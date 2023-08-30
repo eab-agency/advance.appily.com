@@ -1,0 +1,95 @@
+@use '../config/tokens';
+
+.university-match {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: clamp(tokens.$baseUnit * 2, 6vw, tokens.$baseUnit * 6);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: tokens.$layer-2;
+        width: 100vw;
+        height: 100%;
+        background-color: rgba(tokens.$c-blue-500, 0.85);
+    }
+
+    .content {
+        position: relative;
+        z-index: tokens.$layer-3;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: tokens.$baseUnit * 2;
+    }
+
+    figure {
+        display: block;
+        width: 100vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: tokens.$layer-1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .intro {
+        display: block;
+        position: relative;
+        font-size: clamp(tokens.$baseUnit, 2vw, tokens.$baseUnit * 1.5);
+        margin-bottom: tokens.$baseUnit * 2;
+        color: tokens.$c-white;
+        font-weight: tokens.$fw-light;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100vw;
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: tokens.$c-blue-300;
+        }
+    }
+
+    .school-name-title {
+        h2 {
+            margin: 0;
+        }
+        p {
+            font-size: clamp(
+                tokens.$baseUnit * 1.25,
+                2vw,
+                tokens.$baseUnit * 2
+            );
+            font-weight: tokens.$fw-semibold;
+            margin: 0;
+        }
+
+        // add light mode
+        @media (prefers-color-scheme: light) {
+            h2,
+            p {
+                color: tokens.$c-white;
+            }
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        p {
+            color: tokens.$c-white;
+        }
+    }
+}

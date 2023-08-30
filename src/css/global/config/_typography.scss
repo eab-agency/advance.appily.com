@@ -1,0 +1,113 @@
+@use 'fonts';
+@use 'tokens';
+
+html {
+    line-height: 1.5;
+    font-family: fonts.$f-bodyFont;
+}
+
+// ================
+// Headlines
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 1rem 0;
+    line-height: fonts.$lh-s;
+    font-family: fonts.$f-headlineFont;
+}
+
+h1 {
+    font-size: clamp(fonts.$fs-xxl, 5vw, fonts.$fs-xxxl);
+    font-weight: fonts.$fw-bold;
+    color: tokens.$c-white;
+
+    @media (prefers-color-scheme: light) {
+        color: tokens.$c-blue-800;
+    }
+}
+h2 {
+    font-size: clamp(fonts.$fs-m, 4vw, fonts.$fs-xxl);
+    font-weight: fonts.$fw-semibold;
+    color: tokens.$c-white;
+
+    @media (prefers-color-scheme: light) {
+        color: tokens.$c-blue-800;
+    }
+}
+
+h3 {
+    font-size: clamp(fonts.$fs-s, 3vw, fonts.$fs-l);
+    font-weight: fonts.$fw-semibold;
+    // strong {
+    //     display: block;
+    //     font-weight: 700;
+    // }
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}
+
+// ================
+// Body Copy
+
+p,
+ul,
+ol,
+blockquote,
+address {
+    margin: 0 0 1rem 0;
+    font-style: normal;
+}
+
+ul,
+ol {
+    li {
+    }
+}
+
+a {
+    text-decoration: underline;
+    color: tokens.$c-orange-500;
+
+    @media (prefers-color-scheme: light) {
+        color: tokens.$c-blue-500;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+%small,
+small,
+.copyright {
+    font-size: fonts.$fs-xs;
+    font-style: italic;
+    line-height: 135%;
+    color: tokens.$c-white;
+    display: block;
+
+    @media (prefers-color-scheme: light) {
+        color: tokens.$c-blue-500;
+    }
+}
+
+
+// ================
+// Other Type Styles
+
+.error,
+.val-header {
+    color: tokens.$c-error;
+}

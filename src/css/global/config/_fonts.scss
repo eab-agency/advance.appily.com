@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,700;1,400');
+
+@font-face {
+    font-family: 'Icomoon';
+    src: url('/fonts/icomoon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$f-sans: 'Nunito', sans-serif;
+// $f-serif: 'Merriweather', serif;
+// $f-mono: 'Fira Code', monospace;
+
+$f-icons: 'icomoon';
+
+$f-headlineFont: $f-sans;
+$f-bodyFont: $f-sans;
+
+// ================
+// Font Weights
+
+$fw-light: 300;
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+$fw-black: 900;
+
+// ================
+// Font Sizes
+
+$fs-xxxl: 3.5rem;
+$fs-xxl: 2.2rem;
+$fs-xl: 1.8rem;
+$fs-l: 1.3rem;
+$fs-m: 1.15rem;
+$fs-s: 1rem;
+$fs-xs: 0.8rem;
+$fs-xxs: 0.64rem;
+$fs-xxxs: 0.512rem;
+
+// ================
+// Line Heights
+
+$lh-xxxl: 1.8;
+$lh-xxl: 1.5;
+$lh-xl: 1.4;
+$lh-l: 1.3;
+$lh-m: 1.2;
+$lh-s: 1.1;
+$lh-xs: 1;
+
+// ================

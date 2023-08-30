@@ -1,0 +1,202 @@
+{
+     "schools": [
+        {
+            "title": "Augsburg University",
+            "subTitle": "Health Programs",
+            "description": "Augsburg University provides a robust, community-focused health sciences education, preparing students for success in a dynamic healthcare landscape.",
+            "link": "https://www.augsburg.edu/academics/majors/",
+            "linkText": "Learn about health programs at Augsburg",
+            "imageURL": "/images/augsburg-university.jpg",
+            "logoUrl": "/images/augsburg_logo.png",
+            "buttonText": "Connect with Augsburg",
+            "schoolMeta": {
+                "city": "Minneapolis",
+                "state": "MN"
+            },
+            "region": "midwest"
+        },
+        {
+            "title": "Emory & Henry College",
+            "subTitle": "School of Health Sciences",
+            "description": "Emory & Henry's health programs equip students to provide compassionate, flexible care, addressing the unique health challenges of the Appalachian community.",
+            "link": "https://www.ehc.edu/academics/programs/school-health-sciences/",
+            "linkText": "Learn about health sciences at Emory & Henry",
+            "imageURL": "/images/emory-and-henry-college.webp",
+            "logoUrl": "/images/emory-and-henry-college_logo.jpg",
+            "buttonText": "Connect with Emory & Henry",
+            "schoolMeta": {
+                "city": "Emory",
+                "state": "VA"
+            },
+            "region": "southeast"
+        },
+        {
+            "title": "University of Massachusetts Lowell",
+            "subTitle": "Zuckerberg College of Health Sciences",
+            "description": "UMass Lowell's health programs, led by experienced faculty, blend innovative research and practical education for licensure-ready, successful healthcare professionals.",
+            "link": "https://www.uml.edu/Health-Sciences/",
+            "linkText": "Learn about health programs at UMass Lowell",
+            "imageURL": "/images/university-of-massachusetts-lowell.jpg",
+            "logoUrl": "/images/university-of-massachusetts-lowell_logo.png",
+            "buttonText": "Connect with UML",
+            "schoolMeta": {
+                "city": "Lowell",
+                "state": "MA"
+            },
+            "region": "northeast"
+        },
+        {
+            "title": "Immaculata University",
+            "subTitle": "College of Nursing and Health Professions",
+            "description": "Immaculata University's health programs combine a strong humanities focus, experiential learning, and individualized mentoring to prepare compassionate, competent healthcare professionals.",
+            "link": "https://www.immaculata.edu/academics/departments/college-of-nursing-and-health-professions/",
+            "linkText": "Learn about nursing and health programs at Immaculata",
+            "imageURL": "/images/Immaculata-University.jpg",
+            "logoUrl": "/images/Immaculata_University_logo.png",
+            "buttonText": "Connect with Immaculata",
+            "schoolMeta": {
+                "city": "Immaculata",
+                "state": "PA"
+            },
+            "region": "northeast"
+        },
+        {
+            "title": "D’Youville University",
+            "subTitle": "Health Programs Across Multiple Schools",
+            "description": "D’Youville University's health programs are committed to innovative, inclusive education, fostering service, and addressing health disparities to build healthier communities.",
+            "link": "https://www.dyu.edu/academics/schools-and-departments",
+            "linkText": "Learn about health programs at D’Youville",
+            "imageURL": "/images/DYouville-University.jpeg",
+            "logoUrl": "/images/DYouville-University_logo.jpg",
+            "buttonText": "Connect with DYU",
+            "schoolMeta": {
+                "city": "Buffalo",
+                "state": "NY"
+            },
+            "region": "northeast"
+        },
+        {
+            "title": "Jacksonville University",
+            "subTitle": "Brooks Rehabilitation College of Healthcare Sciences",
+            "description": "Jacksonville University's health programs focus on equipping students to provide exemplary care and improve health service delivery in diverse communities.",
+            "link": "https://www.ju.edu/chs/index.php",
+            "linkText": "Learn about health programs at Jacksonville",
+            "imageURL": "/images/Jacksonville-University.jpg",
+            "logoUrl": "/images/ju-seal-green-web.png",
+            "buttonText": "Connect with JU",
+            "schoolMeta": {
+                "city": "Jacksonville",
+                "state": "FL"
+            },
+            "region": "southeast"
+        },
+        {
+            "title": "The College of New Jersey",
+            "subTitle": "School of Nursing and Health Sciences",
+            "description": "TCNJ's health programs emphasize health promotion and integrative wellness, equipping students to improve health outcomes and promote equitable access to care.",
+            "link": "https://nhs.tcnj.edu/",
+            "linkText": "Learn about health programs at TCNJ",
+            "imageURL": "/images/college-of-new-jersey.jpg",
+            "logoUrl": "/images/college-of-new-jersey_logo.jpg",
+            "buttonText": "Connect with TCNJ",
+            "schoolMeta": {
+                "city": "Ewing",
+                "state": "NJ"
+            },
+            "region": "northeast"
+        },
+        {
+            "title": "Montana State University",
+            "subTitle": "Division of Health Sciences",
+            "description": "Montana State University's health programs focus on advancing health education, research, and service to improve well-being statewide. Emphasizing collaboration, they prepare high-quality healthcare providers, educators, and scientists.",
+            "link": "https://www.montana.edu/healthsciences/index.html",
+            "linkText": "Learn about health programs at MSU",
+            "imageURL": "/images/Montana-State-University.png",
+            "logoUrl": "/images/MSU-vert-rgb.jpg",
+            "buttonText": "Connect with MSU",
+            "schoolMeta": {
+                "city": "Bozeman",
+                "state": "MT"
+            },
+            "region": "mountain"
+        },
+        {
+            "title": "Ithaca College",
+            "subTitle": "School of Health Sciences and Human Performance",
+            "description": "Ithaca College's health programs combine classroom learning and hands-on experience, preparing students to promote health and wellness under expert faculty guidance.",
+            "link": "https://www.ithaca.edu/academics/school-health-sciences-and-human-performance",
+            "linkText": "Learn about health programs at Ithaca College",
+            "imageURL": "/images/ithaca-college.jpg",
+            "logoUrl": "/images/ithaca-college_logo.jpg",
+            "buttonText": "Connect with Ithaca",
+            "schoolMeta": {
+                "city": "Ithaca",
+                "state": "NY"
+            },
+            "region": "northeast"
+        },
+        {
+            "title": "Hood College",
+            "subTitle": "Health Care Programs",
+            "description": "Hood College's health care programs, under the Ruth Whitaker Holmes School, offer holistic studies of health, blending liberal arts with practical experiences. Dedicated faculty and community partnerships propel your journey in behavioral and health sciences.",
+            "link": "https://www.hood.edu/academics/ruth-whitaker-holmes-school-behavioral-health-sciences",
+            "linkText": "Learn about health care programs at Hood",
+            "imageURL": "/images/hood-college.jpg",
+            "logoUrl": "/images/hood-college-logo.png",
+            "buttonText": "Connect with Hood College",
+            "schoolMeta": {
+                "city": "Frederick",
+                "state": "MD"
+            },
+            "region": "northeast"
+        },
+        {
+    "title": "Goshen College",
+    "subTitle": "Nursing Programs",
+    "description": "Goshen's nursing programs emphasize servant leadership, intercultural competency, and innovation - which prepares graduates for a dynamic healthcare landscape.",
+    "link": "https://www.goshen.edu/",
+    "linkText": "Learn about nursing programs at Goshen",
+    "imageURL": "/images/goshen-college.jpg",
+    "logoUrl": "/images/goshen-college-logo.jpg",
+    "buttonText": "Connect with Goshen College",
+    "schoolMeta": {
+        "city": "Goshen",
+        "state": "IN"
+    },
+    "region": "midwest"
+},
+
+        {
+    "title": "Bowie State University",
+    "subTitle": "Healthcare Degrees",
+    "description": "Bowie State equips students for diverse healthcare careers through hands-on experience, expert faculty, and cutting-edge labs in its state-of-the-art science and nursing center.",
+    "link": "https://www.bowiestate.edu/academics/healthcare-degrees.php",
+    "linkText": "Learn about health programs at Bowie State",
+    "imageURL": "/images/bowie-state.jpg",  
+    "logoUrl": "/images/bowie-state-logo.png",  
+    "buttonText": "Connect with Bowie State",
+    "schoolMeta": {
+        "city": "Bowie",
+        "state": "MD"
+    },
+    "region": "northeast"
+},
+{
+    "title": "Mount Carmel College of Nursing",
+    "subTitle": "Nursing Programs",
+    "description": "MCCN prioritizes personal growth with student-focused learning, ideal ratios, and cutting-edge resources, cultivating highly competent, dedicated nursing professionals.",
+    "link": "https://www.mccn.edu/academics ",
+    "linkText": "Explore nursing programs at Mount Carmel",
+    "imageURL": "/images/mt-carmel-college.jpg",
+    "logoUrl": "/images/mt-carmel-college-logo.svg",
+    "buttonText": "Connect with Mount Carmel",
+    "schoolMeta": {
+        "city": "Columbus",
+        "state": "OH"
+    },
+    "region": "midwest"
+}
+
+
+    ]
+}

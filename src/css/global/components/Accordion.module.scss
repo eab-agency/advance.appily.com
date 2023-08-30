@@ -1,0 +1,92 @@
+@use 'sass:color';
+@use '../config/tokens';
+
+.accordion {
+    position: relative;
+    z-index: tokens.$layer-1;
+
+    .accordion-header {
+        cursor: pointer;
+        h2 {
+            display: flex;
+            align-items: center;
+            gap: tokens.$baseUnit * 2;
+            margin: 0;
+
+            span {
+                width: 100%;
+                max-width: tokens.$mq-900;
+            }
+
+            i {
+                line-height: 1;
+                font-size: 1.2em;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+
+        &:hover {
+            h2 {
+                color: tokens.$c-turquoise-500;
+                text-decoration: underline;
+
+                i {
+                    transform: translateX(30%);
+                }
+
+                // add light mode
+                @media (prefers-color-scheme: light) {
+                    color: color.adjust(tokens.$c-malva-500, $lightness: -25%);
+                }
+            }
+        }
+    }
+
+    .accordion-body {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        gap: tokens.$baseUnit * 2;
+        width: 100%;
+        max-width: tokens.$maxWidth;
+        padding-top: clamp(tokens.$baseUnit, 2vw, tokens.$baseUnit * 2);
+        margin-top: clamp(tokens.$baseUnit, 2vw, tokens.$baseUnit * 2);
+
+        @media (min-width: tokens.$mq-600) {
+            flex-direction: row;
+        }
+
+        @media (min-width: tokens.$mq-900) {
+            align-items: center;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 1px;
+            background-color: tokens.$c-blue-300;
+        }
+
+        figure {
+            width: 50%;
+            max-width: 15rem;
+
+            @media (min-width: tokens.$mq-900) {
+                width: 100%;
+                max-width: 25rem;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        div {
+            flex: 1 0 25rem;
+        }
+    }
+}

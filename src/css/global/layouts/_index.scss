@@ -1,0 +1,120 @@
+//* Layouts
+
+@use '../config/tokens';
+
+body {
+    div#__next {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+        // overflow: hidden;
+        background: url('/images/cappex-icon-dark.svg') no-repeat 70% -40rem;
+
+        @media (min-width: tokens.$mq-900) {
+            background-size: 120vw auto;
+        }
+
+        @media (min-width: tokens.$mq-900) and (min-height: tokens.$mq-900) {
+            background: url('/images/cappex-icon-dark.svg') no-repeat 80% -50rem;
+            background-size: 260vh auto;
+        }
+
+        @media (prefers-color-scheme: light) {
+            background: url('/images/cappex-icon-light.svg') no-repeat 70% 45%;
+
+            @media (min-width: tokens.$mq-900) {
+                background-size: 120vw auto;
+            }
+
+            @media (min-width: tokens.$mq-900) and (min-height: tokens.$mq-900) {
+                background: url('/images/cappex-icon-light.svg') no-repeat 60%
+                    45%;
+                background-size: 260vh auto;
+            }
+        }
+    }
+
+    div.content-wrapper {
+        display: block;
+        width: 100%;
+        max-width: tokens.$maxWidth;
+        position: relative;
+        margin: 0 auto;
+    }
+}
+
+//* Page Layout
+
+.short {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+
+    &.landing {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@mixin container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: tokens.$baseUnit * 2;
+    width: 100%;
+    padding: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
+
+    @media (min-width: tokens.$mq-900) {
+        flex-direction: row;
+    }
+}
+
+@mixin content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(tokens.$baseUnit * 2, 4vw, tokens.$baseUnit * 5);
+    flex: 1 0 25rem;
+
+    & > header {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(tokens.$baseUnit, 5vw, tokens.$baseUnit * 5);
+    }
+}
+
+@mixin decoImage {
+    display: block;
+
+    @media (max-width: tokens.$mq-900) {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        opacity: 0.2;
+        transform: translateY(-50%);
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    @media (min-width: tokens.$mq-900) {
+        position: relative;
+        -webkit-mask-image: url('/images/image-mask.svg');
+        -webkit-mask-size: 100%;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-image: url('/images/image-mask.svg');
+        mask-size: 100%;
+        mask-repeat: no-repeat;
+        mask-position: center;
+    }
+}

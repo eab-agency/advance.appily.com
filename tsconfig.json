@@ -1,0 +1,101 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"  ],
+  "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@cloud/*": [
+        "./src/app/cloud/*"
+      ],
+      "@forms/*": [
+        "./src/forms/*"
+      ],
+      "@blocks/*": [
+        "./src/blocks/*"
+      ],
+      "@scss/*": [
+        "./src/css/*"
+      ],
+      "@root/*": [
+        "./src/*"
+      ],
+      "@providers": [
+        "./src/providers"
+      ],
+      "@providers/*": [
+        "./src/providers/*"
+      ],
+      "@icons/*": [
+        "./src/icons/*"
+      ],
+      "@utilities": [
+        "./src/utilities"
+      ],
+      "@utilities/*": [
+        "./src/utilities/*"
+      ],
+      "@types": [
+        "./src/payload-types.ts"
+      ],
+      "@graphics/*": [
+        "./src/graphics/*"
+      ],
+      "@graphql": [
+        "./src/app/_graphql"
+      ],
+      "@graphql/*": [
+        "./src/app/_graphql/*"
+      ],
+      "@lib": [
+        "./src/lib"
+      ],
+      "@lib/*": [
+        "./src/lib/*"
+      ],
+      "@hooks": [
+        "./src/hooks"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
+      "@helpers": [
+        "./src/helpers"
+      ],
+      "@helpers/*": [
+        "./src/helpers/*"
+      ],
+    },
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,55 @@
+@use 'sass:color';
+@use '../config/tokens';
+@use '../layouts';
+
+.container {
+    @include layouts.container;
+    align-items: flex-start;
+
+    .content {
+        @include layouts.content;
+    }
+}
+
+.container-quiz {
+    @include layouts.container;
+    max-width: 60rem;
+    align-items: flex-start;
+
+    .content {
+        @include layouts.content;
+    }
+}
+
+.deco-image {
+    @include layouts.decoImage;
+}
+
+.questions-counter {
+    display: block;
+    position: absolute;
+    right: 1em;
+    top: 4.9rem;
+    color: color.adjust(tokens.$c-blue-300, $lightness: 5%);
+    font-size: clamp(tokens.$fs-xs, 2vw, tokens.$fs-m);
+
+    @media (prefers-color-scheme: light) {
+        color: tokens.$c-blue-500;
+    }
+}
+
+.containerResults {
+    @include layouts.container;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 0;
+}
+
+.retakeButton {
+    border-top: 1px solid tokens.$c-blue-300;
+    margin-top: clamp(tokens.$baseUnit, 3vw, tokens.$baseUnit * 3);
+    padding-top: 1em;
+    display: block;
+    width: 100%;
+    max-width: tokens.$mq-700;
+}

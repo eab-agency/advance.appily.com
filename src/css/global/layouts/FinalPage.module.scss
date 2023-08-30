@@ -1,0 +1,418 @@
+@use 'sass:color';
+@use '../layouts';
+@use '../config/tokens';
+
+.container {
+    @include layouts.container;
+    align-items: flex-start;
+    max-width: tokens.$maxWidth;
+    margin: 0 auto;
+    padding-bottom: 0;
+    overflow: hidden;
+
+
+    .content {
+        @include layouts.content;
+        gap: 0;
+        max-width: 100%;
+
+        & > span {
+            margin-bottom: 2em;
+        }
+    }
+}
+
+.intro-section {
+    padding-bottom: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
+    h1 {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 1px;
+            background-color: tokens.$c-blue-500;
+        }
+    }
+
+    p {
+        display: block;
+        width: 100%;
+        max-width: tokens.$mq-900;
+        font-size: clamp(tokens.$baseUnit * 1, 2vw, tokens.$baseUnit * 1.75);
+    }
+}
+
+.career-path {
+    display: block;
+    width: 100%;
+    background: tokens.$c-blue-500;
+    padding-block: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 150vw;
+        height: 100%;
+        transform: translateX(-50%);
+        background: tokens.$c-blue-500;
+        z-index: tokens.$layer-1;
+    }
+
+    // add light mode
+    @media (prefers-color-scheme: light) {
+        background: color.adjust(tokens.$c-blue-800, $lightness: 70%);
+        &::before {
+            background: color.adjust(tokens.$c-blue-800, $lightness: 70%);
+        }
+    }
+
+    .path-intro {
+        position: relative;
+        z-index: tokens.$layer-2;
+        h2 {
+            position: relative;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100vw;
+                height: 1px;
+                background-color: tokens.$c-blue-300;
+            }
+        }
+
+        p {
+            display: block;
+            width: 100%;
+            max-width: tokens.$mq-900;
+            font-size: clamp(
+                tokens.$baseUnit * 1,
+                2vw,
+                tokens.$baseUnit * 1.75
+            );
+        }
+    }
+
+    .executive-path {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
+        position: relative;
+        z-index: tokens.$layer-2;
+        margin-top: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
+
+        @media (min-width: tokens.$mq-900) {
+            flex-direction: row;
+        }
+
+        p {
+            font-size: clamp(tokens.$fs-s, 2vw, tokens.$fs-m);
+            order: 1;
+
+            @media (min-width: tokens.$mq-900) {
+                order: 0;
+            }
+        }
+
+        ul {
+            flex: 1 1 100%;
+            list-style: none;
+            order: 1;
+
+            @media (min-width: tokens.$mq-900) {
+                order: 0;
+            }
+
+            li {
+                display: block;
+                padding-left: 2em;
+                position: relative;
+                font-size: clamp(tokens.$fs-s, 2vw, tokens.$fs-m);
+                color: tokens.$c-white;
+                margin-bottom: 1em;
+                padding-left: 1.5em;
+                position: relative;
+
+                &::before {
+                    content: tokens.$i-checkmark;
+                    font-family: tokens.$f-icons;
+                    color: tokens.$c-orange-500;
+                    font-size: 1.2em;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translateY(-5%);
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+
+                strong {
+                    color: tokens.$c-turquoise-500;
+                }
+
+                @media (prefers-color-scheme: light) {
+                    color: tokens.$c-blue-800;
+                    &::before {
+                        color: tokens.$c-turquoise-500;
+                    }
+                    strong {
+                        color: color.adjust(
+                            tokens.$c-malva-500,
+                            $lightness: -20%
+                        );
+                    }
+                }
+            }
+        }
+
+        .pathwrapper {
+            order: 1;
+
+            @media (min-width: tokens.$mq-900) {
+                order: initial;
+            }
+        }
+
+        figure {
+            flex-shrink: 0;
+            width: 50%;
+            order: 0;
+
+            @media (min-width: tokens.$mq-900) {
+                width: 40%;
+                order: initial;
+            }
+
+            img {
+                order: 0;
+                width: 100%;
+
+                @media (min-width: tokens.$mq-900) {
+                    order: 1;
+                }
+            }
+
+            figcaption {
+                font-size: tokens.$fs-xs;
+                color: tokens.$c-white;
+                margin-top: 0;
+                text-transform: uppercase;
+
+                @media (prefers-color-scheme: light) {
+                    color: tokens.$c-blue-800;
+                }
+            }
+        }
+    }
+}
+
+.best-degrees {
+    display: block;
+    width: 100%;
+    background: tokens.$c-blue-800;
+    padding-block: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 150vw;
+        height: 100%;
+        transform: translateX(-50%);
+        background: tokens.$c-blue-800;
+        z-index: tokens.$layer-1;
+    }
+
+    // add light mode
+    @media (prefers-color-scheme: light) {
+        background: tokens.$c-gray-100;
+        &::before {
+            background: tokens.$c-gray-100;
+        }
+    }
+
+    .degrees-intro {
+        position: relative;
+        z-index: tokens.$layer-2;
+        h2 {
+            position: relative;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100vw;
+                height: 1px;
+                background-color: tokens.$c-blue-300;
+            }
+        }
+
+        p {
+            display: block;
+            width: 100%;
+            max-width: tokens.$mq-900;
+            font-size: clamp(
+                tokens.$baseUnit * 1,
+                2vw,
+                tokens.$baseUnit * 1.75
+            );
+        }
+    }
+}
+
+.certificates {
+    display: block;
+    width: 100%;
+    position: relative;
+    background: tokens.$c-blue-500;
+    padding-block: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 150vw;
+        height: 100%;
+        transform: translateX(-50%);
+        background: tokens.$c-blue-500;
+        z-index: tokens.$layer-1;
+    }
+
+    @media (prefers-color-scheme: light) {
+        background: color.adjust(tokens.$c-blue-800, $lightness: 70%);
+        &::before {
+            background: color.adjust(tokens.$c-blue-800, $lightness: 70%);
+        }
+    }
+}
+
+.keep-exploring {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    padding-block: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
+    background: tokens.$c-blue-800;
+
+    .sourceContent {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: tokens.$baseUnit;
+        width: 100%;
+        max-width: tokens.$mq-800;
+        background: tokens.$c-blue-900;
+        padding-block: clamp(tokens.$baseUnit, 3vw, tokens.$baseUnit * 3);
+        padding-inline: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
+        position: relative;
+        border: 0.35em dashed tokens.$c-blue-500;
+        z-index: tokens.$layer-2;
+
+        h2 {
+            color: tokens.$c-blue-300;
+        }
+
+        a {
+            width: auto;
+        }
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 150vw;
+        height: 100%;
+        transform: translateX(-50%);
+        background: tokens.$c-blue-800;
+        z-index: tokens.$layer-1;
+    }
+
+    @media (prefers-color-scheme: light) {
+        background: tokens.$c-gray-100;
+        .sourceContent {
+            background: color.adjust(tokens.$c-blue-800, $lightness: 70%);
+            border-color: color.adjust(tokens.$c-blue-800, $lightness: 20%);
+            h2 {
+                color: color.adjust(tokens.$c-blue-800, $lightness: 30%);
+            }
+        }
+        &::before {
+            background: tokens.$c-gray-100;
+        }
+    }
+
+    h2 {
+        font-weight: tokens.$fw-light;
+        font-size: clamp(tokens.$fs-l, 2vw, tokens.$fs-xl);
+    }
+}
+
+.carouselWithForm{
+    width: 100%;
+}
+
+.matchedSchools {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: tokens.$mq-1200;
+    margin: 0 auto;
+    min-height: 35rem;
+    padding-block: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 3);
+
+    .intro{
+        position: relative;
+    z-index: tokens.$layer-2;
+
+    h2{
+        position: relative;
+        padding-bottom: 0.5em;
+        margin-bottom: tokens.$baseUnit * 2;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100vw;
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: tokens.$c-blue-300;
+            z-index: tokens.$layer-2;
+        }
+    }
+    }
+}
+
+// .carouselContainer{
+//     display: block;
+//     width: 100%;
+    
+//     background: red;
+// }
