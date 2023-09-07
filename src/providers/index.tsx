@@ -1,5 +1,5 @@
 'use client'
-// TODO: Andrei, i'm keeping this in here so you can take a look at it. looks awesome. see files like src/blocks/CallToAction
+// TODO: Andrei, i'm keeping this GridProvider in here so you can take a look at it. looks awesome. see files like src/blocks/CallToAction
 import { GridProvider } from '@faceless-ui/css-grid'
 import React from 'react'
 import { CookiesProvider } from 'react-cookie'

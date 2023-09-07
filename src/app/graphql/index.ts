@@ -1,10 +1,48 @@
-import type { Page, Post } from '../../../payload-types'
+import type { Page, Post, CarouselCard } from '../../../payload-types'
+import { CAROUSELCARDS, CAROUSELCARDSNOTIN } from './carouselCards'
 import { GLOBALS } from './globals'
 import { PAGE, PAGES } from './pages'
 import { POST, POSTS } from './posts'
 
 const next: { revalidate: false } = {
   revalidate: false,
+}
+
+
+export const fetchCarouselCards = async (incomingLocations?: string[]): Promise<CarouselCard[]> => {
+  const { data } = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?carousel-cards`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    next,
+    body: JSON.stringify({
+      query: CAROUSELCARDS,
+      variables: {
+        state: incomingLocations,
+      },
+    }),
+  }).then(res => res.json())
+
+  return data?.CarouselCards?.docs
+}
+
+export const fetchReaminingCarouselCards = async (incomingLocationsToFilterOut?: string[]): Promise<CarouselCard[]> => {
+  const { data } = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?carousel-cards`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    next,
+    body: JSON.stringify({
+      query: CAROUSELCARDSNOTIN,
+      variables: {
+        state: incomingLocationsToFilterOut,
+      },
+    }),
+  }).then(res => res.json())
+
+  return data?.CarouselCards?.docs
 }
 
 export const fetchGlobals = async (): Promise<{

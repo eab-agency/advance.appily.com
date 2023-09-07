@@ -1,1 +1,1 @@
-export { default } from './SchoolCarousel.js';
+export { default } from './SchoolCarousel';

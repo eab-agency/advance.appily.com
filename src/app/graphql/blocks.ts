@@ -14,6 +14,19 @@ export const CALL_TO_ACTION = `
 }
 `
 
+export const PARTNER = `
+...on Partner {
+  partner {
+    shortName
+    acroynm
+    region
+    contact {
+      state
+    }
+  }
+}
+`
+
 export const CONTENT = `
 ...on Content {
   blockType

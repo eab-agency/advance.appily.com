@@ -2,7 +2,6 @@
 import Image from 'next/image'
 import { useRef } from 'react'
 import { BiLinkExternal } from 'react-icons/bi'
-import useSWR from 'swr'
 
 import Accordion from '@components/Accordion'
 import CarouselWithForm from '@components/CarouselWithForm'
@@ -11,17 +10,18 @@ import StickyCta from '@components/StickyCta'
 import Tabs from '@components/Tabs'
 import styles from '@scss/global/layouts/FinalPage.module.scss'
 import { usePathname } from 'next/navigation'
+import useResult from 'src/hooks/useResult'
 
 const AnalystPage = () => {
    const carouselRef = useRef(null)
    const pathname = usePathname()
    const slug = pathname.split('/').pop()
+  const { result, isLoading, isError } = useResult(slug)
 
-   const { data, error } = useSWR(`/api/quiz/results?result=${slug}`)
-   //Handle the error state
-   if (error) return <div>Failed to load {JSON.stringify({ error })} </div>
-   //Handle the loading state
-   if (!data) return <div>Loading...</div>
+  if (isLoading) return <div>Loading...</div>
+
+   if (isError) return <div>Failed to load {JSON.stringify({ isError })} </div>
+
 
   return (
     <>
@@ -29,16 +29,16 @@ const AnalystPage = () => {
         <div className={styles.content}>
           <span className="intro-title">Your ideal role could be ...</span>
           <section className={styles['intro-section']}>
-            <h1>{data.title}</h1>
-            <p>{data.detailedDescription}</p>
+            <h1>{result.title}</h1>
+            <p>{result.detailedDescription}</p>
           </section>
-          <Tabs className="react-tabs" tabs={data.tabs} />
+          <Tabs className="react-tabs" tabs={result.tabs} />
           <section className={styles['career-path']}>
             <div className={styles['path-intro']}>
               <h2>What's a common health care career path for The Analyst?</h2>
               <p>
                 Occupations that align with The Analyst's career path advise organizations on
-                computerized healthcare systems and analyze clinical data.
+                computerized healthcare systems and analyze clinical result.
               </p>
             </div>
             <div className={styles['executive-path']}>
@@ -75,7 +75,7 @@ const AnalystPage = () => {
               </figure>
             </div>
           </section>
-          <Stats stats={data.stats} source={data.statsSource} />
+          <Stats stats={result.stats} source={result.statsSource} />
           <section className={styles['best-degrees']}>
             <div className={styles['degrees-intro']}>
               <h2>What are the best health care degrees for The Analyst?</h2>
@@ -85,7 +85,7 @@ const AnalystPage = () => {
                 preferring a bachelor's or master's degree.
               </p>
             </div>
-            <Tabs tabs={data.degreeTabs} className="degree-tabs" />
+            <Tabs tabs={result.degreeTabs} className="degree-tabs" />
           </section>
           <section className={styles.certificates}>
             <Accordion title="Does The Analyst need a license, certification, or registration?">

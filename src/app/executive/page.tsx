@@ -16,9 +16,10 @@ const ExecutivePage = () => {
    const carouselRef = useRef(null)
    const pathname = usePathname()
   const slug = pathname.split('/').pop()
- 
+
   const { data, error } = useSWR(`/api/quiz/results?result=${slug}`)
   //Handle the error state
+  console.log("🚀 ~ file: page.tsx:22 ~ ExecutivePage ~ data, error:", data, error)
   if (error) return <div>Failed to load {JSON.stringify({ error })} </div>
   //Handle the loading state
   if (!data) return <div>Loading...</div>

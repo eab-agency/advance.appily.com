@@ -3,11 +3,12 @@
 /* eslint-disable no-unused-vars */
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { useCookies } from 'react-cookie'
+import type { CarouselCard } from "../../payload-types"
 
 import { getMatchedSchool } from '../helpers/getMatchedSchool'
 
 interface UserLocationContextProps {
-  matchedSchools: any[]
+  matchedSchools: CarouselCard[]
   setMatchedSchools: React.Dispatch<React.SetStateAction<any[]>>
   location: {
     region_iso_code: string

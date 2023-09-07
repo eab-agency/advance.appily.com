@@ -2,20 +2,22 @@ import { promises as fs } from 'fs'
 import path from 'path'
 
 export default async function handler(req, res) {
-  // Find the absolute path of the data directory
-  const dataDirectory = path.join(process.cwd(), 'src/data')
-  // Read the json data file data.json
-  const fileContents = await fs.readFile(`${dataDirectory}/results.json`, 'utf8')
-  // Parse the JSON string into an object and extract the questions array
-  const data = JSON.parse(fileContents)
-  const { results } = data
+  try {
+    const dataDirectory = path.resolve(process.cwd(), 'src/data')
+    const filePath = path.join(dataDirectory, 'results.json')
 
-  // Get the value to filter by from the query parameter
-  const filterValue = req.query.result
-  // Filter the results array to only include the result with the specified value
-  const filteredResults = results.filter(
-    result => result.title.toLowerCase() === filterValue.toLowerCase()
-  )
-  // Return the filtered results array in json format
-  res.status(200).json(filteredResults[0])
+    const fileContents = await fs.readFile(filePath, 'utf8')
+    const data = JSON.parse(fileContents)
+    const { results } = data
+
+    const filterValue = req.query.result
+    const filteredResults = results.filter(
+      result => result.title.toLowerCase() === filterValue.toLowerCase()
+    )
+
+    res.status(200).json(filteredResults[0])
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ error: 'Internal Server Error' })
+  }
 }

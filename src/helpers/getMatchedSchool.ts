@@ -1,76 +1,89 @@
+import { fetchCarouselCards, fetchReaminingCarouselCards } from '../app/graphql'
 
-const regionMatching: RegionMatching = {
-  northeast: ['ME', 'VT', 'NH', 'MA', 'RI', 'CT', 'NY', 'NJ', 'PA', 'MD', 'DE'],
-  midwest: ['OH', 'MI', 'IN', 'IL', 'WI', 'MN', 'IA', 'MO', 'NE', 'KS'],
-  southwest: ['NM', 'AZ', 'NV', 'WY'],
-  pacific: ['CA', 'OR', 'WA', 'AK', 'HI'],
-  mountain: ['MT', 'ID', 'ND', 'SD', 'CO', 'UT'],
-  southeast: ['VA', 'NC', 'SC', 'GA', 'FL'],
-  southcentral: ['WV', 'KY', 'TN', 'AL', 'MS', 'AR', 'LA', 'OK', 'TX'],
-}
-type RegionMatching = {
+// import CarouselCard type from payload-types.ts
+import type { CarouselCard, Partner, Media } from "../../payload-types"
+
+type statesToMatchAgainst = {
   [key: string]: string[]
 }
 
-type School = {
-  title: string
-  subTitle: string
-  description: string
-  link: string
-  linkText: string
-  imageURL: string
-  logoUrl: string
-  buttonText: string
-  schoolMeta: {
-    city: string
-    state: string
-  }
-  region: string
+const statesToMatchAgainst: statesToMatchAgainst = {
+  AL: ['AL', 'FL', 'GA', 'MS', 'TN'],
+  AK: ['AK', 'CA', 'HI', 'OR', 'WA'],
+  AZ: ['AZ', 'CA', 'CO', 'NV', 'NM', 'UT'],
+  AR: ['AR', 'LA', 'MS', 'MO', 'OK', 'TN', 'TX'],
+  CA: ['CA', 'AZ', 'NV', 'OR'],
+  CO: ['CO', 'AZ', 'KS', 'NE', 'NM', 'OK', 'UT', 'WY'],
+  CT: ['CT', 'MA', 'NY', 'RI'],
+  DE: ['DE', 'MD', 'NJ', 'PA'],
+  FL: ['FL', 'AL', 'GA', 'MS', 'SC'],
+  GA: ['GA', 'AL', 'FL', 'NC', 'SC', 'TN'],
+  HI: ['HI', 'AK', 'CA', 'OR', 'WA'],
+  ID: ['ID', 'MT', 'NV', 'OR', 'UT', 'WA', 'WY'],
+  IL: ['IL', 'IN', 'IA', 'MI', 'KY', 'MO', 'WI'],
+  IN: ['IN', 'IL', 'KY', 'MI', 'OH'],
+  IA: ['IA', 'IL', 'MN', 'MO', 'NE', 'SD', 'WI'],
+  KS: ['KS', 'CO', 'MO', 'NE', 'OK'],
+  KY: ['KY', 'IL', 'IN', 'MO', 'OH', 'TN', 'VA', 'WV'],
+  LA: ['LA', 'AR', 'MS', 'TX'],
+  ME: ['VT', 'MA', 'NH', 'NY', 'RI', 'CT'],
+  MD: ['MD', 'DE', 'PA', 'VA', 'WV'],
+  MA: ['MA', 'CT', 'NH', 'NY', 'RI', 'VT'],
+  MI: ['MI', 'IL', 'IN', 'MN', 'OH', 'WI'],
+  MN: ['MN', 'IA', 'MI', 'ND', 'SD', 'WI', 'IL'],
+  MS: ['MS', 'AL', 'AR', 'LA', 'TN'],
+  MO: ['MO', 'AR', 'IL', 'IA', 'KS', 'KY', 'NE', 'OK', 'TN'],
+  MT: ['MT', 'ID', 'ND', 'SD', 'WY', 'WA', 'OR', 'NE'],
+  NE: ['NE', 'CO', 'IA', 'KS', 'MO', 'SD', 'WY'],
+  NV: ['NV', 'AZ', 'CA', 'ID', 'OR', 'UT'],
+  NH: ['VT', 'MA', 'NH', 'NY', 'RI', 'CT'],
+  NJ: ['NJ', 'DE', 'NY', 'PA'],
+  NM: ['NM', 'AZ', 'CO', 'OK', 'TX', 'UT'],
+  NY: ['NY', 'CT', 'MA', 'NJ', 'PA', 'RI', 'VT'],
+  NC: ['NC', 'GA', 'SC', 'TN', 'VA'],
+  ND: ['ND', 'MN', 'SD', 'IA', 'WI', 'WY', 'NE'],
+  OH: ['OH', 'IN', 'KY', 'MI', 'PA', 'WV'],
+  OK: ['OK', 'AR', 'CO', 'KS', 'MO', 'NM', 'TX'],
+  OR: ['OR', 'CA', 'ID', 'NV', 'WA'],
+  PA: ['PA', 'DE', 'MD', 'NJ', 'NY', 'OH', 'WV'],
+  RI: ['RI', 'CT', 'MA', 'NY'],
+  SC: ['NC', 'GA', 'SC', 'TN', 'VA'],
+  SD: ['ND', 'MN', 'SD', 'IA', 'WI', 'WY', 'NE'],
+  TN: ['TN', 'AL', 'AR', 'GA', 'KY', 'MS', 'MO', 'NC', 'VA'],
+  TX: ['TX', 'AR', 'LA', 'NM', 'OK'],
+  UT: ['UT', 'AZ', 'CO', 'ID', 'NV', 'NM', 'WY'],
+  VT: ['VT', 'MA', 'NH', 'NY', 'RI', 'CT'],
+  VA: ['VA', 'KY', 'MD', 'NC', 'TN', 'WV'],
+  WA: ['WA', 'ID', 'OR', 'CA', 'MT'],
+  WV: ['WV', 'KY', 'MD', 'OH', 'PA', 'VA'],
+  WI: ['WI', 'IA', 'IL', 'MI', 'MN'],
+  WY: ['WY', 'CO', 'ID', 'MT', 'NE', 'SD', 'ND', 'UT'],
+  DC: ['DC', 'MD', 'VA', 'WV', 'PA', 'DE'],
 }
 
-// get all states from regionMatching, alphabetize and export const
-export const allStates: string[] = Object.values(regionMatching)
-  .flat()
-  .sort((a, b) => a.localeCompare(b))
-
 // function that checks region_iso_code and returns a school if matched from .schools.associatedStates otherwise returns the first school from schools
-export const getMatchedSchool = async (state?: string): Promise<School[]> => {
-  const response = await fetch('/api/quiz/schools')
-  const { data: schools, error }: { data: School[]; error?: string } = await response.json()
+export const getMatchedSchool = async (state?: string): Promise<CarouselCard[]> => {
+  // const response = await fetch('/api/quiz/schools')
+  // const { data: schools, error }: { data: School[]; error?: string } = await response.json()
+// match incoming state to the statesToMatchAgainst key/value to pass to fetchCarouselCards
+  const arrayOfStates: string[] | undefined = state ? statesToMatchAgainst[state] : undefined;
+
+    const cards: CarouselCard[] = await fetchCarouselCards(arrayOfStates || ['VA, DC']);
+
+    // if cards is less than 5 then await fetchAllCards and append the results
+    if (cards.length < 5) {
+      const allCards: CarouselCard[] = await fetchReaminingCarouselCards(arrayOfStates)
+      return shuffleArray([...cards, ...allCards]).slice(0, 5)
+    }
+
 
   // if there is an error or no schools, return null
-  if (error || !schools) {
+  if (!cards) {
     return []
   }
 
-  if (!state) {
-    // Return 5 random schools as the default list
-    return shuffleArray(schools).slice(0, 5)
-  } else {
-    // Find the region associated with the given state
-    const region = Object.keys(regionMatching).find(r => regionMatching[r].includes(state))
+  return shuffleArray(cards).slice(0, 5)
 
-    // Filter schools by region. the purpose of the school.region === 'US' condition is to include all schools if no region is found for the given state
-    const matchedSchools = shuffleArray(
-      schools.filter(school => school.region === region || school.region === 'US')
-    )
-
-    // If there are less than 5 matched schools, add additional non-matched schools
-    if (matchedSchools.length < 5) {
-      const nonMatchedSchools = schools.filter(
-        school => school.region !== region && school.region !== 'US'
-      )
-
-      const additionalSchools = shuffleArray(nonMatchedSchools).slice(0, 5 - matchedSchools.length)
-
-      return [...matchedSchools, ...additionalSchools]
-    }
-
-    return matchedSchools
-  }
-
-  // Return an empty array if schools is not defined
-  return []
 }
 
 // Function to shuffle an array using Fisher-Yates algorithm
