@@ -8,6 +8,7 @@ import { mergeOpenGraph } from '../../../seo/mergeOpenGraph'
 import { fetchPage, fetchPages } from '../../graphql'
 
 const Page = async ({ params: { slug } }) => {
+  console.log("🚀 ~ file: page.tsx:11 ~ Page ~ slug:", slug)
   const page = await fetchPage(slug)
 
   if (!page) return notFound()

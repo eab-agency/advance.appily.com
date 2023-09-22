@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-import styles from '@scss/global/components/MainLogo.module.scss'
+import styles from '@styles/global/components/MainLogo.module.scss'
 
 export default function MainLogo() {
   const [logo, setLogo] = useState(null)

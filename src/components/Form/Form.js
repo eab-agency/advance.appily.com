@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import * as Yup from 'yup'
 
-import styles from '@scss/global/components/Form.module.scss'
+import styles from '@styles/global/components/Form.module.scss'
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { useUser } from '@/context/context'
 import isDevMode from '../../helpers/isDevMode'

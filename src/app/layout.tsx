@@ -6,11 +6,9 @@ import React from 'react'
 import { Providers } from '../providers'
 import { mergeOpenGraph } from '../seo/mergeOpenGraph'
 
-import '../css/app.scss'
+import '@styles/app.scss'
 
-// import { AdminBar } from '../components/AdminBar';
 import Footer from '../components/Footer'
-import Header from '../components/Header'
 import styles from './layout.module.scss'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -18,23 +16,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        {/* <AdminBar
-              adminBarProps={{
-                collection,
-                id,
-                preview,
-                onPreviewExit,
-              }}
-            /> */}
         <Providers>
-          <Header />
           <div className={styles.layout}>
             <main className={styles.layoutContainer}>
-              {/* <LocationInDevMode /> */}
               <div className={styles.layoutContent}>{children}</div>
             </main>
-            <Footer />
           </div>
+            <Footer />
         </Providers>
         <Analytics />
       </body>

@@ -1,7 +1,7 @@
 /* eslint-disable no-prototype-builtins */
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
-import styles from '@scss/global/components/Form.module.scss';
+import styles from '@styles/global/components/Form.module.scss';
 import { Field, useFormikContext } from 'formik';
 import { useEffect, useState } from 'react';
 import { MdChevronRight } from 'react-icons/md';

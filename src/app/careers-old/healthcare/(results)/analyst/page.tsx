@@ -5,10 +5,10 @@ import { BiLinkExternal } from 'react-icons/bi'
 
 import Accordion from '@components/Accordion'
 import CarouselWithForm from '@components/CarouselWithForm'
-import Stats from '@components/Stats'
+import Stats from '../../../../components/Stats'
 import StickyCta from '@components/StickyCta'
 import Tabs from '@components/Tabs'
-import styles from '@scss/global/layouts/FinalPage.module.scss'
+import styles from '@styles/global/layouts/FinalPage.module.scss'
 import { usePathname } from 'next/navigation'
 import useResult from 'src/hooks/useResult'
 

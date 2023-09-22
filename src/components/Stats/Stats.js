@@ -1,4 +1,4 @@
-import styles from '@scss/global/components/Stats.module.scss'
+import styles from '@styles/global/components/Stats.module.scss'
 
 /* eslint-disable react/no-danger */
 function Stats({ stats, source, className }) {

@@ -43,7 +43,7 @@
       "@blocks/*": [
         "./src/blocks/*"
       ],
-      "@scss/*": [
+      "@styles/*": [
         "./src/css/*"
       ],
       "@root/*": [

@@ -6,7 +6,7 @@ import { MdHelpOutline, MdOutlinePrivacyTip } from 'react-icons/md'
 import { Reoverlay } from 'reoverlay'
 
 import { HelpModal, PrivacyModal } from '@components/Modals'
-import styles from '@scss/modules/PageFooter.module.scss'
+import styles from '@styles/modules/PageFooter.module.scss'
 
 const Footer: React.FC = () => {
   const helpClick = () => {

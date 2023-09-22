@@ -3,7 +3,7 @@ import { RiArrowGoBackFill } from 'react-icons/ri'
 
 import Form from '@components/Form'
 import SchoolCarousel from '@components/SchoolCarousel'
-import styles from '@scss/global/components/CarouselWithForm.module.scss'
+import styles from '@styles/global/components/CarouselWithForm.module.scss'
 
 const CarouselWithForm = ({ formId }) => {
   const [visibleForm, setVisibleForm] = useState(false)
