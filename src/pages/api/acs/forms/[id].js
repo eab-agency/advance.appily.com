@@ -1,4 +1,4 @@
-import { getAccessToken } from '@/lib/token-utils';
+import { getAccessToken } from '@lib/token-utils';
 
 export default async (req, res) => {
     const { id } = req.query;

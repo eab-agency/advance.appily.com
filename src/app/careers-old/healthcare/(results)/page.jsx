@@ -10,9 +10,9 @@ import CarouselWithForm from '@components/CarouselWithForm'
 import styles from '@styles/global/layouts/SeoPage.module.scss'
 import { Button } from '@components/Button'
 import StickyCta from '@components/StickyCta'
-import { useUser } from '@/context/context'
+import { useUser } from '@context/context'
 import { useSearchParams } from 'next/navigation'
-import data from '@/data/seopage.json'
+import data from '@data/seopage.json'
 
 /* eslint-disable react/no-danger */
 const SeoPage = () => {

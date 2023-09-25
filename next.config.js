@@ -47,6 +47,8 @@ const nextConfig = {
       '@hooks': path.resolve(__dirname, './src/hooks'),
       '@context': path.resolve(__dirname, './src/context'),
       '@helpers': path.resolve(__dirname, './src/helpers'),
+      '@data': path.resolve(__dirname, './src/data'),
+      '@lib': path.resolve(__dirname, './src/lib'),
       // IMPORTANT: the next lines are for development only
       // keep them commented out unless actively developing local react modules
       // modify their paths according to your local directory

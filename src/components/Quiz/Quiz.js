@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-// import Score from '@/components/Score';
-import { useLocalStorage } from '@/hooks/useLocalStorage';
+// import Score from '@components/Score';
+import { useLocalStorage } from '@hooks/useLocalStorage';
 import Image from 'next/image';
 import styles from '@styles/global/layouts/Quiz.module.scss';
 import { useRequest } from '@hooks/useRequest';
@@ -20,7 +20,7 @@ export function Quiz() {
     const router = useRouter();
 
     const { location } = useUser();
-    
+
     const [scopedQuestions, setScopedQuestions] = useState(null);
 
     const [personalityData, setPersonalityData] = useState('executive');

@@ -1,7 +1,7 @@
 
 // import { useEffect } from 'react';
 // import { useRouter } from 'next/router';
-// import { useUser } from '@/context/context';
+// import { useUser } from '@context/context';
 
 import PageHeader from '@components/PageHeader';
 import PageFooter from '@components/PageFooter';
