@@ -44,6 +44,9 @@ const nextConfig = {
       '@types': path.resolve(__dirname, './payload-types.ts'),
       '@graphics': path.resolve(__dirname, './src/graphics'),
       '@graphql': path.resolve(__dirname, './src/graphql'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@context': path.resolve(__dirname, './src/context'),
+      '@helpers': path.resolve(__dirname, './src/helpers'),
       // IMPORTANT: the next lines are for development only
       // keep them commented out unless actively developing local react modules
       // modify their paths according to your local directory

@@ -3,14 +3,10 @@ import Image from 'next/image'
 import { useRef } from 'react'
 import { BiLinkExternal } from 'react-icons/bi'
 
-import Accordion from '@components/Accordion'
-import CarouselWithForm from '@components/CarouselWithForm'
-import Stats from '../../../../components/Stats'
-import StickyCta from '@components/StickyCta'
-import Tabs from '@components/Tabs'
+import {StickyCta, Tabs, Accordion, CarouselWithForm, Stats} from '@components'
 import styles from '@styles/global/layouts/FinalPage.module.scss'
 import { usePathname } from 'next/navigation'
-import useResult from 'src/hooks/useResult'
+import useResult from '@hooks/useResult'
 
 const AnalystPage = () => {
    const carouselRef = useRef(null)

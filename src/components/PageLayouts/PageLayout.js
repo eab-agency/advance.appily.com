@@ -1,10 +1,11 @@
+'use client'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 import { useUser } from '../../context/context'
-import { allStates } from '../../helpers/getMatchedSchool'
-import PageFooter from './PageFooter'
-import PageHeader from './PageHeader'
+// import { allStates } from '../../helpers/getMatchedSchool'
+import PageFooter from '../PageFooter'
+import PageHeader from '../PageHeader'
 
 const LocationInDevMode = () => {
   const { location, setLocation } = useUser()
@@ -41,7 +42,7 @@ const LocationInDevMode = () => {
   )
 }
 
-export default function PageLayout({ children }) {
+export function PageLayout({ children }) {
   const { setUtmSource } = useUser()
   const router = useRouter()
 
@@ -68,7 +69,7 @@ export default function PageLayout({ children }) {
       <div className="page-layout">
         {resultsPage && <PageHeader pageType="results" />}
         <main className="page-layout__container">
-          <LocationInDevMode />
+          {/* <LocationInDevMode /> */}
           <div className="page-layout__content">{children}</div>
         </main>
       </div>

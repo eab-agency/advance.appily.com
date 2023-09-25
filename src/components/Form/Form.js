@@ -1,16 +1,16 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable no-unused-vars */
 import { Form, Formik } from 'formik'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import * as Yup from 'yup'
 
 import styles from '@styles/global/components/Form.module.scss'
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { useUser } from '@/context/context'
-import isDevMode from '../../helpers/isDevMode'
-import useForm from '../../hooks/useForm'
-import { useLocalStorage } from '../../hooks/useLocalStorage'
+import isDevMode from '@helpers/isDevMode'
+import useForm from '@hooks/useForm'
+import { useLocalStorage } from '@hooks/useLocalStorage'
 import GenerateField from '../../lib/GenerateField'
 
 // const validationSchema = Yup.object().shape({
@@ -51,11 +51,12 @@ const AcquiaFormHandle = ({ redirectTo, answers = {}, user = {}, id, school = {}
         //         initialHide: true,
         //     };
         // }
-        field,
+        field
     )
 
   useEffect(() => {
     if (acsForm) {
+      console.log("🚀 ~ file: Form.js:59 ~ useEffect ~ acsForm:", acsForm)
       const { fields, ...otherFormProps } = acsForm.form
       const modifiedFields = modifyFields(fields)
       setTheFields(modifiedFields)
@@ -107,7 +108,8 @@ const AcquiaFormHandle = ({ redirectTo, answers = {}, user = {}, id, school = {}
   const initialValues = { ...formData }
 
   const [fieldsProcessed, setFieldsProcessed] = useState(false)
-  const { utmSource } = useUser()
+  // const { utmSource } = useUser()
+  const { utmSource } = {}
 
   useEffect(() => {
     // console.log('theFields', theFields);
@@ -190,7 +192,7 @@ const AcquiaFormHandle = ({ redirectTo, answers = {}, user = {}, id, school = {}
 
       if (field.isRequired) {
         fieldValidation = fieldValidation.required(
-          field.validationMessage || `${field.label} is required`,
+          field.validationMessage || `${field.label} is required`
         )
       }
 
@@ -203,7 +205,7 @@ const AcquiaFormHandle = ({ redirectTo, answers = {}, user = {}, id, school = {}
         fieldValidation = fieldValidation.test(
           'len',
           'Zip Code needs to be excatly 5 digits',
-          val => !val || val.toString().length === 5,
+          val => !val || val.toString().length === 5
         )
       }
 
@@ -213,7 +215,7 @@ const AcquiaFormHandle = ({ redirectTo, answers = {}, user = {}, id, school = {}
       // schema[field.alias] = fieldValidation;
       return { ...schema, [field.alias]: fieldValidation }
       // return schema;
-    }, {}),
+    }, {})
   )
 
   return (

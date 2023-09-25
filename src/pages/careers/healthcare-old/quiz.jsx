@@ -1,15 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import useUser from '@/hooks/useUser';
-import PageFooter from '@/components/PageFooter';
 import styles from '@styles/global/layouts/EmailOnly.module.scss';
-import Button from '@/components/Button';
+import {Button} from '@components';
 // eslint-disable-next-line import/no-unresolved
-import QuizLayout from '@/components/QuizLayout';
+import {QuizLayout} from '@components/PageLayouts';
 
 export default function LandingPage() {
-    const { user } = useUser();
 
     return (
         <>
@@ -29,16 +26,7 @@ export default function LandingPage() {
                     <div className={styles.container}>
                         <div className={styles.content}>
                             <header>
-                                {/* <MainLogo /> */}
-                                {user && user.fname ? (
-                                    <h1>
-                                        {/* if user.fname this display some text */}
-                                        {`${user.fname}, `} Define Your Future
-                                        in Health Care
-                                    </h1>
-                                ) : (
                                     <h1>Define Your Future in Health Care</h1>
-                                )}
                             </header>
                             <p>
                                 If you’re considering a career change, a role in

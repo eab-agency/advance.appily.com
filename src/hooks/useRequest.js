@@ -1,16 +1,16 @@
-import useSwr from 'swr'
+import useSwr from 'swr';
 
-const baseUrl = '/api'
+const baseUrl = '/api';
 
 export const useRequest = (path, name) => {
-  if (!path) {
-    throw new Error('Path is required')
-  }
+    if (!path) {
+        throw new Error('Path is required');
+    }
 
-  const nameString = name != null ? name.toString() : ''
-  const url = `${baseUrl}${path}/${nameString}`
+    const nameString = name != null ? name.toString() : '';
+    const url = `${baseUrl}${path}/${nameString}`;
 
-  const { data, error } = useSwr(url)
+    const { data, error } = useSwr(url);
 
-  return { data, error }
-}
+    return { data, error };
+};

@@ -25,7 +25,7 @@ export const Button: React.FC<Props> = ({
   label,
   newTab,
   href,
-  appearance,
+  appearance = 'default',
   className: classNameFromProps,
   onClick,
   type = 'button',

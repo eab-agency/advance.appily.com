@@ -1,23 +1,25 @@
-'use client'
-import Image from 'next/image'
-import { useRef } from 'react'
-import { BiLinkExternal } from 'react-icons/bi'
-import useSWR from 'swr'
+import React, { useRef } from 'react';
+import Image from 'next/image';
 
-import {Tabs, StickyCta, Stats, CarouselWithForm, Accordion} from '@components'
-import styles from '@styles/global/layouts/FinalPage.module.scss'
-import { usePathname } from 'next/navigation'
+import {PageLayout} from '@components/PageLayouts';
+import Tabs from '@/components/Tabs';
+import Stats from '@/components/Stats';
+import { BiLinkExternal } from 'react-icons/bi';
 
-const ScientistPage = () => {
- const carouselRef = useRef(null)
-   const pathname = usePathname()
-  const slug = pathname.split('/').pop()
- 
-  const { data, error } = useSWR(`/api/quiz/results?result=${slug}`)
-  //Handle the error state
-  if (error) return <div>Failed to load {JSON.stringify({ error })} </div>
-  //Handle the loading state
-  if (!data) return <div>Loading...</div>
+import styles from '@/styles/global/layouts/FinalPage.module.scss';
+import Accordion from '@/components/Accordion';
+import CarouselWithForm from '@/components/CarouselWithForm';
+
+import { StickyCta } from '@/components/StickyCta';
+import getQuizJSON from '@/lib/getQuizJSON';
+
+const ScientistPage = ({ results }) => {
+    const carouselRef = useRef(null);
+
+    // if no results is found, return loading
+    if (!results) {
+        return <div className="loading">Loading...</div>;
+    }
 
     return (
         <>
@@ -27,10 +29,10 @@ const ScientistPage = () => {
                         Your ideal role could be ...
                     </span>
                     <section className={styles['intro-section']}>
-                        <h1>{data.title}</h1>
-                        <p>{data.detailedDescription}</p>
+                        <h1>{results.title}</h1>
+                        <p>{results.detailedDescription}</p>
                     </section>
-                    <Tabs className="react-tabs" tabs={data.tabs} />
+                    <Tabs className="react-tabs" tabs={results.tabs} />
                     <section className={styles['career-path']}>
                         <div className={styles['path-intro']}>
                             <h2>
@@ -88,7 +90,7 @@ const ScientistPage = () => {
                             </figure>
                         </div>
                     </section>
-                    <Stats stats={data.stats} source={data.statsSource} />
+                    <Stats stats={results.stats} source={results.statsSource} />
                     <section className={styles['best-degrees']}>
                         <div className={styles['degrees-intro']}>
                             <h2>
@@ -104,7 +106,7 @@ const ScientistPage = () => {
                             </p>
                         </div>
                         <Tabs
-                            tabs={data.degreeTabs}
+                            tabs={results.degreeTabs}
                             className="degree-tabs"
                         />
                     </section>
@@ -169,4 +171,19 @@ const ScientistPage = () => {
     );
 };
 
+ScientistPage.PageLayout = PageLayout;
 export default ScientistPage;
+
+export const getStaticProps = async () => {
+    const results = await getQuizJSON();
+
+    const filteredResults = results.filter(
+        (result) => result.title.toLowerCase() === 'scientist'
+    );
+
+    return {
+        props: {
+            results: filteredResults[0],
+        },
+    };
+};

@@ -1,1 +1,1 @@
-export { default } from './CarouselWithForm';
+export { default as CarouselWithForm } from './CarouselWithForm';

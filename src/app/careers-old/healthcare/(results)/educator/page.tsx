@@ -4,12 +4,8 @@ import { useRef } from 'react'
 import { BiLinkExternal } from 'react-icons/bi'
 import useSWR from 'swr'
 
-import Accordion from '@components/Accordion'
-import CarouselWithForm from '@components/CarouselWithForm'
-import Stats from '@components/Stats'
-import StickyCta from '@components/StickyCta'
-import Tabs from '@components/Tabs'
-import styles from '@scss/global/layouts/FinalPage.module.scss'
+import {Tabs, StickyCta, Stats, CarouselWithForm, Accordion} from '@components'
+import styles from '@styles/global/layouts/FinalPage.module.scss'
 import { usePathname } from 'next/navigation'
 
 const EducatorPage = () => {

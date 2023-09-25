@@ -1,1 +1,1 @@
-export { default } from './StickyCta';
+export { default as StickyCta } from './StickyCta'

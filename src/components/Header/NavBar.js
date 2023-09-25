@@ -7,30 +7,7 @@ import { MdClose, MdMenu } from 'react-icons/md'
 
 import styles from '@styles/modules/NavBar.module.scss'
 
-const links = [
-  {
-    href: '/practitioner',
-    label: 'Practitioner',
-  },
-  {
-    href: '/analyst',
-    label: 'Analyst',
-  },
-  {
-    href: '/educator',
-    label: 'Educator',
-  },
-  {
-    href: '/executive',
-    label: 'Executive',
-  },
-  {
-    href: '/scientist',
-    label: 'Scientist',
-  },
-]
-
-export default function NabBar() {
+export default function NabBar({links}) {
   const pathname = usePathname()
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
