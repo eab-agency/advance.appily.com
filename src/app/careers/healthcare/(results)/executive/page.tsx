@@ -5,20 +5,18 @@ import { useRef } from 'react'
 import { BiLinkExternal } from 'react-icons/bi'
 import useSWR from 'swr'
 
-import { Tabs, StickyCta, Stats, CarouselWithForm, Accordion } from '../../../../../components'
 import styles from '@/styles/global/layouts/FinalPage.module.scss'
 import { usePathname } from 'next/navigation'
+import { Accordion, CarouselWithForm, Stats, StickyCta, Tabs } from '../../../../../components'
 
 const ExecutivePage = () => {
    const carouselRef = useRef(null)
    const pathname = usePathname()
   const slug = pathname ? pathname.split('/').pop() : ''
 
-  const { data, error } = useSWR(`/api/quiz/results?result=${slug}`)
-  //Handle the error state
+  const { data, error, isLoading } = useSWR(`/api/quiz/results?result=${slug}&vertical=healthcare`)
+  if (isLoading) return <div>Loading...</div>
   if (error) return <div>Failed to load {JSON.stringify({ error })} </div>
-  //Handle the loading state
-  if (!data) return <div>Loading...</div>
 
     return (
         <>
