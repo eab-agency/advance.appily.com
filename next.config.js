@@ -2,6 +2,15 @@
 const path = require('path')
 
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/careers/healthcare/',
+        permanent: true,
+      },
+    ]
+  },
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
