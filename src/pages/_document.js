@@ -1,8 +1,8 @@
 /* eslint-disable react/no-danger */
 import { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
-import { GTM_ID } from '@lib/gtm';
-import { GTAG_ID } from '@lib/gtag';
+import { GTM_ID } from '@/lib/gtm';
+import { GTAG_ID } from '@/lib/gtag';
 
 export default function Document() {
     return (

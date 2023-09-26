@@ -1,10 +1,13 @@
-/* eslint-disable simple-import-sort/imports */
+import {Header} from '@/components'
 
-import {Header} from '@components'
+interface Link {
+  href: string;
+  label: string;
+}
 
 export default async function HealthCareResultsLayout({ children }: { children: React.ReactNode }) {
 
-const links = [
+const links: Link[] = [
   {
     href: 'practitioner',
     label: 'Practitioner',
@@ -28,7 +31,7 @@ const links = [
 ]
   return (
     <>
-      <Header links={links}/>
+      <Header links={links.map(link => link.label)}/>
       {children}
     </>
   )

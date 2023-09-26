@@ -13,7 +13,7 @@ const SeoPage = () => {
     if (search) {
       setUtmSource(search)
     }
-  }, [search])
+  }, [search, setUtmSource])
 
 
 

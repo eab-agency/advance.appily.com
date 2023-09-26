@@ -1,7 +1,7 @@
 /* eslint-disable react/no-danger */
 import React, { useState, useEffect } from 'react';
-import styles from '@styles/global/layouts/Question.module.scss';
-import { useRequest } from '@hooks/useRequest';
+import styles from '@/styles/global/layouts/Question.module.scss';
+import { useRequest } from '@/hooks/useRequest';
 
 function Question({ questionNum, handleAnswer }) {
     const { data, error } = useRequest('/quiz/question', questionNum);

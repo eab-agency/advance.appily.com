@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { MdChevronRight } from 'react-icons/md'
 
-import styles from '@styles/global/components/StickyCta.module.scss'
+import styles from '@/styles/global/components/StickyCta.module.scss'
 
 const StickyCta = ({ trackedElement }) => {
   const [scrolled, setScrolled] = useState(false)

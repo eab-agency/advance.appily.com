@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { MdHelpOutline, MdOutlinePrivacyTip } from 'react-icons/md';
 import { Reoverlay } from 'reoverlay';
-import styles from '@styles/modules/PageFooter.module.scss';
+import styles from '@/styles/modules/PageFooter.module.scss';
 import PrivacyModal from './PrivacyModal';
 import HelpModal from './HelpModal';
 

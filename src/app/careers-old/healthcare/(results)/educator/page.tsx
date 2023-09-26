@@ -1,18 +1,19 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client'
 import Image from 'next/image'
 import { useRef } from 'react'
 import { BiLinkExternal } from 'react-icons/bi'
 import useSWR from 'swr'
 
-import {Tabs, StickyCta, Stats, CarouselWithForm, Accordion} from '@components'
-import styles from '@styles/global/layouts/FinalPage.module.scss'
+import {Tabs, StickyCta, Stats, CarouselWithForm, Accordion} from '../../../../../components'
+import styles from '@/styles/global/layouts/FinalPage.module.scss'
 import { usePathname } from 'next/navigation'
 
 const EducatorPage = () => {
   const carouselRef = useRef(null)
    const pathname = usePathname()
-  const slug = pathname.split('/').pop()
- 
+  const slug = pathname ? pathname.split('/').pop() : ''
+
   const { data, error } = useSWR(`/api/quiz/results?result=${slug}`)
   //Handle the error state
   if (error) return <div>Failed to load {JSON.stringify({ error })} </div>

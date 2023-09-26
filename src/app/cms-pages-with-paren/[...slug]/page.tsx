@@ -7,8 +7,13 @@ import { Hero } from '../../../components/Hero'
 import { mergeOpenGraph } from '../../../seo/mergeOpenGraph'
 import { fetchPage, fetchPages } from '../../graphql'
 
-const Page = async ({ params: { slug } }) => {
-  console.log("🚀 ~ file: page.tsx:11 ~ Page ~ slug:", slug)
+interface Params {
+  slug: string[]
+}
+
+
+const Page = async ({ params }: { params: Params } ) => {
+  const { slug } = params
   const page = await fetchPage(slug)
 
   if (!page) return notFound()
@@ -34,7 +39,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params: { slug } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { slug } = params
   const page = await fetchPage(slug)
 
   const ogImage =

@@ -1,9 +1,9 @@
 import React from 'react';
-import Form from '@components/Form';
+import Form from '@/components/Form';
 import Link from 'next/link';
 
-import styles from '@styles/global/layouts/Results.module.scss';
-import isDevMode from '@helpers/isDevMode';
+import styles from '@/styles/global/layouts/Results.module.scss';
+import isDevMode from '@/helpers/isDevMode';
 
 const Results = ({ personality, description, title, answers, children }) => {
     const devModeOnly = isDevMode();

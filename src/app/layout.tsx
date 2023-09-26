@@ -1,4 +1,3 @@
-/* eslint-disable simple-import-sort/imports */
 import { Analytics } from '@vercel/analytics/react'
 import { Metadata } from 'next'
 import React from 'react'
@@ -6,7 +5,7 @@ import React from 'react'
 import { Providers } from '../providers'
 import { mergeOpenGraph } from '../seo/mergeOpenGraph'
 
-import '@styles/app.scss'
+import '@/styles/app.scss'
 
 import Footer from '../components/Footer'
 import styles from './layout.module.scss'

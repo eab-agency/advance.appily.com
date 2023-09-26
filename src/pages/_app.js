@@ -1,8 +1,8 @@
 import { SWRConfig } from 'swr';
-import '@styles/app.scss';
+import '@/styles/app.scss';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
-import { GTM_ID, pageview } from '@lib/gtm';
+import { GTM_ID, pageview } from '@/lib/gtm';
 import { useEffect } from 'react';
 import { ModalContainer } from 'reoverlay';
 import { Analytics } from '@vercel/analytics/react';

@@ -1,11 +1,11 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-// import Score from '@components/Score';
-import { useLocalStorage } from '@hooks/useLocalStorage';
+// import Score from '@/components/Score';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 import Image from 'next/image';
-import styles from '@styles/global/layouts/Quiz.module.scss';
-import { useRequest } from '@hooks/useRequest';
-import { useUser } from '@context/context';
+import styles from '@/styles/global/layouts/Quiz.module.scss';
+import { useRequest } from '@/hooks/useRequest';
+import { useUser } from '@/context/context';
 import { useRouter } from 'next/navigation'
 import Question from './Question';
 import ResetQuizButton from './ResetQuizButton';

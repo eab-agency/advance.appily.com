@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import {Quiz} from '@components';
+import {Quiz} from '@/components';
 
 function QuizHome() {
     return (

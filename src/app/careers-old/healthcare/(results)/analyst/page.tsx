@@ -1,17 +1,18 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client'
 import Image from 'next/image'
 import { useRef } from 'react'
 import { BiLinkExternal } from 'react-icons/bi'
 
-import {StickyCta, Tabs, Accordion, CarouselWithForm, Stats} from '@components'
-import styles from '@styles/global/layouts/FinalPage.module.scss'
+import { StickyCta, Tabs, Accordion, CarouselWithForm, Stats } from '../../../../../components'
+import styles from '@/styles/global/layouts/FinalPage.module.scss'
 import { usePathname } from 'next/navigation'
-import useResult from '@hooks/useResult'
+import useResult from '../../../../../hooks/useResult'
 
 const AnalystPage = () => {
    const carouselRef = useRef(null)
    const pathname = usePathname()
-   const slug = pathname.split('/').pop()
+  const slug = pathname ? pathname.split('/').pop() : ''
   const { result, isLoading, isError } = useResult(slug)
 
   if (isLoading) return <div>Loading...</div>

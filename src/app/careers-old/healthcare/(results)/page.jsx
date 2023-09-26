@@ -1,18 +1,12 @@
-/* eslint-disable no-unused-vars */
-
 'use client'
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 
-import Stats from '@components/Stats'
-import CarouselWithForm from '@components/CarouselWithForm'
-
-import styles from '@styles/global/layouts/SeoPage.module.scss'
-import { Button } from '@components/Button'
-import StickyCta from '@components/StickyCta'
-import { useUser } from '@context/context'
+import styles from '@/styles/global/layouts/SeoPage.module.scss'
+import { StickyCta, Stats, CarouselWithForm, Button } from '@/components'
+import { useUser } from '@/context/context'
 import { useSearchParams } from 'next/navigation'
-import data from '@data/seopage.json'
+import data from '@/data/seopage.json'
 
 /* eslint-disable react/no-danger */
 const SeoPage = () => {
@@ -22,10 +16,9 @@ const SeoPage = () => {
   const search = searchParams.get('utm_source')
   useEffect(() => {
     if (search) {
-      console.log('🚀 ~ file: page.jsx:28 ~ useEffect ~ search:', search)
       setUtmSource(search)
     }
-  }, [search])
+  }, [search, setUtmSource])
 
   const reasonsArray = data.whyChoose[1].reasons
   const reasonsList = reasonsArray.map((reason, index) => (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import PageHeader from '@components/PageHeader';
+import PageHeader from '@/components/PageHeader';
 import Image from 'next/image';
-import styles from '@styles/global/layouts/Error.module.scss';
+import styles from '@/styles/global/layouts/Error.module.scss';
 
 /* eslint-disable no-nested-ternary */
 function Error({ statusCode }) {

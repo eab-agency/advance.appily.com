@@ -5,12 +5,12 @@ import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import * as Yup from 'yup'
 
-import styles from '@styles/global/components/Form.module.scss'
+import styles from '@/styles/global/components/Form.module.scss'
 // eslint-disable-next-line import/no-extraneous-dependencies
-// import { useUser } from '@context/context'
-import isDevMode from '@helpers/isDevMode'
-import useForm from '@hooks/useForm'
-import { useLocalStorage } from '@hooks/useLocalStorage'
+// import { useUser } from '@/context/context'
+import isDevMode from '@/helpers/isDevMode'
+import useForm from '@/hooks/useForm'
+import { useLocalStorage } from '@/hooks/useLocalStorage'
 import GenerateField from '../../lib/GenerateField'
 
 // const validationSchema = Yup.object().shape({
