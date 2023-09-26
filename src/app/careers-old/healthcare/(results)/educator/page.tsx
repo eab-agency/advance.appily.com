@@ -181,23 +181,3 @@ const EducatorPage = () => {
 }
 
 export default EducatorPage
-
-// async function getStaticProps() {
-//   const results = await getQuizJSON()
-
-//   const filteredResults = data.filter(result => result.title.toLowerCase() === 'educator')
-
-//   return filteredResults[0]
-// }
-
-// export const getStaticProps = async () => {
-//   const results = await getQuizJSON()
-
-//   const filteredResults = data.filter(result => result.title.toLowerCase() === 'educator')
-
-//   return {
-//     props: {
-//       results: filteredResults[0],
-//     },
-//   }
-// }

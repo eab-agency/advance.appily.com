@@ -8,7 +8,7 @@ import { Reoverlay } from 'reoverlay'
 import { HelpModal, PrivacyModal } from '@/components/Modals'
 import styles from '@/styles/modules/PageFooter.module.scss'
 
-const Footer: React.FC = () => {
+const Footer = () => {
   const helpClick = () => {
     Reoverlay.showModal(HelpModal, {})
   }

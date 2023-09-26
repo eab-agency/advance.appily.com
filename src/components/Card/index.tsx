@@ -18,14 +18,14 @@ export const Card: React.FC<{
     title: titleFromProps,
     relationTo,
     doc,
-    doc: { slug, title, meta } = {},
+    doc: { slug, title } = {},
     className,
   } = props
 
-  const { description, image: metaImage } = meta || {}
+  // const { description, image: metaImage } = meta || {}
 
   const titleToUse = titleFromProps || title
-  const sanitizedDescription = description?.replace(/\s/g, ' ') // replace non-breaking space with white space
+  // const sanitizedDescription = description?.replace(/\s/g, ' ') // replace non-breaking space with white space
 
   let href = ''
   if (relationTo === 'pages') {
@@ -37,21 +37,21 @@ export const Card: React.FC<{
   return (
     <div className={[classes.card, className].filter(Boolean).join(' ')}>
       <Link href={href} className={classes.mediaWrapper}>
-        {!metaImage && <div className={classes.placeholder}>No image</div>}
+        {/* {!metaImage && <div className={classes.placeholder}>No image</div>}
         {metaImage && typeof metaImage !== 'string' && (
           <Media imgClassName={classes.image} resource={metaImage} fill />
-        )}
+        )} */}
       </Link>
       {titleToUse && (
         <h4 className={classes.title}>
           <Link href={href}>{titleToUse}</Link>
         </h4>
       )}
-      {description && (
+      {/* {description && (
         <div className={classes.body}>
           {description && <p className={classes.description}>{sanitizedDescription}</p>}
         </div>
-      )}
+      )} */}
     </div>
   )
 }

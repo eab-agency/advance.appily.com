@@ -25,7 +25,8 @@ export const Image: React.FC<MediaProps> = props => {
   let width: number | undefined
   let height: number | undefined
   let alt = altFromProps
-  let src: StaticImageData | string = srcFromProps
+  let src: StaticImageData | string = srcFromProps || ''
+
 
   if (!src && resource && typeof resource !== 'string') {
     const {
@@ -55,7 +56,7 @@ export const Image: React.FC<MediaProps> = props => {
         .filter(Boolean)
         .join(' ')}
       src={src}
-      alt={alt}
+      alt={alt || ''}
       onClick={onClick}
       onLoad={() => {
         setIsLoading(false)

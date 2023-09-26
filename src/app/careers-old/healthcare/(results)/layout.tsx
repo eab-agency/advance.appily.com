@@ -31,7 +31,7 @@ const links: Link[] = [
 ]
   return (
     <>
-      <Header links={links.map(link => link.label)}/>
+      <Header links={links}/>
       {children}
     </>
   )

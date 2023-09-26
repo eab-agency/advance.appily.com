@@ -1,24 +1,14 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
 
 import styles from '@/styles/global/layouts/SeoPage.module.scss'
 import { StickyCta, Stats, CarouselWithForm, Button } from '@/components'
-import { useUser } from '@/context/context'
-import { useSearchParams } from 'next/navigation'
 import data from '@/data/seopage.json'
 
 /* eslint-disable react/no-danger */
 const SeoPage = () => {
-  const { setUtmSource, utmSource } = useUser()
-  const searchParams = useSearchParams()
-
-  const search = searchParams.get('utm_source')
-  useEffect(() => {
-    if (search) {
-      setUtmSource(search)
-    }
-  }, [search, setUtmSource])
+  
 
   const reasonsArray = data.whyChoose[1].reasons
   const reasonsList = reasonsArray.map((reason, index) => (

@@ -45,26 +45,26 @@ export const fetchReaminingCarouselCards = async (incomingLocationsToFilterOut?:
   return data?.CarouselCards?.docs
 }
 
-export const fetchGlobals = async (): Promise<{
-  header: Header
-  footer: Footer
-}> => {
-  const { data } = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?globals`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    next,
-    body: JSON.stringify({
-      query: GLOBALS,
-    }),
-  }).then(res => res.json())
+// export const fetchGlobals = async (): Promise<{
+//   header: Header
+//   footer: Footer
+// }> => {
+//   const { data } = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?globals`, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     next,
+//     body: JSON.stringify({
+//       query: GLOBALS,
+//     }),
+//   }).then(res => res.json())
 
-  return {
-    header: data.Header,
-    footer: data.Footer,
-  }
-}
+//   return {
+//     header: data.Header,
+//     footer: data.Footer,
+//   }
+// }
 
 export const fetchPages = async (): Promise<
   Array<{ breadcrumbs: Page['breadcrumbs']; slug: string }>

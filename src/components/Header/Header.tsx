@@ -4,7 +4,12 @@ import MainLogo from './MainLogo'
 import NavBar from './NavBar'
 
 interface HeaderProps {
-  links: string[] // replace string[] with the actual type of your links
+  links: Link[] // replace string[] with the actual type of your links
+}
+
+interface Link {
+  href: string
+  label: string
 }
 
 export const Header: React.FC<HeaderProps> = ({ links }) => {
