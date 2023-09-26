@@ -4,5 +4,15 @@
      "titleBar.activeBackground": "#e60ccd",
     "titleBar.activeForeground": "#0b0708",
     "activityBar.foreground": "#0b0708"
+  },
+  "[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+  },
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": true,
+    "source.organizeImports.biome": true
   }
 }

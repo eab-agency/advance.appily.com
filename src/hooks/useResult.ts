@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 
-function useResult (slug) {
-  const { data, error, isLoading } = useSWR(`/api/quiz/results?result=${slug}`)
+function useResult (slug, vertical = 'healthcare') {
+  const { data, error, isLoading } = useSWR(`/api/quiz/results?result=${slug}&vertical=${vertical}`)
 
   return {
     result: data,

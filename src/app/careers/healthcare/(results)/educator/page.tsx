@@ -14,11 +14,11 @@ const EducatorPage = () => {
    const pathname = usePathname()
   const slug = pathname ? pathname.split('/').pop() : ''
 
-  const { data, error } = useSWR(`/api/quiz/results?result=${slug}`)
-  //Handle the error state
+  const { data, error, isLoading } = useSWR(`/api/quiz/results?result=${slug}&vertical=healthcare`)
+
+  if (isLoading) return <div>Loading...</div>
+
   if (error) return <div>Failed to load {JSON.stringify({ error })} </div>
-  //Handle the loading state
-  if (!data) return <div>Loading...</div>
 
   return (
     <>
