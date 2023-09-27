@@ -1,7 +1,7 @@
+import {Button} from '@/components';
+import styles from '@/styles/global/layouts/EmailOnly.module.scss';
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '@/styles/global/layouts/EmailOnly.module.scss';
-import {Button} from '@/components';
 // eslint-disable-next-line import/no-unresolved
 
 export default function QuizLandingPage() {
@@ -38,7 +38,7 @@ export default function QuizLandingPage() {
                   <strong>discover which role could be a good fit for you</strong>
                   —and the steps you can take to advance your career.
                 </p>
-                <Button label="Get Started" appearance="primary" href="start" />
+                <Button label="Get Started" appearance="primary" href="/careers/healthcare/quiz/start" />
               </div>
               <figure className={styles['deco-image']}>
                 <Image

@@ -1,13 +1,12 @@
 'use client'
-import React from 'react';
+import React from 'react'
 
 const SeoPage = () => {
+  return (
+    <>
+      <h1>need content for careers root page</h1>
+    </>
+  )
+}
 
-    return (
-        <>
-         <h1>need content for careers root page</h1>
-        </>
-    );
-};
-
-export default SeoPage;
+export default SeoPage

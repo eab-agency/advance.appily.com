@@ -1,7 +1,7 @@
 'use client'
 
-import React, { ElementType } from 'react'
 import Link from 'next/link'
+import React, { ElementType } from 'react'
 
 import { useBackgroundColor } from '../BackgroundColor'
 
@@ -9,6 +9,7 @@ import classes from './index.module.scss'
 
 export type Props = {
   label: string
+  children?: JSX.Element | string
   appearance?: 'default' | 'primary' | 'secondary'
   el?: 'button' | 'link' | 'a'
   onClick?: () => void
@@ -23,6 +24,7 @@ export type Props = {
 export const Button: React.FC<Props> = ({
   el: elFromProps = 'link',
   label,
+children,
   newTab,
   href,
   appearance = 'default',
@@ -49,6 +51,7 @@ export const Button: React.FC<Props> = ({
     <div className={classes.content}>
       {/* <Chevron /> */}
       <span className={classes.label}>{label}</span>
+      {children}
     </div>
   )
 

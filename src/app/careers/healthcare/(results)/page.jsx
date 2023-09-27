@@ -1,18 +1,16 @@
 'use client'
-import React, { useRef } from 'react'
 import Image from 'next/image'
+import React, { useRef } from 'react'
 
-import styles from '@/styles/global/layouts/SeoPage.module.scss'
-import { StickyCta, Stats, CarouselWithForm, Button } from '@/components'
+import { Button, CarouselWithForm, Stats, StickyCta } from '@/components'
 import data from '@/data/seopage.json'
+import styles from '@/styles/global/layouts/SeoPage.module.scss'
 
 /* eslint-disable react/no-danger */
 const SeoPage = () => {
-  
-
   const reasonsArray = data.whyChoose[1].reasons
   const reasonsList = reasonsArray.map((reason, index) => (
-    <li key={index}>
+    <li key={reason.title}>
       <h3>{reason.title}</h3>
       <p
         dangerouslySetInnerHTML={{
@@ -24,6 +22,7 @@ const SeoPage = () => {
 
   const rightCareerArray = data.rightCareer[0].reasons
   const rightCareerList = rightCareerArray.map((reason, index) => (
+    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
     <li key={index}>
       <p
         dangerouslySetInnerHTML={{
@@ -35,6 +34,7 @@ const SeoPage = () => {
 
   const cappexFacts = data.whatIsCappex.facts
   const cappexFactsList = cappexFacts.map((fact, index) => (
+    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
     <li key={index}>
       <p
         dangerouslySetInnerHTML={{
@@ -88,7 +88,7 @@ const SeoPage = () => {
                     <Button
                       type="primary"
                       label={data.quizSection.buttonText}
-                      href="/quiz"
+                      href="/careers/healthcare/quiz"
                       className={styles.button}
                     />
                   </div>
@@ -168,7 +168,7 @@ const SeoPage = () => {
                     <Button
                       type="primary"
                       label={data.takeQuiz.buttonText}
-                      href="/quiz"
+                      href="/careers/healthcare/quiz"
                       className={styles.button}
                     />
                   </div>

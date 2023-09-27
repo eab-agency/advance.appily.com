@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { MdChevronRight } from 'react-icons/md'
 
+import { Button } from '@/components';
 import styles from '@/styles/global/components/StickyCta.module.scss'
 
 const StickyCta = ({ trackedElement }) => {
@@ -39,12 +40,12 @@ const StickyCta = ({ trackedElement }) => {
 
   return (
     <div className={stickyCtaClass}>
-      <button type="button" onClick={handleClick}>
+      <Button type="button" onClick={handleClick} appearance='primary'>
         <span>Explore Your School Matches</span>
         <i>
           <MdChevronRight />{' '}
         </i>
-      </button>
+      </Button>
     </div>
   )
 }
