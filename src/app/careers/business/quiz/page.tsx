@@ -19,36 +19,39 @@ export default function QuizLandingPage() {
 						<div className={styles.content}>
 							<header>
 								{/* <MainLogo /> */}
-								<h1>Define Your Future in Health Care</h1>
+								<h1>
+									Forge Your Path <strong>in Business</strong>
+								</h1>
 							</header>
 							<p>
-								If you’re considering a career change, a role in health care
-								could be a great fit. The Bureau of Labor Statistics predicts
-								about{" "}
-								<strong>
-									2 million jobs in health care will be created each year over
-									the next decade
-								</strong>
-								—and many colleges and universities offer flexible, affordable
-								degrees or certificates that can help you get a head start in
-								transferring your skills to a new or more advanced role.
+								If you want to work in business but you don’t know which job
+								fits your skills and interests,{" "}
+								<strong>this free quiz can help find a good fit</strong> and you
+								plan your next steps.
 							</p>
-
 							<p>
-								In less than three minutes, you could{" "}
-								<strong>discover which role could be a good fit for you</strong>
-								—and the steps you can take to advance your career.
+								The Bureau of Labor Statistics predicts about X million jobs in
+								business will be created each year over the next decade. Many
+								colleges and universities offer flexible, affordable degrees or
+								certificates that can help you get a head start in transferring
+								your skills to a new or more advanced role.
+							</p>
+							<p>
+								In less than three minutes, you could discover which type of
+								business career could be a good fit for you. We’ll also connect
+								you with schools near you that offer degrees to help you reach
+								your goals..
 							</p>
 							<Button
-								label="Get Started"
+								label="Take the Quiz"
 								appearance="primary"
-								href="/careers/healthcare/quiz/start"
+								href="/careers/business/quiz/start"
 							/>
 						</div>
 						<figure className={styles["deco-image"]}>
 							<Image
 								src="/images/cappex-define-your-future-img.jpg"
-								alt="Define Your Future in Health Care"
+								alt="Define Your Future in Business"
 								// fill
 								width={500}
 								height={600}

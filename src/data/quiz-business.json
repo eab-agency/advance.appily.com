@@ -1,0 +1,228 @@
+{
+    "questions": [
+        {
+            "question": "At work, a primary motivator for me is...",
+            "associatedField": "education_journey",
+            "answers": [
+                {
+                    "answer": "Inspiring and leading others to achieve common goals and success.",
+                    "personality": "fearless_leader",
+                    "weight": 1
+                },
+                {
+                    "answer": "Finding innovative ways to connect with audiences and build strong brands.",
+                    "personality": "creative_marketer",
+                    "weight": 1
+                },
+                {
+                    "answer": "Managing finances and investments to maximize profitability and financial success.",
+                    "personality": "money_maestro",
+                    "weight": 1
+                },
+                {
+                    "answer": "Taking risks and creating new ventures to drive business growth and success.",
+                    "personality": "self_starter",
+                    "weight": 1
+                },
+                {
+                    "answer": "Leveraging technology and data to optimize processes and solve complex problems.",
+                    "personality": "computer_whiz",
+                    "weight": 1
+                },
+                {
+                    "answer": "Supporting and developing teams, creating positive work environments, and nurturing talent.",
+                    "personality": "people_person",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "question": "I prefer working...",
+            "associatedField": "quizresponse1",
+            "answers": [
+                {
+                    "answer": "Leading collaboratively with teams to achieve objectives.",
+                    "personality": "fearless_leader",
+                    "weight": 1
+                },
+                {
+                    "answer": "Creatively, to develop marketing campaigns and strategies.",
+                    "personality": "creative_marketer",
+                    "weight": 1
+                },
+                {
+                    "answer": "With financial data and numbers to make informed decisions.",
+                    "personality": "money_maestro",
+                    "weight": 1
+                },
+                {
+                    "answer": "Independently and taking ownership of projects.",
+                    "personality": "self_starter",
+                    "weight": 1
+                },
+                {
+                    "answer": "With computers and technology to analyze data and solve problems.",
+                    "personality": "computer_whiz",
+                    "weight": 1
+                },
+                {
+                    "answer": "Collaboratively with colleagues and clients to build strong relationships.",
+                    "personality": "people_person",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "question": "My ideal work setting is...",
+            "associatedField": "quizresponse2",
+            "answers": [
+                {
+                    "answer": "A dynamic and fast-paced corporate environment.",
+                    "personality": "fearless_leader",
+                    "weight": 1
+                },
+                {
+                    "answer": "A creative and innovative workspace that fosters ideas.",
+                    "personality": "creative_marketer",
+                    "weight": 1
+                },
+                {
+                    "answer": "A financial institution or investment firm.",
+                    "personality": "money_maestro",
+                    "weight": 1
+                },
+                {
+                    "answer": "A startup or entrepreneurial setting.",
+                    "personality": "self_starter",
+                    "weight": 1
+                },
+                {
+                    "answer": "A technology-driven workplace with opportunities for data analysis.",
+                    "personality": "computer_whiz",
+                    "weight": 1
+                },
+                {
+                    "answer": "A people-centric organization that values teamwork and growth.",
+                    "personality": "people_person",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "question": "My biggest professional strengths are...",
+            "associatedField": "quizresponse3",
+            "answers": [
+                {
+                    "answer": "Exceptional leadership and strategic decision-making.",
+                    "personality": "fearless_leader",
+                    "weight": 1
+                },
+                {
+                    "answer": "Creativity, communication, and brand-building skills.",
+                    "personality": "creative_marketer",
+                    "weight": 1
+                },
+                {
+                    "answer": "Strong analytical and financial management abilities.",
+                    "personality": "money_maestro",
+                    "weight": 1
+                },
+                {
+                    "answer": "Entrepreneurial mindset and risk-taking capabilities.",
+                    "personality": "self_starter",
+                    "weight": 1
+                },
+                {
+                    "answer": "Proficiency in technology, data analysis, and problem-solving.",
+                    "personality": "computer_whiz",
+                    "weight": 1
+                },
+                {
+                    "answer": "Empathy, communication, and team-building skills.",
+                    "personality": "people_person",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "question": "I have taken college courses in...",
+            "associatedField": "quizresponse4",
+            "answers": [
+                {
+                    "answer": "Business administration, management, or leadership.",
+                    "personality": "fearless_leader",
+                    "weight": 1
+                },
+                {
+                    "answer": "Marketing, communication, or design.",
+                    "personality": "creative_marketer",
+                    "weight": 1
+                },
+                {
+                    "answer": "Finance, economics, or accounting.",
+                    "personality": "money_maestro",
+                    "weight": 1
+                },
+                {
+                    "answer": "Entrepreneurship, business development, or innovation.",
+                    "personality": "self_starter",
+                    "weight": 1
+                },
+                {
+                    "answer": "Information technology, data analytics, or computer science.",
+                    "personality": "computer_whiz",
+                    "weight": 1
+                },
+                {
+                    "answer": "Human resources, organizational behavior, or psychology.",
+                    "personality": "people_person",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "question": "My professional experience includes...",
+            "associatedField": "quizresponse5",
+            "answers": [
+                {
+                    "answer": "Leadership roles, managing teams, and making critical decisions.",
+                    "personality": "fearless_leader",
+                    "weight": 1
+                },
+                {
+                    "answer": "Developing and executing marketing campaigns and strategies.",
+                    "personality": "creative_marketer",
+                    "weight": 1
+                },
+                {
+                    "answer": "Financial analysis, budgeting, and managing investments.",
+                    "personality": "money_maestro",
+                    "weight": 1
+                },
+                {
+                    "answer": "Starting and running a business or leading entrepreneurial projects.",
+                    "personality": "self_starter",
+                    "weight": 1
+                },
+                {
+                    "answer": "Utilizing data analysis and technology for problem-solving.",
+                    "personality": "computer_whiz",
+                    "weight": 1
+                },
+                {
+                    "answer": "Managing teams, handling employee relations, and fostering collaboration.",
+                    "personality": "people_person",
+                    "weight": 1
+                }
+            ]
+        }
+    ],
+    "score": {
+        "fearless_leader": 0,
+        "creative_marketer": 0,
+        "money_maestro": 0,
+        "self_starter": 0,
+        "computer_whiz": 0,
+        "people_person": 0
+    }
+}

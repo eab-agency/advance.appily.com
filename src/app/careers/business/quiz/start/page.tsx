@@ -1,7 +1,7 @@
 import { Quiz } from "@/components";
 import Head from "next/head";
 
-function HealthCareQuizHome() {
+function QuizHome() {
 	return (
 		<>
 			<Head>
@@ -10,8 +10,8 @@ function HealthCareQuizHome() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.png" />
 			</Head>
-			<Quiz vertical="healthcare" />
+			<Quiz vertical="business" />
 		</>
 	);
 }
-export default HealthCareQuizHome;
+export default QuizHome;

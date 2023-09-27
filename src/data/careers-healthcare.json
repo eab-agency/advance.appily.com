@@ -20,11 +20,9 @@
         }
     ],
     "statsSource": "U.S. Bureau of Labor Statistics",
-    "whyChoose": [
-        {
-            "title": "Why Choose a Career in Health Care?"
-        },
-        {
+    "whyChoose": {
+            "title": "Why Choose a Career in Health Care?",
+            "subTitle": "",
             "reasons": [
                 {
                     "title": "Fulfilling Rewards",
@@ -43,8 +41,7 @@
                     "description": "Finally, health care offers <strong>competitive salaries and benefits,</strong> as well as the opportunity to work in a variety of settings and specialties. Whether you prefer a fast-paced hospital environment or a quieter clinic or private practice, there are countless options to explore within the health care field. Overall, if you're passionate about helping others and looking for a rewarding career path, a career in health care may be the perfect choice for you."
                 }
             ]
-        }
-    ],
+        },
     "testimonial": {
         "text": "There are times when the work is hard, but the rewards are tremendous. It’s a privilege to be able to care for patients in their time of need. It’s an opportunity to make a difference, to make someone’s life better, to provide comfort and support. There’s no feeling quite like knowing that you’ve made a positive impact on someone’s life.",
         "author": "Dr. Tiffany Osborn",
@@ -71,9 +68,9 @@
                     "description": "<strong>Career Advancement:</strong> The health care industry is constantly evolving and offers many opportunities for career advancement. Whether you're interested in pursuing additional degrees, moving up the career ladder, or exploring new specialties, health care offers many options for growth."
                 }
             ],
-            
+
                 "endCopy": "If you're still unsure if health care is the right fit for you, <a href='/quiz'>take our free health care career quiz.</a> It will help you identify how your interests, skills, and strengths align with different medical career paths and suggest the degrees you can earn to take the next step in your career."
-            
+
 
         }
     ],
@@ -85,36 +82,5 @@
         "title": "Ready to Find Your Role?",
         "description": "In less than three minutes, you could discover which role could be a good fit for you — and the steps you can take to advance your career.",
         "buttonText": "Take the Quiz"
-    },
-    "whatIsCappex":{
-        "title": "What is Cappex?",
-        "intro": "At <strong>Cappex</strong>, our mission is to help you get to day one at the college or university that’s right for you. This quest was born out of our own frustration with the college search and selection process. We realized that inherent barriers were limiting many students’ access to education, and we needed to do something about it.",
-        "subtitle":"Here’s how we help future students like you:",
-        "facts": [
-            {
-                "fact": "<strong>Give you tools to sharpen your goals:</strong> It’s easy to say you want to advance your career. It’s harder to know how. Cappex has resources (<a href='/quiz'>like this quiz</a>) to help you define — and reach — your goals."
-            },
-            {
-                "fact": "<strong>Help you connect with the right schools:</strong> Finding a college or university that has programs that are worth your time and investment can be a challenge. Cappex provides matches to make it easier."
-            },
-            {
-                "fact": "<strong>Share valuable college search advice:</strong> Tap into our extensive expertise acquired over nearly two decades of helping students find their perfect schools."
-            }
-        ]
-    },
-    "cappexStats": [
-            {
-                "number": "600+",
-                "description": "Institutions trust Cappex to match them with students like you"
-            },
-            {
-                "number": "Billions",
-                "description": "Of dollars in scholarships can be applied for through Cappex’s scholarship database"
-            },
-            {
-                "number": "17+",
-                "description": "Years of experience matching students with their perfect colleges and universities"
-            }
-        ]
+    }
 }
-

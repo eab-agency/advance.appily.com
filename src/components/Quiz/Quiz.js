@@ -2,20 +2,28 @@
 import { useUser } from "@/context/context";
 // import Score from '@/components/Score';
 import { useLocalStorage } from "@/hooks/useLocalStorage";
-import { useRequest } from "@/hooks/useRequest";
 import styles from "@/styles/global/layouts/Quiz.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import useSWR from "swr";
 import Question from "./Question";
 import ResetQuizButton from "./ResetQuizButton";
 import Results from "./Results";
 import Score from "./Score";
 
-export function Quiz() {
+export function Quiz({ vertical }) {
 	// const { data: results, error: resultError } = useRequest('/quiz/results');
-	const { data: questions, error: questionError } =
-		useRequest("/quiz/questions");
+	const {
+		data: questions,
+		error: questionError,
+		isLoading,
+	} = useSWR(`/api/quiz/questions?vertical=${vertical}`);
+
+	// const { data: questions, error: questionError } = useRequest(
+	// 	"/quiz/questions",
+	// 	vertical,
+	// );
 	// console.log('🚀 ~ file: Quiz.js:16 ~ Quiz ~ questions:', questions.length);
 	const router = useRouter();
 
@@ -28,14 +36,6 @@ export function Quiz() {
 	const [localQData, setLocalQData] = useLocalStorage("eab-quiz-data", {
 		answers: [],
 		currentQuestion: 0,
-		score: {
-			executive: 0,
-			practitioner: 0,
-			educator: 0,
-			scientist: 0,
-			analyst: 0,
-			initial: 0,
-		},
 		isFinished: false,
 		questionLength: 0,
 		highestScorePersonality: null,
@@ -152,6 +152,7 @@ export function Quiz() {
 							<Question
 								questionNum={localQData.currentQuestion}
 								handleAnswer={handleAnswer}
+								vertical={vertical}
 							/>
 						)}
 					</div>
@@ -184,6 +185,7 @@ export function Quiz() {
 					<Question
 						handleAnswer={handleAnswer}
 						questionNum={localQData.currentQuestion}
+						vertical={vertical}
 					/>
 				</div>
 			</div>
