@@ -150,7 +150,7 @@ const BusinessSeoPage = () => {
 									</p>
 								</section>
 								<section>
-									<Card title="ROI (Return on Investment):">
+									<Card title="ROI (Return on Investment):" icon="ROI">
 										<>
 											<h5>MBA:</h5>
 											<p>
