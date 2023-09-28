@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 
 import { Button, CarouselWithForm, Stats, StickyCta } from "@/components";
 import data from "@/data/careers-healthcare.json";
-import styles from "@/styles/global/layouts/SeoPage.module.scss";
+import styles from "@/styles/app.scss"
 
 /* eslint-disable react/no-danger */
 const HealthCareSeoPage = () => {

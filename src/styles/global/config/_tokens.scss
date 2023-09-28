@@ -26,6 +26,21 @@ $c-warning: #ff0;
 
 $c-blue-100:color.scale($c-blue-300, $lightness: 80%);
 
+// =============================
+
+@function get-preferred-color($light-color, $dark-color) {
+  @if (prefers-color-scheme(dark)) {
+    @return $dark-color;
+  } @else {
+    @return $light-color;
+  }
+}
+
+$primary-color: get-preferred-color($c-success, $c-error);
+$secondary-color: get-preferred-color(yellow, #b84a00);
+// $secondary-color: pink;
+
+
 //* Base Unit
 $baseUnit: 1rem;
 

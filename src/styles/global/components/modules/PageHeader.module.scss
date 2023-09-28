@@ -1,5 +1,5 @@
-@use '../global/config/tokens';
-@use '../global/layouts';
+@use '../../config/tokens';
+@use '../../layouts';
 
 .container {
     @include layouts.container;

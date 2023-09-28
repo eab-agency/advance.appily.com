@@ -11,7 +11,7 @@ import {
 	StickyCta,
 } from "@/components";
 import data from "@/data/careers-business.json";
-import styles from "@/styles/global/layouts/SeoPage.module.scss";
+
 
 /* eslint-disable react/no-danger */
 const BusinessSeoPage = () => {
@@ -33,12 +33,12 @@ const BusinessSeoPage = () => {
 
 	return (
 		<>
-			<div className={styles.pageLayout}>
-				<main className="page-layout__container">
-					<div className="page-layout__content">
-						<div className={styles.container}>
-							<div className={styles.content}>
-								<section className={styles.pageHero}>
+<div className="pageLayout">
+  <main className="page-layout__container">
+    <div className="page-layout__content">
+      <div className="container">
+        <div className="content">
+          <section className="pageHero">
 									<h1
 										dangerouslySetInnerHTML={{
 											__html: data.pageTitle,
@@ -53,38 +53,38 @@ const BusinessSeoPage = () => {
 										/>
 									</figure>
 								</section>
-								<section className={styles.quizSection}>
-									<figure>
-										<Image
-											src="/images/profesional-man-researching-online.jpg"
-											width={800}
-											height={480}
-											alt="Profesional man researching online"
-										/>
-									</figure>
+<section className="quizSection">
+  <figure>
+    <Image
+      src="/images/profesional-man-researching-online.jpg"
+      width={800}
+      height={480}
+      alt="Profesional man researching online"
+    />
+  </figure>
 
-									<div className={styles.intro}>
-										<h2>{data.quizSection.title}</h2>
-										<div
-											dangerouslySetInnerHTML={{
-												__html: data.quizSection.content,
-											}}
-										/>
-										<Button
-											appearance="primary"
-											label={data.quizSection.buttonText}
-											href="/careers/business/quiz"
-											className={styles.button}
-										/>
-									</div>
-								</section>
-								<Stats
-									stats={data.stats}
-									source={data.statsSource}
-									className={styles.stats}
-								/>
-								<section className={styles.whyChoose}>
-									<div className={styles.intro}>
+  <div className="intro">
+    <h2>{data.quizSection.title}</h2>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: data.quizSection.content,
+      }}
+    />
+    <Button
+      appearance="primary"
+      label={data.quizSection.buttonText}
+      href="/careers/business/quiz"
+      className="button"
+    />
+  </div>
+</section>
+<Stats
+  stats={data.stats}
+  source={data.statsSource}
+  className="stats"
+/>
+<section className="whyChoose">
+  <div className="intro">
 										<h2>{data.whyChoose.title}</h2>
 										<h3>{data.whyChoose.subTitle}</h3>
 										<p
@@ -93,7 +93,7 @@ const BusinessSeoPage = () => {
 											}}
 										/>
 									</div>
-									<div className={styles.whyChooseContent}>
+<div className="whyChooseContent">
 										{reasonsArray.map((reason, index) => (
 											// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 											<Accordion key={index} title={reason.title}>
@@ -114,18 +114,18 @@ const BusinessSeoPage = () => {
 										</figure>
 									</div>
 								</section>
-								<section className={styles.testimonial}>
-									<div className={styles.quotation}>
+<section className="testimonial">
+  <div className="quotation">
 										<blockquote>
 											<p>{data.testimonial.text}</p>
-											<div className={styles.testimonialAuthor}>
+<div className="testimonialAuthor">
 												<p>{data.testimonial.author}</p>
 												<small>{data.testimonial.authorTitle}</small>
 											</div>
 										</blockquote>
 									</div>
 								</section>
-								<section className={styles.mbaVsBusinessMasters}>
+								<section className="mbaVsBusinessMasters">
 									<h3>
 										MBA vs. Specific Business Master's Degrees:{" "}
 										<strong>Maximizing Your Career Investment</strong>
@@ -188,17 +188,17 @@ const BusinessSeoPage = () => {
 								<div id="explore-your-school-matches" ref={carouselRef}>
 									<CarouselWithForm />
 								</div>
-								<section className={styles.whatIsCappex}>
-									<div className={styles.content}>
-										<figure>
-											<Image
-												src="/images/college-search.png"
-												width={536}
-												height={361}
-												alt="What is Cappex"
-											/>
-										</figure>
-										<section className={styles.goingToCollege}>
+<section className="whatIsCappex">
+  <div className="content">
+    <figure>
+      <Image
+        src="/images/college-search.png"
+        width={536}
+        height={361}
+        alt="What is Cappex"
+      />
+    </figure>
+    <section className="goingToCollege">
 											<h3>
 												An All-in-One Resource for{" "}
 												<strong>Going to College</strong>
@@ -222,15 +222,15 @@ const BusinessSeoPage = () => {
 									</div>
 								</section>
 
-								<section className={styles.takeQuiz}>
-									<div className={styles.content}>
+								<section className="takeQuiz">
+									<div className="content">
 										<h2>{data.takeQuiz.title}</h2>
 										<p>{data.takeQuiz.description}</p>
 										<Button
 											appearance="primary"
 											label={data.takeQuiz.buttonText}
 											href="/careers/business/quiz"
-											className={styles.button}
+											className="button"
 										/>
 									</div>
 									hp

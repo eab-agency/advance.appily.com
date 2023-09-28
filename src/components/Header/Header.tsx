@@ -1,4 +1,4 @@
-import styles from '@/styles/modules/PageHeader.module.scss'
+import styles from '@/styles/global/components/modules/PageHeader.module.scss'
 import React from 'react'
 import MainLogo from './MainLogo'
 import NavBar from './NavBar'

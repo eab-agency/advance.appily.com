@@ -6,7 +6,7 @@
 @use 'global/components/schoolCarousel';
 
 body {
-    background-color: config.$c-blue-800;
+    background-color: config.$primary-color;
 }
 
 p {
@@ -17,19 +17,23 @@ p {
     }
 }
 
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: config.$c-gray-100;
-    }
-
-    p {
-        color: config.$c-blue-800;
-
-        strong {
-            color: config.$c-malva-500;
-        }
-    }
+.pageLayout{
+  background: config.get-preferred-color(config.$c-blue-500, config.$c-blue-100);
 }
+
+// @media (prefers-color-scheme: light) {
+//     body {
+//         background-color: config.$c-gray-100;
+//     }
+
+//     p {
+//         color: config.$c-blue-800;
+
+//         strong {
+//             color: config.$c-malva-500;
+//         }
+//     }
+// }
 
 ul{
     list-style: none;

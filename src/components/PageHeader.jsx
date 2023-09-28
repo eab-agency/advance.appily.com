@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from '@/styles/modules/PageHeader.module.scss';
-import NavBar from '@/components/Header/NavBar';
 import MainLogo from '@/components/Header/MainLogo'
+import NavBar from '@/components/Header/NavBar';
+import styles from '@/styles/global/components/modules/PageHeader.module.scss';
+import React from 'react';
 
 export default function PageHeader({ pageType }) {
     return (

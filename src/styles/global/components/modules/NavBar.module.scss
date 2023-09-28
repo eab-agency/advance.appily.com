@@ -1,7 +1,7 @@
 @use 'sass:color';
-@use '../global/config/breakpoints';
-@use '../global/config/tokens';
-@use '../global/config/fonts';
+@use '../../config/breakpoints';
+@use '../../config/tokens';
+@use '../../config/fonts';
 
 .navigation {
     display: flex;

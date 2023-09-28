@@ -1,4 +1,4 @@
-import styles from "@/styles/modules/PageFooter.module.scss";
+import styles from "@/styles/global/components/modules/PageFooter.module.scss";
 import Image from "next/image";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
