@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
 		const filterValue = req.query.result;
 		const filteredResults = results.filter(
-			result => result.title.toLowerCase() === filterValue.toLowerCase(),
+			result => result.slug === filterValue.toLowerCase(),
 		);
 
 		res.status(200).json(filteredResults[0]);
