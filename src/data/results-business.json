@@ -1,10 +1,10 @@
 {
 	"results": [
 		{
-			"slug": "fearless_leader",
-			"title": "Fearless Leader",
-			"description": "You have a natural ability to lead and make decisions. You thrive in high-pressure environments and enjoy taking charge of projects and people.",
-			"detailedDescription": "You're an organized go-getter who's interested in the business side of health care. The idea of planning, directing, and coordinating medical and health services intrigues you. Adapting to an ever-changing landscape of health care laws, regulations, and technology doesn't phase you. You may already have a background in business or health care and find yourself ready for the responsibilities of management.",
+			"slug": "fearless-leader",
+			"title": "The Fearless Leader",
+			"description": "You're a dynamic and strategic thinker, with a passion for guiding teams towards success. Leadership comes naturally to you, and you thrive in fast-paced corporate environments. Planning, decision-making, and motivating others are second nature, and you're prepared to take on the responsibilities of management. Whether you have a background in business or aspire to lead in the world of commerce, the executive and leadership path beckons you.",
+			"detailedDescription": "You're a dynamic and strategic thinker, with a passion for guiding teams towards success. Leadership comes naturally to you, and you thrive in fast-paced corporate environments. Planning, decision-making, and motivating others are second nature, and you're prepared to take on the responsibilities of management. Whether you have a background in business or aspire to lead in the world of commerce, the executive and leadership path beckons you.",
 			"tabs": [
 				{
 					"title": "Motivation",
@@ -69,13 +69,39 @@
 					"title": "Bachelor's",
 					"content": "<p>If you don’t already have a bachelor’s degree, many universities offer a Bachelor’s in Health Administration. You can often earn these degrees online in an accelerated format.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and business.</p>"
 				}
-			]
+			],
+			"careerPaths": {
+				"title": "What kind of career is a good fit for me?",
+				"description": "Occupations that align with The Fearless Leader's career path involve planning, directing, and coordinating business activities and teams.",
+				"paths": [
+					{
+						"title": "Chief Executive Officer (CEO)",
+						"description": "Oversee and lead the entire organization, making critical decisions and setting strategic goals.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Chief Financial Officer (CFO)",
+						"description": "Manage financial operations, budgets, and investments to ensure the organization's financial success.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "General Manager",
+						"description": "Oversee the day-to-day operations of a business unit or division.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Director or Associate Director",
+						"description": "Lead specific departments or functional areas within an organization.",
+						"imagePath": "/images/ceo.jpg"
+					}
+				]
+			}
 		},
 		{
-			"slug": "creative_marketer",
-			"title": "creative_marketer",
-			"description": "You enjoy working directly with people to help them solve problems and improve their lives. You have a hands-on approach and prefer to be in the field rather than behind a desk.",
-			"detailedDescription": "You’re an empathetic person who likes to help others. Things like anatomy and biology intrigue you, and natural bodily functions don’t phase you. Whether it’s through nursing or surgery, therapy or routine care appointments, what matters to you is improving the health of others. You may already have a background in patient care and are ready to advance your career, or you may be answering a new calling.",
+			"slug": "creative-marketer",
+			"title": "The Creative Marketer",
+			"description": "You possess a flair for creativity and innovation, and marketing is where you shine. Crafting captivating campaigns, building brands, and communicating effectively with audiences are your specialties. A dynamic and innovative workspace fuels your motivation, and you're always seeking new ways to connect with clients and customers. If you have a knack for creativity and a passion for driving business growth, the marketing and creative path could be your perfect fit.",
+			"detailedDescription": "You possess a flair for creativity and innovation, and marketing is where you shine. Crafting captivating campaigns, building brands, and communicating effectively with audiences are your specialties. A dynamic and innovative workspace fuels your motivation, and you're always seeking new ways to connect with clients and customers. If you have a knack for creativity and a passion for driving business growth, the marketing and creative path could be your perfect fit.",
 			"tabs": [
 				{
 					"title": "Motivation",
@@ -139,13 +165,39 @@
 					"title": "Bachelor's",
 					"content": "If you don’t already have a bachelor’s degree, there are many good options to pursue based on your career of interest. Some popular ones include:<ul><li><strong>Bachelor of Science in Nursing (BSN):</strong> This program may allow for specialization into specific areas of nursing and often qualifies students to pursue nursing licensure in their state</li><li><strong>Bachelor’s in Biology:</strong> This is a popular undergraduate degree for students who will go on to pursue a master’s or professional doctorate.</li><li><strong>Bachelor’s in Nutrition and Dietetics:</strong> This degree can prepare you to work in roles such as health and wellness, K-12 nutrition programming, nutrition education, food labeling, and more. If you become a Registered Dietitian Nutritionist, there are even more roles available.</li></ul>"
 				}
-			]
+			],
+			"careerPaths": {
+				"title": "What kind of career is a good fit for me?",
+				"description": "Occupations that align with The Creative Marketer's career path focus on creating and executing marketing strategies and campaigns",
+				"paths": [
+					{
+						"title": "Brand Manager",
+						"description": "Develop and maintain brand identity and strategy.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Product Manager",
+						"description": "Oversee the development and marketing of specific products or services.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Marketing Research Analyst",
+						"description": "Conduct market research and analyze data to inform marketing decisions.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Advertising Manager",
+						"description": "Plan and execute advertising campaigns to promote products or services.",
+						"imagePath": "/images/ceo.jpg"
+					}
+				]
+			}
 		},
 		{
-			"slug": "money_maestro",
-			"title": "money_maestro",
-			"description": "You have a passion for teaching and sharing knowledge with others. You are patient, empathetic, and have a talent for explaining complex ideas in simple terms.",
-			"detailedDescription": "You’re a lifelong learner who likes to help others better understand a subject you’re passionate about. You may have a deep specialized knowledge in a health field you’re eager to share with future medical professionals—or you may want to educate entire communities on public health topics. You may have a background in patient care or education and want to share your talents to make a lasting difference.",
+			"slug": "money-maestro",
+			"title": "The Money Maestro",
+			"description": "Numbers are your domain, and financial management is your expertise. You excel in analyzing data, managing finances, and making informed decisions that drive profitability. Whether it's in a financial institution or an investment firm, you feel at home with financial data and economic trends. If you have a strong analytical mind and a desire to make a substantial impact on financial matters, the roles in finance, accounting, and economics await your skills.",
+			"detailedDescription": "Numbers are your domain, and financial management is your expertise. You excel in analyzing data, managing finances, and making informed decisions that drive profitability. Whether it's in a financial institution or an investment firm, you feel at home with financial data and economic trends. If you have a strong analytical mind and a desire to make a substantial impact on financial matters, the roles in finance, accounting, and economics await your skills.",
 			"tabs": [
 				{
 					"title": "Motivation",
@@ -208,82 +260,134 @@
 					"title": "Bachelor's",
 					"content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Education or Health Promotion.</strong> You can often earn these degrees online. Employers may also accept bachelor’s degrees in business, social science, or other health care related fields.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and education.</p>"
 				}
-			]
+			],
+			"careerPaths": {
+				"title": "What kind of career is a good fit for me?",
+				"description": "Occupations that align with The Money Maestro's career path involve financial analysis, management, and decision-making.",
+				"paths": [
+					{
+						"title": "Financial Analyst",
+						"description": "Analyze financial data and provide recommendations for investments and financial decisions.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Investment Banker",
+						"description": "Assist companies with raising capital and provide financial advice.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Accountant",
+						"description": "Prepare and examine financial records and ensure compliance with regulations.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Risk Manager",
+						"description": "Identify and manage financial risks for organizations.",
+						"imagePath": "/images/ceo.jpg"
+					}
+				]
+			}
 		},
 		{
-			"slug": "self_starter",
-			"title": "self_starter",
-			"description": "You are naturally curious and enjoy solving complex problems. You are methodical, analytical, and enjoy using data and research to drive your decisions.",
-			"detailedDescription": "You’re an intensely curious person with a drive to learn how things work or make groundbreaking discoveries. You may enjoy reading a patient’s lab results to find things a physician can help them improve—or you may be driven to cure a disease or find a treatment that will change many lives. You probably have a background in science but may also be a skilled writer.",
+			"slug": "self-starter",
+			"title": "The Self Starter",
+			"description": "Entrepreneurship is in your blood, and you're not afraid to take risks and create new ventures. An entrepreneurial spirit drives you to seize opportunities and build businesses from the ground up. The idea of being your own boss and driving business growth fuels your motivation. If you've always dreamt of starting your own business or leading innovative projects, the path of entrepreneurship is ready to embrace your boldness.",
+			"detailedDescription": "Entrepreneurship is in your blood, and you're not afraid to take risks and create new ventures. An entrepreneurial spirit drives you to seize opportunities and build businesses from the ground up. The idea of being your own boss and driving business growth fuels your motivation. If you've always dreamt of starting your own business or leading innovative projects, the path of entrepreneurship is ready to embrace your boldness.",
 			"tabs": [
 				{
 					"title": "Motivation",
 					"icon": "motivation-icon",
-					"content": "The Scientist likes to figure out how things work and wants to make groundbreaking discoveries."
+					"content": "The Educator likes to teach others and give them the tools to help themselves."
 				},
 				{
 					"title": "Skills",
 					"icon": "skills-icon",
-					"content": "This role is skilled at critical thinking, observation, and data analysis. They can also communicate complex ideas simply while speaking and writing."
+					"content": "This role is skilled at breaking down big ideas so others can learn. They’re good at analyzing information to inform big-picture problem solving."
 				},
 				{
 					"title": "Works With",
 					"icon": "work-icon",
-					"content": "Careers in The Scientist’s path usually work with other scientists or medical professionals."
+					"content": "Careers in The Educator’s path often work with community residents, aspiring health care professionals, or people with disabilities."
 				},
 				{
 					"title": "Setting",
-					"icon": "setting-icon",
-					"content": "A lab or university are the most common workplaces for The Scientist, but they may also work in a hospital or office."
+					"icon": "skills-icon",
+					"content": "A government agency, nonprofit,  university or family services organization are common workplaces for The Educator."
 				},
 				{
 					"title": "Education",
 					"icon": "education-icon",
-					"content": "Jobs in this field often require at least a bachelor’s degree in a physical science, and many prefer a Ph.D. or medical degree."
+					"content": "Jobs in this field often require college courses in things like education, public health, ethics, or a language. Roles require a bachelor’s or master’s degree."
 				},
 				{
 					"title": "Experience",
-					"icon": "experience-icon",
-					"content": "People with experience working in a lab setting or doing research and writing proposals tend to be a good fit for The Scientist’s career path."
+					"icon": "skills-icon",
+					"content": "People with experience working in education, health care, or with a community organization tend to be a good fit for The Educator’s career path."
 				}
 			],
 			"stats": [
 				{
-					"number": "17%",
+					"number": "12%",
 					"title": "Growth",
-					"description": "In employment of medical scientists over the next decade"
+					"description": "In employment of health education specialists and community health workers over the next decade"
 				},
 				{
-					"number": "$95K",
+					"number": "$60K",
 					"title": "Median Salary",
-					"description": "For medical scientists, ranging from $50K to $166K averages"
+					"description": "For health education specialists, $46K for community health workers, and $102K for medical educators"
 				},
 				{
-					"number": "10K",
+					"number": "16K",
 					"title": "Job Openings",
 					"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
 				}
 			],
 			"degreeTabs": [
+				{
+					"title": "Master's",
+					"content": "<p>If you do have a bachelor’s degree and want to further specialize your studies, these are some popular master’s in the health education field:</p><ul><li><strong>Master’s in Health Education and Promotion:</strong> This can prepare you for leadership positions in academic, clinical, community, or corporate settings, such as a community health coordinator or wellness coach.</li><li><strong>Master of Public Health (MPH):</strong> The MPH is professional degree that gives you tools to impact public health in careers such as a public health educator, clinical research coordinator, epidemiologist, or health policy analyst.</li><li><strong>Master of Science in Public Health:</strong> This is more of an academic research degree that will prepare you for doctoral studies.</li><li><strong>Master of Medical Sciences in Medical Education:</strong> This type of program teaches things like the science of learning, curriculum development, and adult learning theories as well as training on current tools and research relevant to the field you’d be teaching.</li></ul> <p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and education.</p>"
+				},
 				{
 					"title": "Doctoral",
-					"content": "<p>PhD programs for medical scientists typically focus on research in a particular field, such as immunology, neurology, or cancer. Popular PhD options include:</p><ul><li><strong>PhD in Biology:</strong> This degree can prepare you for research in fields such as microbiology, environmental science, pharmaceutical development, genetics and more</li><li><strong>PhD in Chemistry:</strong> This degree can prepare you for research in fields such as pharmacology, biomedicine, toxicology, and more.</li></ul><p>Medical scientists also may pursue these medical degrees:</p><ul><li>Medical Doctor (MD)</li><li>Doctor of Dental Surgery (DDS)</li><li>Doctor of Dental Medicine (DMD)</li><li>Doctor of Osteopathic Medicine (DO)</li><li>Doctor of Pharmacy (PharmD)</li><li>Doctor of Nursing Practice (DNP)</li></ul>"
-				},
-				{
-					"title": "Master's",
-					"content": "<p>A good master’s degree for those pursuing a medical science career is a <strong>Master of Science in Medical Science.</strong> It’s goal is to help medical students prepare to become competent physicians, but it can also prepare you for a more research-focused career.</p><p>Another option is the <strong>Master of Science in Clinical Research,</strong> which focuses more on quantitative and analytic skills in patient-oriented and translational research, as well as more traditional clinical investigation.</p>"
+					"content": "<p>If you’re interested in teaching future medical professionals, <strong>a PhD in Health Professions Education (HPEd</strong> program and prepare clinicians and other health professionals without a research degree to make contributions to the scholarship of teaching and learning.</p><p>A <strong>Doctor of Education (EdD) in Health Education</strong> could also be a good fit for those interested leadership roles related to advocacy and policy development, administrative leadership in organizations providing appropriate care to communities, and university roles that train the next generation of health education specialists, community health educators, and public health professionals.</p>"
 				},
 				{
 					"title": "Bachelor's",
-					"content": "<p>If you’re just getting started down the path of The Scientist, it’s a good idea to earn your <strong>Bachelor of Science in Biology or Chemistry.</strong> This will give you a strong foundation for future degrees.</p><p>Another options is a <strong>Bachelor of Science in Health Sciences,</strong> which can give you a strong skill base for clinical research. You’ll get an learn how to conduct research studies to ensure the safety and effectiveness of new drugs, devices, diagnostics and treatment regimens.</p>"
+					"content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Education or Health Promotion.</strong> You can often earn these degrees online. Employers may also accept bachelor’s degrees in business, social science, or other health care related fields.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and education.</p>"
 				}
-			]
+			],
+			"careerPaths": {
+				"title": "What kind of career is a good fit for me?",
+				"description": "Occupations that align with The Self-Starter's career path revolve around entrepreneurship and leading innovative ventures.",
+				"paths": [
+					{
+						"title": "Entrepreneur",
+						"description": "Start and manage their own businesses in various industries.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Small Business Owner",
+						"description": "Operate and oversee small businesses, often with a hands-on approach.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Venture Capitalist",
+						"description": "Invest in and provide funding for early-stage startups with growth potential.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Business Development Manager",
+						"description": "Identify and pursue new business opportunities to drive growth for a company.",
+						"imagePath": "/images/ceo.jpg"
+					}
+				]
+			}
 		},
 		{
-			"slug": "computer_whiz",
-			"title": "computer_whiz",
-			"description": "You enjoy working with numbers and data to identify patterns and solve problems. You have a keen eye for detail and are able to see the big picture while also paying attention to the small details.",
-			"detailedDescription": "You’re a person who likes connecting the dots. You think in systems and see patterns where others might not. You probably enjoy working with computers and a complex spreadsheet doesn’t phase you. You may already have a background in analytics or information systems and are interested in transferring those skills to health care—or you may be in an administrative role looking to upskill.",
+			"slug": "computer-whiz",
+			"title": "The Computer Whiz",
+			"description": "Technology is your forte, and you're at home working with computers and data. Leveraging technology for problem-solving and data analysis excites you. You're keen on optimizing processes and finding innovative solutions to complex challenges. If you possess a strong technological aptitude and have a passion for data-driven decision-making, the world of information technology and analytics is the perfect space for you.",
+			"detailedDescription": "Technology is your forte, and you're at home working with computers and data. Leveraging technology for problem-solving and data analysis excites you. You're keen on optimizing processes and finding innovative solutions to complex challenges. If you possess a strong technological aptitude and have a passion for data-driven decision-making, the world of information technology and analytics is the perfect space for you.",
 			"tabs": [
 				{
 					"title": "Motivation",
@@ -342,13 +446,39 @@
 					"title": "Bachelor's",
 					"content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Information Management.</strong> You can often earn these degrees online.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
 				}
-			]
+			],
+			"careerPaths": {
+				"title": "What kind of career is a good fit for me?",
+				"description": "Occupations that align with The Computer Whiz's career path center on leveraging technology and data for problem-solving and decision-making.",
+				"paths": [
+					{
+						"title": "IT Manager",
+						"description": "Oversee and manage the IT department of an organization.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Data Analyst",
+						"description": "Analyze and interpret data to inform business decisions and strategies.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Business Intelligence Analyst",
+						"description": "Use data and analytics tools to generate insights for the organization.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Cybersecurity Analyst",
+						"description": "Protect the organization's computer systems and data from security breaches.",
+						"imagePath": "/images/ceo.jpg"
+					}
+				]
+			}
 		},
 		{
-			"slug": "people_person",
-			"title": "people_person",
-			"description": "You enjoy working with numbers and data to identify patterns and solve problems. You have a keen eye for detail and are able to see the big picture while also paying attention to the small details.",
-			"detailedDescription": "You’re a person who likes connecting the dots. You think in systems and see patterns where others might not. You probably enjoy working with computers and a complex spreadsheet doesn’t phase you. You may already have a background in analytics or information systems and are interested in transferring those skills to health care—or you may be in an administrative role looking to upskill.",
+			"slug": "people-person",
+			"title": "The People Person",
+			"description": "People are your priority, and you excel in creating positive work environments that nurture talent and foster growth. Collaborating with colleagues and clients brings out the best in you. You find fulfillment in managing teams, handling employee relations, and facilitating effective teamwork. If you possess empathy, excellent communication skills, and a drive to create strong and cohesive teams, the realm of operations, project management, and human resources beckons you.",
+			"detailedDescription": "People are your priority, and you excel in creating positive work environments that nurture talent and foster growth. Collaborating with colleagues and clients brings out the best in you. You find fulfillment in managing teams, handling employee relations, and facilitating effective teamwork. If you possess empathy, excellent communication skills, and a drive to create strong and cohesive teams, the realm of operations, project management, and human resources beckons you.",
 			"tabs": [
 				{
 					"title": "Motivation",
@@ -407,7 +537,33 @@
 					"title": "Bachelor's",
 					"content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Information Management.</strong> You can often earn these degrees online.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
 				}
-			]
+			],
+			"careerPaths": {
+				"title": "What kind of career is a good fit for me?",
+				"description": "Occupations that align with The People Person's career path focus on team management, employee relations, and human resources.",
+				"paths": [
+					{
+						"title": "Operations Manager",
+						"description": "Oversee the operations and processes of an organization to ensure efficiency.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Human Resource Manager",
+						"description": "Manage the organization's workforce, including recruitment, training, and employee relations.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Project Manager",
+						"description": "Plan and execute projects, working closely with cross-functional teams.",
+						"imagePath": "/images/ceo.jpg"
+					},
+					{
+						"title": "Training and Development Manager",
+						"description": "Create and implement training programs to enhance employee skills and development.",
+						"imagePath": "/images/ceo.jpg"
+					}
+				]
+			}
 		}
 	]
 }
