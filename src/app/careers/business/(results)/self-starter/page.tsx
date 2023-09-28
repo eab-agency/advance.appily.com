@@ -12,6 +12,7 @@ import {
 	Stats,
 	StickyCta,
 	Tabs,
+	TextWithImage,
 } from "@/components";
 import styles from "@/styles/global/layouts/FinalPage.module.scss";
 import { usePathname } from "next/navigation";
@@ -42,20 +43,13 @@ export default function Page() {
 					<CareerPaths careerPaths={data.careerPaths} />
 
 					<Stats stats={data.stats} source={data.statsSource} />
-					<section className={styles["best-degrees"]}>
-						<div className={styles["degrees-intro"]}>
-							<h2>
-								What are the best health care degrees for The Practitioner?
-							</h2>
-							<p>
-								For many roles in The Practitioner’s career path, a bachelor’s
-								degree is a minimum qualification. Master’s degrees are common
-								and often preferred, especially for more senior management
-								roles.
-							</p>
-						</div>
-						<Tabs tabs={data.degreeTabs} className="degree-tabs" />
-					</section>
+
+					<TextWithImage
+						content={data.textWithImage.content}
+						imagePath={data.textWithImage.imagePath}
+						className="whatever-you-need"
+					/>
+
 					<section className={styles.certificates}>
 						{/* <div className={styles.accordionHead}> */}
 						<Accordion title="Does The Practitioner need a license, certification, or registration?">

@@ -12,6 +12,7 @@ import {
 	Stats,
 	StickyCta,
 	Tabs,
+	TextWithImage,
 } from "@/components";
 import styles from "@/styles/global/layouts/FinalPage.module.scss";
 import { usePathname } from "next/navigation";
@@ -41,19 +42,12 @@ const EducatorPage = () => {
 					<CareerPaths careerPaths={data.careerPaths} />
 
 					<Stats stats={data.stats} source={data.statsSource} />
-					<section className={styles["best-degrees"]}>
-						<div className={styles["degrees-intro"]}>
-							<h2>What are the best health care degrees for The Educator?</h2>
-							<p>
-								The type of degree needed for various careers in The Educator’s
-								path vary. Health education specialists usually need at least a
-								bachelor’s degree, community health workers often only need a
-								high school diploma, and medical educators often require at
-								least a master’s degree.
-							</p>
-						</div>
-						<Tabs tabs={data.degreeTabs} className="degree-tabs" />
-					</section>
+
+					<TextWithImage
+						content={data.textWithImage.content}
+						imagePath={data.textWithImage.imagePath}
+						className="whatever-you-need"
+					/>
 					<section className={styles.certificates}>
 						<Accordion title="Does The Educator need a license, certification, or registration?">
 							<figure>

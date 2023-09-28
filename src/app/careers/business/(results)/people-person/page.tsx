@@ -11,6 +11,7 @@ import {
 	Stats,
 	StickyCta,
 	Tabs,
+	TextWithImage,
 } from "@/components";
 import styles from "@/styles/global/layouts/FinalPage.module.scss";
 import { usePathname } from "next/navigation";
@@ -40,18 +41,12 @@ const ScientistPage = () => {
 					<CareerPaths careerPaths={data.careerPaths} />
 
 					<Stats stats={data.stats} source={data.statsSource} />
-					<section className={styles["best-degrees"]}>
-						<div className={styles["degrees-intro"]}>
-							<h2>What are the best health care degrees for The Scientist?</h2>
-							<p>
-								For many roles in The Scientist’s career path, a Ph.D. (often in
-								biology or life sciences) or a medical degree is required. Some
-								positions will also accept a master’s degree if the candidate
-								also has experience.
-							</p>
-						</div>
-						<Tabs tabs={data.degreeTabs} className="degree-tabs" />
-					</section>
+
+					<TextWithImage
+						content={data.textWithImage.content}
+						imagePath={data.textWithImage.imagePath}
+						className="whatever-you-need"
+					/>
 					<section className={styles.certificates}>
 						<Accordion title="Does The Scientist need a license, certification, or registration?">
 							<figure>

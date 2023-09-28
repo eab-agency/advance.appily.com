@@ -11,6 +11,7 @@ import {
 	Stats,
 	StickyCta,
 	Tabs,
+	TextWithImage,
 } from "@/components";
 import styles from "@/styles/global/layouts/FinalPage.module.scss";
 import { usePathname } from "next/navigation";
@@ -40,18 +41,12 @@ const AnalystPage = () => {
 					<CareerPaths careerPaths={data.careerPaths} />
 
 					<Stats stats={data.stats} source={data.statsSource} />
-					<section className={styles["best-degrees"]}>
-						<div className={styles["degrees-intro"]}>
-							<h2>What are the best health care degrees for The Analyst?</h2>
-							<p>
-								The degree necessary for careers in The Analyst's path varies
-								depending on responsibilities. An associate's degree is a
-								minimum requirement, with many roles preferring a bachelor's or
-								master's degree.
-							</p>
-						</div>
-						<Tabs tabs={data.degreeTabs} className="degree-tabs" />
-					</section>
+
+					<TextWithImage
+						content={data.textWithImage.content}
+						imagePath={data.textWithImage.imagePath}
+						className="whatever-you-need"
+					/>
 					<section className={styles.certificates}>
 						<Accordion title="Does The Analyst need a license, certification, or registration?">
 							<figure>
