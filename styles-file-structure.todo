@@ -1,0 +1,69 @@
+styles:
+    - app.scss
+    - colors.scss
+    - common.scss
+    - queries.scss
+    - type.scss
+
+    global:
+        components:
+            - _button.scss
+            - _forms.scss
+            - _modals.scss
+            - _schoolCarousel.scss
+            - _tabs.scss
+            - CarouselWithForm.module.scss
+            - Accordion.module.scss
+            - Form.module.scss
+            - MainLogo.module.scss
+            - Stats.module.scss
+            - StickyCta.module.scss
+            - UniversityMatch.module.scss
+
+            >  other component options
+            - _nav.scss
+            - _pagination.scss
+            - _panels.scss
+            - _tooltips.scss
+            - _accordions.scss
+            - _alerts.scss
+            - _badges.scss
+            - _breadcrumbs.scss
+
+            modules:
+                - NavBar.module.scss
+                - PageFooter.module.scss
+                - PageHeader.module.scss
+
+        config:
+            - _breakpoints.scss
+            - _fonts.scss
+            - _icons.scss
+            - _reset.scss
+            - _tokens.scss
+            - _typography.scss
+
+            > other component options
+            - _animations.scss
+            - _functions.scss
+            - _mixins.scss
+            - _variables.scss
+            - _utilities.scss
+            - _helpers.scss
+
+        layouts:
+            - EmailOnly.module.scss
+            - Error.module.scss
+            - FinalPage.module.scss
+            - Question.module.scss
+            - Quiz.module.scss
+            - Results.module.scss
+
+
+        themes:
+            - _dark.scss
+            - _light.scss
+
+            > other component options
+            - _default.scss
+
