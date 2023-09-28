@@ -47,31 +47,14 @@ const AnalystPage = () => {
 						imagePath={data.textWithImage.imagePath}
 						className="whatever-you-need"
 					/>
-					<section className={styles.certificates}>
-						<Accordion title="Does The Analyst need a license, certification, or registration?">
-							<figure>
-								<Image
-									src="/images/certificate-image.svg"
-									width={478}
-									height={284}
-									alt="Medical records"
-								/>
-							</figure>
-							<div>
-								<p>
-									Employers may prefer to hire health information technologists
-									and medical registrars who have certification, or they may
-									expect applicants to earn certification after being hired.
-								</p>
-								<p>
-									Credentials for a variety of specializations are available
-									from professional organizations, including the Registered
-									Health Information Technician (RHIT), the Certified
-									Documentation Improvement Practitioner (CDIP), and the
-									Certified Health Data Analyst (CHDA).
-								</p>
-							</div>
-						</Accordion>
+					<section>
+						<h3>{data.degreeTabs.title}</h3>
+						<p>{data.degreeTabs.description}</p>
+						{data.degreeTabs.degrees.map(degree => (
+							<Accordion title={degree.title}>
+								<div dangerouslySetInnerHTML={{ __html: degree.content }} />
+							</Accordion>
+						))}
 					</section>
 					<div
 						id="explore-your-school-matches"

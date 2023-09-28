@@ -50,33 +50,14 @@ export default function Page() {
 						className="whatever-you-need"
 					/>
 
-					<section className={styles.certificates}>
-						{/* <div className={styles.accordionHead}> */}
-						<Accordion title="Does The Practitioner need a license, certification, or registration?">
-							<figure>
-								<Image
-									src="/images/certificate-image.svg"
-									width={478}
-									height={284}
-									alt="Medical records"
-								/>
-							</figure>
-							<div>
-								<p>
-									Most jobs involving patient care require licensure. Nurses,
-									occupational therapists, physicians and physician’s
-									assistants, chiropractors, dentists, and pharmacists are
-									required by all states to have licenses.
-								</p>
-								<p>
-									Sometimes this requires a national licensure exam or a
-									state-specific test. It may also require a certain number of
-									practicing hours as an intern or resident. The good news is
-									that most degree programs are designed to prepare students to
-									sit for these tests.
-								</p>
-							</div>
-						</Accordion>
+					<section>
+						<h3>{data.degreeTabs.title}</h3>
+						<p>{data.degreeTabs.description}</p>
+						{data.degreeTabs.degrees.map(degree => (
+							<Accordion title={degree.title}>
+								<div dangerouslySetInnerHTML={{ __html: degree.content }} />
+							</Accordion>
+						))}
 					</section>
 
 					<div

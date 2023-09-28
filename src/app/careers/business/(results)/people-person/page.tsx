@@ -47,26 +47,14 @@ const ScientistPage = () => {
 						imagePath={data.textWithImage.imagePath}
 						className="whatever-you-need"
 					/>
-					<section className={styles.certificates}>
-						<Accordion title="Does The Scientist need a license, certification, or registration?">
-							<figure>
-								<Image
-									src="/images/certificate-image.svg"
-									width={478}
-									height={284}
-									alt="Medical records"
-								/>
-							</figure>
-							<div>
-								<p>
-									Medical scientists mostly conduct research and don’t usually
-									need licenses or certifications. However, those who practice
-									medicine, such as by treating patients in clinical trials or
-									in private practice, must be licensed as physicians or other
-									healthcare practitioners.
-								</p>
-							</div>
-						</Accordion>
+					<section>
+						<h3>{data.degreeTabs.title}</h3>
+						<p>{data.degreeTabs.description}</p>
+						{data.degreeTabs.degrees.map(degree => (
+							<Accordion title={degree.title}>
+								<div dangerouslySetInnerHTML={{ __html: degree.content }} />
+							</Accordion>
+						))}
 					</section>
 					<div
 						id="explore-your-school-matches"
