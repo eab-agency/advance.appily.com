@@ -11,12 +11,7 @@ export default async function handler(req, res) {
 		const data = JSON.parse(fileContents);
 		const { results } = data;
 
-		const filterValue = req.query.result;
-		const filteredResults = results.filter(
-			result => result.slug === filterValue.toLowerCase(),
-		);
-
-		res.status(200).json(filteredResults[0]);
+		res.status(200).json(results);
 	} catch (error) {
 		console.error(error);
 		res.status(500).json({ error: "Internal Server Error" });
