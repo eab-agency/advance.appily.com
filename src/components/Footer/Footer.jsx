@@ -6,7 +6,7 @@ import { MdHelpOutline, MdOutlinePrivacyTip } from "react-icons/md";
 import { Reoverlay } from "reoverlay";
 
 import { HelpModal, PrivacyModal } from "@/components/Modals";
-import styles from "@/styles/global/components/modules/PageFooter.module.scss";
+import styles from "@/styles/components/PageFooter.module.scss";
 
 const Footer = () => {
 	const helpClick = () => {
@@ -17,10 +17,10 @@ const Footer = () => {
 	};
 
 	return (
-		<footer className={styles["page-footer"]}>
+		<footer className={styles.pageFooter}>
 			<div className={styles.wrapper}>
 				<figure className={styles.logo}>
-					<Image src="/images/cappex-footer-logo.svg" alt="Appily Logo" fill />
+					<Image src="/images/appily-logo.svg" alt="Appily Logo" fill />
 				</figure>
 				<div className="copyright">
 					<p>

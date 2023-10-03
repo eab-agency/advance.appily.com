@@ -1,0 +1,93 @@
+@use "@/styles/global/tokens/breakpoints";
+
+body {
+  background: var(--c-bg-body);
+
+  &::before {
+    content: "";
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(/images/bg-pattern-dark.svg) center center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+
+    @media (prefers-color-scheme: light) {
+      background: url(/images/bg-pattern-light.svg) center center;
+      opacity: 0.5;
+    }
+  }
+
+  figure {
+    position: relative;
+    display: flex;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: clamp(var(--p-m), 6vw, var(--p-xxxl));
+    padding-block: clamp(var(--p-l), 10vw, var(--p-xxxxl));
+  }
+
+  .group {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: var(--layer-10);
+
+    &.center-aligned {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: breakpoints.$mq-1200;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    & > div {
+      flex: 1;
+    }
+
+    @media (max-width: breakpoints.$mq-900) {
+      flex-direction: column;
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-column);
+  }
+
+  .cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: breakpoints.$mq-900;
+    margin: 0 auto;
+    padding: clamp(var(--p-m), 4vw, var(--p-xl)) 0;
+  }
+
+  .cols-2 {
+    gap: var(--gutter);
+
+    & > div {
+      // flex: 1 1 50%;
+      flex: 1;
+    }
+  }
+}

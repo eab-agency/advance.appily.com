@@ -1,4 +1,22 @@
 {
+  "links": [
+    {
+      "label": "Adult Degree Completion",
+      "href": "/"
+    },
+    {
+      "label": "Graduate Degrees",
+      "href": "/"
+    },
+    {
+      "label": "Careers",
+      "href": "/"
+    },
+    {
+      "label": "Resources",
+      "href": "/"
+    }
+  ],
     "pageTitle": " Which <strong>health care career</strong> is right for you?",
     "quizSection": {
         "title": "Take our Free Health Care Career Quiz to Find Out!",

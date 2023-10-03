@@ -2,7 +2,7 @@
 import { useUser } from "@/context/context";
 // import Score from '@/components/Score';
 import { useLocalStorage } from "@/hooks/useLocalStorage";
-import styles from "@/styles/global/layouts/Quiz.module.scss";
+import styles from "@/styles/components/Quiz.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";

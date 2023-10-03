@@ -1,0 +1,224 @@
+// Colors
+@use "sass:color";
+@use "sass:map";
+
+// Primary Appily Branding Colors
+$c-black: #111518;
+$c-white: #fff;
+$c-orange: #ed8b00;
+$c-slateGray: #333f48;
+$c-yellow: #ffe510;
+$c-teal: #00b1b0;
+
+// Secondary Appily Branding Colors
+$c-navy: #031d32;
+$c-violet: #d100ff;
+
+// =====================================
+// Color Shades
+
+$black: (
+  900: $c-black,
+  800: color.adjust($c-black, $lightness: 10%),
+  700: color.adjust($c-black, $lightness: 20%),
+  600: color.adjust($c-black, $lightness: 30%),
+  500: color.adjust($c-black, $lightness: 40%),
+  400: color.adjust($c-black, $lightness: 50%),
+  300: color.adjust($c-black, $lightness: 60%),
+  200: color.adjust($c-black, $lightness: 70%),
+  100: color.adjust($c-black, $lightness: 80%),
+  50: color.adjust($c-black, $lightness: 90%)
+);
+
+$orange: (
+  900: color.adjust($c-orange, $lightness: -40%),
+  800: color.adjust($c-orange, $lightness: -30%),
+  700: color.adjust($c-orange, $lightness: -20%),
+  600: color.adjust($c-orange, $lightness: -10%),
+  500: $c-orange,
+  400: color.adjust($c-orange, $lightness: 10%),
+  300: color.adjust($c-orange, $lightness: 20%),
+  200: color.adjust($c-orange, $lightness: 30%),
+  100: color.adjust($c-orange, $lightness: 40%),
+  50: color.adjust($c-orange, $lightness: 50%)
+);
+
+$slateGray: (
+  900: $c-slateGray,
+  800: color.adjust($c-slateGray, $lightness: 10%),
+  700: color.adjust($c-slateGray, $lightness: 20%),
+  600: color.adjust($c-slateGray, $lightness: 30%),
+  500: color.adjust($c-slateGray, $lightness: 40%),
+  400: color.adjust($c-slateGray, $lightness: 50%),
+  300: color.adjust($c-slateGray, $lightness: 60%),
+  200: color.adjust($c-slateGray, $lightness: 70%),
+  100: color.adjust($c-slateGray, $lightness: 80%),
+  50: color.adjust($c-slateGray, $lightness: 90%)
+);
+
+$yellow: (
+  900: $c-yellow,
+  800: color.adjust($c-yellow, $lightness: 10%),
+  700: color.adjust($c-yellow, $lightness: 20%),
+  600: color.adjust($c-yellow, $lightness: 30%),
+  500: color.adjust($c-yellow, $lightness: 40%),
+  400: color.adjust($c-yellow, $lightness: 50%),
+  300: color.adjust($c-yellow, $lightness: 60%),
+  200: color.adjust($c-yellow, $lightness: 70%),
+  100: color.adjust($c-yellow, $lightness: 80%),
+  50: color.adjust($c-yellow, $lightness: 90%)
+);
+
+$teal: (
+  900: color.adjust($c-teal, $lightness: -30%),
+  800: color.adjust($c-teal, $lightness: -20%),
+  700: color.adjust($c-teal, $lightness: -10%),
+  600: $c-teal,
+  500: color.adjust($c-teal, $lightness: 10%),
+  400: color.adjust($c-teal, $lightness: 20%),
+  300: color.adjust($c-teal, $lightness: 30%),
+  200: color.adjust($c-teal, $lightness: 40%),
+  100: color.adjust($c-teal, $lightness: 50%),
+  50: color.adjust($c-teal, $lightness: 60%)
+);
+
+$navy: (
+  900: color.adjust($c-navy, $lightness: -30%),
+  800: color.adjust($c-navy, $lightness: -15%),
+  700: color.adjust($c-navy, $lightness: -5%),
+  600: $c-navy,
+  500: color.adjust($c-navy, $lightness: 10%),
+  400: color.adjust($c-navy, $lightness: 30%),
+  300: color.adjust($c-navy, $lightness: 50%),
+  200: color.adjust($c-navy, $lightness: 70%),
+  100: color.adjust($c-navy, $lightness: 90%),
+  50: color.adjust($c-navy, $lightness: 95%)
+);
+
+$violet: (
+  900: $c-violet,
+  800: color.adjust($c-violet, $lightness: 10%),
+  700: color.adjust($c-violet, $lightness: 20%),
+  600: color.adjust($c-violet, $lightness: 30%),
+  500: color.adjust($c-violet, $lightness: 40%),
+  400: color.adjust($c-violet, $lightness: 50%),
+  300: color.adjust($c-violet, $lightness: 60%),
+  200: color.adjust($c-violet, $lightness: 70%),
+  100: color.adjust($c-violet, $lightness: 80%),
+  50: color.adjust($c-violet, $lightness: 90%)
+);
+
+// =====================================
+
+$texts: (
+  dark: (
+    "headingPrimary": $c-white,
+    "headingSecondary": map.get($teal, 500),
+    "bodyPrimary": $c-white,
+    "bodySecondary": $c-slateGray,
+    "linkPrimary": $c-orange,
+    "linkHover": $c-teal
+  ),
+  light: (
+    "headingPrimary": $c-navy,
+    "headingSecondary": $c-teal,
+    "bodyPrimary": $c-black,
+    "bodySecondary": $c-slateGray,
+    "linkPrimary": $c-orange,
+    "linkHover": map.get($teal, 500)
+  )
+);
+
+$backgrounds: (
+  dark: (
+    "bg1": $c-navy,
+    "bg2": $c-orange,
+    "bg3": $c-yellow,
+    "bg4": $c-teal,
+    "bg-body": map.get($navy, 700),
+    "button": $c-orange,
+    "shadow1": $c-yellow
+  ),
+  light: (
+    "bg1": color.adjust($c-slateGray, $lightness: 70%),
+    "bg2": color.adjust($c-orange, $lightness: 40%),
+    "bg3": $c-yellow,
+    "bg4": color.adjust($c-teal, $lightness: 50%),
+    "bg-body": $c-white
+  )
+);
+
+$borders: (
+  dark: (
+    "border-1": $c-orange,
+    "border-2": $c-navy,
+    "border-3": $c-teal,
+    "border-4": map.get($navy, 600),
+    "border-5": map.get($teal, 700)
+  ),
+  light: (
+    "border-1": map.get($orange, 300),
+    "border-2": map.get($navy, 300),
+    "border-3": map.get($teal, 500),
+    "border-4": map.get($navy, 100)
+  )
+);
+
+$miscellaneous: (
+  "error": #cc0000,
+  "success": #00e50b,
+  "warning": #ffb700,
+  "texture": $c-slateGray
+);
+
+// =====================================
+
+:where(html) {
+  @each $shade, $color in $black {
+    --c-black-#{$shade}: #{$color};
+  }
+
+  @each $shade, $color in $orange {
+    --c-orange-#{$shade}: #{$color};
+  }
+
+  @each $shade, $color in $yellow {
+    --c-yellow-#{$shade}: #{$color};
+  }
+
+  @each $shade, $color in $teal {
+    --c-teal-#{$shade}: #{$color};
+  }
+
+  @each $shade, $color in $navy {
+    --c-navy-#{$shade}: #{$color};
+  }
+
+  @each $shade, $color in $violet {
+    --c-violet-#{$shade}: #{$color};
+  }
+
+  $maps: $texts, $backgrounds, $borders;
+
+  @each $map in $maps {
+    @each $name, $color in map-get($map, dark) {
+      --c-#{$name}: #{$color};
+    }
+  }
+
+  @each $name, $color in $miscellaneous {
+    --c-#{$name}: #{$color};
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :where(html) {
+    $maps: $texts, $backgrounds, $borders;
+
+    @each $map in $maps {
+      @each $name, $color in map-get($map, light) {
+        --c-#{$name}: #{$color};
+      }
+    }
+  }
+}

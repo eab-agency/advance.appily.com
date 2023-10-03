@@ -1,0 +1,113 @@
+// @use 'fonts';
+// @use 'tokens';
+
+html {
+  line-height: 1.5;
+  font-family: var(--ff-body);
+}
+
+// ================
+// Headlines
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1rem 0;
+  line-height: var(--lh-l);
+  font-family: var(--ff-heading);
+}
+
+h1 {
+  font-size: clamp(var(--fs-xxl), 6vw, var(--fs-xxxl));
+  font-weight: var(--fw-light);
+  color: var(--c-headingPrimary);
+  line-height: var(--lh-xs);
+  text-transform: uppercase;
+
+  strong {
+    font-weight: var(--fw-bold);
+    font-size: 1.5em;
+    display: block;
+    color: var(--c-headingSecondary);
+  }
+}
+
+h2 {
+  font-size: clamp(var(--fs-xl), 4vw, var(--fs-xxl));
+  font-weight: var(--fw-light);
+  color: var(--c-headingPrimary);
+}
+
+h3 {
+  font-size: clamp(var(--fs-s), 4vw, var(--fs-xl));
+  font-weight: var(--fw-semibold);
+  color: var(--c-headingPrimary);
+}
+
+h4 {
+  color: var(--c-headingPrimary);
+}
+
+h5 {
+  color: var(--c-headingPrimary);
+}
+
+h6 {
+  color: var(--c-headingPrimary);
+}
+
+// ================
+// Body Copy
+
+p,
+ul,
+ol,
+blockquote,
+address {
+  margin: 0 0 1rem 0;
+  font-style: normal;
+  color: var(--c-bodyPrimary);
+  font-size: clamp(var(--fs-xs), 2vw, var(--fs-m));
+
+  strong {
+    font-weight: var(--fw-bold);
+  }
+}
+
+ul,
+ol {
+  li {
+  }
+}
+
+a {
+  text-decoration: underline;
+  color: var(--c-linkPrimary);
+
+  &:hover,
+  &:focus {
+    text-decoration: dashed;
+    color: var(--c-linkHover);
+  }
+}
+
+%small,
+small,
+.copyright {
+  font-size: var(--fs-xs);
+  font-style: italic;
+  line-height: 135%;
+  color: var(--c-bodySecondary);
+  display: block;
+}
+
+// ================
+// Other Type Styles
+
+.error,
+.val-header {
+  color: var(--c-error);
+}

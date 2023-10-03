@@ -1,7 +1,7 @@
 export { Button } from "./Button";
 export { StickyCta } from "./StickyCta";
 export { default as PageFooter } from "./PageFooter";
-export { default as PageHeader } from "./PageHeader";
+// export { default as PageHeader } from "./Header/PageHeader";
 export { Quiz } from "./Quiz";
 export { Tabs } from "./Tabs";
 export { Accordion } from "./Accordion";

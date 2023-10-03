@@ -1,5 +1,5 @@
 import { useRequest } from "@/hooks/useRequest";
-import styles from "@/styles/global/layouts/Question.module.scss";
+import styles from "@/styles/components/Question.module.scss";
 /* eslint-disable react/no-danger */
 import React, { useEffect, useState } from "react";
 import useSWR from "swr";

@@ -1,5 +1,5 @@
 import { Button } from "@/components";
-import styles from "@/styles/global/layouts/EmailOnly.module.scss";
+import styles from "@/styles/components/EmailOnly.module.scss";
 import Head from "next/head";
 import Image from "next/image";
 // eslint-disable-next-line import/no-unresolved

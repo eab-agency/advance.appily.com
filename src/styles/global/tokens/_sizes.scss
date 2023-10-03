@@ -1,0 +1,52 @@
+// Size variables
+
+$font-size: (
+  fs-xxxs: 0.65rem,
+  fs-xxs: 0.78rem,
+  fs-xs: 0.88rem,
+  fs-s: 1rem,
+  fs-m: 1.15rem,
+  fs-l: 1.3rem,
+  fs-xl: 1.8rem,
+  fs-xxl: 2.2rem,
+  fs-xxxl: 3.5rem,
+  fs-xxxxl: 4.5rem
+);
+
+$border-radius: (
+  br-xxs: 0.125rem,
+  br-xs: 0.25rem,
+  br-s: 0.5rem,
+  br-m: 1rem,
+  br-l: 1.5rem,
+  br-xl: 2rem,
+  br-xxl: 3rem,
+  br-xxxl: 4rem
+);
+
+$border-width: (
+  bw-xxs: 0.0625rem,
+  bw-xs: 0.1rem,
+  bw-s: 0.125rem,
+  bw-m: 0.25rem,
+  bw-l: 0.5rem,
+  bw-xl: 0.75rem,
+  bw-xxl: 1rem
+);
+
+$layout-width: (
+  layout-lg: 80rem,
+  layout-md: 60rem,
+  layout-sm: 40rem
+);
+
+// ================
+:where(html) {
+  $maps: $font-size, $border-radius, $border-width, $layout-width;
+
+  @each $map in $maps {
+    @each $size, $value in $map {
+      --#{$size}: #{$value};
+    }
+  }
+}

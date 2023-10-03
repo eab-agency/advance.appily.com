@@ -1,0 +1,54 @@
+// Spacing variables
+
+$gutter: clamp(2rem, 4vw, 4rem);
+$gutter-column: clamp(0.5rem, 2.5vw, 2.5rem);
+
+$padding: (
+  p-xxs: 0.25rem,
+  p-xs: 0.5rem,
+  p-s: 0.75rem,
+  p-m: 1rem,
+  p-l: 1.5rem,
+  p-xl: 2rem,
+  p-xxl: 3rem,
+  p-xxxl: 4rem,
+  p-xxxxl: 6rem
+);
+
+$margin: (
+  m-xxs: 0.25rem,
+  m-xs: 0.5rem,
+  m-s: 0.75rem,
+  m-m: 1rem,
+  m-l: 1.5rem,
+  m-xl: 2rem,
+  m-xxl: 3rem,
+  m-xxxl: 4rem
+);
+
+$layers: (
+  layer-0: 1,
+  layer-1: 10,
+  layer-2: 20,
+  layer-3: 30,
+  layer-4: 40,
+  layer-5: 50,
+  layer-6: 60,
+  layer-7: 70,
+  layer-8: 80,
+  layer-9: 90,
+  layer-10: 100,
+  layer-9999: 9999
+);
+
+:where(html) {
+  --gutter: #{$gutter};
+
+  $maps: $padding, $margin, $layers;
+
+  @each $map in $maps {
+    @each $size, $value in $map {
+      --#{$size}: #{$value};
+    }
+  }
+}

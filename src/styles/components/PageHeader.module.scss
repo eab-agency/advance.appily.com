@@ -1,0 +1,18 @@
+// Page Header Module styles
+@use "@/styles/global/tokens/breakpoints";
+
+.pageHeader {
+  border-bottom: var(--bw-m) solid var(--c-border-3);
+  background: var(--c-bg-body);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  max-width: breakpoints.$mq-1500;
+  margin: 0 auto;
+  padding-block: clamp(var(--p-xs), 5vw, var(--p-m));
+  padding-inline: clamp(var(--p-l), 5vw, var(--p-xxl));
+  gap: var(--gutter);
+  position: relative;
+}

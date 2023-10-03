@@ -1,4 +1,4 @@
-import styles from '@/styles/global/components/modules/PageHeader.module.scss'
+import styles from '@/styles/components/PageHeader.module.scss'
 import React from 'react'
 import MainLogo from './MainLogo'
 import NavBar from './NavBar'
@@ -14,12 +14,10 @@ interface Link {
 
 export const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
-    <header>
+    <header className={styles.pageHeader}>
       <div className={styles.container}>
-        <div className={styles['page-header-results']}>
           <MainLogo />
           <NavBar links={links} />
-        </div>
       </div>
     </header>
   )

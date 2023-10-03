@@ -1,0 +1,162 @@
+// @use 'sass:color';
+// @use '../config/tokens';
+
+// .results-container {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     gap: clamp(tokens.$baseUnit * 1, 5vw, tokens.$baseUnit * 3);
+// }
+
+// .role {
+//     display: block;
+//     width: 100%;
+//     max-width: tokens.$mq-800;
+//     margin-bottom: -7.7em;
+
+//     .roleTitle {
+//         font-size: clamp(tokens.$fs-xl, 5vw, tokens.$fs-xxxl);
+//     }
+
+//     p {
+//         font-size: clamp(1rem, 2vw, 1.75rem);
+//     }
+// }
+
+// // .role {
+// //     display: block;
+// //     width: 100%;
+// //     max-width: tokens.$mq-600;
+// //     background: tokens.$c-blue-900 url('/images/texture.png');
+// //     border: 0.5em solid tokens.$c-blue-500;
+// //     padding: clamp(tokens.$baseUnit * 1, 5vw, tokens.$baseUnit * 2);
+
+// //     .roleTitle {
+// //         font-size: clamp(tokens.$fs-m, 3vw, tokens.$fs-l);
+// //         padding-bottom: 0.5em;
+// //         margin-bottom: 1em;
+// //         border-bottom: 1px solid tokens.$c-blue-500;
+// //     }
+
+// //     // light mode
+// //     @media (prefers-color-scheme: light) {
+// //         background: color.adjust(tokens.$c-turquoise-500, $lightness: 45%)
+// //             url('/images/texture-light.png');
+// //         border: 0.5em solid
+// //             color.adjust(
+// //                 color.adjust(tokens.$c-turquoise-500, $lightness: 30%),
+// //                 $saturation: -20%
+// //             );
+// //     }
+// // }
+
+// .engage {
+//     display: block;
+//     width: 100%;
+//     position: relative;
+//     background: tokens.$c-blue-900;
+//     padding-bottom: clamp(tokens.$baseUnit * 1, 5vw, tokens.$baseUnit * 2);
+
+//     &::before {
+//         content: '';
+//         display: block;
+//         position: absolute;
+//         top: 0;
+//         left: 50%;
+//         transform: translateX(-50%);
+//         width: 100vw;
+//         height: 100%;
+//         background: tokens.$c-blue-900;
+//         z-index: tokens.$layer-1;
+//         box-shadow: -0.5em -0.5em 1em rgba(tokens.$c-blue-800, 0.8);
+//     }
+
+//     // add a light mode
+//     @media (prefers-color-scheme: light) {
+//         background: color.adjust(tokens.$c-blue-800, $lightness: 70%);
+
+//         &::before {
+//             background: color.adjust(tokens.$c-blue-800, $lightness: 70%);
+//         }
+//     }
+
+//     &::after {
+//         content: '';
+//         display: block;
+//         width: 100vw;
+//         height: 100vh;
+//         position: absolute;
+//         top: 0;
+//         left: 50%;
+//         transform: translateX(-50%) translateY(-50%);
+//         background: rgba(tokens.$c-blue-800, 0.7);
+//     }
+
+//     div,
+//     button {
+//         position: relative;
+//         z-index: tokens.$layer-2;
+//     }
+// }
+
+// .engageCopy {
+//     margin-top: 1em;
+//     position: relative;
+//     z-index: tokens.$layer-2;
+//     padding-block: clamp(tokens.$baseUnit * 1, 5vw, tokens.$baseUnit * 2);
+
+//     p {
+//         font-size: clamp(tokens.$fs-m, 3vw, tokens.$fs-xl);
+//         // color: tokens.$c-blue-800;
+
+//         strong {
+//             // color: color.adjust(tokens.$c-malva-500, $lightness: -30%);
+//         }
+//     }
+
+//     & + div {
+//         display: block;
+//         padding-block: clamp(tokens.$baseUnit * 1, 5vw, tokens.$baseUnit * 2);
+//         & > h2 {
+//             position: relative;
+//             padding-bottom: 0.5em;
+//             margin-bottom: 1em;
+//             // color: tokens.$c-blue-800;
+
+//             &::after {
+//                 content: '';
+//                 position: absolute;
+//                 bottom: 0;
+//                 left: 0;
+//                 width: 100vw;
+//                 height: 1px;
+//                 background: color.adjust(tokens.$c-blue-500, $lightness: 30%);
+//             }
+//         }
+
+//         label {
+//             // color: #0014b8;
+//         }
+//     }
+// }
+
+// // .formContainer {
+// //     display: block;
+// //     padding-block: clamp(tokens.$baseUnit * 1, 5vw, tokens.$baseUnit * 2);
+// //     & > h2 {
+// //         position: relative;
+// //         padding-bottom: 0.5em;
+// //         margin-bottom: 1em;
+// //         color: tokens.$c-blue-800;
+
+// //         &::after {
+// //             content: '';
+// //             position: absolute;
+// //             bottom: 0;
+// //             left: 0;
+// //             width: 100vw;
+// //             height: 1px;
+// //             background: tokens.$c-blue-300;
+// //         }
+// //     }
+// // }

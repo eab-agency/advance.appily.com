@@ -1,12 +1,12 @@
-import { SWRConfig } from 'swr';
-import '@/styles/app.scss';
-import Script from 'next/script';
-import { useRouter } from 'next/router';
 import { GTM_ID, pageview } from '@/lib/gtm';
-import { useEffect } from 'react';
-import { ModalContainer } from 'reoverlay';
+import '@/styles/styles.scss';
 import { Analytics } from '@vercel/analytics/react';
+import { useRouter } from 'next/router';
+import Script from 'next/script';
+import { useEffect } from 'react';
 import { CookiesProvider } from 'react-cookie';
+import { ModalContainer } from 'reoverlay';
+import { SWRConfig } from 'swr';
 import { ContextProvider } from '../context/context';
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
