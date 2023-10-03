@@ -24,7 +24,7 @@ export type Props = {
 export const Button: React.FC<Props> = ({
   el: elFromProps = 'link',
   label,
-children,
+  children,
   newTab,
   href,
   appearance = 'default',
@@ -48,9 +48,9 @@ children,
     .join(' ')
 
   const content = (
-    <div className={classes.content}>
+    <div className="btn-content">
       {/* <Chevron /> */}
-      <span className={classes.label}>{label}</span>
+      <span className="btn-label">{label}</span>
       {children}
     </div>
   )

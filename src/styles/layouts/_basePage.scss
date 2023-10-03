@@ -1,4 +1,4 @@
-@use "@/styles/global/tokens/breakpoints";
+@use "@/styles/global/tokens";
 
 body {
   background: var(--c-bg-body);
@@ -12,13 +12,13 @@ body {
     width: 100%;
     height: 100%;
     background: url(/images/bg-pattern-dark.svg) center center;
-    background-size: cover;
-    opacity: 0.1;
-    z-index: -1;
+    background-size: contain;
+    // opacity: 0.1;
+    z-index: tokens.$layer-0;
 
     @media (prefers-color-scheme: light) {
       background: url(/images/bg-pattern-light.svg) center center;
-      opacity: 0.5;
+      opacity: 1;
     }
   }
 
@@ -31,21 +31,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-inline: clamp(var(--p-m), 6vw, var(--p-xxxl));
-    padding-block: clamp(var(--p-l), 10vw, var(--p-xxxxl));
+    padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+    padding-block: clamp(tokens.$padding-xl, 8vw, tokens.$padding-xxxl);
   }
 
   .group {
     display: flex;
     justify-content: center;
     position: relative;
-    z-index: var(--layer-10);
+    z-index: tokens.$layer-1;
 
     &.center-aligned {
       justify-content: center;
       align-items: center;
       width: 100%;
-      max-width: breakpoints.$mq-1200;
+      max-width: tokens.$mq-1200;
     }
   }
 
@@ -60,7 +60,7 @@ body {
       flex: 1;
     }
 
-    @media (max-width: breakpoints.$mq-900) {
+    @media (max-width: tokens.$mq-900) {
       flex-direction: column;
     }
   }
@@ -68,7 +68,7 @@ body {
   .column {
     display: flex;
     flex-direction: column;
-    gap: var(--gutter-column);
+    gap: clamp(tokens.$size-4, 2vw, tokens.$size-6);
   }
 
   .cols {
@@ -77,13 +77,13 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: breakpoints.$mq-900;
+    max-width: tokens.$mq-900;
     margin: 0 auto;
-    padding: clamp(var(--p-m), 4vw, var(--p-xl)) 0;
+    padding: clamp(tokens.$padding-m, 4vw, tokens.$padding-xl);
   }
 
   .cols-2 {
-    gap: var(--gutter);
+    gap: clamp(tokens.$size-4, 6vw, tokens.$size-9);
 
     & > div {
       // flex: 1 1 50%;

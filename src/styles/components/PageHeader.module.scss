@@ -1,18 +1,24 @@
 // Page Header Module styles
-@use "@/styles/global/tokens/breakpoints";
+@use "@/styles/global/tokens";
 
 .pageHeader {
-  border-bottom: var(--bw-m) solid var(--c-border-3);
+  // border-bottom: var(--bw-m) solid var(--c-border-3);
   background: var(--c-bg-body);
+  position: sticky;
+  top: 0;
+  z-index: tokens.$layer-99;
 }
 
 .container {
   display: flex;
   align-items: center;
-  max-width: breakpoints.$mq-1500;
+  max-width: tokens.$mq-1500;
   margin: 0 auto;
-  padding-block: clamp(var(--p-xs), 5vw, var(--p-m));
-  padding-inline: clamp(var(--p-l), 5vw, var(--p-xxl));
-  gap: var(--gutter);
+  padding-inline: clamp(tokens.$padding-m, 5vw, tokens.$padding-xl);
+  gap: clamp(tokens.$size-2, 5vw, tokens.$size-7);
   position: relative;
+
+  @media (max-width: tokens.$mq-1000) {
+    padding-block: clamp(tokens.$padding-s, 5vw, tokens.$padding-m);
+  }
 }

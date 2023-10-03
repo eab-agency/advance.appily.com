@@ -10,41 +10,66 @@ $f-serif: "museo-slab", serif;
 $f-mono: monospace;
 $f-icons: "icomoon";
 
+$f-body: $f-sans;
+$f-heading: $f-serif;
+
+$f-lineHeight-normal: 1.5;
+$f-lineHeight-expanded: 1.8;
+$f-lineHeight-condensed: 1.2;
+$f-lineHeight-tight: 1;
+
+$fontWeight-thin: 100;
+$fontWeight-light: 300;
+$fontWeight-normal: 400;
+$fontWeight-medium: 500;
+$fontWeight-semibold: 600;
+$fontWeight-bold: 700;
+$fontWeight-extrabold: 800;
+$fontWeight-black: 900;
+
 // ================
 
-$typography-variables: (
-  ff-sans: $f-sans,
-  ff-serif: $f-serif,
-  ff-mono: $f-mono,
-  ff-icons: $f-icons,
-  ff-heading: $f-serif,
-  ff-body: $f-sans,
-  fw-thin: 100,
-  fw-light: 300,
-  fw-normal: 400,
-  fw-medium: 500,
-  fw-semibold: 600,
-  fw-bold: 700,
-  fw-extrabold: 800,
-  fw-black: 900,
-  lh-xxxl: 1.8,
-  lh-xxl: 1.5,
-  lh-xl: 1.4,
-  lh-l: 1.3,
-  lh-m: 1.2,
-  lh-s: 1.1,
-  lh-xs: 1,
-  ls-xxxl: 0.2rem,
-  ls-xxl: 0.15rem,
-  ls-xl: 0.1rem,
-  ls-l: 0.05rem,
-  ls-m: 0,
-  ls-s: -0.05rem,
-  ls-xs: -0.1rem
-);
+// $typography-variables: (
+//   ff-sans: $f-sans,
+//   ff-serif: $f-serif,
+//   ff-mono: $f-mono,
+//   ff-icons: $f-icons,
+//   ff-heading: $f-serif,
+//   ff-body: $f-sans,
+//   fw-thin: 100,
+//   fw-light: 300,
+//   fw-normal: 400,
+//   fw-medium: 500,
+//   fw-semibold: 600,
+//   fw-bold: 700,
+//   fw-extrabold: 800,
+//   fw-black: 900,
+//   lh-xxxl: 1.8,
+//   lh-xxl: 1.5,
+//   lh-xl: 1.4,
+//   lh-l: 1.3,
+//   lh-m: 1.2,
+//   lh-s: 1.1,
+//   lh-xs: 1,
+//   ls-xxxl: 0.2rem,
+//   ls-xxl: 0.15rem,
+//   ls-xl: 0.1rem,
+//   ls-l: 0.05rem,
+//   ls-m: 0,
+//   ls-s: -0.05rem,
+//   ls-xs: -0.1rem
+// );
 
-:where(html) {
-  @each $property, $value in $typography-variables {
-    --#{$property}: #{$value};
-  }
-}
+// :where(html) {
+//   @each $property, $value in $typography-variables {
+//     --#{$property}: #{$value};
+//   }
+// }
+
+// loop and create sass variables
+
+// @each $property, $value in $typography-variables {
+//   $property: $value;
+// }
+
+$fs-xxl: 2.2rem;

@@ -1,54 +1,44 @@
 // Spacing variables
 
-$gutter: clamp(2rem, 4vw, 4rem);
-$gutter-column: clamp(0.5rem, 2.5vw, 2.5rem);
+// $gutter-row: clamp(2rem, 4vw, 4rem);
+// $gutter-column: clamp(0.5rem, 2.5vw, 2.5rem);
 
-$padding: (
-  p-xxs: 0.25rem,
-  p-xs: 0.5rem,
-  p-s: 0.75rem,
-  p-m: 1rem,
-  p-l: 1.5rem,
-  p-xl: 2rem,
-  p-xxl: 3rem,
-  p-xxxl: 4rem,
-  p-xxxxl: 6rem
-);
+// $gutter-s: 1rem;
+// $gutter-m: 2rem;
+// $gutter-l: 3rem;
+// $gutter-xl: 4rem;
 
-$margin: (
-  m-xxs: 0.25rem,
-  m-xs: 0.5rem,
-  m-s: 0.75rem,
-  m-m: 1rem,
-  m-l: 1.5rem,
-  m-xl: 2rem,
-  m-xxl: 3rem,
-  m-xxxl: 4rem
-);
+$padding-xxs: 0.25rem;
+$padding-xs: 0.5rem;
+$padding-s: 0.75rem;
+$padding-m: 1rem;
+$padding-l: 1.5rem;
+$padding-xl: 2rem;
+$padding-xxl: 3rem;
+$padding-xxxl: 4rem;
+$padding-xxxxl: 6rem;
 
-$layers: (
-  layer-0: 1,
-  layer-1: 10,
-  layer-2: 20,
-  layer-3: 30,
-  layer-4: 40,
-  layer-5: 50,
-  layer-6: 60,
-  layer-7: 70,
-  layer-8: 80,
-  layer-9: 90,
-  layer-10: 100,
-  layer-9999: 9999
-);
+$margin-xxs: 0.25rem;
+$margin-xs: 0.5rem;
+$margin-s: 0.75rem;
+$margin-m: 1rem;
+$margin-l: 1.5rem;
+$margin-xl: 2rem;
+$margin-xxl: 3rem;
+$margin-xxxl: 4rem;
+$margin-xxxxl: 6rem;
 
-:where(html) {
-  --gutter: #{$gutter};
-
-  $maps: $padding, $margin, $layers;
-
-  @each $map in $maps {
-    @each $size, $value in $map {
-      --#{$size}: #{$value};
-    }
-  }
-}
+$layer-0: -1;
+$layer-1: 10;
+$layer-2: 20;
+$layer-3: 30;
+$layer-4: 40;
+$layer-5: 50;
+$layer-6: 60;
+$layer-7: 70;
+$layer-8: 80;
+$layer-9: 90;
+$layer-10: 100;
+$layer-50: 500;
+$layer-99: 999;
+$layer-999: 9999;
