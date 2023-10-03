@@ -12,6 +12,7 @@ import {
 	Stats,
 	StickyCta,
 	Tabs,
+	TextWithImage,
 } from "@/components";
 import styles from "@/styles/global/layouts/FinalPage.module.scss";
 import { usePathname } from "next/navigation";
@@ -41,57 +42,21 @@ const ExecutivePage = () => {
 					<CareerPaths careerPaths={data.careerPaths} />
 
 					<Stats stats={data.stats} source={data.statsSource} />
-					<section className={styles["best-degrees"]}>
-						<div className={styles["degrees-intro"]}>
-							<h2>What are the best health care degrees for The Executive?</h2>
-							<p>
-								For many roles in The Executive’s career path, a bachelor’s
-								degree is a minimum qualification. Master’s degrees are common
-								and often preferred, especially for more senior management
-								roles.
-							</p>
-						</div>
-						<Tabs className="degree-tabs" tabs={data.degreeTabs} />
-					</section>
-					<section className={styles.certificates}>
-						{/* <div className={styles.accordionHead}> */}
-						<Accordion
-							title="Does The Executive need a license, certification, or
-                        registration?"
-						>
-							<figure>
-								<Image
-									src="/images/certificate-image.svg"
-									width={478}
-									height={284}
-									alt="Medical records"
-								/>
-							</figure>
-							<div>
-								<p>
-									The need for a license or certification depends on the role.
-								</p>
-								<p>
-									All states require licensure for{" "}
-									<strong>nursing home administrators.</strong> The process
-									often involves a state-approved training program and national
-									licensing exam, and varies by state.
-								</p>
-								<p>
-									A license is <strong>not typically required</strong> in other
-									areas of medical and health services management, although some
-									positions do require a registered nurse or social worker
-									license.
-								</p>
-								<p>
-									While not required,{" "}
-									<strong>certification can help your resume stand out</strong>{" "}
-									among your peers. You could become certified in many of areas
-									of practice, such as medical management or health information
-									management.
-								</p>
-							</div>
-						</Accordion>
+
+					<TextWithImage
+						content={data.textWithImage.content}
+						imagePath={data.textWithImage.imagePath}
+						className="whatever-you-need"
+					/>
+
+					<section>
+						<h3>{data.degreeTabs.title}</h3>
+						<p>{data.degreeTabs.description}</p>
+						{data.degreeTabs.degrees.map(degree => (
+							<Accordion title={degree.title}>
+								<div dangerouslySetInnerHTML={{ __html: degree.content }} />
+							</Accordion>
+						))}
 					</section>
 					<div
 						id="explore-your-school-matches"

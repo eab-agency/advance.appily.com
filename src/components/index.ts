@@ -10,3 +10,4 @@ export { Stats } from "./Stats";
 export { Header } from "./Header";
 export { Card } from "./Card";
 export { CareerPaths } from "./CareerPaths";
+export { TextWithImage } from "./TextWithImage";

@@ -11,6 +11,7 @@ import {
 	Stats,
 	StickyCta,
 	Tabs,
+	TextWithImage,
 } from "@/components";
 import styles from "@/styles/global/layouts/FinalPage.module.scss";
 import { usePathname } from "next/navigation";
@@ -40,43 +41,20 @@ const AnalystPage = () => {
 					<CareerPaths careerPaths={data.careerPaths} />
 
 					<Stats stats={data.stats} source={data.statsSource} />
-					<section className={styles["best-degrees"]}>
-						<div className={styles["degrees-intro"]}>
-							<h2>What are the best health care degrees for The Analyst?</h2>
-							<p>
-								The degree necessary for careers in The Analyst's path varies
-								depending on responsibilities. An associate's degree is a
-								minimum requirement, with many roles preferring a bachelor's or
-								master's degree.
-							</p>
-						</div>
-						<Tabs tabs={data.degreeTabs} className="degree-tabs" />
-					</section>
-					<section className={styles.certificates}>
-						<Accordion title="Does The Analyst need a license, certification, or registration?">
-							<figure>
-								<Image
-									src="/images/certificate-image.svg"
-									width={478}
-									height={284}
-									alt="Medical records"
-								/>
-							</figure>
-							<div>
-								<p>
-									Employers may prefer to hire health information technologists
-									and medical registrars who have certification, or they may
-									expect applicants to earn certification after being hired.
-								</p>
-								<p>
-									Credentials for a variety of specializations are available
-									from professional organizations, including the Registered
-									Health Information Technician (RHIT), the Certified
-									Documentation Improvement Practitioner (CDIP), and the
-									Certified Health Data Analyst (CHDA).
-								</p>
-							</div>
-						</Accordion>
+
+					<TextWithImage
+						content={data.textWithImage.content}
+						imagePath={data.textWithImage.imagePath}
+						className="whatever-you-need"
+					/>
+					<section>
+						<h3>{data.degreeTabs.title}</h3>
+						<p>{data.degreeTabs.description}</p>
+						{data.degreeTabs.degrees.map(degree => (
+							<Accordion title={degree.title}>
+								<div dangerouslySetInnerHTML={{ __html: degree.content }} />
+							</Accordion>
+						))}
 					</section>
 					<div
 						id="explore-your-school-matches"

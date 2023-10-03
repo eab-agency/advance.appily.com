@@ -60,16 +60,44 @@
 					"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
 				}
 			],
-			"degreeTabs": [
-				{
-					"title": "Master's",
-					"content": "<p>If you do have a bachelor’s degree and some work experience, an MBA in Healthcare Management is a smart next step. This MBA concentration will use a health care lens to give you a broad overview of business ethics, law, leadership, accounting, marketing, budgeting, and planning.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and business.</p>"
-				},
-				{
-					"title": "Bachelor's",
-					"content": "<p>If you don’t already have a bachelor’s degree, many universities offer a Bachelor’s in Health Administration. You can often earn these degrees online in an accelerated format.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and business.</p>"
-				}
-			],
+			"degreeTabs": {
+				"title": "What degree do I need for a management career path?",
+				"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+				"degrees": [
+					{
+						"title": "Executive Business Administration",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Business Administration",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Organizational Leadership",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "International Business/Trade/Commerce",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Risk Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Office Management and Supervision",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Non-Profit/Public Organizational Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					}
+				]
+			},
 			"careerPaths": {
 				"title": "What kind of career is a good fit for me?",
 				"description": "Occupations that align with The Fearless Leader's career path involve planning, directing, and coordinating business activities and teams.",
@@ -95,6 +123,10 @@
 						"imagePath": "/images/ceo.jpg"
 					}
 				]
+			},
+			"textWithImage": {
+				"content": "<h2>Do I need a Master’s or an MBA?</h2><p>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+				"imagePath": "/images/ceo.jpg"
 			}
 		},
 		{
@@ -152,20 +184,44 @@
 					"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
 				}
 			],
-			"degreeTabs": [
-				{
-					"title": "Master's",
-					"content": "If you have a bachelor’s degree and want to further specialize your studies, these are some popular master’s in the health field:<ul><li><strong>Master of Science in Nursing (MSN):</strong> This program expands your nursing skill set and prepares you for roles such as nurse administrator, nurse educator, clinical nurse specialist, and more</li><li><strong>Master of Physician Assistant Studies:</strong> This program can prepare you to become a certified physician assistant, health educator, medical services manager, and more</li><li><strong>Master of Occupational Therapy (MOT):</strong> This is often the minimum credential required to practice occupational therapy, while many go on to earn the Doctor of Occupational Therapy</li><ul>"
-				},
-				{
-					"title": "Professional",
-					"content": "To reach the pinnacle of patient care, you can earn a professional doctorate such as:<ul><li>Doctor of Nursing Practice (DNP)</li><li>Medical Doctor (MD)</li><li>Doctor of Dental Surgery (DDS)</li><li>Doctor of Dental Medicine (DMD)</li><li>Doctor of Osteopathic Medicine (DO)</li><li>Doctor of Pharmacy (PharmD)</li></ul>"
-				},
-				{
-					"title": "Bachelor's",
-					"content": "If you don’t already have a bachelor’s degree, there are many good options to pursue based on your career of interest. Some popular ones include:<ul><li><strong>Bachelor of Science in Nursing (BSN):</strong> This program may allow for specialization into specific areas of nursing and often qualifies students to pursue nursing licensure in their state</li><li><strong>Bachelor’s in Biology:</strong> This is a popular undergraduate degree for students who will go on to pursue a master’s or professional doctorate.</li><li><strong>Bachelor’s in Nutrition and Dietetics:</strong> This degree can prepare you to work in roles such as health and wellness, K-12 nutrition programming, nutrition education, food labeling, and more. If you become a Registered Dietitian Nutritionist, there are even more roles available.</li></ul>"
-				}
-			],
+			"degreeTabs": {
+				"title": "What degree do I need for a management career path?",
+				"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+				"degrees": [
+					{
+						"title": "Executive Business Administration",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Business Administration",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Organizational Leadership",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "International Business/Trade/Commerce",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Risk Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Office Management and Supervision",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Non-Profit/Public Organizational Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					}
+				]
+			},
 			"careerPaths": {
 				"title": "What kind of career is a good fit for me?",
 				"description": "Occupations that align with The Creative Marketer's career path focus on creating and executing marketing strategies and campaigns",
@@ -191,6 +247,10 @@
 						"imagePath": "/images/ceo.jpg"
 					}
 				]
+			},
+			"textWithImage": {
+				"content": "<h2>Do I need a Master’s or an MBA?</h2><p>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+				"imagePath": "/images/ceo.jpg"
 			}
 		},
 		{
@@ -247,20 +307,44 @@
 					"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
 				}
 			],
-			"degreeTabs": [
-				{
-					"title": "Master's",
-					"content": "<p>If you do have a bachelor’s degree and want to further specialize your studies, these are some popular master’s in the health education field:</p><ul><li><strong>Master’s in Health Education and Promotion:</strong> This can prepare you for leadership positions in academic, clinical, community, or corporate settings, such as a community health coordinator or wellness coach.</li><li><strong>Master of Public Health (MPH):</strong> The MPH is professional degree that gives you tools to impact public health in careers such as a public health educator, clinical research coordinator, epidemiologist, or health policy analyst.</li><li><strong>Master of Science in Public Health:</strong> This is more of an academic research degree that will prepare you for doctoral studies.</li><li><strong>Master of Medical Sciences in Medical Education:</strong> This type of program teaches things like the science of learning, curriculum development, and adult learning theories as well as training on current tools and research relevant to the field you’d be teaching.</li></ul> <p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and education.</p>"
-				},
-				{
-					"title": "Doctoral",
-					"content": "<p>If you’re interested in teaching future medical professionals, <strong>a PhD in Health Professions Education (HPEd</strong> program and prepare clinicians and other health professionals without a research degree to make contributions to the scholarship of teaching and learning.</p><p>A <strong>Doctor of Education (EdD) in Health Education</strong> could also be a good fit for those interested leadership roles related to advocacy and policy development, administrative leadership in organizations providing appropriate care to communities, and university roles that train the next generation of health education specialists, community health educators, and public health professionals.</p>"
-				},
-				{
-					"title": "Bachelor's",
-					"content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Education or Health Promotion.</strong> You can often earn these degrees online. Employers may also accept bachelor’s degrees in business, social science, or other health care related fields.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and education.</p>"
-				}
-			],
+			"degreeTabs": {
+				"title": "What degree do I need for a management career path?",
+				"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+				"degrees": [
+					{
+						"title": "Executive Business Administration",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Business Administration",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Organizational Leadership",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "International Business/Trade/Commerce",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Risk Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Office Management and Supervision",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Non-Profit/Public Organizational Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					}
+				]
+			},
 			"careerPaths": {
 				"title": "What kind of career is a good fit for me?",
 				"description": "Occupations that align with The Money Maestro's career path involve financial analysis, management, and decision-making.",
@@ -286,6 +370,10 @@
 						"imagePath": "/images/ceo.jpg"
 					}
 				]
+			},
+			"textWithImage": {
+				"content": "<h2>Do I need a Master’s or an MBA?</h2><p>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+				"imagePath": "/images/ceo.jpg"
 			}
 		},
 		{
@@ -342,20 +430,44 @@
 					"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
 				}
 			],
-			"degreeTabs": [
-				{
-					"title": "Master's",
-					"content": "<p>If you do have a bachelor’s degree and want to further specialize your studies, these are some popular master’s in the health education field:</p><ul><li><strong>Master’s in Health Education and Promotion:</strong> This can prepare you for leadership positions in academic, clinical, community, or corporate settings, such as a community health coordinator or wellness coach.</li><li><strong>Master of Public Health (MPH):</strong> The MPH is professional degree that gives you tools to impact public health in careers such as a public health educator, clinical research coordinator, epidemiologist, or health policy analyst.</li><li><strong>Master of Science in Public Health:</strong> This is more of an academic research degree that will prepare you for doctoral studies.</li><li><strong>Master of Medical Sciences in Medical Education:</strong> This type of program teaches things like the science of learning, curriculum development, and adult learning theories as well as training on current tools and research relevant to the field you’d be teaching.</li></ul> <p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and education.</p>"
-				},
-				{
-					"title": "Doctoral",
-					"content": "<p>If you’re interested in teaching future medical professionals, <strong>a PhD in Health Professions Education (HPEd</strong> program and prepare clinicians and other health professionals without a research degree to make contributions to the scholarship of teaching and learning.</p><p>A <strong>Doctor of Education (EdD) in Health Education</strong> could also be a good fit for those interested leadership roles related to advocacy and policy development, administrative leadership in organizations providing appropriate care to communities, and university roles that train the next generation of health education specialists, community health educators, and public health professionals.</p>"
-				},
-				{
-					"title": "Bachelor's",
-					"content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Education or Health Promotion.</strong> You can often earn these degrees online. Employers may also accept bachelor’s degrees in business, social science, or other health care related fields.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and education.</p>"
-				}
-			],
+			"degreeTabs": {
+				"title": "What degree do I need for a management career path?",
+				"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+				"degrees": [
+					{
+						"title": "Executive Business Administration",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Business Administration",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Organizational Leadership",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "International Business/Trade/Commerce",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Risk Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Office Management and Supervision",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Non-Profit/Public Organizational Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					}
+				]
+			},
 			"careerPaths": {
 				"title": "What kind of career is a good fit for me?",
 				"description": "Occupations that align with The Self-Starter's career path revolve around entrepreneurship and leading innovative ventures.",
@@ -381,6 +493,10 @@
 						"imagePath": "/images/ceo.jpg"
 					}
 				]
+			},
+			"textWithImage": {
+				"content": "<h2>Do I need a Master’s or an MBA?</h2><p>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+				"imagePath": "/images/ceo.jpg"
 			}
 		},
 		{
@@ -437,16 +553,44 @@
 					"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
 				}
 			],
-			"degreeTabs": [
-				{
-					"title": "Master's",
-					"content": "<p>If you do have a bachelor’s degree and want to further specialize your studies, these are some popular master’s in the health information field:</p><ul><li><strong>Master’s in Health Informatics:</strong> This degree can prepare you to analyze data and improve data systems with the goal of improving public health systems, healthcare delivery systems, and patient outcomes.</li><li><strong>Master’s in Bioinformatics:</strong> This degree provides skills in both biotechnology and computer science which opens doors in a wide range of analysis-driven careers.</li><li><strong>Master’s in Health Care Analytics:</strong> This degree focuses more on the data side, helping you comply with key legal, regulatory, and ethical constraints around sensitive client data and practices advanced analysis and reporting techniques.</li></ul><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
-				},
-				{
-					"title": "Bachelor's",
-					"content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Information Management.</strong> You can often earn these degrees online.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
-				}
-			],
+			"degreeTabs": {
+				"title": "What degree do I need for a management career path?",
+				"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+				"degrees": [
+					{
+						"title": "Executive Business Administration",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Business Administration",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Organizational Leadership",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "International Business/Trade/Commerce",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Risk Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Office Management and Supervision",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Non-Profit/Public Organizational Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					}
+				]
+			},
 			"careerPaths": {
 				"title": "What kind of career is a good fit for me?",
 				"description": "Occupations that align with The Computer Whiz's career path center on leveraging technology and data for problem-solving and decision-making.",
@@ -472,6 +616,10 @@
 						"imagePath": "/images/ceo.jpg"
 					}
 				]
+			},
+			"textWithImage": {
+				"content": "<h2>Do I need a Master’s or an MBA?</h2><p>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+				"imagePath": "/images/ceo.jpg"
 			}
 		},
 		{
@@ -528,16 +676,44 @@
 					"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
 				}
 			],
-			"degreeTabs": [
-				{
-					"title": "Master's",
-					"content": "<p>If you do have a bachelor’s degree and want to further specialize your studies, these are some popular master’s in the health information field:</p><ul><li><strong>Master’s in Health Informatics:</strong> This degree can prepare you to analyze data and improve data systems with the goal of improving public health systems, healthcare delivery systems, and patient outcomes.</li><li><strong>Master’s in Bioinformatics:</strong> This degree provides skills in both biotechnology and computer science which opens doors in a wide range of analysis-driven careers.</li><li><strong>Master’s in Health Care Analytics:</strong> This degree focuses more on the data side, helping you comply with key legal, regulatory, and ethical constraints around sensitive client data and practices advanced analysis and reporting techniques.</li></ul><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
-				},
-				{
-					"title": "Bachelor's",
-					"content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Information Management.</strong> You can often earn these degrees online.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
-				}
-			],
+			"degreeTabs": {
+				"title": "What degree do I need for a management career path?",
+				"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+				"degrees": [
+					{
+						"title": "Executive Business Administration",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Business Administration",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Organizational Leadership",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "International Business/Trade/Commerce",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Risk Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Office Management and Supervision",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Non-Profit/Public Organizational Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					},
+					{
+						"title": "Management",
+						"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+					}
+				]
+			},
 			"careerPaths": {
 				"title": "What kind of career is a good fit for me?",
 				"description": "Occupations that align with The People Person's career path focus on team management, employee relations, and human resources.",
@@ -563,6 +739,10 @@
 						"imagePath": "/images/ceo.jpg"
 					}
 				]
+			},
+			"textWithImage": {
+				"content": "<h2>Do I need a Master’s or an MBA?</h2><p>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+				"imagePath": "/images/ceo.jpg"
 			}
 		}
 	]
