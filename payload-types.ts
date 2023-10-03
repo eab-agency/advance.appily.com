@@ -284,25 +284,6 @@ export interface Form {
         blockName?: string;
         blockType: 'message';
       }
-    | {
-        name: string;
-        label?: string;
-        width?: number;
-        basePrice?: number;
-        priceConditions?: {
-          fieldToUse?: string;
-          condition?: 'hasValue' | 'equals' | 'notEquals';
-          valueForCondition?: string;
-          operator?: 'add' | 'subtract' | 'multiply' | 'divide';
-          valueType?: 'static' | 'valueOfField';
-          valueForOperator?: string;
-          id?: string;
-        }[];
-        required?: boolean;
-        id?: string;
-        blockName?: string;
-        blockType: 'payment';
-      }
   )[];
   submitButtonLabel?: string;
   confirmationType?: 'message' | 'redirect';
@@ -459,8 +440,7 @@ export interface Partner {
   id: string;
   title: string;
   shortName: string;
-  acroynm: string;
-  foundingDate?: string;
+  acroynm?: string;
   contact: {
     street1: string;
     street2?: string;
@@ -515,7 +495,8 @@ export interface Partner {
       | 'WA'
       | 'WV'
       | 'WI'
-      | 'WY';
+      | 'WY'
+      | 'DC';
     zip: string;
     country?: string;
   };
@@ -582,17 +563,6 @@ export interface FormSubmission {
     value: string;
     id?: string;
   }[];
-  payment?: {
-    field?: string;
-    status?: string;
-    amount?: number;
-    paymentProcessor?: string;
-    creditCard?: {
-      token?: string;
-      brand?: string;
-      number?: string;
-    };
-  };
   updatedAt: string;
   createdAt: string;
 }

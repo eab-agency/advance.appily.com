@@ -4,16 +4,12 @@ import { RiArrowGoBackFill } from "react-icons/ri";
 
 import Form from "@/components/Form";
 import SchoolCarousel from "@/components/SchoolCarousel";
+import { useUser } from "@/context/context";
 import styles from "@/styles/global/components/CarouselWithForm.module.scss";
 
 const CarouselWithForm = ({ formId = "4" }) => {
 	const [visibleForm, setVisibleForm] = useState(false);
-	// const { user, location } = useUser()
-
-	const user = {};
-	const location = {
-		notUS: false,
-	};
+	const { user, location, vertical } = useUser();
 
 	const [selectedSchool, setSelectedSchool] = useState(null);
 
@@ -64,7 +60,7 @@ const CarouselWithForm = ({ formId = "4" }) => {
 						</div>
 						<Form
 							school={selectedSchool}
-							redirectTo={selectedSchool.link}
+							redirectTo={`${selectedSchool.links[0].link.url}?utm_source=appily_advance&utm_campaign=${vertical}}`}
 							user={user}
 							id={formId || "4"}
 						/>

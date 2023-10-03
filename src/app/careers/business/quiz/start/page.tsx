@@ -1,7 +1,18 @@
 import { Quiz } from "@/components";
 import Head from "next/head";
 
-function QuizHome() {
+const API_URL = `${process.env.NEXT_PUBLIC_APP_URL}/api/quiz/questions`;
+const VERTICAL = "business";
+
+const fetchQuiz = async vertical => {
+	const res = await fetch(`${API_URL}?vertical=${vertical}`);
+	const data = await res.json();
+	return data;
+};
+
+async function QuizHome() {
+	const quizData = await fetchQuiz(VERTICAL);
+
 	return (
 		<>
 			<Head>
@@ -10,7 +21,7 @@ function QuizHome() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.png" />
 			</Head>
-			<Quiz vertical="business" />
+			<Quiz vertical={VERTICAL} quizData={quizData} />
 		</>
 	);
 }

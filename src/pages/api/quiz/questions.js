@@ -3,7 +3,7 @@ import path from "path";
 
 export default async function handler(req, res) {
 	// Find the absolute path of the data directory
-	const vertical = req.query.vertical;
+	const vertical = req.query.vertical || "healthcare";
 	const dataDirectory = path.join(process.cwd(), "src/data");
 	// Read the json data file data.json
 	const fileContents = await fs.readFile(
@@ -12,7 +12,6 @@ export default async function handler(req, res) {
 	);
 	// Parse the JSON string into an object and extract the questions array
 	const data = JSON.parse(fileContents);
-	const { questions } = data;
 	// Return the questions array in json format
-	res.status(200).json(questions);
+	res.status(200).json(data);
 }
