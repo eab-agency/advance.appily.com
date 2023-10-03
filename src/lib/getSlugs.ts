@@ -1,6 +1,6 @@
-export async function getSlugs() {
+export async function getSlugs(vertical: string) {
 	const res = await fetch(
-		`${process.env.NEXT_PUBLIC_APP_URL}/api/quiz/slugs?vertical=business`,
+		`${process.env.NEXT_PUBLIC_APP_URL}/api/quiz/slugs?vertical=${vertical}`,
 	);
 
 	if (!res.ok) {

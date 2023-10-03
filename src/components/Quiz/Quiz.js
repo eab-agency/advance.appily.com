@@ -42,7 +42,7 @@ export function Quiz({ vertical: verticalProp, quizData }) {
 			...selectedAnswers,
 			{
 				question,
-				answer: answer.answer,
+				answer: answer.value || answer.answer,
 				associatedField,
 			},
 		];

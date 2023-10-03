@@ -5,6 +5,7 @@ function Question({ handleAnswer, question, lastQuestion }) {
 		return null;
 	}
 	const handleClick = (q, answer, assocField) => {
+		console.log("🚀 ~ file: Question.jsx:8 ~ handleClick ~ answer:", answer);
 		handleAnswer(q, answer, assocField);
 	};
 

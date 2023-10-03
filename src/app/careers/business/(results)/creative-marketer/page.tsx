@@ -1,9 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BiLinkExternal } from "react-icons/bi";
-import useSWR from "swr";
 
 import {
 	Accordion,
@@ -14,19 +12,23 @@ import {
 	Tabs,
 	TextWithImage,
 } from "@/components";
+import { useUser } from "@/context/context";
 import styles from "@/styles/global/layouts/FinalPage.module.scss";
 import { usePathname } from "next/navigation";
+import useSWR from "swr";
 
-const ExecutivePage = () => {
+export default function Page() {
+	const API_URL = `${process.env.NEXT_PUBLIC_APP_URL}`;
 	const carouselRef = useRef(null);
 	const pathname = usePathname();
 	const slug = pathname ? pathname.split("/").pop() : "";
-
+	const { vertical } = useUser();
 	const { data, error, isLoading } = useSWR(
-		`/api/quiz/results?result=${slug}&vertical=business`,
+		`${API_URL}/api/results?vertical=${vertical}&slug=${slug}`,
 	);
+
+	if (error) return <div>Failed to load data.</div>;
 	if (isLoading) return <div>Loading...</div>;
-	if (error) return <div>Failed to load {JSON.stringify({ error })} </div>;
 
 	return (
 		<>
@@ -91,6 +93,4 @@ const ExecutivePage = () => {
 			<StickyCta trackedElement={carouselRef} />
 		</>
 	);
-};
-
-export default ExecutivePage;
+}
