@@ -42,12 +42,7 @@ const StickyCta = ({ trackedElement }) => {
 
 	return (
 		<div className={stickyCtaClass}>
-			<Button type="button" onClick={handleClick} appearance="primary">
-				<span>Explore Your School Matches</span>
-				<i>
-					<MdChevronRight />{" "}
-				</i>
-			</Button>
+			<Button type="button" onClick={handleClick} appearance="primary" className="button btn-primary" label="Explore Your School Matches" />
 		</div>
 	);
 };

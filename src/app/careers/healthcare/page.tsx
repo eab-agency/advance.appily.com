@@ -85,18 +85,6 @@ const HealthCareSeoPage = () => {
               href="/careers/healthcare/quiz"
               className="button btn-primary"
             />
-            <Button
-              type="button"
-              label={data.quizSection.buttonText}
-              href="/careers/healthcare/quiz"
-              className="button btn-secondary"
-            />
-            <Button
-              type="button"
-              label={data.quizSection.buttonText}
-              href="/careers/healthcare/quiz"
-              className="button"
-            />
           </div>
         </div>
       </section>
@@ -177,10 +165,10 @@ const HealthCareSeoPage = () => {
           <h2>{data.takeQuiz.title}</h2>
           <p>{data.takeQuiz.description}</p>
           <Button
-            type="primary"
+            type="button"
             label={data.takeQuiz.buttonText}
             href="/careers/healthcare/quiz"
-            className={styles.button}
+            className="button btn-primary"
           />
         </div>
       </section>

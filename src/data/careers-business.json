@@ -1,4 +1,22 @@
 {
+  "links": [
+  {
+    "label": "Adult Degree Completion",
+    "href": "/"
+  },
+  {
+    "label": "Graduate Degrees",
+    "href": "/"
+  },
+  {
+    "label": "Careers",
+    "href": "/"
+  },
+  {
+    "label": "Resources",
+    "href": "/"
+  }
+],
     "pageTitle": " Which type of<strong>business careeer</strong> is right for you?",
     "quizSection": {
         "title": "Take Our Free Business Career Quiz to Find Out",
