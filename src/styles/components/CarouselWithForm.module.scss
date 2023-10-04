@@ -16,7 +16,7 @@
     display: block;
     width: 50%;
     height: 100%;
-    background: var(--c-bg3);
+    background: var(--c-bg7);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -54,7 +54,7 @@
     padding-inline: clamp(tokens.$padding-s, 10vw, tokens.$padding-xxxl);
     padding-block: clamp(tokens.$padding-s, 10vw, tokens.$padding-xxxl);
 
-    @media (min-width: tokens.$mq-1200) {
+    @media (min-width: tokens.$mq-1300) {
       flex-direction: row;
     }
   }
@@ -65,9 +65,11 @@
 
     h2 {
       font-size: clamp(tokens.$size-6, 5vw, tokens.$size-8);
+      color: var(--c-headingTertiary);
+      font-weight: tokens.$fontWeight-extrabold;
     }
     p {
-      font-size: clamp(tokens.$size-4, 2vw, tokens.$size-5);
+      font-size: clamp(tokens.$size-4, 2vw, tokens.$size-6);
     }
   }
 
@@ -77,8 +79,8 @@
     flex-shrink: 0;
     width: 100%;
 
-    @media (min-width: tokens.$mq-1200) {
-      width: clamp(20rem, 70vw, 70rem);
+    @media (min-width: tokens.$mq-1300) {
+      width: clamp(20rem, 80vw, 80rem);
       padding-left: 4em;
       padding-right: 0;
     }

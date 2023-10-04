@@ -102,6 +102,7 @@ $texts: (
   dark: (
     "headingPrimary": colors.$c-white,
     "headingSecondary": map.get($teal, 500),
+    "headingTertiary": map.get($teal, 500),
     "bodyPrimary": colors.$c-white,
     "bodySecondary": map.get($teal, 400),
     "linkPrimary": colors.$c-orange,
@@ -112,6 +113,7 @@ $texts: (
   light: (
     "headingPrimary": colors.$c-navy,
     "headingSecondary": colors.$c-teal,
+    "headingTertiary": colors.$c-navy,
     "bodyPrimary": colors.$c-black,
     "bodySecondary": colors.$c-teal,
     "linkPrimary": colors.$c-orange,
@@ -129,6 +131,8 @@ $backgrounds: (
     "bg4": colors.$c-teal,
     "bg5": map.get($navy, 500),
     "bg6": colors.$c-navy,
+    "bg7": map.get($navy, 500),
+    "bg8": map.get($slateGray, 900),
     "bg-body": map.get($navy, 600),
     "button": colors.$c-orange,
     "shadow1": colors.$c-yellow,
@@ -141,6 +145,8 @@ $backgrounds: (
     "bg4": color.adjust(colors.$c-teal, $lightness: 50%),
     "bg5": map.get($teal, 50),
     "bg6": map.get($teal, 50),
+    "bg7": colors.$c-yellow,
+    "bg8": map.get($slateGray, 100),
     "bg-body": colors.$c-white
   )
 );

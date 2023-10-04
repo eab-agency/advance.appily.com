@@ -256,10 +256,16 @@
 
 .whatIsCappex {
   padding: 0;
+  background: var(--c-bg8);
+  border-top: tokens.$borderWidth-s solid var(--c-border-5);
 
   figure {
     max-width: 70%;
     margin-bottom: 2rem;
+
+    @media (min-width: tokens.$mq-900) {
+      max-width: 100%;
+    }
   }
 
   & > .group {
