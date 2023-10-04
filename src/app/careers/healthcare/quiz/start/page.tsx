@@ -5,7 +5,7 @@ const VERTICAL = "healthcare";
 const API_URL = `${process.env.NEXT_PUBLIC_APP_URL}`;
 
 const fetchQuiz = async vertical => {
-	const res = await fetch(`${API_URL}/api/quiz/questions?vertical=${vertical}`);
+	const res = await fetch(API_URL + `/api/quiz/questions?vertical=${vertical}`);
 	const data = await res.json();
 	return data;
 };
