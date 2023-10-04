@@ -37,6 +37,7 @@ const CarouselWithForm = ({ formId = "4" }) => {
 			</div>
 
 			<div className={styles.container}>
+        {/* thecarousel */}
 				<SchoolCarousel
 					handleClick={school => onCarouselClick(school)}
 					className={`${visibleForm ? styles.hide : ""}`}

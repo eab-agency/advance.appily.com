@@ -20,7 +20,7 @@ const Accordion = ({ title, children }) => {
         role="button"
         tabIndex={0}
       >
-        <h2 className={isExpanded && styles.expanded}>
+        <h2 className={isExpanded ? styles.expanded : undefined}>
           <span>{title}</span>{' '}
           {isExpanded ? (
             <i>

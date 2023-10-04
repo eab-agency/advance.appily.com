@@ -42,45 +42,47 @@ const SchoolCarousel = ({ handleClick, className }) => {
   }
   // if schools is empty, return null
   if (!matchedSchools) return null
-
+  console.log("THE MATCHED SCHOOLS", matchedSchools)
   return (<Carousel responsive={responsive} showDots infinite containerClass={className}>
-      {matchedSchools &&
-        matchedSchools.map((card: CarouselCard) => (
-          <div className="item-content" key={card.id}>
-            <div className="item-head">
-              <Image
-                src={card.image?.url}
-                width="400"
-                height="300"
-                alt={card.image.alt}
-                className="school-thumbnail"
-              />
-              <Image
-                src={card.partner.logo.url}
-                width="100"
-                height="100"
-                alt={card.partner.logo.alt}
-                className="school-logo"
-              />
-            </div>
-            <div className="item-text">
-              <div className="item-head">
-                <h4 key={card.partner.title}>{card.partner.title}</h4>
-                <p>
-                  {card.partner.contact.city}, {card.partner.contact.state}
-                </p>
-              </div>
-                        <RichText content={card.description} />
-              <button type="button" onClick={() => handleButtonClick(card)}>
-                <span>{card.links?.[0]?.link.label}</span>
-                <i>
-                  <MdChevronRight />
-                </i>
-              </button>
-            </div>
+    <h1>BOO</h1>
+    {matchedSchools &&
+      matchedSchools.map((card: CarouselCard) => (
+        <div className="item-content" key={card.id}>
+
+          <div className="item-head">
+            <Image
+              src={card.image?.url}
+              width="400"
+              height="300"
+              alt={card.image.alt}
+              className="school-thumbnail"
+            />
+            <Image
+              src={card.partner.logo.url}
+              width="100"
+              height="100"
+              alt={card.partner.logo.alt}
+              className="school-logo"
+            />
           </div>
-        ))}
-    </Carousel>)
+          <div className="item-text">
+            <div className="item-head">
+              <h4 key={card.partner.title}>{card.partner.title}</h4>
+              <p>
+                {card.partner.contact.city}, {card.partner.contact.state}
+              </p>
+            </div>
+            <RichText content={card.description} />
+            <button type="button" onClick={() => handleButtonClick(card)}>
+              <span>{card.links?.[0]?.link.label}</span>
+              <i>
+                <MdChevronRight />
+              </i>
+            </button>
+          </div>
+        </div>
+      ))}
+  </Carousel>)
 
 }
 export default SchoolCarousel
