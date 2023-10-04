@@ -1,37 +1,22 @@
-// @use 'sass:color';
-// @use '../config/tokens';
+@use "sass:color";
+@use "@/styles/global/tokens";
 
-// .stickyCta{
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     padding: clamp(tokens.$baseUnit * 0.2, 2vw, tokens.$baseUnit * 0.5);
-//     background: tokens.$c-blue-500;
-//     border-top: 1px solid tokens.$c-blue-800;
-//     // position: sticky;
-//     position: fixed;
-//     bottom: 0;
-//     left: 0;
-//     width: 100%;
-//     z-index: tokens.$layer-2;
-//     transition: opacity tokens.$transition;
+.stickyCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(tokens.$padding-xs, 2vw, tokens.$padding-s);
+  background: var(--c-bg6);
+  border-top: 1px solid var(--c-border-5);
+  // position: sticky;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: tokens.$layer-99;
+  transition: opacity 0.2s ease-in-out;
 
-//     &.scrolled{
-//         opacity: 0;
-//     }
-
-//     button{
-//         background-color: tokens.$c-orange-500;
-//     color: tokens.$c-blue-800;
-//     border-color: tokens.$c-orange-500;
-//     font-size: clamp(tokens.$fs-s, 3vw, tokens.$fs-m);
-
-//     span{
-//         margin: -0.2em 0 0 0;
-//     }
-
-//     &:hover {
-//         background: color.adjust(tokens.$c-orange-500, $lightness: 30%);
-//     }
-//     }
-// }
+  &.scrolled {
+    opacity: 0;
+  }
+}

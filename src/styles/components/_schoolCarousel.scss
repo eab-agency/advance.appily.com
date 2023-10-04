@@ -1,5 +1,5 @@
-@use 'sass:color';
-@use '../config/tokens';
+@use "sass:color";
+@use "@/styles/global/tokens";
 
 .react-multi-carousel-list {
   display: flex;
@@ -28,26 +28,36 @@
   z-index: 1000;
   border: none;
   border-radius: 0;
-  background: tokens.$c-blue-300;
-  width: 2em;
-  height: 3em;
+  background: var(--c-teal-700) !important;
+  width: auto;
+  height: auto;
   opacity: 1;
   cursor: pointer;
+  display: block;
+
+  &::after {
+    display: none !important
+    ;
+  }
 }
 .react-multiple-carousel__arrow:hover {
-  background: tokens.$c-turquoise-500;
+  background: var(--c-linkHover);
 }
 .react-multiple-carousel__arrow::before {
   content: tokens.$i-chevron;
   font-family: tokens.$f-icons;
   font-size: 2em;
-  color: tokens.$c-white;
+  color: var(--c-white);
   display: block;
   text-align: center;
   z-index: 2;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  background: none;
+  opacity: 1;
+  width: 1em;
+  height: 1em;
 }
 .react-multiple-carousel__arrow:disabled {
   cursor: default;
@@ -55,17 +65,16 @@
 }
 
 .react-multiple-carousel__arrow--left {
-  left: 0;
+  left: 0 !important;
   border-top-right-radius: 2em;
   border-bottom-right-radius: 2em;
 
-
-  &::before {
-    transform: rotate(-180deg) translateX(50%);
-  }
+  // &::before {
+  //   transform: rotate(-180deg) translateX(50%);
+  // }
 }
 .react-multiple-carousel__arrow--right {
-  right: 0;
+  right: 0 !important;
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
 }
@@ -89,19 +98,19 @@
   height: 0.2em;
   border-radius: 0.5em;
   opacity: 1;
-  background: tokens.$c-blue-300;
-  border-color: tokens.$c-blue-300;
+  background: var(--c-slateGray-200);
+  border: none !important;
   padding: 0.15em;
-  transition: all .5s;
+  transition: all 0.5s;
   margin-right: 6px;
   outline: 0;
   cursor: pointer;
 }
 .react-multi-carousel-dot button:hover:active {
-  background: tokens.$c-gray-100;
+  background: green;
 }
 .react-multi-carousel-dot--active button {
-  background: tokens.$c-gray-100;
+  background: var(--c-navy-400) !important;
   width: 2em;
 }
 .react-multi-carousel-item {
@@ -110,78 +119,76 @@
   padding-inline: clamp(1rem, 1.5vw, 1.5rem);
   display: flex;
 
-
-  .item-content{
+  .item-content {
     display: flex;
     flex-direction: column;
-    background: tokens.$c-white;
+    background: var(--c-white);
     overflow: hidden;
-    border-radius: 0.5em;
+    border-radius: tokens.$borderRadius-xl;
     flex: 1;
-    
-  @media (prefers-color-scheme: light) {
     box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.1);
-  }
 
-    .item-head{
+    .item-head {
       position: relative;
-      img{
-        &.school-thumbnail{
+      img {
+        &.school-thumbnail {
           display: block;
           width: 100%;
           height: clamp(9rem, 12vw, 12rem);
           object-fit: cover;
+          background: lightcyan;
         }
-        &.school-logo{
+        &.school-logo {
           display: block;
           width: clamp(3.5rem, 4vw, 4rem);
           height: clamp(3.5rem, 4vw, 4rem);
-          background: tokens.$c-white;
+          background: var(--c-white);
           border-top-left-radius: 0.3em;
           border-top-right-radius: 0.3em;
           position: absolute;
           bottom: 0;
           left: clamp(1rem, 2vw, 2rem);
+          overflow: hidden;
         }
       }
     }
-    .item-text{
-      display:flex;
+    .item-text {
+      display: flex;
       flex-direction: column;
       align-items: center;
       padding: clamp(1rem, 2vw, 2rem);
 
-      .item-head{
+      .item-head {
         display: block;
         width: 100%;
 
-        h4{
-          color: tokens.$c-blue-500;
+        h4 {
+          color: var(--c-navy-700);
           font-size: clamp(1rem, 1.2vw, 1.2rem);
           margin: 0;
         }
-        p{
-          font-size: 0.8em;
+        p {
+          font-size: tokens.$size-3;
         }
       }
-      p{
-        color: tokens.$c-blue-900;
+      p {
+        color: var(--c-navy-700);
         font-size: clamp(0.8rem, 1.5vw, 0.95rem);
       }
 
-      button{
-        background-color: tokens.$c-orange-500;
-      color: tokens.$c-blue-800;
-      border-color: tokens.$c-orange-500;
-    font-size: clamp(tokens.$fs-xs, 2vw, tokens.$fs-s);
+      button {
+        // background-color: tokens.$c-orange-500;
+        // color: tokens.$c-blue-800;
+        // border-color: tokens.$c-orange-500;
+        // font-size: clamp(tokens.$fs-xs, 2vw, tokens.$fs-s);
 
-    span{
-      margin: 0;
-    }
+        span {
+          margin: 0;
+        }
 
-    &:hover {
-        background: color.adjust(tokens.$c-orange-500, $lightness: 30%);
-    }
+        &:hover {
+          // background: color.adjust(tokens.$c-orange-500, $lightness: 30%);
+        }
       }
     }
   }

@@ -23,6 +23,12 @@ body {
   figure {
     position: relative;
     display: flex;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
   }
 
   section {
@@ -31,6 +37,7 @@ body {
     justify-content: center;
     padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
     padding-block: clamp(tokens.$padding-xxl, 10vw, tokens.$padding-xxxxl);
+    overflow: hidden;
   }
 
   .group {

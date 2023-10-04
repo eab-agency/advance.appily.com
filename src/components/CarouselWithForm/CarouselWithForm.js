@@ -28,49 +28,50 @@ const CarouselWithForm = ({ formId = "4" }) => {
 	};
 	return (
 		<section className={styles.matchedSchools}>
-			<div className={styles.intro}>
-				<h2>Explore Your School Matches</h2>
-				<p>
-					The following schools offer business programs that could help you
-					reach your goals.
-				</p>
-			</div>
+			<div className={styles.wrapper}>
+				<div className={styles.intro}>
+					<h2>Explore Your School Matches</h2>
+					<p>
+						The following schools offer business programs that could help you
+						reach your goals.
+					</p>
+				</div>
 
-			<div className={styles.container}>
-        {/* thecarousel */}
-				<SchoolCarousel
-					handleClick={school => onCarouselClick(school)}
-					className={`${visibleForm ? styles.hide : ""}`}
-				/>
+				<div className={styles.container}>
+					<SchoolCarousel
+						handleClick={school => onCarouselClick(school)}
+						className={`${visibleForm ? styles.hide : ""}`}
+					/>
 
-				{visibleForm && (
-					<div className={styles.carouselForm}>
-						<button
-							className={styles.closeBtn}
-							type="button"
-							onClick={() => onCarouselClick()}
-						>
-							Back{" "}
-							<i>
-								<RiArrowGoBackFill />
-							</i>
-						</button>
+					{visibleForm && (
+						<div className={styles.carouselForm}>
+							<button
+								className={styles.closeBtn}
+								type="button"
+								onClick={() => onCarouselClick()}
+							>
+								Back{" "}
+								<i>
+									<RiArrowGoBackFill />
+								</i>
+							</button>
 
-						<div className={styles.intro}>
-							{/* <h3>Let's Get Started</h3> */}
-							<p>
-								Let us know the best way to contact you with helpful information
-								and potential college or university matches.
-							</p>
+							<div className={styles.intro}>
+								{/* <h3>Let's Get Started</h3> */}
+								<p>
+									Let us know the best way to contact you with helpful
+									information and potential college or university matches.
+								</p>
+							</div>
+							<Form
+								school={selectedSchool}
+								redirectTo={selectedSchool.link}
+								user={user}
+								id={formId || "4"}
+							/>
 						</div>
-						<Form
-							school={selectedSchool}
-							redirectTo={selectedSchool.link}
-							user={user}
-							id={formId || "4"}
-						/>
-					</div>
-				)}
+					)}
+				</div>
 			</div>
 		</section>
 	);

@@ -5,7 +5,6 @@ import React, { useRef } from "react";
 import {
   Accordion,
   Button,
-  Card,
   CarouselWithForm,
   Header,
   Stats,
@@ -13,6 +12,7 @@ import {
 } from "@/components";
 import data from "@/data/careers-business.json";
 import { IconCard } from "@/components/IconCard/IconCard";
+import MainLogo from "@/components/Header/MainLogo";
 
 
 /* eslint-disable react/no-danger */
@@ -43,12 +43,12 @@ const BusinessSeoPage = () => {
               __html: data.pageTitle,
             }}
           />
-          <figure>
+          <figure className="heroImage">
             <Image
-              src="/images/which-health-care-career.jpg"
-              width={800}
-              height={480}
-              alt="Health care professional in a laboratory"
+              src="/images/business-hero-image.jpg"
+              width={1000}
+              height={1000}
+              alt="Business woman wor"
             />
           </figure>
         </div>
@@ -58,8 +58,8 @@ const BusinessSeoPage = () => {
           <div className="column">
             <figure className="highlighted-img">
               <Image
-                src="/images/profesional-man-researching-online.jpg"
-                width={800}
+                src="/images/take-our-free-quiz.jpg"
+                width={480}
                 height={480}
                 alt="Profesional man researching online"
               />
@@ -111,9 +111,9 @@ const BusinessSeoPage = () => {
           <div className="column">
             <figure className="highlighted-img">
               <Image
-                src="/images/doctor-wearing-mas-and-sthethoscope.jpg"
-                width={478}
-                height={284}
+                src="/images/whats-the-difference-mba-specific-master.jpg"
+                width={480}
+                height={480}
                 alt="Doctor wearing mask and a sthethoscope"
               />
             </figure>
@@ -204,25 +204,28 @@ const BusinessSeoPage = () => {
         </div>
       </section>
 
-      <section id="explore-your-school-matches" ref={carouselRef}>
+      <div id="explore-your-school-matches" ref={carouselRef}>
         <CarouselWithForm />
-      </section>
+      </div>
 
-      <section className="whatIsCappex">
-        <div className="content">
-          <figure>
-            <Image
-              src="/images/college-search.png"
-              width={536}
-              height={361}
-              alt="What is Cappex"
-            />
-          </figure>
-          <section className="goingToCollege">
-            <h3>
+      <section className="whatIsCappex column">
+        <div className="group center-aligned cols-2">
+          <div className="column">
+            <figure>
+              <Image
+                src="/images/what-is-appily.jpg"
+                width={480}
+                height={480}
+                alt="What is Cappex"
+                className="highlighted-img"
+              />
+            </figure>
+          </div>
+          <div className="column">
+            <h2><MainLogo />
               An All-in-One Resource for{" "}
               <strong>Going to College</strong>
-            </h3>
+            </h2>
             <p>
               Appily is the future of higher education guidance,
               uniting trusted tools that have empowered students for
@@ -238,9 +241,14 @@ const BusinessSeoPage = () => {
               Take the next step in achieving your academic goals with
               confidence.
             </p>
-          </section>
-        </div>
-      </section>
+          </div>
+        </div >
+        <Stats
+          stats={data.stats}
+          source={data.statsSource}
+          className="stats-section"
+        />
+      </section >
 
       <section className="takeQuiz">
         <div className="content">
@@ -253,7 +261,6 @@ const BusinessSeoPage = () => {
             className="button btn-primary"
           />
         </div>
-        hp
       </section>
       <StickyCta trackedElement={carouselRef} />
     </>

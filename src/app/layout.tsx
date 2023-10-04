@@ -10,29 +10,29 @@ import "@/styles/styles.scss";
 import Footer from "../components/Footer";
 
 export default async function RootLayout({
-	children,
+  children,
 }: { children: React.ReactNode }) {
-	return (
-		<html lang="en" suppressHydrationWarning>
-			<head>
-				<link rel="stylesheet" href="https://use.typekit.net/wba2ytz.css" />
-			</head>
-			<body>
-				<Providers>
-					<div className="layout-wrapper">
-						<main className="page-layout">
-							<div className="page-content">{children}</div>
-						</main>
-					</div>
-					<Footer />
-				</Providers>
-				<Analytics />
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/wba2ytz.css" />
+      </head>
+      <body>
+        <Providers>
+          <div className="layout-wrapper">
+            <main className="page-layout">
+              <div className="page-content">{children}</div>
+            </main>
+          </div>
+          <Footer />
+        </Providers>
+        <Analytics />
+      </body>
+    </html>
+  );
 }
 
 export const metadata: Metadata = {
-	metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || ""),
-	openGraph: mergeOpenGraph(),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || ""),
+  openGraph: mergeOpenGraph(),
 };

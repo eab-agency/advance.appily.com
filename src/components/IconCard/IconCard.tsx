@@ -14,14 +14,12 @@ export const IconCard: React.FC<{
   return (
     <div className={`${className && className} icon-card`}>
       <header className="icon-card-head">
-        <figure>
-          <Image
-            src={iconUrl ?? ""}
-            width={480}
-            height={480}
-            alt={iconAlt ?? ""}
-          />
-        </figure>
+        <Image
+          src={iconUrl ?? ""}
+          width={480}
+          height={480}
+          alt={iconAlt ?? ""}
+        />
         {titleFromProps && <h3 className="icon-card-title">{titleFromProps}</h3>}
       </header>
       {children && (

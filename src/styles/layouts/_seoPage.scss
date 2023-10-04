@@ -9,6 +9,40 @@
 
   .group {
     gap: clamp(tokens.$size-4, 4vw, tokens.$size-8);
+
+    .heroImage {
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 15rem;
+        height: 15rem;
+        background: var(--c-teal-600);
+        position: absolute;
+        border-top-right-radius: 100%;
+        top: -20%;
+        right: -20%;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 20rem;
+        height: 20rem;
+        background: var(--c-yellow-400);
+        position: absolute;
+        border-top-left-radius: 100%;
+        bottom: -5%;
+        left: -5%;
+      }
+
+      img {
+        position: relative;
+        z-index: tokens.$layer-2;
+        border-bottom-left-radius: 100%;
+      }
+    }
   }
 }
 
@@ -82,6 +116,7 @@
 }
 
 .testimonial {
+  position: relative;
   background: var(--c-bg3);
   border-bottom: tokens.$borderWidth-s solid var(--c-border-5);
 
@@ -123,6 +158,24 @@
         font-style: italic;
         color: var(--c-bodyPrimary);
       }
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    font-size: clamp(tokens.$size-8, 8vw, tokens.$size-10);
+    width: 0.8em;
+    height: 5em;
+    background: url("/images/appily-vector-shapes.svg") no-repeat center;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (max-width: tokens.$mq-900) {
+      display: none;
     }
   }
 }
@@ -168,4 +221,25 @@
       }
     }
   }
+}
+
+.whatIsCappex {
+  padding: 0;
+
+  & > .group {
+    padding-block: clamp(tokens.$padding-xxl, 10vw, tokens.$padding-xxxxl);
+    padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+    border-bottom: tokens.$borderWidth-xxs solid var(--c-border-5);
+  }
+
+  .stats-section {
+    background: none;
+    border: none;
+    padding-top: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+  }
+}
+
+.takeQuiz {
+  background: var(--c-bg6);
+  border-top: tokens.$borderWidth-s solid var(--c-border-5);
 }

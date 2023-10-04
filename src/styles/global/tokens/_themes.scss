@@ -32,29 +32,29 @@ $orange: (
 );
 
 $slateGray: (
-  900: colors.$c-slateGray,
-  800: color.adjust(colors.$c-slateGray, $lightness: 10%),
-  700: color.adjust(colors.$c-slateGray, $lightness: 20%),
-  600: color.adjust(colors.$c-slateGray, $lightness: 30%),
-  500: color.adjust(colors.$c-slateGray, $lightness: 40%),
-  400: color.adjust(colors.$c-slateGray, $lightness: 50%),
-  300: color.adjust(colors.$c-slateGray, $lightness: 60%),
-  200: color.adjust(colors.$c-slateGray, $lightness: 70%),
+  900: color.adjust(colors.$c-slateGray, $lightness: -10%),
+  800: color.adjust(colors.$c-slateGray, $lightness: -5%),
+  700: colors.$c-slateGray,
+  600: color.adjust(colors.$c-slateGray, $lightness: 10%),
+  500: color.adjust(colors.$c-slateGray, $lightness: 20%),
+  400: color.adjust(colors.$c-slateGray, $lightness: 30%),
+  300: color.adjust(colors.$c-slateGray, $lightness: 40%),
+  200: color.adjust(colors.$c-slateGray, $lightness: 50%),
   100: color.adjust(colors.$c-slateGray, $lightness: 80%),
   50: color.adjust(colors.$c-slateGray, $lightness: 90%)
 );
 
 $yellow: (
-  900: colors.$c-yellow,
-  800: color.adjust(colors.$c-yellow, $lightness: 10%),
-  700: color.adjust(colors.$c-yellow, $lightness: 20%),
-  600: color.adjust(colors.$c-yellow, $lightness: 30%),
-  500: color.adjust(colors.$c-yellow, $lightness: 40%),
-  400: color.adjust(colors.$c-yellow, $lightness: 50%),
-  300: color.adjust(colors.$c-yellow, $lightness: 60%),
-  200: color.adjust(colors.$c-yellow, $lightness: 70%),
-  100: color.adjust(colors.$c-yellow, $lightness: 80%),
-  50: color.adjust(colors.$c-yellow, $lightness: 90%)
+  900: color.adjust(colors.$c-yellow, $lightness: -50%),
+  800: color.adjust(colors.$c-yellow, $lightness: -40%),
+  700: color.adjust(colors.$c-yellow, $lightness: -30%),
+  600: color.adjust(colors.$c-yellow, $lightness: -20%),
+  500: color.adjust(colors.$c-yellow, $lightness: -10%),
+  400: colors.$c-yellow,
+  300: color.adjust(colors.$c-yellow, $lightness: 10%),
+  200: color.adjust(colors.$c-yellow, $lightness: 15%),
+  100: color.adjust(colors.$c-yellow, $lightness: 20%),
+  50: color.adjust(colors.$c-yellow, $lightness: 30%)
 );
 
 $teal: (
@@ -128,17 +128,19 @@ $backgrounds: (
     "bg3": colors.$c-teal,
     "bg4": colors.$c-teal,
     "bg5": map.get($navy, 500),
+    "bg6": colors.$c-navy,
     "bg-body": map.get($navy, 600),
     "button": colors.$c-orange,
     "shadow1": colors.$c-yellow,
     "shadow2": map.get($navy, 700)
   ),
   light: (
-    "bg1": color.adjust(colors.$c-slateGray, $lightness: 70%),
+    "bg1": color.adjust(colors.$c-slateGray, $lightness: 72%),
     "bg2": color.adjust(colors.$c-orange, $lightness: 40%),
     "bg3": colors.$c-yellow,
     "bg4": color.adjust(colors.$c-teal, $lightness: 50%),
     "bg5": map.get($teal, 50),
+    "bg6": map.get($teal, 50),
     "bg-body": colors.$c-white
   )
 );
@@ -163,7 +165,9 @@ $miscellaneous: (
   "error": #cc0000,
   "success": #00e50b,
   "warning": #ffb700,
-  "texture": colors.$c-slateGray
+  "texture": colors.$c-slateGray,
+  "white": colors.$c-white,
+  "black": colors.$c-black
 );
 
 // =====================================
@@ -191,6 +195,9 @@ $miscellaneous: (
 
   @each $shade, $color in $violet {
     --c-violet-#{$shade}: #{$color};
+  }
+  @each $shade, $color in $slateGray {
+    --c-slateGray-#{$shade}: #{$color};
   }
 
   $maps: $texts, $backgrounds, $borders;
