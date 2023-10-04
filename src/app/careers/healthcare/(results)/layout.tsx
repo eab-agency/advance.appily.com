@@ -9,11 +9,11 @@ interface Link {
 export default async function HealthCareResultsLayout({
 	children,
 }: { children: React.ReactNode }) {
-	const links: Link[] = await getSlugs("healthcare");
+	// const links: Link[] = await getSlugs("healthcare");
 
 	return (
 		<>
-			<Header links={links} />
+			{/* <Header links={links} /> */}
 			{children}
 		</>
 	);
