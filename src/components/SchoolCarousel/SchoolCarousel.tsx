@@ -76,6 +76,8 @@ const SchoolCarousel = ({ handleClick, className }) => {
                   </p>
                 </div>
                 <RichText content={card.description} />
+              </div>
+              <div className="item-foot">
                 <button type="button" onClick={() => handleButtonClick(card)}>
                   <span>{card.links?.[0]?.link.label}</span>
                   <i>

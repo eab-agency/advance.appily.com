@@ -10,9 +10,9 @@ import {
   Stats,
   StickyCta,
 } from "@/components";
-import data from "@/data/careers-business.json";
-import { IconCard } from "@/components/IconCard/IconCard";
 import MainLogo from "@/components/Header/MainLogo";
+import { IconCard } from "@/components/IconCard/IconCard";
+import data from "@/data/careers-business.json";
 
 
 /* eslint-disable react/no-danger */
@@ -209,7 +209,7 @@ const BusinessSeoPage = () => {
       </div>
 
       <section className="whatIsCappex column">
-        <div className="group center-aligned cols-2">
+        <div className="group row center-aligned cols-2">
           <div className="column">
             <figure>
               <Image
@@ -250,16 +250,29 @@ const BusinessSeoPage = () => {
         />
       </section >
 
-      <section className="takeQuiz">
-        <div className="content">
-          <h2>{data.takeQuiz.title}</h2>
-          <p>{data.takeQuiz.description}</p>
-          <Button
-            type="button"
-            label={data.takeQuiz.buttonText}
-            href="/careers/business/quiz"
-            className="button btn-primary"
-          />
+      <section className="takeQuiz full-content">
+        <div className="group row">
+          <div className="column">
+            <figure>
+              <Image
+                src="/images/ready-to-find-your-role.jpg"
+                width={800}
+                height={800}
+                alt="Take our free quiz"
+              // className="highlighted-img"
+              />
+            </figure>
+          </div>
+          <div className="content column">
+            <h2>{data.takeQuiz.title}</h2>
+            <p>{data.takeQuiz.description}</p>
+            <Button
+              type="button"
+              label={data.takeQuiz.buttonText}
+              href="/careers/business/quiz"
+              className="button btn-primary"
+            />
+          </div>
         </div>
       </section>
       <StickyCta trackedElement={carouselRef} />

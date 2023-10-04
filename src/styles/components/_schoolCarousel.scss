@@ -191,6 +191,11 @@
         }
       }
     }
+
+    .item-foot {
+      padding: clamp(1rem, 2vw, 2rem);
+      margin-block: auto 0;
+    }
   }
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

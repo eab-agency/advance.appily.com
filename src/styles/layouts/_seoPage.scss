@@ -189,6 +189,8 @@
     }
 
     .infograph {
+      width: 90%;
+
       .icon-card {
         display: flex;
         flex-direction: column;
@@ -226,6 +228,11 @@
 .whatIsCappex {
   padding: 0;
 
+  figure {
+    max-width: 70%;
+    margin-bottom: 2rem;
+  }
+
   & > .group {
     padding-block: clamp(tokens.$padding-xxl, 10vw, tokens.$padding-xxxxl);
     padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
@@ -242,4 +249,34 @@
 .takeQuiz {
   background: var(--c-bg6);
   border-top: tokens.$borderWidth-s solid var(--c-border-5);
+
+  .group {
+    align-items: center;
+    @media (min-width: tokens.$mq-900) {
+      gap: clamp(tokens.$size-5, 10vw, tokens.$size-10);
+      padding-right: 5vw;
+    }
+  }
+
+  figure {
+    overflow: hidden;
+    max-height: 14rem;
+
+    @media (min-width: tokens.$mq-900) {
+      max-height: 25rem;
+      img {
+        width: 100%;
+        height: 60vw;
+        border-top-right-radius: 100%;
+        position: relative;
+        transform: translateY(-25%);
+      }
+    }
+  }
+
+  .content {
+    @media (max-width: tokens.$mq-900) {
+      padding: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+    }
+  }
 }
