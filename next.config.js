@@ -21,14 +21,14 @@ const nextConfig = {
 	images: {
 		minimumCacheTTL: 6000,
 		domains: ["localhost", process.env.NEXT_PUBLIC_CMS_URL],
-		// remotePatterns: [
-		//   {
-		//     protocol: 'https',
-		//     hostname: 'localhost',
-		//     port: '3000',
-		//     pathname: '/media/**',
-		//   },
-		// ],
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: process.env.NEXT_PUBLIC_CMS_URL,
+				// port: "3000",
+				pathname: "/media/**",
+			},
+		],
 	},
 	async rewrites() {
 		return [
