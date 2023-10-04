@@ -23,7 +23,7 @@ export function CareerPaths({ careerPaths }: CareerPathsProps) {
 			<p>{description}</p>
 			<ul>
 				{paths.map(path => (
-					<li key={path.id}>
+					<li key={path.title}>
 						<Image
 							src={path.imagePath}
 							width={340}

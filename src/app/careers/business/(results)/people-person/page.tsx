@@ -54,7 +54,7 @@ export default function Page() {
 						<h3>{data.degreeTabs.title}</h3>
 						<p>{data.degreeTabs.description}</p>
 						{data.degreeTabs.degrees.map(degree => (
-							<Accordion title={degree.title}>
+							<Accordion title={degree.title} key={degree.title}>
 								<div dangerouslySetInnerHTML={{ __html: degree.content }} />
 							</Accordion>
 						))}

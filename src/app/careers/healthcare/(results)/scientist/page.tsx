@@ -4,16 +4,16 @@ import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import useSWR from "swr";
 
-import { useUser } from "@/context/context";
-import styles from "@/styles/global/layouts/FinalPage.module.scss";
-import { usePathname } from "next/navigation";
 import {
 	Accordion,
 	CarouselWithForm,
 	Stats,
 	StickyCta,
 	Tabs,
-} from "../../../../../components";
+} from "@/components";
+import { useUser } from "@/context/context";
+import styles from "@/styles/global/layouts/FinalPage.module.scss";
+import { usePathname } from "next/navigation";
 
 const API_URL = `${process.env.NEXT_PUBLIC_APP_URL}`;
 
@@ -26,7 +26,7 @@ export default function Page() {
 		`${API_URL}/api/results?vertical=${vertical}&slug=${slug}`,
 	);
 
-	if (error) return <div>Failed to load data.</div>;
+	if (error) return <div>Failed to load data.{JSON.stringify(error)}</div>;
 	if (isLoading) return <div>Loading...</div>;
 	return (
 		<>
