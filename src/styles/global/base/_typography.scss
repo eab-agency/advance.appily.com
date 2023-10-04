@@ -29,8 +29,11 @@ h1 {
   strong {
     font-weight: tokens.$fontWeight-bold;
     font-size: 1.5em;
-    display: block;
     color: var(--c-headingSecondary);
+
+    @media (min-width: tokens.$mq-1100) {
+      display: block;
+    }
   }
 }
 
@@ -68,6 +71,7 @@ blockquote,
 address {
   margin: 0 0 1rem 0;
   font-style: normal;
+  font-weight: 300;
   color: var(--c-bodyPrimary);
   font-size: clamp(tokens.$size-3, 2vw, tokens.$size-4);
 

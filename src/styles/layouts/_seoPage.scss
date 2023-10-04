@@ -22,7 +22,7 @@
   &::after {
     position: absolute;
     content: "";
-    display: block;
+    display: none;
     background-color: $color;
     width: 70vw;
     height: 120%;
@@ -30,17 +30,18 @@
     top: 0;
     left: 0;
     border-bottom-right-radius: 100%;
-    opacity: 0.05;
+    // opacity: 0.05;
 
     @media (min-width: tokens.$mq-1000) {
+      display: block;
       width: 50vw;
       left: -4em;
-      opacity: 1;
+      // opacity: 1;
     }
 
-    @media (prefers-color-scheme: light) and (max-width: tokens.$mq-1000) {
-      opacity: 0.45;
-    }
+    // @media (prefers-color-scheme: light) and (max-width: tokens.$mq-1000) {
+    //   opacity: 1;
+    // }
   }
 }
 
@@ -51,7 +52,7 @@
   overflow: hidden;
   position: relative;
 
-  @include decoElement(var(--c-bg4));
+  @include decoElement(var(--c-teal-500));
 
   figure {
     @media (max-width: tokens.$mq-900) {
@@ -61,5 +62,110 @@
   }
 }
 
-.stats-section {
+// .stats-section {
+// }
+
+.whyChoose {
+  .column {
+    &:nth-child(1) {
+      flex: 1 1 70%;
+    }
+
+    &:nth-child(2) {
+      flex: 1 1 30%;
+
+      @media (max-width: tokens.$mq-900) {
+        display: none;
+      }
+    }
+  }
+}
+
+.testimonial {
+  background: var(--c-bg3);
+  border-bottom: tokens.$borderWidth-s solid var(--c-border-5);
+
+  .quotation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: tokens.$mq-900;
+
+    p {
+      font-size: clamp(tokens.$size-3, 2vw, tokens.$size-5);
+      font-weight: tokens.$fontWeight-semibold;
+      font-family: tokens.$f-serif;
+      color: var(--c-bodyPrimary);
+      margin-bottom: 1rem;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: clamp(tokens.$size-8, 8vw, tokens.$size-10);
+      height: clamp(tokens.$size-8, 8vw, tokens.$size-10);
+      background: url("/images/quote-icon.svg") no-repeat center;
+      background-size: contain;
+      margin-bottom: 2em;
+    }
+
+    .testimonialAuthor {
+      border-top: 1px solid var(--c-bodyPrimary);
+      padding-top: 1em;
+      font-family: tokens.$f-sans;
+
+      p {
+      }
+      small {
+        font-style: italic;
+        color: var(--c-bodyPrimary);
+      }
+    }
+  }
+}
+
+.comparison {
+  .group {
+    .intro-text {
+      text-align: center;
+      color: var(--c-bodyPrimary);
+      max-width: tokens.$mq-800;
+    }
+
+    .infograph {
+      .icon-card {
+        display: flex;
+        flex-direction: column;
+        background: var(--c-bg5);
+        border-radius: tokens.$borderRadius-xl;
+        box-shadow: -0.5rem 0.5rem 0 var(--c-shadow2);
+        color: var(--c-bodyPrimary);
+        padding: clamp(tokens.$padding-m, 3vw, tokens.$padding-xxl);
+
+        .icon-card-head {
+          display: flex;
+          align-items: center;
+          gap: tokens.$size-4;
+
+          img {
+            display: block;
+            width: clamp(tokens.$size-5, 10vw, tokens.$size-8 * 3);
+            height: clamp(tokens.$size-5, 10vw, tokens.$size-8 * 3);
+            flex-shrink: 0;
+          }
+
+          .icon-card-title {
+            font-size: clamp(tokens.$size-4, 3vw, tokens.$size-7);
+            margin: 0;
+          }
+        }
+
+        .card-content {
+        }
+      }
+    }
+  }
 }

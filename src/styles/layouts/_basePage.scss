@@ -13,12 +13,10 @@ body {
     height: 100%;
     background: url(/images/bg-pattern-dark.svg) center center;
     background-size: contain;
-    // opacity: 0.1;
     z-index: tokens.$layer-0;
 
     @media (prefers-color-scheme: light) {
       background: url(/images/bg-pattern-light.svg) center center;
-      opacity: 1;
     }
   }
 
@@ -32,7 +30,7 @@ body {
     align-items: center;
     justify-content: center;
     padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
-    padding-block: clamp(tokens.$padding-xl, 8vw, tokens.$padding-xxxl);
+    padding-block: clamp(tokens.$padding-xxl, 10vw, tokens.$padding-xxxxl);
   }
 
   .group {
@@ -46,6 +44,14 @@ body {
       align-items: center;
       width: 100%;
       max-width: tokens.$mq-1200;
+    }
+
+    h2 {
+      strong {
+        font-size: 1.7em;
+        font-weight: tokens.$fontWeight-bold;
+        display: block;
+      }
     }
   }
 
@@ -86,7 +92,6 @@ body {
     gap: clamp(tokens.$size-4, 6vw, tokens.$size-9);
 
     & > div {
-      // flex: 1 1 50%;
       flex: 1;
     }
   }

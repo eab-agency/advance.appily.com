@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { FiMinusSquare, FiPlusSquare } from 'react-icons/fi'
+import {BiSolidPlusCircle, BiSolidMinusCircle } from 'react-icons/Bi'
 
 import styles from '@/styles/components/Accordion.module.scss'
 
@@ -20,15 +20,15 @@ const Accordion = ({ title, children }) => {
         role="button"
         tabIndex={0}
       >
-        <h2>
+        <h2 className={isExpanded && styles.expanded}>
           <span>{title}</span>{' '}
           {isExpanded ? (
             <i>
-              <FiMinusSquare />
+              <BiSolidMinusCircle />
             </i>
           ) : (
             <i>
-              <FiPlusSquare />
+              <BiSolidPlusCircle />
             </i>
           )}
         </h2>

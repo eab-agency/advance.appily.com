@@ -103,17 +103,21 @@ $texts: (
     "headingPrimary": colors.$c-white,
     "headingSecondary": map.get($teal, 500),
     "bodyPrimary": colors.$c-white,
-    "bodySecondary": colors.$c-slateGray,
+    "bodySecondary": map.get($teal, 400),
     "linkPrimary": colors.$c-orange,
-    "linkHover": colors.$c-teal
+    "linkHover": colors.$c-teal,
+    "accordionLink": map.get($teal, 400),
+    "accordionLinkHover": map.get($orange, 400)
   ),
   light: (
     "headingPrimary": colors.$c-navy,
     "headingSecondary": colors.$c-teal,
     "bodyPrimary": colors.$c-black,
-    "bodySecondary": colors.$c-slateGray,
+    "bodySecondary": colors.$c-teal,
     "linkPrimary": colors.$c-orange,
-    "linkHover": map.get($teal, 500)
+    "linkHover": map.get($teal, 600),
+    "accordionLink": map.get($teal, 600),
+    "accordionLinkHover": map.get($orange, 600)
   )
 );
 
@@ -121,17 +125,20 @@ $backgrounds: (
   dark: (
     "bg1": colors.$c-navy,
     "bg2": colors.$c-orange,
-    "bg3": colors.$c-yellow,
+    "bg3": colors.$c-teal,
     "bg4": colors.$c-teal,
+    "bg5": map.get($navy, 500),
     "bg-body": map.get($navy, 600),
     "button": colors.$c-orange,
-    "shadow1": colors.$c-yellow
+    "shadow1": colors.$c-yellow,
+    "shadow2": map.get($navy, 700)
   ),
   light: (
     "bg1": color.adjust(colors.$c-slateGray, $lightness: 70%),
     "bg2": color.adjust(colors.$c-orange, $lightness: 40%),
     "bg3": colors.$c-yellow,
     "bg4": color.adjust(colors.$c-teal, $lightness: 50%),
+    "bg5": map.get($teal, 50),
     "bg-body": colors.$c-white
   )
 );

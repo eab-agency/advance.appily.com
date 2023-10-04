@@ -1,45 +1,24 @@
 // @use 'sass:color';
 // @use '../config/tokens';
-@use "@/styles/global/tokens/breakpoints";
-@use "@/styles/global/tokens/fonts";
+@use "@/styles/global/tokens";
 
 .stats {
-  background: var(--c-bg1);
+  background: var(--c-bg5);
   position: relative;
+  border-top: tokens.$borderWidth-s solid var(--c-border-5);
 
   & > div {
     flex-direction: column;
   }
-
-  // &::before {
-  //     content: '';
-  //     display: block;
-  //     position: absolute;
-  //     top: 0;
-  //     left: 50%;
-  //     width: 150vw;
-  //     height: 100%;
-  //     transform: translateX(-50%);
-  //     background: tokens.$c-blue-800;
-  //     z-index: tokens.$layer-1;
-  // }
-
-  // @media (prefers-color-scheme: light) {
-  //     background: tokens.$c-gray-100;
-  //     &::before {
-  //         background: tokens.$c-gray-100;
-  //     }
-  // }
 
   ul {
     display: flex;
     flex-direction: column;
     list-style: none;
     position: relative;
-    // z-index: tokens.$layer-2;
-    gap: var(--gutter);
+    gap: tokens.$size-5;
 
-    @media (min-width: breakpoints.$mq-1000) {
+    @media (min-width: tokens.$mq-1000) {
       flex-direction: row;
       gap: 0;
     }
@@ -49,26 +28,18 @@
       flex-flow: row wrap;
       align-items: center;
       gap: clamp(1rem, 3vw, 3rem);
-      padding-block: clamp(var(--p-l), 2vw, var(--p-xxl));
+      padding-block: clamp(tokens.$padding-m, 2vw, tokens.$padding-xl);
       padding-left: 1em;
-      border-left: 0.5em solid var(--c-border-3);
+      border-left: 0.3em solid var(--c-border-5);
+      flex: 1;
 
-      // @media (prefers-color-scheme: light) {
-      //   border-color: color.adjust(tokens.$c-blue-800, $lightness: 70%);
-      // }
-
-      @media (min-width: breakpoints.$mq-1000) {
+      @media (min-width: tokens.$mq-1000) {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0;
         border-left: 0;
-        border-right: 0.5em solid var(--c-border-3);
-        padding-inline: clamp(var(--p-l), 2vw, var(--p-xxl));
+        border-right: 0.3em solid var(--c-border-5);
+        padding-inline: clamp(tokens.$padding-m, 2vw, tokens.$padding-xl);
         padding-block: 0;
-
-        // @media (prefers-color-scheme: light) {
-        //   border-color: color.adjust(tokens.$c-blue-800, $lightness: 70%);
-        // }
       }
 
       &:last-child {
@@ -78,35 +49,22 @@
       h3 {
         display: flex;
         flex-direction: column;
-        // font-weight: tokens.$fw-normal;
-        // font-size: clamp(var(--fs-xxl), 4vw, var(--fs-xxxxl));
-        font-family: fonts.$f-serif;
-        font-size: fonts.$fs-xxl;
-        color: var(--c-bodySecondary);
+        font-family: tokens.$f-serif;
+        font-weight: tokens.$fontWeight-black;
+        font-size: clamp(tokens.$size-3, 7vw, tokens.$size-7);
+        color: var(--c-bodyPrimary);
         width: 100%;
-        max-width: 10rem;
+        max-width: 15rem;
         margin-bottom: clamp(0rem, 2vw, var(--m-l));
 
-        @media (--breakpoint-sm) {
-          color: green;
-        }
-
-        // @media (prefers-color-scheme: light) {
-        //   color: tokens.$c-blue-800;
-        // }
-
-        @media (min-width: breakpoints.$mq-1000) {
+        @media (min-width: tokens.$mq-1000) {
           max-width: 100%;
         }
 
         strong {
-          color: var(--c-bodyPrimary);
-          font-size: clamp(var(--fs-xxl), 5vw, var(--fs-xxxxl));
-          font-weight: var(--fw-bold);
-
-          // @media (prefers-color-scheme: light) {
-          //   color: color.adjust(tokens.$c-turquoise-500, $lightness: -5%);
-          // }
+          color: var(--c-bodySecondary);
+          font-size: 2em;
+          font-weight: var(--fw-semiBold);
         }
       }
       p {
@@ -116,7 +74,7 @@
           margin-bottom: 0;
         }
 
-        @media (max-width: breakpoints.$mq-1000) {
+        @media (max-width: tokens.$mq-1000) {
           flex: 1 0 15rem;
         }
       }
@@ -127,14 +85,10 @@
     display: block;
     padding-top: 0.5em;
     margin-top: 2em;
-    border-top: 1px solid var(--c-border-4);
+    width: 100%;
+    border-top: 1px solid var(--c-border-5);
     position: relative;
-    // z-index: var(--layer-1);
     font-style: italic;
     font-size: var(--fs-s);
-
-    // @media (prefers-color-scheme: light) {
-    //   border-color: color.adjust(tokens.$c-blue-500, $lightness: 50%);
-    // }
   }
 }
