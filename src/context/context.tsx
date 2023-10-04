@@ -27,6 +27,7 @@ interface UserLocationContextProps {
 		} | null>
 	>;
 	vertical: string;
+	setVertical: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const UserLocationContext = createContext<UserLocationContextProps>(null!);

@@ -14,6 +14,7 @@ import {
 import { useUser } from "@/context/context";
 import styles from "@/styles/global/layouts/FinalPage.module.scss";
 import { usePathname } from "next/navigation";
+import { set } from "react-hook-form";
 
 const API_URL = `${process.env.NEXT_PUBLIC_APP_URL}`;
 
@@ -21,7 +22,8 @@ export default function Page() {
 	const carouselRef = useRef(null);
 	const pathname = usePathname();
 	const slug = pathname ? pathname.split("/").pop() : "";
-	const { vertical } = useUser();
+	const { setVertical, vertical } = useUser();
+	setVertical("healthcare");
 	const { data, error, isLoading } = useSWR(
 		`${API_URL}/api/results?vertical=${vertical}&slug=${slug}`,
 	);

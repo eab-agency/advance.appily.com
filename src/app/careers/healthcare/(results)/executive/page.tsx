@@ -22,12 +22,13 @@ export default function Page() {
 	const carouselRef = useRef(null);
 	const pathname = usePathname();
 	const slug = pathname ? pathname.split("/").pop() : "";
-	const { vertical } = useUser();
+	const { setVertical, vertical } = useUser();
+	setVertical("healthcare");
 	const { data, error, isLoading } = useSWR(
 		`${API_URL}/api/results?vertical=${vertical}&slug=${slug}`,
 	);
 
-	if (error) return <div>Failed to load data.</div>;
+	if (error) return <div>Failed to load data.{JSON.stringify(error)}</div>;
 	if (isLoading) return <div>Loading...</div>;
 
 	return (
