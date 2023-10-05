@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { useRef } from "react";
-import { BiLinkExternal } from "react-icons/bi";
+// import { BiLinkExternal } from "react-icons/Bi";
 import useSWR from "swr";
 
 import {
@@ -81,7 +81,7 @@ const ExecutivePage = () => {
               >
                 Bureau of Labor Statistics{" "}
                 <i>
-                  <BiLinkExternal />
+                  {/* <BiLinkExternal /> */}
                 </i>
               </a>
             </div>
@@ -90,5 +90,5 @@ const ExecutivePage = () => {
       </div>
       <StickyCta trackedElement={carouselRef} />
     </>
-  ) : null;
+  );
 }
