@@ -97,8 +97,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-block: 4em;
-  padding-inline: 4em;
+  padding: clamp(tokens.$padding-m, 3vw, tokens.$padding-xxxl);
   position: relative;
   background: rgba(black, 0.8);
   backdrop-filter: blur(5px);
@@ -112,16 +111,28 @@
   .formContentWrapper {
     background: white;
     border-radius: tokens.$borderRadius-xl;
-    padding: 3em;
+    padding: clamp(tokens.$padding-m, 3vw, tokens.$padding-xxxl);
+    padding-top: 4em;
     position: relative;
     width: 100%;
+    margin-top: 10rem;
     max-width: tokens.$mq-600;
+
+    @media (min-width: tokens.$mq-400) {
+      margin-top: clamp(6rem, -3vw, tokens.$margin-xl);
+    }
+  }
+
+  .formContent {
+    display: block;
+    max-height: 80vh;
+    overflow-y: auto;
   }
 
   .closeBtn {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 1rem;
+    top: 1rem;
     background: none;
     border: none;
     font-size: clamp(0.9rem, 1.5vw, 1.2rem);
@@ -143,7 +154,7 @@
       text-align: center;
     }
     p {
-      font-size: clamp(1rem, 2vw, 2rem);
+      font-size: clamp(1rem, 1.3vw, 1.3rem);
       text-align: center;
     }
   }
