@@ -1,12 +1,4 @@
 @use "@/styles/global/tokens";
-// @use '../config/tokens';
-
-// .form {
-//   display: flex;
-//   flex-direction: column;
-//   margin: 0;
-//   // margin-bottom: tokens.$margin-xl;
-// }
 
 .qGroup {
   padding-block: 0.25em;
@@ -50,6 +42,11 @@
     width: 100%;
     border: 1px solid var(--c-navy-500);
     background-color: var(--c-slateGray-100);
+
+    &:hover {
+      border-color: var(--c-teal-700);
+      background: var(--c-teal-50);
+    }
   }
 
   select {

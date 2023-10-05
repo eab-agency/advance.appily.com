@@ -136,10 +136,18 @@
     background: none;
     border: none;
     font-size: clamp(0.9rem, 1.5vw, 1.2rem);
-    // color: tokens.$c-turquoise-500;
+    gap: 0.2em;
+    transition: all 0.1s ease-out;
+
+    &::before,
+    &::after {
+      display: none;
+    }
 
     &:hover {
-      // color: tokens.$c-orange-500;
+      background: none;
+      color: var(--c-orange-600);
+      gap: 0.5em;
     }
   }
 
