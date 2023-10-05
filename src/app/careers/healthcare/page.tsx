@@ -127,20 +127,24 @@ const HealthCareSeoPage = () => {
         </div>
         <ul>{rightCareerList}</ul>
       </section>
+
       <div id="explore-your-school-matches" ref={carouselRef}>
         <CarouselWithForm />
       </div>
-      <section className={styles.whatIsCappex}>
-        <div className={styles.content}>
-          <figure>
-            <Image
-              src="/images/college-search.png"
-              width={536}
-              height={361}
-              alt="What is Appily?"
-            />
-          </figure>
-          <section className={styles.goingToCollege}>
+
+      <section className="whatIsCappex column">
+        <div className="group row center-aligned cols-2">
+          <div className="column">
+            <figure>
+              <Image
+                src="/images/college-search.png"
+                width={800}
+                height={800}
+                alt="What is Appily?"
+              />
+            </figure>
+          </div>
+          <div className="column">
             <h3>
               An All-in-One Resource for <strong>Going to College</strong>
             </h3>
@@ -157,19 +161,38 @@ const HealthCareSeoPage = () => {
               help you get there — all in one place. Take the next step in
               achieving your academic goals with confidence.
             </p>
-          </section>
+          </div>
         </div>
+        <Stats
+          stats={data.statsAppily}
+          className="stats-section"
+        />
       </section>
-      <section className={styles.takeQuiz}>
-        <div className={styles.content}>
-          <h2>{data.takeQuiz.title}</h2>
-          <p>{data.takeQuiz.description}</p>
-          <Button
-            type="button"
-            label={data.takeQuiz.buttonText}
-            href="/careers/healthcare/quiz"
-            className="button btn-primary"
-          />
+
+
+      <section className="takeQuiz full-content">
+        <div className="group row">
+          <div className="column">
+            <figure>
+              <Image
+                src="/images/ready-to-find-your-role.jpg"
+                width={800}
+                height={800}
+                alt="Take our free quiz"
+              // className="highlighted-img"
+              />
+            </figure>
+          </div>
+          <div className="content column">
+            <h2>{data.takeQuiz.title}</h2>
+            <p>{data.takeQuiz.description}</p>
+            <Button
+              type="button"
+              label={data.takeQuiz.buttonText}
+              href="/careers/business/quiz"
+              className="button btn-primary"
+            />
+          </div>
         </div>
       </section>
       <StickyCta trackedElement={carouselRef} />

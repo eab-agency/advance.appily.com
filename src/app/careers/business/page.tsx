@@ -244,8 +244,7 @@ const BusinessSeoPage = () => {
           </div>
         </div >
         <Stats
-          stats={data.stats}
-          source={data.statsSource}
+          stats={data.statsAppily}
           className="stats-section"
         />
       </section >
