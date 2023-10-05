@@ -136,6 +136,27 @@
       }
     }
   }
+
+  .accordion-group {
+    counter-reset: accordion;
+
+    & > div {
+      counter-increment: accordion;
+
+      & > div[class*="accordion-header"] {
+        h3 {
+          width: 100%;
+
+          &::before {
+            content: counter(accordion) ".";
+            color: var(--c-accordionLink);
+            font-size: 1em;
+            font-family: tokens.$f-serif;
+          }
+        }
+      }
+    }
+  }
 }
 
 .testimonial {
@@ -324,6 +345,40 @@
   .content {
     @media (max-width: tokens.$mq-900) {
       padding: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+    }
+  }
+}
+
+.rightCareer {
+  .group {
+    max-width: tokens.$mq-900;
+  }
+
+  ul {
+    counter-reset: careerList;
+    list-style: none;
+    padding: 0;
+
+    li {
+      counter-increment: careerList;
+      padding-left: 3em;
+      position: relative;
+
+      &::before {
+        content: counter(careerList);
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        background: var(--c-teal-700);
+        color: var(--c-white);
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.5em;
+        border-radius: 100%;
+        position: absolute;
+        left: 0;
+      }
     }
   }
 }

@@ -8,10 +8,11 @@
 
   .accordion-header {
     cursor: pointer;
-    h2 {
+
+    h3 {
       display: flex;
       align-items: center;
-      gap: tokens.$size-6;
+      gap: tokens.$size-2;
       margin: 0;
       font-weight: tokens.$fontWeight-light;
       color: var(--c-accordionLink);

@@ -50,6 +50,7 @@ const SchoolCarousel = ({ handleClick, className }) => {
       {/* biome-ignore lint/complexity/useOptionalChain: <explanation> */}
       {matchedSchools &&
         matchedSchools.map((card: CarouselCard) => (
+
           <>
             <div className="item-content" key={card.id}>
               <div className="item-head">

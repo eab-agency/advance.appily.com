@@ -5,7 +5,7 @@ import { useRef } from 'react'
 import { BiLinkExternal } from 'react-icons/bi'
 import useSWR from 'swr'
 
-import styles from '@/styles/global/layouts/FinalPage.module.scss'
+import styles from '@/styles/components/FinalPage.module.scss'
 import { usePathname } from 'next/navigation'
 import { Accordion, CarouselWithForm, Stats, StickyCta, Tabs } from '../../../../../components'
 

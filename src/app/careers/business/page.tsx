@@ -9,6 +9,7 @@ import {
   Header,
   Stats,
   StickyCta,
+  Testimonial
 } from "@/components";
 import MainLogo from "@/components/Header/MainLogo";
 import { IconCard } from "@/components/IconCard/IconCard";
@@ -81,11 +82,13 @@ const BusinessSeoPage = () => {
           </div>
         </div>
       </section>
+
       <Stats
         stats={data.stats}
         source={data.statsSource}
         className="stats-section"
       />
+
       <section className="whyChoose">
         <div className="group center-aligned cols-2">
           <div className="column">
@@ -97,16 +100,18 @@ const BusinessSeoPage = () => {
                 }}
               />
             </div>
-            {reasonsArray.map((reason, index) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              <Accordion key={index} title={reason.title}>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: reason.description,
-                  }}
-                />
-              </Accordion>
-            ))}
+            <div className="accordion-group">
+              {reasonsArray.map((reason, index) => (
+                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                <Accordion key={index} title={reason.title}>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: reason.description,
+                    }}
+                  />
+                </Accordion>
+              ))}
+            </div>
           </div>
           <div className="column">
             <figure className="highlighted-img">
@@ -120,17 +125,9 @@ const BusinessSeoPage = () => {
           </div>
         </div>
       </section>
-      <section className="testimonial">
-        <div className="quotation">
-          <blockquote>
-            <p>{data.testimonial.text}</p>
-            <div className="testimonialAuthor">
-              <p>{data.testimonial.author}</p>
-              <small>{data.testimonial.authorTitle}</small>
-            </div>
-          </blockquote>
-        </div>
-      </section>
+
+      <Testimonial testimonialData={data.testimonial} />
+
       <section className="comparison">
         <div className="group column center-aligned">
           <div className="intro-text">

@@ -3,12 +3,15 @@ import Image from "next/image";
 import React, { useRef } from "react";
 
 import {
+  Accordion,
   Button,
   CarouselWithForm,
   Header,
   Stats,
   StickyCta,
+  Testimonial
 } from "@/components";
+// import Testimonial from "@/components/Testimonial";
 import data from "@/data/careers-healthcare.json";
 import styles from "@/styles/styles.scss";
 
@@ -88,44 +91,55 @@ const HealthCareSeoPage = () => {
           </div>
         </div>
       </section>
+
       <Stats
         stats={data.stats}
         source={data.statsSource}
         className="stats-section"
       />
-      <section className={styles.whyChoose}>
-        <div className={styles.intro}>
-          <h2>{data.whyChoose.title}</h2>
-        </div>
-        <div className={styles.whyChooseContent}>
-          <ul>{reasonsList}</ul>
-          <figure>
-            <Image
-              src="/images/doctor-wearing-mas-and-sthethoscope.jpg"
-              width={478}
-              height={284}
-              alt="Doctor wearing mask and a sthethoscope"
-            />
-          </figure>
-        </div>
-      </section>
-      <section className={styles.testimonial}>
-        <div className={styles.quotation}>
-          <blockquote>
-            <p>{data.testimonial.text}</p>
-            <div className={styles.testimonialAuthor}>
-              <p>{data.testimonial.author}</p>
-              <small>{data.testimonial.authorTitle}</small>
+
+      <section className="whyChoose">
+        <div className="group center-aligned cols-2">
+          <div className="column">
+            <h2>{data.whyChoose.title}</h2>
+            <div className="accordion-group">
+              {reasonsArray.map((reason, index) => (
+                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                <Accordion key={index} title={reason.title}>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: reason.description,
+                    }}
+                  />
+                </Accordion>
+              ))}
             </div>
-          </blockquote>
+          </div>
+
+          <div className="column">
+            <figure>
+              <Image
+                src="/images/doctor-wearing-mas-and-sthethoscope.jpg"
+                width={478}
+                height={284}
+                alt="Doctor wearing mask and a sthethoscope"
+                className="highlighted-img"
+              />
+            </figure>
+          </div>
         </div>
       </section>
-      <section className={styles.rightCareer}>
-        <div className={styles.intro}>
-          <h2>{data.rightCareer[0].title}</h2>
-          <p>{data.rightCareer[0].description}</p>
+
+      <Testimonial testimonialData={data.testimonial} />
+
+      <section className="rightCareer">
+        <div className="group column center-aligned">
+          <div className="column">
+            <h2>{data.rightCareer[0].title}</h2>
+            <p>{data.rightCareer[0].description}</p>
+          </div>
+          <ul>{rightCareerList}</ul>
         </div>
-        <ul>{rightCareerList}</ul>
       </section>
 
       <div id="explore-your-school-matches" ref={carouselRef}>

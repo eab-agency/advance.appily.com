@@ -11,3 +11,4 @@ export { Header } from "./Header";
 export { Card } from "./Card";
 export { CareerPaths } from "./CareerPaths";
 export { TextWithImage } from "./TextWithImage";
+export { Testimonial } from "./Testimonial";
