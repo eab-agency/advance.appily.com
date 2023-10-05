@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { useRef } from "react";
-import { BiLinkExternal } from "react-icons/bi";
+import { BiLinkExternal } from "react-icons/Bi";
+import useSWR from "swr";
 
 import {
   Accordion,
@@ -17,7 +18,7 @@ import data from "@/data/results-creative-marketer.json";
 import styles from "@/styles/components/FinalPage.module.scss";
 
 export default function Page() {
-	const carouselRef = useRef(null);
+  const carouselRef = useRef(null);
 
   return (
     <>
