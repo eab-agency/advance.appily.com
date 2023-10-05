@@ -27,7 +27,6 @@ const AcquiaFormHandle = ({
 	id,
 	school = {},
 }) => {
-	console.log("🚀 ~ file: Form.js:29 ~ answers:", answers);
 	// keep track of whether the form has been submitted
 	const [isSent, setIsSent] = useState(false);
 
@@ -235,8 +234,6 @@ const AcquiaFormHandle = ({
 			{({ errors, isSubmitting, isValid, dirty }) =>
 				!isSent ? (
 					<Form className={styles.form}>
-						{JSON.stringify(formValues)}
-
 						{theFields.map(field => (
 							<GenerateField
 								field={field}
