@@ -19,11 +19,9 @@ export default async function RootLayout({
       </head>
       <body>
         <Providers>
-          <div className="layout-wrapper">
-            <main className="page-layout">
-              <div className="page-content">{children}</div>
-            </main>
-          </div>
+          <main className="layout-wrapper">
+            {children}
+          </main>
           <Footer />
         </Providers>
         <Analytics />

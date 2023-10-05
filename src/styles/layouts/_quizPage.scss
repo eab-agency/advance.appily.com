@@ -1,0 +1,39 @@
+@use "@/styles/global/tokens";
+
+.quiz-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 120vh;
+    border-top-left-radius: 100%;
+    background: var(--c-teal-500);
+    z-index: tokens.$layer-0;
+  }
+
+  .quiz-container {
+    display: flex;
+    width: 100%;
+    max-width: tokens.$mq-1300;
+    gap: clamp(tokens.$size-5, 10vw, tokens.$size-10 * 1);
+  }
+
+  figure {
+    width: clamp(20rem, 30vw, 30rem);
+  }
+
+  h1 {
+    font-size: clamp(tokens.$size-3, 8vw, tokens.$size-7 * 1.9);
+  }
+}

@@ -4,7 +4,7 @@ import MainLogo from './MainLogo'
 import NavBar from './NavBar'
 
 interface HeaderProps {
-  links: Link[] // replace string[] with the actual type of your links
+  links?: Link[] | undefined // replace string[] with the actual type of your links
 }
 
 interface Link {
@@ -14,10 +14,10 @@ interface Link {
 
 export const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
-    <header className={styles.pageHeader}>
+    <header className={`${styles.pageHeader} ${links ? "" : styles.noNav}`}>
       <div className={styles.container}>
-          <MainLogo />
-          <NavBar links={links} />
+        <MainLogo />
+        {links && <NavBar links={links} />}
       </div>
     </header>
   )

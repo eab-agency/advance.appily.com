@@ -7,6 +7,10 @@
   position: sticky;
   top: 0;
   z-index: tokens.$layer-999;
+
+  &.noNav {
+    padding-block: clamp(tokens.$padding-s, 5vw, tokens.$padding-m);
+  }
 }
 
 .container {

@@ -75,12 +75,6 @@
   }
 }
 
-.highlighted-img {
-  border-radius: tokens.$borderRadius-xl;
-  overflow: hidden;
-  box-shadow: -1rem 1rem 0 var(--c-shadow1);
-}
-
 @mixin decoElement($color) {
   &::after {
     position: absolute;
