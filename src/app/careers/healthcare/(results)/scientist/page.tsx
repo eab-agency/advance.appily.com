@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
-import useSWR from "swr";
 
 import {
 	Accordion,
@@ -11,25 +10,11 @@ import {
 	StickyCta,
 	Tabs,
 } from "@/components";
-import { useUser } from "@/context/context";
+import data from "@/data/results-scientist.json";
 import styles from "@/styles/global/layouts/FinalPage.module.scss";
-import { usePathname } from "next/navigation";
-import { set } from "react-hook-form";
-
-const API_URL = `${process.env.NEXT_PUBLIC_APP_URL}`;
 
 export default function Page() {
 	const carouselRef = useRef(null);
-	const pathname = usePathname();
-	const slug = pathname ? pathname.split("/").pop() : "";
-	const { setVertical, vertical } = useUser();
-	setVertical("healthcare");
-	const { data, error, isLoading } = useSWR(
-		`${API_URL}/api/results?vertical=${vertical}&slug=${slug}`,
-	);
-
-	if (error) return <div>Failed to load data.{JSON.stringify(error)}</div>;
-	if (isLoading) return <div>Loading...</div>;
 	return (
 		<>
 			<div className={styles.container}>

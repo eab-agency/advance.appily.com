@@ -1,9 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import Image from "next/image";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
-import useSWR from "swr";
 
 import {
 	Accordion,
@@ -14,26 +12,13 @@ import {
 	Tabs,
 	TextWithImage,
 } from "@/components";
-import { useUser } from "@/context/context";
+import data from "@/data/results-computer-whiz.json";
 import styles from "@/styles/global/layouts/FinalPage.module.scss";
-import { usePathname } from "next/navigation";
-
-const API_URL = `${process.env.NEXT_PUBLIC_APP_URL}`;
 
 export default function Page() {
 	const carouselRef = useRef(null);
-	const pathname = usePathname();
-	const slug = pathname ? pathname.split("/").pop() : "";
-	const { setVertical, vertical } = useUser();
-	setVertical("business");
-	const { data, error, isLoading } = useSWR(
-		`${API_URL}/api/results?vertical=${vertical}&slug=${slug}`,
-	);
 
-	if (error) return <div>Failed to load data.{JSON.stringify(error)}</div>;
-	if (isLoading) return <div>Loading...</div>;
-
-	return (
+	return data ? (
 		<>
 			<div className={styles.container}>
 				<div className={styles.content}>
@@ -96,5 +81,5 @@ export default function Page() {
 			</div>
 			<StickyCta trackedElement={carouselRef} />
 		</>
-	);
+	) : null;
 }

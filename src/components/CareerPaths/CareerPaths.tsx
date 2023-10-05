@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 interface CareerPath {
-	id: string;
 	imagePath: string;
 	title: string;
 	description: string;

@@ -1,0 +1,129 @@
+{
+	"slug": "fearless-leader",
+	"title": "The Fearless Leader",
+	"description": "You're a dynamic and strategic thinker, with a passion for guiding teams towards success. Leadership comes naturally to you, and you thrive in fast-paced corporate environments. Planning, decision-making, and motivating others are second nature, and you're prepared to take on the responsibilities of management. Whether you have a background in business or aspire to lead in the world of commerce, the executive and leadership path beckons you.",
+	"detailedDescription": "You're a dynamic and strategic thinker, with a passion for guiding teams towards success. Leadership comes naturally to you, and you thrive in fast-paced corporate environments. Planning, decision-making, and motivating others are second nature, and you're prepared to take on the responsibilities of management. Whether you have a background in business or aspire to lead in the world of commerce, the executive and leadership path beckons you.",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "The Executive may like to develop plans and communicate them to a team. They enjoy helping others do their best at work."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "This role is skilled at leading and communicating with others. They have good attention to detail and enjoy analyzing information and using technology."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "Careers in The Executive's path often involve working with health care providers and managing staff or finances."
+		},
+		{
+			"title": "Courses",
+			"icon": "education-icon",
+			"content": "The Executive may have taken college courses in accounting, administration, ethics, or economics."
+		},
+		{
+			"title": "Setting",
+			"icon": "setting-icon",
+			"content": "A hospital or physician's office are common workplaces for The Executive, although they may also work in a residential care facility or government agency."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "Many jobs in this field require college courses in things like accounting, administration, ethics, or economics. Some roles require a bachelor's or master's degree."
+		},
+		{
+			"title": "Experience",
+			"icon": "work-icon",
+			"content": "People with experience in an administrative or clinical role tend to be a good fit for this The Executive's career path."
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"stats": [
+		{
+			"number": "28%",
+			"title": "Growth",
+			"description": "In employment of medical and health services managers over the next decade"
+		},
+		{
+			"number": "$101K",
+			"title": "Median Salary",
+			"description": "For medical and health services managers, ranging from $83K to $119K averages"
+		},
+		{
+			"number": "56K",
+			"title": "Job Openings",
+			"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
+		}
+	],
+	"degreeTabs": {
+		"title": "What degree do I need for a management career path?",
+		"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+		"degrees": [
+			{
+				"title": "Executive Business Administration",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Business Administration",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Organizational Leadership",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "International Business/Trade/Commerce",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Risk Management",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Office Management and Supervision",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Non-Profit/Public Organizational Management",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Management",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			}
+		]
+	},
+	"careerPaths": {
+		"title": "What kind of career is a good fit for me?",
+		"description": "Occupations that align with The Fearless Leader's career path involve planning, directing, and coordinating business activities and teams.",
+		"paths": [
+			{
+				"title": "Chief Executive Officer (CEO)",
+				"description": "Oversee and lead the entire organization, making critical decisions and setting strategic goals.",
+				"imagePath": "/images/ceo.jpg"
+			},
+			{
+				"title": "Chief Financial Officer (CFO)",
+				"description": "Manage financial operations, budgets, and investments to ensure the organization's financial success.",
+				"imagePath": "/images/ceo.jpg"
+			},
+			{
+				"title": "General Manager",
+				"description": "Oversee the day-to-day operations of a business unit or division.",
+				"imagePath": "/images/ceo.jpg"
+			},
+			{
+				"title": "Director or Associate Director",
+				"description": "Lead specific departments or functional areas within an organization.",
+				"imagePath": "/images/ceo.jpg"
+			}
+		]
+	},
+	"textWithImage": {
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+		"imagePath": "/images/ceo.jpg"
+	}
+}

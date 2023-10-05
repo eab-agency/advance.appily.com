@@ -1,0 +1,124 @@
+{
+	"slug": "people-person",
+	"title": "The People Person",
+	"description": "People are your priority, and you excel in creating positive work environments that nurture talent and foster growth. Collaborating with colleagues and clients brings out the best in you. You find fulfillment in managing teams, handling employee relations, and facilitating effective teamwork. If you possess empathy, excellent communication skills, and a drive to create strong and cohesive teams, the realm of operations, project management, and human resources beckons you.",
+	"detailedDescription": "People are your priority, and you excel in creating positive work environments that nurture talent and foster growth. Collaborating with colleagues and clients brings out the best in you. You find fulfillment in managing teams, handling employee relations, and facilitating effective teamwork. If you possess empathy, excellent communication skills, and a drive to create strong and cohesive teams, the realm of operations, project management, and human resources beckons you.",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "The Analyst likes to develop and maintain systems and solve problems. They often enjoy solving puzzles presented by data."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "This role is skilled at organization, project management, data analysis, and creative problem solving."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "Careers in The Analyst’s path tend to work with medical professionals and computer systems."
+		},
+		{
+			"title": "Setting",
+			"icon": "setting-icon",
+			"content": "An office or hospital are common workplaces for The Analyst, but they may also work for a technical services or administrative support organization."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "Jobs in this field often require college courses in things like biology, computer science, math, and management. Some roles require a bachelor’s or master’s degree."
+		},
+		{
+			"title": "Experience",
+			"icon": "skills-icon",
+			"content": "People with experience working with computers, databases, or information systems tend to be a good fit for The Analyst’s career path."
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"stats": [
+		{
+			"number": "17%",
+			"title": "Growth",
+			"description": "In employment of health information technologists and medical registrars over the next decade"
+		},
+		{
+			"number": "$55K",
+			"title": "Median Salary",
+			"description": "For health information technologists and medical registrars, ranging from $30K to $98K averages"
+		},
+		{
+			"number": "3.4K",
+			"title": "Job Openings",
+			"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
+		}
+	],
+	"degreeTabs": {
+		"title": "What degree do I need for a management career path?",
+		"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+		"degrees": [
+			{
+				"title": "Executive Business Administration",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Business Administration",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Organizational Leadership",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "International Business/Trade/Commerce",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Risk Management",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Office Management and Supervision",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Non-Profit/Public Organizational Management",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Management",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			}
+		]
+	},
+	"careerPaths": {
+		"title": "What kind of career is a good fit for me?",
+		"description": "Occupations that align with The People Person's career path focus on team management, employee relations, and human resources.",
+		"paths": [
+			{
+				"title": "Operations Manager",
+				"description": "Oversee the operations and processes of an organization to ensure efficiency.",
+				"imagePath": "/images/ceo.jpg"
+			},
+			{
+				"title": "Human Resource Manager",
+				"description": "Manage the organization's workforce, including recruitment, training, and employee relations.",
+				"imagePath": "/images/ceo.jpg"
+			},
+			{
+				"title": "Project Manager",
+				"description": "Plan and execute projects, working closely with cross-functional teams.",
+				"imagePath": "/images/ceo.jpg"
+			},
+			{
+				"title": "Training and Development Manager",
+				"description": "Create and implement training programs to enhance employee skills and development.",
+				"imagePath": "/images/ceo.jpg"
+			}
+		]
+	},
+	"textWithImage": {
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+		"imagePath": "/images/ceo.jpg"
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"results": [
+		{
+			"slug": "executive",
+			"title": "Executive"
+		},
+		{
+			"slug": "practitioner",
+			"title": "Practitioner"
+		},
+		{
+			"slug": "educator",
+			"title": "Educator"
+		},
+		{
+			"slug": "scientist",
+			"title": "Scientist"
+		},
+		{
+			"slug": "analyst",
+			"title": "Analyst"
+		}
+	]
+}

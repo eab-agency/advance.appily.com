@@ -1,0 +1,70 @@
+{
+	"slug": "practitioner",
+	"title": "Practitioner",
+	"description": "You enjoy working directly with people to help them solve problems and improve their lives. You have a hands-on approach and prefer to be in the field rather than behind a desk.",
+	"detailedDescription": "You’re an empathetic person who likes to help others. Things like anatomy and biology intrigue you, and natural bodily functions don’t phase you. Whether it’s through nursing or surgery, therapy or routine care appointments, what matters to you is improving the health of others. You may already have a background in patient care and are ready to advance your career, or you may be answering a new calling.",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "The Practitioner likes to help people. They enjoy improving a person’s health or quality of life."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "This role is skilled in empathetic communication and tends to be emotionally stable. They have strong problem-solving and interpersonal skills."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "Careers in The Practitioner’s path work with patients and other medical professionals. They may be interested in all patients or those with a specific need."
+		},
+		{
+			"title": "Setting",
+			"icon": "setting-icon",
+			"content": "A physician’s office, hospital, or outpatient care center are common workplaces for The Practitioner."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "Jobs in this field often require college courses in physical sciences or health care. Many roles require a bachelor’s, masters, or professional degree."
+		},
+		{
+			"title": "Experience",
+			"icon": "experience-icon",
+			"content": "People with experience working in a lab setting or with patients as a nurse, medical assistant, EMT tend to be a good fit for The Practitioner’s career path."
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"stats": [
+		{
+			"number": "13%",
+			"title": "Growth",
+			"description": "In employment of healthcare occupations over the next decade"
+		},
+		{
+			"number": "$75K",
+			"title": "Median Salary",
+			"description": "For healthcare practitioners and technical occupations, ranging from $30K to $163K averages "
+		},
+		{
+			"number": "2M",
+			"title": "Job Openings",
+			"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
+		}
+	],
+	"degreeTabs": [
+		{
+			"title": "Master's",
+			"content": "If you have a bachelor’s degree and want to further specialize your studies, these are some popular master’s in the health field:<ul><li><strong>Master of Science in Nursing (MSN):</strong> This program expands your nursing skill set and prepares you for roles such as nurse administrator, nurse educator, clinical nurse specialist, and more</li><li><strong>Master of Physician Assistant Studies:</strong> This program can prepare you to become a certified physician assistant, health educator, medical services manager, and more</li><li><strong>Master of Occupational Therapy (MOT):</strong> This is often the minimum credential required to practice occupational therapy, while many go on to earn the Doctor of Occupational Therapy</li><ul>"
+		},
+		{
+			"title": "Professional",
+			"content": "To reach the pinnacle of patient care, you can earn a professional doctorate such as:<ul><li>Doctor of Nursing Practice (DNP)</li><li>Medical Doctor (MD)</li><li>Doctor of Dental Surgery (DDS)</li><li>Doctor of Dental Medicine (DMD)</li><li>Doctor of Osteopathic Medicine (DO)</li><li>Doctor of Pharmacy (PharmD)</li></ul>"
+		},
+		{
+			"title": "Bachelor's",
+			"content": "If you don’t already have a bachelor’s degree, there are many good options to pursue based on your career of interest. Some popular ones include:<ul><li><strong>Bachelor of Science in Nursing (BSN):</strong> This program may allow for specialization into specific areas of nursing and often qualifies students to pursue nursing licensure in their state</li><li><strong>Bachelor’s in Biology:</strong> This is a popular undergraduate degree for students who will go on to pursue a master’s or professional doctorate.</li><li><strong>Bachelor’s in Nutrition and Dietetics:</strong> This degree can prepare you to work in roles such as health and wellness, K-12 nutrition programming, nutrition education, food labeling, and more. If you become a Registered Dietitian Nutritionist, there are even more roles available.</li></ul>"
+		}
+	]
+}

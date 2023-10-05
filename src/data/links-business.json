@@ -1,0 +1,28 @@
+{
+	"results": [
+		{
+			"slug": "fearless-leader",
+			"title": "The Fearless Leader"
+		},
+		{
+			"slug": "creative-marketer",
+			"title": "The Creative Marketer"
+		},
+		{
+			"slug": "money-maestro",
+			"title": "The Money Maestro"
+		},
+		{
+			"slug": "self-starter",
+			"title": "The Self Starter"
+		},
+		{
+			"slug": "computer-whiz",
+			"title": "The Computer Whiz"
+		},
+		{
+			"slug": "people-person",
+			"title": "The People Person"
+		}
+	]
+}

@@ -3,33 +3,19 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
-import useSWR from "swr";
 
-import { useUser } from "@/context/context";
-import styles from "@/styles/global/layouts/FinalPage.module.scss";
-import { usePathname } from "next/navigation";
 import {
 	Accordion,
 	CarouselWithForm,
 	Stats,
 	StickyCta,
 	Tabs,
-} from "../../../../../components";
-
-const API_URL = `${process.env.NEXT_PUBLIC_APP_URL}`;
+} from "@/components";
+import data from "@/data/results-executive.json";
+import styles from "@/styles/global/layouts/FinalPage.module.scss";
 
 export default function Page() {
 	const carouselRef = useRef(null);
-	const pathname = usePathname();
-	const slug = pathname ? pathname.split("/").pop() : "";
-	const { setVertical, vertical } = useUser();
-	setVertical("healthcare");
-	const { data, error, isLoading } = useSWR(
-		`${API_URL}/api/results?vertical=${vertical}&slug=${slug}`,
-	);
-
-	if (error) return <div>Failed to load data.{JSON.stringify(error)}</div>;
-	if (isLoading) return <div>Loading...</div>;
 
 	return (
 		<>

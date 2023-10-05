@@ -9,11 +9,11 @@ interface Link {
 export default async function BusinessResultsLayout({
 	children,
 }: { children: React.ReactNode }) {
-	// const links: Link[] = await getSlugs("business");
+	const links: Link[] = await getSlugs("business");
 
 	return (
 		<>
-			{/* <Header links={links} /> */}
+			<Header links={links} />
 			{children}
 		</>
 	);

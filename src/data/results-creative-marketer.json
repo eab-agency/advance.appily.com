@@ -1,0 +1,124 @@
+{
+	"slug": "creative-marketer",
+	"title": "The Creative Marketer",
+	"description": "You possess a flair for creativity and innovation, and marketing is where you shine. Crafting captivating campaigns, building brands, and communicating effectively with audiences are your specialties. A dynamic and innovative workspace fuels your motivation, and you're always seeking new ways to connect with clients and customers. If you have a knack for creativity and a passion for driving business growth, the marketing and creative path could be your perfect fit.",
+	"detailedDescription": "You possess a flair for creativity and innovation, and marketing is where you shine. Crafting captivating campaigns, building brands, and communicating effectively with audiences are your specialties. A dynamic and innovative workspace fuels your motivation, and you're always seeking new ways to connect with clients and customers. If you have a knack for creativity and a passion for driving business growth, the marketing and creative path could be your perfect fit.",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "The Practitioner likes to help people. They enjoy improving a person’s health or quality of life."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "This role is skilled in empathetic communication and tends to be emotionally stable. They have strong problem-solving and interpersonal skills."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "Careers in The Practitioner’s path work with patients and other medical professionals. They may be interested in all patients or those with a specific need."
+		},
+		{
+			"title": "Setting",
+			"icon": "setting-icon",
+			"content": "A physician’s office, hospital, or outpatient care center are common workplaces for The Practitioner."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "Jobs in this field often require college courses in physical sciences or health care. Many roles require a bachelor’s, masters, or professional degree."
+		},
+		{
+			"title": "Experience",
+			"icon": "experience-icon",
+			"content": "People with experience working in a lab setting or with patients as a nurse, medical assistant, EMT tend to be a good fit for The Practitioner’s career path."
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"stats": [
+		{
+			"number": "13%",
+			"title": "Growth",
+			"description": "In employment of healthcare occupations over the next decade"
+		},
+		{
+			"number": "$75K",
+			"title": "Median Salary",
+			"description": "For healthcare practitioners and technical occupations, ranging from $30K to $163K averages "
+		},
+		{
+			"number": "2M",
+			"title": "Job Openings",
+			"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
+		}
+	],
+	"degreeTabs": {
+		"title": "What degree do I need for a management career path?",
+		"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+		"degrees": [
+			{
+				"title": "Executive Business Administration",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Business Administration",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Organizational Leadership",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "International Business/Trade/Commerce",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Risk Management",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Office Management and Supervision",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Non-Profit/Public Organizational Management",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Management",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			}
+		]
+	},
+	"careerPaths": {
+		"title": "What kind of career is a good fit for me?",
+		"description": "Occupations that align with The Creative Marketer's career path focus on creating and executing marketing strategies and campaigns",
+		"paths": [
+			{
+				"title": "Brand Manager",
+				"description": "Develop and maintain brand identity and strategy.",
+				"imagePath": "/images/ceo.jpg"
+			},
+			{
+				"title": "Product Manager",
+				"description": "Oversee the development and marketing of specific products or services.",
+				"imagePath": "/images/ceo.jpg"
+			},
+			{
+				"title": "Marketing Research Analyst",
+				"description": "Conduct market research and analyze data to inform marketing decisions.",
+				"imagePath": "/images/ceo.jpg"
+			},
+			{
+				"title": "Advertising Manager",
+				"description": "Plan and execute advertising campaigns to promote products or services.",
+				"imagePath": "/images/ceo.jpg"
+			}
+		]
+	},
+	"textWithImage": {
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+		"imagePath": "/images/ceo.jpg"
+	}
+}
