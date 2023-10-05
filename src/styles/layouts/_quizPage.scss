@@ -24,6 +24,10 @@
     }
   }
 
+  &.questions-wrapper::after {
+    display: none;
+  }
+
   .quiz-container {
     display: flex;
     width: 100%;
@@ -54,5 +58,26 @@
 
   h1 {
     font-size: clamp(tokens.$size-3, 8vw, tokens.$size-7 * 1.9);
+  }
+
+  h2 {
+    font-size: clamp(tokens.$size-5, 7vw, tokens.$size-7 * 1.2);
+  }
+
+  .intro-title {
+    color: var(--c-teal-700);
+    font-size: clamp(tokens.$size-3, 3vw, tokens.$size-6);
+  }
+}
+
+.questions-container {
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(tokens.$size-1, 2vw, tokens.$size-4);
+
+    li {
+    }
   }
 }

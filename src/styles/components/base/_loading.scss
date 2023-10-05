@@ -10,18 +10,19 @@
   position: relative;
   margin: 0 auto;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  color: var(--c-bg2);
+  color: var(--c-navy-600);
+  gap: 0.5em;
 
   &::before {
     content: " ";
     display: block;
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
-    border: 6px solid var(--c-bg2);
-    border-color: var(--c-bg2) transparent var(--c-bg2) transparent;
+    border: 6px solid var(--c-teal-600);
+    border-color: var(--c-teal-600) transparent var(--c-teal-600) transparent;
     animation: loading 1.2s linear infinite;
   }
 }

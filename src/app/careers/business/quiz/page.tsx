@@ -1,7 +1,5 @@
 import { Button } from "@/components";
 import { Header } from "@/components";
-import data from "@/data/careers-business.json";
-import styles from "@/styles/components/EmailOnly.module.scss";
 import Head from "next/head";
 import Image from "next/image";
 // eslint-disable-next-line import/no-unresolved

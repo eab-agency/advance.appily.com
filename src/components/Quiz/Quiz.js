@@ -144,7 +144,7 @@ export function Quiz({ vertical }) {
 	}
 	if (localQData.currentQuestion === 0) {
 		return (
-			<div className={styles.container}>
+			<section className="quiz-wrapper questions-wrapper">
 				<div className={styles.content}>
 					<span className="intro-title">Before we get started ...</span>
 					<div className="questions-container">
@@ -157,15 +157,15 @@ export function Quiz({ vertical }) {
 						)}
 					</div>
 				</div>
-				<figure className={styles["deco-image"]}>
+				{/* <figure className={styles["deco-image"]}>
 					<Image
 						src="/images/cappex-education-journey.jpg"
 						alt="Define Your Future in Health Care"
 						width={500}
 						height={600}
 					/>
-				</figure>
-			</div>
+				</figure> */}
+			</section>
 		);
 	}
 

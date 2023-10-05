@@ -140,12 +140,15 @@
 
 .answer-button {
   border-color: var(--c-orange-500);
-  background: color.adjust(red, $lightness: 40%);
-  color: var(--c-blue-500);
-  font-size: clamp(var(--fs-s), 2vw, var(--fs-m));
+  background: var(--c-orange-50);
+  color: var(--c-navy-700);
+  font-size: clamp(tokens.$size-2, 2vw, tokens.$size-5);
   line-height: var(--lh-m);
   padding: 0.5em 1em;
   position: relative;
+  font-family: tokens.$f-sans;
+  font-weight: tokens.$fontWeight-light;
+  gap: 1em;
 
   &::before {
     content: "";
@@ -173,13 +176,14 @@
     flex-shrink: 0;
     transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
+    transform: translateY(0);
     z-index: var(--layer-1);
   }
 
   &:hover {
-    background: color.adjust(red, $lightness: 40%);
-    color: var(--c-blue-500);
-    border-color: var(--c-malva-500);
+    background: var(--c-teal-50);
+    color: var(--c-navy-800);
+    border-color: var(--c-teal-500);
 
     &::before {
       transform: scale(1) translateX(0.35em);
