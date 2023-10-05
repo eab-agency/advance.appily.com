@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { BiSolidPlusCircle, BiSolidMinusCircle } from "react-icons/Bi";
+import { BiSolidPlusCircle, BiSolidMinusCircle } from "react-icons/bi";
 
 import styles from "@/styles/components/Accordion.module.scss";
 
