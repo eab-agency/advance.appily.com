@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { MdChevronRight } from "react-icons/md";
 
 import { Button } from "@/components";
-import styles from "@/styles/global/components/StickyCta.module.scss";
+import styles from "@/styles/components/StickyCta.module.scss";
 
 const StickyCta = ({ trackedElement }) => {
 	const [scrolled, setScrolled] = useState(false);
@@ -42,12 +42,7 @@ const StickyCta = ({ trackedElement }) => {
 
 	return (
 		<div className={stickyCtaClass}>
-			<Button type="button" onClick={handleClick} appearance="primary">
-				<span>Explore Your School Matches</span>
-				<i>
-					<MdChevronRight />{" "}
-				</i>
-			</Button>
+			<Button type="button" onClick={handleClick} appearance="primary" className="button btn-primary" label="Explore Your School Matches" />
 		</div>
 	);
 };

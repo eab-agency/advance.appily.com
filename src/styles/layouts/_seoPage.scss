@@ -1,0 +1,384 @@
+@use "sass:color";
+@use "@/styles/global/tokens";
+// ==========================
+// Sections
+
+.pageHero {
+  border-bottom: tokens.$borderWidth-s solid var(--c-border-5);
+  padding: 0;
+
+  @media (min-width: tokens.$mq-900) {
+    min-height: 70vh;
+    padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+    padding-block: clamp(tokens.$padding-xxl, 10vw, tokens.$padding-xxxxl);
+  }
+
+  .group {
+    flex-direction: column;
+
+    @media (min-width: tokens.$mq-900) {
+      gap: clamp(tokens.$size-4, 4vw, tokens.$size-8);
+      flex-direction: row;
+    }
+
+    h1 {
+      padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+      padding-block: clamp(tokens.$padding-m, 6vw, tokens.$padding-xxxxl);
+
+      @media (min-width: tokens.$mq-900) {
+        padding: 0;
+      }
+    }
+
+    .heroImage {
+      position: relative;
+      max-height: 20rem;
+
+      @media (min-width: tokens.$mq-900) {
+        max-height: initial;
+      }
+
+      @media (min-width: tokens.$mq-900) {
+        &::before {
+          content: "";
+          display: block;
+          width: 15rem;
+          height: 15rem;
+          background: var(--c-teal-600);
+          position: absolute;
+          border-top-right-radius: 100%;
+          top: -20%;
+          right: -20%;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 20rem;
+          height: 20rem;
+          background: var(--c-yellow-400);
+          position: absolute;
+          border-top-left-radius: 100%;
+          bottom: -5%;
+          left: -5%;
+        }
+      }
+
+      img {
+        position: relative;
+        z-index: tokens.$layer-2;
+        @media (min-width: tokens.$mq-900) {
+          border-bottom-left-radius: 100%;
+        }
+      }
+    }
+  }
+}
+
+@mixin decoElement($color) {
+  &::after {
+    position: absolute;
+    content: "";
+    display: none;
+    background-color: $color;
+    width: 70vw;
+    height: 120%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 100%;
+    // opacity: 0.05;
+
+    @media (min-width: tokens.$mq-1000) {
+      display: block;
+      width: 50vw;
+      left: -4em;
+      // opacity: 1;
+    }
+
+    // @media (prefers-color-scheme: light) and (max-width: tokens.$mq-1000) {
+    //   opacity: 1;
+    // }
+  }
+}
+
+.quizSection {
+  display: flex;
+  justify-content: center;
+  background: var(--c-bg-body);
+  overflow: hidden;
+  position: relative;
+
+  @include decoElement(var(--c-teal-500));
+
+  figure {
+    @media (max-width: tokens.$mq-900) {
+      max-width: 70%;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+// .stats-section {
+// }
+
+.whyChoose {
+  .column {
+    &:nth-child(1) {
+      flex: 1 1 70%;
+    }
+
+    &:nth-child(2) {
+      flex: 1 1 30%;
+
+      @media (max-width: tokens.$mq-900) {
+        display: none;
+      }
+    }
+  }
+
+  .accordion-group {
+    counter-reset: accordion;
+
+    & > div {
+      counter-increment: accordion;
+
+      & > div[class*="accordion-header"] {
+        h3 {
+          width: 100%;
+
+          &::before {
+            content: counter(accordion) ".";
+            color: var(--c-accordionLink);
+            font-size: 1em;
+            font-family: tokens.$f-serif;
+          }
+        }
+      }
+    }
+  }
+}
+
+.testimonial {
+  position: relative;
+  background: var(--c-bg3);
+  border-bottom: tokens.$borderWidth-s solid var(--c-border-5);
+
+  .quotation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: tokens.$mq-900;
+
+    p {
+      font-size: clamp(tokens.$size-3, 2vw, tokens.$size-5);
+      font-weight: tokens.$fontWeight-semibold;
+      font-family: tokens.$f-serif;
+      color: var(--c-bodyPrimary);
+      margin-bottom: 1rem;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: clamp(tokens.$size-8, 8vw, tokens.$size-10);
+      height: clamp(tokens.$size-8, 8vw, tokens.$size-10);
+      background: url("/images/quote-icon.svg") no-repeat center;
+      background-size: contain;
+      margin-bottom: 2em;
+    }
+
+    .testimonialAuthor {
+      border-top: 1px solid var(--c-bodyPrimary);
+      padding-top: 1em;
+      font-family: tokens.$f-sans;
+
+      p {
+      }
+      small {
+        font-style: italic;
+        color: var(--c-bodyPrimary);
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    font-size: clamp(tokens.$size-8, 8vw, tokens.$size-10);
+    width: 0.8em;
+    height: 5em;
+    background: url("/images/appily-vector-shapes.svg") no-repeat center;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (max-width: tokens.$mq-900) {
+      display: none;
+    }
+  }
+}
+
+.comparison {
+  .group {
+    .intro-text {
+      text-align: center;
+      color: var(--c-bodyPrimary);
+      max-width: tokens.$mq-800;
+    }
+
+    .infograph {
+      width: 90%;
+
+      .icon-card {
+        display: flex;
+        flex-direction: column;
+        background: var(--c-bg5);
+        border-radius: tokens.$borderRadius-xl;
+        box-shadow: -0.5rem 0.5rem 0 var(--c-shadow2);
+        color: var(--c-bodyPrimary);
+        padding: clamp(tokens.$padding-m, 3vw, tokens.$padding-xxl);
+
+        .icon-card-head {
+          display: flex;
+          align-items: center;
+          gap: tokens.$size-4;
+
+          img {
+            display: block;
+            width: clamp(tokens.$size-5, 10vw, tokens.$size-8 * 3);
+            height: clamp(tokens.$size-5, 10vw, tokens.$size-8 * 3);
+            flex-shrink: 0;
+          }
+
+          .icon-card-title {
+            font-size: clamp(tokens.$size-4, 3vw, tokens.$size-7);
+            margin: 0;
+          }
+        }
+
+        .card-content {
+        }
+      }
+    }
+  }
+}
+
+.whatIsCappex {
+  padding: 0;
+  background: var(--c-bg8);
+  border-top: tokens.$borderWidth-s solid var(--c-border-5);
+
+  figure {
+    max-width: 70%;
+    margin-bottom: 2rem;
+
+    @media (min-width: tokens.$mq-900) {
+      max-width: 100%;
+    }
+  }
+
+  & > .group {
+    padding-block: clamp(tokens.$padding-xxl, 10vw, tokens.$padding-xxxxl);
+    padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+    border-bottom: tokens.$borderWidth-xxs solid var(--c-border-5);
+  }
+
+  .stats-section {
+    background: none;
+    border: none;
+    padding-top: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+  }
+}
+
+.takeQuiz {
+  background: var(--c-bg6);
+  border-top: tokens.$borderWidth-s solid var(--c-border-5);
+
+  .group {
+    align-items: center;
+    @media (min-width: tokens.$mq-900) {
+      gap: clamp(tokens.$size-5, 10vw, tokens.$size-10);
+      padding-right: 5vw;
+    }
+  }
+
+  figure {
+    overflow: hidden;
+    max-height: 14rem;
+
+    @media (min-width: tokens.$mq-900) {
+      max-height: 25rem;
+      img {
+        width: 100%;
+        height: 60vw;
+        border-top-right-radius: 100%;
+        position: relative;
+        transform: translateY(-25%);
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      font-size: clamp(tokens.$size-8, 8vw, tokens.$size-10);
+      width: 0.8em;
+      height: 5em;
+      background: url("/images/appily-vector-shapes.svg") no-repeat center;
+      background-size: contain;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @media (max-width: tokens.$mq-900) {
+        display: none;
+      }
+    }
+  }
+
+  .content {
+    @media (max-width: tokens.$mq-900) {
+      padding: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+    }
+  }
+}
+
+.rightCareer {
+  .group {
+    max-width: tokens.$mq-900;
+  }
+
+  ul {
+    counter-reset: careerList;
+    list-style: none;
+    padding: 0;
+
+    li {
+      counter-increment: careerList;
+      padding-left: 3em;
+      position: relative;
+
+      &::before {
+        content: counter(careerList);
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        background: var(--c-teal-700);
+        color: var(--c-white);
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.5em;
+        border-radius: 100%;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}

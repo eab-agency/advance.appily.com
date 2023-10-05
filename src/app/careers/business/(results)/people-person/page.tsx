@@ -1,36 +1,36 @@
 "use client";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
+import data from "@/data/results-people-person.json";
 
 import {
-	Accordion,
-	CareerPaths,
-	CarouselWithForm,
-	Stats,
-	StickyCta,
-	Tabs,
-	TextWithImage,
+  Accordion,
+  CareerPaths,
+  CarouselWithForm,
+  Stats,
+  StickyCta,
+  Tabs,
+  TextWithImage,
 } from "@/components";
-import data from "@/data/results-people-person.json";
-import styles from "@/styles/global/layouts/FinalPage.module.scss";
+import styles from "@/styles/components/FinalPage.module.scss";
 
 export default function Page() {
 	const carouselRef = useRef(null);
 
-	return (
-		<>
-			<div className={styles.container}>
-				<div className={styles.content}>
-					<span className="intro-title">Your ideal role could be ...</span>
-					<section className={styles["intro-section"]}>
-						<h1>{data.title}</h1>
-						<p>{data.detailedDescription}</p>
-					</section>
-					<Tabs className="react-tabs" tabs={data.tabs} />
+  return (
+    <>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <span className="intro-title">Your ideal role could be ...</span>
+          <section className={styles["intro-section"]}>
+            <h1>{data.title}</h1>
+            <p>{data.detailedDescription}</p>
+          </section>
+          <Tabs className="react-tabs" tabs={data.tabs} />
 
-					<CareerPaths careerPaths={data.careerPaths} />
+          <CareerPaths careerPaths={data.careerPaths} />
 
-					<Stats stats={data.stats} source={data.statsSource} />
+          <Stats stats={data.stats} source={data.statsSource} />
 
 					<TextWithImage
 						content={data.textWithImage.content}

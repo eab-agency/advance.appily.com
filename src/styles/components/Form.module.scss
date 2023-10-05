@@ -1,0 +1,81 @@
+@use "@/styles/global/tokens";
+
+.qGroup {
+  padding-block: 0.25em;
+
+  &.isInvalid {
+    label {
+      color: var(--c-error);
+    }
+    input,
+    select {
+      border-color: var(--c-error);
+    }
+
+    span {
+      color: var(--c-error);
+    }
+  }
+
+  .fieldLabel {
+    display: flex;
+    line-height: 1;
+    margin-bottom: -0.5em;
+    margin-left: 0.5em;
+    z-index: 100;
+    padding-inline: 0.2em;
+    position: relative;
+    background: white;
+    width: fit-content;
+    color: var(--c-teal-700);
+
+    label {
+      font-size: tokens.$size-2;
+    }
+  }
+
+  input,
+  select {
+    border-radius: tokens.$borderRadius-s;
+    font-size: tokens.$size-5;
+    padding: 0.5em;
+    width: 100%;
+    border: 1px solid var(--c-navy-500);
+    background-color: var(--c-slateGray-100);
+
+    &:hover {
+      border-color: var(--c-teal-700);
+      background: var(--c-teal-50);
+    }
+  }
+
+  select {
+    width: auto;
+    max-width: 100%;
+  }
+
+  &.text,
+  &.email,
+  &.tel,
+  &.checkboxgrp,
+  &.select {
+    border: none;
+  }
+
+  &.freetext {
+    flex: 1 0 100%;
+    font-size: tokens.$size-3;
+    a {
+      text-decoration: none;
+      font-weight: 400;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.submitButton {
+  padding: 1em;
+}

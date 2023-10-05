@@ -1,0 +1,116 @@
+@use "@/styles/global/tokens";
+
+html {
+  line-height: 1.5;
+  font-family: tokens.$f-body;
+}
+
+// ================
+// Headlines
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1rem 0;
+  line-height: tokens.$f-lineHeight-condensed;
+  font-family: tokens.$f-heading;
+}
+
+h1 {
+  font-size: clamp(tokens.$size-7, 6vw, tokens.$size-9);
+  font-weight: tokens.$fontWeight-normal;
+  color: var(--c-headingPrimary);
+  line-height: tokens.$f-lineHeight-tight;
+  text-transform: uppercase;
+
+  strong {
+    font-weight: tokens.$fontWeight-black;
+    font-size: 1.5em;
+    color: var(--c-headingSecondary);
+
+    @media (min-width: tokens.$mq-1100) {
+      display: block;
+    }
+  }
+}
+
+h2 {
+  font-size: clamp(tokens.$size-6, 4vw, tokens.$size-7);
+  font-weight: tokens.$fontWeight-normal;
+  color: var(--c-headingPrimary);
+}
+
+h3 {
+  font-size: clamp(tokens.$size-5, 4vw, tokens.$size-6);
+  font-weight: tokens.$fontWeight-bold;
+  color: var(--c-headingPrimary);
+}
+
+h4 {
+  color: var(--c-headingPrimary);
+}
+
+h5 {
+  color: var(--c-headingPrimary);
+}
+
+h6 {
+  color: var(--c-headingPrimary);
+}
+
+// ================
+// Body Copy
+
+p,
+ul,
+ol,
+blockquote,
+address {
+  margin: 0 0 1rem 0;
+  font-style: normal;
+  font-weight: 300;
+  color: var(--c-bodyPrimary);
+  font-size: clamp(tokens.$size-3, 2vw, tokens.$size-4);
+
+  strong {
+    font-weight: tokens.$fontWeight-bold;
+  }
+}
+
+ul,
+ol {
+  li {
+  }
+}
+
+a:not(.button) {
+  text-decoration: underline;
+  color: var(--c-linkPrimary);
+
+  &:hover,
+  &:focus {
+    text-decoration: dashed;
+    color: var(--c-linkHover);
+  }
+}
+
+%small,
+small,
+.copyright {
+  font-size: tokens.$size-3;
+  font-style: italic;
+  line-height: 135%;
+  // color: var(--c-bodySecondary);
+  display: block;
+}
+
+// ================
+// Other Type Styles
+
+.error,
+.val-header {
+  color: var(--c-error);
+}

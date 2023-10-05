@@ -1,10 +1,10 @@
-import styles from '@/styles/modules/PageHeader.module.scss'
+import styles from '@/styles/components/PageHeader.module.scss'
 import React from 'react'
 import MainLogo from './MainLogo'
 import NavBar from './NavBar'
 
 interface HeaderProps {
-  links: Link[] // replace string[] with the actual type of your links
+  links?: Link[] | undefined // replace string[] with the actual type of your links
 }
 
 interface Link {
@@ -14,12 +14,10 @@ interface Link {
 
 export const Header: React.FC<HeaderProps> = ({ links }) => {
   return (
-    <header>
+    <header className={`${styles.pageHeader} ${links ? "" : styles.noNav}`}>
       <div className={styles.container}>
-        <div className={styles['page-header-results']}>
-          <MainLogo />
-          <NavBar links={links} />
-        </div>
+        <MainLogo />
+        {links && <NavBar links={links} />}
       </div>
     </header>
   )

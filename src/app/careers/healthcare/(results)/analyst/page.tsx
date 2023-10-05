@@ -12,7 +12,7 @@ import {
 	Tabs,
 } from "@/components";
 import data from "@/data/results-analyst.json";
-import styles from "@/styles/global/layouts/FinalPage.module.scss";
+import styles from '@/styles/components/FinalPage.module.scss'
 
 export default function Page() {
 	const carouselRef = useRef(null);

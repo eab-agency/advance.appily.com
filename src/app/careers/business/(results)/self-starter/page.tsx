@@ -4,19 +4,19 @@ import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 
 import {
-	Accordion,
-	CareerPaths,
-	CarouselWithForm,
-	Stats,
-	StickyCta,
-	Tabs,
-	TextWithImage,
+  Accordion,
+  CareerPaths,
+  CarouselWithForm,
+  Stats,
+  StickyCta,
+  Tabs,
+  TextWithImage,
 } from "@/components";
 import data from "@/data/results-self-starter.json";
-import styles from "@/styles/global/layouts/FinalPage.module.scss";
+import styles from "@/styles/components/FinalPage.module.scss";
 
 export default function Page() {
-	const carouselRef = useRef(null);
+  const carouselRef = useRef(null);
 
 	return (
 		<>
@@ -29,15 +29,15 @@ export default function Page() {
 					</section>
 					<Tabs className="react-tabs" tabs={data.tabs} />
 
-					<CareerPaths careerPaths={data.careerPaths} />
+          <CareerPaths careerPaths={data.careerPaths} />
 
-					<Stats stats={data.stats} source={data.statsSource} />
+          <Stats stats={data.stats} source={data.statsSource} />
 
-					<TextWithImage
-						content={data.textWithImage.content}
-						imagePath={data.textWithImage.imagePath}
-						className="whatever-you-need"
-					/>
+          <TextWithImage
+            content={data.textWithImage.content}
+            imagePath={data.textWithImage.imagePath}
+            className="whatever-you-need"
+          />
 
 					<section>
 						<h3>{data.degreeTabs.title}</h3>
@@ -49,39 +49,39 @@ export default function Page() {
 						))}
 					</section>
 
-					<div
-						id="explore-your-school-matches"
-						className={styles.carouselWithForm}
-						ref={carouselRef}
-					>
-						<CarouselWithForm formId="3" />
-					</div>
+          <div
+            id="explore-your-school-matches"
+            className={styles.carouselWithForm}
+            ref={carouselRef}
+          >
+            <CarouselWithForm formId="3" />
+          </div>
 
-					<section className={styles["keep-exploring"]}>
-						<div className={styles.sourceContent}>
-							<h2>Keep exploring</h2>
-							<p>
-								Much of the career, education, and salary information above was
-								sourced from the Bureau of Labor Statistics. You can find
-								state-specific job outlooks and salary details as well as even
-								more information on related careers on their website.
-							</p>
-							<a
-								href="https://www.bls.gov/ooh/healthcare/home.htm"
-								target="_blank"
-								rel="noreferrer"
-								className="button btn-secondary"
-							>
-								Bureau of Labor Statistics{" "}
-								<i>
-									<BiLinkExternal />
-								</i>
-							</a>
-						</div>
-					</section>
-				</div>
-			</div>
-			<StickyCta trackedElement={carouselRef} />
-		</>
-	);
+          <section className={styles["keep-exploring"]}>
+            <div className={styles.sourceContent}>
+              <h2>Keep exploring</h2>
+              <p>
+                Much of the career, education, and salary information above was
+                sourced from the Bureau of Labor Statistics. You can find
+                state-specific job outlooks and salary details as well as even
+                more information on related careers on their website.
+              </p>
+              <a
+                href="https://www.bls.gov/ooh/healthcare/home.htm"
+                target="_blank"
+                rel="noreferrer"
+                className="button btn-secondary"
+              >
+                Bureau of Labor Statistics{" "}
+                <i>
+                  <BiLinkExternal />
+                </i>
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+      <StickyCta trackedElement={carouselRef} />
+    </>
+  );
 }

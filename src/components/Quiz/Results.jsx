@@ -2,7 +2,7 @@ import Form from "@/components/Form";
 import Link from "next/link";
 
 import isDevMode from "@/helpers/isDevMode";
-import styles from "@/styles/global/layouts/Results.module.scss";
+import styles from '@/styles/components/Results.module.scss';
 
 const Results = ({ children, vertical, answers }) => {
 	const formSubmitAnswers = {

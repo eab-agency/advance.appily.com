@@ -4,16 +4,16 @@ import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 
 import {
-	Accordion,
-	CareerPaths,
-	CarouselWithForm,
-	Stats,
-	StickyCta,
-	Tabs,
-	TextWithImage,
+  Accordion,
+  CareerPaths,
+  CarouselWithForm,
+  Stats,
+  StickyCta,
+  Tabs,
+  TextWithImage,
 } from "@/components";
 import data from "@/data/results-computer-whiz.json";
-import styles from "@/styles/global/layouts/FinalPage.module.scss";
+import styles from "@/styles/components/FinalPage.module.scss";
 
 export default function Page() {
 	const carouselRef = useRef(null);
@@ -29,15 +29,15 @@ export default function Page() {
 					</section>
 					<Tabs className="react-tabs" tabs={data.tabs} />
 
-					<CareerPaths careerPaths={data.careerPaths} />
+          <CareerPaths careerPaths={data.careerPaths} />
 
-					<Stats stats={data.stats} source={data.statsSource} />
+          <Stats stats={data.stats} source={data.statsSource} />
 
-					<TextWithImage
-						content={data.textWithImage.content}
-						imagePath={data.textWithImage.imagePath}
-						className="whatever-you-need"
-					/>
+          <TextWithImage
+            content={data.textWithImage.content}
+            imagePath={data.textWithImage.imagePath}
+            className="whatever-you-need"
+          />
 
 					<section>
 						<h3>{data.degreeTabs.title}</h3>

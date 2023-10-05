@@ -8,7 +8,7 @@ import {
 	Tabs,
 } from "@/components";
 import data from "@/data/results-educator.json";
-import styles from "@/styles/global/layouts/FinalPage.module.scss";
+import styles from '@/styles/components/FinalPage.module.scss'
 import Image from "next/image";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";

@@ -1,86 +1,119 @@
 {
-    "pageTitle": " Which <strong>health care career</strong> is right for you?",
-    "quizSection": {
-        "title": "Take our Free Health Care Career Quiz to Find Out!",
-        "content": "<p> If you want to work in the medical field but you don’t know which job fits your skills and interests, this  free quiz can help find a good fit and you plan your next steps.</p><p>The Bureau of Labor Statistics  predicts about <strong>2 million jobs in health care will be created each year over the next decade. </strong>Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p> In less than three minutes, you could <strong>discover which type of health care career could be a good fit for you. </strong> We’ll also connect you with schools near you that</p>",
-        "buttonText": "Take the Quiz"
-    },
-    "stats": [
-        {
-            "number": "13%",
-            "description": "Overall <strong>employment growth</strong> in health care occupations in the next decade"
-        },
-        {
-            "number": "64%",
-            "description": "<strong>Higher annual median wage</strong> for health care practitioners and technical occupations (vs. the median annual wage for all occupations)"
-        },
-        {
-            "number": "1.9M",
-            "description": "Openings in <strong>health care jobs</strong> projected each year over the next decade"
-        }
-    ],
-    "statsSource": "U.S. Bureau of Labor Statistics",
-    "whyChoose": {
-            "title": "Why Choose a Career in Health Care?",
-            "subTitle": "",
-            "reasons": [
-                {
-                    "title": "Fulfilling Rewards",
-                    "description": "A career in health care can be incredibly rewarding, both personally and professionally. For starters, health care professionals have the unique opportunity to <strong>make a real difference</strong> in people's lives on a daily basis. Whether you're a doctor, nurse, therapist, or technician, you'll be able to provide care and support to those who need it most."
-                },
-                {
-                    "title": "Alternative Career Paths",
-                    "description": "There are also many jobs in health care <strong>beyond patient care.</strong> These include roles such as hospital administration and operations management, medical testing and monitoring, and research-based careers in things like pharmaceutical development or toxicology."
-                },
-                {
-                    "title": "Job Stability and Growth Potential",
-                    "description": "Beyond the personal fulfillment that comes with helping others, a career in health care also offers <strong>excellent job stability and growth potential.</strong> Health care is a rapidly growing industry with a high demand for skilled professionals. With an aging population and advances in medical technology, the need for health care workers is only expected to increase, meaning you'll have plenty of opportunities throughout your career."
-                },
-                {
-                    "title": "Competitive Salaries and Benefits",
-                    "description": "Finally, health care offers <strong>competitive salaries and benefits,</strong> as well as the opportunity to work in a variety of settings and specialties. Whether you prefer a fast-paced hospital environment or a quieter clinic or private practice, there are countless options to explore within the health care field. Overall, if you're passionate about helping others and looking for a rewarding career path, a career in health care may be the perfect choice for you."
-                }
-            ]
-        },
-    "testimonial": {
-        "text": "There are times when the work is hard, but the rewards are tremendous. It’s a privilege to be able to care for patients in their time of need. It’s an opportunity to make a difference, to make someone’s life better, to provide comfort and support. There’s no feeling quite like knowing that you’ve made a positive impact on someone’s life.",
-        "author": "Dr. Tiffany Osborn",
-        "authorTitle": "Professor of Surgery and Emergency Medicine, Washington University School of Medicine"
-    },
-    "rightCareer": [
-        {
-            "title":" Top 5 Reasons a Career in Health Care Could Be Right for You",
-            "description": "Are you considering a career in health care but unsure if it's the right fit for you? Here are the top five reasons why it might be:",
-            "reasons":[
-                {
-                    "description": "<strong>Diverse Career Paths:</strong> The health care industry offers a wide range of career paths, from direct patient care roles like nursing and therapy, to support roles like hospital administration, medical analytics, and medical research."
-                },
-                {
-                    "description": "<strong>Rewarding Work:</strong> Health care professionals have the opportunity to make a positive impact on others and improve their quality of life. If you're passionate about helping others and making a difference, health care could be a great fit for you."
-                },
-                {
-                    "description": "<strong>Hands-On Work:</strong> If you enjoy hands-on work and thrive under pressure, direct patient care roles may be a perfect fit for you. These roles require excellent communication, problem-solving, and critical thinking skills, as well as attention to detail."
-                },
-                {
-                    "description": "<strong>Technology and Data Analysis:</strong> Health care also offers many support roles that require a strong understanding of data analysis, research methodologies, and health care systems. If you enjoy working with data and technology, roles like medical analytics and medical research could be a great fit for you."
-                },
-                {
-                    "description": "<strong>Career Advancement:</strong> The health care industry is constantly evolving and offers many opportunities for career advancement. Whether you're interested in pursuing additional degrees, moving up the career ladder, or exploring new specialties, health care offers many options for growth."
-                }
-            ],
+	"links": [
+		{
+			"label": "Adult Degree Completion",
+			"href": "/"
+		},
+		{
+			"label": "Graduate Degrees",
+			"href": "/"
+		},
+		{
+			"label": "Careers",
+			"href": "/"
+		},
+		{
+			"label": "Resources",
+			"href": "/"
+		}
+	],
+	"pageTitle": " Which <strong>health care career</strong> is right for you?",
+	"quizSection": {
+		"title": "Take our Free Health Care Career Quiz to Find Out!",
+		"content": "<p> If you want to work in the medical field but you don’t know which job fits your skills and interests, this  free quiz can help find a good fit and you plan your next steps.</p><p>The Bureau of Labor Statistics  predicts about <strong>2 million jobs in health care will be created each year over the next decade. </strong>Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p> In less than three minutes, you could <strong>discover which type of health care career could be a good fit for you. </strong> We’ll also connect you with schools near you that</p>",
+		"buttonText": "Take the Quiz"
+	},
+	"stats": [
+		{
+			"number": "13%",
+			"description": "Overall <strong>employment growth</strong> in health care occupations in the next decade"
+		},
+		{
+			"number": "64%",
+			"description": "<strong>Higher annual median wage</strong> for health care practitioners and technical occupations (vs. the median annual wage for all occupations)"
+		},
+		{
+			"number": "1.9M",
+			"description": "Openings in <strong>health care jobs</strong> projected each year over the next decade"
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"whyChoose": {
+		"title": "Why Choose a Career in Health Care?",
+		"subTitle": "",
+		"reasons": [
+			{
+				"title": "Fulfilling Rewards",
+				"description": "A career in health care can be incredibly rewarding, both personally and professionally. For starters, health care professionals have the unique opportunity to <strong>make a real difference</strong> in people's lives on a daily basis. Whether you're a doctor, nurse, therapist, or technician, you'll be able to provide care and support to those who need it most."
+			},
+			{
+				"title": "Alternative Career Paths",
+				"description": "There are also many jobs in health care <strong>beyond patient care.</strong> These include roles such as hospital administration and operations management, medical testing and monitoring, and research-based careers in things like pharmaceutical development or toxicology."
+			},
+			{
+				"title": "Job Stability and Growth Potential",
+				"description": "Beyond the personal fulfillment that comes with helping others, a career in health care also offers <strong>excellent job stability and growth potential.</strong> Health care is a rapidly growing industry with a high demand for skilled professionals. With an aging population and advances in medical technology, the need for health care workers is only expected to increase, meaning you'll have plenty of opportunities throughout your career."
+			},
+			{
+				"title": "Competitive Salaries and Benefits",
+				"description": "Finally, health care offers <strong>competitive salaries and benefits,</strong> as well as the opportunity to work in a variety of settings and specialties. Whether you prefer a fast-paced hospital environment or a quieter clinic or private practice, there are countless options to explore within the health care field. Overall, if you're passionate about helping others and looking for a rewarding career path, a career in health care may be the perfect choice for you."
+			}
+		]
+	},
+	"testimonial": {
+		"text": "There are times when the work is hard, but the rewards are tremendous. It’s a privilege to be able to care for patients in their time of need. It’s an opportunity to make a difference, to make someone’s life better, to provide comfort and support. There’s no feeling quite like knowing that you’ve made a positive impact on someone’s life.",
+		"author": "Dr. Tiffany Osborn",
+		"authorTitle": "Professor of Surgery and Emergency Medicine, Washington University School of Medicine"
+	},
+	"rightCareer": [
+		{
+			"title": " Top 5 Reasons a Career in Health Care Could Be Right for You",
+			"description": "Are you considering a career in health care but unsure if it's the right fit for you? Here are the top five reasons why it might be:",
+			"reasons": [
+				{
+					"description": "<strong>Diverse Career Paths:</strong> The health care industry offers a wide range of career paths, from direct patient care roles like nursing and therapy, to support roles like hospital administration, medical analytics, and medical research."
+				},
+				{
+					"description": "<strong>Rewarding Work:</strong> Health care professionals have the opportunity to make a positive impact on others and improve their quality of life. If you're passionate about helping others and making a difference, health care could be a great fit for you."
+				},
+				{
+					"description": "<strong>Hands-On Work:</strong> If you enjoy hands-on work and thrive under pressure, direct patient care roles may be a perfect fit for you. These roles require excellent communication, problem-solving, and critical thinking skills, as well as attention to detail."
+				},
+				{
+					"description": "<strong>Technology and Data Analysis:</strong> Health care also offers many support roles that require a strong understanding of data analysis, research methodologies, and health care systems. If you enjoy working with data and technology, roles like medical analytics and medical research could be a great fit for you."
+				},
+				{
+					"description": "<strong>Career Advancement:</strong> The health care industry is constantly evolving and offers many opportunities for career advancement. Whether you're interested in pursuing additional degrees, moving up the career ladder, or exploring new specialties, health care offers many options for growth."
+				}
+			],
 
-                "endCopy": "If you're still unsure if health care is the right fit for you, <a href='/quiz'>take our free health care career quiz.</a> It will help you identify how your interests, skills, and strengths align with different medical career paths and suggest the degrees you can earn to take the next step in your career."
-
-
-        }
-    ],
-    "contactForm": {
-        "title": "Explore Your Potencial School matches",
-        "description": "Let us know the best way to contact you with helpful information and  potential college or university  matches."
-    },
-    "takeQuiz": {
-        "title": "Ready to Find Your Role?",
-        "description": "In less than three minutes, you could discover which role could be a good fit for you — and the steps you can take to advance your career.",
-        "buttonText": "Take the Quiz"
-    }
+			"endCopy": "If you're still unsure if health care is the right fit for you, <a href='/quiz'>take our free health care career quiz.</a> It will help you identify how your interests, skills, and strengths align with different medical career paths and suggest the degrees you can earn to take the next step in your career."
+		}
+	],
+	"contactForm": {
+		"title": "Explore Your Potencial School matches",
+		"description": "Let us know the best way to contact you with helpful information and  potential college or university  matches."
+	},
+	"takeQuiz": {
+		"title": "Ready to Find Your Role?",
+		"description": "In less than three minutes, you could discover which role could be a good fit for you — and the steps you can take to advance your career.",
+		"buttonText": "Take the Quiz"
+	},
+	"statsAppily": [
+		{
+			"number": "600",
+			"title": "Institutions",
+			"description": "Trust Appily to match them with students like you"
+		},
+		{
+			"number": "Billions",
+			"title": "In Scholarships",
+			"description": "Can be applied for through Appily’s scholarship database"
+		},
+		{
+			"number": "4",
+			"title": "Trusted Tools",
+			"description": "Combine to make Appily your one-stop resource for finding a school"
+		}
+	]
 }

@@ -12,7 +12,7 @@ import {
 	Tabs,
 } from "@/components";
 import data from "@/data/results-practitioner.json";
-import styles from "@/styles/global/layouts/FinalPage.module.scss";
+import styles from "@/styles/components/FinalPage.module.scss";
 
 export default function Page() {
 	const carouselRef = useRef(null);
@@ -147,13 +147,14 @@ export default function Page() {
 						</Accordion>
 					</section>
 
-					<div
-						id="explore-your-school-matches"
-						className={styles.carouselWithForm}
-						ref={carouselRef}
-					>
-						<CarouselWithForm formId="3" />
-					</div>
+
+          <div
+            id="explore-your-school-matches"
+            className={styles.carouselWithForm}
+            ref={carouselRef}
+          >
+            <CarouselWithForm formId="3" />
+          </div>
 
 					<section className={styles["keep-exploring"]}>
 						<div className={styles.sourceContent}>

@@ -9,7 +9,7 @@ import * as Yup from "yup";
 // import { useUser } from '@/context/context'
 import isDevMode from "@/helpers/isDevMode";
 import useForm from "@/hooks/useForm";
-import styles from "@/styles/global/components/Form.module.scss";
+import styles from '@/styles/components/Form.module.scss'
 import Link from "next/link";
 import GenerateField from "../../lib/GenerateField";
 

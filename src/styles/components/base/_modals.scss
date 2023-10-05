@@ -1,0 +1,107 @@
+// @use 'sass:color';
+// @use '../config/tokens';
+
+// .reOverlay {
+//     div[class*='modalWrapper'] {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         width: 100vw;
+//         height: 100vh;
+//         z-index: 999;
+//         background-color: rgba(tokens.$c-blue-800, 0.7);
+//         backdrop-filter: blur(3px);
+
+//         .modal-content {
+//             display: block;
+//             width: 90%;
+//             max-width: tokens.$mq-700;
+//             background: tokens.$c-blue-500;
+//             border: 0.5em solid tokens.$c-blue-300;
+//             position: relative;
+
+//             @media (prefers-color-scheme: light) {
+//                 background: tokens.$c-gray-100;
+//                 border: 0.5em solid tokens.$c-blue-500;
+//             }
+
+//             .help,
+//             .privacy {
+//                 display: block;
+//                 overflow-y: auto;
+//                 max-height: 90vh;
+//                 padding-block: clamp(
+//                     tokens.$baseUnit,
+//                     3vw,
+//                     tokens.$baseUnit * 3
+//                 );
+//                 padding-inline: clamp(
+//                     tokens.$baseUnit * 2,
+//                     4vw,
+//                     tokens.$baseUnit * 4
+//                 );
+
+//                 a {
+//                     color: tokens.$c-turquoise-500;
+
+//                     @media (prefers-color-scheme: light) {
+//                         color: color.adjust(
+//                             tokens.$c-malva-500,
+//                             $lightness: -30%
+//                         );
+//                     }
+//                 }
+//             }
+
+//             .close-modal {
+//                 position: absolute;
+//                 right: 1rem;
+//                 top: 1rem;
+//                 background: none;
+//                 text-indent: -999rem;
+//                 padding: 0;
+//                 border: none;
+//                 width: 1.5rem;
+//                 height: 1.5rem;
+//                 font-size: 1px;
+//                 transition: all 0.2s ease-in-out;
+
+//                 &::before {
+//                     content: '';
+//                     display: block;
+//                     width: 1.5rem;
+//                     height: 0.25rem;
+//                     background-color: tokens.$c-orange-500;
+//                     position: absolute;
+//                     transform: rotate(45deg);
+//                 }
+
+//                 &::after {
+//                     content: '';
+//                     display: block;
+//                     width: 1.5rem;
+//                     height: 0.25rem;
+//                     background-color: tokens.$c-orange-500;
+//                     position: absolute;
+//                     transform: rotate(-45deg);
+//                 }
+
+//                 &:hover,
+//                 &:focus {
+//                     transform: rotate(90deg);
+//                     &::before,
+//                     &::after {
+//                         background-color: tokens.$c-turquoise-500;
+
+//                         @media (prefers-color-scheme: light) {
+//                             background-color: tokens.$c-malva-500;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

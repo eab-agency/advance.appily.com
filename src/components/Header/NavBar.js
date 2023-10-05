@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { MdClose, MdMenu } from 'react-icons/md'
 
-import styles from '@/styles/modules/NavBar.module.scss'
+import styles from '@/styles/components/NavBar.module.scss'
 
 export default function NabBar({links}) {
   const pathname = usePathname()

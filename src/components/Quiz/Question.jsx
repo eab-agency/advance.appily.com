@@ -1,4 +1,4 @@
-import styles from "@/styles/global/layouts/Question.module.scss";
+import styles from "@/styles/components/Question.module.scss";
 
 function Question({ handleAnswer, question, lastQuestion }) {
 	if (!question) {

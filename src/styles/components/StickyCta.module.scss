@@ -1,0 +1,22 @@
+@use "sass:color";
+@use "@/styles/global/tokens";
+
+.stickyCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(tokens.$padding-xs, 2vw, tokens.$padding-s);
+  background: var(--c-bg6);
+  border-top: 1px solid var(--c-border-5);
+  // position: sticky;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: tokens.$layer-8;
+  transition: opacity 0.2s ease-in-out;
+
+  &.scrolled {
+    opacity: 0;
+  }
+}

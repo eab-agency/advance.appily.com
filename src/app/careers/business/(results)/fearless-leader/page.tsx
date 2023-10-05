@@ -1,52 +1,37 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import Image from "next/image";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 
 import {
-	Accordion,
-	CareerPaths,
-	CarouselWithForm,
-	Stats,
-	StickyCta,
-	Tabs,
-	TextWithImage,
+  Accordion,
+  CareerPaths,
+  CarouselWithForm,
+  Stats,
+  StickyCta,
+  Tabs,
+  TextWithImage,
 } from "@/components";
-import { useUser } from "@/context/context";
-import styles from "@/styles/global/layouts/FinalPage.module.scss";
-import { usePathname } from "next/navigation";
-import useSWR from "swr";
-
-const API_URL = `${process.env.NEXT_PUBLIC_APP_URL}`;
+import styles from "@/styles/components/FinalPage.module.scss";
+import data from "@/data/results-fearless-leader.json";
 
 export default function Page() {
 	const carouselRef = useRef(null);
-	const pathname = usePathname();
-	const slug = pathname ? pathname.split("/").pop() : "";
-	const { setVertical, vertical } = useUser();
-	setVertical("business");
-	const { data, error, isLoading } = useSWR(
-		`${API_URL}/api/results?vertical=${vertical}&slug=${slug}`,
-	);
 
-	if (error) return <div>Failed to load data.{JSON.stringify(error)}</div>;
-	if (isLoading) return <div>Loading...</div>;
+  return (
+    <>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <span className="intro-title">Your ideal role could be ...</span>
+          <section className={styles["intro-section"]}>
+            <h1>{data.title}</h1>
+            <p>{data.detailedDescription}</p>
+          </section>
+          <Tabs className="react-tabs" tabs={data.tabs} />
 
-	return (
-		<>
-			<div className={styles.container}>
-				<div className={styles.content}>
-					<span className="intro-title">Your ideal role could be ...</span>
-					<section className={styles["intro-section"]}>
-						<h1>{data.title}</h1>
-						<p>{data.detailedDescription}</p>
-					</section>
-					<Tabs className="react-tabs" tabs={data.tabs} />
+          <CareerPaths careerPaths={data.careerPaths} />
 
-					<CareerPaths careerPaths={data.careerPaths} />
-
-					<Stats stats={data.stats} source={data.statsSource} />
+          <Stats stats={data.stats} source={data.statsSource} />
 
 					<TextWithImage
 						content={data.textWithImage.content}

@@ -1,7 +1,7 @@
 export { Button } from "./Button";
 export { StickyCta } from "./StickyCta";
-export { default as PageFooter } from "./PageFooter";
-export { default as PageHeader } from "./PageHeader";
+export { default as Footer } from "./Footer";
+// export { default as PageHeader } from "./Header/PageHeader";
 export { Quiz } from "./Quiz";
 export { Tabs } from "./Tabs";
 export { Accordion } from "./Accordion";
@@ -11,3 +11,4 @@ export { Header } from "./Header";
 export { Card } from "./Card";
 export { CareerPaths } from "./CareerPaths";
 export { TextWithImage } from "./TextWithImage";
+export { Testimonial } from "./Testimonial";

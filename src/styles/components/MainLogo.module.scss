@@ -1,0 +1,10 @@
+// @use '../config/tokens';
+
+.main-logo {
+  display: block;
+  width: clamp(12rem, 20vw, 20rem);
+
+  img {
+    width: 100%;
+  }
+}
