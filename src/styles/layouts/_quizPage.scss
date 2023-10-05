@@ -8,18 +8,20 @@
   position: relative;
   overflow: hidden;
 
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 50%;
-    height: 120vh;
-    border-top-left-radius: 100%;
-    background: var(--c-teal-500);
-    z-index: tokens.$layer-0;
+  @media (min-width: tokens.$mq-1000) {
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 50%;
+      right: -5%;
+      transform: translateY(-50%);
+      width: 50%;
+      height: 120vh;
+      border-top-left-radius: 100%;
+      background: var(--c-teal-500);
+      z-index: tokens.$layer-0;
+    }
   }
 
   .quiz-container {
@@ -27,10 +29,27 @@
     width: 100%;
     max-width: tokens.$mq-1300;
     gap: clamp(tokens.$size-5, 10vw, tokens.$size-10 * 1);
+
+    // @media (max-width: tokens.$mq-800) {
+    //   align-items: flex-start;
+
+    //   .highlighted-img {
+    //     order: 0;
+    //     height: 12rem;
+    //   }
+
+    //   .column:nth-child(1) {
+    //     order: 1;
+    //   }
+    // }
   }
 
   figure {
-    width: clamp(20rem, 30vw, 30rem);
+    width: clamp(12rem, 30vw, 25rem);
+
+    @media (max-width: tokens.$mq-1000) {
+      display: none;
+    }
   }
 
   h1 {

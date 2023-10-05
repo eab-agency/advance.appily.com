@@ -9,7 +9,9 @@
   z-index: tokens.$layer-999;
 
   &.noNav {
-    padding-block: clamp(tokens.$padding-s, 5vw, tokens.$padding-m);
+    @media (min-width: tokens.$mq-1000) {
+      padding-block: clamp(tokens.$padding-s, 5vw, tokens.$padding-m);
+    }
   }
 }
 
