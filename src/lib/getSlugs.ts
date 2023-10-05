@@ -1,17 +1,22 @@
+import { promises as fs } from "fs";
+import path from "path";
+
+
 export async function getSlugs(vertical: string) {
-	const res = await fetch(
-		process.env.NEXT_PUBLIC_APP_URL + `/api/quiz/slugs?vertical=${vertical}`,
-	);
+	try {
+    const dataDirectory = path.resolve(process.cwd(), "src/data");
+    const filePath = path.join(dataDirectory, `links-${vertical}.json`);
 
-	if (!res.ok) {
-		// This will activate the closest `error.js` Error Boundary
-		throw new Error("Failed to fetch data");
-	}
-	const data = await res.json();
-
-	const transformedData = data.map(({ slug, title }) => ({
+    const fileContents = await fs.readFile(filePath, "utf8");
+    const data = JSON.parse(fileContents);
+    const { results } = data;
+    const transformedData = results.map(({ slug, title }) => ({
 		href: slug,
 		label: title,
 	}));
 	return transformedData;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Internal Server Error");
+  }
 }
