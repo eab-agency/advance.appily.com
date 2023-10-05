@@ -1,43 +1,84 @@
+@use "@/styles/global/tokens";
 // @use '../config/tokens';
 
 // .form {
-//     display: flex;
-//     flex-flow: row wrap;
-//     gap: 1rem;
-//     width: 100%;
-//     max-width: 38rem;
-//     margin-bottom: tokens.$baseUnit * 3;
+//   display: flex;
+//   flex-direction: column;
+//   margin: 0;
+//   // margin-bottom: tokens.$margin-xl;
 // }
 
-// .qGroup {
-//     flex: 1 0 15rem;
-//     color: tokens.$c-error;
+.qGroup {
+  padding-block: 0.5em;
 
-//     &:nth-child(3) {
-//         flex: 1 0 100%;
-//     }
+  &.isInvalid {
+    label {
+      color: var(--c-error);
+    }
+    input,
+    select {
+      border-color: var(--c-error);
+    }
 
-//     &.text, &.email, &.tel, &.checkboxgrp, &.select{
-//         border: none;
-//     }
+    span {
+      color: var(--c-error);
+    }
+  }
 
-//     &.freetext{
-//         flex: 1 0 100%;
-//         font-size: tokens.$fs-xs;
-//         a{
-//             text-decoration: none;
-//             font-weight: 400;
-//         }
-//     }
+  .fieldLabel {
+    display: flex;
+    line-height: 1;
+    margin-bottom: -0.5em;
+    margin-left: 0.5em;
+    z-index: 100;
+    padding-inline: 0.2em;
+    position: relative;
+    background: white;
+    width: fit-content;
+    color: var(--c-teal-700);
 
-//     &.button{
-//         background: none;
-//         border-radius: 0;
-//         border: none;
-//         padding: 0;
-//     }
-// }
+    label {
+      font-size: tokens.$size-2;
+    }
+  }
 
-// .hidden {
-//     display: none;
-// }
+  input,
+  select {
+    border-radius: tokens.$borderRadius-s;
+    font-size: tokens.$size-5;
+    padding: 0.5em;
+    width: 100%;
+    border: 1px solid var(--c-navy-500);
+    background-color: var(--c-slateGray-100);
+  }
+
+  select {
+    width: auto;
+    max-width: 100%;
+  }
+
+  &.text,
+  &.email,
+  &.tel,
+  &.checkboxgrp,
+  &.select {
+    border: none;
+  }
+
+  &.freetext {
+    flex: 1 0 100%;
+    font-size: tokens.$size-3;
+    a {
+      text-decoration: none;
+      font-weight: 400;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.submitButton {
+  padding: 1em;
+}
