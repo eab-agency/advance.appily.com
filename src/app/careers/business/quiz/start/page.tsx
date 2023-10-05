@@ -1,22 +1,11 @@
 import { Quiz } from "@/components";
+import { fetchQuizData } from "@/lib/fetchQuizData";
 import Head from "next/head";
 
 const VERTICAL = "business";
-const API_URL = `${process.env.NEXT_PUBLIC_APP_URL}`;
-
-const fetchQuiz = async vertical => {
-	const res = await fetch(
-		API_URL + `/api/quiz/questions?vertical=${vertical}`,
-		{
-			method: "GET",
-		},
-	);
-	const data = await res.json();
-	return data;
-};
 
 async function QuizHome() {
-	const quizData = await fetchQuiz(VERTICAL);
+	const quizData = await fetchQuizData(VERTICAL);
 
 	return (
 		<>
