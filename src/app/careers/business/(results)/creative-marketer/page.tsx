@@ -1,5 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
+import creativeMarketer from "@/assets/lotties/creativeMarketer.json";
+import Lottie from "lottie-react";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import useSWR from "swr";
@@ -21,6 +23,7 @@ export default function Page() {
 
   return (
     <>
+      <Lottie animationData={creativeMarketer} loop={true} />
       <div className="resultContent">
         <section className="resultsHero">
           <div className="heroContent">
