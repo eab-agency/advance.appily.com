@@ -3,29 +3,19 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
-import useSWR from "swr";
 
-import styles from "@/styles/components/FinalPage.module.scss";
-import { usePathname } from "next/navigation";
 import {
 	Accordion,
 	CarouselWithForm,
 	Stats,
 	StickyCta,
 	Tabs,
-} from "../../../../../components";
+} from "@/components";
+import data from "@/data/results-practitioner.json";
+import styles from "@/styles/components/FinalPage.module.scss";
 
-const PractitionerPage = () => {
+export default function Page() {
 	const carouselRef = useRef(null);
-	const pathname = usePathname();
-	const slug = pathname ? pathname.split("/").pop() : "";
-
-	const { data, error, isLoading } = useSWR(
-		`/api/quiz/results?result=${slug}&vertical=healthcare`,
-	);
-	if (isLoading) return <div>Loading...</div>;
-	if (error) return <div>Failed to load {JSON.stringify({ error })} </div>;
-
 	return (
 		<>
 			<div className={styles.container}>
@@ -192,6 +182,4 @@ const PractitionerPage = () => {
 			<StickyCta trackedElement={carouselRef} />
 		</>
 	);
-};
-
-export default PractitionerPage;
+}
