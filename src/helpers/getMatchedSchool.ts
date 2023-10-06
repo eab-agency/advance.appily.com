@@ -67,8 +67,10 @@ export const getMatchedSchool = async (state?: string): Promise<CarouselCard[]> 
   // const { data: schools, error }: { data: School[]; error?: string } = await response.json()
 // match incoming state to the statesToMatchAgainst key/value to pass to fetchCarouselCards
   const arrayOfStates: string[] | undefined = state ? statesToMatchAgainst[state] : undefined;
+  console.log("🚀 ~ file: getMatchedSchool.ts:70 ~ getMatchedSchool ~ arrayOfStates:", arrayOfStates)
 
-    const cards: CarouselCard[] = await fetchCarouselCards(arrayOfStates || ['VA, DC']);
+    const cards: CarouselCard[] = await fetchCarouselCards(arrayOfStates || ['VA', 'KY', 'MD', 'NC', 'TN', 'WV']);
+    console.log("🚀 ~ file: getMatchedSchool.ts:72 ~ getMatchedSchool ~ cards:", cards)
 
     // if cards is less than 5 then await fetchAllCards and append the results
     if (cards.length < 5) {
