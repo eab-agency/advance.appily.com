@@ -108,7 +108,9 @@ $texts: (
     "linkPrimary": colors.$c-orange,
     "linkHover": colors.$c-teal,
     "accordionLink": map.get($teal, 400),
-    "accordionLinkHover": map.get($orange, 400)
+    "accordionLinkHover": map.get($orange, 400),
+    "formLink": map.get($navy, 200),
+    "formLinkHover": map.get($orange, 400)
   ),
   light: (
     "headingPrimary": colors.$c-navy,
@@ -119,7 +121,9 @@ $texts: (
     "linkPrimary": colors.$c-orange,
     "linkHover": map.get($teal, 600),
     "accordionLink": map.get($teal, 600),
-    "accordionLinkHover": map.get($orange, 600)
+    "accordionLinkHover": map.get($orange, 600),
+    "formLink": map.get($navy, 400),
+    "formLinkHover": map.get($navy, 600)
   )
 );
 

@@ -92,7 +92,7 @@ a:not(.button) {
 
   &:hover,
   &:focus {
-    text-decoration: dashed;
+    text-decoration: dashed underline;
     color: var(--c-linkHover);
   }
 }

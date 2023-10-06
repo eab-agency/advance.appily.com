@@ -84,5 +84,14 @@
         padding: 0.5em;
       }
     }
+
+    a {
+      color: var(--c-formLink);
+      font-weight: normal;
+
+      &:hover {
+        color: var(--c-formLinkHover);
+      }
+    }
   }
 }
