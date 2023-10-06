@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
+import useSWR from "swr";
 
 import {
 	Accordion,
@@ -12,7 +13,7 @@ import {
 	Tabs,
 } from "@/components";
 import data from "@/data/results-executive.json";
-import styles from '@/styles/components/FinalPage.module.scss'
+import styles from "@/styles/components/FinalPage.module.scss";
 
 export default function Page() {
 	const carouselRef = useRef(null);

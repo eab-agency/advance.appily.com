@@ -11,9 +11,8 @@ import {
   StickyCta,
   Testimonial
 } from "@/components";
-// import Testimonial from "@/components/Testimonial";
+import MainLogo from "@/components/Header/MainLogo";
 import data from "@/data/careers-healthcare.json";
-import styles from "@/styles/styles.scss";
 
 /* eslint-disable react/no-danger */
 const HealthCareSeoPage = () => {
@@ -135,7 +134,7 @@ const HealthCareSeoPage = () => {
       <section className="rightCareer">
         <div className="group column center-aligned">
           <div className="column">
-            <h2>{data.rightCareer[0].title}</h2>
+            <h2><strong>Top 5 Reasons</strong> a Career in Health Care Could be Right for You</h2>
             <p>{data.rightCareer[0].description}</p>
           </div>
           <ul>{rightCareerList}</ul>
@@ -151,17 +150,19 @@ const HealthCareSeoPage = () => {
           <div className="column">
             <figure>
               <Image
-                src="/images/college-search.png"
-                width={800}
-                height={800}
-                alt="What is Appily?"
+                src="/images/what-is-appily.jpg"
+                width={480}
+                height={480}
+                alt="What is Cappex"
+                className="highlighted-img"
               />
             </figure>
           </div>
           <div className="column">
-            <h3>
-              An All-in-One Resource for <strong>Going to College</strong>
-            </h3>
+            <h2><MainLogo />
+              An All-in-One Resource for{" "}
+              <strong>Going to College</strong>
+            </h2>
             <p>
               Appily is the future of higher education guidance, uniting trusted
               tools that have empowered students for almost two decades. Born

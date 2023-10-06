@@ -350,8 +350,18 @@
 }
 
 .rightCareer {
-  .group {
-    max-width: tokens.$mq-900;
+  .group.center-aligned {
+    max-width: tokens.$mq-800;
+  }
+
+  h2 {
+    strong {
+      color: var(--c-headingSecondary);
+    }
+
+    & + p {
+      font-size: clamp(tokens.$size-3, 3vw, tokens.$size-5);
+    }
   }
 
   ul {

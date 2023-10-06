@@ -119,7 +119,7 @@ const BusinessSeoPage = () => {
                 src="/images/whats-the-difference-mba-specific-master.jpg"
                 width={480}
                 height={480}
-                alt="Doctor wearing mask and a sthethoscope"
+                alt="Man using a tablet device"
               />
             </figure>
           </div>
