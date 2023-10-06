@@ -4,20 +4,29 @@
 }
 
 .resultsHero {
-  .intro-title {
-    position: relative;
+  .group {
+    gap: tokens.$size-7;
+    .heroContent {
+      .intro-title {
+        position: relative;
 
-    &::before {
-      content: "";
-      display: block;
-      width: 100vw;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      border-top-right-radius: tokens.$borderRadius-xxxl;
-      border-bottom-right-radius: tokens.$borderRadius-xxxl;
-      background: var(--c-bg-6);
+        &::before {
+          content: "";
+          display: block;
+          width: 100vw;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          border-top-right-radius: tokens.$borderRadius-xxxl;
+          border-bottom-right-radius: tokens.$borderRadius-xxxl;
+          background: var(--c-bg6);
+        }
+      }
+
+      h1 {
+        text-transform: initial;
+      }
     }
   }
 }

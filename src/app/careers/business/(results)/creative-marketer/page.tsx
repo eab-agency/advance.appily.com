@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import creativeMarketer from "@/assets/lotties/creativeMarketer.json";
+import fearlessLeader from "@/assets/lotties/fearlessLeader.json";
 import Lottie from "lottie-react";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
@@ -23,13 +23,18 @@ export default function Page() {
 
   return (
     <>
-      <Lottie animationData={creativeMarketer} loop={true} />
+      
       <div className="resultContent">
         <section className="resultsHero">
-          <div className="heroContent">
-            <div className="intro-title">Your ideal role could be ...</div>
-            <h1>{data.title}</h1>
-            <p>{data.detailedDescription}</p>
+          <div className="group">
+            <div className="heroContent column">
+              <div className="intro-title">Your ideal role could be ...</div>
+              <h1>{data.title}</h1>
+              <p>{data.detailedDescription}</p>
+            </div>
+            <figure className="column">
+            <Lottie animationData={fearlessLeader} loop={true} />
+              </figure>
           </div>
         </section>
 
