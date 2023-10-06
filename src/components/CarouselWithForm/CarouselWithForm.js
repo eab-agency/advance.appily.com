@@ -9,14 +9,13 @@ import styles from "@/styles/components/CarouselWithForm.module.scss";
 
 const CarouselWithForm = ({ formId = "4" }) => {
 	const [visibleForm, setVisibleForm] = useState(false);
-	const { user, location, vertical } = useUser();
+	const { user, location, vertical, globalPrivacyControl } = useUser();
 
 	const [selectedSchool, setSelectedSchool] = useState(null);
 
 	const onCarouselClick = school => {
-		// if location.notUS === true, then redirect to selectedSchool.link
-		if (location.notUS) {
-			window.open(school.link, "_blank");
+		if (location.notUS || globalPrivacyControl) {
+			window.open(school.links[0].link.url, "_blank");
 		} else {
 			setSelectedSchool(school);
 			setVisibleForm(!visibleForm);
@@ -64,11 +63,11 @@ const CarouselWithForm = ({ formId = "4" }) => {
 								</p>
 							</div>
 							<Form
-							school={selectedSchool}
-							redirectTo={`${selectedSchool.links[0].link.url}?utm_source=appily_advance&utm_campaign=${vertical}}`}
-							user={user}
-							id={formId || "4"}
-						/>
+								school={selectedSchool}
+								redirectTo={`${selectedSchool.links[0].link.url}?utm_source=appily_advance&utm_campaign=${vertical}}`}
+								user={user}
+								id={formId || "4"}
+							/>
 						</div>
 					</div>
 				</div>

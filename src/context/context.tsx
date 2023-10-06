@@ -39,6 +39,17 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 
 	const apiURL = `https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.NEXT_PUBLIC_ABSTRACT_API_KEY}&fields=region_iso_code,country_code`;
 
+	const [globalPrivacyControl, setGlobalPrivacyControl] = useState(null);
+
+	useEffect(() => {
+		if (
+			typeof navigator !== "undefined" &&
+			"globalPrivacyControl" in navigator
+		) {
+			setGlobalPrivacyControl(navigator.globalPrivacyControl);
+		}
+	}, []);
+
 	// Uncomment the below to simulate a 4XX error when making a GET request to apiURL
 	// Create a new instance of axios mock
 	// const mock = new MockAdapter(axios);
@@ -121,6 +132,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 			setLocation,
 			vertical,
 			setVertical,
+			globalPrivacyControl,
 		}),
 		[
 			matchedSchools,
@@ -133,6 +145,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 			setLocation,
 			vertical,
 			setVertical,
+			globalPrivacyControl,
 		],
 	);
 
