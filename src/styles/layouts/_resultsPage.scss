@@ -9,6 +9,9 @@
     .heroContent {
       .intro-title {
         position: relative;
+        width: fit-content;
+        padding: 0.2em 1.5em 0.2em 0;
+        font-size: clamp(tokens.$size-4, 5vw, tokens.$size-6);
 
         &::before {
           content: "";
@@ -16,11 +19,17 @@
           width: 100vw;
           height: 100%;
           position: absolute;
+          z-index: tokens.$layer-1;
           top: 0;
           right: 0;
           border-top-right-radius: tokens.$borderRadius-xxxl;
           border-bottom-right-radius: tokens.$borderRadius-xxxl;
-          background: var(--c-bg6);
+          background: var(--c-bg9);
+        }
+
+        span {
+          position: relative;
+          z-index: tokens.$layer-10;
         }
       }
 

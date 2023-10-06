@@ -23,18 +23,18 @@ export default function Page() {
 
   return (
     <>
-      
+
       <div className="resultContent">
         <section className="resultsHero">
           <div className="group">
             <div className="heroContent column">
-              <div className="intro-title">Your ideal role could be ...</div>
+              <div className="intro-title"><span>Your ideal role could be ...</span></div>
               <h1>{data.title}</h1>
               <p>{data.detailedDescription}</p>
             </div>
             <figure className="column">
-            <Lottie animationData={fearlessLeader} loop={true} />
-              </figure>
+              <Lottie animationData={fearlessLeader} loop={true} />
+            </figure>
           </div>
         </section>
 
