@@ -13,7 +13,8 @@ export default async function BusinessResultsLayout({
 
   return (
     <>
-      <Header links={links} />
+      {/* <Header links={links} /> */}
+      <Header />
       {children}
     </>
   );

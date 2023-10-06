@@ -1,26 +1,3 @@
-// @use 'sass:color';
-// @use '../layouts';
-// @use '../config/tokens';
-
-// .container {
-//     @include layouts.container;
-//     align-items: flex-start;
-//     max-width: tokens.$maxWidth;
-//     margin: 0 auto;
-//     padding-bottom: 0;
-//     overflow: hidden;
-
-//     .content {
-//         @include layouts.content;
-//         gap: 0;
-//         max-width: 100%;
-
-//         & > span {
-//             margin-bottom: 2em;
-//         }
-//     }
-// }
-
 // .intro-section {
 //     padding-bottom: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
 //     h1 {
