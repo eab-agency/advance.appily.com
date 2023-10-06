@@ -74,8 +74,12 @@
 .logo {
   display: block;
   position: relative;
-  width: 5rem;
-  height: 1em;
+  width: 8rem;
+  height: 2.5em;
+
+  img {
+    object-fit: contain;
+  }
 }
 
 .legalInfo {

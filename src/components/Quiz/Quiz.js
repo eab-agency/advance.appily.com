@@ -96,19 +96,22 @@ export function Quiz({ vertical, quizData }) {
 	return (
 		<>
 			{!quizFinished ? (
-				<div className={styles["container-quiz"]}>
+				<div className={styles.containerQuiz}>
 					<div className={styles.content}>
 						{/* NOTE: This score components will only show in dev mode */}
 						{/* <Score
 							score={personalityScores}
 							winningPersonality={quizState.highestScorePersonality}
 						/> */}
-						<span className="intro-title">
-							Define Your Future in Health Care
-						</span>
-						<div className={styles["questions-counter"]}>
-							Question {quizState.currentQuestionIdx + 1} of {questions?.length}
-						</div>
+						<header className={styles.quizContentHead}>
+							<span className="intro-title">
+								Define Your Future in Health Care
+							</span>
+							<div className={styles["questions-counter"]}>
+								Question {quizState.currentQuestionIdx + 1} of{" "}
+								{questions?.length}
+							</div>
+						</header>
 						<div className="questions-container">
 							<Question
 								handleAnswer={handleAnswer}

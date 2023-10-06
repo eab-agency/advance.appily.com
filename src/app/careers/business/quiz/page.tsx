@@ -1,5 +1,4 @@
 import { Button } from "@/components";
-import { Header } from "@/components";
 import Head from "next/head";
 import Image from "next/image";
 // eslint-disable-next-line import/no-unresolved
@@ -13,7 +12,6 @@ export default function QuizLandingPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <Header />
       <div className="quiz-wrapper">
         <section className="quiz-container group row cols-2">
           <div className="column">

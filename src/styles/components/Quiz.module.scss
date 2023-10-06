@@ -1,6 +1,4 @@
-// @use 'sass:color';
-// @use '../config/tokens';
-// @use '../layouts';
+@use "@/styles/global/tokens";
 
 // .container {
 //     @include layouts.container;
@@ -11,15 +9,29 @@
 //     }
 // }
 
-// .container-quiz {
-//     @include layouts.container;
-//     max-width: 60rem;
-//     align-items: flex-start;
+.containerQuiz {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+.content {
+  width: 100%;
+  max-width: tokens.$mq-900;
+  padding-block: clamp(tokens.$size-6, 8vw, tokens.$size-10);
+  padding-inline: clamp(tokens.$size-4, 8vw, tokens.$size-10);
 
-//     .content {
-//         @include layouts.content;
-//     }
-// }
+  .quizContentHead {
+    margin-bottom: 3em;
+
+    span {
+      color: var(--c-bodySecondary);
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+}
 
 // .deco-image {
 //     @include layouts.decoImage;
@@ -38,12 +50,13 @@
 //     }
 // }
 
-// .containerResults {
-//     @include layouts.container;
-//     align-items: flex-start;
-//     gap: 1rem;
-//     padding-bottom: 0;
-// }
+.containerResults {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 0;
+}
 
 // .retakeButton {
 //     border-top: 1px solid tokens.$c-blue-300;
