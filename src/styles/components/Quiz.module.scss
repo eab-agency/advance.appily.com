@@ -1,14 +1,5 @@
 @use "@/styles/global/tokens";
 
-// .container {
-//     @include layouts.container;
-//     align-items: flex-start;
-
-//     .content {
-//         @include layouts.content;
-//     }
-// }
-
 .containerQuiz {
   width: 100%;
   display: flex;
@@ -49,14 +40,6 @@
 //         color: tokens.$c-blue-500;
 //     }
 // }
-
-.containerResults {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-  padding-bottom: 0;
-}
 
 // .retakeButton {
 //     border-top: 1px solid tokens.$c-blue-300;

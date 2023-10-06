@@ -121,22 +121,20 @@ export function Quiz({ vertical, quizData }) {
 					</div>
 				</div>
 			) : (
-				<div className={styles.containerResults}>
-					<div className={styles.content}>
-						{/* { only show Results if !location.notUS} */}
-						{location &&
-							(location.notUS === false ||
-								location.notUS === null ||
-								location.notUS === undefined) && (
-								<Results vertical={vertical} answers={quizState}>
-									<ResetQuizButton
-										handleRetakeQuiz={handleRetakeQuiz}
-										vertical={vertical}
-									/>
-								</Results>
-							)}
-					</div>
-				</div>
+				<>
+					{/* { only show Results if !location.notUS} */}
+					{location &&
+						(location.notUS === false ||
+							location.notUS === null ||
+							location.notUS === undefined) && (
+							<Results vertical={vertical} answers={quizState}>
+								<ResetQuizButton
+									handleRetakeQuiz={handleRetakeQuiz}
+									vertical={vertical}
+								/>
+							</Results>
+						)}
+				</>
 			)}
 		</>
 	);

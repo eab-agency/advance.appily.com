@@ -2,19 +2,19 @@ import { Header } from "@/components";
 import { getSlugs } from "@/lib/getSlugs";
 
 interface Link {
-	href: string;
-	label: string;
+  href: string;
+  label: string;
 }
 
 export default async function HealthCareResultsLayout({
-	children,
+  children,
 }: { children: React.ReactNode }) {
-	const links: Link[] = await getSlugs("healthcare");
+  const links: Link[] = await getSlugs("healthcare");
 
-	return (
-		<>
-			<Header links={links} />
-			{children}
-		</>
-	);
+  return (
+    <>
+      {/* <Header links={links} /> */}
+      {children}
+    </>
+  );
 }

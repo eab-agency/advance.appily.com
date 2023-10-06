@@ -39,3 +39,50 @@
     }
   }
 }
+
+.preResultsContainer {
+  .resultsHero {
+    padding-bottom: 2em;
+
+    .group {
+      width: 100%;
+      max-width: tokens.$mq-1000;
+      .heroContent {
+        width: 100%;
+
+        p {
+          font-size: clamp(tokens.$size-4, 7vw, tokens.$size-6);
+        }
+      }
+    }
+  }
+
+  .engageForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    background: var(--c-bg5);
+    padding: clamp(tokens.$size-4, 8vw, tokens.$size-10);
+    border-top: 0.2em solid var(--c-teal-500);
+
+    .formWrapper {
+      .leadForm {
+        width: 100%;
+        max-width: tokens.$mq-800;
+
+        h2 {
+        }
+      }
+    }
+
+    .btn-secondary {
+      font-size: tokens.$size-4;
+      margin-top: 1em;
+      span {
+        padding: 0.5em;
+      }
+    }
+  }
+}

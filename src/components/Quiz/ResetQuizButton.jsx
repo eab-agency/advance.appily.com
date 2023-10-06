@@ -8,7 +8,7 @@ function ResetQuizButton({ handleRetakeQuiz }) {
 			type="button"
 			onClick={handleRetakeQuiz}
 		>
-			Retake Quiz
+			<span>Retake Quiz</span>
 		</button>
 	);
 }

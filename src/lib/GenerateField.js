@@ -4,7 +4,6 @@
 import styles from "@/styles/components/Form.module.scss";
 import { Field, useFormikContext } from "formik";
 import { useEffect, useState } from "react";
-import { MdChevronRight } from "react-icons/md";
 
 const GenerateField = ({ field, error, formData }) => {
 	const [isVisible, setIsVisible] = useState(true);
@@ -206,8 +205,7 @@ const GenerateField = ({ field, error, formData }) => {
 						type="submit"
 						disabled={isSubmitting && isValid && dirty}
 					>
-						{label}
-						<MdChevronRight />
+						<span>{label}</span>
 					</button>
 				</div>
 			);
