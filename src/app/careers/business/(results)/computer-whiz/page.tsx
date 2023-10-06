@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { useRef } from "react";
-import { BiLinkExternal } from "react-icons/Bi";
+import { BiLinkExternal } from "react-icons/bi";
 import useSWR from "swr";
 
 import {
