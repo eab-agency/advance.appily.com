@@ -2,16 +2,13 @@
 import { useUser } from "@/context/context";
 // import Score from '@/components/Score';
 import { useLocalStorage } from "@/hooks/useLocalStorage";
-import styles from "@/styles/global/layouts/Quiz.module.scss";
-import Image from "next/image";
+import styles from "@/styles/components/Quiz.module.scss";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { set } from "react-hook-form";
-import useSWR from "swr";
 import Question from "./Question";
 import ResetQuizButton from "./ResetQuizButton";
 import Results from "./Results";
-import Score from "./Score";
+// import Score from "./Score";
 
 export function Quiz({ vertical, quizData }) {
 	const { location } = useUser();
