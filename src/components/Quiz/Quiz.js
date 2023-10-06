@@ -13,9 +13,8 @@ import ResetQuizButton from "./ResetQuizButton";
 import Results from "./Results";
 import Score from "./Score";
 
-export function Quiz({ vertical: verticalProp, quizData }) {
-	const { location, vertical, setVertical } = useUser();
-	setVertical(verticalProp);
+export function Quiz({ vertical, quizData }) {
+	const { location } = useUser();
 
 	const router = useRouter();
 	const { questions, score: initialScore } = quizData;
