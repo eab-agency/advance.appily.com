@@ -4,9 +4,25 @@
 }
 
 .resultsHero {
+  position: relative;
+  min-height: 50vh;
+  overflow: hidden;
+
   .group {
+    width: 100%;
+    max-width: tokens.$mq-1200;
     gap: tokens.$size-7;
+    justify-content: flex-start;
+    position: initial;
+
     .heroContent {
+      width: 100%;
+      max-width: 45rem;
+
+      @media (min-width: tokens.$mq-900) {
+        width: 60vw;
+      }
+
       .intro-title {
         position: relative;
         width: fit-content;
@@ -35,6 +51,54 @@
 
       h1 {
         text-transform: initial;
+      }
+    }
+    figure {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40vw;
+      height: 100%;
+      z-index: tokens.$layer-0;
+
+      @media (max-width: tokens.$mq-900) {
+        display: none;
+      }
+
+      & > div {
+        height: 50vw;
+        position: relative;
+        z-index: tokens.$layer-1;
+
+        image[width*="793"] {
+          display: none;
+        }
+      }
+
+      @media (min-width: tokens.$mq-900) {
+        &::before {
+          content: "";
+          display: block;
+          width: 15rem;
+          height: 15rem;
+          background: var(--c-teal-600);
+          position: absolute;
+          border-top-right-radius: 100%;
+          top: 10%;
+          right: 10%;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 20rem;
+          height: 20rem;
+          background: var(--c-yellow-400);
+          position: absolute;
+          border-top-left-radius: 100%;
+          bottom: -10%;
+          left: 10%;
+        }
       }
     }
   }

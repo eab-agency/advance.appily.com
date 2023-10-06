@@ -57,7 +57,7 @@ const Results = ({ children, vertical, answers }) => {
 				{children}
 			</div>
 		</div>
-        </div>
+    </div>
 	);
 };
 

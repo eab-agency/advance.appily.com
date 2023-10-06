@@ -1,0 +1,337 @@
+@use "@/styles/global/tokens";
+
+.react-tabs {
+  display: flex;
+  width: 100%;
+  position: relative;
+  background: var(--c-bg1);
+  padding-block: clamp(tokens.$padding-m, 5vw, tokens.$padding-xxl);
+  padding-top: 0;
+
+  @media (min-width: tokens.$mq-800) {
+    flex-direction: column;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 150vw;
+    height: 100%;
+    transform: translateX(-50%);
+    background: var(--c-bg2);
+  }
+
+  &__tab-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    z-index: tokens.$layer-2;
+
+    @media (min-width: tokens.$mq-800) {
+      flex-direction: row;
+      margin-bottom: -0.5em;
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 0.5em;
+      position: relative;
+      border: 0.5em solid transparent;
+      cursor: pointer;
+      border-color: var(--c-border-3);
+      border-right-color: transparent;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-bottom-width: 1px;
+      border-right-width: 0;
+      padding-block: clamp(tokens.$padding-m, 1.35vw, tokens.$padding-xl);
+      padding-inline: clamp(tokens.$padding-s, 2vw, tokens.$padding-xl);
+      transition: all 0.2s ease-in-out;
+
+      @media (min-width: tokens.$mq-800) {
+        width: auto;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-bottom: transparent;
+        border-right-width: 1px;
+
+        &:last-child {
+          border-right: 0.5em solid transparent;
+        }
+      }
+
+      &[class*="-selected"] {
+        border: 0.5em solid var(--c-bg2);
+        border-right-width: 0;
+        pointer-events: none;
+
+        @media (min-width: tokens.$mq-800) {
+          border-right-width: 0.5em;
+          border-bottom-width: 0;
+        }
+
+        span {
+          text-decoration: none;
+        }
+
+        &::before {
+          color: var(--c-bodySecondary);
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 130%;
+          height: 100%;
+          background: var(--c-bg2);
+
+          @media (min-width: tokens.$mq-800) {
+            width: 100%;
+            height: 130%;
+          }
+        }
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        line-height: 1;
+        font-family: tokens.$f-icons;
+        font-size: clamp(tokens.$size-5, 4vw, tokens.$size-8);
+        color: var(--c-bodySecondary);
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        z-index: tokens.$layer-2;
+      }
+
+      &.motivation-icon::before {
+        content: tokens.$i-motivation;
+      }
+
+      &.skills-icon::before {
+        content: tokens.$i-skills;
+      }
+
+      &.work-icon::before {
+        content: tokens.$i-people;
+      }
+
+      &.setting-icon::before {
+        content: tokens.$i-building;
+      }
+
+      &.education-icon::before {
+        content: tokens.$i-education;
+      }
+
+      &.experience-icon::before {
+        content: tokens.$i-work;
+      }
+
+      span {
+        position: relative;
+        z-index: tokens.$layer-2;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: underline;
+        color: var(--c-white);
+        font-size: clamp(tokens.$size-2, 1.5vw, tokens.$size-5);
+      }
+
+      &:hover {
+        background: rgba(green, 0.3);
+      }
+
+      &::before {
+        transform: translateY(-10%);
+      }
+    }
+
+    &:focus {
+      outline: 1px dotted var(--c-border-3);
+    }
+  }
+}
+
+// div[class*='__tab-panel'] {
+//     display: none;
+//     width: 100%;
+//     padding: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
+//     border: 0.5em solid tokens.$c-blue-500;
+//     position: relative;
+//     z-index: tokens.$layer-1;
+
+//     @media (prefers-color-scheme: light) {
+//         border-color: color.adjust(tokens.$c-blue-500, $lightness: 50%);
+//     }
+
+//     &[class*='-selected'] {
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         gap: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
+
+//         @media (min-width: tokens.$mq-800) {
+//             flex-direction: row;
+//             align-items: center;
+//         }
+
+//         &::before {
+//             content: '';
+//             font-family: tokens.$f-icons;
+//             font-size: clamp(tokens.$baseUnit * 4, 20vw, tokens.$baseUnit * 20);
+//             color: color.adjust(tokens.$c-blue-500, $lightness: 10%);
+//             line-height: 1;
+
+//             // @media (prefers-color-scheme: light) {
+//             //     color: tokens.$c-malva-500;
+//             // }
+//         }
+
+//         &.motivation-icon::before {
+//             content: tokens.$i-motivation;
+//         }
+
+//         &.skills-icon::before {
+//             content: tokens.$i-skills;
+//         }
+
+//         &.work-icon::before {
+//             content: tokens.$i-people;
+//         }
+
+//         &.setting-icon::before {
+//             content: tokens.$i-building;
+//         }
+
+//         &.education-icon::before {
+//             content: tokens.$i-education;
+//         }
+
+//         &.experience-icon::before {
+//             content: tokens.$i-work;
+//         }
+
+//         .tab-copy {
+//             @media (min-width: tokens.$mq-800) {
+//                 flex: 1;
+//             }
+//         }
+//     }
+// }
+
+// .tab-copy {
+//     h3 {
+//         font-size: clamp(tokens.$fs-l, 2vw, tokens.$fs-xl);
+//         color: tokens.$c-white;
+
+//         @media (prefers-color-scheme: light) {
+//             color: tokens.$c-blue-500;
+//         }
+//     }
+
+//     p {
+//         font-size: clamp(tokens.$fs-s, 2vw, tokens.$fs-m);
+//     }
+
+//     ul {
+//         margin-top: 2em;
+//         padding-left: 2em;
+
+//         li {
+//             margin-bottom: 1.5em;
+//         }
+//     }
+// }
+
+// .degree-tabs {
+//     ul[class*='tab-list'] {
+//         display: flex;
+//         flex-direction: row;
+
+//         li {
+//             width: auto;
+//             border-top-color: transparent;
+//             border-left-color: transparent;
+//             border-bottom: transparent;
+//             border-right-width: 1px;
+
+//             @media (prefers-color-scheme: light) {
+//                 border-color: color.adjust(tokens.$c-blue-500, $lightness: 50%);
+//                 border-top-color: transparent;
+//                 border-left-color: transparent;
+//                 border-bottom: transparent;
+//             }
+
+//             &:last-child {
+//                 border-right: 0.5em solid transparent;
+//             }
+
+//             &[class*='-selected'] {
+//                 border: 0.5em solid tokens.$c-blue-500;
+//                 border-right-width: 0.5em;
+//                 border-bottom-width: 0;
+//                 pointer-events: none;
+
+//                 @media (prefers-color-scheme: light) {
+//                     border-color: color.adjust(
+//                         tokens.$c-blue-500,
+//                         $lightness: 50%
+//                     );
+//                 }
+
+//                 // @media (min-width: tokens.$mq-800) {
+//                 //     border-right-width: 0.5em;
+//                 //     border-bottom-width: 0;
+//                 // }
+
+//                 span {
+//                     text-decoration: none;
+//                 }
+
+//                 &::before {
+//                     color: tokens.$c-turquoise-500;
+
+//                     @media (prefers-color-scheme: light) {
+//                         color: tokens.$c-malva-500;
+//                     }
+//                 }
+
+//                 &::after {
+//                     content: '';
+//                     position: absolute;
+//                     left: 0;
+//                     top: 0;
+//                     width: 100%;
+//                     height: 130%;
+//                     background: tokens.$c-blue-800;
+
+//                     @media (prefers-color-scheme: light) {
+//                         background: tokens.$c-gray-100;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// .tab-content{
+//     color: white;
+
+//     @media (prefers-color-scheme: light) {
+//         color: tokens.$c-blue-500;
+//     }
+// }

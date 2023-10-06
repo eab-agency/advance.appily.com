@@ -1,10 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import fearlessLeader from "@/assets/lotties/fearlessLeader.json";
+import { Header } from "@/components";
 import Lottie from "lottie-react";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
-import useSWR from "swr";
+// import useSWR from "swr";
+
 
 import {
   Accordion,
@@ -24,6 +26,7 @@ export default function Page() {
   return (
     <>
 
+      <Header />
       <div className="resultContent">
         <section className="resultsHero">
           <div className="group">
@@ -37,6 +40,8 @@ export default function Page() {
             </figure>
           </div>
         </section>
+
+
 
         <Tabs className="react-tabs" tabs={data.tabs} />
 
