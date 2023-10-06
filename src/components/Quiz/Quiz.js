@@ -3,15 +3,12 @@ import { useUser } from "@/context/context";
 // import Score from '@/components/Score';
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import styles from "@/styles/components/Quiz.module.scss";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { set } from "react-hook-form";
-import useSWR from "swr";
 import Question from "./Question";
 import ResetQuizButton from "./ResetQuizButton";
 import Results from "./Results";
-import Score from "./Score";
+// import Score from "./Score";
 
 export function Quiz({ vertical, quizData }) {
 	const { location } = useUser();
@@ -79,90 +76,22 @@ export function Quiz({ vertical, quizData }) {
 			personalityScores: updatedScores,
 			highestScorePersonality,
 		});
+
+		if (currentQuestionIdx === questions.length - 1) {
+			setQuizFinished(true);
+		}
 	};
 
-	// if highestScorePersonality is changes, then set the personalityData
-	// useEffect(() => {
-	//     if (results) {
-	//         const personalityDataInternal = results.find(
-	//             (result) =>
-	//                 result.title.toLowerCase() ===
-	//                 localQData.highestScorePersonality
-	//         );
-	//         setPersonalityData(personalityDataInternal);
-	//     }
-	// }, [localQData.highestScorePersonality, results]);
-
-	useEffect(() => {
-		// console.log('localQData updated', localQData);
-		// if localQData.currentQuesion is greater than localQData.questionLength, then set isFinished to true
-		if (localQData.currentQuestion > localQData.questionLength) {
-			setLocalQData({ ...localQData, isFinished: true });
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [localQData.currentQuestion, localQData.questionLength]);
-
-	if (questionError) return <p>Error loading questions.</p>;
-	if (!questions) return <p className="loading">Loading...</p>;
-
-	// if we are at the end of the quiz, show the results page and pass the score and personality
-	if (localQData.isFinished) {
-		// setLocalQData({ ...localQData, isFinished: true });
-		// if location.notUS === true, then redirect to results
-		if (location.notUS === true) {
-			router.push(`${localQData.highestScorePersonality}`);
-		}
-		const finalResults = {
-			answers: localQData.answers,
-			highestScorePersonality: localQData.highestScorePersonality,
-			areaOfInterest: localQData.answers[7].answer,
-		};
-		return (
-			<div className={styles.containerResults}>
-				<div className={styles.content}>
-					{/* { only show Results if !location.notUS} */}
-					{(location.notUS === false ||
-						location.notUS === null ||
-						location.notUS === undefined) && (
-						<Results
-							personality={localQData.highestScorePersonality}
-							description={personalityData.description}
-							title={personalityData.title}
-							answers={finalResults}
-						>
-							<ResetQuizButton />
-						</Results>
-					)}
-				</div>
-			</div>
-		);
-	}
-	if (localQData.currentQuestion === 0) {
-		return (
-			<section className="quiz-wrapper questions-wrapper">
-				<div className="quiz-content">
-					<span className="intro-title">Before we get started ...</span>
-					<div className="questions-container">
-						{questions && (
-							<Question
-								questionNum={localQData.currentQuestion}
-								handleAnswer={handleAnswer}
-								vertical={vertical}
-							/>
-						)}
-					</div>
-				</div>
-				{/* <figure className={styles["deco-image"]}>
-					<Image
-						src="/images/cappex-education-journey.jpg"
-						alt="Define Your Future in Health Care"
-						width={500}
-						height={600}
-					/>
-				</figure> */}
-			</section>
-		);
-	}
+	const handleRetakeQuiz = () => {
+		setQuizState({
+			currentQuestionIdx: 0,
+			selectedAnswers: [],
+			personalityScores: initialScore,
+			highestScorePersonality: null,
+			isFinished: false,
+		});
+		setQuizFinished(false);
+	};
 
 	return (
 		<>
@@ -184,9 +113,6 @@ export function Quiz({ vertical, quizData }) {
 							<Question
 								handleAnswer={handleAnswer}
 								question={questions[currentQuestionIdx]}
-								// lastQuestion={
-								// 	localQData.currentQuestion === questions.length - 1
-								// }
 							/>
 						</div>
 					</div>

@@ -1,7 +1,7 @@
 {
 	"questions": [
 		{
-			"question": "<span className='intro-title'>Before we get started ...</span>XXXXX are you in your educational journey?",
+			"question": "<span className='intro-title'>Before we get started ...</span>Where are you in your educational journey?",
 			"associatedField": "education_journey__select1",
 			"answers": [
 				{
