@@ -28,6 +28,14 @@ const nextConfig = {
 				// port: "3000",
 				pathname: "/media/**",
 			},
+			{
+				protocol: "https",
+				hostname: "advance-cms.appily.com", // port: "3000",
+			},
+			{
+				protocol: "https",
+				hostname: "**-eab-agency.vercel.app",
+			},
 		],
 	},
 	async rewrites() {

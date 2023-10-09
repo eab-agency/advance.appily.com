@@ -39,6 +39,7 @@ const responsive = {
 
 const SchoolCarousel = ({ handleClick, className }) => {
   const { matchedSchools } = useUser()
+  console.log("🚀 ~ file: SchoolCarousel.tsx:42 ~ SchoolCarousel ~ matchedSchools:", matchedSchools)
 
   const handleButtonClick = (card: CarouselCard) => {
     handleClick(card)
@@ -50,8 +51,6 @@ const SchoolCarousel = ({ handleClick, className }) => {
       {/* biome-ignore lint/complexity/useOptionalChain: <explanation> */}
       {matchedSchools &&
         matchedSchools.map((card: CarouselCard) => (
-
-          <>
             <div className="item-content" key={card.id}>
               <div className="item-head">
                 <Image
@@ -87,7 +86,6 @@ const SchoolCarousel = ({ handleClick, className }) => {
                 </button>
               </div>
             </div>
-          </>
         ))}
     </Carousel>)
 
