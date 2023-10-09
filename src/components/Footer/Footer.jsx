@@ -13,7 +13,13 @@ const Footer = () => {
 		Reoverlay.showModal(HelpModal, {});
 	};
 	const privacyClick = () => {
-		Reoverlay.showModal(PrivacyModal, {});
+		if (
+			typeof window.OneTrust === "undefined" ||
+			typeof window.OneTrust.ToggleInfoDisplay !== "function"
+		) {
+			return;
+		}
+		window.OneTrust.ToggleInfoDisplay();
 	};
 
 	return (
