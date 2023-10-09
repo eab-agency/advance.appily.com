@@ -1,17 +1,11 @@
 "use client";
 
+import styles from "@/styles/components/PageFooter.module.scss";
 import Image from "next/image";
 import React from "react";
-import { MdHelpOutline, MdOutlinePrivacyTip } from "react-icons/md";
-import { Reoverlay } from "reoverlay";
-
-import { HelpModal, PrivacyModal } from "@/components/Modals";
-import styles from "@/styles/components/PageFooter.module.scss";
+import { MdOutlinePrivacyTip } from "react-icons/md";
 
 const Footer = () => {
-  const helpClick = () => {
-    Reoverlay.showModal(HelpModal, {});
-  };
   const privacyClick = () => {
     if (
       typeof window.OneTrust === "undefined" ||
@@ -36,16 +30,6 @@ const Footer = () => {
         </div>
         <div className="help-privacy">
           <ul>
-            <li>
-              <button
-                type="button"
-                className={styles.helpPrivBtn}
-                onClick={helpClick}
-              >
-                <MdHelpOutline />
-                Help
-              </button>
-            </li>
             <li>
               <button
                 type="button"
