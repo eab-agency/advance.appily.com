@@ -3,10 +3,12 @@
 .react-tabs {
   display: flex;
   width: 100%;
+  max-width: tokens.$mq-1200;
+  margin: 0 auto;
   position: relative;
   background: var(--c-bg1);
-  padding-block: clamp(tokens.$padding-m, 5vw, tokens.$padding-xxl);
-  padding-top: 0;
+  padding-block: clamp(tokens.$padding-m, 5vw, tokens.$padding-xxxxl);
+  padding-inline: clamp(tokens.$padding-m, 5vw, tokens.$padding-xxxxl);
 
   @media (min-width: tokens.$mq-800) {
     flex-direction: column;
@@ -21,7 +23,7 @@
     width: 150vw;
     height: 100%;
     transform: translateX(-50%);
-    background: var(--c-bg2);
+    background: var(--c-bg6);
   }
 
   &__tab-list {
@@ -50,7 +52,7 @@
       cursor: pointer;
       border-color: var(--c-border-3);
       border-right-color: transparent;
-      border-top-color: transparent;
+      border-top-color: var;
       border-left-color: transparent;
       border-bottom-width: 1px;
       border-right-width: 0;
@@ -71,7 +73,7 @@
       }
 
       &[class*="-selected"] {
-        border: 0.5em solid var(--c-border-3);
+        border-left: 0.5em solid var(--c-border-3);
         border-right-width: 0;
         pointer-events: none;
 
@@ -102,6 +104,12 @@
             height: 130%;
           }
         }
+      }
+
+      &:first-child {
+        border-top-left-radius: tokens.$borderRadius-xl;
+        border-left-width: 1px;
+        overflow: hidden;
       }
 
       &::before {
@@ -147,12 +155,12 @@
         text-align: center;
         text-transform: uppercase;
         text-decoration: underline;
-        color: var(--c-white);
+        color: var(--c-bodyPrimary);
         font-size: clamp(tokens.$size-2, 1.5vw, tokens.$size-5);
       }
 
       &:hover {
-        background: rgba(green, 0.3);
+        background: var(--c-bg6);
       }
 
       &::before {
@@ -173,8 +181,14 @@ div[class*="__tab-panel"] {
   width: 100%;
   padding: clamp(tokens.$padding-s, 5vw, tokens.$padding-l);
   border: 0.5em solid var(--c-border-3);
+  border-top-width: 1px;
+  border-left-width: 1px;
   position: relative;
   z-index: tokens.$layer-1;
+  background: var(--c-white);
+  border-radius: tokens.$borderRadius-xl;
+  border-top-left-radius: 0;
+  box-shadow: 0.5em 0.5em 0 var(--c-border-3);
 
   &[class*="-selected"] {
     display: flex;
@@ -191,7 +205,8 @@ div[class*="__tab-panel"] {
       content: "";
       font-family: tokens.$f-icons;
       font-size: clamp(tokens.$size-10, 20vw, tokens.$size-10 * 10);
-      color: var(--c-bodySecondary);
+      color: var(--c-tabsMainIcon);
+      // color: var(--c-bg4);
       line-height: 1;
     }
 
@@ -232,7 +247,7 @@ div[class*="__tab-panel"] {
 .tab-copy {
   h3 {
     font-size: clamp(tokens.$size-4, 2vw, tokens.$size-6);
-    color: var(--c-white);
+    color: var(--c-headingSecondary);
   }
 
   p {
@@ -311,10 +326,10 @@ div[class*="__tab-panel"] {
 //                     height: 130%;
 //                     background: tokens.$c-blue-800;
 
-//                     @media (prefers-color-scheme: light) {
-//                         background: tokens.$c-gray-100;
-//                     }
-//                 }
+//     @media (prefers-color-scheme: light) {
+//         background: tokens.$c-gray-100;
+//     }
+// }
 //             }
 //         }
 //     }

@@ -44,7 +44,7 @@ const HealthCareSeoPage = () => {
 
   return (
     <>
-      <Header links={data.links} />
+      {/* <Header links={data.links} /> */}
       <section className="pageHero">
         <div className="group center-aligned">
           <h1
