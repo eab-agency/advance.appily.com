@@ -205,8 +205,8 @@ div[class*="__tab-panel"] {
       content: "";
       font-family: tokens.$f-icons;
       font-size: clamp(tokens.$size-10, 20vw, tokens.$size-10 * 10);
-      color: var(--c-tabsMainIcon);
-      // color: var(--c-bg4);
+      // color: var(--c-tabsMainIcon);
+      color: var(--c-bg4);
       line-height: 1;
     }
 
