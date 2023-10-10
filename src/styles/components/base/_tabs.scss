@@ -71,7 +71,7 @@
       }
 
       &[class*="-selected"] {
-        border: 0.5em solid var(--c-bg2);
+        border: 0.5em solid var(--c-border-3);
         border-right-width: 0;
         pointer-events: none;
 
@@ -95,7 +95,7 @@
           top: 0;
           width: 130%;
           height: 100%;
-          background: var(--c-bg2);
+          background: var(--c-white);
 
           @media (min-width: tokens.$mq-800) {
             width: 100%;
@@ -166,96 +166,88 @@
   }
 }
 
-// div[class*='__tab-panel'] {
-//     display: none;
-//     width: 100%;
-//     padding: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
-//     border: 0.5em solid tokens.$c-blue-500;
-//     position: relative;
-//     z-index: tokens.$layer-1;
+// =========================
 
-//     @media (prefers-color-scheme: light) {
-//         border-color: color.adjust(tokens.$c-blue-500, $lightness: 50%);
-//     }
+div[class*="__tab-panel"] {
+  display: none;
+  width: 100%;
+  padding: clamp(tokens.$padding-s, 5vw, tokens.$padding-l);
+  border: 0.5em solid var(--c-border-3);
+  position: relative;
+  z-index: tokens.$layer-1;
 
-//     &[class*='-selected'] {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         gap: clamp(tokens.$baseUnit * 2, 5vw, tokens.$baseUnit * 4);
+  &[class*="-selected"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(tokens.$size-7, 5vw, tokens.$size-9);
 
-//         @media (min-width: tokens.$mq-800) {
-//             flex-direction: row;
-//             align-items: center;
-//         }
+    @media (min-width: tokens.$mq-800) {
+      flex-direction: row;
+      align-items: center;
+    }
 
-//         &::before {
-//             content: '';
-//             font-family: tokens.$f-icons;
-//             font-size: clamp(tokens.$baseUnit * 4, 20vw, tokens.$baseUnit * 20);
-//             color: color.adjust(tokens.$c-blue-500, $lightness: 10%);
-//             line-height: 1;
+    &::before {
+      content: "";
+      font-family: tokens.$f-icons;
+      font-size: clamp(tokens.$size-10, 20vw, tokens.$size-10 * 10);
+      color: var(--c-bodySecondary);
+      line-height: 1;
+    }
 
-//             // @media (prefers-color-scheme: light) {
-//             //     color: tokens.$c-malva-500;
-//             // }
-//         }
+    &.motivation-icon::before {
+      content: tokens.$i-motivation;
+    }
 
-//         &.motivation-icon::before {
-//             content: tokens.$i-motivation;
-//         }
+    &.skills-icon::before {
+      content: tokens.$i-skills;
+    }
 
-//         &.skills-icon::before {
-//             content: tokens.$i-skills;
-//         }
+    &.work-icon::before {
+      content: tokens.$i-people;
+    }
 
-//         &.work-icon::before {
-//             content: tokens.$i-people;
-//         }
+    &.setting-icon::before {
+      content: tokens.$i-building;
+    }
 
-//         &.setting-icon::before {
-//             content: tokens.$i-building;
-//         }
+    &.education-icon::before {
+      content: tokens.$i-education;
+    }
 
-//         &.education-icon::before {
-//             content: tokens.$i-education;
-//         }
+    &.experience-icon::before {
+      content: tokens.$i-work;
+    }
 
-//         &.experience-icon::before {
-//             content: tokens.$i-work;
-//         }
+    .tab-copy {
+      @media (min-width: tokens.$mq-800) {
+        flex: 1;
+      }
+    }
+  }
+}
 
-//         .tab-copy {
-//             @media (min-width: tokens.$mq-800) {
-//                 flex: 1;
-//             }
-//         }
-//     }
-// }
+// =======================
 
-// .tab-copy {
-//     h3 {
-//         font-size: clamp(tokens.$fs-l, 2vw, tokens.$fs-xl);
-//         color: tokens.$c-white;
+.tab-copy {
+  h3 {
+    font-size: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+    color: var(--c-white);
+  }
 
-//         @media (prefers-color-scheme: light) {
-//             color: tokens.$c-blue-500;
-//         }
-//     }
+  p {
+    font-size: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+  }
 
-//     p {
-//         font-size: clamp(tokens.$fs-s, 2vw, tokens.$fs-m);
-//     }
+  ul {
+    margin-top: 2em;
+    padding-left: 2em;
 
-//     ul {
-//         margin-top: 2em;
-//         padding-left: 2em;
-
-//         li {
-//             margin-bottom: 1.5em;
-//         }
-//     }
-// }
+    li {
+      margin-bottom: 1.5em;
+    }
+  }
+}
 
 // .degree-tabs {
 //     ul[class*='tab-list'] {
