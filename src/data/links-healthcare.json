@@ -1,24 +1,24 @@
 {
 	"results": [
 		{
-			"slug": "executive",
-			"title": "Executive"
+			"href": "executive",
+			"label": "Executive"
 		},
 		{
-			"slug": "practitioner",
-			"title": "Practitioner"
+			"href": "practitioner",
+			"label": "Practitioner"
 		},
 		{
-			"slug": "educator",
-			"title": "Educator"
+			"href": "educator",
+			"label": "Educator"
 		},
 		{
-			"slug": "scientist",
-			"title": "Scientist"
+			"href": "scientist",
+			"label": "Scientist"
 		},
 		{
-			"slug": "analyst",
-			"title": "Analyst"
+			"href": "analyst",
+			"label": "Analyst"
 		}
 	]
 }

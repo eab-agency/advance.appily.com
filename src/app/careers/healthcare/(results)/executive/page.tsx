@@ -3,20 +3,22 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
-import useSWR from "swr";
 
 import {
 	Accordion,
 	CarouselWithForm,
+	NavBar,
 	Stats,
 	StickyCta,
 	Tabs,
 } from "@/components";
+import dataLinks from "@/data/links-healthcare.json";
 import data from "@/data/results-executive.json";
 import styles from "@/styles/components/FinalPage.module.scss";
 
 export default function Page() {
 	const carouselRef = useRef(null);
+	const { results: links } = dataLinks;
 
 	return (
 		<>
@@ -27,6 +29,7 @@ export default function Page() {
 						<h1>{data.title}</h1>
 						<p>{data.detailedDescription}</p>
 					</section>
+					{links && <NavBar links={links} />}
 					<Tabs className="react-tabs" tabs={data.tabs} />
 					<section className={styles["career-path"]}>
 						<div className={styles["path-intro"]}>
