@@ -1,24 +1,11 @@
-"use client";
 import Image from "next/image";
-import React, { useRef } from "react";
 
-import {
-	Accordion,
-	Button,
-	CarouselWithForm,
-	Header,
-	Stats,
-	StickyCta,
-	Testimonial,
-} from "@/components";
-import MainLogo from "@/components/Header/MainLogo";
+import { Button, CarouselWithForm, Header } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";
 import data from "@/data/careers-business.json";
 import Link from "next/link";
 
 const CareersSeoPage = () => {
-	const carouselRef = useRef(null);
-
 	return (
 		<>
 			<Header links={data.links} />
@@ -140,7 +127,7 @@ const CareersSeoPage = () => {
 				</div>
 			</section>
 
-			<div id="explore-your-school-matches" ref={carouselRef}>
+			<div id="explore-your-school-matches">
 				<CarouselWithForm />
 			</div>
 
