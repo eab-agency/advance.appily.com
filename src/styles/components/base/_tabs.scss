@@ -3,11 +3,10 @@
 .react-tabs {
   display: flex;
   width: 100%;
-  max-width: tokens.$mq-1200;
+  max-width: tokens.$mq-1100;
   margin: 0 auto;
   position: relative;
-  background: var(--c-bg1);
-  padding-block: clamp(tokens.$padding-m, 5vw, tokens.$padding-xxxxl);
+  padding-block: clamp(tokens.$padding-m, 5vw, tokens.$padding-xxxxl * 2);
   padding-inline: clamp(tokens.$padding-m, 5vw, tokens.$padding-xxxxl);
 
   @media (min-width: tokens.$mq-800) {
@@ -20,10 +19,10 @@
     position: absolute;
     top: 0;
     left: 50%;
-    width: 150vw;
+    width: 99vw;
     height: 100%;
+    background: var(--c-bg10);
     transform: translateX(-50%);
-    background: var(--c-bg6);
   }
 
   &__tab-list {
@@ -48,7 +47,7 @@
       width: 100%;
       gap: 0.5em;
       position: relative;
-      border: 0.5em solid transparent;
+      border: 1px solid transparent;
       cursor: pointer;
       border-color: var(--c-border-3);
       border-right-color: transparent;
@@ -68,17 +67,20 @@
         border-right-width: 1px;
 
         &:last-child {
-          border-right: 0.5em solid transparent;
+          border-right: 1px solid transparent;
         }
       }
 
       &[class*="-selected"] {
-        border-left: 0.5em solid var(--c-border-3);
+        border-left: 1px solid var(--c-border-3);
         border-right-width: 0;
         pointer-events: none;
+        border-top-left-radius: tokens.$borderRadius-m;
+        border-top-right-radius: tokens.$borderRadius-m;
+        overflow: hidden;
 
         @media (min-width: tokens.$mq-800) {
-          border-right-width: 0.5em;
+          border-right-width: 1px;
           border-bottom-width: 0;
         }
 
@@ -97,7 +99,7 @@
           top: 0;
           width: 130%;
           height: 100%;
-          background: var(--c-white);
+          background: var(--c-bg-body);
 
           @media (min-width: tokens.$mq-800) {
             width: 100%;
@@ -156,7 +158,7 @@
         text-transform: uppercase;
         text-decoration: underline;
         color: var(--c-bodyPrimary);
-        font-size: clamp(tokens.$size-2, 1.5vw, tokens.$size-5);
+        font-size: clamp(tokens.$size-2, 1.5vw, tokens.$size-4);
       }
 
       &:hover {
@@ -185,7 +187,7 @@ div[class*="__tab-panel"] {
   border-left-width: 1px;
   position: relative;
   z-index: tokens.$layer-1;
-  background: var(--c-white);
+  background: var(--c-bg-body);
   border-radius: tokens.$borderRadius-xl;
   border-top-left-radius: 0;
   box-shadow: 0.5em 0.5em 0 var(--c-border-3);
@@ -205,7 +207,6 @@ div[class*="__tab-panel"] {
       content: "";
       font-family: tokens.$f-icons;
       font-size: clamp(tokens.$size-10, 20vw, tokens.$size-10 * 10);
-      // color: var(--c-tabsMainIcon);
       color: var(--c-bg9);
       line-height: 1;
     }
@@ -250,8 +251,11 @@ div[class*="__tab-panel"] {
     color: var(--c-headingSecondary);
   }
 
-  p {
-    font-size: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+  .tab-content {
+    color: var(--c-bodyPrimary);
+    font-size: clamp(tokens.$size-3, 2vw, tokens.$size-5);
+    font-weight: tokens.$fontWeight-light;
+    font-family: tokens.$f-sans;
   }
 
   ul {

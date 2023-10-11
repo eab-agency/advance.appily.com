@@ -139,7 +139,8 @@ $backgrounds: (
     "bg6": colors.$c-navy,
     "bg7": map.get($navy, 500),
     "bg8": map.get($slateGray, 900),
-    "bg9": map.get($teal, 500),
+    "bg9": map.get($teal, 700),
+    "bg10": map.get($navy, 500),
     "bg-body": map.get($navy, 600),
     "button": colors.$c-orange,
     "shadow1": colors.$c-yellow,
@@ -155,6 +156,7 @@ $backgrounds: (
     "bg7": colors.$c-yellow,
     "bg8": map.get($slateGray, 100),
     "bg9": map.get($teal, 500),
+    "bg10": map.get($teal, 50),
     "bg-body": colors.$c-white
   )
 );
