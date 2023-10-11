@@ -1,0 +1,33 @@
+@use "@/styles/global/tokens";
+
+.subNavigation {
+  display: flex;
+  align-items: center;
+  background: var(--c-bg12);
+  padding-inline: clamp(tokens.$size-2, 4vw, tokens.$size-8);
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: tokens.$fontWeight-normal;
+    color: var(--c-navy-400);
+    font-size: clamp(tokens.$size-4, 7vw, tokens.$size-6);
+    margin: 0;
+  }
+
+  .subNavItems {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    gap: clamp(tokens.$size-1, 4vw, tokens.$size-4);
+
+    li {
+      a {
+        display: block;
+        padding-block: clamp(tokens.$size-1, 2vw, tokens.$size-4);
+        text-align: center;
+        text-transform: uppercase;
+        font-size: tokens.$size-3;
+      }
+    }
+  }
+}

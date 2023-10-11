@@ -13,3 +13,5 @@ export { CareerPaths } from "./CareerPaths";
 export { TextWithImage } from "./TextWithImage";
 export { Testimonial } from "./Testimonial";
 export { NavBar } from "./Header/NavBar";
+// export { SubNav } from "./SubNav";
+export { SubNav } from "./Header/SubNav";
