@@ -2,12 +2,13 @@ import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import React from "react";
 
+import data from "@/data/careers-business.json";
 import { Providers } from "../providers";
 import { mergeOpenGraph } from "../seo/mergeOpenGraph";
 
 import "@/styles/styles.scss";
 
-import Footer from "../components/Footer";
+import { Footer, Header } from "@/components";
 
 export default async function RootLayout({
 	children,
@@ -19,6 +20,7 @@ export default async function RootLayout({
 			</head>
 			<body>
 				<Providers>
+					<Header links={data.links} />
 					<main className="layout-wrapper">{children}</main>
 					<Footer />
 				</Providers>

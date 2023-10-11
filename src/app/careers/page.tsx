@@ -2,13 +2,11 @@ import Image from "next/image";
 
 import { Button, CarouselWithForm, Header } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";
-import data from "@/data/careers-business.json";
 import Link from "next/link";
 
 const CareersSeoPage = () => {
 	return (
 		<>
-			<Header links={data.links} />
 			<section className="pageHero">
 				<div className="group center-aligned">
 					<h1>
