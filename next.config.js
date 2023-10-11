@@ -2,15 +2,6 @@
 const path = require("path");
 
 const nextConfig = {
-	async redirects() {
-		return [
-			{
-				source: "/",
-				destination: "/careers/healthcare/",
-				permanent: true,
-			},
-		];
-	},
 	typescript: {
 		// !! WARN !!
 		// Dangerously allow production builds to successfully complete even if
@@ -41,39 +32,6 @@ const nextConfig = {
 				destination: "https://go.cappexhealth.com/api/:slug",
 			},
 		];
-	},
-	webpack: config => {
-		const configCopy = { ...config };
-		configCopy.resolve.fallback = {
-			...config.resolve.fallback,
-			fs: false,
-			path: false,
-		};
-		// configCopy.resolve.alias = {
-		//   ...config.resolve.alias,
-		//   // '@': path.resolve(__dirname, './src'),
-		//   '@components': path.resolve(__dirname, './src/components'),
-		//   '@/styles': path.resolve(__dirname, './src/css'),
-		//   '@cloud': path.resolve(__dirname, './src/app/cloud'),
-		//   '@forms': path.resolve(__dirname, './src/forms'),
-		//   '@blocks': path.resolve(__dirname, './src/blocks'),
-		//   '@providers': path.resolve(__dirname, './src/providers'),
-		//   '@icons': path.resolve(__dirname, './src/icons'),
-		//   '@utilities': path.resolve(__dirname, './src/utilities'),
-		//   '@types': path.resolve(__dirname, './payload-types.ts'),
-		//   '@graphics': path.resolve(__dirname, './src/graphics'),
-		//   '@graphql': path.resolve(__dirname, './src/graphql'),
-		//   '@hooks': path.resolve(__dirname, './src/hooks'),
-		//   '@/context': path.resolve(__dirname, './src/context'),
-		//   '@helpers': path.resolve(__dirname, './src/helpers'),
-		//   '@/data': path.resolve(__dirname, './src/data'),
-		//   '@/lib': path.resolve(__dirname, './src/lib'),
-		//   // IMPORTANT: the next lines are for development only
-		//   // keep them commented out unless actively developing local react modules
-		//   // modify their paths according to your local directory
-		//   // "payload-admin-bar": path.join(__dirname, "../payload-admin-bar"),
-		// }
-		return configCopy;
 	},
 	async headers() {
 		const headers = [];
