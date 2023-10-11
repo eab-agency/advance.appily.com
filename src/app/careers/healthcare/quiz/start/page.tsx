@@ -1,22 +1,18 @@
 import { Quiz } from "@/components";
 import { fetchQuizData } from "@/lib/fetchQuizData";
-import Head from "next/head";
+import { mergeOpenGraph } from "@/seo/mergeOpenGraph";
+import { Metadata } from "next";
 
 const VERTICAL = "healthcare";
 
-async function HealthCareQuizHome() {
-	const quizData = await fetchQuizData(VERTICAL);
+export const metadata: Metadata = {
+	title: "Health Science Quiz",
+	description: "Appily Health Science Quiz",
+	openGraph: mergeOpenGraph({ title: "Health Science Quiz" }),
+};
 
-	return (
-		<>
-			<Head>
-				<title>Health Science Quiz</title>
-				<meta name="description" content="Appily Health Science Quiz" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.png" />
-			</Head>
-			{quizData && <Quiz vertical={VERTICAL} quizData={quizData} />}
-		</>
-	);
+async function QuizHome() {
+	const quizData = await fetchQuizData(VERTICAL);
+	return quizData && <Quiz vertical={VERTICAL} quizData={quizData} />;
 }
-export default HealthCareQuizHome;
+export default QuizHome;

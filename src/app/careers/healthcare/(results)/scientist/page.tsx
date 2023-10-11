@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { BiLinkExternal } from "react-icons/bi";
-import useSWR from "swr";
 
 import {
 	Accordion,
