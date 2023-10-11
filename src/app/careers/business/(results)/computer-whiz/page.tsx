@@ -7,16 +7,19 @@ import {
 	Accordion,
 	CareerPaths,
 	CarouselWithForm,
+	NavBar,
 	Stats,
 	StickyCta,
 	Tabs,
 	TextWithImage,
 } from "@/components";
+import dataLinks from "@/data/links-business.json";
 import data from "@/data/results-computer-whiz.json";
 import styles from "@/styles/components/FinalPage.module.scss";
 
 export default function Page() {
 	const carouselRef = useRef(null);
+	const { results: links } = dataLinks;
 
 	return data ? (
 		<>
@@ -27,6 +30,7 @@ export default function Page() {
 						<h1>{data.title}</h1>
 						<p>{data.detailedDescription}</p>
 					</section>
+					{links && <NavBar links={links} />}
 					<Tabs className="react-tabs" tabs={data.tabs} />
 
 					<CareerPaths careerPaths={data.careerPaths} />
