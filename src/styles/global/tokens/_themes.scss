@@ -85,15 +85,15 @@ $navy: (
 
 $violet: (
   900: colors.$c-violet,
-  800: color.adjust(colors.$c-violet, $lightness: 10%),
-  700: color.adjust(colors.$c-violet, $lightness: 20%),
-  600: color.adjust(colors.$c-violet, $lightness: 30%),
-  500: color.adjust(colors.$c-violet, $lightness: 40%),
-  400: color.adjust(colors.$c-violet, $lightness: 50%),
-  300: color.adjust(colors.$c-violet, $lightness: 60%),
-  200: color.adjust(colors.$c-violet, $lightness: 70%),
-  100: color.adjust(colors.$c-violet, $lightness: 80%),
-  50: color.adjust(colors.$c-violet, $lightness: 90%)
+  800: color.adjust(colors.$c-violet, $lightness: -30%),
+  700: color.adjust(colors.$c-violet, $lightness: -20%),
+  600: color.adjust(colors.$c-violet, $lightness: -10%),
+  500: colors.$c-violet,
+  400: color.adjust(colors.$c-violet, $lightness: 10%),
+  300: color.adjust(colors.$c-violet, $lightness: 20%),
+  200: color.adjust(colors.$c-violet, $lightness: 30%),
+  100: color.adjust(colors.$c-violet, $lightness: 40%),
+  50: color.adjust(colors.$c-violet, $lightness: 45%)
 );
 
 // =====================================
@@ -141,10 +141,12 @@ $backgrounds: (
     "bg8": map.get($slateGray, 900),
     "bg9": map.get($teal, 700),
     "bg10": map.get($navy, 500),
+    "bg11": map.get($navy, 500),
     "bg-body": map.get($navy, 600),
     "button": colors.$c-orange,
     "shadow1": colors.$c-yellow,
-    "shadow2": map.get($navy, 700)
+    "shadow2": map.get($navy, 700),
+    "shadow3": map.get($violet, 400)
   ),
   light: (
     "bg1": color.adjust(colors.$c-slateGray, $lightness: 72%),
@@ -157,7 +159,9 @@ $backgrounds: (
     "bg8": map.get($slateGray, 100),
     "bg9": map.get($teal, 500),
     "bg10": map.get($teal, 50),
-    "bg-body": colors.$c-white
+    "bg11": map.get($violet, 50),
+    "bg-body": colors.$c-white,
+    "shadow3": map.get($navy, 700)
   )
 );
 
