@@ -6,7 +6,7 @@
   max-width: tokens.$mq-1100;
   margin: 0 auto;
   position: relative;
-  padding-block: clamp(tokens.$padding-m, 5vw, tokens.$padding-xxxxl * 2);
+  padding-block: clamp(tokens.$padding-m, 5vw, tokens.$padding-xxxxl * 3);
   padding-inline: clamp(tokens.$padding-m, 5vw, tokens.$padding-xxxxl);
 
   @media (min-width: tokens.$mq-800) {
@@ -45,7 +45,7 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 0.5em;
+      gap: clamp(0.25rem, 1vw, 0.7rem);
       position: relative;
       border: 1px solid transparent;
       cursor: pointer;
@@ -55,7 +55,7 @@
       border-left-color: transparent;
       border-bottom-width: 1px;
       border-right-width: 0;
-      padding-block: clamp(tokens.$padding-m, 1.35vw, tokens.$padding-xl);
+      padding-block: clamp(tokens.$padding-s, 1.35vw, tokens.$padding-xl);
       padding-inline: clamp(tokens.$padding-s, 2vw, tokens.$padding-xl);
       transition: all 0.2s ease-in-out;
 
@@ -75,11 +75,11 @@
         border-left: 1px solid var(--c-border-3);
         border-right-width: 0;
         pointer-events: none;
-        border-top-left-radius: tokens.$borderRadius-m;
-        border-top-right-radius: tokens.$borderRadius-m;
-        overflow: hidden;
 
         @media (min-width: tokens.$mq-800) {
+          border-top-left-radius: tokens.$borderRadius-m;
+          border-top-right-radius: tokens.$borderRadius-m;
+          overflow: hidden;
           border-right-width: 1px;
           border-bottom-width: 0;
         }
@@ -97,21 +97,23 @@
           position: absolute;
           left: 0;
           top: 0;
-          width: 130%;
+          width: 110%;
           height: 100%;
           background: var(--c-bg-body);
 
           @media (min-width: tokens.$mq-800) {
             width: 100%;
-            height: 130%;
+            height: 110%;
           }
         }
       }
 
       &:first-child {
-        border-top-left-radius: tokens.$borderRadius-xl;
         border-left-width: 1px;
         overflow: hidden;
+        @media (min-width: tokens.$mq-800) {
+          border-top-left-radius: tokens.$borderRadius-xl;
+        }
       }
 
       &::before {
@@ -159,6 +161,7 @@
         text-decoration: underline;
         color: var(--c-bodyPrimary);
         font-size: clamp(tokens.$size-2, 1.5vw, tokens.$size-4);
+        line-height: tokens.$f-lineHeight-tight;
       }
 
       &:hover {
@@ -182,7 +185,6 @@ div[class*="__tab-panel"] {
   display: none;
   width: 100%;
   padding: clamp(tokens.$padding-s, 5vw, tokens.$padding-l);
-  border: 0.5em solid var(--c-border-3);
   border-top-width: 1px;
   border-left-width: 1px;
   position: relative;
@@ -190,7 +192,12 @@ div[class*="__tab-panel"] {
   background: var(--c-bg-body);
   border-radius: tokens.$borderRadius-xl;
   border-top-left-radius: 0;
-  box-shadow: 0.5em 0.5em 0 var(--c-border-3);
+  border-bottom-left-radius: 0;
+  box-shadow: clamp(0.2em, 1vw, 0.5em) clamp(0.2em, 1vw, 0.5em) 0 var(--c-border-3);
+
+  @media (min-width: tokens.$mq-800) {
+    border: 0.5em solid var(--c-border-3);
+  }
 
   &[class*="-selected"] {
     display: flex;
