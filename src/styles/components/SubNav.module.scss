@@ -2,31 +2,87 @@
 
 .subNavigation {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   background: var(--c-bg12);
   padding-inline: clamp(tokens.$size-2, 4vw, tokens.$size-8);
+
+  .group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: tokens.$mq-1200;
+  }
 
   h2 {
     text-transform: uppercase;
     font-weight: tokens.$fontWeight-normal;
-    color: var(--c-navy-400);
-    font-size: clamp(tokens.$size-4, 7vw, tokens.$size-6);
+    color: var(--c-navy-300);
+    font-size: clamp(tokens.$size-3, 4vw, tokens.$size-4);
     margin: 0;
+    position: relative;
+    padding-right: 2em;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: "//";
+      font-weight: 900;
+      color: rgba(white, 0.5);
+      letter-spacing: -0.2em;
+      font-size: 1.5em;
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   .subNavItems {
     display: flex;
     list-style: none;
     margin: 0;
-    gap: clamp(tokens.$size-1, 4vw, tokens.$size-4);
+    // gap: clamp(tokens.$size-1, 4vw, tokens.$size-4);
 
     li {
+      border-left: 1px solid var(--c-navy-400);
+
       a {
         display: block;
         padding-block: clamp(tokens.$size-1, 2vw, tokens.$size-4);
+        padding-inline: clamp(tokens.$size-2, 4vw, tokens.$size-6);
         text-align: center;
         text-transform: uppercase;
-        font-size: tokens.$size-3;
+        font-size: tokens.$size-4;
+        color: var(--c-white);
+        text-decoration: none;
+        position: relative;
+
+        &::before {
+          content: "";
+          display: block;
+          height: 0.3em;
+          width: 90%;
+          background: var(--c-teal-400);
+          position: absolute;
+          top: 0.2em;
+          left: 50%;
+          transform: translateX(-50%);
+          opacity: 0;
+          transition: all 0.1s ease-out;
+        }
+
+        &:hover {
+          background: var(--c-navy-400);
+
+          &::before {
+            top: -0.2em;
+            opacity: 1;
+          }
+        }
       }
     }
   }

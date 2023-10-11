@@ -55,14 +55,20 @@ export default function Page() {
           className="whatever-you-need"
         />
 
-        <section>
-          <h3>{data.degreeTabs.title}</h3>
-          <p>{data.degreeTabs.description}</p>
-          {data.degreeTabs.degrees.map(degree => (
-            <Accordion title={degree.title}>
-              <div dangerouslySetInnerHTML={{ __html: degree.content }} />
-            </Accordion>
-          ))}
+        <section className="whatDegrees">
+          <div className="group column">
+            <div className="intro-text">
+              <h3>{data.degreeTabs.title}</h3>
+              <p>{data.degreeTabs.description}</p>
+            </div>
+            <div className="accordion-group">
+              {data.degreeTabs.degrees.map(degree => (
+                <Accordion title={degree.title}>
+                  <div dangerouslySetInnerHTML={{ __html: degree.content }} />
+                </Accordion>
+              ))}
+            </div>
+          </div>
         </section>
 
         <div

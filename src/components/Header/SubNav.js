@@ -33,23 +33,26 @@ export function SubNav({ links }) {
 			>
 				{isMenuOpen ? <MdClose /> : <MdMenu />}
 			</button> */}
-			<h2>Explore Results</h2>
-			<ul className={styles.subNavItems}>
-				{links.map(({ href, label }) => {
-					const isActive = pathname === href;
-					return (
-						<li key={`${href}${label}`}>
-							<Link
-								href={href}
-								className={isActive ? styles.active : styles.nonActive}
-								// onClick={toggleMenu}
-							>
-								{label}
-							</Link>
-						</li>
-					);
-				})}
-			</ul>
+			<div className="group">
+				<h2>Explore Results</h2>
+				<ul className={styles.subNavItems}>
+					{links.map(({ href, label }) => {
+						const isActive = pathname === href;
+						return (
+							<li key={`${href}${label}`}>
+								<Link
+									href={href}
+									className={isActive ? styles.active : styles.nonActive}
+									// onClick={toggleMenu}
+								>
+									{label}
+								</Link>
+							</li>
+						);
+					})}
+				</ul>
+			</div>
 		</nav>
 	);
 }
+5;
