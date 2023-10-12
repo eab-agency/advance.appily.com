@@ -11,9 +11,13 @@
     background-color: var(--c-button);
     border-color: var(--c-border-1);
     transition: all 0.2s ease-in-out;
-    padding: 0.5em;
+    padding: 0.4em;
     width: 2.5rem;
     height: 2.5rem;
+    border-radius: tokens.$borderRadius-m;
+    border: tokens.$borderWidth-xs solid var(--c-orange-500);
+    font-weight: tokens.$fontWeight-semibold;
+    cursor: pointer;
 
     svg {
       width: 2em;

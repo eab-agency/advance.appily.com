@@ -126,7 +126,7 @@
   }
 }
 
-:where(button),
+// :where(button),
 :where(.button) {
   @extend %button;
 
