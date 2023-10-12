@@ -83,7 +83,6 @@
   .container {
     position: relative;
     z-index: tokens.$layer-3;
-    // flex-shrink: 0;
     width: 100%;
     min-height: 45rem;
     padding-inline: 2em;
@@ -91,8 +90,6 @@
 
     @media (min-width: tokens.$mq-1300) {
       width: clamp(20rem, 80vw, 80rem);
-      // padding-left: 2em;
-      // padding-right: 0;
       padding-inline: 1em;
     }
   }
@@ -168,7 +165,6 @@
     max-width: tokens.$mq-900;
 
     h3 {
-      // color: tokens.$c-white;
       text-align: center;
     }
     p {
@@ -177,7 +173,7 @@
     }
   }
 
-  form {
-    // margin: 2em auto;
-  }
+  // form {
+  //   // margin: 2em auto;
+  // }
 }
