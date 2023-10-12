@@ -95,7 +95,8 @@
   .subNavItems {
     display: none;
     flex-direction: column;
-    width: 100%;
+    width: fit-content;
+    max-width: 100%;
     padding-inline: 0;
     gap: 0;
     list-style: none;

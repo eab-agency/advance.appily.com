@@ -81,6 +81,7 @@
     li {
       a {
         font-size: tokens.$size-3;
+        color: var(--c-teal-500);
 
         &:hover {
           color: var(--c-orange-500);

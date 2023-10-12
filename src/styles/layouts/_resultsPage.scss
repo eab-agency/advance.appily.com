@@ -367,3 +367,128 @@
     }
   }
 }
+
+// ======================
+
+.career-path {
+  display: block;
+  width: 100%;
+  position: relative;
+
+  .path-intro {
+    position: relative;
+    z-index: tokens.$layer-2;
+    h2 {
+      position: relative;
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+    }
+
+    p {
+      display: block;
+      width: 100%;
+      max-width: tokens.$mq-900;
+    }
+  }
+
+  .group {
+    flex-direction: column;
+
+    @media (min-width: tokens.$mq-900) {
+      flex-direction: row;
+    }
+  }
+
+  .executive-path {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(tokens.$size-2, 5vw, tokens.$size-5);
+    position: relative;
+    z-index: tokens.$layer-2;
+
+    @media (min-width: tokens.$mq-900) {
+      flex-direction: row;
+    }
+
+    p {
+      // font-size: clamp(tokens.$fs-s, 2vw, tokens.$fs-m);
+      order: 1;
+
+      @media (min-width: tokens.$mq-900) {
+        order: 0;
+      }
+    }
+
+    ul {
+      flex: 1 1 100%;
+      list-style: none;
+      order: 1;
+
+      @media (min-width: tokens.$mq-900) {
+        order: 0;
+      }
+
+      li {
+        display: block;
+        padding-left: 2em;
+        position: relative;
+        color: var(--c-bodyPrimary);
+        margin-bottom: 1em;
+        padding-left: 1.5em;
+        position: relative;
+
+        &::before {
+          content: tokens.$i-checkmark;
+          font-family: tokens.$f-icons;
+          color: var(--c-orange-500);
+          font-size: 1.2em;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translateY(-5%);
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+
+  figure {
+    flex-shrink: 0;
+    width: 100%;
+
+    @media (min-width: tokens.$mq-900) {
+      width: 50%;
+    }
+
+    img {
+      // order: 0;
+      width: 100%;
+
+      // @media (min-width: tokens.$mq-900) {
+      //   order: 1;
+      // }
+    }
+
+    figcaption {
+      font-size: tokens.$size-2;
+      color: var(--c-bodyPrimary);
+      margin-top: 2em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}
+
+// ===================
+
+.best-degrees {
+  flex-direction: column;
+
+  .group {
+    width: 100%;
+    max-width: tokens.$mq-900;
+    margin: 0 auto;
+  }
+}
