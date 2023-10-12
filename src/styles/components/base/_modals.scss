@@ -1,5 +1,5 @@
-// @use 'sass:color';
-// @use '../config/tokens';
+@use "sass:color";
+@use "@/styles/global/tokens";
 
 // .reOverlay {
 //     div[class*='modalWrapper'] {
@@ -105,3 +105,8 @@
 //         }
 //     }
 // }
+
+#onetrust-pc-sdk.otPcCenter {
+  max-width: tokens.$mq-900 !important;
+  // overflow-x: hidden !important;
+}
