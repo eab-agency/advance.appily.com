@@ -1,9 +1,8 @@
 "use client";
 
+import { Button } from "@/components";
 import styles from "@/styles/components/PageFooter.module.scss";
 import Image from "next/image";
-import React from "react";
-import { MdOutlinePrivacyTip } from "react-icons/md";
 
 const Footer = () => {
   const privacyClick = () => {
@@ -88,15 +87,15 @@ const Footer = () => {
                 >
                   Personal Information Protection
                 </a>
-                <li>
-                  <Button
-                    type="button"
-                    className={styles.privacyButton}
-                    onClick={privacyClick}
-                  >
-                    Privacy Settings
-                  </Button>
-                </li>
+              </li>
+              <li>
+                <Button
+                  type="button"
+                  className={styles.privacyButton}
+                  onClick={privacyClick}
+                >
+                  Privacy Settings
+                </Button>
               </li>
             </ul>
           </div>
