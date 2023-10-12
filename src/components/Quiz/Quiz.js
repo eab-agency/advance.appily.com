@@ -10,7 +10,7 @@ import ResetQuizButton from "./ResetQuizButton";
 import Results from "./Results";
 // import Score from "./Score";
 
-export function Quiz({ vertical, quizData }) {
+export function Quiz({ vertical, quizData, resultsFormId }) {
 	const { location } = useUser();
 
 	const router = useRouter();
@@ -127,7 +127,11 @@ export function Quiz({ vertical, quizData }) {
 						(location.notUS === false ||
 							location.notUS === null ||
 							location.notUS === undefined) && (
-							<Results vertical={vertical} answers={quizState}>
+							<Results
+								vertical={vertical}
+								answers={quizState}
+								formId={resultsFormId}
+							>
 								<ResetQuizButton
 									handleRetakeQuiz={handleRetakeQuiz}
 									vertical={vertical}
