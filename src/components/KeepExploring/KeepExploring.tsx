@@ -20,7 +20,7 @@ function KeepExploring({ keepExploringData }: KeepExploringProps) {
       <div className="group column">
         <figure className="backgroundImage">
           <Image
-            src="/images/ready-to-find-your-role.jpg"
+            src="/images/ready-to-find-your-role-wide.jpg"
             width={900}
             height={900}
             alt="Take our free quiz"
