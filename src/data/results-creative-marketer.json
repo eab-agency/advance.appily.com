@@ -54,7 +54,7 @@
 		}
 	],
 	"degreeTabs": {
-		"title": "What degree do I need for a management career path?",
+		"title": "What degree do I need for a <strong>management career path?</strong>",
 		"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
 		"degrees": [
 			{
@@ -118,7 +118,7 @@
 		]
 	},
 	"textWithImage": {
-		"content": "<h2>Do I need a Master’s or an MBA?</h2><p>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. <strong>Gain strategic insights, hone your decision-making prowess, and build a strong network.</strong></p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
 		"imagePath": "/images/ceo.jpg"
 	}
 }

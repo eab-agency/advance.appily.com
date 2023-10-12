@@ -121,7 +121,7 @@ $texts: (
     "bodySecondary": colors.$c-teal,
     "linkPrimary": colors.$c-orange,
     "linkHover": map.get($teal, 600),
-    "accordionLink": map.get($teal, 600),
+    "accordionLink": map.get($teal, 700),
     "accordionLinkHover": map.get($orange, 600),
     "formLink": map.get($navy, 400),
     "formLinkHover": map.get($navy, 600),
@@ -143,6 +143,7 @@ $backgrounds: (
     "bg10": map.get($navy, 500),
     "bg11": map.get($navy, 500),
     "bg12": map.get($navy, 700),
+    "bg13": map.get($teal, 800),
     "bg-body": map.get($navy, 600),
     "button": colors.$c-orange,
     "shadow1": colors.$c-yellow,
@@ -162,6 +163,7 @@ $backgrounds: (
     "bg10": map.get($teal, 50),
     "bg11": map.get($violet, 50),
     "bg12": map.get($navy, 500),
+    "bg13": map.get($teal, 700),
     "bg-body": colors.$c-white,
     "shadow3": map.get($navy, 700)
   )

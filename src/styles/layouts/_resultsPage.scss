@@ -217,7 +217,7 @@
 }
 
 .textWithImage {
-  background: var(--c-bg4);
+  background: var(--c-bg11);
 
   .group {
     figure {
@@ -226,8 +226,108 @@
     }
 
     .textContainer {
+      &.column {
+        gap: 0.5em;
+      }
+
       h2 {
         font-size: clamp(tokens.$size-5, 8vw, tokens.$size-8);
+      }
+    }
+  }
+}
+
+.featuredParagraph {
+  font-size: clamp(tokens.$size-4, 2vw, tokens.$size-5);
+}
+
+.whatDegrees {
+  .group {
+    max-width: tokens.$mq-1200;
+
+    .intro-text {
+      text-align: center;
+
+      h2 {
+        font-size: clamp(tokens.$size-5, 8vw, tokens.$size-8);
+        line-height: tokens.$f-lineHeight-tight;
+      }
+
+      p {
+        font-size: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+      }
+    }
+    .accordionGroup {
+      width: 100%;
+      max-width: tokens.$mq-900;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+    }
+  }
+}
+
+.keepExploring {
+  position: relative;
+
+  .group {
+    width: 100%;
+    max-width: tokens.$mq-900;
+    padding-block: clamp(tokens.$size-4, 5vw, tokens.$size-8);
+    position: initial;
+
+    .backgroundImage {
+      position: absolute;
+      display: block;
+      width: 100vw;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: tokens.$layer-0;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: var(--c-bg13);
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0.95;
+      }
+    }
+
+    .contentWrapper {
+      position: relative;
+      z-index: tokens.$layer-1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2 {
+        color: var(--c-white);
+      }
+
+      p {
+        color: var(--c-white);
+      }
+
+      .externalLink {
+        background: var(--c-teal-600);
+        border-color: var(--c-teal-500);
+
+        &:hover {
+          background: var(--c-teal-500);
+        }
+
+        span {
+          font-size: tokens.$size-4;
+          color: var(--c-black);
+        }
       }
     }
   }
