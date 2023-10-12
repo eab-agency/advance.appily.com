@@ -11,7 +11,7 @@ import Results from "./Results";
 // import Score from "./Score";
 
 export function Quiz({ vertical, quizData, resultsFormId }) {
-	const { location } = useUser();
+	const { location, globalPrivacyControl } = useUser();
 
 	const router = useRouter();
 	const { questions, score: initialScore } = quizData;
@@ -79,6 +79,9 @@ export function Quiz({ vertical, quizData, resultsFormId }) {
 
 		if (currentQuestionIdx === questions.length - 1) {
 			setQuizFinished(true);
+			if (location.notUS || globalPrivacyControl) {
+				router.push(`/careers/${vertical}/${highestScorePersonality}`);
+			}
 		}
 	};
 
@@ -121,24 +124,32 @@ export function Quiz({ vertical, quizData, resultsFormId }) {
 					</div>
 				</div>
 			) : (
-				<>
-					{/* { only show Results if !location.notUS} */}
-					{location &&
-						(location.notUS === false ||
-							location.notUS === null ||
-							location.notUS === undefined) && (
-							<Results
-								vertical={vertical}
-								answers={quizState}
-								formId={resultsFormId}
-							>
-								<ResetQuizButton
-									handleRetakeQuiz={handleRetakeQuiz}
+				<div className={styles.containerResults}>
+					<div className={styles.content}>
+						{/* Check if either location.notUS or globalPrivacyControl is true */}
+						{location && (location.notUS || globalPrivacyControl) ? (
+							<>
+								{router.push(
+									`/careers/${vertical}/${quizState.highestScorePersonality}`,
+								)}
+							</>
+						) : (
+							<>
+								{/* Show the Results component */}
+								<Results
 									vertical={vertical}
-								/>
-							</Results>
+									answers={quizState}
+									formId={resultsFormId}
+								>
+									<ResetQuizButton
+										handleRetakeQuiz={handleRetakeQuiz}
+										vertical={vertical}
+									/>
+								</Results>
+							</>
 						)}
-				</>
+					</div>
+				</div>
 			)}
 		</>
 	);

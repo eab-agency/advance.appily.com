@@ -11,11 +11,6 @@ import { useUser } from "../../context/context";
 
 // import '@/styles/components/SchoolCarousel.scss'
 
-type SchoolCarouselProps = {
-	handleClick: (card: CarouselCard) => void;
-	className: string;
-};
-
 const responsive = {
 	superLargeDesktop: {
 		breakpoint: { max: 4000, min: 1800 },
