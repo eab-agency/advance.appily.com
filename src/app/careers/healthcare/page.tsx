@@ -44,7 +44,6 @@ const HealthCareSeoPage = () => {
 
   return (
     <>
-      {/* <Header links={data.links} /> */}
       <section className="pageHero">
         <div className="group center-aligned">
           <h1
@@ -52,7 +51,7 @@ const HealthCareSeoPage = () => {
               __html: data.pageTitle,
             }}
           />
-          <figure>
+          <figure className="heroImage">
             <Image
               src="/images/which-health-care-career.jpg"
               width={800}
@@ -68,8 +67,8 @@ const HealthCareSeoPage = () => {
             <figure className="highlighted-img">
               <Image
                 src="/images/profesional-man-researching-online.jpg"
-                width={800}
-                height={480}
+                width={1000}
+                height={1000}
                 alt="Profesional man researching online"
               />
             </figure>
