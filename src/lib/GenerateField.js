@@ -328,8 +328,10 @@ const GenerateField = ({ field, error, formData }) => {
 					}`}
 					key={field.id}
 				>
-					<label htmlFor={alias}>{label}</label>
-					{isRequired && <span className="required">*</span>}
+					<div className={styles.fieldLabel}>
+						<label htmlFor={alias}>{label}</label>
+						{isRequired && <span className="required">*</span>}
+					</div>
 					<Field
 						name={alias}
 						type="number"
