@@ -15,7 +15,6 @@ import {
 } from "@/components";
 import dataLinks from "@/data/links-healthcare.json";
 import data from "@/data/results-analyst.json";
-// import styles from "@/styles/components/FinalPage.module.scss";
 
 export default function Page() {
   const carouselRef = useRef(null);
@@ -114,6 +113,7 @@ export default function Page() {
             <Tabs tabs={data.degreeTabs} className="degree-tabs" />
           </div>
         </section >
+
         <section className="certificates">
           <Accordion title="Does The Analyst need a license, certification, or registration?">
             <figure>
@@ -150,7 +150,9 @@ export default function Page() {
           <CarouselWithForm formId="7" />
         </div>
 
+
         <KeepExploring />
+
       </div >
       <StickyCta trackedElement={carouselRef} />
     </>
