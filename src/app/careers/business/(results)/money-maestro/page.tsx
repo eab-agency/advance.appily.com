@@ -7,11 +7,9 @@ import data from "@/data/results-money-maestro.json";
 import { useRef } from "react";
 
 import {
-  Accordion,
   CareerPaths,
   CarouselWithForm,
   KeepExploring,
-  NavBar,
   Stats,
   StickyCta,
   SubNav,
