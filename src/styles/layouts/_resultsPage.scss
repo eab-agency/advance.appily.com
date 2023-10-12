@@ -157,6 +157,14 @@
         color: var(--c-formLinkHover);
       }
     }
+
+    div[class*="fieldLabel"] {
+      background: var(--c-bg5);
+
+      label {
+        color: var(--c-bodyPrimary);
+      }
+    }
   }
 }
 
@@ -218,6 +226,8 @@
 
   .group {
     flex-direction: column;
+    width: 100%;
+    max-width: tokens.$mq-1200;
 
     @media (min-width: tokens.$mq-900) {
       flex-direction: row;

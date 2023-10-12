@@ -25,13 +25,13 @@
     z-index: 100;
     padding-inline: 0.2em;
     position: relative;
-    background: var(--c-bg5);
+    background: var(--c-white);
     width: fit-content;
     color: var(--c-teal-700);
 
     label {
       font-size: tokens.$size-2;
-      color: var(--c-bodyPrimary);
+      color: var(--c-black);
     }
     span {
       color: var(--c-error);
@@ -85,7 +85,3 @@
 .hidden {
   display: none;
 }
-
-// .submitButton {
-//   padding: 1em;
-// }
