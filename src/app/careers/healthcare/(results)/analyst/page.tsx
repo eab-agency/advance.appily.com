@@ -2,11 +2,9 @@
 "use client";
 import Image from "next/image";
 import { useRef } from "react";
-import { BiLinkExternal } from "react-icons/bi";
 
 import {
   Accordion,
-  CareerPaths,
   CarouselWithForm,
   KeepExploring,
   Stats,
@@ -14,11 +12,10 @@ import {
   SubNav,
   Tabs,
   TextWithImage,
-  WhatDegrees
 } from "@/components";
 import dataLinks from "@/data/links-healthcare.json";
 import data from "@/data/results-analyst.json";
-import styles from "@/styles/components/FinalPage.module.scss";
+// import styles from "@/styles/components/FinalPage.module.scss";
 
 export default function Page() {
   const carouselRef = useRef(null);
@@ -117,7 +114,7 @@ export default function Page() {
             <Tabs tabs={data.degreeTabs} className="degree-tabs" />
           </div>
         </section >
-        <section className={styles.certificates}>
+        <section className="certificates">
           <Accordion title="Does The Analyst need a license, certification, or registration?">
             <figure>
               <Image
