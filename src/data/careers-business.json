@@ -1,20 +1,8 @@
 {
 	"links": [
 		{
-			"label": "Adult Degree Completion",
-			"href": "/"
-		},
-		{
-			"label": "Graduate Degrees",
-			"href": "/"
-		},
-		{
 			"label": "Careers",
-			"href": "/"
-		},
-		{
-			"label": "Resources",
-			"href": "/"
+			"href": "/careers"
 		}
 	],
 	"pageTitle": " Which type of<strong>business careeer</strong> is right for you?",
