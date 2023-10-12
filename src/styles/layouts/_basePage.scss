@@ -123,3 +123,8 @@ body {
     box-shadow: -1rem 1rem 0 var(--c-shadow1);
   }
 }
+
+div[class*="CarouselWithForm"] {
+  padding-inline: 2em;
+  overflow: hidden;
+}
