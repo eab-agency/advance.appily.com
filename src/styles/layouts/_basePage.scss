@@ -124,7 +124,8 @@ body {
   }
 }
 
-// div[class*="formContent"] {
-//   padding-inline: 2em;
-//   overflow: hidden;
-// }
+form {
+  p {
+    color: var(--c-black);
+  }
+}
