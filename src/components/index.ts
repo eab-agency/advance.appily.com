@@ -14,3 +14,5 @@ export { TextWithImage } from "./TextWithImage";
 export { Testimonial } from "./Testimonial";
 export { NavBar } from "./Header/NavBar";
 export { SubNav } from "./Header/SubNav";
+export { KeepExploring } from "./KeepExploring";
+export { WhatDegrees } from "./WhatDegrees";
