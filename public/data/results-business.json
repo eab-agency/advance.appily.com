@@ -110,7 +110,7 @@
 					{
 						"title": "Chief Financial Officer (CFO)",
 						"description": "Manage financial operations, budgets, and investments to ensure the organization's financial success.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/cfo.jpg"
 					},
 					{
 						"title": "General Manager",
@@ -120,7 +120,7 @@
 					{
 						"title": "Director or Associate Director",
 						"description": "Lead specific departments or functional areas within an organization.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/director-or-associate-director.jpg"
 					}
 				]
 			},
@@ -229,22 +229,22 @@
 					{
 						"title": "Brand Manager",
 						"description": "Develop and maintain brand identity and strategy.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/brand-manager.jpg"
 					},
 					{
 						"title": "Product Manager",
 						"description": "Oversee the development and marketing of specific products or services.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/product-manager.jpg"
 					},
 					{
 						"title": "Marketing Research Analyst",
 						"description": "Conduct market research and analyze data to inform marketing decisions.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/marketing-research-analyst.jpg"
 					},
 					{
 						"title": "Advertising Manager",
 						"description": "Plan and execute advertising campaigns to promote products or services.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/advertising-manager.jpg"
 					}
 				]
 			},
@@ -352,22 +352,22 @@
 					{
 						"title": "Financial Analyst",
 						"description": "Analyze financial data and provide recommendations for investments and financial decisions.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/financial-analyst.jpg"
 					},
 					{
 						"title": "Investment Banker",
 						"description": "Assist companies with raising capital and provide financial advice.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/investment-banker.jpg"
 					},
 					{
 						"title": "Accountant",
 						"description": "Prepare and examine financial records and ensure compliance with regulations.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/accountant.jpg"
 					},
 					{
 						"title": "Risk Manager",
 						"description": "Identify and manage financial risks for organizations.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/risk-manager.jpg"
 					}
 				]
 			},
@@ -475,22 +475,22 @@
 					{
 						"title": "Entrepreneur",
 						"description": "Start and manage their own businesses in various industries.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/entrepreneur.jpg"
 					},
 					{
 						"title": "Small Business Owner",
 						"description": "Operate and oversee small businesses, often with a hands-on approach.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/small-business-owner.jpg"
 					},
 					{
 						"title": "Venture Capitalist",
 						"description": "Invest in and provide funding for early-stage startups with growth potential.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/venture-capitalist.jpg"
 					},
 					{
 						"title": "Business Development Manager",
 						"description": "Identify and pursue new business opportunities to drive growth for a company.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/business-development-manager.jpg"
 					}
 				]
 			},
@@ -598,22 +598,22 @@
 					{
 						"title": "IT Manager",
 						"description": "Oversee and manage the IT department of an organization.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/IT-manager.jpg"
 					},
 					{
 						"title": "Data Analyst",
 						"description": "Analyze and interpret data to inform business decisions and strategies.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/data-analyst.jpg"
 					},
 					{
 						"title": "Business Intelligence Analyst",
 						"description": "Use data and analytics tools to generate insights for the organization.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/business-intelligence-analyst.jpg"
 					},
 					{
 						"title": "Cybersecurity Analyst",
 						"description": "Protect the organization's computer systems and data from security breaches.",
-						"imagePath": "/images/ceo.jpg"
+						"imagePath": "/images/cybersecurity-analyst.jpg"
 					}
 				]
 			},
