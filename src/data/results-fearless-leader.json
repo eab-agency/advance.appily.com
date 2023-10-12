@@ -30,11 +30,6 @@
 			"content": "A hospital or physician's office are common workplaces for The Executive, although they may also work in a residential care facility or government agency."
 		},
 		{
-			"title": "Education",
-			"icon": "education-icon",
-			"content": "Many jobs in this field require college courses in things like accounting, administration, ethics, or economics. Some roles require a bachelor's or master's degree."
-		},
-		{
 			"title": "Experience",
 			"icon": "work-icon",
 			"content": "People with experience in an administrative or clinical role tend to be a good fit for this The Executive's career path."
@@ -43,19 +38,19 @@
 	"statsSource": "U.S. Bureau of Labor Statistics",
 	"stats": [
 		{
-			"number": "28%",
+			"number": "8%",
 			"title": "Growth",
-			"description": "In employment of medical and health services managers over the next decade"
+			"description": "In employment of management occupations over the next decade"
 		},
 		{
-			"number": "$101K",
+			"number": "$102K",
 			"title": "Median Salary",
-			"description": "For medical and health services managers, ranging from $83K to $119K averages"
+			"description": "For management occupations, ranging from $75K to $160K averages"
 		},
 		{
-			"number": "56K",
+			"number": "884K",
 			"title": "Job Openings",
-			"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
+			"description": "Predicted annually over the next decade in business and management"
 		}
 	],
 	"degreeTabs": {

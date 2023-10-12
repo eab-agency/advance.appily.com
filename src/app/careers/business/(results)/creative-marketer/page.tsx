@@ -65,7 +65,7 @@ export default function Page() {
 					<CarouselWithForm formId="7" />
 				</div>
 
-				<KeepExploring />
+				<ChoosingRightSchoolBusinessDegree />
 			</div>
 
 			<StickyCta trackedElement={carouselRef} />

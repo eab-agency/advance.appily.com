@@ -1,0 +1,1 @@
+export { ChoosingRightSchoolBusinessDegree } from "./ChoosingRightSchoolBusinessDegree";

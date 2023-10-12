@@ -93,7 +93,7 @@ const Footer = () => {
                   type="button"
                   className={styles.privacyButton}
                   onClick={privacyClick}
-                  label="Privacy Settings"
+                  label="Privacy Preferences"
                 />
               </li>
             </ul>

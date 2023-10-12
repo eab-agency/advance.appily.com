@@ -16,3 +16,4 @@ export { NavBar } from "./Header/NavBar";
 export { SubNav } from "./Header/SubNav";
 export { KeepExploring } from "./KeepExploring";
 export { WhatDegrees } from "./WhatDegrees";
+export { ChoosingRightSchoolBusinessDegree } from "./ChoosingRightSchoolBusinessDegree";
