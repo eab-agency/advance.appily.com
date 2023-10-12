@@ -8,7 +8,6 @@ import {
 	CareerPaths,
 	CarouselWithForm,
 	ChoosingRightSchoolBusinessDegree,
-	KeepExploring,
 	Stats,
 	StickyCta,
 	SubNav,

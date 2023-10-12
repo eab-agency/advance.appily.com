@@ -9,7 +9,7 @@ import { useRef } from "react";
 import {
 	CareerPaths,
 	CarouselWithForm,
-	KeepExploring,
+	ChoosingRightSchoolBusinessDegree,
 	Stats,
 	StickyCta,
 	SubNav,
