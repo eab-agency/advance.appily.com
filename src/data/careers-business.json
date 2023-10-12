@@ -1,8 +1,12 @@
 {
 	"links": [
 		{
-			"label": "Careers",
-			"href": "/careers"
+			"label": "Healthcare Careers",
+			"href": "/careers/healthcare"
+		},
+		{
+			"label": "Business Careers",
+			"href": "/careers/business"
 		}
 	],
 	"pageTitle": " Which type of<strong>business careeer</strong> is right for you?",
