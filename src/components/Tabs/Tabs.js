@@ -18,7 +18,7 @@ const TabComponent = ({ tabs, className }) => (
 		{tabs.map((tab, index) => (
 			<TabPanel className={tab.icon} key={index}>
 				<div className="tab-copy">
-					<h3>{tab.title}</h3>
+					<h2>{tab.title}</h2>
 					<div
 						className="tab-content"
 						dangerouslySetInnerHTML={{ __html: tab.content }}
