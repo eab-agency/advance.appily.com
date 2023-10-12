@@ -43,67 +43,77 @@ export default function Page() {
         {links && <SubNav links={links} />}
 
         <Tabs className="react-tabs" tabs={data.tabs} />
-        <section className={styles["career-path"]}>
-          <div className={styles["path-intro"]}>
-            <h2>What's a common health care career path for The Educator?</h2>
-            <p>
-              Occupations that align with The Educator’s career path tend to
-              teach people about behaviors that promote wellness, developing
-              strategies to improve the well-being of individuals and
-              communities.
-            </p>
-          </div>
-          <div className={styles["executive-path"]}>
-            <div className={styles.pathwrapper}>
-              <p>
-                A health education specialist’s duties differ based on where
-                they work:
-              </p>
-              <ul>
-                <li>
-                  <strong>Healthcare facilities:</strong> Work one-on-one with
-                  patients or their families to understand their diagnoses and
-                  treatment options. Organize education programs for the
-                  community about health-related topics.
-                </li>
-                <li>
-                  <strong>Executives or administrators:</strong> Plan
-                  strategies and policies to help organizations such as
-                  hospital systems reach their goals.
-                </li>
-                <li>
-                  <strong>Human resources manager:</strong> Plan, coordinate,
-                  and direct the employee-focused functions of organizations
-                  such as hospitals or clinics
-                </li>
-                <li>
-                  <strong>Purchasing managers or agents:</strong> Buy products
-                  and services such as medical supplies and equipment for
-                  hospitals or clinics
-                </li>
-              </ul>
+
+        <section className="career-path rows-2">
+          <div className="group cols-2">
+
+            <div className="column">
+
+              <div className="path-intro">
+                <h2>What's a common health care career path for The Educator?</h2>
+                <p>
+                  Occupations that align with The Educator’s career path tend to
+                  teach people about behaviors that promote wellness, developing
+                  strategies to improve the well-being of individuals and
+                  communities.
+                </p>
+              </div>
+
+              <div className="executive-path">
+                <div className="pathwrapper">
+                  <p>
+                    A health education specialist’s duties differ based on where
+                    they work:
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Healthcare facilities:</strong> Work one-on-one with
+                      patients or their families to understand their diagnoses and
+                      treatment options. Organize education programs for the
+                      community about health-related topics.
+                    </li>
+                    <li>
+                      <strong>Executives or administrators:</strong> Plan
+                      strategies and policies to help organizations such as
+                      hospital systems reach their goals.
+                    </li>
+                    <li>
+                      <strong>Human resources manager:</strong> Plan, coordinate,
+                      and direct the employee-focused functions of organizations
+                      such as hospitals or clinics
+                    </li>
+                    <li>
+                      <strong>Purchasing managers or agents:</strong> Buy products
+                      and services such as medical supplies and equipment for
+                      hospitals or clinics
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <figure>
+            <figure className="column">
               <Image
                 src="/images/non-profit-worker.jpg"
                 width={600}
                 height={600}
                 alt="Non profit worker in a desk"
+                className="highlighted-img"
               />
               <figcaption>Nonprofit Worker</figcaption>
             </figure>
           </div>
-          <div className={styles["executive-path"]}>
-            <figure>
+          <div className="group cols-2">
+            <figure className="column">
               <Image
                 src="/images/educator.jpg"
                 width={600}
                 height={600}
                 alt="Medical educator in front of a whiteboard"
+                className="highlighted-img"
               />
               <figcaption>Professor</figcaption>
             </figure>
-            <div className={styles.pathwrapper}>
+            <div className="pathwrapper">
               <ul>
                 <li>
                   <strong>Community health workers</strong> tend to have a
@@ -126,21 +136,26 @@ export default function Page() {
               </ul>
             </div>
           </div>
-        </section>
+        </section >
+
         <Stats stats={data.stats} source={data.statsSource} />
-        <section className={styles["best-degrees"]}>
-          <div className={styles["degrees-intro"]}>
-            <h2>What are the best health care degrees for The Educator?</h2>
-            <p>
-              The type of degree needed for various careers in The Educator’s
-              path vary. Health education specialists usually need at least a
-              bachelor’s degree, community health workers often only need a
-              high school diploma, and medical educators often require at
-              least a master’s degree.
-            </p>
+
+        <section className="best-degrees">
+          <div className="group column">
+            <div className="degrees-intro">
+              <h2>What are the best health care degrees for The Educator?</h2>
+              <p>
+                The type of degree needed for various careers in The Educator’s
+                path vary. Health education specialists usually need at least a
+                bachelor’s degree, community health workers often only need a
+                high school diploma, and medical educators often require at
+                least a master’s degree.
+              </p>
+            </div>
+            <Tabs tabs={data.degreeTabs} className="degree-tabs" />
           </div>
-          <Tabs tabs={data.degreeTabs} className="degree-tabs" />
         </section>
+
         <section className={styles.certificates}>
           <Accordion title="Does The Educator need a license, certification, or registration?">
             <figure>

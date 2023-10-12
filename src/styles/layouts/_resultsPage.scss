@@ -371,9 +371,11 @@
 // ======================
 
 .career-path {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   position: relative;
+  gap: clamp(tokens.$size-6, 5vw, tokens.$size-8);
 
   .path-intro {
     position: relative;
@@ -393,6 +395,8 @@
 
   .group {
     flex-direction: column;
+    width: 100%;
+    max-width: tokens.$mq-1200;
 
     @media (min-width: tokens.$mq-900) {
       flex-direction: row;
