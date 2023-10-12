@@ -113,7 +113,7 @@ export default function Page() {
               />
               <figcaption>Professor</figcaption>
             </figure>
-            <div className="pathwrapper">
+            <div className="executive-path pathwrapper">
               <ul>
                 <li>
                   <strong>Community health workers</strong> tend to have a
