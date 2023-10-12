@@ -220,6 +220,12 @@
   background: var(--c-bg11);
 
   .group {
+    flex-direction: column;
+
+    @media (min-width: tokens.$mq-900) {
+      flex-direction: row;
+    }
+
     figure {
       width: 50%;
       flex-shrink: 0;
@@ -231,7 +237,7 @@
       }
 
       h2 {
-        font-size: clamp(tokens.$size-5, 8vw, tokens.$size-8);
+        font-size: clamp(tokens.$size-5, 5vw, tokens.$size-8);
       }
     }
   }
@@ -249,7 +255,7 @@
       text-align: center;
 
       h2 {
-        font-size: clamp(tokens.$size-5, 8vw, tokens.$size-8);
+        font-size: clamp(tokens.$size-5, 4vw, tokens.$size-8);
         line-height: tokens.$f-lineHeight-tight;
       }
 

@@ -32,6 +32,7 @@
       padding-left: 1em;
       border-left: 0.3em solid var(--c-border-5);
       flex: 1;
+      width: 100%;
 
       @media (min-width: tokens.$mq-1000) {
         flex-direction: column;
