@@ -4,7 +4,7 @@ import { BiSolidMinusCircle, BiSolidPlusCircle } from "react-icons/bi";
 
 import styles from "@/styles/components/Accordion.module.scss";
 
-const Accordion = ({ title, children }) => {
+export const Accordion = ({ title, children }) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 
 	const togglePanel = () => {
@@ -38,5 +38,3 @@ const Accordion = ({ title, children }) => {
 		</div>
 	);
 };
-
-export default Accordion;
