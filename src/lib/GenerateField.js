@@ -279,12 +279,18 @@ const GenerateField = ({ field, error, formData }) => {
 					}`}
 					key={field.id}
 				>
-					<div id="checkbox-group">{label}</div>
-					<div role="group" aria-labelledby="checkbox-group">
-						<label>
+					<div id="checkbox-group" className={styles.checkboxGroupLabel}>
+						{label}
+					</div>
+					<div
+						role="group"
+						aria-labelledby="checkbox-group"
+						className={styles.checkboxGroupContainer}
+					>
+						<div className={styles.checkboxGroup}>
 							{isRequired && <span className="required">*</span>}
 							{properties.optionlist.list.map(option => (
-								<div key={option.value}>
+								<div key={option.value} className={styles.checkBox}>
 									<Field
 										name={alias}
 										id={option.value}
@@ -307,7 +313,7 @@ const GenerateField = ({ field, error, formData }) => {
 									<label htmlFor={option.value}>{option.label}</label>
 								</div>
 							))}
-						</label>
+						</div>
 						{error && error}
 						{helpMessage && <small>{helpMessage}</small>}
 					</div>
@@ -322,8 +328,10 @@ const GenerateField = ({ field, error, formData }) => {
 					}`}
 					key={field.id}
 				>
-					<label htmlFor={alias}>{label}</label>
-					{isRequired && <span className="required">*</span>}
+					<div className={styles.fieldLabel}>
+						<label htmlFor={alias}>{label}</label>
+						{isRequired && <span className="required">*</span>}
+					</div>
 					<Field
 						name={alias}
 						type="number"

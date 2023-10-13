@@ -143,8 +143,8 @@ export default function Page() {
         >
           <CarouselWithForm formId="7" />
         </div>
-
         <KeepExploring />
+
       </div >
       <StickyCta trackedElement={carouselRef} />
     </>

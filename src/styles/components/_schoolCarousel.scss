@@ -181,7 +181,6 @@
         // background-color: tokens.$c-orange-500;
         // color: tokens.$c-blue-800;
         // border-color: tokens.$c-orange-500;
-        // font-size: clamp(tokens.$fs-xs, 2vw, tokens.$fs-s);
 
         span {
           margin: 0;
@@ -196,6 +195,12 @@
     .item-foot {
       padding: clamp(1rem, 2vw, 2rem);
       margin-block: auto 0;
+
+      button {
+        span {
+          font-size: clamp(tokens.$size-3, 1.5vw, tokens.$size-4);
+        }
+      }
     }
   }
 }

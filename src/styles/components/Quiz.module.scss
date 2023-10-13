@@ -24,6 +24,14 @@
   }
 }
 
+.containerResults {
+  .content {
+    max-width: 100%;
+    // background: red;
+    padding: 0;
+  }
+}
+
 // .deco-image {
 //     @include layouts.decoImage;
 // }

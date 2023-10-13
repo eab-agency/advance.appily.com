@@ -62,7 +62,8 @@
   &.email,
   &.tel,
   &.checkboxgrp,
-  &.select {
+  &.select,
+  &.zip_code {
     border: none;
   }
 
@@ -84,4 +85,32 @@
 
 .hidden {
   display: none;
+}
+
+.checkboxGroupLabel {
+}
+
+.checkboxGroupContainer {
+  padding-block: 0.5em;
+
+  .checkboxGroup {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 0.8em;
+
+    .checkBox {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+
+      input {
+        width: 1em;
+        height: 1em;
+      }
+      label {
+        font-size: tokens.$size-3;
+        font-weight: tokens.$fontWeight-light;
+      }
+    }
+  }
 }
