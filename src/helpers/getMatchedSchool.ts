@@ -1,5 +1,7 @@
 import {
 	fetchCarouselCards,
+	fetchCarouselCardsByStateAndLeadType,
+	fetchLeadTypes,
 	fetchReaminingCarouselCards,
 } from "../app/graphql";
 
@@ -67,29 +69,40 @@ const statesToMatchAgainst: statesToMatchAgainst = {
 // function that checks region_iso_code and returns a school if matched from .schools.associatedStates otherwise returns the first school from schools
 export const getMatchedSchool = async (
 	state?: string,
+	vertical?: string,
 ): Promise<CarouselCard[]> => {
 	// const response = await fetch('/api/quiz/schools')
 	// const { data: schools, error }: { data: School[]; error?: string } = await response.json()
-	// match incoming state to the statesToMatchAgainst key/value to pass to fetchCarouselCards
+	// match incoming state to the statesToMatchAgainst key/value to pass to fetchCarouselCardsByStateAndLeadType
 	const arrayOfStates: string[] | undefined = state
 		? statesToMatchAgainst[state]
 		: undefined;
 
-	const cards: CarouselCard[] = await fetchCarouselCards(
+	// fetch all the lead types to get their id
+	const leadTypes = await fetchLeadTypes();
+
+	// match incoming vertical to the leadTypes title to get the id
+	const leadTypeId = leadTypes?.find(item => item.title === vertical)?.id;
+
+	// fetch cards from CMS
+	const cards: CarouselCard[] = await fetchCarouselCardsByStateAndLeadType(
 		arrayOfStates || ["VA", "KY", "MD", "NC", "TN", "WV"],
+		leadTypeId,
 	);
 
 	// if cards is less than 5 then await fetchAllCards and append the results
-	if (cards.length < 5) {
+	if (cards && Array.isArray(cards) && cards.length < 5) {
 		const allCards: CarouselCard[] = await fetchReaminingCarouselCards(
 			arrayOfStates,
+			leadTypeId,
 		);
 		return shuffleArray([...cards, ...allCards]).slice(0, 5);
 	}
 
-	// if there is an error or no schools, return null
+	// if still no cards, fetch all cards
 	if (!cards) {
-		return [];
+		const allCards: CarouselCard[] = await fetchCarouselCards();
+		return shuffleArray([...allCards]).slice(0, 5);
 	}
 
 	return shuffleArray(cards).slice(0, 5);

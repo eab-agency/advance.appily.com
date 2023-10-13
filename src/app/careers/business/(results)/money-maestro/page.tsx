@@ -17,12 +17,14 @@ import {
 	TextWithImage,
 	WhatDegrees,
 } from "@/components";
+import { useUser } from "@/context/context";
 import dataLinks from "@/data/links-business.json";
 
 export default function Page() {
 	const carouselRef = useRef(null);
 	const { results: links } = dataLinks;
-
+	const { setVertical, vertical } = useUser();
+	setVertical("Business");
 	return (
 		<>
 			<div className="resultContent">

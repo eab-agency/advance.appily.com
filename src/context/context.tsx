@@ -111,14 +111,19 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 			if (location) {
 				const matchedSchoolInternal = await getMatchedSchool(
 					location?.region_iso_code,
+					vertical,
 				);
+				// console.log(
+				// 	"🚀 ~ file: context.tsx:116 ~ fetchData ~ matchedSchoolInternal:",
+				// 	matchedSchoolInternal,
+				// );
 				// grab first school from schools and set matchedSchool
 				setMatchedSchools(matchedSchoolInternal);
 			}
 		};
 
 		fetchData();
-	}, [location]);
+	}, [location, vertical]);
 
 	const valueUser = useMemo(
 		() => ({
