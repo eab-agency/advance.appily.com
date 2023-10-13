@@ -98,22 +98,22 @@
 			{
 				"title": "Brand Manager",
 				"description": "Develop and maintain brand identity and strategy.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/brand-manager.jpg"
 			},
 			{
 				"title": "Product Manager",
 				"description": "Oversee the development and marketing of specific products or services.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/product-manager.jpg"
 			},
 			{
 				"title": "Marketing Research Analyst",
 				"description": "Conduct market research and analyze data to inform marketing decisions.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/marketing-research-analyst.jpg"
 			},
 			{
 				"title": "Advertising Manager",
 				"description": "Plan and execute advertising campaigns to promote products or services.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/advertising-manager.jpg"
 			}
 		]
 	},

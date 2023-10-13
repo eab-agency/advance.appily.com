@@ -98,22 +98,22 @@
 			{
 				"title": "Operations Manager",
 				"description": "Oversee the operations and processes of an organization to ensure efficiency.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/operations-manager.jpg"
 			},
 			{
 				"title": "Human Resource Manager",
 				"description": "Manage the organization's workforce, including recruitment, training, and employee relations.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/human-resource-manager.jpg"
 			},
 			{
 				"title": "Project Manager",
 				"description": "Plan and execute projects, working closely with cross-functional teams.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/project-manager.jpg"
 			},
 			{
 				"title": "Training and Development Manager",
 				"description": "Create and implement training programs to enhance employee skills and development.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/training-and-development-manager.jpg"
 			}
 		]
 	},

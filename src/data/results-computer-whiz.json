@@ -90,22 +90,22 @@
 			{
 				"title": "IT Manager",
 				"description": "Oversee and manage the IT department of an organization.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/IT-manager.jpg"
 			},
 			{
 				"title": "Data Analyst",
 				"description": "Analyze and interpret data to inform business decisions and strategies.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/data-analyst.jpg"
 			},
 			{
 				"title": "Business Intelligence Analyst",
 				"description": "Use data and analytics tools to generate insights for the organization.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/business-intelligence-analyst.jpg"
 			},
 			{
 				"title": "Cybersecurity Analyst",
 				"description": "Protect the organization's computer systems and data from security breaches.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/cybersecurity-analyst.jpg"
 			}
 		]
 	},
