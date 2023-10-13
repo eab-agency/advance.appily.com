@@ -38,24 +38,24 @@
 	"statsSource": "U.S. Bureau of Labor Statistics",
 	"stats": [
 		{
-			"number": "17%",
+			"number": "8%",
 			"title": "Growth",
-			"description": "In employment of health information technologists and medical registrars over the next decade"
+			"description": "In employment of mangement occupations over the next decade"
 		},
 		{
-			"number": "$55K",
+			"number": "$102K",
 			"title": "Median Salary",
-			"description": "For health information technologists and medical registrars, ranging from $30K to $98K averages"
+			"description": "For management occupations, ranging from $75K to $160K averages"
 		},
 		{
-			"number": "3.4K",
+			"number": "884K",
 			"title": "Job Openings",
-			"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
+			"description": "Predicted annually over the next decade in management occupations"
 		}
 	],
 	"degreeTabs": {
-		"title": "What degree do I need for a management career path?",
-		"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+		"title": "What degree do I need for a management and operations career path? ",
+		"description": "Thriving in roles that involve managing business operations, projects, teams, and human resources requires a strong educational foundation. While a bachelor's degree is a starting point, advancing your education to a master's level can significantly enhance your skills and open doors to advanced opportunities.",
 		"degrees": [
 			{
 				"title": "Logistics, Materials, and Supply Chain Management",
@@ -118,7 +118,7 @@
 		]
 	},
 	"textWithImage": {
-		"content": "<h2>Do I need a Master’s or an MBA?</h2><p>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p>You can cultivate impactful workplaces with an MBA in Human Resources Management, where you'll master employee relations, talent acquisition, and organizational development. </p><p>Alternatively, a Master's in Project Management equips you to lead teams and projects efficiently.</p><p>While both paths center on people, the MBA provides a holistic approach to managing human capital and fostering organizational growth, making it the optimal choice for The People Person committed to creating thriving work environments.</p>",
 		"imagePath": "/images/ceo.jpg"
 	}
 }
