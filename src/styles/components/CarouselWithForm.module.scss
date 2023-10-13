@@ -53,6 +53,7 @@
     align-items: center;
     padding-inline: 0;
     padding-block: clamp(tokens.$padding-s, 10vw, tokens.$padding-xxxl);
+    gap: 3em;
 
     @media (min-width: tokens.$mq-1300) {
       flex-direction: row;
@@ -84,13 +85,14 @@
     position: relative;
     z-index: tokens.$layer-3;
     width: 100%;
-    min-height: 45rem;
+    min-height: 35rem;
     padding-inline: 2em;
     overflow: hidden;
 
     @media (min-width: tokens.$mq-1300) {
       width: clamp(20rem, 80vw, 80rem);
       padding-inline: 1em;
+      min-height: 45rem;
     }
   }
 }
