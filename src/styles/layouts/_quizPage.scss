@@ -33,19 +33,6 @@
     width: 100%;
     max-width: tokens.$mq-1300;
     gap: clamp(tokens.$size-5, 10vw, tokens.$size-10 * 1);
-
-    // @media (max-width: tokens.$mq-800) {
-    //   align-items: flex-start;
-
-    //   .highlighted-img {
-    //     order: 0;
-    //     height: 12rem;
-    //   }
-
-    //   .column:nth-child(1) {
-    //     order: 1;
-    //   }
-    // }
   }
 
   figure {
@@ -57,7 +44,7 @@
   }
 
   h1 {
-    font-size: clamp(tokens.$size-3, 8vw, tokens.$size-7 * 1.8);
+    font-size: clamp(tokens.$size-3, 8vw, tokens.$size-7 * 1.7);
   }
 
   h2 {
