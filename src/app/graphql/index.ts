@@ -1,49 +1,98 @@
-import type { Page, Post, CarouselCard } from '../../../payload-types'
-import { CAROUSELCARDS, CAROUSELCARDSNOTIN } from './carouselCards'
-import { GLOBALS } from './globals'
-import { PAGE, PAGES } from './pages'
-import { POST, POSTS } from './posts'
+import type { CarouselCard, Page, Post } from "../../../payload-types";
+import { CAROUSELCARDS, CAROUSELCARDSNOTIN } from "./carouselCards";
+import { GLOBALS } from "./globals";
+import { PAGE, PAGES } from "./pages";
+import { POST, POSTS } from "./posts";
 
 const next: { revalidate: false } = {
-  revalidate: false,
-}
+	revalidate: false,
+};
 
+// fetch all the lead types and their ids
+export const fetchLeadTypes = async (): Promise<
+	{
+		id: string;
+		title: string;
+	}[]
+> => {
+	const { data } = await fetch(
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?lead-types`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			next,
+			body: JSON.stringify({
+				query: `
+        query LeadTypes {
+          LeadTypes {
+            docs {
+              id
+              title
+            }
+          }
+        }
+      `,
+			}),
+		},
+	).then(res => res.json());
 
-export const fetchCarouselCards = async (incomingLocations?: string[]): Promise<CarouselCard[]> => {
-  const { data } = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?carousel-cards`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    next,
-    body: JSON.stringify({
-      query: CAROUSELCARDS,
-      variables: {
-        state: incomingLocations,
-      },
-    }),
-  }).then(res => res.json())
+	return data?.LeadTypes?.docs;
+};
 
-  return data?.CarouselCards?.docs
-}
+export const fetchCarouselCards = async (
+	incomingLocations?: string[],
+	leadTypeId?: string,
+): Promise<CarouselCard[]> => {
+	// console.log("🟡🟡🟡🟡 ~ file: index.ts:45 ~ leadTypeId:", leadTypeId);
 
-export const fetchReaminingCarouselCards = async (incomingLocationsToFilterOut?: string[]): Promise<CarouselCard[]> => {
-  const { data } = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?carousel-cards`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    next,
-    body: JSON.stringify({
-      query: CAROUSELCARDSNOTIN,
-      variables: {
-        state: incomingLocationsToFilterOut,
-      },
-    }),
-  }).then(res => res.json())
+	if (leadTypeId) {
+		const { data } = await fetch(
+			`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?carousel-cards`,
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				next,
+				body: JSON.stringify({
+					query: CAROUSELCARDS,
+					variables: {
+						state: incomingLocations,
+						lead: [leadTypeId],
+					},
+				}),
+			},
+		).then(res => res.json());
 
-  return data?.CarouselCards?.docs
-}
+		return data?.CarouselCards?.docs;
+	}
+};
+
+export const fetchReaminingCarouselCards = async (
+	incomingLocationsToFilterOut?: string[],
+	leadType?: string,
+): Promise<CarouselCard[]> => {
+	const { data } = await fetch(
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?carousel-cards`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			next,
+			body: JSON.stringify({
+				query: CAROUSELCARDSNOTIN,
+				variables: {
+					state: incomingLocationsToFilterOut,
+					lead: [leadType] || ["Business"],
+				},
+			}),
+		},
+	).then(res => res.json());
+	return data?.CarouselCards?.docs;
+};
 
 // export const fetchGlobals = async (): Promise<{
 //   header: Header
@@ -67,100 +116,111 @@ export const fetchReaminingCarouselCards = async (incomingLocationsToFilterOut?:
 // }
 
 export const fetchPages = async (): Promise<
-  Array<{ breadcrumbs: Page['breadcrumbs']; slug: string }>
+	Array<{ breadcrumbs: Page["breadcrumbs"]; slug: string }>
 > => {
-  const { data, errors } = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?pages`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    next,
-    body: JSON.stringify({
-      query: PAGES,
-    }),
-  }).then(res => res.json())
+	const { data, errors } = await fetch(
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?pages`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			next,
+			body: JSON.stringify({
+				query: PAGES,
+			}),
+		},
+	).then(res => res.json());
 
-  if (errors) {
-    console.error(JSON.stringify(errors)) // eslint-disable-line no-console
-    throw new Error()
-  }
+	if (errors) {
+		console.error(JSON.stringify(errors)); // eslint-disable-line no-console
+		throw new Error();
+	}
 
-  return data.Pages.docs
-}
+	return data.Pages.docs;
+};
 
-export const fetchPage = async (incomingSlugSegments?: string[]): Promise<Page | null> => {
-  const slugSegments = incomingSlugSegments || ['home']
-  const slug = slugSegments.at(-1)
-  const { data, errors } = await fetch(
-    `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?page=${slug}`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      next,
-      body: JSON.stringify({
-        query: PAGE,
-        variables: {
-          slug,
-        },
-      }),
-    },
-  ).then(res => res.json())
+export const fetchPage = async (
+	incomingSlugSegments?: string[],
+): Promise<Page | null> => {
+	const slugSegments = incomingSlugSegments || ["home"];
+	const slug = slugSegments.at(-1);
+	const { data, errors } = await fetch(
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?page=${slug}`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			next,
+			body: JSON.stringify({
+				query: PAGE,
+				variables: {
+					slug,
+				},
+			}),
+		},
+	).then(res => res.json());
 
-  if (errors) {
-    console.error(JSON.stringify(errors)) // eslint-disable-line no-console
-    throw new Error()
-  }
+	if (errors) {
+		console.error(JSON.stringify(errors)); // eslint-disable-line no-console
+		throw new Error();
+	}
 
-  const pagePath = `/${slugSegments.join('/')}`
+	const pagePath = `/${slugSegments.join("/")}`;
 
-  const page = data.Pages?.docs.find(({ breadcrumbs }: Page) => {
-    if (!breadcrumbs) return false
-    const { url } = breadcrumbs[breadcrumbs.length - 1]
-    return url === pagePath
-  })
+	const page = data.Pages?.docs.find(({ breadcrumbs }: Page) => {
+		if (!breadcrumbs) return false;
+		const { url } = breadcrumbs[breadcrumbs.length - 1];
+		return url === pagePath;
+	});
 
-  if (page) {
-    return page
-  }
+	if (page) {
+		return page;
+	}
 
-  return null
-}
+	return null;
+};
 
 export const fetchPosts = async (): Promise<Post[]> => {
-  const currentDate = new Date()
-  const { data } = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    next,
-    body: JSON.stringify({
-      query: POSTS,
-      variables: {
-        publishedOn: currentDate,
-      },
-    }),
-  }).then(res => res.json())
+	const currentDate = new Date();
+	const { data } = await fetch(
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			next,
+			body: JSON.stringify({
+				query: POSTS,
+				variables: {
+					publishedOn: currentDate,
+				},
+			}),
+		},
+	).then(res => res.json());
 
-  return data?.Posts?.docs
-}
+	return data?.Posts?.docs;
+};
 
 export const fetchPost = async (slug: string): Promise<Post> => {
-  const { data } = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?post=${slug}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    next,
-    body: JSON.stringify({
-      query: POST,
-      variables: {
-        slug,
-      },
-    }),
-  }).then(res => res.json())
+	const { data } = await fetch(
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?post=${slug}`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			next,
+			body: JSON.stringify({
+				query: POST,
+				variables: {
+					slug,
+				},
+			}),
+		},
+	).then(res => res.json());
 
-  return data?.Posts?.docs[0]
-}
+	return data?.Posts?.docs[0];
+};

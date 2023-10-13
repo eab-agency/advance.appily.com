@@ -13,10 +13,14 @@ import {
 } from "@/components";
 import MainLogo from "@/components/Header/MainLogo";
 import { IconCard } from "@/components/IconCard/IconCard";
+import { useUser } from "@/context/context";
 import data from "@/data/careers-business.json";
 
 /* eslint-disable react/no-danger */
 const BusinessSeoPage = () => {
+	const { setVertical } = useUser();
+	setVertical("Business");
+
 	const reasonsArray = data.whyChoose.reasons;
 
 	const rightCareerArray = data.rightCareer[0].reasons;

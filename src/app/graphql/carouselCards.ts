@@ -1,6 +1,6 @@
 export const CAROUSELCARDSNOTIN = `
-query CarouselCards($state: [String]) {
-  CarouselCards(where: {partnerState: { not_in: $state } } ) {
+query CarouselCardsNotIn($state: [String] $lead: [String]) {
+  CarouselCards(where: {partnerState: { not_in: $state }, leadTypes: {in: $lead} } ) {
     docs {
       id
       partnerState
@@ -40,11 +40,11 @@ query CarouselCards($state: [String]) {
     }
   }
 }
-`
+`;
 
 export const CAROUSELCARDS = `
-query CarouselCards($state: [String]) {
-  CarouselCards(where: {partnerState: { in: $state } } ) {
+ query CarouselCards($state: [String], $lead: [String]) {
+  CarouselCards(where: {partnerState: { in: $state }, leadTypes: {in: $lead} } ) {
     docs {
       id
       partnerState
@@ -52,6 +52,7 @@ query CarouselCards($state: [String]) {
       description
       leadTypes {
         title
+        id
       }
       image {
         id
@@ -84,4 +85,4 @@ query CarouselCards($state: [String]) {
     }
   }
 }
-`
+`;

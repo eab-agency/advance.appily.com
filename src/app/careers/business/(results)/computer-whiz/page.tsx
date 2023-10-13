@@ -15,13 +15,15 @@ import {
 	TextWithImage,
 	WhatDegrees,
 } from "@/components";
+import { useUser } from "@/context/context";
 import dataLinks from "@/data/links-business.json";
 import data from "@/data/results-computer-whiz.json";
 
 export default function Page() {
 	const carouselRef = useRef(null);
 	const { results: links } = dataLinks;
-
+	const { setVertical, vertical } = useUser();
+	setVertical("Business");
 	return data ? (
 		<>
 			<div className="resultContent">
