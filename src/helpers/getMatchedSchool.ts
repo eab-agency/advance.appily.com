@@ -1,5 +1,6 @@
 import {
 	fetchCarouselCards,
+	fetchCarouselCardsByStateAndLeadType,
 	fetchLeadTypes,
 	fetchReaminingCarouselCards,
 } from "../app/graphql";
@@ -72,7 +73,7 @@ export const getMatchedSchool = async (
 ): Promise<CarouselCard[]> => {
 	// const response = await fetch('/api/quiz/schools')
 	// const { data: schools, error }: { data: School[]; error?: string } = await response.json()
-	// match incoming state to the statesToMatchAgainst key/value to pass to fetchCarouselCards
+	// match incoming state to the statesToMatchAgainst key/value to pass to fetchCarouselCardsByStateAndLeadType
 	const arrayOfStates: string[] | undefined = state
 		? statesToMatchAgainst[state]
 		: undefined;
@@ -84,7 +85,7 @@ export const getMatchedSchool = async (
 	const leadTypeId = leadTypes?.find(item => item.title === vertical)?.id;
 
 	// fetch cards from CMS
-	const cards: CarouselCard[] = await fetchCarouselCards(
+	const cards: CarouselCard[] = await fetchCarouselCardsByStateAndLeadType(
 		arrayOfStates || ["VA", "KY", "MD", "NC", "TN", "WV"],
 		leadTypeId,
 	);
@@ -98,9 +99,10 @@ export const getMatchedSchool = async (
 		return shuffleArray([...cards, ...allCards]).slice(0, 5);
 	}
 
-	// if there is an error or no schools, return null
+	// if still no cards, fetch all cards
 	if (!cards) {
-		return [];
+		const allCards: CarouselCard[] = await fetchCarouselCards();
+		return shuffleArray([...allCards]).slice(0, 5);
 	}
 
 	return shuffleArray(cards).slice(0, 5);
