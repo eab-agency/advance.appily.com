@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import {
 	Accordion,
@@ -20,9 +20,7 @@ import data from "@/data/careers-business.json";
 const BusinessSeoPage = () => {
 	const { setVertical } = useUser();
 	setVertical("Business");
-
 	const reasonsArray = data.whyChoose.reasons;
-
 	const rightCareerArray = data.rightCareer[0].reasons;
 	const rightCareerList = rightCareerArray.map((reason, index) => (
 		// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
@@ -36,6 +34,19 @@ const BusinessSeoPage = () => {
 	));
 
 	const carouselRef = useRef(null);
+
+	const [themeMode, setThemeMode] = useState("light");
+
+	useEffect(() => {
+		// biome-ignore lint/complexity/useOptionalChain: <explanation>
+		if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
+			setThemeMode("dark");
+			console.log("dark mode");
+		} else {
+			setThemeMode("light");
+			console.log("light mode");
+		}
+	}, []);
 
 	return (
 		<>
@@ -162,7 +173,11 @@ const BusinessSeoPage = () => {
 					<div className="infograph row cols-2">
 						<IconCard
 							title="ROI (Return on Investment):"
-							iconUrl="/images/roi-icon.svg"
+							iconUrl={
+								themeMode === "dark"
+									? "/images/roi-icon-light.svg"
+									: "/images/roi-icon.svg"
+							}
 							iconAlt="ROI (Return on Investment) icon"
 							className="roi-card"
 						>
@@ -184,7 +199,11 @@ const BusinessSeoPage = () => {
 
 						<IconCard
 							title="Career Opportunities:"
-							iconUrl="/images/career-opportunity-icon.svg"
+							iconUrl={
+								themeMode === "dark"
+									? "/images/career-opportunity-icon-light.svg"
+									: "/images/career-opportunity-icon.svg"
+							}
 							iconAlt="Career Opportunities icon"
 							className="career-card"
 						>

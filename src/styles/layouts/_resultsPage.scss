@@ -1,4 +1,6 @@
+@use "sass:color";
 @use "@/styles/global/tokens";
+@use "@/styles/global/tokens/colors";
 
 .resultContent {
 }
@@ -109,6 +111,10 @@
 }
 
 .preResultsContainer {
+  position: relative;
+  max-height: 23.3rem;
+  overflow: hidden;
+
   .resultsHero {
     padding-bottom: 2em;
 
@@ -122,6 +128,35 @@
           font-size: clamp(tokens.$size-4, 7vw, tokens.$size-6);
         }
       }
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(colors.$c-navy, 0),
+      rgba(colors.$c-navy, 0.5),
+      rgba(colors.$c-navy, 0.9),
+      rgba(colors.$c-navy, 0.95)
+    );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: tokens.$layer-999;
+
+    // light mode
+    @media (prefers-color-scheme: light) {
+      background-image: linear-gradient(
+        to bottom,
+        rgba(colors.$c-slateGray, 0),
+        rgba(color.adjust(colors.$c-slateGray, $lightness: 70%), 0.5),
+        rgba(color.adjust(colors.$c-slateGray, $lightness: 70%), 0.9),
+        rgba(color.adjust(colors.$c-slateGray, $lightness: 70%), 0.95)
+      );
     }
   }
 }
@@ -181,11 +216,11 @@
       text-align: center;
 
       h2 {
-        font-size: clamp(tokens.$size-5, 8vw, tokens.$size-8);
+        font-size: clamp(tokens.$size-6, 5vw, tokens.$size-8);
       }
 
       p {
-        font-size: clamp(tokens.$size-4, 7vw, tokens.$size-6);
+        font-size: clamp(tokens.$size-4, 4vw, tokens.$size-6);
       }
     }
 
@@ -248,7 +283,7 @@
       }
 
       h2 {
-        font-size: clamp(tokens.$size-5, 5vw, tokens.$size-8);
+        font-size: clamp(tokens.$size-6, 5vw, tokens.$size-8);
       }
     }
   }
@@ -538,11 +573,23 @@
       }
     }
   }
+}
 
-  .sectionFooter {
-    margin-top: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+.sectionFooter {
+  margin-top: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+  p {
+    text-align: center;
+  }
+
+  &.makingAPlan {
+    max-width: tokens.$mq-800;
+
+    h3 {
+      margin: 0;
+    }
+
     p {
-      text-align: center;
+      font-size: clamp(tokens.$size-4, 1.5vw, tokens.$size-6);
     }
   }
 }

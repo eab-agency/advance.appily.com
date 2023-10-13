@@ -1,5 +1,5 @@
-import React from "react";
 import Image from "next/image";
+import React from "react";
 
 export const IconCard: React.FC<{
   alignItems?: "center";
@@ -10,6 +10,7 @@ export const IconCard: React.FC<{
   iconAlt?: string;
 }> = props => {
   const { title: titleFromProps, className, children, iconUrl, iconAlt } = props;
+
 
   return (
     <div className={`${className && className} icon-card`}>

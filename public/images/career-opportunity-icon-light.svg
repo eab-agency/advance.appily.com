@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 130 131" style="enable-background:new 0 0 130 131;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_00000129892511728633228560000006206632217950703493_);}
+	.st1{fill:#E468FF;}
+	.st2{fill:#FFE510;}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="0.4" width="130" height="130"/>
+	</defs>
+	<clipPath id="SVGID_00000160912422035769248280000013114487976411442824_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g style="clip-path:url(#SVGID_00000160912422035769248280000013114487976411442824_);">
+		<path class="st1" d="M74.7,69h9.7v-7.2h-9.7c-0.1-0.3-0.2-0.5-0.3-0.8l6.9-6.9l-5.1-5.1L69.3,56c-0.2-0.1-0.5-0.2-0.8-0.3V46h-7.2
+			v9.7c-0.3,0.1-0.5,0.2-0.8,0.3l-6.9-6.9l-5.1,5.1l6.9,6.9c-0.1,0.2-0.2,0.5-0.3,0.8h-9.7V69h9.7c0.1,0.3,0.2,0.5,0.3,0.8l-6.9,6.9
+			l5.1,5.1l6.9-6.9c0.2,0.1,0.5,0.2,0.8,0.3v9.7h7.2v-9.7c0.3-0.1,0.5-0.2,0.8-0.3l6.9,6.9l5.1-5.1l-6.9-6.9
+			C74.5,69.5,74.6,69.3,74.7,69z M70.5,65.4c0,3-2.5,5.5-5.5,5.5c-3,0-5.5-2.5-5.5-5.5c0-3,2.5-5.5,5.5-5.5
+			C68,59.9,70.5,62.4,70.5,65.4z"/>
+		<path class="st2" d="M58.5,31.5h13V20.6h8.1L65,0.4L50.4,20.6h8.1V31.5z"/>
+		<path class="st2" d="M71.5,99.4h-13v10.9h-8.1L65,130.4l14.6-20.2h-8.1V99.4z"/>
+		<path class="st2" d="M130,65.4l-20.2-14.6v8.1H98.9v13h10.9V80L130,65.4z"/>
+		<path class="st2" d="M20.2,71.9h10.9v-13H20.2v-8.1L0,65.4L20.2,80V71.9z"/>
+		<path class="st2" d="M93.6,46l7.7-7.7l5.7,5.7l4-24.6l-24.6,4l5.7,5.7l-7.7,7.7L93.6,46z"/>
+		<path class="st2" d="M36.4,84.8l-7.7,7.7L23,86.8l-4,24.6l24.6-4l-5.7-5.7l7.7-7.7L36.4,84.8z"/>
+		<path class="st2" d="M28.7,38.3l7.7,7.7l9.2-9.2l-7.7-7.7l5.7-5.7l-24.6-4l4,24.6L28.7,38.3z"/>
+		<path class="st2" d="M101.3,92.5l-7.7-7.7L84.4,94l7.7,7.7l-5.7,5.7l24.6,4l-4-24.6L101.3,92.5z"/>
+	</g>
+</g>
+</svg>
