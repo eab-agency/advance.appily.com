@@ -7,7 +7,7 @@
 		{
 			"title": "Motivation",
 			"icon": "motivation-icon",
-			"content": "The Educator likes to teach others and give them the tools to help themselves."
+			"content": "You excel at managing finances and investments to maximize profitability and financial success."
 		},
 		{
 			"title": "Skills",
@@ -27,12 +27,12 @@
 		{
 			"title": "Education",
 			"icon": "education-icon",
-			"content": "Jobs in this field often require college courses in things like education, public health, ethics, or a language. Roles require a bachelor’s or master’s degree."
+			"content": "You have probably taken courses in finance, economics, or accounting. "
 		},
 		{
 			"title": "Experience",
 			"icon": "skills-icon",
-			"content": "People with experience working in education, health care, or with a community organization tend to be a good fit for The Educator’s career path."
+			"content": "Your work experience may include financial analysis, budgeting, and managing investments. "
 		}
 	],
 	"statsSource": "U.S. Bureau of Labor Statistics",
@@ -40,54 +40,46 @@
 		{
 			"number": "8%",
 			"title": "Growth",
-			"description": "In employment of business and financial occupations over the next decade"
+			"description": "In employment of business-related occupations over the next decade"
 		},
 		{
-			"number": "$60K",
+			"number": "$76K",
 			"title": "Median Salary",
-			"description": "For health education specialists, $46K for community health workers, and $102K for medical educators"
+			"description": "For business and financial occupations, ranging from $50K to $96K"
 		},
 		{
-			"number": "16K",
+			"number": "911K",
 			"title": "Job Openings",
-			"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
+			"description": "Predicted annually over the next decade in business and financial occupations"
 		}
 	],
 	"degreeTabs": {
-		"title": "What degree do I need for a management career path?",
-		"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+		"title": "What degree do I need for a financial career path?",
+		"description": "A career in finance demands a strong educational foundation. While starting with an undergraduate degree is common, furthering your education can open doors to advanced roles and opportunities.",
 		"degrees": [
 			{
-				"title": "Executive Business Administration",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+				"title": "Finance",
+				"content": "<p>A degree in Finance covers financial analysis, investment strategies, corporate finance, and financial management.</p><p>Example degrees: Master of Science in Finance (MSF), Master of Business Administration (MBA) with a specialization in Finance</p>"
 			},
 			{
-				"title": "Business Administration",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+				"title": "Accounting",
+				"content": "<p>A degree in Accounting provides expertise in financial reporting, auditing, taxation, and managerial accounting.</p><p>Example degrees: Master of Accounting (MAcc), Master of Science in Accounting (MSA), Master of Business Administration (MBA) with a concentration in Accounting</p>"
 			},
 			{
-				"title": "Organizational Leadership",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+				"title": "Business Economics",
+				"content": "<p>A degree in Business Economics focuses on applying economic principles to business decision-making and financial analysis.</p><p>Example degrees: Master of Business Economics (MBE), Master of Science in Business Economics, Master of Arts in Economics</p>"
 			},
 			{
-				"title": "International Business/Trade/Commerce",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+				"title": "Banking and Financial Support Services",
+				"content": "<p>A degree in Banking and Financial Support Services prepares individuals for roles in banking operations and financial services.</p><p>Example degrees: Master of Banking and Financial Services (MBFS), Master of Financial Services Management (MFSM), Master of Business Administration (MBA) with a focus on Banking</p>"
 			},
 			{
-				"title": "Risk Management",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+				"title": "Investments and Securities",
+				"content": "<p>A degree in Investments and Securities emphasizes understanding financial markets and managing investment portfolios.</p><p>Example degrees: Master of Science in Investments and Securities, Master of Finance with a concentration in Investments, Master of Business Administration (MBA) with a specialization in Investments</p>"
 			},
 			{
-				"title": "Office Management and Supervision",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
-			},
-			{
-				"title": "Non-Profit/Public Organizational Management",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
-			},
-			{
-				"title": "Management",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+				"title": "Taxation",
+				"content": "<p>A degree in Taxation provides expertise in tax laws and regulations for individuals and businesses.</p><p>Example degrees: Master of Taxation (MTax), Master of Science in Taxation, Master of Business Administration (MBA) with a concentration in Taxation</p>"
 			}
 		]
 	},
@@ -118,7 +110,7 @@
 		]
 	},
 	"textWithImage": {
-		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can secure your financial future with an MBA specializing in Finance that arms you with advanced financial analysis, investment knowledge, and risk management skills.</p><p>Alternatively, a Master's in Accounting can refine your expertise in financial reporting and analysis, ensuring accurate financial decisions.</p><p>While both paths delve into finance, the MBA offers a broader skill set for roles beyond accounting, making it the prime choice for The Money Maestro aspiring to lead financial strategies and business growth.</p>",
 		"imagePath": "/images/ceo.jpg"
 	}
 }
