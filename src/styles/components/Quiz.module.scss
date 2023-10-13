@@ -36,18 +36,11 @@
 //     @include layouts.decoImage;
 // }
 
-// .questions-counter {
-//     display: block;
-//     position: absolute;
-//     right: 1em;
-//     top: 4.9rem;
-//     color: color.adjust(tokens.$c-blue-300, $lightness: 5%);
-//     font-size: clamp(tokens.$fs-xs, 2vw, tokens.$fs-m);
-
-//     @media (prefers-color-scheme: light) {
-//         color: tokens.$c-blue-500;
-//     }
-// }
+.questionsCounter {
+  display: block;
+  color: var(--c-bodyPrimary);
+  font-size: tokens.$size-3;
+}
 
 // .retakeButton {
 //     border-top: 1px solid tokens.$c-blue-300;
