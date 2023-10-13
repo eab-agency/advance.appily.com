@@ -124,7 +124,7 @@ body {
   }
 }
 
-form {
+div[class*="CarouselWithForm_carouselForm_"] {
   p {
     color: var(--c-black);
   }
