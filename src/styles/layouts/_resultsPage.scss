@@ -573,11 +573,23 @@
       }
     }
   }
+}
 
-  .sectionFooter {
-    margin-top: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+.sectionFooter {
+  margin-top: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+  p {
+    text-align: center;
+  }
+
+  &.makingAPlan {
+    max-width: tokens.$mq-800;
+
+    h3 {
+      margin: 0;
+    }
+
     p {
-      text-align: center;
+      font-size: clamp(tokens.$size-4, 1.5vw, tokens.$size-6);
     }
   }
 }
