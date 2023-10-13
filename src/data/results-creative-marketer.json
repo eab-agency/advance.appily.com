@@ -38,14 +38,14 @@
 	"statsSource": "U.S. Bureau of Labor Statistics",
 	"stats": [
 		{
-			"number": "13%",
+			"number": "7%",
 			"title": "Growth",
-			"description": "In employment of healthcare occupations over the next decade"
+			"description": "In employment of media and communication occupations over the next decade"
 		},
 		{
-			"number": "$75K",
+			"number": "$66K",
 			"title": "Median Salary",
-			"description": "For healthcare practitioners and technical occupations, ranging from $30K to $163K averages "
+			"description": "For media and communications occupations, ranging from $53K to $80K averages"
 		},
 		{
 			"number": "114K",
@@ -54,40 +54,32 @@
 		}
 	],
 	"degreeTabs": {
-		"title": "What degree do I need for a <strong>management career path?</strong>",
-		"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas — but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+		"title": "What degree do I need for a <strong>marketing career path?</strong>",
+		"description": "Many marketing roles require a strong educational background. Starting with an undergraduate degree in the following areas is beneficial, but consider furthering your education for career advancement.",
 		"degrees": [
 			{
-				"title": "Executive Business Administration",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+				"title": "Marketing",
+				"content": "<p>A degree in Marketing covers consumer behavior, market research, advertising, and brand management, preparing individuals for marketing and creative roles.</p><p>Example degrees: Master of Science in Marketing, Master of Business Administration (MBA) with a concentration in Marketing</p>"
 			},
 			{
-				"title": "Business Administration",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+				"title": "Marketing Research",
+				"content": "<p>A degree in Marketing Research focuses on gathering and analyzing data to inform marketing strategies and decision-making.</p><p>Example degrees: Master of Science in Marketing Research, Master of Marketing Analytics, Master of Business Administration (MBA) with a specialization in Marketing Research</p>"
 			},
 			{
-				"title": "Organizational Leadership",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+				"title": "Advertising",
+				"content": "<p>A degree in Advertising emphasizes creating and executing advertising campaigns to promote products or services effectively.</p><p>Example degrees: Master of Arts in Advertising, Master of Science in Advertising and Public Relations, Master of Business Administration (MBA) with a focus on Advertising</p>"
 			},
 			{
-				"title": "International Business/Trade/Commerce",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+				"title": "Graphic Design",
+				"content": "<p>A degree in Graphic Design equips individuals with artistic skills and expertise in creating visual communication materials for marketing purposes.</p><p>Example degrees: Master of Fine Arts (MFA) in Graphic Design, Master of Professional Studies (MPS) in Graphic Design, Master of Fine Arts (MFA) in Visual Communication Design</p>"
 			},
 			{
-				"title": "Risk Management",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+				"title": "Digital Marketing",
+				"content": "<p>A degree in Digital Marketing focuses on using digital platforms and technology for marketing and advertising efforts.</p><p>Example degrees: Master of Science in Digital Marketing, Master of Business Administration (MBA) with a specialization in Digital Marketing</p>"
 			},
 			{
-				"title": "Office Management and Supervision",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
-			},
-			{
-				"title": "Non-Profit/Public Organizational Management",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
-			},
-			{
-				"title": "Management",
-				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+				"title": "Public Relations and Applied Communication",
+				"content": "<p>A degree in Public Relations and Applied Communication emphasizes effective communication and relationship-building with various stakeholders.</p><p>Example degrees: Master of Arts in Public Relations, Master of Science in Strategic Communication and Public Relations, Master of Business Administration (MBA) with a concentration in Public Relations</p>"
 			}
 		]
 	},
@@ -118,7 +110,7 @@
 		]
 	},
 	"textWithImage": {
-		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. <strong>Gain strategic insights, hone your decision-making prowess, and build a strong network.</strong></p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can embark on an MBA journey to master marketing strategies, amplify brand impact, and lead creative teams effectively.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
 		"imagePath": "/images/ceo.jpg"
 	}
 }

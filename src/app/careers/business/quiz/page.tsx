@@ -28,7 +28,7 @@ export default function QuizLandingPage() {
               plan your next steps.
             </p>
             <p>
-              The Bureau of Labor Statistics predicts about X million jobs in
+              The Bureau of Labor Statistics predicts about nearly one million jobs in
               business will be created each year over the next decade. Many
               colleges and universities offer flexible, affordable degrees or
               certificates that can help you get a head start in transferring
