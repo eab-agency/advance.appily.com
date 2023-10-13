@@ -38,14 +38,14 @@
 	"statsSource": "U.S. Bureau of Labor Statistics",
 	"stats": [
 		{
-			"number": "13%",
+			"number": "7%",
 			"title": "Growth",
-			"description": "In employment of healthcare occupations over the next decade"
+			"description": "In employment of media and communication occupations over the next decade"
 		},
 		{
-			"number": "$75K",
+			"number": "$66K",
 			"title": "Median Salary",
-			"description": "For healthcare practitioners and technical occupations, ranging from $30K to $163K averages "
+			"description": "For media and communications occupations, ranging from $53K to $80K averages"
 		},
 		{
 			"number": "114K",
