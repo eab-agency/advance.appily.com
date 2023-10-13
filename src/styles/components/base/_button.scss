@@ -139,6 +139,7 @@
 }
 
 .answer-button {
+  @extend %button;
   border-color: var(--c-orange-500);
   background: var(--c-orange-50);
   color: var(--c-navy-700);
