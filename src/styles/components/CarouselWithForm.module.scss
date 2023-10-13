@@ -65,7 +65,7 @@
     position: relative;
     z-index: tokens.$layer-3;
     flex-shrink: 0;
-    width: 100%;
+    width: 80%;
 
     h2 {
       font-size: clamp(tokens.$size-6, 5vw, tokens.$size-8);

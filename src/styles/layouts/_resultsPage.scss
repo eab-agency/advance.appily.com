@@ -181,11 +181,11 @@
       text-align: center;
 
       h2 {
-        font-size: clamp(tokens.$size-5, 8vw, tokens.$size-8);
+        font-size: clamp(tokens.$size-6, 5vw, tokens.$size-8);
       }
 
       p {
-        font-size: clamp(tokens.$size-4, 7vw, tokens.$size-6);
+        font-size: clamp(tokens.$size-4, 4vw, tokens.$size-6);
       }
     }
 
@@ -248,7 +248,7 @@
       }
 
       h2 {
-        font-size: clamp(tokens.$size-5, 5vw, tokens.$size-8);
+        font-size: clamp(tokens.$size-6, 5vw, tokens.$size-8);
       }
     }
   }
