@@ -61,6 +61,10 @@ body {
       align-items: center;
       width: 100%;
       max-width: tokens.$mq-1200;
+
+      &.narrow {
+        max-width: tokens.$mq-800;
+      }
     }
 
     h2 {
@@ -128,4 +132,8 @@ div[class*="CarouselWithForm_carouselForm_"] {
   p {
     color: var(--c-black);
   }
+}
+
+.centered-content {
+  text-align: center;
 }
