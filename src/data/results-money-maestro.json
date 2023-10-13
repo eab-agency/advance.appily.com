@@ -12,17 +12,17 @@
 		{
 			"title": "Skills",
 			"icon": "skills-icon",
-			"content": "This role is skilled at breaking down big ideas so others can learn. They’re good at analyzing information to inform big-picture problem solving."
+			"content": "You have strong analytical and financial management abilities."
 		},
 		{
 			"title": "Works With",
 			"icon": "work-icon",
-			"content": "Careers in The Educator’s path often work with community residents, aspiring health care professionals, or people with disabilities."
+			"content": "You enjoy working with financial data and numbers to make informed decisions."
 		},
 		{
 			"title": "Setting",
 			"icon": "skills-icon",
-			"content": "A government agency, nonprofit,  university or family services organization are common workplaces for The Educator."
+			"content": "You may enjoy working at a financial institution or investment firm."
 		},
 		{
 			"title": "Education",
@@ -38,9 +38,9 @@
 	"statsSource": "U.S. Bureau of Labor Statistics",
 	"stats": [
 		{
-			"number": "12%",
+			"number": "8%",
 			"title": "Growth",
-			"description": "In employment of health education specialists and community health workers over the next decade"
+			"description": "In employment of business and financial occupations over the next decade"
 		},
 		{
 			"number": "$60K",
