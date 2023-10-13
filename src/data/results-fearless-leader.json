@@ -103,17 +103,17 @@
 			{
 				"title": "Chief Financial Officer (CFO)",
 				"description": "Manage financial operations, budgets, and investments to ensure the organization's financial success.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/cfo.jpg"
 			},
 			{
 				"title": "General Manager",
 				"description": "Oversee the day-to-day operations of a business unit or division.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/general-manager.jpg"
 			},
 			{
 				"title": "Director or Associate Director",
 				"description": "Lead specific departments or functional areas within an organization.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/director-or-associate-director.jpg"
 			}
 		]
 	},

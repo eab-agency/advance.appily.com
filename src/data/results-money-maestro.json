@@ -98,22 +98,22 @@
 			{
 				"title": "Financial Analyst",
 				"description": "Analyze financial data and provide recommendations for investments and financial decisions.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/financial-analyst.jpg"
 			},
 			{
 				"title": "Investment Banker",
 				"description": "Assist companies with raising capital and provide financial advice.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/investment-banker.jpg"
 			},
 			{
 				"title": "Accountant",
 				"description": "Prepare and examine financial records and ensure compliance with regulations.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/accountant.jpg"
 			},
 			{
 				"title": "Risk Manager",
 				"description": "Identify and manage financial risks for organizations.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/risk-manager.jpg"
 			}
 		]
 	},
