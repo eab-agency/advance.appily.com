@@ -28,8 +28,8 @@ const CarouselWithForm = ({ formId = "4" }) => {
 					<div className={styles.intro}>
 						<h2>Explore Your School Matches</h2>
 						<p>
-							The following schools offer business programs that could help you
-							reach your goals.
+							The following schools offer programs that could help you reach
+							your goals.
 						</p>
 					</div>
 

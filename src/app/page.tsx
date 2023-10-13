@@ -43,7 +43,7 @@ const RootPage = () => {
                 school, you’re in the right place.
               </p>
               <p>
-                Still in high school?
+                <strong>Still in high school?</strong>
                 <br />
                 <a href="https://www.applily.com">
                   Find resources for high school students

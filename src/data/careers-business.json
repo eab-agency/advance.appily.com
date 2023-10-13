@@ -12,7 +12,7 @@
 	"pageTitle": " Which type of<strong>business careeer</strong> is right for you?",
 	"quizSection": {
 		"title": "Take Our Free Business Career Quiz to Find Out",
-		"content": "<p>If you want to work in business but you don’t know which job fits your skills and interests, <strong>this free quiz can help find a good fit</strong> and you plan your next steps.</p><p>The Bureau of Labor Statistics predicts about <strong>X million jobs in business</strong> will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p><strong>In less than three minutes, you could discover which type of business career could be a good fit for you.</strong> We’ll also connect you with schools near you that offer degrees to help you reach your goals.</p>",
+		"content": "<p>If you want to work in business but you don’t know which job fits your skills and interests, <strong>this free quiz can help find a good fit</strong> and you plan your next steps.</p><p>The Bureau of Labor Statistics predicts about <strong>nearly one jobs in business</strong> will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p><strong>In less than three minutes, you could discover which type of business career could be a good fit for you.</strong> We’ll also connect you with schools near you that offer degrees to help you reach your goals.</p>",
 		"buttonText": "Take the Quiz"
 	},
 	"stats": [
@@ -22,9 +22,9 @@
 			"description": "In employment of management occupations over the next decade"
 		},
 		{
-			"number": "$102K",
+			"number": "$76K",
 			"title": "Median Salary",
-			"description": "For management occupations, ranging from $75K to $160K averages"
+			"description": "For business-related occupations, ranging from $50K to $96K"
 		},
 		{
 			"number": "911K",
@@ -58,8 +58,8 @@
 	},
 	"testimonial": {
 		"text": "Every day presents new challenges and opportunities to make strategic decisions that shape the direction of the company. The ability to drive innovation, lead a team, and contribute to the growth of the organization is both fulfilling and empowering. Business is all about creating value, solving problems, and making a positive impact on the world. It's a dynamic and ever-evolving field that allows me to continuously learn and grow while making meaningful contributions to the bottom line and the community.",
-		"author": "Dr. WWW WWW",
-		"authorTitle": "Professor of WWW and XXXXX, LOREM University School of Medicine"
+		"author": "Dana Jones",
+		"authorTitle": "Directory of Creative Strategy and Innovation, EAB"
 	},
 	"rightCareer": [
 		{
