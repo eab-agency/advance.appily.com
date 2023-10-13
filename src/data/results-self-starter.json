@@ -98,22 +98,22 @@
 			{
 				"title": "Entrepreneur",
 				"description": "Start and manage their own businesses in various industries.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/entrepreneur.jpg"
 			},
 			{
 				"title": "Small Business Owner",
 				"description": "Operate and oversee small businesses, often with a hands-on approach.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/small-business-owner.jpg"
 			},
 			{
 				"title": "Venture Capitalist",
 				"description": "Invest in and provide funding for early-stage startups with growth potential.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/venture-capitalist.jpg"
 			},
 			{
 				"title": "Business Development Manager",
 				"description": "Identify and pursue new business opportunities to drive growth for a company.",
-				"imagePath": "/images/ceo.jpg"
+				"imagePath": "/images/business-development-manager.jpg"
 			}
 		]
 	},
