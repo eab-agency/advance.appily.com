@@ -11,6 +11,7 @@ const Results = ({ children, vertical, answers, formId }) => {
   };
   const devModeOnly = isDevMode();
   return (
+    <>
     <div className="preResultsContainer">
       <section className="resultsHero">
         <div className="group">
@@ -32,7 +33,7 @@ const Results = ({ children, vertical, answers, formId }) => {
       {/* <div className={styles.role}> */}
       {/* Results: {personality} */}
       {/* <p>{description}</p> */}
-      {/* </div> */}
+      </div>
 
       <div className="engageForm">
         <div className="formWrapper">
@@ -57,7 +58,7 @@ const Results = ({ children, vertical, answers, formId }) => {
           {children}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
