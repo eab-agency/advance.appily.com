@@ -110,7 +110,7 @@ export function Quiz({ vertical, quizData, resultsFormId }) {
 							<span className="intro-title">
 								Define Your Future in Health Care
 							</span>
-							<div className={styles["questions-counter"]}>
+							<div className={styles.questionsCounter}>
 								Question {quizState.currentQuestionIdx + 1} of{" "}
 								{questions?.length}
 							</div>
