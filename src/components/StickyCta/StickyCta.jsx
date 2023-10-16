@@ -14,6 +14,12 @@ const StickyCta = ({ trackedElement }) => {
 		const trackedElementPosY = trackedElement.current.offsetTop;
 		setPosY(trackedElementPosY);
 
+    if(!trackedElement){
+      console.log("trackedElement: ",trackedElement)
+    } else{
+      console.log("notthing")
+    }
+
     const trackedElementClass =
     trackedElement.current.className.toLowerCase();
 
