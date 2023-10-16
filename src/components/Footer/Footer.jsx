@@ -1,10 +1,12 @@
 "use client";
 
 import { Button } from "@/components";
+import { useUser } from "@/context/context";
 import styles from "@/styles/components/PageFooter.module.scss";
 import Image from "next/image";
 
 const Footer = () => {
+  const { location } = useUser()
   const privacyClick = () => {
     if (
       typeof window.OneTrust === "undefined" ||
