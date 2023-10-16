@@ -2,9 +2,9 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { useCookies } from "react-cookie";
 import type { CarouselCard } from "../../payload-types";
 
+import { on } from "events";
 import { getMatchedSchool } from "../helpers/getMatchedSchool";
 
 interface UserLocationContextProps {
@@ -34,12 +34,32 @@ const UserLocationContext = createContext<UserLocationContextProps>(null!);
 
 function ContextProvider({ children }: { children: React.ReactNode }) {
 	const [matchedSchools, setMatchedSchools] = useState<any[]>([]);
-
-	const [cookies, setCookies] = useCookies(["initialData"]);
-
-	const apiURL = `https://ipgeolocation.abstractapi.com/v1/?api_key=${process.env.NEXT_PUBLIC_ABSTRACT_API_KEY}&fields=region_iso_code,country_code`;
+	const [oneTrust, setOneTrust] = useState<any>(null);
 
 	const [globalPrivacyControl, setGlobalPrivacyControl] = useState(null);
+
+	// check if window.OneTrust is defined and if so, set a listener for the OneTrustUpdated event
+	useEffect(() => {
+		const handleOneTrustUpdated = () => {
+			if (window.OneTrust) {
+				setOneTrust(window.OneTrust);
+			}
+		};
+
+		if (typeof window !== "undefined") {
+			if (window.OneTrust) {
+				setOneTrust(window.OneTrust);
+			} else {
+				window.addEventListener("OneTrustUpdated", handleOneTrustUpdated);
+			}
+		}
+
+		return () => {
+			if (typeof window !== "undefined") {
+				window.removeEventListener("OneTrustUpdated", handleOneTrustUpdated);
+			}
+		};
+	}, []);
 
 	useEffect(() => {
 		if (
@@ -64,46 +84,29 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 		region_iso_code: string;
 		country_code: string;
 		notUS: boolean;
-	} | null>(null);
+	} | null>({
+		region_iso_code: "VA",
+		country_code: "US",
+		notUS: false,
+	});
 
 	const [formData, setFormData] = useState<any>(null);
 
 	const [utmSource, setUtmSource] = useState<any>(null);
 
-	const [apiRequestMade, setApiRequestMade] = useState<boolean>(false);
-
 	const [vertical, setVertical] = useState<string>("business");
 
+	// check oneTrust.getGeolocation(), that returns an object of { country: 'US', region: 'CA' }, and set location
 	useEffect(() => {
-		// Check if the initial data is already stored in cookies
-		const { initialData } = cookies;
-
-		if (initialData) {
-			// Use the initial data from cookies instead of hitting the api
-			setLocation(initialData);
-		} else if (!apiRequestMade) {
-			// Only make the API request if it hasn't been made yet
-			setApiRequestMade(true);
-			fetch(apiURL)
-				.then(response => response.json())
-				.then(data => {
-					const { region_iso_code, country_code } = data;
-					// Store the initial data in cookies
-					const initialResponseData = {
-						region_iso_code,
-						country_code,
-						notUS: country_code !== "US",
-					};
-					setLocation(initialResponseData);
-					setCookies("initialData", initialResponseData);
-				})
-				.catch(error => {
-					// Handle the error here
-					console.log("API Error:", error);
-				});
+		if (oneTrust) {
+			const { country, region } = oneTrust.getGeolocationData();
+			setLocation({
+				region_iso_code: region,
+				country_code: country,
+				notUS: country !== "US",
+			});
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [apiURL, setLocation, setCookies]);
+	}, [oneTrust, setLocation]);
 
 	// wait for userLocation to be populated and then set matchedSchool based on userLocation.region_iso_code
 	useEffect(() => {

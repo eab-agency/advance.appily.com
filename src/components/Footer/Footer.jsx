@@ -1,10 +1,12 @@
 "use client";
 
 import { Button } from "@/components";
+import { useUser } from "@/context/context";
 import styles from "@/styles/components/PageFooter.module.scss";
 import Image from "next/image";
 
 const Footer = () => {
+  const { location } = useUser()
   const privacyClick = () => {
     if (
       typeof window.OneTrust === "undefined" ||
@@ -77,15 +79,6 @@ const Footer = () => {
                   rel="noreferrer"
                 >
                   Data Attribution
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.appily.com/your-privacy-rights"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Personal Information Protection
                 </a>
               </li>
               <li>
