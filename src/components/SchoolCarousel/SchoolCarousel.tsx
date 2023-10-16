@@ -58,13 +58,15 @@ const SchoolCarousel = ({ handleClick, className }) => {
                 alt={card.image.alt}
                 className="school-thumbnail"
               />
-              <Image
-                src={card.partner.logo.url}
-                width="100"
-                height="100"
-                alt={card.partner.logo.alt}
-                className="school-logo"
-              />
+              <figure className="school-logo">
+                <Image
+                  src={card.partner.logo.url}
+                  width="100"
+                  height="100"
+                  alt={card.partner.logo.alt}
+
+                />
+              </figure>
             </div>
             <div className="item-text">
               <div className="item-head">

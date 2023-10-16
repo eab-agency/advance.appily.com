@@ -140,17 +140,27 @@
           object-fit: cover;
           background: lightcyan;
         }
-        &.school-logo {
-          display: block;
-          width: clamp(3.5rem, 4vw, 4rem);
-          height: clamp(3.5rem, 4vw, 4rem);
-          background: var(--c-white);
-          border-top-left-radius: 0.3em;
-          border-top-right-radius: 0.3em;
+      }
+      .school-logo {
+        display: block;
+        width: clamp(3.5rem, 4vw, 4rem);
+        height: clamp(3.5rem, 4vw, 4rem);
+        background: var(--c-white);
+        border-top-left-radius: 0.3em;
+        border-top-right-radius: 0.3em;
+        position: absolute;
+        bottom: 0;
+        left: clamp(1rem, 2vw, 2rem);
+        overflow: hidden;
+
+        img {
+          width: 90%;
+          object-fit: contain;
           position: absolute;
-          bottom: 0;
-          left: clamp(1rem, 2vw, 2rem);
-          overflow: hidden;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          left: 50%;
+          height: 90%;
         }
       }
     }
