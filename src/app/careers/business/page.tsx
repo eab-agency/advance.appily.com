@@ -277,7 +277,7 @@ const BusinessSeoPage = () => {
           </div>
         </div>
       </section>
-      <StickyCta trackedElement={carouselRef} />
+      <StickyCta />
     </>
   );
 };
