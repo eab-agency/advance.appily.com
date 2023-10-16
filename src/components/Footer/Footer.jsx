@@ -82,15 +82,6 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="https://www.appily.com/your-privacy-rights"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Personal Information Protection
-                </a>
-              </li>
-              <li>
                 <Button
                   type="button"
                   className={styles.privacyButton}
