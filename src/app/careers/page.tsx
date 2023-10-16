@@ -37,9 +37,12 @@ const CareersSeoPage = () => {
           <div className="column intro-text">
             <h2>Feeling lost, stuck, or just ready for a change?</h2>
             <div>
-              <p>
+              <p className='featuredParagraph'>
                 Take one of Appily’s free career tests to see what type of job
                 fits your goals and skills!
+              </p>
+              <p>
+                In today's dynamic job market, finding the right career path can be a daunting task. Appily understands the importance of a fulfilling and purpose-driven career. <strong>Our comprehensive career tests are tailored to provide you with insights into your strengths, interests, and aspirations.</strong>
               </p>
             </div>
           </div>
