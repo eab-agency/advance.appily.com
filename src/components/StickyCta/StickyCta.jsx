@@ -8,11 +8,19 @@ import styles from "@/styles/components/StickyCta.module.scss";
 const StickyCta = ({ trackedElement }) => {
 	const [scrolled, setScrolled] = useState(false);
 	const [posY, setPosY] = useState(0);
+  const [quizLink, setQuizLink] = useState('');
 
 	useEffect(() => {
 		const trackedElementPosY = trackedElement.current.offsetTop;
 		setPosY(trackedElementPosY);
-	}, [trackedElement]);
+
+    const trackedElementClass =
+    trackedElement.current.className.toLowerCase();
+
+
+  setQuizLink(trackedElementClass);
+  console.log("the class: ",trackedElementClass)
+    }, [trackedElement]);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -39,6 +47,19 @@ const StickyCta = ({ trackedElement }) => {
 			behavior: "smooth",
 		});
 	};
+
+  if (quizLink.includes('quiz')) {
+    return (
+        <div className={stickyCtaClass}>
+            <Button
+                type="primary"
+                label="Take the Quiz"
+                href="/careers/healthcare/quiz-start"
+                className={styles.button}
+            />
+        </div>
+    );
+}
 
 	return (
 		<div className={stickyCtaClass}>

@@ -64,7 +64,7 @@ const CareersSeoPage = () => {
           <div className="infograph row cols-2">
             <IconCard
               title="Business"
-              iconUrl="/images/roi-icon.svg"
+              iconUrl="/images/business-icon.svg"
               iconAlt="Business icon"
               className="roi-card"
             >
@@ -91,7 +91,7 @@ const CareersSeoPage = () => {
 
             <IconCard
               title="Healthcare"
-              iconUrl="/images/roi-icon.svg"
+              iconUrl="/images/healthcare-icon.svg"
               iconAlt="Healthcare icon"
               className="roi-card"
             >
