@@ -1,11 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { MdChevronRight } from "react-icons/md";
 
 import { Button } from "@/components";
 import styles from "@/styles/components/StickyCta.module.scss";
 
-const StickyCta = ({ trackedElement }) => {
+const StickyCta = ({ trackedElement}) => {
 	const [scrolled, setScrolled] = useState(false);
 	const [posY, setPosY] = useState(0);
   const [quizLink, setQuizLink] = useState('');
@@ -13,19 +12,17 @@ const StickyCta = ({ trackedElement }) => {
 	useEffect(() => {
 		const trackedElementPosY = trackedElement.current.offsetTop;
 		setPosY(trackedElementPosY);
-
-    if(!trackedElement){
-      console.log("trackedElement: ",trackedElement)
-    } else{
-      console.log("notthing")
-    }
+    // const quizLinkt = quizLink;
 
     const trackedElementClass =
     trackedElement.current.className.toLowerCase();
 
+setQuizLink(trackedElementClass);
 
-  setQuizLink(trackedElementClass);
-  console.log("the class: ",trackedElementClass)
+console.log(trackedElementClass)
+console.log(trackedElement)
+
+
     }, [trackedElement]);
 
 	useEffect(() => {

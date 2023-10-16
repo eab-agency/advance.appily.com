@@ -4,6 +4,7 @@ import selfStarter from "@/assets/lotties/selfStarter.json";
 import Lottie from "lottie-react";
 import { useRef } from "react";
 
+
 import {
   CareerPaths,
   CarouselWithForm,

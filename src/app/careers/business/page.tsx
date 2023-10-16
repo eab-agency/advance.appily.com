@@ -38,13 +38,10 @@ const BusinessSeoPage = () => {
   const [themeMode, setThemeMode] = useState("light");
 
   useEffect(() => {
-    // biome-ignore lint/complexity/useOptionalChain: <explanation>
     if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
       setThemeMode("dark");
-      console.log("dark mode");
     } else {
       setThemeMode("light");
-      console.log("light mode");
     }
   }, []);
 
