@@ -40,7 +40,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 
 	// check if window.OneTrust is defined and if so, set a listener for the OneTrustUpdated event
 	useEffect(() => {
-		if (typeof window !== "undefined" && "OneTrust" in window) {
+		if (typeof window.OneTrust !== "undefined") {
 			setOneTrust(window.OneTrust);
 		}
 	}, [window.OneTrust]);
