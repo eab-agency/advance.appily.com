@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components";
 import styles from "@/styles/components/StickyCta.module.scss";
 
+import { usePathname, useRouter } from "next/navigation";
+
 interface stickyProps {
   trackedElement?: React.RefObject<HTMLElement> | null;
 }
@@ -11,6 +13,12 @@ interface stickyProps {
 const StickyCta: React.FC<stickyProps> = ({ trackedElement }) => {
   const [scrolled, setScrolled] = useState(false);
   const [posY, setPosY] = useState(0);
+
+  const currentPath = usePathname();
+
+  const quizRoute = currentPath?.includes("business")
+    ? "/careers/business/quiz"
+    : "/careers/healthcare/quiz";
 
   useEffect(() => {
     if (trackedElement) {
@@ -60,7 +68,7 @@ const StickyCta: React.FC<stickyProps> = ({ trackedElement }) => {
         <Button
           type="button"
           label="Take the Quiz"
-          href="/quiz-start"
+          href={quizRoute}
           className="button btn-primary"
         />
       )}
