@@ -9,7 +9,7 @@ import * as Yup from "yup";
 // import { useUser } from '@/context/context'
 import isDevMode from "@/helpers/isDevMode";
 import useForm from "@/hooks/useForm";
-import styles from '@/styles/components/Form.module.scss'
+import styles from "@/styles/components/Form.module.scss";
 import Link from "next/link";
 import GenerateField from "../../lib/GenerateField";
 
@@ -71,6 +71,10 @@ const AcquiaFormHandle = ({
 	const router = useRouter();
 
 	const onSubmit = async (values, { setSubmitting }) => {
+		// if values.text_optin is not checked, then clear out values.phone_number
+		if (!values.text_optin) {
+			values.phone_number = "";
+		}
 		try {
 			const theFormData = {
 				...values,

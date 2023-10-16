@@ -16,7 +16,7 @@ export function Quiz({ vertical, quizData, resultsFormId }) {
 	const router = useRouter();
 	const { questions, score: initialScore } = quizData;
 
-	const [quizState, setQuizState] = useLocalStorage("quizState", {
+	const [quizState, setQuizState] = useState({
 		currentQuestionIdx: 0,
 		selectedAnswers: [],
 		personalityScores: initialScore,
