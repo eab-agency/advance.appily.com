@@ -184,7 +184,6 @@ const HealthCareSeoPage = () => {
                 width={800}
                 height={800}
                 alt="Take our free quiz"
-              // className="highlighted-img"
               />
             </figure>
           </div>
