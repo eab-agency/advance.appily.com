@@ -38,12 +38,28 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 
 	const [globalPrivacyControl, setGlobalPrivacyControl] = useState(null);
 
-	// // check if window.OneTrust is defined and if so, set a listener for the OneTrustUpdated event
-	// useEffect(() => {
-	// 	if (typeof window.OneTrust !== "undefined") {
-	// 		setOneTrust(window.OneTrust);
-	// 	}
-	// }, [window.OneTrust]);
+	// check if window.OneTrust is defined and if so, set a listener for the OneTrustUpdated event
+	useEffect(() => {
+		const handleOneTrustUpdated = () => {
+			if (window.OneTrust) {
+				setOneTrust(window.OneTrust);
+			}
+		};
+
+		if (typeof window !== "undefined") {
+			if (window.OneTrust) {
+				setOneTrust(window.OneTrust);
+			} else {
+				window.addEventListener("OneTrustUpdated", handleOneTrustUpdated);
+			}
+		}
+
+		return () => {
+			if (typeof window !== "undefined") {
+				window.removeEventListener("OneTrustUpdated", handleOneTrustUpdated);
+			}
+		};
+	}, []);
 
 	useEffect(() => {
 		if (
@@ -81,16 +97,16 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 	const [vertical, setVertical] = useState<string>("business");
 
 	// check oneTrust.getGeolocation(), that returns an object of { country: 'US', region: 'CA' }, and set location
-	// useEffect(() => {
-	// 	if (oneTrust) {
-	// 		const { country, region } = oneTrust.getGeolocationData();
-	// 		setLocation({
-	// 			region_iso_code: region,
-	// 			country_code: country,
-	// 			notUS: country !== "US",
-	// 		});
-	// 	}
-	// }, [oneTrust, setLocation]);
+	useEffect(() => {
+		if (oneTrust) {
+			const { country, region } = oneTrust.getGeolocationData();
+			setLocation({
+				region_iso_code: region,
+				country_code: country,
+				notUS: country !== "US",
+			});
+		}
+	}, [oneTrust, setLocation]);
 
 	// wait for userLocation to be populated and then set matchedSchool based on userLocation.region_iso_code
 	useEffect(() => {
