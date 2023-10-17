@@ -97,7 +97,18 @@ const GenerateField = ({ field, error, formData }) => {
 
 	switch (type) {
 		case "select": {
-			const selectOptions = Object.values(properties.list.list).map(option => (
+			let listArray = [];
+
+			if (Array.isArray(properties.list.list)) {
+				listArray = properties.list.list;
+			} else if (
+				typeof properties.list.list === "object" &&
+				properties.list.list !== null
+			) {
+				listArray = Object.values(properties.list.list);
+			}
+
+			const selectOptions = listArray.map(option => (
 				<option key={option.value} value={option.value}>
 					{option.label}
 				</option>
