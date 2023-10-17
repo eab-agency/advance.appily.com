@@ -46,7 +46,7 @@ const RootPage = () => {
                 <strong>Still in high school?</strong>
                 <br />
                 <a href="https://www.appily.com">
-                  Find resources for high school students
+                  Find resources for high school students.
                 </a>
               </p>
             </div>
@@ -88,7 +88,7 @@ const RootPage = () => {
               <p>
                 Appily is the future of higher education guidance, uniting
                 trusted tools that have empowered students for almost two
-                decades. Born from respected platforms like Cappex, Concourse,
+                decades. Born from respected platforms including Cappex, Concourse,
                 YouVisit, and College Greenlight, Appily offers a seamless
                 experience for students of all ages on their journey to college.{" "}
               </p>
