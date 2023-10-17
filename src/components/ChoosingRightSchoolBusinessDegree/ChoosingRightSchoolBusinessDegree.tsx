@@ -10,12 +10,11 @@ export function ChoosingRightSchoolBusinessDegree() {
           </h2>
           <p>
             Embarking on your journey to earn a business degree is an exciting step
-            towards a rewarding career path. As you navigate this decision, it's
+            toward a rewarding career path. As you navigate this decision, it's
             crucial to focus on the aspects that truly matter and align with your
             aspirations. While rankings might catch your attention, remember that
             the perfect fit goes beyond numbers. Here are{" "}
-            <strong>five vital factors</strong>
-            to keep at the forefront when selecting the right school for your
+            <strong>five vital factors</strong> to keep at the forefront when selecting the right school for your
             business degree:
           </p>
         </div>
@@ -69,7 +68,7 @@ export function ChoosingRightSchoolBusinessDegree() {
           <p>
             Remember, the "best" school isn't defined solely by rankings; it's the
             one that{" "}
-            <strong>aligns with your needs, aspirations, and values</strong>. As you
+            <strong>aligns with your needs, aspirations, and values.</strong> As you
             embark on your business degree journey, prioritize factors that resonate
             with your personal and professional growth. The right fit will propel
             you towards success, equipping you with the skills, knowledge, and
