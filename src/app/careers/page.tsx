@@ -155,7 +155,7 @@ const CareersSeoPage = () => {
               <p>
                 Discover your ideal career path, make a plan to reach your
                 academic and professional goals, and match with colleges that
-                can help you get there — all in one place. Take the next step in
+                can help you get there—all in one place. Take the next step in
                 achieving your academic goals with confidence.
               </p>
             </div>

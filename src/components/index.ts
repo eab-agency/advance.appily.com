@@ -17,3 +17,4 @@ export { SubNav } from "./Header/SubNav";
 export { KeepExploring } from "./KeepExploring";
 export { WhatDegrees } from "./WhatDegrees";
 export { ChoosingRightSchoolBusinessDegree } from "./ChoosingRightSchoolBusinessDegree";
+export { WhatIsCappex } from "./WhatIsCappex";
