@@ -97,7 +97,7 @@ const GenerateField = ({ field, error, formData }) => {
 
 	switch (type) {
 		case "select": {
-			const selectOptions = properties.list.list.map(option => (
+			const selectOptions = Object.values(properties.list.list).map(option => (
 				<option key={option.value} value={option.value}>
 					{option.label}
 				</option>
