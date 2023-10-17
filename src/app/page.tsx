@@ -1,8 +1,26 @@
 import Image from "next/image";
 
-import { Button, CarouselWithForm, Header } from "@/components";
-import { IconCard } from "@/components/IconCard/IconCard";
-import Link from "next/link";
+import { Button, CarouselWithForm } from "@/components";
+
+import { mergeOpenGraph, mergeTwitter } from "@/seo";
+import { Metadata } from "next";
+
+const title = "Your ideal role is in reach";
+const description =
+	"Discover your ideal role and find schools that offer degrees to help you reach your goals.";
+
+export const metadata: Metadata = {
+	openGraph: mergeOpenGraph({
+		title: title,
+		description: description,
+	}),
+	twitter: mergeTwitter({
+		title: title,
+		description: description,
+	}),
+	title: title,
+	description: description,
+};
 
 const RootPage = () => {
   return (

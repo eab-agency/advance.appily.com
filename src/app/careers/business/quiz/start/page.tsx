@@ -1,20 +1,26 @@
 import { Quiz } from "@/components";
 import { fetchQuizData } from "@/lib/fetchQuizData";
-import { mergeOpenGraph } from "@/seo/mergeOpenGraph";
 
-const VERTICAL = "business";
-
+import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
+const title = "Forge Your Path in Business";
+const description = "Start the Appily Business Quiz Now";
+
 export const metadata: Metadata = {
+	title: title,
+	description: description,
 	openGraph: mergeOpenGraph({
-		title: "Business Quiz",
-		description: "Appily Business Quiz",
+		title: title,
+		description: description,
 	}),
-	title: "Business Quiz",
-	description: "Appily Business Quiz",
+	twitter: mergeTwitter({
+		title: title,
+		description: description,
+	}),
 };
 
+const VERTICAL = "business";
 async function QuizHome() {
 	const quizData = await fetchQuizData(VERTICAL);
 
@@ -24,7 +30,7 @@ async function QuizHome() {
 				vertical={VERTICAL}
 				quizData={quizData}
 				resultsFormId="6"
-				title="Forge Your Path in Business"
+				title={title}
 			/>
 		)
 	);

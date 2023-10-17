@@ -27,6 +27,10 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "**-eab-agency.vercel.app",
 			},
+			{
+				protocol: "https",
+				hostname: "advance.appily.com",
+			},
 		],
 	},
 	sassOptions: {
