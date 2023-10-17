@@ -58,7 +58,7 @@ const CareersSeoPage = () => {
             <p>
               Whether you’re <strong>just starting out</strong> on your career
               journey, are interested in <strong>changing careers,</strong> or
-              are looking to <strong>advance your current career</strong>, these
+              are looking to <strong>advance your current career,</strong> these
               career tests will match you with possible career paths based on
               your skills, experience, and interests.
             </p>
@@ -93,9 +93,9 @@ const CareersSeoPage = () => {
             </IconCard>
 
             <IconCard
-              title="Healthcare"
+              title="Health Care"
               iconUrl="/images/healthcare-icon.svg"
-              iconAlt="Healthcare icon"
+              iconAlt="Health Care icon"
               className="roi-card"
             >
               <h4>Define Your Future in Health Care</h4>
@@ -106,7 +106,7 @@ const CareersSeoPage = () => {
                 and much more.
               </p>
               <p>
-                If you want to help people, there’s a place in health care for
+                If you want to help people, there’s a place in health-care for
                 you.{" "}
                 <Link href="/careers/healthcare/quiz">Take the quiz today</Link>{" "}
                 and we’ll help you find the perfect role that matches your
@@ -147,7 +147,7 @@ const CareersSeoPage = () => {
               <p>
                 Appily is the future of higher education guidance, uniting
                 trusted tools that have empowered students for almost two
-                decades. Born from respected platforms like Cappex, Concourse,
+                decades. Born from respected platforms including Cappex, Concourse,
                 YouVisit, and College Greenlight, Appily offers a seamless
                 experience for students of all ages on their journey to college.{" "}
               </p>
@@ -155,7 +155,7 @@ const CareersSeoPage = () => {
               <p>
                 Discover your ideal career path, make a plan to reach your
                 academic and professional goals, and match with colleges that
-                can help you get there — all in one place. Take the next step in
+                can help you get there—all in one place. Take the next step in
                 achieving your academic goals with confidence.
               </p>
             </div>

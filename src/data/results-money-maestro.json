@@ -40,17 +40,17 @@
 		{
 			"number": "8%",
 			"title": "Growth",
-			"description": "In employment of business-related occupations over the next decade"
+			"description": "in employment of business-related occupations over the next decade"
 		},
 		{
 			"number": "$76K",
 			"title": "Median Salary",
-			"description": "For business and financial occupations, ranging from $50K to $96K"
+			"description": "for business and financial occupations, ranging from $50K to $96K"
 		},
 		{
 			"number": "911K",
 			"title": "Job Openings",
-			"description": "Predicted annually over the next decade in business and financial occupations"
+			"description": "predicted annually over the next decade in business and financial occupations"
 		}
 	],
 	"degreeTabs": {
@@ -110,7 +110,7 @@
 		]
 	},
 	"textWithImage": {
-		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can secure your financial future with an MBA specializing in Finance that arms you with advanced financial analysis, investment knowledge, and risk management skills.</p><p>Alternatively, a Master's in Accounting can refine your expertise in financial reporting and analysis, ensuring accurate financial decisions.</p><p>While both paths delve into finance, the MBA offers a broader skill set for roles beyond accounting, making it the prime choice for The Money Maestro aspiring to lead financial strategies and business growth.</p>",
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can secure your financial future with an MBA specializing in Finance that arms you with advanced financial analysis, investment knowledge, and risk-management skills.</p><p>Alternatively, a Master's in Accounting can refine your expertise in financial reporting and analysis, ensuring accurate financial decisions.</p><p>While both paths delve into finance, the MBA offers a broader skill set for roles beyond accounting, making it the prime choice for The Money Maestro aspiring to lead financial strategies and business growth.</p>",
 		"imagePath": "/images/ceo.jpg"
 	}
 }

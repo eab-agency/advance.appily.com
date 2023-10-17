@@ -12,31 +12,31 @@
 	"pageTitle": " Which type of<strong>business careeer</strong> is right for you?",
 	"quizSection": {
 		"title": "Take Our Free Business Career Quiz to Find Out",
-		"content": "<p>If you want to work in business but you don’t know which job fits your skills and interests, <strong>this free quiz can help find a good fit</strong> and you plan your next steps.</p><p>The Bureau of Labor Statistics predicts about <strong>nearly one jobs in business</strong> will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p><strong>In less than three minutes, you could discover which type of business career could be a good fit for you.</strong> We’ll also connect you with schools near you that offer degrees to help you reach your goals.</p>",
+		"content": "<p>If you want to work in business but you don’t know which job fits your skills and interests, <strong>this free quiz can help find a good fit</strong> and you plan your next steps.</p><p>The Bureau of Labor Statistics predicts about <strong>nearly one million jobs in business</strong> will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p><strong>In less than three minutes, you could discover which type of business career could be a good fit for you.</strong> We’ll also connect you with schools near you that offer degrees to help you reach your goals.</p>",
 		"buttonText": "Take the Quiz"
 	},
 	"stats": [
 		{
 			"number": "8%",
 			"title": "Growth",
-			"description": "In employment of management occupations over the next decade"
+			"description": "in employment of management occupations over the next decade"
 		},
 		{
 			"number": "$76K",
 			"title": "Median Salary",
-			"description": "For business-related occupations, ranging from $50K to $96K"
+			"description": "for business-related occupations, ranging from $50K to $96K"
 		},
 		{
 			"number": "911K",
 			"title": "Job Openings",
-			"description": "Predicted annually over the next decade in business-related occupations"
+			"description": "predicted annually over the next decade in business-related occupations"
 		}
 	],
 	"statsSource": "U.S. Bureau of Labor Statistics",
 	"whyChoose": {
 		"title": "MBA vs. Specific Business Master’s Degrees:",
 		"subTitle": "What's the Difference?",
-		"description": "An MBA (Master of Business Administration) and a business master’s degree — such as an M.S. in Management — are both <strong>graduate-level programs that focus on business and management education</strong>. However, there are some differences between the two:",
+		"description": "An MBA (Master of Business Administration) and a business master’s degree—such as an M.S. in Management—are both <strong>graduate-level programs that focus on business and management education.</strong> However, there are some differences between the two:",
 		"reasons": [
 			{
 				"title": "Curriculum",
@@ -92,7 +92,7 @@
 	},
 	"takeQuiz": {
 		"title": "Ready to Find Your Role?",
-		"description": "In less than three minutes, you could discover which role could be a good fit for you — and the steps you can take to advance your career.",
+		"description": "In less than three minutes, you could discover which role could be a good fit for you—and the steps you can take to advance your career.",
 		"buttonText": "Take the Quiz"
 	},
 	"statsAppily": [

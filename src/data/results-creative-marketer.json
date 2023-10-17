@@ -40,17 +40,17 @@
 		{
 			"number": "7%",
 			"title": "Growth",
-			"description": "In employment of media and communication occupations over the next decade"
+			"description": "in employment of media and communication occupations over the next decade"
 		},
 		{
 			"number": "$66K",
 			"title": "Median Salary",
-			"description": "For media and communications occupations, ranging from $53K to $80K averages"
+			"description": "for media and communications occupations, ranging from $53K to $80K averages"
 		},
 		{
 			"number": "114K",
 			"title": "Job Openings",
-			"description": "Predicted annually over the next decade in media and communication"
+			"description": "predicted annually over the next decade in media and communication"
 		}
 	],
 	"degreeTabs": {
@@ -85,7 +85,7 @@
 	},
 	"careerPaths": {
 		"title": "What kind of career is a good fit for me?",
-		"description": "Occupations that align with The Creative Marketer's career path <strong>focus on creating and executing marketing strategies and campaigns</strong>",
+		"description": "Occupations that align with The Creative Marketer's career path <strong>focus on creating and executing marketing strategies and campaigns.</strong>",
 		"paths": [
 			{
 				"title": "Brand Manager",
@@ -110,7 +110,7 @@
 		]
 	},
 	"textWithImage": {
-		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can embark on an MBA journey to master marketing strategies, amplify brand impact, and lead creative teams effectively.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can embark on an MBA journey to master marketing strategies, amplify brand impact, and lead creative teams effectively.</p><p>However, if you're seeking a more artistic route, a Master's in Graphic Design or Digital Marketing can channel your creativity into visual communication or digital strategy.</p><p>While both paths cater to your creative flair, the MBA widens your expertise in managing marketing landscapes, making it ideal for The Creative Marketer who envisions a holistic role in driving business growth.</p>",
 		"imagePath": "/images/ceo.jpg"
 	}
 }
