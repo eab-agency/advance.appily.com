@@ -10,7 +10,6 @@ const Results = ({ children, vertical, answers, formId }) => {
     highestScorePersonality: answers.highestScorePersonality,
   };
   const devModeOnly = isDevMode();
-  console.log(answers.highestScorePersonality)
 
   const roleResult = () => {
     switch (answers.highestScorePersonality) {
