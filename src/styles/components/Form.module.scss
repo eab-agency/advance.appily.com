@@ -46,6 +46,7 @@
     width: 100%;
     border: 1px solid var(--c-border-inputs);
     background-color: var(--c-slateGray-100);
+    font-family: tokens.$f-sans;
 
     &:hover {
       border-color: var(--c-teal-700);
