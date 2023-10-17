@@ -6,7 +6,7 @@ export function ChoosingRightSchoolBusinessDegree() {
       <div className="group column">
         <div className="intro-text">
           <h2>
-            Choosing the Right School for <strong>your Business Degree</strong>
+            Choosing the Right School for <strong>Your Business Degree</strong>
           </h2>
           <p>
             Embarking on your journey to earn a business degree is an exciting step
