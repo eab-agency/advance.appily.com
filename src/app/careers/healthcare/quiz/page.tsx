@@ -2,11 +2,23 @@ import { Button } from "@/components";
 import Image from "next/image";
 // eslint-disable-next-line import/no-unresolved
 
+import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
+const title = "Define Your Future in Health Care";
+const description = "Appily Health Care Quiz";
+
 export const metadata: Metadata = {
-	title: "Define Your Future in Health Care | Health Science Quiz",
-	description: "Appily Health Science Quiz",
+	title: title,
+	description: description,
+	openGraph: mergeOpenGraph({
+		title: title,
+		description: description,
+	}),
+	twitter: mergeTwitter({
+		title: title,
+		description: description,
+	}),
 };
 
 export default function QuizLandingPage() {
