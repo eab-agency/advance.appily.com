@@ -10,7 +10,7 @@ import ResetQuizButton from "./ResetQuizButton";
 import Results from "./Results";
 // import Score from "./Score";
 
-export function Quiz({ vertical, quizData, resultsFormId }) {
+export function Quiz({ vertical, quizData, resultsFormId, title }) {
 	const { location, globalPrivacyControl } = useUser();
 
 	const router = useRouter();
@@ -107,9 +107,7 @@ export function Quiz({ vertical, quizData, resultsFormId }) {
 							winningPersonality={quizState.highestScorePersonality}
 						/> */}
 						<header className={styles.quizContentHead}>
-							<span className="intro-title">
-								Define Your Future in Health Care
-							</span>
+							<span className="intro-title">{title || "Take the Quiz"}</span>
 							<div className={styles.questionsCounter}>
 								Question {quizState.currentQuestionIdx + 1} of{" "}
 								{questions?.length}

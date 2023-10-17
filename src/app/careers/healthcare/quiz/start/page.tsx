@@ -13,6 +13,15 @@ export const metadata: Metadata = {
 
 async function QuizHome() {
 	const quizData = await fetchQuizData(VERTICAL);
-	return quizData && <Quiz vertical={VERTICAL} quizData={quizData} />;
+	return (
+		quizData && (
+			<Quiz
+				vertical={VERTICAL}
+				quizData={quizData}
+				resultsFormId="2"
+				title="Define Your Future in Health Care"
+			/>
+		)
+	);
 }
 export default QuizHome;

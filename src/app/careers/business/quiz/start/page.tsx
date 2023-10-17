@@ -15,7 +15,12 @@ async function QuizHome() {
 
 	return (
 		quizData && (
-			<Quiz vertical={VERTICAL} quizData={quizData} resultsFormId="6" />
+			<Quiz
+				vertical={VERTICAL}
+				quizData={quizData}
+				resultsFormId="6"
+				title="Forge Your Path in Business"
+			/>
 		)
 	);
 }
