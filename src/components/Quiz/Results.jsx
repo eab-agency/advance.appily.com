@@ -10,9 +10,12 @@ const Results = ({ children, vertical, answers, formId }) => {
     highestScorePersonality: answers.highestScorePersonality,
   };
   const devModeOnly = isDevMode();
+  console.log(answers.highestScorePersonality)
 
   const roleResult = () => {
     switch (answers.highestScorePersonality) {
+
+      // Business
       case 'creative-marketer':
         return 'The Creative Marketer';
 
@@ -30,6 +33,18 @@ const Results = ({ children, vertical, answers, formId }) => {
 
       case 'self-starter':
         return 'The Self Starter';
+
+      // Healthcare
+      case 'executive':
+        return 'The Executive';
+      case 'practitioner':
+        return 'The Practitioner';
+      case 'educator':
+        return 'The Educator';
+      case 'analyst':
+        return 'The Analyst';
+      case 'scientist':
+        return 'The Scientist';
 
       default:
         return 'Unknown Personality';
