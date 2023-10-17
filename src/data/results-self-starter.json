@@ -1,8 +1,8 @@
 {
 	"slug": "self-starter",
 	"title": "The Self Starter",
-	"description": "Entrepreneurship is in your blood, and you're not afraid to take risks and create new ventures. An entrepreneurial spirit drives you to seize opportunities and build businesses from the ground up. The idea of being your own boss and driving business growth fuels your motivation. If you've always dreamt of starting your own business or leading innovative projects, the path of entrepreneurship is ready to embrace your boldness.",
-	"detailedDescription": "Entrepreneurship is in your blood, and you're not afraid to take risks and create new ventures. An entrepreneurial spirit drives you to seize opportunities and build businesses from the ground up. The idea of being your own boss and driving business growth fuels your motivation. If you've always dreamt of starting your own business or leading innovative projects, the path of entrepreneurship is ready to embrace your boldness.",
+	"description": "Entrepreneurship is in your blood, and you're not afraid to take risks and create new ventures. An entrepreneurial spirit drives you to seize opportunities and build businesses from the ground up. The idea of being your own boss and driving business growth fuels your motivation. If you've always dreamed of starting your own business or leading innovative projects, the path of entrepreneurship is ready to embrace your boldness.",
+	"detailedDescription": "Entrepreneurship is in your blood, and you're not afraid to take risks and create new ventures. An entrepreneurial spirit drives you to seize opportunities and build businesses from the ground up. The idea of being your own boss and driving business growth fuels your motivation. If you've always dreamed of starting your own business or leading innovative projects, the path of entrepreneurship is ready to embrace your boldness.",
 	"tabs": [
 		{
 			"title": "Motivation",
@@ -40,17 +40,17 @@
 		{
 			"number": "99%",
 			"title": "Of Businesses",
-			"description": "In the US are small businesses"
+			"description": "in the US are small businesses"
 		},
 		{
 			"number": "$60K",
 			"title": "Average Salary",
-			"description": "For small business owners, ranging from $29K to $128K averages"
+			"description": "for small business owners, ranging from $29K to $128K averages"
 		},
 		{
 			"number": "13M",
 			"title": "Jobs Created",
-			"description": "By small businesses over the past 25 years"
+			"description": "by small businesses over the past 25 years"
 		}
 	],
 	"degreeTabs": {
