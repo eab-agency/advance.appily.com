@@ -10,13 +10,40 @@ const Results = ({ children, vertical, answers, formId }) => {
     highestScorePersonality: answers.highestScorePersonality,
   };
   const devModeOnly = isDevMode();
+
+  const roleResult = () => {
+    switch (answers.highestScorePersonality) {
+      case 'creative-marketer':
+        return 'The Creative Marketer';
+
+      case 'fearless-leader':
+        return 'The Fearless Leader';
+
+      case 'people-person':
+        return 'The People Person';
+
+      case 'money-maestro':
+        return 'The Money Maestro';
+
+      case 'computer-whiz':
+        return 'The Computer Whiz';
+
+      case 'self-starter':
+        return 'The Self Starter';
+
+      default:
+        return 'Unknown Personality';
+    }
+  }
+
   return (
     <>
     <div className="preResultsContainer">
       <section className="resultsHero">
         <div className="group">
           <div className="heroContent column">
-            <div className="intro-title"><span>Your ideal role is ...</span></div>
+            <div className="intro-title"><span>Your ideal role could be ... </span></div>
+            <h1>{roleResult()}</h1>
             <p>
               Learn why we thought this role could be a good fit for you! Then,
               discover <strong>related careers</strong>, average{" "}
