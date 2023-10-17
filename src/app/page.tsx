@@ -35,7 +35,7 @@ const RootPage = () => {
             </figure>
           </div>
           <div className="column intro-text">
-            <h2>Ready for a change?</h2>
+            <h2>Resources for Students Returning to Schools</h2>
             <div>
               <p>
                 Whether you’re looking to complete an undergraduate or graduate
@@ -46,7 +46,7 @@ const RootPage = () => {
                 <strong>Still in high school?</strong>
                 <br />
                 <a href="https://www.appily.com">
-                  Find resources for high school students.
+                  Find resources for high school students
                 </a>
               </p>
             </div>
