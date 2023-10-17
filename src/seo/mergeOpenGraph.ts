@@ -8,8 +8,7 @@ const defaultOpenGraph: Metadata["openGraph"] = {
 		default: "Appily Advance",
 		template: "%s | Appily Advance",
 	},
-	images:
-		"https://appily-advance-git-qa-eab-agency.vercel.app/images/og-twitter-default.png",
+	images: "/images/og-twitter-default.png",
 };
 
 export const mergeOpenGraph = (

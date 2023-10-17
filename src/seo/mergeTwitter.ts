@@ -6,8 +6,7 @@ const defaultX: Metadata["twitter"] = {
 	creator: "@creator",
 	title: "Appily Advance",
 	description: "Resources for Students Returning to School",
-	images:
-		"https://appily-advance-git-qa-eab-agency.vercel.app/images/og-twitter-default.png",
+	images: "/images/og-twitter-default.png",
 };
 
 export const mergeTwitter = (
