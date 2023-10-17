@@ -2,11 +2,23 @@ import { Button, Header } from "@/components";
 import Image from "next/image";
 // eslint-disable-next-line import/no-unresolved
 
+import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
+const title = "Forge Your Path in Business";
+const description = "Appily Business Quiz";
+
 export const metadata: Metadata = {
-	title: "Forge Your Path in Business | Business Quiz",
-	description: "Appily Business Quiz",
+	title: title,
+	description: description,
+	openGraph: mergeOpenGraph({
+		title: title,
+		description: description,
+	}),
+	twitter: mergeTwitter({
+		title: title,
+		description: description,
+	}),
 };
 
 export default function QuizLandingPage() {
