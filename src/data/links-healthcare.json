@@ -1,0 +1,24 @@
+{
+	"results": [
+		{
+			"href": "executive",
+			"label": "Executive"
+		},
+		{
+			"href": "practitioner",
+			"label": "Practitioner"
+		},
+		{
+			"href": "educator",
+			"label": "Educator"
+		},
+		{
+			"href": "scientist",
+			"label": "Scientist"
+		},
+		{
+			"href": "analyst",
+			"label": "Analyst"
+		}
+	]
+}

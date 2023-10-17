@@ -1,95 +1,77 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import Image from "next/image";
+import fearlessLeader from "@/assets/lotties/fearlessLeader.json";
+import Lottie from "lottie-react";
 import { useRef } from "react";
-import { BiLinkExternal } from "react-icons/bi";
 
 import {
-	Accordion,
-	CareerPaths,
-	CarouselWithForm,
-	Stats,
-	StickyCta,
-	Tabs,
-	TextWithImage,
+  CareerPaths,
+  CarouselWithForm,
+  ChoosingRightSchoolBusinessDegree,
+  KeepExploring,
+  Stats,
+  StickyCta,
+  SubNav,
+  Tabs,
+  TextWithImage,
+  WhatDegrees
 } from "@/components";
-import styles from "@/styles/global/layouts/FinalPage.module.scss";
-import { usePathname } from "next/navigation";
-import useSWR from "swr";
 
-const AnalystPage = () => {
-	const carouselRef = useRef(null);
-	const pathname = usePathname();
-	const slug = pathname ? pathname.split("/").pop() : "";
-	const { data, error, isLoading } = useSWR(
-		`/api/quiz/results?result=${slug}&vertical=business`,
-	);
-	if (isLoading) return <div>Loading...</div>;
-	if (error) return <div>Failed to load {JSON.stringify({ error })} </div>;
+import { useUser } from "@/context/context";
+import dataLinks from "@/data/links-business.json";
+import data from "@/data/results-fearless-leader.json";
 
-	return (
-		<>
-			<div className={styles.container}>
-				<div className={styles.content}>
-					<span className="intro-title">Your ideal role could be ...</span>
-					<section className={styles["intro-section"]}>
-						<h1>{data.title}</h1>
-						<p>{data.detailedDescription}</p>
-					</section>
-					<Tabs className="react-tabs" tabs={data.tabs} />
+export default function Page() {
+  const carouselRef = useRef(null);
+  const { results: links } = dataLinks;
+  const { setVertical, vertical } = useUser();
+  setVertical("Business");
+  return (
+    <>
+      <div className="resultContent">
+        <section className="resultsHero">
+          <div className="group">
+            <div className="heroContent column">
+              <div className="intro-title">
+                <span>Your ideal role could be ...</span>
+              </div>
+              <h1>{data.title}</h1>
+              <p>{data.detailedDescription}</p>
+            </div>
+            <figure className="column">
+              <Lottie animationData={fearlessLeader} loop={true} />
+            </figure>
+          </div>
+        </section>
 
-					<CareerPaths careerPaths={data.careerPaths} />
+        {links && <SubNav links={links} />}
+        <Tabs className="react-tabs" tabs={data.tabs} />
 
-					<Stats stats={data.stats} source={data.statsSource} />
+        <CareerPaths careerPaths={data.careerPaths} />
 
-					<TextWithImage
-						content={data.textWithImage.content}
-						imagePath={data.textWithImage.imagePath}
-						className="whatever-you-need"
-					/>
-					<section>
-						<h3>{data.degreeTabs.title}</h3>
-						<p>{data.degreeTabs.description}</p>
-						{data.degreeTabs.degrees.map(degree => (
-							<Accordion title={degree.title}>
-								<div dangerouslySetInnerHTML={{ __html: degree.content }} />
-							</Accordion>
-						))}
-					</section>
-					<div
-						id="explore-your-school-matches"
-						className={styles.carouselWithForm}
-						ref={carouselRef}
-					>
-						<CarouselWithForm formId="3" />
-					</div>
-					<section className={styles["keep-exploring"]}>
-						<div className={styles.sourceContent}>
-							<h2>Keep exploring</h2>
-							<p>
-								Much of the career, education, and salary information above was
-								sourced from the Bureau of Labor Statistics. You can find
-								state-specific job outlooks and salary details as well as even
-								more information on related careers on their website.
-							</p>
-							<a
-								href="https://www.bls.gov/ooh/healthcare/home.htm"
-								target="_blank"
-								rel="noreferrer"
-								className="button btn-secondary"
-							>
-								Bureau of Labor Statistics{" "}
-								<i>
-									<BiLinkExternal />
-								</i>
-							</a>
-						</div>
-					</section>
-				</div>
-			</div>
-			<StickyCta trackedElement={carouselRef} />
-		</>
-	);
-};
+        <Stats stats={data.stats} source={data.statsSource} />
 
-export default AnalystPage;
+        <TextWithImage
+          content={data.textWithImage.content}
+          imagePath={data.textWithImage.imagePath}
+          className="whatever-you-need"
+        />
+
+        <WhatDegrees whatDegreesData={data.degreeTabs} />
+
+        <div
+          id="explore-your-school-matches"
+          className="carouselWithForm"
+          ref={carouselRef}
+        >
+          <CarouselWithForm formId="7" />
+        </div>
+
+        <ChoosingRightSchoolBusinessDegree />
+
+        <KeepExploring trackedElement={carouselRef} />
+      </div>
+      <StickyCta trackedElement={carouselRef} />
+    </>
+  );
+}

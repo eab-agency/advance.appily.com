@@ -1,17 +1,32 @@
 import { Quiz } from "@/components";
-import Head from "next/head";
+import { fetchQuizData } from "@/lib/fetchQuizData";
+import { mergeOpenGraph } from "@/seo/mergeOpenGraph";
 
-function QuizHome() {
+const VERTICAL = "business";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	openGraph: mergeOpenGraph({
+		title: "Business Quiz",
+		description: "Appily Business Quiz",
+	}),
+	title: "Business Quiz",
+	description: "Appily Business Quiz",
+};
+
+async function QuizHome() {
+	const quizData = await fetchQuizData(VERTICAL);
+
 	return (
-		<>
-			<Head>
-				<title>Health Science Quiz</title>
-				<meta name="description" content="Appily Health Science Quiz" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.png" />
-			</Head>
-			<Quiz vertical="business" />
-		</>
+		quizData && (
+			<Quiz
+				vertical={VERTICAL}
+				quizData={quizData}
+				resultsFormId="6"
+				title="Forge Your Path in Business"
+			/>
+		)
 	);
 }
 export default QuizHome;

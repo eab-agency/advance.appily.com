@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 		const data = JSON.parse(fileContents);
 		const { results } = data;
 
-		const filterValue = req.query.result;
+		const filterValue = req.query.slug;
 		const filteredResults = results.filter(
 			result => result.slug === filterValue.toLowerCase(),
 		);

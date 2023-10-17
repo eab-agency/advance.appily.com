@@ -1,269 +1,273 @@
 {
-    "questions": [
-        {
-            "question": "Where are you in your educational journey?",
-            "associatedField": "education_journey",
-            "answers": [
-                {
-                    "answer": "I am considering a graduate-level health care degree.",
-                    "personality": "initial",
-                    "weight": 1
-                },
-                {
-                    "answer": "I am exploring a health care degree at the undergraduate level.",
-                    "personality": "initial",
-                    "weight": 1
-                },
-                {
-                    "answer": "I am currently in school for an undergraduate health care degree and wish to transfer.",
-                    "personality": "initial",
-                    "weight": 1
-                },
-                {
-                    "answer": "I am not currently considering school or I am pursuing a non-health care degree.",
-                    "personality": "initial",
-                    "weight": 1
-                }
-            ]
-        },
-        {
-            "question": "At work, a primary <strong>motivator</strong> for me is...",
-            "associatedField": "quizresponse1",
-            "answers": [
-                {
-                    "answer": "Inspiring others to do their best.",
-                    "personality": "executive",
-                    "weight": 1
-                },
-                {
-                    "answer": "Improving people's quality of life.",
-                    "personality": "practitioner",
-                    "weight": 1
-                },
-                {
-                    "answer": "Sharing my skills and knowledge with others.",
-                    "personality": "educator",
-                    "weight": 1
-                },
-                {
-                    "answer": "Making groundbreaking discoveries.",
-                    "personality": "scientist",
-                    "weight": 1
-                },
-                {
-                    "answer": "Creating solutions through analytics.",
-                    "personality": "analyst",
-                    "weight": 1
-                }
-            ]
-        },
-        {
-            "question": "I'd like to enhance <strong>health care</strong> through ...",
-            "associatedField": "quizresponse2",
-            "answers": [
-                {
-                    "answer": "Directing staff and planning finances.",
-                    "personality": "executive",
-                    "weight": 1
-                },
-                {
-                    "answer": "Working directly with patients.",
-                    "personality": "practitioner",
-                    "weight": 1
-                },
-                {
-                    "answer": "Educating new practitioners or community members.",
-                    "personality": "educator",
-                    "weight": 1
-                },
-                {
-                    "answer": "Advancing the science of medicine.",
-                    "personality": "scientist",
-                    "weight": 1
-                },
-                {
-                    "answer": "Managing data and computer systems.",
-                    "personality": "analyst",
-                    "weight": 1
-                }
-            ]
-        },
-        {
-            "question": "My ideal <strong>work setting</strong> is...",
-            "associatedField": "quizresponse3",
-            "answers": [
-                {
-                    "answer": "Primarily in a hospital, but open to smaller settings.",
-                    "personality": "executive",
-                    "weight": 1
-                },
-                {
-                    "answer": "Primarily in a physician's office, but open to other settings.",
-                    "personality": "practitioner",
-                    "weight": 1
-                },
-                {
-                    "answer": "At a government agency, nonprofit, or university.",
-                    "personality": "educator",
-                    "weight": 1
-                },
-                {
-                    "answer": "In a lab, at a university, or hospital.",
-                    "personality": "scientist",
-                    "weight": 1
-                },
-                {
-                    "answer": "In a technical services or administrative support setting.",
-                    "personality": "analyst",
-                    "weight": 1
-                }
-            ]
-        },
-        {
-            "question": "My biggest professional <strong>strengths</strong> are...",
-            "associatedField": "quizresponse4",
-            "answers": [
-                {
-                    "answer": "Leadership and guiding others.",
-                    "personality": "executive",
-                    "weight": 2
-                },
-                {
-                    "answer": "Empathetic communication and emotional stability.",
-                    "personality": "practitioner",
-                    "weight": 2
-                },
-                {
-                    "answer": "Breaking down big ideas so others can learn.",
-                    "personality": "educator",
-                    "weight": 2
-                },
-                {
-                    "answer": "Critical thinking, observation, and data analysis.",
-                    "personality": "scientist",
-                    "weight": 2
-                },
-                {
-                    "answer": "Organization, project management, and problem solving.",
-                    "personality": "analyst",
-                    "weight": 2
-                }
-            ]
-        },
-        {
-            "question": "I have taken <strong>college courses</strong> in ...",
-            "associatedField": "quizresponse5",
-            "answers": [
-                {
-                    "answer": "Accounting, administration, ethics, or economics.",
-                    "personality": "executive",
-                    "weight": 1
-                },
-                {
-                    "answer": "Physical sciences or health care.",
-                    "personality": "practitioner",
-                    "weight": 1
-                },
-                {
-                    "answer": "Education, public health, ethics, or a language.",
-                    "personality": "educator",
-                    "weight": 1
-                },
-                {
-                    "answer": "Physical science such as biology or chemistry.",
-                    "personality": "scientist",
-                    "weight": 1
-                },
-                {
-                    "answer": "Biology, computer science, math, or management.",
-                    "personality": "analyst",
-                    "weight": 1
-                }
-            ]
-        },
-        {
-            "question": "My <strong>professional experience</strong> includes ...",
-            "associatedField": "quizresponse6",
-            "answers": [
-                {
-                    "answer": "In an administrative or clinical role.",
-                    "personality": "executive",
-                    "weight": 1
-                },
-                {
-                    "answer": "Some experience working in a lab setting or with patients as a medic, nurse...",
-                    "personality": "practitioner",
-                    "weight": 1
-                },
-                {
-                    "answer": "In education or with a community organization.",
-                    "personality": "educator",
-                    "weight": 1
-                },
-                {
-                    "answer": "Doing research, writing proposals, and recording my findings.",
-                    "personality": "scientist",
-                    "weight": 1
-                },
-                {
-                    "answer": "With computers, databases, or information systems.",
-                    "personality": "analyst",
-                    "weight": 1
-                }
-            ]
-        },
-        {
-            "question": "We're curious how accurate your results are!<br /><strong>Which of these areas would most appeal to you?</strong>",
-            "associatedField": "quizresponse7",
-            "answers": [
-                {
-                    "answer": "Diagnostic Services",
-                    "personality": "analyst",
-                    "weight": 0
-                },
-                {
-                    "answer": "Health Services Management",
-                    "personality": "executive",
-                    "weight": 0
-                },
-                {
-                    "answer": "Public Health",
-                    "personality": "educator",
-                    "weight": 0
-                },
-                {
-                    "answer": "Nursing",
-                    "personality": "analyst",
-                    "weight": 0
-                },
-                {
-                    "answer": "Information Technology",
-                    "personality": "analyst",
-                    "weight": 0
-                },
-                {
-                    "answer": "Mental or Social Health",
-                    "personality": "analyst",
-                    "weight": 0
-                },
-                {
-                    "answer": "Clinical Care",
-                    "personality": "analyst",
-                    "weight": 0
-                },
-                {
-                    "answer": "Research",
-                    "personality": "analyst",
-                    "weight": 0
-                }
-            ]
-        }
-    ],
-    "score": {
-        "executive": 0,
-        "practitioner": 0,
-        "educator": 0,
-        "scientist": 0,
-        "analyst": 0
-    }
+	"questions": [
+		{
+			"question": "<span className='intro-title'>Before we get started ...</span>Where are you in your educational journey?",
+			"associatedField": "education_journey__select1",
+			"answers": [
+				{
+					"answer": "I am considering a graduate-level health care degree.",
+					"personality": "initial",
+					"weight": 1,
+					"value": "Graduate"
+				},
+				{
+					"answer": "I am exploring a health care degree at the undergraduate level.",
+					"personality": "initial",
+					"weight": 1,
+					"value": "Bachelors"
+				},
+				{
+					"answer": "I am currently in school for an undergraduate health care degree and wish to transfer.",
+					"personality": "initial",
+					"weight": 1,
+					"value": "Transfer"
+				},
+				{
+					"answer": "I am not currently considering school or I am pursuing a non-health care degree.",
+					"personality": "initial",
+					"weight": 1,
+					"value": "Other"
+				}
+			]
+		},
+		{
+			"question": "At work, a primary <strong>motivator</strong> for me is...",
+			"associatedField": "quizresponse1",
+			"answers": [
+				{
+					"answer": "Inspiring others to do their best.",
+					"personality": "executive",
+					"weight": 1
+				},
+				{
+					"answer": "Improving people's quality of life.",
+					"personality": "practitioner",
+					"weight": 1
+				},
+				{
+					"answer": "Sharing my skills and knowledge with others.",
+					"personality": "educator",
+					"weight": 1
+				},
+				{
+					"answer": "Making groundbreaking discoveries.",
+					"personality": "scientist",
+					"weight": 1
+				},
+				{
+					"answer": "Creating solutions through analytics.",
+					"personality": "analyst",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"question": "I'd like to enhance <strong>health care</strong> through ...",
+			"associatedField": "quizresponse2",
+			"answers": [
+				{
+					"answer": "Directing staff and planning finances.",
+					"personality": "executive",
+					"weight": 1
+				},
+				{
+					"answer": "Working directly with patients.",
+					"personality": "practitioner",
+					"weight": 1
+				},
+				{
+					"answer": "Educating new practitioners or community members.",
+					"personality": "educator",
+					"weight": 1
+				},
+				{
+					"answer": "Advancing the science of medicine.",
+					"personality": "scientist",
+					"weight": 1
+				},
+				{
+					"answer": "Managing data and computer systems.",
+					"personality": "analyst",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"question": "My ideal <strong>work setting</strong> is...",
+			"associatedField": "quizresponse3",
+			"answers": [
+				{
+					"answer": "Primarily in a hospital, but open to smaller settings.",
+					"personality": "executive",
+					"weight": 1
+				},
+				{
+					"answer": "Primarily in a physician's office, but open to other settings.",
+					"personality": "practitioner",
+					"weight": 1
+				},
+				{
+					"answer": "At a government agency, nonprofit, or university.",
+					"personality": "educator",
+					"weight": 1
+				},
+				{
+					"answer": "In a lab, at a university, or hospital.",
+					"personality": "scientist",
+					"weight": 1
+				},
+				{
+					"answer": "In a technical services or administrative support setting.",
+					"personality": "analyst",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"question": "My biggest professional <strong>strengths</strong> are...",
+			"associatedField": "quizresponse4",
+			"answers": [
+				{
+					"answer": "Leadership and guiding others.",
+					"personality": "executive",
+					"weight": 2
+				},
+				{
+					"answer": "Empathetic communication and emotional stability.",
+					"personality": "practitioner",
+					"weight": 2
+				},
+				{
+					"answer": "Breaking down big ideas so others can learn.",
+					"personality": "educator",
+					"weight": 2
+				},
+				{
+					"answer": "Critical thinking, observation, and data analysis.",
+					"personality": "scientist",
+					"weight": 2
+				},
+				{
+					"answer": "Organization, project management, and problem solving.",
+					"personality": "analyst",
+					"weight": 2
+				}
+			]
+		},
+		{
+			"question": "I have taken <strong>college courses</strong> in ...",
+			"associatedField": "quizresponse5",
+			"answers": [
+				{
+					"answer": "Accounting, administration, ethics, or economics.",
+					"personality": "executive",
+					"weight": 1
+				},
+				{
+					"answer": "Physical sciences or health care.",
+					"personality": "practitioner",
+					"weight": 1
+				},
+				{
+					"answer": "Education, public health, ethics, or a language.",
+					"personality": "educator",
+					"weight": 1
+				},
+				{
+					"answer": "Physical science such as biology or chemistry.",
+					"personality": "scientist",
+					"weight": 1
+				},
+				{
+					"answer": "Biology, computer science, math, or management.",
+					"personality": "analyst",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"question": "My <strong>professional experience</strong> includes ...",
+			"associatedField": "quizresponse6",
+			"answers": [
+				{
+					"answer": "In an administrative or clinical role.",
+					"personality": "executive",
+					"weight": 1
+				},
+				{
+					"answer": "Some experience working in a lab setting or with patients as a medic, nurse...",
+					"personality": "practitioner",
+					"weight": 1
+				},
+				{
+					"answer": "In education or with a community organization.",
+					"personality": "educator",
+					"weight": 1
+				},
+				{
+					"answer": "Doing research, writing proposals, and recording my findings.",
+					"personality": "scientist",
+					"weight": 1
+				},
+				{
+					"answer": "With computers, databases, or information systems.",
+					"personality": "analyst",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"question": "We're curious how accurate your results are!<br /><strong>Which of these areas would most appeal to you?</strong>",
+			"associatedField": "area_of_interest",
+			"answers": [
+				{
+					"answer": "Diagnostic Services",
+					"personality": "analyst",
+					"weight": 0
+				},
+				{
+					"answer": "Health Services Management",
+					"personality": "executive",
+					"weight": 0
+				},
+				{
+					"answer": "Public Health",
+					"personality": "educator",
+					"weight": 0
+				},
+				{
+					"answer": "Nursing",
+					"personality": "analyst",
+					"weight": 0
+				},
+				{
+					"answer": "Information Technology",
+					"personality": "analyst",
+					"weight": 0
+				},
+				{
+					"answer": "Mental or Social Health",
+					"personality": "analyst",
+					"weight": 0
+				},
+				{
+					"answer": "Clinical Care",
+					"personality": "analyst",
+					"weight": 0
+				},
+				{
+					"answer": "Research",
+					"personality": "analyst",
+					"weight": 0
+				}
+			]
+		}
+	],
+	"score": {
+		"executive": 0,
+		"practitioner": 0,
+		"educator": 0,
+		"scientist": 0,
+		"analyst": 0
+	}
 }

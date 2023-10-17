@@ -1,0 +1,37 @@
+@use "@/styles/global/tokens";
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: tokens.$mq-500;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--c-navy-600);
+  gap: 0.5em;
+
+  &::before {
+    content: " ";
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 6px solid var(--c-teal-600);
+    border-color: var(--c-teal-600) transparent var(--c-teal-600) transparent;
+    animation: loading 1.2s linear infinite;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

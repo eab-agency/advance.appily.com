@@ -1,0 +1,116 @@
+{
+	"slug": "people-person",
+	"title": "The People Person",
+	"description": "People are your priority, and you excel in creating positive work environments that nurture talent and foster growth. Collaborating with colleagues and clients brings out the best in you. You find fulfillment in managing teams, handling employee relations, and facilitating effective teamwork. If you possess empathy, excellent communication skills, and a drive to create strong and cohesive teams, the realm of operations, project management, and human resources beckons you.",
+	"detailedDescription": "People are your priority, and you excel in creating positive work environments that nurture talent and foster growth. Collaborating with colleagues and clients brings out the best in you. You find fulfillment in managing teams, handling employee relations, and facilitating effective teamwork. If you possess empathy, excellent communication skills, and a drive to create strong and cohesive teams, the realm of operations, project management, and human resources beckons you.",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "You excel at supporting and developing teams, creating positive work environments, and nurturing talent."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "You have strong empathy, communication, and team-building skills."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "You enjoy working collaboratively with colleagues and clients to build strong relationships."
+		},
+		{
+			"title": "Setting",
+			"icon": "setting-icon",
+			"content": "You would thrive in a people-centric organization that values teamwork and growth."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "You may have taken courses in human resources, organizational behavior, or psychology."
+		},
+		{
+			"title": "Experience",
+			"icon": "skills-icon",
+			"content": "Your work experience may include managing teams, handling employee relations, and fostering collaboration."
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"stats": [
+		{
+			"number": "8%",
+			"title": "Growth",
+			"description": "in employment of mangement occupations over the next decade"
+		},
+		{
+			"number": "$102K",
+			"title": "Median Salary",
+			"description": "for management occupations, ranging from $75K to $160K averages"
+		},
+		{
+			"number": "884K",
+			"title": "Job Openings",
+			"description": "predicted annually over the next decade in management occupations"
+		}
+	],
+	"degreeTabs": {
+		"title": "What degree do I need for a <strong>management and operations career path?</strong>",
+		"description": "Thriving in roles that involve managing business operations, projects, teams, and human resources requires a strong educational foundation. While a bachelor's degree is a starting point, advancing your education to a master's level can significantly enhance your skills and open doors to advanced opportunities.",
+		"degrees": [
+			{
+				"title": "Logistics, Materials, and Supply Chain Management",
+				"content": "<p>A degree in Logistics, Materials, and Supply Chain Management covers managing the flow of goods and services in supply chains.</p><p>Example degrees: Master of Science in Logistics and Supply Chain Management, Master of Business Administration (MBA) with a specialization in Supply Chain Management</p>"
+			},
+			{
+				"title": "Operations Management and Supervision",
+				"content": "<p>A degree in Operations Management and Supervision prepares individuals for managing business operations efficiently.</p><p>Example degrees: Master of Science in Operations Management, Master of Business Administration (MBA) with a focus on Operations Management</p>"
+			},
+			{
+				"title": "Project Management",
+				"content": "<p>A degree in Project Management focuses on planning, executing, and monitoring projects to achieve specific goals.</p><p>Example degrees: Master of Science in Project Management, Master of Business Administration (MBA) with a concentration in Project Management</p>"
+			},
+			{
+				"title": "Executive/Career Coaching",
+				"content": "<p>A degree in Executive/Career Coaching equips individuals with skills to provide professional coaching and development support.</p><p>Example degrees: Master of Science in Executive Coaching, Master of Business Administration (MBA) with a specialization in Leadership and Coaching</p>"
+			},
+			{
+				"title": "Sales, Distribution, and Marketing Operations",
+				"content": "<p>A degree in Sales, Distribution, and Marketing Operations covers managing sales and distribution channels in business operations.</p><p>Example degrees: Master of Science in Marketing and Sales, Master of Business Administration (MBA) with a focus on Sales and Marketing</p>"
+			},
+			{
+				"title": "Human Resources Management",
+				"content": "<p>A degree in Human Resources Management focuses on managing an organization's workforce and employee-related functions.</p><p> Example degrees: Master of Science in Human Resource Management, Master of Business Administration (MBA) with a concentration in Human Resources</p>"
+			}
+		]
+	},
+	"careerPaths": {
+		"title": "What kind of career is a good fit for me?",
+		"description": "Occupations that align with The People Person's career path focus on team management, employee relations, and human resources.",
+		"paths": [
+			{
+				"title": "Operations Manager",
+				"description": "Oversee the operations and processes of an organization to ensure efficiency.",
+				"imagePath": "/images/operations-manager.jpg"
+			},
+			{
+				"title": "Human Resource Manager",
+				"description": "Manage the organization's workforce, including recruitment, training, and employee relations.",
+				"imagePath": "/images/human-resource-manager.jpg"
+			},
+			{
+				"title": "Project Manager",
+				"description": "Plan and execute projects, working closely with cross-functional teams.",
+				"imagePath": "/images/project-manager.jpg"
+			},
+			{
+				"title": "Training and Development Manager",
+				"description": "Create and implement training programs to enhance employee skills and development.",
+				"imagePath": "/images/training-and-development-manager.jpg"
+			}
+		]
+	},
+	"textWithImage": {
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can cultivate impactful workplaces with an MBA in Human Resources Management, where you'll master employee relations, talent acquisition, and organizational development. </p><p>Alternatively, a Master's in Project Management equips you to lead teams and projects efficiently.</p><p>While both paths center on people, the MBA provides a holistic approach to managing human capital and fostering organizational growth, making it the optimal choice for The People Person committed to creating thriving work environments.</p>",
+		"imagePath": "/images/ceo.jpg"
+	}
+}

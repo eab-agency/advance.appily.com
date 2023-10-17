@@ -1,0 +1,359 @@
+@use "@/styles/global/tokens";
+
+.react-tabs {
+  display: flex;
+  width: 100%;
+  max-width: tokens.$mq-1200;
+  margin: 0 auto;
+  position: relative;
+  background: var(--c-bg10);
+  padding-block: clamp(tokens.$padding-xxl, 5vw, tokens.$padding-xxxxl * 3);
+  padding-inline: clamp(tokens.$padding-xs, 5vw, tokens.$padding-xxxxl);
+
+  @media (min-width: tokens.$mq-800) {
+    flex-direction: column;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: calc(100vw - 1rem);
+      height: 100%;
+      background: var(--c-bg10);
+      transform: translateX(-50%);
+    }
+  }
+
+  &__tab-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    z-index: tokens.$layer-2;
+
+    @media (min-width: tokens.$mq-800) {
+      flex-direction: row;
+      margin-bottom: -0.5em;
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: clamp(0.25rem, 1vw, 0.7rem);
+      position: relative;
+      border: 1px solid transparent;
+      cursor: pointer;
+      border-color: var(--c-border-3);
+      border-right-color: transparent;
+      border-top-color: var;
+      border-left-color: transparent;
+      border-bottom-width: 1px;
+      border-right-width: 0;
+      padding-block: clamp(tokens.$padding-s, 1.35vw, tokens.$padding-xl);
+      padding-inline: clamp(tokens.$padding-xs, 2vw, tokens.$padding-xl);
+      transition: all 0.2s ease-in-out;
+
+      @media (min-width: tokens.$mq-800) {
+        width: auto;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-bottom: transparent;
+        border-right-width: 1px;
+
+        &:last-child {
+          border-right: 1px solid transparent;
+        }
+      }
+
+      &[class*="-selected"] {
+        border-left: 1px solid var(--c-border-3);
+        border-right-width: 0;
+        pointer-events: none;
+
+        @media (min-width: tokens.$mq-800) {
+          border-top-left-radius: tokens.$borderRadius-m;
+          border-top-right-radius: tokens.$borderRadius-m;
+          overflow: hidden;
+          border-right-width: 1px;
+          border-bottom-width: 0;
+        }
+
+        span {
+          text-decoration: none;
+        }
+
+        &::before {
+          color: var(--c-bodySecondary);
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 110%;
+          height: 100%;
+          background: var(--c-bg-body);
+
+          @media (min-width: tokens.$mq-800) {
+            width: 100%;
+            height: 110%;
+          }
+        }
+      }
+
+      &:first-child {
+        border-left-width: 1px;
+        overflow: hidden;
+        @media (min-width: tokens.$mq-800) {
+          border-top-left-radius: tokens.$borderRadius-xl;
+        }
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        line-height: 1;
+        font-family: tokens.$f-icons;
+        font-size: clamp(tokens.$size-5, 4vw, tokens.$size-8);
+        color: var(--c-bodySecondary);
+        transition: all 0.2s ease-in-out;
+        position: relative;
+        z-index: tokens.$layer-2;
+      }
+
+      &.motivation-icon::before {
+        content: tokens.$i-motivation;
+      }
+
+      &.skills-icon::before {
+        content: tokens.$i-skills;
+      }
+
+      &.work-icon::before {
+        content: tokens.$i-people;
+      }
+
+      &.setting-icon::before {
+        content: tokens.$i-building;
+      }
+
+      &.education-icon::before {
+        content: tokens.$i-education;
+      }
+
+      &.experience-icon::before {
+        content: tokens.$i-work;
+      }
+
+      span {
+        position: relative;
+        z-index: tokens.$layer-2;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: underline;
+        color: var(--c-bodyPrimary);
+        font-size: clamp(tokens.$size-2, 1.5vw, tokens.$size-4);
+        line-height: tokens.$f-lineHeight-tight;
+      }
+
+      &:hover {
+        background: var(--c-bg6);
+      }
+
+      &::before {
+        transform: translateY(-10%);
+      }
+    }
+
+    &:focus {
+      outline: 1px dotted var(--c-border-3);
+    }
+  }
+}
+
+// =========================
+
+div[class*="__tab-panel"] {
+  display: none;
+  width: 100%;
+  padding: clamp(tokens.$padding-l, 5vw, tokens.$padding-xxl);
+  border-top-width: 1px;
+  border-left-width: 1px;
+  position: relative;
+  z-index: tokens.$layer-1;
+  background: var(--c-bg-body);
+  border-radius: tokens.$borderRadius-xl;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: clamp(0.2em, 1vw, 0.5em) clamp(0.2em, 1vw, 0.5em) 0 var(--c-border-3);
+
+  @media (min-width: tokens.$mq-800) {
+    border: 0.5em solid var(--c-border-3);
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-bottom-left-radius: tokens.$borderRadius-xl;
+  }
+
+  &[class*="-selected"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(tokens.$size-7, 5vw, tokens.$size-9);
+
+    @media (min-width: tokens.$mq-800) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &::before {
+      content: "";
+      font-family: tokens.$f-icons;
+      font-size: clamp(tokens.$size-10, 20vw, tokens.$size-10 * 10);
+      color: var(--c-bg9);
+      line-height: 1;
+    }
+
+    &.motivation-icon::before {
+      content: tokens.$i-motivation;
+    }
+
+    &.skills-icon::before {
+      content: tokens.$i-skills;
+    }
+
+    &.work-icon::before {
+      content: tokens.$i-people;
+    }
+
+    &.setting-icon::before {
+      content: tokens.$i-building;
+    }
+
+    &.education-icon::before {
+      content: tokens.$i-education;
+    }
+
+    &.experience-icon::before {
+      content: tokens.$i-work;
+    }
+
+    .tab-copy {
+      @media (min-width: tokens.$mq-800) {
+        flex: 1;
+      }
+    }
+  }
+}
+
+// =======================
+
+.tab-copy {
+  h3 {
+    font-size: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+    color: var(--c-headingSecondary);
+  }
+
+  .tab-content {
+    color: var(--c-bodyPrimary);
+    font-size: clamp(tokens.$size-3, 2vw, tokens.$size-5);
+    font-weight: tokens.$fontWeight-light;
+    font-family: tokens.$f-sans;
+  }
+
+  ul {
+    margin-top: 2em;
+    padding-left: 2em;
+
+    li {
+      margin-bottom: 1.5em;
+    }
+  }
+}
+
+// .degree-tabs {
+//     ul[class*='tab-list'] {
+//         display: flex;
+//         flex-direction: row;
+
+//         li {
+//             width: auto;
+//             border-top-color: transparent;
+//             border-left-color: transparent;
+//             border-bottom: transparent;
+//             border-right-width: 1px;
+
+//             @media (prefers-color-scheme: light) {
+//                 border-color: color.adjust(tokens.$c-blue-500, $lightness: 50%);
+//                 border-top-color: transparent;
+//                 border-left-color: transparent;
+//                 border-bottom: transparent;
+//             }
+
+//             &:last-child {
+//                 border-right: 0.5em solid transparent;
+//             }
+
+//             &[class*='-selected'] {
+//                 border: 0.5em solid tokens.$c-blue-500;
+//                 border-right-width: 0.5em;
+//                 border-bottom-width: 0;
+//                 pointer-events: none;
+
+//                 @media (prefers-color-scheme: light) {
+//                     border-color: color.adjust(
+//                         tokens.$c-blue-500,
+//                         $lightness: 50%
+//                     );
+//                 }
+
+//                 // @media (min-width: tokens.$mq-800) {
+//                 //     border-right-width: 0.5em;
+//                 //     border-bottom-width: 0;
+//                 // }
+
+//                 span {
+//                     text-decoration: none;
+//                 }
+
+//                 &::before {
+//                     color: tokens.$c-turquoise-500;
+
+//                     @media (prefers-color-scheme: light) {
+//                         color: tokens.$c-malva-500;
+//                     }
+//                 }
+
+//                 &::after {
+//                     content: '';
+//                     position: absolute;
+//                     left: 0;
+//                     top: 0;
+//                     width: 100%;
+//                     height: 130%;
+//                     background: tokens.$c-blue-800;
+
+//     @media (prefers-color-scheme: light) {
+//         background: tokens.$c-gray-100;
+//     }
+// }
+//             }
+//         }
+//     }
+// }
+
+// .tab-content{
+//     color: white;
+
+//     @media (prefers-color-scheme: light) {
+//         color: tokens.$c-blue-500;
+//     }
+// }

@@ -1,0 +1,116 @@
+{
+	"slug": "self-starter",
+	"title": "The Self-Starter",
+	"description": "Entrepreneurship is in your blood, and you're not afraid to take risks and create new ventures. An entrepreneurial spirit drives you to seize opportunities and build businesses from the ground up. The idea of being your own boss and driving business growth fuels your motivation. If you've always dreamt of starting your own business or leading innovative projects, the path of entrepreneurship is ready to embrace your boldness.",
+	"detailedDescription": "Entrepreneurship is in your blood, and you're not afraid to take risks and create new ventures. An entrepreneurial spirit drives you to seize opportunities and build businesses from the ground up. The idea of being your own boss and driving business growth fuels your motivation. If you've always dreamt of starting your own business or leading innovative projects, the path of entrepreneurship is ready to embrace your boldness.",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "You're not shy about taking risks and creating new ventures to drive business growth and success."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "You have a strong entrepreneurial mindset and risk-taking capabilities."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "You tend to prefer working independently and taking ownership of projects."
+		},
+		{
+			"title": "Setting",
+			"icon": "skills-icon",
+			"content": "You may enjoy working in a startup or entrepreneurial setting (or even from your own home)."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "You may have taken classes in entrepreneurship, business development, or innovation."
+		},
+		{
+			"title": "Experience",
+			"icon": "skills-icon",
+			"content": "Your work experience may involve starting and running a business or leading entrepreneurial projects."
+		}
+	],
+	"statsSource": "Forbes",
+	"stats": [
+		{
+			"number": "99%",
+			"title": "Of Businesses",
+			"description": "in the US are small businesses"
+		},
+		{
+			"number": "$60K",
+			"title": "Average Salary",
+			"description": "for small business owners, ranging from $29K to $128K averages"
+		},
+		{
+			"number": "13M",
+			"title": "Jobs Created",
+			"description": "by small businesses over the past 25 years"
+		}
+	],
+	"degreeTabs": {
+		"title": "What degree do I need for an <strong>entrepreneurship career path?</strong>",
+		"description": "Embarking on an entrepreneurial journey requires a solid educational grounding. While a bachelor's degree provides a starting point, pursuing a master's degree can significantly enhance your entrepreneurial skills and expand your horizons.",
+		"degrees": [
+			{
+				"title": "Entrepreneurship",
+				"content": "<p>A degree in Entrepreneurship equips individuals with the knowledge and skills to start and manage their own businesses and ventures.</p><p>Example degrees: Master of Entrepreneurship (MEnt), Master of Business Administration (MBA) with a specialization in Entrepreneurship</p>"
+			},
+			{
+				"title": "Franchising",
+				"content": "<p>A degree in Franchising focuses on understanding and managing franchise businesses.</p><p>Example degrees: Master of Franchise Management, Master of Business Administration (MBA) with a concentration in Franchising</p>"
+			},
+			{
+				"title": "Small Business Management",
+				"content": "<p>A degree in Small Business Management covers the essentials of managing and operating small businesses effectively.</p><p>Example degrees: Master of Small Business Management, Master of Business Administration (MBA) with a focus on Small Business Management</p>"
+			},
+			{
+				"title": "Social Entrepreneurship",
+				"content": "<p>A degree in Social Entrepreneurship emphasizes creating sustainable solutions for social and environmental issues through business ventures.</p><p>Example degrees: Master of Social Entrepreneurship, Master of Business Administration (MBA) with a specialization in Social Entrepreneurship</p>"
+			},
+			{
+				"title": "E-Commerce",
+				"content": "<p>A degree in E-Commerce prepares individuals for starting and managing businesses in the online marketplace.</p><p>Example degrees: Master of E-Commerce, Master of Business Administration (MBA) with a concentration in E-Commerce</p>"
+			},
+			{
+				"title": "Real Estate",
+				"content": "<p>A degree in Real Estate focuses on the management, development, and investment in real estate properties.</p><p>Example degrees: Master of Real Estate Management, Master of Business Administration (MBA) with a specialization in Real Estate</p>"
+			}
+		]
+	},
+	"careerPaths": {
+		"title": "What kind of career is a good fit for me?",
+		"description": "Occupations that align with The Self-Starter's career path revolve around entrepreneurship and leading innovative ventures.",
+		"paths": [
+			{
+				"title": "Entrepreneur",
+				"description": "Start and manage their own businesses in various industries.",
+				"imagePath": "/images/entrepreneur.jpg"
+			},
+			{
+				"title": "Small Business Owner",
+				"description": "Operate and oversee small businesses, often with a hands-on approach.",
+				"imagePath": "/images/small-business-owner.jpg"
+			},
+			{
+				"title": "Venture Capitalist",
+				"description": "Invest in and provide funding for early-stage startups with growth potential.",
+				"imagePath": "/images/venture-capitalist.jpg"
+			},
+			{
+				"title": "Business Development Manager",
+				"description": "Identify and pursue new business opportunities to drive growth for a company.",
+				"imagePath": "/images/business-development-manager.jpg"
+			}
+		]
+	},
+	"textWithImage": {
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can forge your entrepreneurial path with an MBA in Entrepreneurship that hones your business acumen, innovation skills, and strategic planning.</p><p>Alternatively, a Master's in Small Business Management focuses on the intricacies of managing and growing small ventures.</p><p>While both paths cater to entrepreneurship, the MBA empowers you with a comprehensive grasp of business dynamics, making it the ideal choice for The Self-Starter aiming to navigate diverse challenges and steer startups to success.</p>",
+		"imagePath": "/images/ceo.jpg"
+	}
+}

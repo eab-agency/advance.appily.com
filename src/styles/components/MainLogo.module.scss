@@ -1,0 +1,12 @@
+// @use '../config/tokens';
+
+.main-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(12rem, 20vw, 20rem);
+
+  img {
+    width: 100%;
+  }
+}

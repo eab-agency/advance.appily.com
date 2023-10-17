@@ -1,0 +1,198 @@
+@use "sass:color";
+@use "@/styles/global/tokens";
+
+%button {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  border: tokens.$borderWidth-xs solid var(--c-orange-500);
+  border-radius: tokens.$borderRadius-m;
+  background-color: var(--c-orange-500);
+  color: var(--c-navy-600);
+  font-size: clamp(tokens.$size-4, 3vw, tokens.$size-5);
+  font-family: tokens.$f-serif;
+  font-weight: tokens.$fontWeight-semibold;
+  line-height: 1;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  &::before {
+    content: "";
+    display: block;
+    width: 12rem;
+    height: 5rem;
+    background: var(--c-orange-100);
+    border-top-left-radius: 100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    opacity: 0.3;
+    transform: translateX(100%) translateY(-50%);
+    transition: all 0.15s ease-in-out 0.03s;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 7rem;
+    height: 5rem;
+    background: var(--c-orange-100);
+    border-top-left-radius: 100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    opacity: 0.5;
+    transform: translateX(100%) translateY(-50%);
+    transition: all 0.15s ease-in-out;
+  }
+
+  span {
+    display: block;
+    padding: tokens.$padding-m tokens.$padding-l;
+    position: relative;
+    z-index: 4;
+  }
+
+  &:hover {
+    background: var(--c-orange-400);
+    color: var(--c-navy-700);
+
+    &::before {
+      transform: translateX(0%) translateY(-50%);
+    }
+
+    &::after {
+      transform: translateX(0%) translateY(-50%);
+    }
+  }
+}
+
+%button--primary {
+  @extend %button;
+
+  div.btn-content {
+    &::before {
+      content: "";
+      display: block;
+      width: 5rem;
+      height: 5rem;
+      background: var(--c-orange-100);
+      border-top-left-radius: 100%;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      right: 0.5em;
+      transform: translateX(50%) translateY(-50%);
+    }
+  }
+
+  span {
+    padding-right: 3em;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0.7em;
+      height: 0.7em;
+      border-top: tokens.$borderWidth-m solid var(--c-navy-700);
+      border-right: tokens.$borderWidth-m solid var(--c-navy-700);
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  &:hover {
+    // background: var(--c-orange-500);
+    border-color: var(--c-orange-600);
+    // background: color.adjust(red, $lightness: 30%);
+  }
+}
+
+%button--secondary {
+  @extend %button;
+  background-color: transparent;
+  color: var(--c-bodyPrimary);
+  border-color: var(--c-orange-500);
+
+  &:hover {
+    background: var(--c-orange-500);
+    color: var(--c-navy-700);
+  }
+}
+
+// :where(button),
+:where(.button) {
+  @extend %button;
+
+  &.btn-primary {
+    @extend %button--primary;
+  }
+  &.btn-secondary {
+    @extend %button--secondary;
+  }
+}
+
+.answer-button {
+  @extend %button;
+  border-color: var(--c-orange-500);
+  background: var(--c-orange-50);
+  color: var(--c-navy-700);
+  font-size: clamp(tokens.$size-2, 2vw, tokens.$size-5);
+  line-height: var(--lh-m);
+  padding: 0.5em 1em;
+  position: relative;
+  font-family: tokens.$f-sans;
+  font-weight: tokens.$fontWeight-light;
+  gap: 1em;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 0.6em;
+    height: 0.6em;
+    background: var(--c-malva-500);
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: absolute;
+    right: 1.2em;
+    transform: scale(0);
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: var(--layer-2);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    background: var(--c-white);
+    border-radius: 50%;
+    border: 1px solid var(--c-orange-500);
+    flex-shrink: 0;
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    transform: translateY(0);
+    z-index: var(--layer-1);
+  }
+
+  &:hover {
+    background: var(--c-teal-50);
+    color: var(--c-navy-800);
+    border-color: var(--c-teal-500);
+
+    &::before {
+      transform: scale(1) translateX(0.35em);
+    }
+
+    &::after {
+      border-color: var(--c-malva-500);
+      transform: scale(1.2) translateX(0.35em);
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@use "@/styles/global/tokens";
+
+.containerQuiz {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+.content {
+  width: 100%;
+  max-width: tokens.$mq-900;
+  padding-block: clamp(tokens.$size-6, 8vw, tokens.$size-10);
+  padding-inline: clamp(tokens.$size-4, 8vw, tokens.$size-10);
+
+  .quizContentHead {
+    margin-bottom: 3em;
+
+    span {
+      color: var(--c-bodySecondary);
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.containerResults {
+  .content {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+// .deco-image {
+//     @include layouts.decoImage;
+// }
+
+.questionsCounter {
+  display: block;
+  color: var(--c-bodyPrimary);
+  font-size: tokens.$size-3;
+}
+
+// .retakeButton {
+//     border-top: 1px solid tokens.$c-blue-300;
+//     margin-top: clamp(tokens.$baseUnit, 3vw, tokens.$baseUnit * 3);
+//     padding-top: 1em;
+//     display: block;
+//     width: 100%;
+//     max-width: tokens.$mq-700;
+// }

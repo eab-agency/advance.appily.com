@@ -1,0 +1,116 @@
+{
+	"slug": "money-maestro",
+	"title": "The Money Maestro",
+	"description": "Numbers are your domain, and financial management is your expertise. You excel in analyzing data, managing finances, and making informed decisions that drive profitability. Whether it's in a financial institution or an investment firm, you feel at home with financial data and economic trends. If you have a strong analytical mind and a desire to make a substantial impact on financial matters, the roles in finance, accounting, and economics await your skills.",
+	"detailedDescription": "Numbers are your domain, and financial management is your expertise. You excel in analyzing data, managing finances, and making informed decisions that drive profitability. Whether it's in a financial institution or an investment firm, you feel at home with financial data and economic trends. If you have a strong analytical mind and a desire to make a substantial impact on financial matters, the roles in finance, accounting, and economics await your skills.",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "You excel at managing finances and investments to maximize profitability and financial success."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "You have strong analytical and financial management abilities."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "You enjoy working with financial data and numbers to make informed decisions."
+		},
+		{
+			"title": "Setting",
+			"icon": "skills-icon",
+			"content": "You may enjoy working at a financial institution or investment firm."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "You have probably taken courses in finance, economics, or accounting. "
+		},
+		{
+			"title": "Experience",
+			"icon": "skills-icon",
+			"content": "Your work experience may include financial analysis, budgeting, and managing investments. "
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"stats": [
+		{
+			"number": "8%",
+			"title": "Growth",
+			"description": "in employment of business-related occupations over the next decade"
+		},
+		{
+			"number": "$76K",
+			"title": "Median Salary",
+			"description": "for business and financial occupations, ranging from $50K to $96K"
+		},
+		{
+			"number": "911K",
+			"title": "Job Openings",
+			"description": "predicted annually over the next decade in business and financial occupations"
+		}
+	],
+	"degreeTabs": {
+		"title": "What degree do I need for a <strong>financial career path?</strong>",
+		"description": "A career in finance demands a strong educational foundation. While starting with an undergraduate degree is common, furthering your education can open doors to advanced roles and opportunities.",
+		"degrees": [
+			{
+				"title": "Finance",
+				"content": "<p>A degree in Finance covers financial analysis, investment strategies, corporate finance, and financial management.</p><p>Example degrees: Master of Science in Finance (MSF), Master of Business Administration (MBA) with a specialization in Finance</p>"
+			},
+			{
+				"title": "Accounting",
+				"content": "<p>A degree in Accounting provides expertise in financial reporting, auditing, taxation, and managerial accounting.</p><p>Example degrees: Master of Accounting (MAcc), Master of Science in Accounting (MSA), Master of Business Administration (MBA) with a concentration in Accounting</p>"
+			},
+			{
+				"title": "Business Economics",
+				"content": "<p>A degree in Business Economics focuses on applying economic principles to business decision-making and financial analysis.</p><p>Example degrees: Master of Business Economics (MBE), Master of Science in Business Economics, Master of Arts in Economics</p>"
+			},
+			{
+				"title": "Banking and Financial Support Services",
+				"content": "<p>A degree in Banking and Financial Support Services prepares individuals for roles in banking operations and financial services.</p><p>Example degrees: Master of Banking and Financial Services (MBFS), Master of Financial Services Management (MFSM), Master of Business Administration (MBA) with a focus on Banking</p>"
+			},
+			{
+				"title": "Investments and Securities",
+				"content": "<p>A degree in Investments and Securities emphasizes understanding financial markets and managing investment portfolios.</p><p>Example degrees: Master of Science in Investments and Securities, Master of Finance with a concentration in Investments, Master of Business Administration (MBA) with a specialization in Investments</p>"
+			},
+			{
+				"title": "Taxation",
+				"content": "<p>A degree in Taxation provides expertise in tax laws and regulations for individuals and businesses.</p><p>Example degrees: Master of Taxation (MTax), Master of Science in Taxation, Master of Business Administration (MBA) with a concentration in Taxation</p>"
+			}
+		]
+	},
+	"careerPaths": {
+		"title": "What kind of career is a good fit for me?",
+		"description": "Occupations that align with The Money Maestro's career path involve financial analysis, management, and decision-making.",
+		"paths": [
+			{
+				"title": "Financial Analyst",
+				"description": "Analyze financial data and provide recommendations for investments and financial decisions.",
+				"imagePath": "/images/financial-analyst.jpg"
+			},
+			{
+				"title": "Investment Banker",
+				"description": "Assist companies with raising capital and provide financial advice.",
+				"imagePath": "/images/investment-banker.jpg"
+			},
+			{
+				"title": "Accountant",
+				"description": "Prepare and examine financial records and ensure compliance with regulations.",
+				"imagePath": "/images/accountant.jpg"
+			},
+			{
+				"title": "Risk Manager",
+				"description": "Identify and manage financial risks for organizations.",
+				"imagePath": "/images/risk-manager.jpg"
+			}
+		]
+	},
+	"textWithImage": {
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can secure your financial future with an MBA specializing in Finance that arms you with advanced financial analysis, investment knowledge, and risk-management skills.</p><p>Alternatively, a Master's in Accounting can refine your expertise in financial reporting and analysis, ensuring accurate financial decisions.</p><p>While both paths delve into finance, the MBA offers a broader skill set for roles beyond accounting, making it the prime choice for The Money Maestro aspiring to lead financial strategies and business growth.</p>",
+		"imagePath": "/images/ceo.jpg"
+	}
+}

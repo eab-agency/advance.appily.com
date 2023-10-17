@@ -1,50 +1,103 @@
-import React from 'react';
-import Form from '@/components/Form';
-import Link from 'next/link';
+import Form from "@/components/Form";
+import Link from "next/link";
 
-import styles from '@/styles/global/layouts/Results.module.scss';
-import isDevMode from '@/helpers/isDevMode';
+import isDevMode from "@/helpers/isDevMode";
+import styles from '@/styles/components/Results.module.scss';
 
-const Results = ({ personality, description, title, answers, children }) => {
-    const devModeOnly = isDevMode();
-    return (
-        <div className={styles['results-container']}>
-            <span className="intro-title">Your ideal role is ...</span>
-            <div className={styles.role}>
-                {/* Results: {personality} */}
-                <h2 className={styles.roleTitle}>{title}</h2>
-                <p>{description}</p>
-            </div>
+const Results = ({ children, vertical, answers, formId }) => {
+  const formSubmitAnswers = {
+    answers: answers.selectedAnswers,
+    highestScorePersonality: answers.highestScorePersonality,
+  };
+  const devModeOnly = isDevMode();
 
-            <div className={styles.engage}>
-                <div className={styles.engageCopy}>
-                    <p>
-                        Learn why we thought this role could be a good fit for
-                        you! Then, discover <strong>related careers</strong>,
-                        average <strong>salaries</strong> and job outlook, and{' '}
-                        <strong>academic programs</strong> that can help you
-                        reach your goals faster.
-                    </p>
-                </div>
-                <div className={styles.Form}>
-                    <h2>Where should we send your results?</h2>
-                    <Form
-                        redirectTo={`/careers/healthcare/${personality}`}
-                        answers={answers}
-                        user={null}
-                        id="2"
-                        className={styles.formContainer}
-                    />
-                    {devModeOnly && (
-                        <Link href={`/careers/healthcare/${personality}`}>
-                            Skip form (only shows in dev mode)
-                        </Link>
-                    )}
-                </div>
-                {children}
-            </div>
+  const roleResult = () => {
+    switch (answers.highestScorePersonality) {
+
+      // Business
+      case 'creative-marketer':
+        return 'The Creative Marketer';
+
+      case 'fearless-leader':
+        return 'The Fearless Leader';
+
+      case 'people-person':
+        return 'The People Person';
+
+      case 'money-maestro':
+        return 'The Money Maestro';
+
+      case 'computer-whiz':
+        return 'The Computer Whiz';
+
+      case 'self-starter':
+        return 'The Self Starter';
+
+      // Healthcare
+      case 'executive':
+        return 'The Executive';
+      case 'practitioner':
+        return 'The Practitioner';
+      case 'educator':
+        return 'The Educator';
+      case 'analyst':
+        return 'The Analyst';
+      case 'scientist':
+        return 'The Scientist';
+
+      default:
+        return 'Unknown Personality';
+    }
+  }
+
+  return (
+    <>
+    <div className="preResultsContainer">
+      <section className="resultsHero">
+        <div className="group">
+          <div className="heroContent column">
+            <div className="intro-title"><span>Your ideal role could be ... </span></div>
+            <h1>{roleResult()}</h1>
+            <p>
+              Learn why we thought this role could be a good fit for you! Then,
+              discover <strong>related careers</strong>, average{" "}
+              <strong>salaries</strong> and job outlook, and{" "}
+              <strong>academic programs</strong> that can help you reach your
+              goals faster.
+            </p>
+            <p>Furthermore, understanding the average salaries and job outlook associated with this position can offer valuable insights into the financial aspects of your career. It's essential to have a clear understanding of the earning potential and growth opportunities that come with this role. This knowledge will empower you to make informed decisions about your career trajectory, ensuring that you're on a path that aligns with both your professional and financial goals. Additionally, it provides a benchmark for negotiating compensation packages, ensuring that you receive fair and competitive remuneration for your contributions.</p>
+
+<p>Lastly, exploring academic programs tailored to this field can significantly accelerate your progress towards achieving your career objectives. Pursuing specialized courses, workshops, or certifications can enhance your skill set and make you a more competitive candidate in the job market. Additionally, these programs often provide networking opportunities and access to industry experts, further enriching your professional development. By investing in your education, you not only broaden your knowledge base but also demonstrate a strong commitment to continuous learning and growth, qualities highly valued in any industry.</p>
+          </div>
         </div>
-    );
+      </section>
+    </div>
+
+      <div className="engageForm">
+        <div className="formWrapper">
+
+          <div className="leadForm">
+            <h2>Where should we send your results?</h2>
+            <Form
+              redirectTo={`/careers/${vertical}/${answers.highestScorePersonality}`}
+              answers={formSubmitAnswers}
+              user={null}
+              id={formId || "2"}
+              className={styles.formContainer}
+            />
+            {devModeOnly && (
+              <Link
+                href={`/careers/${vertical}/${answers.highestScorePersonality}`}
+              >
+                Skip form (only shows in dev mode)
+              </Link>
+            )}
+          </div>
+          {children}
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Results;

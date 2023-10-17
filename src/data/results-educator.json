@@ -1,0 +1,70 @@
+{
+	"slug": "educator",
+	"title": "Educator",
+	"description": "You have a passion for teaching and sharing knowledge with others. You are patient, empathetic, and have a talent for explaining complex ideas in simple terms.",
+	"detailedDescription": "You’re a lifelong learner who likes to help others better understand a subject you’re passionate about. You may have a deep specialized knowledge in a health field you’re eager to share with future medical professionals—or you may want to educate entire communities on public health topics. You may have a background in patient care or education and want to share your talents to make a lasting difference.",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "The Educator likes to teach others and give them the tools to help themselves."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "This role is skilled at breaking down big ideas so others can learn. They’re good at analyzing information to inform big-picture problem solving."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "Careers in The Educator’s path often work with community residents, aspiring health care professionals, or people with disabilities."
+		},
+		{
+			"title": "Setting",
+			"icon": "skills-icon",
+			"content": "A government agency, nonprofit,  university or family services organization are common workplaces for The Educator."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "Jobs in this field often require college courses in things like education, public health, ethics, or a language. Roles require a bachelor’s or master’s degree."
+		},
+		{
+			"title": "Experience",
+			"icon": "skills-icon",
+			"content": "People with experience working in education, health care, or with a community organization tend to be a good fit for The Educator’s career path."
+		}
+	],
+	"statsSource": "",
+	"stats": [
+		{
+			"number": "12%",
+			"title": "Growth",
+			"description": "In employment of health education specialists and community health workers over the next decade"
+		},
+		{
+			"number": "$60K",
+			"title": "Median Salary",
+			"description": "For health education specialists, $46K for community health workers, and $102K for medical educators"
+		},
+		{
+			"number": "16K",
+			"title": "Job Openings",
+			"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
+		}
+	],
+	"degreeTabs": [
+		{
+			"title": "Master's",
+			"content": "<p>If you do have a bachelor’s degree and want to further specialize your studies, these are some popular master’s in the health education field:</p><ul><li><strong>Master’s in Health Education and Promotion:</strong> This can prepare you for leadership positions in academic, clinical, community, or corporate settings, such as a community health coordinator or wellness coach.</li><li><strong>Master of Public Health (MPH):</strong> The MPH is professional degree that gives you tools to impact public health in careers such as a public health educator, clinical research coordinator, epidemiologist, or health policy analyst.</li><li><strong>Master of Science in Public Health:</strong> This is more of an academic research degree that will prepare you for doctoral studies.</li><li><strong>Master of Medical Sciences in Medical Education:</strong> This type of program teaches things like the science of learning, curriculum development, and adult learning theories as well as training on current tools and research relevant to the field you’d be teaching.</li></ul> <p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and education.</p>"
+		},
+		{
+			"title": "Doctoral",
+			"content": "<p>If you’re interested in teaching future medical professionals, <strong>a PhD in Health Professions Education (HPEd</strong> program and prepare clinicians and other health professionals without a research degree to make contributions to the scholarship of teaching and learning.</p><p>A <strong>Doctor of Education (EdD) in Health Education</strong> could also be a good fit for those interested leadership roles related to advocacy and policy development, administrative leadership in organizations providing appropriate care to communities, and university roles that train the next generation of health education specialists, community health educators, and public health professionals.</p>"
+		},
+		{
+			"title": "Bachelor's",
+			"content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Education or Health Promotion.</strong> You can often earn these degrees online. Employers may also accept bachelor’s degrees in business, social science, or other health care related fields.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and education.</p>"
+		}
+	]
+}

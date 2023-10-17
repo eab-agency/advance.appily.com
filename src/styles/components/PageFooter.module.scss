@@ -1,0 +1,128 @@
+@use "@/styles/global/tokens";
+
+.pageFooter {
+  display: block;
+  background-color: var(--c-navy-700);
+  margin-block: auto 0;
+  padding-inline: clamp(tokens.$padding-m, 5vw, tokens.$padding-l);
+  padding-block: 4em;
+  position: relative;
+  z-index: tokens.$layer-3;
+  border-top: tokens.$borderWidth-s solid var(--c-teal-700);
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    max-width: tokens.$mq-1300;
+    margin: 0 auto;
+    gap: tokens.$size-4;
+
+    @media (min-width: tokens.$mq-800) {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: var(--c-white);
+  }
+
+  a {
+    color: var(--c-teal-500);
+  }
+
+  ul {
+    display: flex;
+    gap: tokens.$size-4;
+    list-style: none;
+    margin: 1em 0 0 0;
+
+    li {
+      .helpPrivBtn {
+        gap: 0.5em;
+        font-size: tokens.$size-3;
+        background: none;
+        color: var(--c-teal-600);
+        border: none;
+      }
+
+      &:first-child {
+        // border-left: 1px solid tokens.$c-blue-500;
+      }
+    }
+  }
+}
+
+.logo {
+  display: block;
+  position: relative;
+  width: 8rem;
+  height: 2.5em;
+
+  img {
+    object-fit: contain;
+  }
+}
+
+.legalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$size-2;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: tokens.$size-1;
+    margin-bottom: 3em;
+
+    li {
+      a {
+        font-size: tokens.$size-3;
+        color: var(--c-teal-500);
+
+        &:hover {
+          color: var(--c-orange-500);
+        }
+      }
+    }
+  }
+
+  .copyright {
+    p {
+      font-size: tokens.$size-3;
+    }
+  }
+}
+
+.privacyButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: tokens.$size-3;
+  background: none;
+  border-radius: 0;
+  color: var(--c-teal-500);
+  border: none;
+  padding: 0;
+  font-weight: tokens.$fontWeight-light;
+  text-decoration: underline;
+  font-family: tokens.$f-sans;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  span {
+    padding: 0.3em 0;
+  }
+
+  &:hover {
+    text-decoration: underline dashed;
+    color: var(--c-orange-500);
+  }
+}

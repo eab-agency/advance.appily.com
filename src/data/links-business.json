@@ -1,0 +1,28 @@
+{
+	"results": [
+		{
+			"href": "fearless-leader",
+			"label": "The Fearless Leader"
+		},
+		{
+			"href": "creative-marketer",
+			"label": "The Creative Marketer"
+		},
+		{
+			"href": "money-maestro",
+			"label": "The Money Maestro"
+		},
+		{
+			"href": "self-starter",
+			"label": "The Self-Starter"
+		},
+		{
+			"href": "computer-whiz",
+			"label": "The Computer Whiz"
+		},
+		{
+			"href": "people-person",
+			"label": "The People Person"
+		}
+	]
+}

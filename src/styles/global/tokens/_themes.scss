@@ -1,0 +1,252 @@
+@use "sass:color";
+@use "sass:map";
+@use "colors";
+
+// =====================================
+// Color Shades
+
+$black: (
+  900: colors.$c-black,
+  800: color.adjust(colors.$c-black, $lightness: 10%),
+  700: color.adjust(colors.$c-black, $lightness: 20%),
+  600: color.adjust(colors.$c-black, $lightness: 30%),
+  500: color.adjust(colors.$c-black, $lightness: 40%),
+  400: color.adjust(colors.$c-black, $lightness: 50%),
+  300: color.adjust(colors.$c-black, $lightness: 60%),
+  200: color.adjust(colors.$c-black, $lightness: 70%),
+  100: color.adjust(colors.$c-black, $lightness: 80%),
+  50: color.adjust(colors.$c-black, $lightness: 90%)
+);
+
+$orange: (
+  900: color.adjust(colors.$c-orange, $lightness: -40%),
+  800: color.adjust(colors.$c-orange, $lightness: -30%),
+  700: color.adjust(colors.$c-orange, $lightness: -20%),
+  600: color.adjust(colors.$c-orange, $lightness: -10%),
+  500: colors.$c-orange,
+  400: color.adjust(colors.$c-orange, $lightness: 10%),
+  300: color.adjust(colors.$c-orange, $lightness: 20%),
+  200: color.adjust(colors.$c-orange, $lightness: 30%),
+  100: color.adjust(colors.$c-orange, $lightness: 40%),
+  50: color.adjust(colors.$c-orange, $lightness: 50%)
+);
+
+$slateGray: (
+  900: color.adjust(colors.$c-slateGray, $lightness: -10%),
+  800: color.adjust(colors.$c-slateGray, $lightness: -5%),
+  700: colors.$c-slateGray,
+  600: color.adjust(colors.$c-slateGray, $lightness: 10%),
+  500: color.adjust(colors.$c-slateGray, $lightness: 20%),
+  400: color.adjust(colors.$c-slateGray, $lightness: 30%),
+  300: color.adjust(colors.$c-slateGray, $lightness: 40%),
+  200: color.adjust(colors.$c-slateGray, $lightness: 50%),
+  100: color.adjust(colors.$c-slateGray, $lightness: 80%),
+  50: color.adjust(colors.$c-slateGray, $lightness: 90%)
+);
+
+$yellow: (
+  900: color.adjust(colors.$c-yellow, $lightness: -50%),
+  800: color.adjust(colors.$c-yellow, $lightness: -40%),
+  700: color.adjust(colors.$c-yellow, $lightness: -30%),
+  600: color.adjust(colors.$c-yellow, $lightness: -20%),
+  500: color.adjust(colors.$c-yellow, $lightness: -10%),
+  400: colors.$c-yellow,
+  300: color.adjust(colors.$c-yellow, $lightness: 10%),
+  200: color.adjust(colors.$c-yellow, $lightness: 15%),
+  100: color.adjust(colors.$c-yellow, $lightness: 20%),
+  50: color.adjust(colors.$c-yellow, $lightness: 30%)
+);
+
+$teal: (
+  900: color.adjust(colors.$c-teal, $lightness: -30%),
+  800: color.adjust(colors.$c-teal, $lightness: -20%),
+  700: color.adjust(colors.$c-teal, $lightness: -10%),
+  600: colors.$c-teal,
+  500: color.adjust(colors.$c-teal, $lightness: 10%),
+  400: color.adjust(colors.$c-teal, $lightness: 20%),
+  300: color.adjust(colors.$c-teal, $lightness: 30%),
+  200: color.adjust(colors.$c-teal, $lightness: 40%),
+  100: color.adjust(colors.$c-teal, $lightness: 50%),
+  50: color.adjust(colors.$c-teal, $lightness: 60%)
+);
+
+$navy: (
+  900: color.adjust(colors.$c-navy, $lightness: -10%),
+  800: color.adjust(colors.$c-navy, $lightness: -5%),
+  700: color.adjust(colors.$c-navy, $lightness: -2%),
+  600: colors.$c-navy,
+  500: color.adjust(colors.$c-navy, $lightness: 10%),
+  400: color.adjust(colors.$c-navy, $lightness: 30%),
+  300: color.adjust(colors.$c-navy, $lightness: 50%),
+  200: color.adjust(colors.$c-navy, $lightness: 70%),
+  100: color.adjust(colors.$c-navy, $lightness: 90%),
+  50: color.adjust(colors.$c-navy, $lightness: 95%)
+);
+
+$violet: (
+  900: colors.$c-violet,
+  800: color.adjust(colors.$c-violet, $lightness: -30%),
+  700: color.adjust(colors.$c-violet, $lightness: -20%),
+  600: color.adjust(colors.$c-violet, $lightness: -10%),
+  500: colors.$c-violet,
+  400: color.adjust(colors.$c-violet, $lightness: 10%),
+  300: color.adjust(colors.$c-violet, $lightness: 20%),
+  200: color.adjust(colors.$c-violet, $lightness: 30%),
+  100: color.adjust(colors.$c-violet, $lightness: 40%),
+  50: color.adjust(colors.$c-violet, $lightness: 45%)
+);
+
+// =====================================
+
+$texts: (
+  dark: (
+    "headingPrimary": colors.$c-white,
+    "headingSecondary": map.get($teal, 500),
+    "headingTertiary": map.get($teal, 500),
+    "bodyPrimary": colors.$c-white,
+    "bodySecondary": map.get($teal, 400),
+    "linkPrimary": colors.$c-orange,
+    "linkHover": colors.$c-teal,
+    "accordionLink": map.get($teal, 400),
+    "accordionLinkHover": map.get($orange, 400),
+    "formLink": map.get($navy, 200),
+    "formLinkHover": map.get($orange, 400),
+    "tabsMainIcon": map.get($teal, 400)
+  ),
+  light: (
+    "headingPrimary": colors.$c-navy,
+    "headingSecondary": colors.$c-teal,
+    "headingTertiary": colors.$c-navy,
+    "bodyPrimary": colors.$c-black,
+    "bodySecondary": colors.$c-teal,
+    "linkPrimary": colors.$c-orange,
+    "linkHover": map.get($teal, 600),
+    "accordionLink": map.get($teal, 700),
+    "accordionLinkHover": map.get($orange, 600),
+    "formLink": map.get($navy, 400),
+    "formLinkHover": map.get($navy, 600),
+    "tabsMainIcon": map.get($navy, 200)
+  )
+);
+
+$backgrounds: (
+  dark: (
+    "bg1": colors.$c-navy,
+    "bg2": colors.$c-orange,
+    "bg3": colors.$c-teal,
+    "bg4": colors.$c-teal,
+    "bg5": map.get($navy, 500),
+    "bg6": colors.$c-navy,
+    "bg7": map.get($navy, 500),
+    "bg8": map.get($slateGray, 900),
+    "bg9": map.get($teal, 700),
+    "bg10": map.get($navy, 500),
+    "bg11": map.get($navy, 500),
+    "bg12": map.get($navy, 700),
+    "bg13": map.get($teal, 800),
+    "bg-body": map.get($navy, 600),
+    "button": colors.$c-orange,
+    "shadow1": colors.$c-yellow,
+    "shadow2": map.get($navy, 700),
+    "shadow3": map.get($violet, 400)
+  ),
+  light: (
+    "bg1": color.adjust(colors.$c-slateGray, $lightness: 72%),
+    "bg2": color.adjust(colors.$c-orange, $lightness: 40%),
+    "bg3": colors.$c-yellow,
+    "bg4": color.adjust(colors.$c-teal, $lightness: 50%),
+    "bg5": map.get($teal, 50),
+    "bg6": map.get($teal, 50),
+    "bg7": colors.$c-yellow,
+    "bg8": map.get($slateGray, 100),
+    "bg9": map.get($teal, 500),
+    "bg10": map.get($teal, 50),
+    "bg11": map.get($violet, 50),
+    "bg12": map.get($navy, 500),
+    "bg13": map.get($teal, 700),
+    "bg-body": colors.$c-white,
+    "shadow3": map.get($navy, 700)
+  )
+);
+
+$borders: (
+  dark: (
+    "border-1": colors.$c-orange,
+    "border-2": colors.$c-navy,
+    "border-3": colors.$c-teal,
+    "border-4": map.get($navy, 600),
+    "border-5": map.get($teal, 700),
+    "border-inputs": map.get($navy, 300)
+  ),
+  light: (
+    "border-1": map.get($orange, 300),
+    "border-2": map.get($navy, 300),
+    "border-3": map.get($teal, 500),
+    "border-4": map.get($navy, 100),
+    "border-inputs": map.get($teal, 600)
+  )
+);
+
+$miscellaneous: (
+  "error": #cc0000,
+  "success": #00e50b,
+  "warning": #ffb700,
+  "texture": colors.$c-slateGray,
+  "white": colors.$c-white,
+  "black": colors.$c-black
+);
+
+// =====================================
+
+:where(html) {
+  @each $shade, $color in $black {
+    --c-black-#{$shade}: #{$color};
+  }
+
+  @each $shade, $color in $orange {
+    --c-orange-#{$shade}: #{$color};
+  }
+
+  @each $shade, $color in $yellow {
+    --c-yellow-#{$shade}: #{$color};
+  }
+
+  @each $shade, $color in $teal {
+    --c-teal-#{$shade}: #{$color};
+  }
+
+  @each $shade, $color in $navy {
+    --c-navy-#{$shade}: #{$color};
+  }
+
+  @each $shade, $color in $violet {
+    --c-violet-#{$shade}: #{$color};
+  }
+  @each $shade, $color in $slateGray {
+    --c-slateGray-#{$shade}: #{$color};
+  }
+
+  $maps: $texts, $backgrounds, $borders;
+
+  @each $map in $maps {
+    @each $name, $color in map-get($map, dark) {
+      --c-#{$name}: #{$color};
+    }
+  }
+
+  @each $name, $color in $miscellaneous {
+    --c-#{$name}: #{$color};
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :where(html) {
+    $maps: $texts, $backgrounds, $borders;
+
+    @each $map in $maps {
+      @each $name, $color in map-get($map, light) {
+        --c-#{$name}: #{$color};
+      }
+    }
+  }
+}

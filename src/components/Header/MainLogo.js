@@ -3,14 +3,14 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import styles from "@/styles/global/components/MainLogo.module.scss";
+import styles from "@/styles/components/MainLogo.module.scss";
 
 export default function MainLogo() {
 	const [logo, setLogo] = useState(null);
 
 	useEffect(() => {
-		const logoLight = "/images/cappex-logo-light.svg";
-		const logoDark = "/images/cappex-logo-dark.svg";
+		const logoLight = "/images/appily-advance-logo-light.svg";
+		const logoDark = "/images/appily-advance-logo-dark.svg";
 
 		const matchColorMode = window.matchMedia("(prefers-color-scheme: dark)");
 
