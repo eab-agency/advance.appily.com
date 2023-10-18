@@ -2,7 +2,7 @@
 import peoplePerson from "@/assets/lotties/peoplePerson.json";
 import data from "@/data/results-people-person.json";
 import Lottie from "lottie-react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import {
 	CareerPaths,
@@ -23,7 +23,9 @@ export default function Page() {
 	const carouselRef = useRef(null);
 	const { results: links } = dataLinks;
 	const { setVertical } = useUser();
-	setVertical("Business");
+	useEffect(() => {
+		setVertical("Business");
+	}, []);
 
 	return (
 		<>
