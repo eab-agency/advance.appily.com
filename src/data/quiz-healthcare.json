@@ -237,7 +237,7 @@
 				},
 				{
 					"answer": "Nursing",
-					"personality": "analyst",
+					"personality": "practitioner",
 					"weight": 0
 				},
 				{
@@ -252,7 +252,7 @@
 				},
 				{
 					"answer": "Clinical Care",
-					"personality": "analyst",
+					"personality": "practitioner",
 					"weight": 0
 				},
 				{

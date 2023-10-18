@@ -89,6 +89,12 @@ export const getMatchedSchool = async (
 		arrayOfStates || ["VA", "KY", "MD", "NC", "TN", "WV"],
 		leadTypeId,
 	);
+	// console.log(
+	// 	"🚀 ~ cards by state and lead type and id:",
+	// 	cards,
+	// 	vertical,
+	// 	leadTypeId,
+	// );
 
 	// if cards is less than 5 then await fetchAllCards and append the results
 	if (cards && Array.isArray(cards) && cards.length < 5) {
@@ -96,12 +102,19 @@ export const getMatchedSchool = async (
 			arrayOfStates,
 			leadTypeId,
 		);
+		// console.log(
+		// 	"🚀 ~ remaining cards near states with leadtype/id:",
+		// 	allCards,
+		// 	vertical,
+		// 	leadTypeId,
+		// );
 		return shuffleArray([...cards, ...allCards]).slice(0, 5);
 	}
 
 	// if still no cards, fetch all cards
 	if (!cards) {
 		const allCards: CarouselCard[] = await fetchCarouselCards();
+		// console.log("🚀 ~ just grabbing any cards:", allCards);
 		return shuffleArray([...allCards]).slice(0, 5);
 	}
 

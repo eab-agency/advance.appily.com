@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import {
 	Accordion,
@@ -21,7 +21,9 @@ export default function Page() {
 	const carouselRef = useRef(null);
 	const { results: links } = dataLinks;
 	const { setVertical, vertical } = useUser();
-	setVertical("Health Care");
+	useEffect(() => {
+		setVertical("Health Care");
+	}, []);
 
 	return (
 		<>
