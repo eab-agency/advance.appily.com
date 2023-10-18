@@ -182,17 +182,29 @@
   }
 
   &:hover {
-    background: var(--c-teal-50);
-    color: var(--c-navy-800);
-    border-color: var(--c-teal-500);
-
-    &::before {
-      transform: scale(1) translateX(0.35em);
-    }
+    border-color: var(--c-orange-500);
+    background: var(--c-orange-50);
 
     &::after {
-      border-color: var(--c-malva-500);
-      transform: scale(1.2) translateX(0.35em);
+      border: 1px solid var(--c-orange-500);
+      transform: translateY(0);
+    }
+  }
+
+  @media (min-width: tokens.$mq-800) {
+    &:hover {
+      background: var(--c-teal-50);
+      color: var(--c-navy-800);
+      border-color: var(--c-teal-500);
+
+      &::before {
+        transform: scale(1) translateX(0.35em);
+      }
+
+      &::after {
+        border-color: var(--c-malva-500);
+        transform: scale(1.2) translateX(0.35em);
+      }
     }
   }
 }
