@@ -15,13 +15,15 @@ import dataLinks from "@/data/links-healthcare.json";
 import data from "@/data/results-educator.json";
 import styles from "@/styles/components/FinalPage.module.scss";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Page() {
 	const { results: links } = dataLinks;
 	const carouselRef = useRef(null);
 	const { setVertical, vertical } = useUser();
-	setVertical("Health Care");
+	useEffect(() => {
+		setVertical("Health Care");
+	}, []);
 
 	return (
 		<>

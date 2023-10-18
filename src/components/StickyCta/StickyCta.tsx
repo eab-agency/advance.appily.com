@@ -58,7 +58,7 @@ const StickyCta: React.FC<stickyProps> = ({ trackedElement }) => {
 		}
 	};
 
-	if (matchedSchools.length === 0 || !trackedElement) {
+	if (matchedSchools.length === 0) {
 		return null; // Return null to show nothing
 	}
 
