@@ -42,7 +42,7 @@ docs {
 
 export const CAROUSELCARDSNOTIN = `
 query CarouselCardsNotIn($state: [String] $lead: [String]) {
-  CarouselCards(where: {partnerState: { not_in: $state }, leadTypes: {in: $lead} } ) {
+  CarouselCards(limit: 4, where: {partnerState: { not_in: $state }, leadTypes: {in: $lead} } ) {
     ${CAROUSELQUERY}
 }
 `;
@@ -56,7 +56,7 @@ export const ALLCAROUSELCARDS = `
 
 export const CAROUSELCARDS = `
  query CarouselCards($state: [String], $lead: [String]) {
-  CarouselCards(where: {partnerState: { in: $state }, leadTypes: {in: $lead} } ) {
+  CarouselCards(limit: 5, where: {partnerState: { in: $state }, leadTypes: {in: $lead} } ) {
     ${CAROUSELQUERY}
 }
 `;
