@@ -94,7 +94,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 
 	const [utmSource, setUtmSource] = useState<any>(null);
 
-	const [vertical, setVertical] = useState<string>("business");
+	const [vertical, setVertical] = useState<string>("Business");
 
 	// check oneTrust.getGeolocation(), that returns an object of { country: 'US', region: 'CA' }, and set location
 	useEffect(() => {
