@@ -48,11 +48,9 @@
     background-color: var(--c-slateGray-100);
     font-family: tokens.$f-sans;
 
-    @media (pointer: coarse) {
-      &:hover {
-        border-color: var(--c-teal-700);
-        background: var(--c-teal-50);
-      }
+    &:hover {
+      border-color: var(--c-teal-700);
+      background: var(--c-teal-50);
     }
   }
 
