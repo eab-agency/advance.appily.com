@@ -23,7 +23,7 @@
 					"value": "Transfer"
 				},
 				{
-					"answer": "I am currently in school for an undergraduate business degree and wish to transfer.",
+					"answer": "I am not currently considering school or I am pursuing a non-business degree.",
 					"personality": "initial",
 					"weight": 1,
 					"value": "Other"
