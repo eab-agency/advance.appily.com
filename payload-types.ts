@@ -520,6 +520,7 @@ export interface Partner {
   slug?: string;
   updatedAt: string;
   createdAt: string;
+  _status?: 'draft' | 'published';
 }
 export interface CarouselCard {
   id: string;
@@ -548,6 +549,7 @@ export interface CarouselCard {
   image: string | Media;
   updatedAt: string;
   createdAt: string;
+  _status?: 'draft' | 'published';
 }
 export interface LeadType {
   id: string;
