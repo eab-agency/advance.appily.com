@@ -1,6 +1,36 @@
 {
 	"questions": [
 		{
+			"question": "Where are you in your educational journey?",
+			"associatedField": "education_journey__select1",
+			"answers": [
+				{
+					"answer": "I am considering a graduate-level business degree.",
+					"personality": "initial",
+					"weight": 1,
+					"value": "Graduate"
+				},
+				{
+					"answer": "I am exploring a business degree at the undergraduate level.",
+					"personality": "initial",
+					"weight": 1,
+					"value": "Bachelors"
+				},
+				{
+					"answer": "I am currently in school for an undergraduate business degree and wish to transfer.",
+					"personality": "initial",
+					"weight": 1,
+					"value": "Transfer"
+				},
+				{
+					"answer": "I am currently in school for an undergraduate business degree and wish to transfer.",
+					"personality": "initial",
+					"weight": 1,
+					"value": "Other"
+				}
+			]
+		},
+		{
 			"question": "At work, a primary motivator for me is...",
 			"associatedField": "education_journey",
 			"answers": [
@@ -213,6 +243,47 @@
 					"answer": "Managing teams, handling employee relations, and fostering collaboration.",
 					"personality": "people-person",
 					"weight": 1
+				}
+			]
+		},
+		{
+			"question": "We're curious how accurate your results are!<br /><strong>Which of these areas would most appeal to you?</strong>",
+			"associatedField": "area_of_interest",
+			"answers": [
+				{
+					"answer": "Executive & Leadership",
+					"personality": "fearless-leader",
+					"weight": 0
+				},
+				{
+					"answer": "Creative & Marketing",
+					"personality": "computer-marketer",
+					"weight": 0
+				},
+				{
+					"answer": "Operations, Project Management, & HR",
+					"personality": "people-person",
+					"weight": 0
+				},
+				{
+					"answer": "Information Technology & Analytics",
+					"personality": "computer-whiz",
+					"weight": 0
+				},
+				{
+					"answer": "Entrepreneurship",
+					"personality": "self-starter",
+					"weight": 0
+				},
+				{
+					"answer": "Finance, Accounting, & Economics",
+					"personality": "money-maestro",
+					"weight": 0
+				},
+				{
+					"answer": "International Business",
+					"personality": "fearless-leader",
+					"weight": 0
 				}
 			]
 		}
