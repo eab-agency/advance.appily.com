@@ -2,7 +2,7 @@
 	"questions": [
 		{
 			"question": "Where are you in your educational journey?",
-			"associatedField": "education_journey__select1",
+			"associatedField": "education_journey",
 			"answers": [
 				{
 					"answer": "I am considering a graduate-level business degree.",
@@ -32,7 +32,7 @@
 		},
 		{
 			"question": "At work, a primary motivator for me is...",
-			"associatedField": "education_journey",
+			"associatedField": "quizresponse1",
 			"answers": [
 				{
 					"answer": "Inspiring and leading others to achieve common goals and success.",
@@ -68,7 +68,7 @@
 		},
 		{
 			"question": "I prefer working...",
-			"associatedField": "quizresponse1",
+			"associatedField": "quizresponse2",
 			"answers": [
 				{
 					"answer": "Leading collaboratively with teams to achieve objectives.",
@@ -104,7 +104,7 @@
 		},
 		{
 			"question": "My ideal work setting is...",
-			"associatedField": "quizresponse2",
+			"associatedField": "quizresponse3",
 			"answers": [
 				{
 					"answer": "A dynamic and fast-paced corporate environment.",
@@ -140,7 +140,7 @@
 		},
 		{
 			"question": "My biggest professional strengths are...",
-			"associatedField": "quizresponse3",
+			"associatedField": "quizresponse4",
 			"answers": [
 				{
 					"answer": "Exceptional leadership and strategic decision-making.",
@@ -176,7 +176,7 @@
 		},
 		{
 			"question": "I have taken college courses in...",
-			"associatedField": "quizresponse4",
+			"associatedField": "quizresponse5",
 			"answers": [
 				{
 					"answer": "Business administration, management, or leadership.",
@@ -212,7 +212,7 @@
 		},
 		{
 			"question": "My professional experience includes...",
-			"associatedField": "quizresponse5",
+			"associatedField": "quizresponse6",
 			"answers": [
 				{
 					"answer": "Leadership roles, managing teams, and making critical decisions.",

@@ -16,6 +16,16 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 	const router = useRouter();
 	const { questions, score: initialScore } = quizData;
 
+	const randomizedQuestions = quizData.questions.map(question => {
+		if (question.associatedField.startsWith("quizresponse")) {
+			const randomizedAnswers = question.answers.sort(
+				() => Math.random() - 0.5,
+			);
+			return { ...question, answers: randomizedAnswers };
+		}
+		return question;
+	});
+
 	const [quizState, setQuizState] = useState({
 		currentQuestionIdx: 0,
 		selectedAnswers: [],
@@ -116,7 +126,7 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 						<div className="questions-container">
 							<Question
 								handleAnswer={handleAnswer}
-								question={questions[currentQuestionIdx]}
+								question={randomizedQuestions[currentQuestionIdx]}
 							/>
 						</div>
 					</div>

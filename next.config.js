@@ -41,11 +41,11 @@ const nextConfig = {
 		return [
 			{
 				source: "/api/submit:path*",
-				destination: "https://go.cappexhealth.com/form/submit:path*",
+				destination: "https://go.advance.appily.com/form/submit:path*",
 			},
 			{
 				source: "/api/acs/:slug",
-				destination: "https://go.cappexhealth.com/api/:slug",
+				destination: "https://go.advance.appily.com/api/:slug",
 			},
 		];
 	},

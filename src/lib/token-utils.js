@@ -1,4 +1,4 @@
-const tokenEndpoint = "https://go.cappexhealth.com/oauth/v2/token";
+const tokenEndpoint = "https://go.advance.appily.com/oauth/v2/token";
 const clientId = process.env.ACS_PUBLIC_KEY;
 const clientSecret = process.env.ACS_PRIVATE_KEY;
 let accessToken = null;
