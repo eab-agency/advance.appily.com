@@ -60,9 +60,10 @@ const nextConfig = {
 						value: "noindex",
 					},
 				],
-				source: "/:path*",
+				source: "/(career/healthcare|career/business)/:path*",
 			});
 		}
+
 		return headers;
 	},
 };
