@@ -2,31 +2,35 @@
 	"questions": [
 		{
 			"question": "Where are you in your educational journey?",
-			"associatedField": "education_journey",
+			"associatedField": "education_journey__select1",
 			"answers": [
 				{
 					"answer": "I am considering a graduate-level business degree.",
 					"personality": "initial",
 					"weight": 1,
-					"value": "Graduate"
+					"value": "3",
+					"label": "Graduate"
 				},
 				{
 					"answer": "I am exploring a business degree at the undergraduate level.",
 					"personality": "initial",
 					"weight": 1,
-					"value": "Bachelors"
+					"value": "2",
+					"label": "Bachelors"
 				},
 				{
 					"answer": "I am currently in school for an undergraduate business degree and wish to transfer.",
 					"personality": "initial",
 					"weight": 1,
-					"value": "Transfer"
+					"value": "2",
+					"label": "Transfer"
 				},
 				{
 					"answer": "I am not currently considering school or I am pursuing a non-business degree.",
 					"personality": "initial",
 					"weight": 1,
-					"value": "Other"
+					"value": "6",
+					"label": "Other"
 				}
 			]
 		},
@@ -252,36 +256,43 @@
 			"answers": [
 				{
 					"answer": "Executive & Leadership",
+					"value": "1",
 					"personality": "fearless-leader",
 					"weight": 0
 				},
 				{
 					"answer": "Creative & Marketing",
+					"value": "2",
 					"personality": "computer-marketer",
 					"weight": 0
 				},
 				{
 					"answer": "Operations, Project Management, & HR",
+					"value": "3",
 					"personality": "people-person",
 					"weight": 0
 				},
 				{
 					"answer": "Information Technology & Analytics",
+					"value": "4",
 					"personality": "computer-whiz",
 					"weight": 0
 				},
 				{
 					"answer": "Entrepreneurship",
+					"value": "5",
 					"personality": "self-starter",
 					"weight": 0
 				},
 				{
 					"answer": "Finance, Accounting, & Economics",
+					"value": "6",
 					"personality": "money-maestro",
 					"weight": 0
 				},
 				{
 					"answer": "International Business",
+					"value": "7",
 					"personality": "fearless-leader",
 					"weight": 0
 				}
