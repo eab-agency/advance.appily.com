@@ -72,6 +72,19 @@ export function formatFormDataForAppilyPartnerAPI(
 		}
 	}
 
+	if (formData.quiz_result && formData.formName) {
+		let appendedQuestion = "generic_microsite_persona_quiz";
+		if (formData.formName === "Business Quiz Form") {
+			appendedQuestion = "business_microsite_persona_quiz";
+		} else if (formData.formName === "Healthcare Quiz Form") {
+			appendedQuestion = "healthcare_microsite_persona_quiz";
+		}
+		questionAnswerForms.push({
+			question: appendedQuestion,
+			answers: [formData.quiz_result],
+		});
+	}
+
 	let studentQuestionAnswerForm: StudentQuestionAnswerForm | undefined;
 	if (questionAnswerForms.length > 0) {
 		studentQuestionAnswerForm = { questionAnswerForms };
@@ -102,12 +115,13 @@ export function formatFormDataForAppilyPartnerAPI(
 		},
 	};
 
-	if (formData.phone_number !== "") {
-		formattedData.phoneNumber = formData.phone_number;
-		formattedData.phoneCountryCode = "+1";
-		formattedData.tcpaConsent = formData.text_optin[0] !== "" ? "2" : "3";
-		formattedData.collegeIds = ["154095"];
-	}
+	// TODO: Uncomment this when we have a phone number field and TCPA finalized in partnerAPI
+	// if (formData.phone_number !== "") {
+	// 	formattedData.phoneNumber = formData.phone_number;
+	// 	formattedData.phoneCountryCode = "+1";
+	// 	formattedData.tcpaConsent = formData.text_optin[0] !== "" ? "2" : "3";
+	// 	formattedData.collegeIds = ["154095"];
+	// }
 
 	return formattedData;
 }

@@ -69,13 +69,15 @@ const AcquiaFormHandle = ({
 	const router = useRouter();
 
 	const onSubmit = async (values, { setSubmitting }) => {
-		// if values.text_optin is not checked, then clear out values.phone_number
-		if (!values.text_optin) {
-			values.phone_number = "";
-		}
+		// Create a copy of values and clear phone_number if text_optin is not checked
+		const updatedValues = {
+			...values,
+			phone_number: values.text_optin ? values.phone_number : "",
+		};
+
 		try {
 			const theFormData = {
-				...values,
+				...updatedValues,
 				formId: theForm.id,
 				formName: theForm.name,
 				messenger: 1,
@@ -107,9 +109,8 @@ const AcquiaFormHandle = ({
 				// Check if the second API request was successful
 				console.error("Network response was not ok for response2");
 			} else {
-				response2.json().then(data => {
-					console.log("Data response: ", data);
-				});
+				const data = await response2.json();
+				// console.log("Data response: ", data);
 			}
 
 			setSubmitting(false);
@@ -118,6 +119,7 @@ const AcquiaFormHandle = ({
 				!isDevMode() && router.push(redirectTo);
 			}
 		} catch (error) {
+			console.error(error);
 			setSubmitting(false);
 		}
 	};
@@ -147,7 +149,8 @@ const AcquiaFormHandle = ({
 								newFormValues[
 									answer.associatedField
 								] = `${answer.question} | ${answer.answer}`;
-							} else if (answer.associatedField === field.alias) {
+							}
+							if (answer.associatedField === field.alias) {
 								newFormValues[field.alias] = answer.value || answer.answer;
 							}
 						});
