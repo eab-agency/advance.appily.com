@@ -111,6 +111,7 @@
 	},
 	"textWithImage": {
 		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can secure your financial future with an MBA specializing in Finance that arms you with advanced financial analysis, investment knowledge, and risk-management skills.</p><p>Alternatively, a Master's in Accounting can refine your expertise in financial reporting and analysis, ensuring accurate financial decisions.</p><p>While both paths delve into finance, the MBA offers a broader skill set for roles beyond accounting, making it the prime choice for The Money Maestro aspiring to lead financial strategies and business growth.</p>",
-		"imagePath": "/images/ceo.jpg"
+		"imagePath": "/images/ceo.jpg",
+		"altText": "CEO at a restaurant"
 	}
 }
