@@ -105,12 +105,14 @@
 			{
 				"title": "Business Development Manager",
 				"description": "Identify and pursue new business opportunities to drive growth for a company.",
-				"imagePath": "/images/business-development-manager.jpg"
+				"imagePath": "/images/business-development-manager.jpg",
+				"altText": "CEO at a restaurant"
 			}
 		]
 	},
 	"textWithImage": {
 		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can forge your entrepreneurial path with an MBA in Entrepreneurship that hones your business acumen, innovation skills, and strategic planning.</p><p>Alternatively, a Master's in Small Business Management focuses on the intricacies of managing and growing small ventures.</p><p>While both paths cater to entrepreneurship, the MBA empowers you with a comprehensive grasp of business dynamics, making it the ideal choice for The Self-Starter aiming to navigate diverse challenges and steer startups to success.</p>",
-		"imagePath": "/images/ceo.jpg"
+		"imagePath": "/images/ceo.jpg",
+		"altText": "CEO at a restaurant"
 	}
 }

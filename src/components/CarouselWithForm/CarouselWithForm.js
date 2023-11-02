@@ -64,7 +64,7 @@ const CarouselWithForm = ({ formId = "4" }) => {
 							</div>
 							<Form
 								school={selectedSchool}
-								redirectTo={`${selectedSchool.links[0].link.url}?utm_source=appily_advance&utm_campaign=${vertical}}`}
+								redirectTo={`${selectedSchool.links[0].link.url}?utm_source=appily_advance&utm_campaign=${vertical}`}
 								user={user}
 								id={formId || "4"}
 							/>
