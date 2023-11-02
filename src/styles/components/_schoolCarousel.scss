@@ -71,9 +71,9 @@
   border-top-right-radius: 2em;
   border-bottom-right-radius: 2em;
 
-  // &::before {
-  //   transform: rotate(-180deg) translateX(50%);
-  // }
+  &::before {
+    transform: rotate(-180deg) translate(-50%, -50%);
+  }
 }
 .react-multiple-carousel__arrow--right {
   right: -1em !important;

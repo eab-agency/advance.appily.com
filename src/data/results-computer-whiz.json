@@ -111,6 +111,7 @@
 	},
 	"textWithImage": {
 		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can amplify your tech prowess with an MBA in Information Technology that merges business strategy with tech innovation, enhancing your analytical and managerial skills.</p><p>Alternatively, a Master's in Data Analytics dives deep into harnessing data insights for business decisions. Or a Master's in Management of Information Systems gets into the finer details of managing information technology and data.</p><p>While both paths revolve around technology, the MBA offers a broader spectrum of business knowledge, making it the prime choice for The Computer Whiz envisioning a dynamic role in bridging tech and business realms.</p>",
-		"imagePath": "/images/ceo.jpg"
+		"imagePath": "/images/ceo.jpg",
+		"altText": "CEO at a restaurant"
 	}
 }

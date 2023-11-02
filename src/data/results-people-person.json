@@ -111,6 +111,7 @@
 	},
 	"textWithImage": {
 		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can cultivate impactful workplaces with an MBA in Human Resources Management, where you'll master employee relations, talent acquisition, and organizational development. </p><p>Alternatively, a Master's in Project Management equips you to lead teams and projects efficiently.</p><p>While both paths center on people, the MBA provides a holistic approach to managing human capital and fostering organizational growth, making it the optimal choice for The People Person committed to creating thriving work environments.</p>",
-		"imagePath": "/images/ceo.jpg"
+		"imagePath": "/images/ceo.jpg",
+		"altText": "CEO at a restaurant"
 	}
 }
