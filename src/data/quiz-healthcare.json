@@ -8,25 +8,27 @@
 					"answer": "I am considering a graduate-level health care degree.",
 					"personality": "initial",
 					"weight": 1,
-					"value": "Graduate"
+					"value": "3",
+					"label": "Graduate"
 				},
 				{
 					"answer": "I am exploring a health care degree at the undergraduate level.",
 					"personality": "initial",
 					"weight": 1,
-					"value": "Bachelors"
+					"value": "2",
+					"label": "Bachelors"
 				},
 				{
 					"answer": "I am currently in school for an undergraduate health care degree and wish to transfer.",
 					"personality": "initial",
-					"weight": 1,
-					"value": "Transfer"
+					"value": "2",
+					"label": "Transfer"
 				},
 				{
 					"answer": "I am not currently considering school or I am pursuing a non-health care degree.",
 					"personality": "initial",
-					"weight": 1,
-					"value": "Other"
+					"value": "6",
+					"label": "Other"
 				}
 			]
 		},
@@ -222,41 +224,49 @@
 			"answers": [
 				{
 					"answer": "Diagnostic Services",
+					"value": "2",
 					"personality": "analyst",
 					"weight": 0
 				},
 				{
 					"answer": "Health Services Management",
+					"value": "4",
 					"personality": "executive",
 					"weight": 0
 				},
 				{
 					"answer": "Public Health",
+					"value": "6",
 					"personality": "educator",
 					"weight": 0
 				},
 				{
 					"answer": "Nursing",
+					"value": "1",
 					"personality": "practitioner",
 					"weight": 0
 				},
 				{
 					"answer": "Information Technology",
+					"value": "3",
 					"personality": "analyst",
 					"weight": 0
 				},
 				{
 					"answer": "Mental or Social Health",
+					"value": "5",
 					"personality": "analyst",
 					"weight": 0
 				},
 				{
 					"answer": "Clinical Care",
+					"value": "5",
 					"personality": "practitioner",
 					"weight": 0
 				},
 				{
 					"answer": "Research",
+					"value": "7",
 					"personality": "analyst",
 					"weight": 0
 				}
