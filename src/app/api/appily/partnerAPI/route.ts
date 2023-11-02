@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 		// );
 
 		const responseFromAppily = await fetch(
-			`${appilyAPI}/partner/v1/register-student`,
+			`${appilyAPI}/partner/v1/register-student/adult-learner`,
 			{
 				headers: {
 					"Content-Type": "application/json",
