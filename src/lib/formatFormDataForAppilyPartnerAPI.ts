@@ -110,7 +110,9 @@ export function formatFormDataForAppilyPartnerAPI(
 			levelOfDegreeSeekingId:
 				formData.education_journey__select1 ||
 				formData.education_journey__select,
-			modalityIds: [formData.preferred_modality],
+			modalityIds: formData.preferred_modality
+				? [formData.preferred_modality]
+				: [],
 			yearsOfWorkExperience: formData.years_of_work_experience,
 		},
 	};
