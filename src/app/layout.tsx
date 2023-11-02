@@ -67,6 +67,9 @@ export const metadata: Metadata = {
 	openGraph: mergeOpenGraph(),
 	twitter: mergeTwitter(),
 	description: "Resources for Students Returning to School",
+	verification: {
+		google: "S6f1L3wpKhuwsB28x34ztRdt-hXMYsNJ0xEsK9xHOEQ",
+	},
 	title: {
 		default: "Appily Advance",
 		template: "%s | Appily Advance",
