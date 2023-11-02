@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
 
+import { useUser } from "@/context/context";
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { useUser } from '@/context/context'
 import isDevMode from "@/helpers/isDevMode";
@@ -36,10 +37,7 @@ const AcquiaFormHandle = ({
 	const [theForm, setTheForm] = useState(null);
 	const [theFields, setTheFields] = useState([]);
 
-	// const { location, setFormData, formData } = useUser()
-	const location = {
-		region_iso_code: "",
-	};
+	const { location } = useUser();
 
 	const [formData, setFormData] = useState({});
 
@@ -71,37 +69,49 @@ const AcquiaFormHandle = ({
 	const router = useRouter();
 
 	const onSubmit = async (values, { setSubmitting }) => {
-		// if values.text_optin is not checked, then clear out values.phone_number
-		if (!values.text_optin) {
-			values.phone_number = "";
-		}
+		// Create a copy of values and clear phone_number if text_optin is not checked
+		const updatedValues = {
+			...values,
+			phone_number: values.text_optin ? values.phone_number : "",
+		};
+
 		try {
 			const theFormData = {
-				...values,
+				...updatedValues,
 				formId: theForm.id,
 				formName: theForm.name,
 				messenger: 1,
-				ip_address_state: location.region_iso_code,
+				state1: location.region_iso_code,
 			};
+			// console.log("🚀🚀🚀 ~ file: Form.js:80- theFormData:", theFormData);
 
-			await fetch(`/api/submit?formId=${theForm.id}`, {
+			// Make the first API request to ACS
+			const response1 = await fetch(`/api/submit?formId=${theForm.id}`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({ mauticform: theFormData }),
-			})
-				.then(res => {
-					if (res.ok) {
-						setFormData(theFormData);
-						setIsSent(true);
-					} else {
-						throw new Error("Network response was not ok");
-					}
-				})
-				.catch(err => {
-					console.log("err", err);
-				});
+			});
+
+			if (!response1.ok) {
+				// Check if the first API request was successful
+				throw new Error("Network response was not ok");
+			}
+
+			// Make the second API request
+			const response2 = await fetch("/api/appily/partnerAPI", {
+				method: "POST",
+				body: JSON.stringify(theFormData),
+			});
+
+			if (!response2.ok) {
+				// Check if the second API request was successful
+				console.error("Network response was not ok for response2");
+			} else {
+				const data = await response2.json();
+				// console.log("Data response: ", data);
+			}
 
 			setSubmitting(false);
 			// Redirect to the specified path on successful form submission
@@ -109,6 +119,7 @@ const AcquiaFormHandle = ({
 				!isDevMode() && router.push(redirectTo);
 			}
 		} catch (error) {
+			console.error(error);
 			setSubmitting(false);
 		}
 	};
@@ -138,8 +149,9 @@ const AcquiaFormHandle = ({
 								newFormValues[
 									answer.associatedField
 								] = `${answer.question} | ${answer.answer}`;
-							} else if (answer.associatedField === field.alias) {
-								newFormValues[field.alias] = answer.answer;
+							}
+							if (answer.associatedField === field.alias) {
+								newFormValues[field.alias] = answer.value || answer.answer;
 							}
 						});
 					}
