@@ -289,12 +289,6 @@
           "value": "13",
           "personality": "money-maestro",
           "weight": 0
-        },
-        {
-          "answer": "International Business",
-          "value": "8",
-          "personality": "fearless-leader",
-          "weight": 0
         }
       ]
     }
