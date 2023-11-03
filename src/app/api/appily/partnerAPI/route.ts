@@ -21,10 +21,12 @@ export async function POST(request: Request) {
 		formattedData.partnerExternalId = partnerExternalId || "";
 		formattedData.programExternalId = programExternalId || "";
 		formattedData.partnerKey = partnerKey || "";
-		// console.log(
-		// 	"🚀 ~ file: route.ts:25 ~ POST ~ formattedData:",
-		// 	JSON.stringify(formattedData),
-		// );
+		if (process.env.NODE_ENV === "development") {
+			console.log(
+				"🚀 ~ file: route.ts:25 ~ POST ~ formattedData:",
+				JSON.stringify(formattedData),
+			);
+		}
 
 		const responseFromAppily = await fetch(
 			`${appilyAPI}/partner/v1/register-student/adult-learner`,
