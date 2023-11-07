@@ -30,14 +30,11 @@ const AcquiaFormHandle = ({
 }) => {
 	// keep track of whether the form has been submitted
 	const [isSent, setIsSent] = useState(false);
-
+	const [fieldsProcessed, setFieldsProcessed] = useState(false);
 	const { data: acsForm, error } = useForm(id);
-	console.log("🚀 ~ file: Form.js:35 ~ error:", error);
-	console.log("🚀 ~ file: Form.js:35 ~ acsForm:", acsForm);
 
-	if (error) return <p>Error loading form.</p>;
-	if (!acsForm) return <p className="loading">Loading...</p>;
-
+	const { utmSource } = useUser();
+	// const { utmSource } = {};
 	const [formValues, setFormValues] = useState({});
 
 	const [theForm, setTheForm] = useState(null);
@@ -46,6 +43,73 @@ const AcquiaFormHandle = ({
 	const { location } = useUser();
 
 	const [formData, setFormData] = useState({});
+
+	useEffect(() => {
+		if (acsForm) {
+			const { fields, ...otherFormProps } = acsForm.form;
+			// const modifiedFields = modifyFields(fields);
+			// setTheFields(modifiedFields);
+			setTheFields(fields);
+			setTheForm(otherFormProps);
+		}
+	}, [acsForm]);
+
+	useEffect(() => {
+		// console.log('theFields', theFields);
+		if (theFields.length > 0 && !fieldsProcessed) {
+			// console.log('🚨 the fields', theFields);
+			const newFormValues = {};
+			theFields.forEach(field => {
+				if (field.alias === "quiz_result") {
+					newFormValues[field.alias] = answers.highestScorePersonality;
+				} else if (field.alias === "paid_social_source_of_con") {
+				} else if (field.alias === "school_carousel") {
+					newFormValues[field.alias] = school.title;
+				} else {
+					newFormValues[field.alias] = field.defaultValue || "";
+					if (answers.answers) {
+						answers.answers.forEach(answer => {
+							if (answer.associatedField.startsWith("quizresponse")) {
+								newFormValues[
+									answer.associatedField
+								] = `${answer.question} | ${answer.answer}`;
+							}
+							if (answer.associatedField === field.alias) {
+								newFormValues[field.alias] = answer.value || answer.answer;
+							}
+						});
+					}
+				}
+				if (user) {
+					if (field.alias === "preferred_email") {
+						newFormValues[field.alias] = user.email;
+					} else if (field.alias === "first_name") {
+						newFormValues[field.alias] = user.fname;
+					} else if (field.alias === "last_name") {
+						newFormValues[field.alias] = user.lname;
+					}
+				}
+			});
+			setFormValues(prev => ({
+				...prev,
+				...newFormValues,
+			}));
+
+			setFieldsProcessed(true);
+		}
+	}, [
+		answers.answers,
+		answers.highestScorePersonality,
+		theFields,
+		user,
+		fieldsProcessed,
+		school,
+		utmSource,
+		answers.areaOfInterest,
+	]);
+
+	if (error) return <p>Error loading form.</p>;
+	if (!acsForm) return <p className="loading">Loading...</p>;
 
 	const modifyFields = fields =>
 		fields.map(
@@ -62,15 +126,6 @@ const AcquiaFormHandle = ({
 				// }
 				field,
 		);
-
-	useEffect(() => {
-		if (acsForm) {
-			const { fields, ...otherFormProps } = acsForm.form;
-			const modifiedFields = modifyFields(fields);
-			setTheFields(modifiedFields);
-			setTheForm(otherFormProps);
-		}
-	}, [acsForm]);
 
 	const router = useRouter();
 
@@ -131,64 +186,6 @@ const AcquiaFormHandle = ({
 	};
 
 	const initialValues = { ...formData };
-
-	const [fieldsProcessed, setFieldsProcessed] = useState(false);
-	// const { utmSource } = useUser()
-	const { utmSource } = {};
-
-	useEffect(() => {
-		// console.log('theFields', theFields);
-		if (theFields.length > 0 && !fieldsProcessed) {
-			// console.log('🚨 the fields', theFields);
-			const newFormValues = {};
-			theFields.forEach(field => {
-				if (field.alias === "quiz_result") {
-					newFormValues[field.alias] = answers.highestScorePersonality;
-				} else if (field.alias === "paid_social_source_of_con") {
-				} else if (field.alias === "school_carousel") {
-					newFormValues[field.alias] = school.title;
-				} else {
-					newFormValues[field.alias] = field.defaultValue || "";
-					if (answers.answers) {
-						answers.answers.forEach(answer => {
-							if (answer.associatedField.startsWith("quizresponse")) {
-								newFormValues[
-									answer.associatedField
-								] = `${answer.question} | ${answer.answer}`;
-							}
-							if (answer.associatedField === field.alias) {
-								newFormValues[field.alias] = answer.value || answer.answer;
-							}
-						});
-					}
-				}
-				if (user) {
-					if (field.alias === "preferred_email") {
-						newFormValues[field.alias] = user.email;
-					} else if (field.alias === "first_name") {
-						newFormValues[field.alias] = user.fname;
-					} else if (field.alias === "last_name") {
-						newFormValues[field.alias] = user.lname;
-					}
-				}
-			});
-			setFormValues(prev => ({
-				...prev,
-				...newFormValues,
-			}));
-
-			setFieldsProcessed(true);
-		}
-	}, [
-		answers.answers,
-		answers.highestScorePersonality,
-		theFields,
-		user,
-		fieldsProcessed,
-		school,
-		utmSource,
-		answers.areaOfInterest,
-	]);
 
 	// Assume `fields` is the array of form fields received from the API
 	const validationSchema = Yup.object().shape(
