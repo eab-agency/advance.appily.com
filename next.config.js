@@ -31,6 +31,10 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "advance.appily.com",
 			},
+			{
+				protocol: "https",
+				hostname: "amplifyapp.com",
+			},
 		],
 	},
 	sassOptions: {
