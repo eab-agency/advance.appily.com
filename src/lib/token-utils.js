@@ -5,6 +5,9 @@ let accessToken = null;
 let tokenExpiration = 0;
 
 async function fetchAccessToken() {
+	console.log("🚀 ~ file: token-utils.js:3 ~ clientId:", clientId);
+	console.log("🚀 ~ file: token-utils.js:5 ~ clientSecret:", clientSecret);
+
 	const tokenResponse = await fetch(tokenEndpoint, {
 		method: "POST",
 		headers: {

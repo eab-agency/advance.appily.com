@@ -54,7 +54,7 @@ const AcquiaFormHandle = ({
 				setTheFields(fields);
 				setTheForm(otherFormProps);
 			} else {
-				errors.map(error => console.log(error.message, error.type));
+				errors.map(error => console.error(error.message, error.type));
 			}
 		}
 	}, [acsForm]);
