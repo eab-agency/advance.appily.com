@@ -32,6 +32,10 @@ const AcquiaFormHandle = ({
 	const [isSent, setIsSent] = useState(false);
 
 	const { data: acsForm, error } = useForm(id);
+
+	if (error) return <p>Error loading form.</p>;
+	if (!acsForm) return <p className="loading">Loading...</p>;
+
 	const [formValues, setFormValues] = useState({});
 
 	const [theForm, setTheForm] = useState(null);
@@ -183,9 +187,6 @@ const AcquiaFormHandle = ({
 		utmSource,
 		answers.areaOfInterest,
 	]);
-
-	if (error) return <p>Error loading form.</p>;
-	if (!acsForm) return <p className="loading">Loading...</p>;
 
 	// Assume `fields` is the array of form fields received from the API
 	const validationSchema = Yup.object().shape(
