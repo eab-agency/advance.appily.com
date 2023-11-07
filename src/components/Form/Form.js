@@ -32,6 +32,8 @@ const AcquiaFormHandle = ({
 	const [isSent, setIsSent] = useState(false);
 
 	const { data: acsForm, error } = useForm(id);
+	console.log("🚀 ~ file: Form.js:35 ~ error:", error);
+	console.log("🚀 ~ file: Form.js:35 ~ acsForm:", acsForm);
 
 	if (error) return <p>Error loading form.</p>;
 	if (!acsForm) return <p className="loading">Loading...</p>;
