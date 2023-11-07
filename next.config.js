@@ -9,6 +9,10 @@ const nextConfig = {
 		// !! WARN !!
 		ignoreBuildErrors: true,
 	},
+	env: {
+		ACS_PUBLIC_KEY: process.env.ACS_PUBLIC_KEY,
+		ACS_PRIVATE_KEY: process.env.ACS_PRIVATE_KEY,
+	},
 	images: {
 		// add comment to test pull requests for amplify
 		minimumCacheTTL: 6000,
