@@ -10,6 +10,7 @@ const nextConfig = {
 		ignoreBuildErrors: true,
 	},
 	images: {
+		// add comment to test pull requests for amplify
 		minimumCacheTTL: 6000,
 		domains: ["localhost", process.env.NEXT_PUBLIC_CMS_URL],
 		remotePatterns: [
