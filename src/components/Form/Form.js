@@ -46,6 +46,7 @@ const AcquiaFormHandle = ({
 
 	useEffect(() => {
 		if (acsForm) {
+			console.log("🚀 ~ file: Form.js:49 ~ useEffect ~ acsForm:", acsForm);
 			const { form, error } = acsForm;
 			if (form) {
 				const { fields, ...otherFormProps } = form;
@@ -55,7 +56,7 @@ const AcquiaFormHandle = ({
 				setTheForm(otherFormProps);
 			} else {
 				// Handle the error case if needed
-				console.error("Error:", error);
+				console.log("Error:", error);
 			}
 		}
 	}, [acsForm]);
