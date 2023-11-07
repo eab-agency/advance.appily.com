@@ -46,6 +46,7 @@ const AcquiaFormHandle = ({
 
 	useEffect(() => {
 		if (acsForm) {
+			console.log("🚀 ~ file: Form.js:49 ~ useEffect ~ acsForm:", acsForm);
 			const { fields, ...otherFormProps } = acsForm.form;
 			// const modifiedFields = modifyFields(fields);
 			// setTheFields(modifiedFields);
