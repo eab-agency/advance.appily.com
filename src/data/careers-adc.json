@@ -13,52 +13,33 @@
 			"href": "/careers/business"
 		}
 	],
-	"pageTitle": " Which type of<strong>business career</strong> is right for you?",
-	"quizSection": {
-		"title": "Take Our Free Business Career Quiz to Find Out",
-		"content": "<p>If you want to work in business but you don’t know which job fits your skills and interests, <strong>this free quiz can help find a good fit</strong> and you plan your next steps.</p><p>The Bureau of Labor Statistics predicts about <strong>nearly one million jobs in business</strong> will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p><strong>In less than three minutes, you could discover which type of business career could be a good fit for you.</strong> We’ll also connect you with schools near you that offer degrees to help you reach your goals.</p>",
-		"buttonText": "Take the Quiz"
-	},
-	"stats": [
-		{
-			"number": "8%",
-			"title": "Growth",
-			"description": "in employment of management occupations over the next decade"
-		},
-		{
-			"number": "$76K",
-			"title": "Median Salary",
-			"description": "for business-related occupations, ranging from $50K to $96K"
-		},
-		{
-			"number": "911K",
-			"title": "Job Openings",
-			"description": "predicted annually over the next decade in business-related occupations"
-		}
-	],
-	"statsSource": "U.S. Bureau of Labor Statistics",
-	"whyChoose": {
-		"title": "MBA vs. Specific Business Master’s Degrees:",
-		"subTitle": "What's the Difference?",
-		"description": "An MBA (Master of Business Administration) and a business master’s degree—such as an M.S. in Management—are both <strong>graduate-level programs that focus on business and management education.</strong> However, there are some differences between the two:",
-		"reasons": [
+	"introComparison": {
+		"title": "SEO Headline, <strong>with highlight keywords</strong>",
+		"description": "SEO copy introducing the quizces. Enim tempor aute ipsum deserunt. Fugiat ut dolor aute minim proident voluptate velit culpa occaecat. Eiusmod consectetur reprehenderit commodo magna pariatur. Id adipisicing voluptate duis fugiat ipsum consequat sunt proident eiusmod cupidatat. Dolore eu Lorem et aliquip non adipisicing qui amet anim labore do in. Lorem elit ut labore ea consequat proident ut mollit labore eu adipisicing fugiat aliquip in. Fugiat veniam quis deserunt veniam ad eu et dolore enim ut officia qui laboris labore dolore. Sunt est aute nulla.",
+		"cards": [
 			{
-				"title": "Curriculum",
-				"description": "MBA programs often have a more comprehensive curriculum, covering a wider range of business topics such as finance, accounting, marketing, strategy, and operations. A business master’s program has a more specialized focus, such as finance, accounting, or marketing."
+				"card": {
+					"title": "Comparison Card Title 1",
+					"iconLight": "/images/roi-icon-light.svg",
+					"iconDark": "/images/roi-icon.svg",
+					"description": "<h4>Sub Title</h4> <p>Enim tempor aute ipsum deserunt. Fugiat ut dolor aute minim proident voluptate velit culpa occaecat. Eiusmod consectetur reprehenderit commodo magna pariatur. Id adipisicing voluptate duis fugiat ipsum consequat sunt proident eiusmod cupidatat. Dolore eu Lorem et aliquip non adipisicing qui amet anim labore do in. Lorem elit ut labore ea consequat proident ut mollit labore eu adipisicing fugiat aliquip in. Fugiat veniam quis deserunt veniam ad eu et dolore enim ut officia qui laboris labore dolore. Sunt est aute nulla.</p>",
+					"buttonText": "Button Text"
+				}
 			},
 			{
-				"title": "Focus",
-				"description": "An MBA program typically focuses on developing general management skills, such as leadership, critical thinking, and problem-solving. A Master's in Business program may have a more technical or specialized focus, such as accounting or finance."
-			},
-			{
-				"title": "Work Experience",
-				"description": "MBA programs usually require applicants to have several years of work experience, while a Master's in Business program may not require any work experience or may only require a short period of experience."
-			},
-			{
-				"title": "Cost",
-				"description": "MBA programs are often more expensive than a Master's in Business program, partly due to the higher caliber of students and faculty, and partly due to the greater resources required to run a comprehensive program."
+				"card": {
+					"title": "Comparison Card Title 2",
+					"description": "<h4>Sub Title</h4> <p>Enim tempor aute ipsum deserunt. Fugiat ut dolor aute minim proident voluptate velit culpa occaecat. Eiusmod consectetur reprehenderit commodo magna pariatur. Id adipisicing voluptate duis fugiat ipsum consequat sunt proident eiusmod cupidatat. Dolore eu Lorem et aliquip non adipisicing qui amet anim labore do in. Lorem elit ut labore ea consequat proident ut mollit labore eu adipisicing fugiat aliquip in. Fugiat veniam quis deserunt veniam ad eu et dolore enim ut officia qui laboris labore dolore. Sunt est aute nulla.</p>",
+					"buttonText": "Button Text"
+				}
 			}
 		]
+	},
+	"pageTitle": "Are you asking yourself: <strong>Should I finish my degree?</strong>",
+	"howSection": {
+		"title": "HOW question SEO",
+		"content": "<p>Et cillum nisi consectetur culpa cupidatat irure esse mollit ut reprehenderit cupidatat ut ea laborum nisi. Occaecat voluptate labore velit et et reprehenderit cupidatat consequat voluptate. Esse sit labore fugiat. Est consectetur cupidatat nisi sint occaecat. Enim eu dolor proident elit labore cupidatat consectetur voluptate ex aliquip incididunt veniam.</p><p>Et cillum nisi consectetur culpa cupidatat irure esse mollit ut reprehenderit cupidatat ut ea laborum nisi. Occaecat voluptate labore velit et et reprehenderit cupidatat consequat voluptate. Esse sit labore fugiat. Est consectetur cupidatat nisi sint occaecat. Enim eu dolor proident elit labore cupidatat consectetur voluptate ex aliquip incididunt veniam.</p>",
+		"buttonText": "Learn if You're Ready"
 	},
 	"testimonial": {
 		"text": "Every day presents new challenges and opportunities to make strategic decisions that shape the direction of the company. The ability to drive innovation, lead a team, and contribute to the growth of the organization is both fulfilling and empowering. Business is all about creating value, solving problems, and making a positive impact on the world. It's a dynamic and ever-evolving field that allows me to continuously learn and grow while making meaningful contributions to the bottom line and the community.",
