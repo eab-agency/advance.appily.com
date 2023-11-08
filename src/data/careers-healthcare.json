@@ -1,6 +1,10 @@
 {
 	"links": [
 		{
+			"label": "Adult Degree Completion",
+			"href": "/careers/adult-degree-completion"
+		},
+		{
 			"label": "Health Care Careers",
 			"href": "/careers/healthcare"
 		},
