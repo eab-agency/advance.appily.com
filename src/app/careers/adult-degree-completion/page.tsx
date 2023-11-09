@@ -83,7 +83,7 @@ const BusinessSeoPage = () => {
               <Button
                 appearance="primary"
                 label={data.introComparison.cards[0].card.buttonText}
-                href="/careers/business/roi"
+                href={data.introComparison.cards[0].card.buttonLink}
                 className="button btn-primary" />
             </IconCard>
 
@@ -98,12 +98,12 @@ const BusinessSeoPage = () => {
               className="career-card"
             >
               <div dangerouslySetInnerHTML={{
-                __html: data.introComparison.cards[0].card.description
+                __html: data.introComparison.cards[1].card.description
               }} />
               <Button
                 appearance="primary"
-                label={data.introComparison.cards[0].card.buttonText}
-                href="/careers/business/roi"
+                label={data.introComparison.cards[1].card.buttonText}
+                href={data.introComparison.cards[1].card.buttonLink}
                 className="button btn-primary" />
             </IconCard>
           </div>

@@ -23,14 +23,16 @@
 					"iconLight": "/images/roi-icon-light.svg",
 					"iconDark": "/images/roi-icon.svg",
 					"description": "<h4>Sub Title</h4> <p>Enim tempor aute ipsum deserunt. Fugiat ut dolor aute minim proident voluptate velit culpa occaecat. Eiusmod consectetur reprehenderit commodo magna pariatur. Id adipisicing voluptate duis fugiat ipsum consequat sunt proident eiusmod cupidatat. Dolore eu Lorem et aliquip non adipisicing qui amet anim labore do in. Lorem elit ut labore ea consequat proident ut mollit labore eu adipisicing fugiat aliquip in. Fugiat veniam quis deserunt veniam ad eu et dolore enim ut officia qui laboris labore dolore. Sunt est aute nulla.</p>",
-					"buttonText": "Button Text"
+					"buttonText": "Start the Readiness Quiz",
+					"buttonLink": "/careers/adult-degree-completion/quiz"
 				}
 			},
 			{
 				"card": {
 					"title": "Comparison Card Title 2",
 					"description": "<h4>Sub Title</h4> <p>Enim tempor aute ipsum deserunt. Fugiat ut dolor aute minim proident voluptate velit culpa occaecat. Eiusmod consectetur reprehenderit commodo magna pariatur. Id adipisicing voluptate duis fugiat ipsum consequat sunt proident eiusmod cupidatat. Dolore eu Lorem et aliquip non adipisicing qui amet anim labore do in. Lorem elit ut labore ea consequat proident ut mollit labore eu adipisicing fugiat aliquip in. Fugiat veniam quis deserunt veniam ad eu et dolore enim ut officia qui laboris labore dolore. Sunt est aute nulla.</p>",
-					"buttonText": "Button Text"
+					"buttonText": "Build Your Plan",
+					"buttonLink": "/careers/business/roi"
 				}
 			}
 		]
