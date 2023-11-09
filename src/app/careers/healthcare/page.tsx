@@ -79,7 +79,7 @@ const HealthCareSeoPage = () => {
 							type="button"
 							label={data.quizSection.buttonText}
 							href="/careers/healthcare/quiz"
-							className="button btn-primary"
+							className="button btn-primary btn-click-quiz"
 						/>
 					</div>
 				</div>
@@ -165,7 +165,7 @@ const HealthCareSeoPage = () => {
 							type="button"
 							label={data.takeQuiz.buttonText}
 							href="/careers/business/quiz"
-							className="button btn-primary"
+							className="button btn-primary btn-click-quiz"
 						/>
 					</div>
 				</div>

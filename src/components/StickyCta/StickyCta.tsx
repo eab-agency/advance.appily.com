@@ -77,7 +77,7 @@ const StickyCta: React.FC<stickyProps> = ({ trackedElement }) => {
 					type="button"
 					label="Take the Quiz"
 					href={quizRoute}
-					className="button btn-primary"
+					className="button btn-primary btn-click-quiz"
 				/>
 			)}
 		</div>
