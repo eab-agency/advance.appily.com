@@ -4,7 +4,7 @@ import { fetchQuizData } from "@/lib/fetchQuizData";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
-const title = "Forge Your Path in Business";
+const title = "Finish Your Degree";
 const description = "Start the Appily Business Quiz Now";
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   }),
 };
 
-const VERTICAL = "business";
+const VERTICAL = "adult-degree-completion";
 async function QuizHome() {
   const quizData = await fetchQuizData(VERTICAL);
 
