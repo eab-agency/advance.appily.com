@@ -212,7 +212,7 @@ const GenerateField = ({ field, error, formData }) => {
 					key={field.id}
 				>
 					<button
-						className={`${styles.submitButton} button btn-primary`}
+						className={`${styles.submitButton} button btn-primary btn-click-submit`}
 						type="submit"
 						disabled={isSubmitting && isValid && dirty}
 					>
