@@ -2,8 +2,11 @@
 	"slug": "ready",
 	"heroData": {
 		"title": "When it comes to college, you're",
-		"result": "Not Quite Ready",
-		"detailedDescription": "<p>Congratulations! Your results indicate that you're extremely prepared to dive back into the academic world. You've showcased strengths in key areas such as time management, motivation, and support systems, which are crucial for success in higher education. </p><p>Remember, while you're well-prepared, every educational journey comes with its unique challenges. Stay adaptive, keep that confidence high, and embark on this exciting chapter!</p>"
+		"result": "Not Quite Ready!",
+		"detailedDescription": "<p><strong>Take a moment to reflect.</strong> Your results suggest that you might benefit from a bit more preparation before diving into the academic realm. </p><p>Don't be disheartened. Everyone's journey is unique, and there's no rush. Consider leveraging resources, tools, and support to bolster your readiness. Remember, with determination and the right approach, you can overcome any hurdle and achieve your educational dreams.</p>",
+		"needHelpTitle": "Need help figuring out where to start?",
+		"needHelpCtaLabel": "Get a Personalized Plan",
+		"needHelpCtaLink": "/get-started"
 	},
 	"tabs": [
 		{

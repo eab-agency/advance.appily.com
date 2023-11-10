@@ -2,7 +2,6 @@
 "use client";
 import darkNotReady from "@/assets/lotties/dark-not-ready.json";
 import AdcResultsHero from "@/components/Heros/AdcResultsHero";
-import Lottie from "lottie-react";
 import { useEffect, useRef } from "react";
 
 import {

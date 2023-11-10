@@ -5,36 +5,46 @@
 
   .adcResultsTitle {
     text-align: center;
+
+    strong {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   .animation {
-    // width: 100%;
-    // height: 25rem;
-
-    // & > div {
-    //   position: absolute;
-    //   height: clamp(15rem, 45vw, 45rem);
-    //   width: 100%;
-    // }
+    max-height: 50rem;
   }
 }
 
 .theResult {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.theResultDescription {
   background: var(--c-bg5);
   padding: clamp(tokens.$padding-l, 5vw, tokens.$padding-xxl);
   position: absolute;
   max-width: tokens.$mq-1000;
   bottom: 2em;
   border-radius: tokens.$size-5;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
 
-  // &.show {
-  //   display: block;
-  //   margin-top: -25rem;
-  //   transition: all 1s ease-in-out;
-  // }
-
-  p {
-    // text-align: center;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+  .detailedDescription {
+    p {
+      font-size: clamp(1rem, 2vw, 1.5rem);
+    }
   }
+}
+
+.needHelpCta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid var(--c-border-3);
+  padding: tokens.$padding-l;
+  padding-bottom: 0;
 }
