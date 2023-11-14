@@ -2,7 +2,7 @@ export { Button } from "./Button";
 export { StickyCta } from "./StickyCta";
 export { default as Footer } from "./Footer";
 // export { default as PageHeader } from "./Header/PageHeader";
-export { Quiz } from "./Quiz";
+export { Quiz, QuizV2 } from "./Quiz";
 export { Tabs } from "./Tabs";
 export { Accordion } from "./Accordion";
 export { CarouselWithForm } from "./CarouselWithForm";
