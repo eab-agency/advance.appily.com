@@ -23,7 +23,6 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 		currentQuestionIdx: 0,
 		selectedAnswers: [],
 		score: initialScore,
-		highestScorePersonality: null,
 	});
 
 	const { currentQuestionIdx, selectedAnswers, score } = quizState;

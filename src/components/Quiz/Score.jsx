@@ -13,7 +13,6 @@ const styles = {
 };
 
 const Score = ({ score, winningPersonality }) => {
-  console.log("🚀 ~ file: Score.jsx:16 ~ Score ~ score:", typeof score)
   if (!isDevMode) {
     return null; // If isDevMode is false, return null to not render the component
   }
