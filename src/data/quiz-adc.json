@@ -27,188 +27,225 @@
       ]
     },
     {
-      "question": "I prefer working...",
+      "question": "How do you feel about studying?",
       "associatedField": "quizresponse2",
       "answers": [
         {
-          "answer": "Leading collaboratively with teams to achieve objectives.",
-          "weight": 1
+          "answer": "I enjoy learning and definitely get into the zone studying",
+          "weight": 5
         },
         {
-          "answer": "Creatively, to develop marketing campaigns and strategies.",
-          "weight": 1
+          "answer": "I don't mind studying if I'm interested in the topic",
+          "weight": 4
         },
         {
-          "answer": "With financial data and numbers to make informed decisions.",
-          "weight": 1
+          "answer": "I don't mind studying if I like the way information is presented",
+          "weight": 4
         },
         {
-          "answer": "Independently and taking ownership of projects.",
-          "weight": 1
+          "answer": "I've struggled with studying in the past, but think I might be ready now",
+          "weight": 3
         },
         {
-          "answer": "With computers and technology to analyze data and solve problems.",
-          "weight": 1
-        },
-        {
-          "answer": "Collaboratively with colleagues and clients to build strong relationships.",
-          "weight": 1
+          "answer": "I can't make myself study no matter what",
+          "weight": 2
         }
       ]
     },
     {
-      "question": "My ideal work setting is...",
+      "question": "What is your highest level of completed education?",
       "associatedField": "quizresponse3",
       "answers": [
         {
-          "answer": "A dynamic and fast-paced corporate environment.",
-          "weight": 1
+          "answer": "Some High School",
+          "weight": 2
         },
         {
-          "answer": "A creative and innovative workspace that fosters ideas.",
-          "weight": 1
+          "answer": "High School Diploma or GED",
+          "weight": 5
         },
         {
-          "answer": "A financial institution or investment firm.",
-          "weight": 1
+          "answer": "Some College, No Degree",
+          "weight": 5
         },
         {
-          "answer": "A startup or entrepreneurial setting.",
-          "weight": 1
+          "answer": "Certification or Associate's Degree",
+          "weight": 5
         },
         {
-          "answer": "A technology-driven workplace with opportunities for data analysis.",
-          "weight": 1
-        },
-        {
-          "answer": "A people-centric organization that values teamwork and growth.",
-          "weight": 1
+          "answer": "Bachelor's Degree or Higher",
+          "weight": 5
         }
       ]
     },
     {
-      "question": "My biggest professional strengths are...",
+      "question": "How clear are you about your desired career path and the degree required to achieve it?",
       "associatedField": "quizresponse4",
       "answers": [
         {
-          "answer": "Exceptional leadership and strategic decision-making.",
-          "weight": 1
+          "answer": "I know what I want to do and the degree I need to earn",
+          "weight": 5
         },
         {
-          "answer": "Creativity, communication, and brand-building skills.",
-          "weight": 1
+          "answer": "I know what I want to do, but not which degree I need",
+          "weight": 4
         },
         {
-          "answer": "Strong analytical and financial management abilities.",
-          "weight": 1
+          "answer": "I know what I want to study, but not which career to pursue",
+          "weight": 4
         },
         {
-          "answer": "An entrepreneurial mindset and risk-taking capabilities.",
-          "weight": 1
-        },
-        {
-          "answer": "Proficiency in technology, data analysis, and problem-solving.",
-          "weight": 1
-        },
-        {
-          "answer": "Empathy, communication, and team-building skills.",
-          "weight": 1
+          "answer": "I don’t know what I want to do or what I want to study ",
+          "weight": 3
         }
       ]
     },
     {
-      "question": "I have taken college courses in...",
+      "question": "How much free time do you tend to have each week?",
       "associatedField": "quizresponse5",
       "answers": [
         {
-          "answer": "Business administration, management, or leadership.",
-          "weight": 1
+          "answer": "I have a few hours of free time most days",
+          "weight": 5
         },
         {
-          "answer": "Marketing, communication, or design.",
-          "weight": 1
+          "answer": "I have at least an hour a few days a week",
+          "weight": 4
         },
         {
-          "answer": "Finance, economics, or accounting.",
-          "weight": 1
+          "answer": "A few hours total a week",
+          "weight": 3
         },
         {
-          "answer": "Entrepreneurship, business development, or innovation.",
-          "weight": 1
-        },
-        {
-          "answer": "Information technology, data analytics, or computer science.",
-          "weight": 1
-        },
-        {
-          "answer": "Human resources, organizational behavior, or psychology.",
-          "weight": 1
+          "answer": "I have almost no free time",
+          "weight": 2
         }
       ]
     },
     {
-      "question": "My professional experience includes...",
+      "question": "How are your time management skills?",
       "associatedField": "quizresponse6",
       "answers": [
         {
-          "answer": "Leadership roles, managing teams, and making critical decisions.",
-          "weight": 1
+          "answer": "I'm a time-management pro",
+          "weight": 5
         },
         {
-          "answer": "Developing and executing marketing campaigns and strategies.",
-          "weight": 1
+          "answer": "I'm pretty confident in my time-management skills",
+          "weight": 4
         },
         {
-          "answer": "Financial analysis, budgeting, and managing investments.",
-          "weight": 1
+          "answer": "I'm doing okay, but there's room for improvement",
+          "weight": 3
         },
         {
-          "answer": "Starting and running a business or leading entrepreneurial projects.",
-          "weight": 1
+          "answer": "I could use a bit more confidence",
+          "weight": 3
         },
         {
-          "answer": "Utilizing data analysis and technology for problem-solving.",
-          "weight": 1
-        },
-        {
-          "answer": "Managing teams, handling employee relations, and fostering collaboration.",
-          "weight": 1
+          "answer": "I need some help with time management",
+          "weight": 2
         }
       ]
     },
     {
-      "question": "We're curious how accurate your results are!<br /><strong>Which of these areas would most appeal to you?</strong>",
-      "associatedField": "area_of_interest",
+      "question": "Do you have supporters who can offer guidance or encouragement for your goals?",
+      "associatedField": "quizresponse7",
       "answers": [
         {
-          "answer": "Executive & Leadership",
-          "value": "14",
-          "weight": 0
+          "answer": "I have a mentor or advisor",
+          "weight": 5
         },
         {
-          "answer": "Creative & Marketing",
-          "value": "11",
-          "weight": 0
+          "answer": "My family or friends are very supportive",
+          "weight": 5
         },
         {
-          "answer": "Operations, Project Management, & HR",
-          "value": "9",
-          "weight": 0
+          "answer": "I have an online community I trust",
+          "weight": 4
         },
         {
-          "answer": "Information Technology & Analytics",
-          "value": "10",
-          "weight": 0
+          "answer": "I have some support but am mostly self-reliant",
+          "weight": 3
         },
         {
-          "answer": "Entrepreneurship",
-          "value": "12",
-          "weight": 0
+          "answer": "I’m pretty much on my own",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "question": "How comfortable are you with using technology for online learning and research?",
+      "associatedField": "quizresponse8",
+      "answers": [
+        {
+          "answer": "I am really comfortable with computers and would prefer learning online",
+          "weight": 5
         },
         {
-          "answer": "Finance, Accounting, & Economics",
-          "value": "13",
-          "weight": 0
+          "answer": "I’m okay with computers, but would prefer a mix of online and in-person learning",
+          "weight": 5
+        },
+        {
+          "answer": "I think I would do better with in-person classes and textbooks",
+          "weight": 5
+        },
+        {
+          "answer": "I’m not sure if online or in-person would be a good fit for me",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "question": "Do you have a plan or financial resources in place to support your education?",
+      "associatedField": "quizresponse9",
+      "answers": [
+        {
+          "answer": "I have a plan and resources",
+          "weight": 5
+        },
+        {
+          "answer": "I have a plan, but I’m not sure I can secure resources",
+          "weight": 4
+        },
+        {
+          "answer": "I need help making a plan and discovering resources available to me",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "question": "What’s your age range?",
+      "description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
+      "associatedField": "quizresponse10",
+      "answers": [
+        {
+          "answer": "16-18",
+          "weight": 5
+        },
+        {
+          "answer": "19-23",
+          "weight": 5
+        },
+        {
+          "answer": "24-29",
+          "weight": 5
+        },
+        {
+          "answer": "33-39",
+          "weight": 5
+        },
+        {
+          "answer": "40-49",
+          "weight": 5
+        },
+        {
+          "answer": "50-65",
+          "weight": 5
+        },
+        {
+          "answer": "65+",
+          "weight": 5
         }
       ]
     }
