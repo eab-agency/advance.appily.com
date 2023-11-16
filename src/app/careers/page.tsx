@@ -114,7 +114,7 @@ const CareersSeoPage = () => {
 								type="button"
 								href="/careers/business/quiz"
 								label="Business Quiz"
-								className="button btn-primary"
+								className="button btn-primary btn-click-quiz"
 							/>
 						</IconCard>
 
@@ -142,7 +142,7 @@ const CareersSeoPage = () => {
 								type="button"
 								href="/careers/healthcare/quiz"
 								label="Healthcare Quiz"
-								className="button btn-primary"
+								className="button btn-primary btn-click-quiz"
 							/>
 						</IconCard>
 					</div>

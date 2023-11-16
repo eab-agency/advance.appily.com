@@ -89,7 +89,7 @@ const BusinessSeoPage = () => {
 							appearance="primary"
 							label={data.quizSection.buttonText}
 							href="/careers/business/quiz"
-							className="button btn-primary"
+							className="button btn-primary btn-click-quiz"
 						/>
 					</div>
 				</div>
@@ -242,7 +242,7 @@ const BusinessSeoPage = () => {
 							type="button"
 							label={data.takeQuiz.buttonText}
 							href="/careers/business/quiz"
-							className="button btn-primary"
+							className="button btn-primary btn-click-quiz"
 						/>
 					</div>
 				</div>

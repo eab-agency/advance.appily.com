@@ -1,0 +1,359 @@
+{
+  "questions": [
+    {
+      "title": "Motivation",
+      "question": "How motivated are you to earn your degree?",
+      "associatedField": "quizresponse1",
+      "icon": "education-icon",
+      "answers": [
+        {
+          "answer": "Earning a degree is a top priority for me",
+          "weight": 5,
+          "value": 1,
+          "dynamicContent": "<p>I have lots of free time.</p><p>🌟 <strong>That's fantastic!</strong> Having ample free time provides a great opportunity to immerse yourself in your studies and fully engage with the college experience. This flexibility will allow you to manage coursework, participate in extracurricular activities, and still have time for self-care.</p><p>Next Steps: Think about how you can best allocate this time towards your studies, and perhaps consider joining study groups, attending workshops, or taking on additional courses.</p>"
+        },
+        {
+          "answer": "I'm ready and think I can balance school and life",
+          "weight": 5,
+          "value": 2,
+          "dynamicContent": "<p>👍 Great to hear! Being able to carve out time regularly indicates that you have a good balance in your life. With this level of time management, you can comfortably handle college coursework and also engage in additional activities.</p><p>Next Steps: Plan out a weekly schedule, allocating specific times for studying, breaks, and recreational activities. This will help ensure you remain consistent in managing your time.</p>"
+        },
+        {
+          "answer": "I'm almost ready to go back to school, but worry life will get in the way",
+          "weight": 4,
+          "value": 3,
+          "dynamicContent": "I'm almost ready to go back to school, but worry life will get in the way"
+        },
+        {
+          "answer": "I might be ready soon but it's still not enough of a priority",
+          "weight": 3,
+          "value": 4,
+          "dynamicContent": "I might be ready soon but it's still not enough of a priority"
+        },
+        {
+          "answer": "I'm not very motivated at all",
+          "weight": 2,
+          "value": 5,
+          "dynamicContent": "I'm not very motivated at all"
+        }
+      ]
+    },
+    {
+      "title": "Studying",
+      "question": "How do you feel about studying?",
+      "associatedField": "quizresponse2",
+      "answers": [
+        {
+          "answer": "I enjoy learning and definitely get into the zone studying",
+          "weight": 5,
+          "value": 1,
+          "dynamicContent": "I enjoy learning and definitely get into the zone studying"
+        },
+        {
+          "answer": "I don't mind studying if I'm interested in the topic",
+          "weight": 4,
+          "value": 2,
+          "dynamicContent": "I don't mind studying if I'm interested in the topic"
+        },
+        {
+          "answer": "I don't mind studying if I like the way information is presented",
+          "weight": 4,
+          "value": 3,
+          "dynamicContent": "I don't mind studying if I like the way information is presented"
+        },
+        {
+          "answer": "I've struggled with studying in the past, but think I might be ready now",
+          "weight": 3,
+          "value": 4,
+          "dynamicContent": "I've struggled with studying in the past, but think I might be ready now"
+        },
+        {
+          "answer": "I can't make myself study no matter what",
+          "weight": 2,
+          "value": 5,
+          "dynamicContent": "I can't make myself study no matter what"
+        }
+      ]
+    },
+    {
+      "title": "Education",
+      "question": "What is your highest level of completed education?",
+      "associatedField": "level_of_education",
+      "answers": [
+        {
+          "answer": "Some High School",
+          "weight": 2,
+          "value": 1,
+          "dynamicContent": "Some High School"
+        },
+        {
+          "answer": "High School Diploma or GED",
+          "weight": 5,
+          "value": 2,
+          "dynamicContent": "High School Diploma or GED"
+        },
+        {
+          "answer": "Some College, No Degree",
+          "weight": 5,
+          "value": 3,
+          "dynamicContent": "Some College, No Degree"
+        },
+        {
+          "answer": "Certification or Associate's Degree",
+          "weight": 5,
+          "value": 4,
+          "dynamicContent": "Certification or Associate's Degree"
+        },
+        {
+          "answer": "Bachelor's Degree or Higher",
+          "weight": 5,
+          "value": 5,
+          "dynamicContent": "Bachelor's Degree or Higher"
+        }
+      ]
+    },
+    {
+      "title": "Career",
+      "question": "How clear are you about your desired career path and the degree required to achieve it?",
+      "associatedField": "quizresponse4",
+      "answers": [
+        {
+          "answer": "I know what I want to do and the degree I need to earn",
+          "weight": 5,
+          "value": 1,
+          "dynamicContent": "I know what I want to do and the degree I need to earn"
+        },
+        {
+          "answer": "I know what I want to do, but not which degree I need",
+          "weight": 4,
+          "value": 2,
+          "dynamicContent": "I know what I want to do, but not which degree I need"
+        },
+        {
+          "answer": "I know what I want to study, but not which career to pursue",
+          "weight": 4,
+          "value": 3,
+          "dynamicContent": "I know what I want to study, but not which career to pursue"
+        },
+        {
+          "answer": "I don’t know what I want to do or what I want to study ",
+          "weight": 3,
+          "value": 4,
+          "dynamicContent": "I don’t know what I want to do or what I want to study "
+        }
+      ]
+    },
+    {
+      "title": "Free Time",
+      "question": "How much free time do you tend to have each week?",
+      "associatedField": "quizresponse5",
+      "answers": [
+        {
+          "answer": "I have a few hours of free time most days",
+          "weight": 5,
+          "value": 1,
+          "dynamicContent": "<p>🌟 That's fantastic! Having ample free time provides a great opportunity to immerse yourself in your studies and fully engage with the college experience. This flexibility will allow you to manage coursework, participate in extracurricular activities, and still have time for self-care.</p><p>Next Steps: Think about how you can best allocate this time towards your studies, and perhaps consider joining study groups, attending workshops, or taking on additional courses.</p>"
+        },
+        {
+          "answer": "I have at least an hour a few days a week",
+          "weight": 4,
+          "value": 2,
+          "dynamicContent": "<p>👍 Great to hear! Being able to carve out time regularly indicates that you have a good balance in your life. With this level of time management, you can comfortably handle college coursework and also engage in additional activities.</p><p>Next Steps: Plan out a weekly schedule, allocating specific times for studying, breaks, and recreational activities. This will help ensure you remain consistent in managing your time.</p>"
+        },
+        {
+          "answer": "A few hours total a week",
+          "weight": 3,
+          "value": 3,
+          "dynamicContent": "<p>⏳ Every minute counts! A few dedicated hours each week can make a significant difference in your studies. It's all about ensuring that the time you do have is focused and productive.</p><p>Next Steps: Make the most of the time you have by creating a distraction-free study environment. Consider tools like the Pomodoro Technique to maximize your focus during these shorter study sessions.</p>"
+        },
+        {
+          "answer": "I have almost no free time",
+          "weight": 2,
+          "value": 4,
+          "dynamicContent": "<p>🔍 Quality over quantity! While your time might be limited, it's the quality of your study sessions that matter most. Even short, focused periods of study can be impactful.</p><p>Next Steps: Prioritize your most critical assignments and tasks. Use tools or apps to help you streamline your studies and to stay organized. Also, consider communicating with professors or academic advisors about your time constraints—they might have additional resources or advice.</p>"
+        }
+      ]
+    },
+    {
+      "title": "Time Management",
+      "question": "How are your time management skills?",
+      "associatedField": "quizresponse6",
+      "answers": [
+        {
+          "answer": "I'm a time-management pro",
+          "weight": 5,
+          "value": 1,
+          "dynamicContent": "I'm a time-management pro"
+        },
+        {
+          "answer": "I'm pretty confident in my time-management skills",
+          "weight": 4,
+          "value": 2,
+          "dynamicContent": "I'm pretty confident in my time-management skills"
+        },
+        {
+          "answer": "I'm doing okay, but there's room for improvement",
+          "weight": 3,
+          "value": 3,
+          "dynamicContent": "I'm doing okay, but there's room for improvement"
+        },
+        {
+          "answer": "I could use a bit more confidence",
+          "weight": 3,
+          "value": 4,
+          "dynamicContent": "I could use a bit more confidence"
+        },
+        {
+          "answer": "I need some help with time management",
+          "weight": 2,
+          "value": 5,
+          "dynamicContent": "I need some help with time management"
+        }
+      ]
+    },
+    {
+      "title": "Support",
+      "question": "Do you have supporters who can offer guidance or encouragement for your goals?",
+      "associatedField": "quizresponse7",
+      "answers": [
+        {
+          "answer": "I have a mentor or advisor",
+          "weight": 5,
+          "value": 1,
+          "dynamicContent": "I have a mentor or advisor"
+        },
+        {
+          "answer": "My family or friends are very supportive",
+          "weight": 5,
+          "value": 2,
+          "dynamicContent": "My family or friends are very supportive"
+        },
+        {
+          "answer": "I have an online community I trust",
+          "weight": 4,
+          "value": 3,
+          "dynamicContent": "I have an online community I trust"
+        },
+        {
+          "answer": "I have some support but am mostly self-reliant",
+          "weight": 3,
+          "value": 4,
+          "dynamicContent": "I have some support but am mostly self-reliant"
+        },
+        {
+          "answer": "I’m pretty much on my own",
+          "weight": 2,
+          "value": 5,
+          "dynamicContent": "I’m pretty much on my own"
+        }
+      ]
+    },
+    {
+      "title": "Technology",
+      "question": "How comfortable are you with using technology for online learning and research?",
+      "associatedField": "quizresponse8",
+      "answers": [
+        {
+          "answer": "I am really comfortable with computers and would prefer learning online",
+          "weight": 5,
+          "value": 1,
+          "dynamicContent": "I am really comfortable with computers and would prefer learning online"
+        },
+        {
+          "answer": "I’m okay with computers, but would prefer a mix of online and in-person learning",
+          "weight": 5,
+          "value": 2,
+          "dynamicContent": "I’m okay with computers, but would prefer a mix of online and in-person learning"
+        },
+        {
+          "answer": "I think I would do better with in-person classes and textbooks",
+          "weight": 5,
+          "value": 3,
+          "dynamicContent": "I think I would do better with in-person classes and textbooks"
+        },
+        {
+          "answer": "I’m not sure if online or in-person would be a good fit for me",
+          "weight": 3,
+          "value": 4,
+          "dynamicContent": "I’m not sure if online or in-person would be a good fit for me"
+        }
+      ]
+    },
+    {
+      "title": "Finances",
+      "question": "Do you have a plan or financial resources in place to support your education?",
+      "associatedField": "quizresponse9",
+      "answers": [
+        {
+          "answer": "I have a plan and resources",
+          "weight": 5,
+          "value": 1,
+          "dynamicContent": "I have a plan and resources"
+        },
+        {
+          "answer": "I have a plan, but I’m not sure I can secure resources",
+          "weight": 4,
+          "value": 2,
+          "dynamicContent": "I have a plan, but I’m not sure I can secure resources"
+        },
+        {
+          "answer": "I need help making a plan and discovering resources available to me",
+          "weight": 3,
+          "value": 3,
+          "dynamicContent": "I need help making a plan and discovering resources available to me"
+        }
+      ]
+    },
+    {
+      "title": "Age",
+      "question": "What’s your age range?",
+      "description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
+      "associatedField": "quizresponse10",
+      "answers": [
+        {
+          "answer": "16-18",
+          "weight": 5,
+          "value": 1,
+          "dynamicContent": "16-18"
+        },
+        {
+          "answer": "19-23",
+          "weight": 5,
+          "value": 2,
+          "dynamicContent": "19-23"
+        },
+        {
+          "answer": "24-29",
+          "weight": 5,
+          "value": 3,
+          "dynamicContent": "24-29"
+        },
+        {
+          "answer": "33-39",
+          "weight": 5,
+          "value": 4,
+          "dynamicContent": "33-39"
+        },
+        {
+          "answer": "40-49",
+          "weight": 5,
+          "value": 5,
+          "dynamicContent": "40-49"
+        },
+        {
+          "answer": "50-65",
+          "weight": 5,
+          "value": 6,
+          "dynamicContent": "50-65"
+        },
+        {
+          "answer": "65+",
+          "weight": 5,
+          "value": 7,
+          "dynamicContent": "65+"
+        }
+      ]
+    }
+  ],
+  "score": 0
+}
