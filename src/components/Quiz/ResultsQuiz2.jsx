@@ -64,7 +64,7 @@ const Results = ({ children, vertical, answers, formId, score = 0 }) => {
       {/* </div> */}
       <Button
         type="button"
-        href=""
+        href={`/adc/results${answers.resultParameters}`}
         label="Get a personalized plan"
         className="button btn-primary"
       />

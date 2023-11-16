@@ -10,20 +10,33 @@ import Score from "./Score";
 export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 	const { location, globalPrivacyControl } = useUser();
 	const { questions, score: initialScore } = quizData;
-	const randomizedQuestions = quizData.questions.map(question => {
-		if (question.associatedField.startsWith("quizresponse")) {
-			const randomizedAnswers = question.answers.sort(
+	const [randomizedQuestions, setRandomizedQuestions] = useState([]);
+
+	useEffect(() => {
+		const randomized = quizData.questions.map(question => {
+			const answersWithOriginalIndex = question.answers.map(
+				(answer, index) => ({
+					...answer,
+					originalIndex: index,
+				}),
+			);
+			const randomizedAnswers = answersWithOriginalIndex.sort(
 				() => Math.random() - 0.5,
 			);
+
 			return { ...question, answers: randomizedAnswers };
-		}
-		return question;
-	});
+		});
+
+		setRandomizedQuestions(randomized);
+	}, []);
+
 	const [quizState, setQuizState] = useState({
 		currentQuestionIdx: 0,
 		selectedAnswers: [],
 		score: initialScore,
+		resultParameters: "",
 	});
+	// console.log("🚀 ~ file: QuizV2.js:28 ~ QuizV2 ~ quizState:", quizState);
 
 	const { currentQuestionIdx, selectedAnswers, score } = quizState;
 	const [quizFinished, setQuizFinished] = useState(
@@ -47,18 +60,22 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 
 		// Only update score if the answer's personality is not 'initial'
 		const answerWeight = score + answer.weight;
+		const newParam = `q${currentQuestionIdx + 1}=${answer.originalIndex}`;
 
-		setQuizState({
-			...quizState,
+		setQuizState(prevState => ({
+			...prevState,
 			currentQuestionIdx: currentQuestionIdx + 1,
 			selectedAnswers: updatedAnswers,
 			score: answerWeight,
-		});
+			resultParameters: prevState.resultParameters
+				? `${prevState.resultParameters}&${newParam}`
+				: `?${newParam}`,
+		}));
 
 		if (currentQuestionIdx === questions.length - 1) {
 			setQuizFinished(true);
 			if (location.notUS || globalPrivacyControl) {
-				router.push(`/careers/${vertical}/${highestScorePersonality}`);
+				router.push(`/adc/results${resultParameters}`);
 			}
 		}
 	};
@@ -69,6 +86,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 			selectedAnswers: [],
 			score: initialScore,
 			isFinished: false,
+			resultParameters: "",
 		});
 		setQuizFinished(false);
 	};
