@@ -56,7 +56,7 @@ const BusinessSeoPage = () => {
       </section>
 
       <section className="comparison">
-        <div className="group column center-aligned">
+        <div className="group column center-aligned center-justified">
           <div className="intro-text">
             <h2 dangerouslySetInnerHTML={{
               __html: data.introComparison.title,
@@ -112,31 +112,62 @@ const BusinessSeoPage = () => {
 
 
       <div id="explore-your-school-matches" ref={carouselRef}>
-        <CarouselWithForm formId="8" />
+        <CarouselWithForm formId="8" data={data.carouselData} />
       </div>
 
-      <section className="howSection">
+      <section className="answersQuestionsSection column bgfilled imgTextSection">
+        <header className="group column intro-group">
+          <h2>{data.answersQuestionsSection.sectionTitle}</h2>
+          <p dangerouslySetInnerHTML={{ __html: data.answersQuestionsSection.sectionDescription }} />
+        </header>
         <div className="group center-aligned row cols-2">
-          <div className="column">
-            <figure className="highlighted-img">
-              <Image
-                src="/images/take-our-free-quiz.jpg"
-                width={480}
-                height={480}
-                alt="Profesional man researching online"
-              />
-            </figure>
-          </div>
           <div className="column intro-text">
-            <h2>{data.howSection.title}</h2>
+            <h3>{data.answersQuestionsSection.questions.question1.title}</h3>
             <div
               dangerouslySetInnerHTML={{
-                __html: data.howSection.content,
+                __html: data.answersQuestionsSection.questions.question1.content,
               }}
             />
             <Button
               appearance="primary"
-              label={data.howSection.buttonText}
+              label={data.answersQuestionsSection.questions.question1.buttonText}
+              href="/careers/business/quiz"
+              className="button btn-secondary"
+            />
+          </div>
+          <figure className="highlighted-img column">
+            <Image
+              src={data.answersQuestionsSection.questions.question1.image}
+              width={480}
+              height={480}
+              alt={data.answersQuestionsSection.questions.question1.imageAlt}
+            />
+          </figure>
+        </div>
+      </section>
+
+      {/* <Testimonial testimonialData={data.testimonial} /> */}
+
+      <section className="answersQuestionsSection imgTextSection">
+        <div className="group center-aligned row cols-2">
+          <figure className="highlighted-img column">
+            <Image
+              src={data.answersQuestionsSection.questions.question2.image}
+              width={480}
+              height={480}
+              alt={data.answersQuestionsSection.questions.question2.imageAlt}
+            />
+          </figure>
+          <div className="column intro-text">
+            <h3>{data.answersQuestionsSection.questions.question2.title}</h3>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.answersQuestionsSection.questions.question2.content,
+              }}
+            />
+            <Button
+              appearance="primary"
+              label={data.answersQuestionsSection.questions.question2.buttonText}
               href="/careers/business/quiz"
               className="button btn-secondary"
             />
@@ -144,34 +175,30 @@ const BusinessSeoPage = () => {
         </div>
       </section>
 
-      <Testimonial testimonialData={data.testimonial} />
-
-      <section className="howSection">
+      <section className="answersQuestionsSection bgfilled imgTextSection">
         <div className="group center-aligned row cols-2">
           <div className="column intro-text">
-            <h2>{data.howSection.title}</h2>
+            <h3>{data.answersQuestionsSection.questions.question3.title}</h3>
             <div
               dangerouslySetInnerHTML={{
-                __html: data.howSection.content,
+                __html: data.answersQuestionsSection.questions.question3.content,
               }}
             />
             <Button
               appearance="primary"
-              label={data.howSection.buttonText}
+              label={data.answersQuestionsSection.questions.question3.buttonText}
               href="/careers/business/quiz"
               className="button btn-secondary"
             />
           </div>
-          <div className="column">
-            <figure className="highlighted-img">
-              <Image
-                src="/images/take-our-free-quiz.jpg"
-                width={480}
-                height={480}
-                alt="Profesional man researching online"
-              />
-            </figure>
-          </div>
+          <figure className="highlighted-img column">
+            <Image
+              src={data.answersQuestionsSection.questions.question3.image}
+              width={480}
+              height={480}
+              alt={data.answersQuestionsSection.questions.question3.imageAlt}
+            />
+          </figure>
         </div>
       </section>
 

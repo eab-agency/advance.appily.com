@@ -7,7 +7,7 @@ import SchoolCarousel from "@/components/SchoolCarousel";
 import { useUser } from "@/context/context";
 import styles from "@/styles/components/CarouselWithForm.module.scss";
 
-const CarouselWithForm = ({ formId = "4" }) => {
+const CarouselWithForm = ({ formId = "4", data }) => {
 	const [visibleForm, setVisibleForm] = useState(false);
 	const { user, location, vertical, globalPrivacyControl } = useUser();
 
@@ -21,16 +21,24 @@ const CarouselWithForm = ({ formId = "4" }) => {
 			setVisibleForm(!visibleForm);
 		}
 	};
+
+	// destructure data if provided
+	const { title, description } = data || {};
+
 	return (
 		<>
 			<section className={styles.matchedSchools}>
 				<div className={styles.wrapper}>
 					<div className={styles.intro}>
-						<h2>Explore Your School Matches</h2>
-						<p>
-							The following schools offer programs that could help you reach
-							your goals.
-						</p>
+						<h2>{title ? title : "Explore Your School Matches"}</h2>
+						{description ? (
+							<div dangerouslySetInnerHTML={{ __html: description }} />
+						) : (
+							<p>
+								The following schools offer programs that could help you reach
+								your goals.
+							</p>
+						)}
 					</div>
 
 					<div className={styles.container}>

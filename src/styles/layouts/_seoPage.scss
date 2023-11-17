@@ -392,3 +392,16 @@
     }
   }
 }
+
+.answersQuestionsSection {
+  .intro-group {
+    h2 {
+      margin: 0;
+    }
+  }
+
+  h3 {
+    font-size: clamp(tokens.$size-6, 3vw, tokens.$size-7);
+    font-weight: tokens.$fontWeight-normal;
+  }
+}
