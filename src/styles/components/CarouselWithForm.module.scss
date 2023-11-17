@@ -69,7 +69,7 @@
     width: 80%;
 
     @media (min-width: tokens.$mq-1000) {
-      width: clamp(20rem, 40vw, 40rem);
+      width: clamp(10rem, 30vw, 30rem);
     }
 
     h2 {
