@@ -118,7 +118,7 @@
 .react-multi-carousel-item {
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  padding-inline: clamp(1rem, 1.5vw, 1.5rem);
+  padding-inline: clamp(1.5rem, 2vw, 2rem);
   display: flex;
 
   .item-content {

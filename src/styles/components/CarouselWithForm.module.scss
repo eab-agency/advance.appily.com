@@ -67,7 +67,10 @@
     position: relative;
     z-index: tokens.$layer-3;
     // flex-shrink: 0;
-    width: 80%;
+    // width: 80%;
+    @media (min-width: tokens.$mq-1000) {
+      width: 40rem;
+    }
 
     h2 {
       font-size: clamp(tokens.$size-6, 5vw, tokens.$size-8);
