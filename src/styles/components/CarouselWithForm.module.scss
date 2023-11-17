@@ -66,10 +66,10 @@
   .intro {
     position: relative;
     z-index: tokens.$layer-3;
-    // flex-shrink: 0;
-    // width: 80%;
+    width: 80%;
+
     @media (min-width: tokens.$mq-1000) {
-      width: 40rem;
+      width: clamp(20rem, 40vw, 40rem);
     }
 
     h2 {
