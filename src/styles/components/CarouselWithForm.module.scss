@@ -57,7 +57,7 @@
     padding-block: clamp(tokens.$padding-s, 10vw, tokens.$padding-xxxl);
     gap: 3em;
 
-    @media (min-width: tokens.$mq-1300) {
+    @media (min-width: tokens.$mq-1400) {
       flex-direction: row;
       padding-inline: clamp(tokens.$padding-s, 10vw, tokens.$padding-xxxxl);
     }
@@ -68,8 +68,9 @@
     z-index: tokens.$layer-3;
     width: 80%;
 
-    @media (min-width: tokens.$mq-1000) {
+    @media (min-width: tokens.$mq-1400) {
       width: clamp(10rem, 30vw, 30rem);
+      margin-top: -3rem;
     }
 
     h2 {
@@ -80,10 +81,6 @@
     p {
       font-size: clamp(tokens.$size-4, 2vw, tokens.$size-6);
     }
-
-    // @media (min-width: tokens.$mq-1300) {
-    //   max-width: 20rem;
-    // }
   }
 
   .container {
