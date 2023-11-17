@@ -50,7 +50,7 @@ const BusinessSeoPage = () => {
   return (
     <>
       <section className="pageHero">
-        <div className="group center-aligned">
+        <div className="group center-aligned center-justified">
           <h1
             dangerouslySetInnerHTML={{
               __html: data.pageTitle,

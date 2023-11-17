@@ -38,7 +38,7 @@ const BusinessSeoPage = () => {
   return (
     <>
       <section className="pageHero">
-        <div className="group center-aligned">
+        <div className="group center-aligned center-justified">
           <h1
             dangerouslySetInnerHTML={{
               __html: data.pageTitle,
@@ -131,7 +131,7 @@ const BusinessSeoPage = () => {
             <Button
               appearance="primary"
               label={data.answersQuestionsSection.questions.question1.buttonText}
-              href="/careers/business/quiz"
+              href={data.answersQuestionsSection.questions.question1.buttonLink}
               className="button btn-secondary"
             />
           </div>
@@ -168,7 +168,7 @@ const BusinessSeoPage = () => {
             <Button
               appearance="primary"
               label={data.answersQuestionsSection.questions.question2.buttonText}
-              href="/careers/business/quiz"
+              href={data.answersQuestionsSection.questions.question2.buttonLink}
               className="button btn-secondary"
             />
           </div>
@@ -187,7 +187,7 @@ const BusinessSeoPage = () => {
             <Button
               appearance="primary"
               label={data.answersQuestionsSection.questions.question3.buttonText}
-              href="/careers/business/quiz"
+              href={data.answersQuestionsSection.questions.question3.buttonLink}
               className="button btn-secondary"
             />
           </div>
@@ -211,10 +211,10 @@ const BusinessSeoPage = () => {
           <div className="column">
             <figure>
               <Image
-                src="/images/ready-to-find-your-role.jpg"
+                src={data.takeQuiz.image}
                 width={900}
                 height={900}
-                alt="Take our free quiz"
+                alt={data.takeQuiz.imageAlt}
               />
             </figure>
           </div>
@@ -224,7 +224,7 @@ const BusinessSeoPage = () => {
             <Button
               type="button"
               label={data.takeQuiz.buttonText}
-              href="/careers/business/quiz"
+              href={data.takeQuiz.buttonLink}
               className="button btn-primary"
             />
           </div>
