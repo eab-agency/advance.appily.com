@@ -56,7 +56,7 @@ export default function QuizLandingPage() {
           </div>
           <figure className="column highlighted-img">
             <Image
-              src="/images/cappex-define-your-future-img.jpg"
+              src="/images/adc-quiz-hero-image.jpg"
               alt="Define Your Future in Business"
               // fill
               width={500}
