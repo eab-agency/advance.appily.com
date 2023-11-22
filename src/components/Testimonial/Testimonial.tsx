@@ -17,7 +17,10 @@ function Testimonial({ testimonialData }: TestimonialProps) {
     <section className="testimonial">
       <div className="quotation">
         <blockquote>
-          <p>{testimonialData.text}</p>
+          <div
+            className="testimonialText"
+            dangerouslySetInnerHTML={{ __html: testimonialData.text }}
+          />
           <div className="testimonialAuthor">
             <p>{testimonialData.author}</p>
             <small>{testimonialData.authorTitle}</small>

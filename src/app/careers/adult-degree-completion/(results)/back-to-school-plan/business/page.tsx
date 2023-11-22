@@ -13,18 +13,17 @@ import {
   KeepExploring,
   Stats,
   StickyCta,
-  SubNav,
+  SubNavPlan,
   Tabs,
+  Testimonial,
   TextWithImage,
   WhatDegrees,
 } from "@/components";
 import { useUser } from "@/context/context";
 import data from "@/data/AdcResults/results-business-plan.json";
-import dataLinks from "@/data/links-business.json";
 
 export default function Page() {
   const carouselRef = useRef(null);
-  const { results: links } = dataLinks;
   const { setVertical, vertical } = useUser();
   useEffect(() => {
     setVertical("Business");
@@ -55,9 +54,9 @@ export default function Page() {
           </div>
         </section>
 
-        {links && <SubNav links={links} />}
+        <SubNavPlan />
 
-        <section className="whyChoose">
+        <section id="value-of-a-degree" className="whyChoose">
           <div className="group center-aligned cols-2">
             <div className="column">
               <div className="intro">
@@ -87,23 +86,26 @@ export default function Page() {
             <div className="column">
               <figure className="highlighted-img">
                 <Image
-                  src="/images/whats-the-difference-mba-specific-master.jpg"
+                  src="/images/build-plan/value-of-a-degree.jpg"
                   width={480}
                   height={480}
-                  alt="Man using a tablet device"
+                  alt="Graduate celebrating wearing a cap and gown"
                 />
               </figure>
             </div>
           </div>
         </section>
 
+        <Stats stats={data.stats} source={data.statsSource} />
+
+        <Testimonial testimonialData={data.testimonial} />
+
         <WhatDegrees whatDegreesData={data.degreeTabs} />
 
-        <Tabs className="react-tabs" tabs={data.tabs} />
+        <Tabs className="react-tabs" tabs={data.fundingYourDegree} />
 
         <CareerPaths careerPaths={data.careerPaths} />
 
-        <Stats stats={data.stats} source={data.statsSource} />
 
         <TextWithImage
           content={data.textWithImage.content}

@@ -1,7 +1,7 @@
 {
 	"slug": "business-plan",
 	"title": "You've got this!",
-	"description": "<p>Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. This plan isn't just a guide; it's a reflection of your ambition, your dreams, and your future. </p>",
+	"description": "no in use",
 	"detailedDescription": "<p>Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. This plan isn't just a guide; it's a reflection of your ambition, your dreams, and your future. </p><p>Here's what you're unlocking:<br/><ul><li>Clarity and Confidence: No more second-guessing. Every piece of advice here is tailored to help you navigate your educational journey with ease.</li><li>A Future Tailored to You: Your goals, your aspirations, your pace. Embrace the exciting opportunities that lie ahead.</li></ul></p><p>You've got the ambition and the drive. With this plan in hand, you're not just going back to school; you're moving forward in life. Let's dive in and advance your future together.</p>",
 	"reasons": [
 		{
@@ -25,7 +25,30 @@
 			"description": "As industries evolve, those with a higher level of education tend to have an easier time adapting to changes in the job market. A bachelor's degree equips you with transferable skills that are valuable in a variety of roles."
 		}
 	],
-	"tabs": [
+	"statsSource": "Association of Public and Land Grant Universities",
+	"stats": [
+		{
+			"number": "84%",
+			"title": "Higher Salary",
+			"description": "Typical earnings for bachelor’s degree holders are 84% higher than those whose highest degree is a high school diploma."
+		},
+		{
+			"number": "$1.2M",
+			"title": "More Lifetime Earnings",
+			"description": "College graduates on average make $1.2 million more over their lifetime."
+		},
+		{
+			"number": "50%",
+			"title": "Less Likely to Be Unemployed",
+			"description": "College graduates are half as likely to be unemployed as their peers who only have a high school degree."
+		}
+	],
+	"testimonial": {
+		"text": "<p>Something like <strong>25 percent of entry-level jobs will be automated in the next 25 years,</strong> and so it’s likely many jobs that don’t require a bachelor’s will be eclipsed by AI or technological automation.</p><p>A college degree gives you a broad set of experiences and skills, and if or when you are replaced by a robot, or your position is diminished by new technology, <strong>with a degree you will be more nimble and better able to find another position</strong> compared to someone who hasn’t developed those skills and earned a bachelor’s degree.</p> ",
+		"author": "Ben Cater, Ph.D.",
+		"authorTitle": "Associate Dean of General Education, Point Loma Nazarene University"
+	},
+	"fundingYourDegree": [
 		{
 			"title": "Motivation",
 			"icon": "motivation-icon",
@@ -55,24 +78,6 @@
 			"title": "Experience",
 			"icon": "skills-icon",
 			"content": "Your work experience may include utilizing data analysis and technology for problem-solving."
-		}
-	],
-	"statsSource": "U.S. Bureau of Labor Statistics",
-	"stats": [
-		{
-			"number": "10%",
-			"title": "Growth",
-			"description": "in employment of computer and information technology occupations over the next decade (with some roles growing much faster)"
-		},
-		{
-			"number": "$101K",
-			"title": "Median Salary",
-			"description": "for computer and information technology occupations, ranging from $60K to $136K averages"
-		},
-		{
-			"number": "377K",
-			"title": "Job Openings",
-			"description": "predicted annually over the next decade in computer and information technology occupations"
 		}
 	],
 	"degreeTabs": {
