@@ -14,7 +14,7 @@
 		{
 			"title": "Education",
 			"icon": "education2-icon",
-			"content": "<p>Your readiness level suggests that you have a mindset conducive to academic success. Whether you're building on prior experiences or embarking on a fresh journey, your enthusiasm and preparedness shine brightly.</p><p><strong>Next Steps:</strong> <a href='' target='_blank' rel='noopener nofollow'>Answer a few more questions</a> to see how your experience, goals, and interests translate into a step-by-step plan to complete your degree.</p>"
+			"content": "<p>Your readiness level suggests that you have a mindset conducive to academic success. Whether you're building on prior experiences or embarking on a fresh journey, your enthusiasm and preparedness shine brightly.</p><p><strong>Next Steps:</strong> <a href='/careers/adult-degree-completion/build-plan' target='_blank' rel='noopener nofollow'>Answer a few more questions</a> to see how your experience, goals, and interests translate into a step-by-step plan to complete your degree.</p>"
 		},
 		{
 			"title": "Career",
@@ -44,30 +44,12 @@
 		{
 			"title": "Finances",
 			"icon": "finances-icon",
-			"content": "<p>Your financial preparation puts you in a great spot. Look into scholarships or grants for added financial relief.</p><p><strong>Next Steps:</strong> Let us help you explore scholarships, grants, and financial aid options available for returning students. <a href='' target='_blank' rel='nofollow noopener'>Answer a few more questions</a> to get your back-to-school plan.</p>"
+			"content": "<p>Your financial preparation puts you in a great spot. Look into scholarships or grants for added financial relief.</p><p><strong>Next Steps:</strong> Let us help you explore scholarships, grants, and financial aid options available for returning students. <a href='/careers/adult-degree-completion/build-plan' target='_blank' rel='nofollow noopener'>Answer a few more questions</a> to get your back-to-school plan.</p>"
 		},
 		{
 			"title": "Age",
 			"icon": "age-icon",
 			"content": "<p>No matter your age, you're in an excellent position to thrive academically.</p>"
-		}
-	],
-	"statsSource": "U.S. Bureau of Labor Statistics",
-	"stats": [
-		{
-			"number": "10%",
-			"title": "Growth",
-			"description": "in employment of computer and information technology occupations over the next decade (with some roles growing much faster)"
-		},
-		{
-			"number": "$101K",
-			"title": "Median Salary",
-			"description": "for computer and information technology occupations, ranging from $60K to $136K averages"
-		},
-		{
-			"number": "377K",
-			"title": "Job Openings",
-			"description": "predicted annually over the next decade in computer and information technology occupations"
 		}
 	],
 	"nextSteps": {

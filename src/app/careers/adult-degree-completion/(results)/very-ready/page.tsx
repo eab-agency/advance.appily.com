@@ -2,33 +2,31 @@
 "use client";
 import veryReady from "@/assets/lotties/very-ready-dark-mode.json";
 import AdcResultsHero from "@/components/Heros/AdcResultsHero";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import {
-  CareerPaths,
+  Button,
   CarouselWithForm,
-  ChoosingRightSchoolBusinessDegree,
   KeepExploring,
-  Stats,
   StickyCta,
-  SubNav,
   Tabs,
-  TextWithImage,
-  WhatDegrees,
 } from "@/components";
 import { useUser } from "@/context/context";
 import heroData from "@/data/AdcResults/adc-readyness-results.json";
-import data from "@/data/AdcResults/results-not-ready.json";
-import dataLinks from "@/data/links-business.json";
+import data from "@/data/AdcResults/very-ready.json";
+import Image from "next/image";
 
 export default function Page() {
   const carouselRef = useRef(null);
-  const { results: links } = dataLinks;
   const { setVertical, vertical } = useUser();
   useEffect(() => {
-    setVertical("adc");
+    setVertical("Business");
   }, []);
+  const [showContent, setShowContent] = useState(false);
 
+  const handleShowContent = (animationState) => {
+    setShowContent(animationState);
+  }
 
   return data ? (
     <>
@@ -36,34 +34,79 @@ export default function Page() {
         <AdcResultsHero
           data={heroData.veryReady}
           animationData={veryReady}
+          animationState={handleShowContent}
         />
 
-        {links && <SubNav links={links} />}
+        {showContent && (
+          <>
+            <Tabs className="react-tabs adc-results-tabs" tabs={data.tabs} />
 
-        <Tabs className="react-tabs" tabs={data.tabs} />
+            <section className="nextSteps">
+              <div className="contentWrapper imgTextSection">
+                <header className="group row cols-2 center-aligned intro-text">
+                  <div className="column">
+                    <h2
+                      dangerouslySetInnerHTML={{
+                        __html: data.nextSteps.title,
+                      }}
+                    />
+                    <div dangerouslySetInnerHTML={{ __html: data.nextSteps.introContent }} />
+                    <Button
+                      appearance="primary"
+                      className="button btn-primary"
+                      href={data.nextSteps.buttonLink}
+                      label={data.nextSteps.buttonText}
+                    />
+                  </div>
+                  <figure className="column highlighted-img">
+                    <Image
+                      src="/images/what-are-your-next-steps.jpg"
+                      alt="Next Steps Image"
+                      width={480}
+                      height={480}
+                    />
+                  </figure>
+                </header>
+                <div className="steps group row cols-2">
+                  <figure className="column highlighted-img">
+                    <Image
+                      src="/images/your-plan-includes.jpg"
+                      alt="Next Steps Image"
+                      width={480}
+                      height={480}
+                    />
+                  </figure>
+                  <div className="column featuredCard">
+                    <h3>{data.nextSteps.steps.title}</h3>
+                    <ul>
+                      {data.nextSteps.steps.list.map((step, index) => (
+                        <li key={index} className="step"
+                          dangerouslySetInnerHTML={{ __html: step.step.content || '' }}
+                        />
+                      ))}
+                    </ul>
+                    <Button
+                      appearance="primary"
+                      className="button btn-primary"
+                      href={data.nextSteps.steps.buttonLink}
+                      label={data.nextSteps.steps.buttonText}
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
 
-        <CareerPaths careerPaths={data.careerPaths} />
+            <div
+              id="explore-your-school-matches"
+              className="carouselWithForm"
+              ref={carouselRef}
+            >
+              <CarouselWithForm formId="7" />
+            </div>
 
-        <Stats stats={data.stats} source={data.statsSource} />
-
-        <TextWithImage
-          content={data.textWithImage.content}
-          imagePath={data.textWithImage.imagePath}
-          className="whatever-you-need"
-          altText={data.textWithImage.altText}
-        />
-        <WhatDegrees whatDegreesData={data.degreeTabs} />
-
-        <div
-          id="explore-your-school-matches"
-          className="carouselWithForm"
-          ref={carouselRef}
-        >
-          <CarouselWithForm formId="7" />
-        </div>
-        <ChoosingRightSchoolBusinessDegree />
-
-        <KeepExploring trackedElement={carouselRef} />
+            <KeepExploring trackedElement={carouselRef} />
+          </>
+        )}
       </div>
       <StickyCta trackedElement={carouselRef} />
     </>

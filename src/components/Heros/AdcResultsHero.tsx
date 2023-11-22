@@ -1,12 +1,27 @@
 import { Button } from "@/components";
 import styles from '@/styles/components/AdcResultsHero.module.scss';
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-export default function AdcResultsHero({ data, animationData }) {
+interface Props {
+  data: {
+    title: string;
+    result: string;
+    detailedDescription: string;
+    needHelpTitle: string;
+    needHelpCtaLabel: string;
+    needHelpCtaLink: string;
+  };
+  animationData: any;
+  animationState?: (animationState: boolean) => void;
+}
+
+export default function AdcResultsHero({ data, animationData, animationState }: Props) {
   const lottieRef = useRef<LottieType | null>(null);
   const adcResultDescription = useRef(null);
   const adcResult = useRef(null);
+  const [animationStateValue, setAnimationStateValue] = useState(false);
+
 
   // destructure data
   const { title, result, detailedDescription, needHelpTitle, needHelpCtaLabel, needHelpCtaLink } = data;
@@ -21,13 +36,19 @@ export default function AdcResultsHero({ data, animationData }) {
       if (adcResult.current) {
         (adcResult.current as HTMLDivElement).style.opacity = "1";
       }
+
+      handleComplete();
     }, 4000);
 
   }
 
-  // const handleComplete = () => {
+  useEffect(() => {
+    animationState?.(animationStateValue);
+  }, [animationStateValue]);
 
-  // }
+  const handleComplete = () => {
+    setAnimationStateValue(true);
+  }
 
 
   return (
