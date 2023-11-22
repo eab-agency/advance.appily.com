@@ -115,6 +115,10 @@
   max-height: 23.3rem;
   overflow: hidden;
 
+  &.adcResult {
+    max-height: 36rem;
+  }
+
   .resultsHero {
     padding-bottom: 2em;
 

@@ -4,7 +4,7 @@ import { fetchQuizData } from "@/lib/fetchQuizData";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
-const title = "Forge Your Path in ADC";
+const title = "";
 const description = "Start the Appily ADC Quiz Now";
 
 export const metadata: Metadata = {

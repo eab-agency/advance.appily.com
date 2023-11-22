@@ -3,7 +3,6 @@ import styles from '@/styles/components/AdcResultsHero.module.scss';
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { useRef } from 'react';
 
-
 export default function AdcResultsHero({ data, animationData }) {
   const lottieRef = useRef<LottieType | null>(null);
   const adcResultDescription = useRef(null);
@@ -25,7 +24,6 @@ export default function AdcResultsHero({ data, animationData }) {
     }, 4000);
 
   }
-
 
   // const handleComplete = () => {
 

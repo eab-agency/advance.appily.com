@@ -1,11 +1,24 @@
 "use client";
 import { useUser } from "@/context/context";
+import resultsData from "@/data/AdcResults/results-not-ready.json";
 import styles from "@/styles/components/Quiz.module.scss";
 import { useEffect, useState } from "react";
 import Question from "./Question";
 import ResetQuizButton from "./ResetQuizButton";
 import Results from "./ResultsQuiz2";
 import Score from "./Score";
+
+import {
+	CareerPaths,
+	CarouselWithForm,
+	ChoosingRightSchoolBusinessDegree,
+	KeepExploring,
+	Stats,
+	StickyCta,
+	Tabs,
+	TextWithImage,
+	WhatDegrees,
+} from "@/components";
 
 export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 	const { location, globalPrivacyControl } = useUser();
@@ -102,7 +115,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 							winningPersonality={quizState.highestScorePersonality}
 						/>
 						<header className={styles.quizContentHead}>
-							<span className="intro-title">{title || "Take the Quiz"}</span>
+							{/* <span className="intro-title">{title || "Take the Quiz"}</span> */}
 							<div className={styles.questionsCounter}>
 								Question {quizState.currentQuestionIdx + 1} of{" "}
 								{questions?.length}

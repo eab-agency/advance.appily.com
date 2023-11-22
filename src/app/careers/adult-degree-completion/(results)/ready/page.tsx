@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import darkNotReady from "@/assets/lotties/dark-not-ready-dark-mode.json";
+import ready from "@/assets/lotties/ready-dark-mode.json";
 import AdcResultsHero from "@/components/Heros/AdcResultsHero";
 import { useEffect, useRef } from "react";
 
@@ -17,6 +17,7 @@ import {
   WhatDegrees,
 } from "@/components";
 import { useUser } from "@/context/context";
+import heroData from "@/data/AdcResults/adc-readyness-results.json";
 import data from "@/data/AdcResults/results-not-ready.json";
 import dataLinks from "@/data/links-business.json";
 
@@ -25,7 +26,7 @@ export default function Page() {
   const { results: links } = dataLinks;
   const { setVertical, vertical } = useUser();
   useEffect(() => {
-    setVertical("acd");
+    setVertical("adc");
   }, []);
 
 
@@ -33,8 +34,8 @@ export default function Page() {
     <>
       <div className="resultContent">
         <AdcResultsHero
-          data={data.heroData}
-          animationData={darkNotReady}
+          data={heroData.ready}
+          animationData={ready}
         />
 
         {links && <SubNav links={links} />}

@@ -153,6 +153,42 @@
         content: tokens.$i-work;
       }
 
+      &.motivation2-icon::before {
+        content: tokens.$i-motivation-icon;
+      }
+
+      &.age-icon::before {
+        content: tokens.$i-age-icon;
+      }
+
+      &.education2-icon::before {
+        content: tokens.$i-education-icon;
+      }
+
+      &.finances-icon::before {
+        content: tokens.$i-finances-icon;
+      }
+
+      &.free-time-icon::before {
+        content: tokens.$i-free-time-icon;
+      }
+
+      &.studying-icon::before {
+        content: tokens.$i-studying-icon;
+      }
+
+      &.support-icon::before {
+        content: tokens.$i-support-icon;
+      }
+
+      &.technology-icon::before {
+        content: tokens.$i-tech-icon;
+      }
+
+      &.time-management-icon::before {
+        content: tokens.$i-time-mgt-icon;
+      }
+
       span {
         position: relative;
         z-index: tokens.$layer-2;
