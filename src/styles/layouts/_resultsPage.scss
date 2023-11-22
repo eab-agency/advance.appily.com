@@ -597,3 +597,33 @@
     }
   }
 }
+
+// ===================================
+// nextSteps
+
+.nextSteps {
+  .intro-text {
+    padding-inline: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+    padding-block: clamp(tokens.$size-6, 4vw, tokens.$size-8);
+    gap: clamp(tokens.$size-5, 4vw, tokens.$size-9);
+
+    h2 {
+      font-weight: tokens.$fontWeight-light;
+      font-size: clamp(tokens.$size-5, 4vw, tokens.$size-7);
+
+      strong {
+        display: block;
+        font-size: 1.5em;
+        font-weight: tokens.$fontWeight-bold;
+      }
+    }
+  }
+
+  .steps {
+    padding-inline: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+    padding-block: clamp(tokens.$size-6, 4vw, tokens.$size-8);
+    gap: clamp(tokens.$size-5, 4vw, tokens.$size-9);
+    // width: 800px;
+    max-width: tokens.$mq-1200;
+  }
+}

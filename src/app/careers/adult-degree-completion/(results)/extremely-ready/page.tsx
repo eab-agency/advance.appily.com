@@ -36,8 +36,8 @@ export default function Page() {
         <Tabs className="react-tabs" tabs={data.tabs} />
 
         <section className="nextSteps">
-          <div className="content-wrapper">
-            <header className="row columns introText">
+          <div className="contentWrapper center-aligned">
+            <header className="row columns intro-text">
               <div className="column">
                 <h2
                   dangerouslySetInnerHTML={{
@@ -54,24 +54,24 @@ export default function Page() {
               </div>
               <figure className="column highlighted-img">
                 <Image
-                  src="/images/business-hero-image.jpg"
+                  src="/images/what-are-your-next-steps.jpg"
                   alt="Next Steps Image"
                   width={480}
                   height={480}
                 />
               </figure>
             </header>
-            <div className="steps columns">
-              <figure className="column">
+            <div className="steps row columns">
+              <figure className="column highlighted-img">
                 <Image
-                  src="/images/business-hero-image.jpg"
+                  src="/images/your-plan-includes.jpg"
                   alt="Next Steps Image"
                   width={480}
                   height={480}
                 />
               </figure>
-              <div className="column">
-                <h3>{data.nextSteps.title}</h3>
+              <div className="column featuredCard">
+                <h3>{data.nextSteps.steps.title}</h3>
                 <ul>
                   {data.nextSteps.steps.list.map((step, index) => (
                     <li key={index} className="step"

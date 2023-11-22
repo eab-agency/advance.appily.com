@@ -179,3 +179,12 @@ div[class*="CarouselWithForm_carouselForm_"] {
     }
   }
 }
+
+.featuredCard {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(tokens.$padding-m, 4vw, tokens.$padding-xxxl);
+  background: var(--c-bg5);
+  border-radius: tokens.$borderRadius-xl;
+  transition: box-shadow 0.2s ease-in-out;
+}
