@@ -21,7 +21,6 @@ export function CareerPaths({ careerPaths }: CareerPathsProps) {
       <div className="group column">
         <div className="intro-text">
           <h2>{title}</h2>
-          {/* <p>{description}</p> */}
           <p
             dangerouslySetInnerHTML={{
               __html: description,
@@ -41,7 +40,11 @@ export function CareerPaths({ careerPaths }: CareerPathsProps) {
               </figure>
               <div className="careerPathContent">
                 <h3>{path.title}</h3>
-                <p>{path.description}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: path.description
+                  }}
+                />
               </div>
             </li>
           ))}

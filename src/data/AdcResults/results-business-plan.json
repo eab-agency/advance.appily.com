@@ -50,36 +50,164 @@
 	},
 	"fundingYourDegree": [
 		{
-			"title": "Motivation",
-			"icon": "motivation-icon",
-			"content": "You excel at leveraging technology and data to optimize processes and solve complex problems."
+			"title": "Scholarships",
+			"icon": "education2-icon",
+			"content": "Scholarships are financial awards given to students based on merit, need, or specific criteria set by the provider. They don't need to be repaid."
 		},
 		{
-			"title": "Skills",
-			"icon": "skills-icon",
-			"content": "You're proficient in technology, data analysis, and problem-solving."
+			"title": "Federal Aid",
+			"icon": "support-icon",
+			"content": "The U.S. Department of Education offers various financial aid options, including grants (which don't need to be repaid) and low-interest loans."
 		},
 		{
-			"title": "Works With",
+			"title": "Tuiton Reimbursement",
 			"icon": "work-icon",
-			"content": "You enjoy working with computers and technology to analyze data and solve problems."
+			"content": "Check the Employee Handbook: Many companies outline their benefits, including tuition reimbursement, in the employee handbook or benefits guide."
 		},
 		{
-			"title": "Setting",
+			"title": "Work Study",
 			"icon": "setting-icon",
-			"content": "You thrive in a technology-driven workplace with opportunities for data analysis."
+			"content": "Work-study is a federal program that provides part-time jobs to students, allowing them to earn money to help pay for school. After you enroll, your college's financial aid office can provide specifics on work-study opportunities."
 		},
 		{
-			"title": "Education",
+			"title": "Military",
 			"icon": "education-icon",
-			"content": "You may have taken courses in information technology, data analytics, or computer science. "
+			"content": "Veterans Affairs education benefits help Veterans, service members, and their qualified family members with needs like paying college tuition, finding the right school or training program, and getting career counseling."
 		},
 		{
-			"title": "Experience",
-			"icon": "skills-icon",
-			"content": "Your work experience may include utilizing data analysis and technology for problem-solving."
+			"title": "Loans",
+			"icon": "finances-icon",
+			"content": "Loans are borrowed funds that must be repaid with interest. They can be federal or private."
 		}
 	],
+	"fileFafsa": {
+		"buttonLink": "https://studentaid.gov/h/apply-for-aid/fafsa",
+		"buttonText": "File Your FAFSA",
+		"importantThings": [
+			{
+				"title": "It Unlocks Financial Aid Opportunities",
+				"description": "The FAFSA is the gateway to a multitude of financial aid options. By completing it, you become eligible for federal grants, work-study programs, and loans. Plus, many states and colleges use FAFSA data to award their own financial aid."
+			},
+			{
+				"title": "It’s Not Just for Freshmen",
+				"description": "Regardless of whether you're a returning adult student or a first-time undergraduate, the FAFSA is for everyone. Age isn't a barrier; the opportunities it brings are applicable to all."
+			},
+			{
+				"title": "It’s Not Just for Federal Aid",
+				"description": "Beyond federal aid, the FAFSA can also connect you with state-specific grants and scholarships tailored for adults returning to the educational fold. Many institutions also require the FAFSA for their own scholarship and grant opportunities."
+			},
+			{
+				"title": "It Helps You Plan",
+				"description": "Filling out the FAFSA provides you with a clearer picture of what financial assistance you qualify for. This can be instrumental in planning your educational journey without the stress of unforeseen costs."
+			},
+			{
+				"title": "It Matters When You File",
+				"description": "The FAFSA becomes available on October 1st each year, and deadlines can vary by state and college. It's often said,'The early bird catches the worm,' and this holds true here. The sooner you file, the better your chances of receiving the maximum amount of aid available."
+			}
+		],
+		"statsSource": "Appily; NCES; SHRM",
+		"stats": [
+			{
+				"number": "Billions",
+				"title": "In Scholarships",
+				"description": "<a href='https://www.appily.com/scholarships' target='_blank'>Appily’s Scholarship search tool</a> is the nation’s largest, multi-billion dollar scholarship database. After you create a free account, you can narrow down your options and apply to any scholarships that interest you within the tool."
+			},
+			{
+				"number": "85%",
+				"title": "Receive Aid",
+				"description": "Approximately 85% of full-time undergraduate students who <a href='https://studentaid.gov/h/apply-for-aid/fafsa'>file the FAFSA</a> receive some kind of financial aid, according to the National Center for Education Statistics (NCES)."
+			},
+			{
+				"number": "~Half",
+				"title": "Of Employers Offer Educational Benefits",
+				"description": "The Society for Human Resource Management (SHRM) reports that while it varies from year to year, on average, between 45-55% of employers offer tuition assistance."
+			}
+		],
+		"moreWays": [
+			{
+				"title": "Transfer as many credits as you can.",
+				"description": "<p>Many colleges accept credits from any previous college experience you have, up to a certain amount of hours. You could also pursue alternative ways of applying credits, such as:</p><ul><li>ACE: If you participated in military service, workplace training programs, apprenticeships, standardized exams, or other types of <strong>experiential learning outside the college classroom, you could receive college credit recommendations</strong> or validated competencies through Learning Evaluation.</li><li>CLEP: These exams let you <strong>test out of introductory courses</strong> and move to more advanced courses sooner, saving time toward your degree.</li></ul><p>Many colleges also offer their own testing programs that allow you the opportunity to test out of introductory-level courses.</p>"
+			},
+			{
+				"title": "Look for accelerated programs.",
+				"description": "<p>Since colleges often charge by credit hour, look for ones that offer programs with <strong>fewer total credits</strong> needed to complete your degree.</p>"
+			},
+			{
+				"title": "Take classes one at a time.",
+				"description": "Some degrees have asynchronous options where you can take one class at a time and complete your week’s work whenever it fits your schedule. This may make it easier to <strong>pay as you go</strong> — and fit it into your busy life."
+			}
+		]
+	},
+	"careersPaths": {
+		"paths": [
+			{
+				"title": "Military",
+				"content": "The discipline, leadership, and strategic skills honed during military service can open doors in sectors like defense contracting, government roles, or security management. Your experience can also be highly valued in project management and logistics, where your abilities to lead and coordinate are crucial.",
+				"icon": "education-icon"
+			},
+			{
+				"title": "Service Industry",
+				"content": "Your service industry experience, with its emphasis on customer relations and operational efficiency, can translate into careers in hospitality management, customer service leadership, or human resources, where your people-centric skills will continue to shine.",
+				"icon": "food-icon"
+			},
+			{
+				"title": "Retail",
+				"content": "A background in retail, rich in customer service and sales experience, can pivot you toward careers in marketing, retail management, or even entrepreneurial ventures. The adaptability and commercial awareness you've gained are assets in any client-facing or business development role.",
+				"icon": "finances-icon"
+			},
+			{
+				"title": "Health Care",
+				"content": "Health care experience is invaluable, opening pathways to advanced clinical roles, healthcare administration, or public health advocacy. Your firsthand understanding of patient care and healthcare systems makes you a strong candidate for positions aiming to enhance healthcare delivery and policy.",
+				"icon": "health-icon"
+			},
+			{
+				"title": "Self-Employed",
+				"content": "Your entrepreneurial background can propel you into leadership roles, consultancy, or business development. The initiative and innovation that come with being self-employed are sought after in the rapidly changing business landscape, tech startups, and creative industries.",
+				"icon": "work-icon"
+			},
+			{
+				"title": "Parent",
+				"content": "The organizational and nurturing skills you've honed can lead to fulfilling careers in education, child development, or community services. Your talent for managing and nurturing growth is also an asset in administrative or project coordination roles.",
+				"icon": "free-time-icon"
+			},
+			{
+				"title": "Other",
+				"content": "Diverse life experiences provide a unique lens through which you view challenges and opportunities, making you suitable for a variety of roles. Your adaptability and breadth of knowledge can be particularly advantageous in roles that require empathy, problem-solving, and a multidisciplinary approach.",
+				"icon": "other-icon"
+			}
+		]
+	},
+	"topCareers": {
+		"title": "Top Careers in Business",
+		"description": "In the dynamic world of business, versatility and strategic acumen are paramount. The careers we've selected not only promise ample opportunities for advancement but also offer the potential for impactful roles in a variety of industries, ensuring that your investment in a business-related bachelor's degree yields substantial professional and financial rewards.",
+		"paths": [
+			{
+				"title": "Business Analyst",
+				"description": "<p><strong>Job responsibilities:</strong> Analyzes organizational processes, identifies inefficiencies, and recommends solutions.</p><p><strong>Why pursue this career:</strong> A smart choice due to the growing reliance on data-driven decision-making in business.</p><p><strong>Related degrees:</strong> Bachelor of Business Administration (BBA) or Bachelor's in Finance</p>",
+				"imagePath": "/images/IT-manager.jpg"
+			},
+			{
+				"title": "Marketing Manager",
+				"description": "<p><strong>Job responsibilities:</strong> Develops and oversees marketing strategies to promote products and services.</p><p><strong>Why pursue this career:</strong> A sound career due to the constant need for businesses to differentiate and compete.</p><p><strong>Related degrees:</strong> Bachelor's in Marketing or Bachelor's in Business Administration</p>",
+				"imagePath": "/images/data-analyst.jpg"
+			},
+			{
+				"title": "Financial Analyst",
+				"description": "<p><strong>Job responsibilities:</strong> Evaluates investment opportunities and provides guidance to businesses or individuals.</p><p><strong>Why pursue this career:</strong> A wise choice given the critical role of financial planning in both corporate and personal finance.</p><p><strong>Related degrees:</strong> Bachelor's in Finance or Bachelor's in Economics</p>",
+				"imagePath": "/images/business-intelligence-analyst.jpg"
+			},
+			{
+				"title": "Human Resources Manager",
+				"description": "<p><strong>Job responsibilities:</strong> Oversees employee relations, recruitment, and compliance with labor laws.</p><p><strong>Why pursue this career:</strong> A stable choice because of the enduring necessity of managing an organization's workforce.</p><p><strong>Related degrees:</strong> Bachelor's in Human Resources or Bachelor's in Business Administration</p>",
+				"imagePath": "/images/cybersecurity-analyst.jpg"
+			},
+			{
+				"title": "Supply Chain Manager",
+				"description": "<p><strong>Job responsibilities:</strong> Manages the entire lifecycle of a product, from sourcing to delivery.</p><p><strong>Why pursue this career:</strong> A prudent choice given the increasing complexity and globalization of supply chains.</p><p><strong>Related degrees:</strong> Bachelor's in Supply Chain Management or Bachelor's in Business Administration</p>",
+				"imagePath": "/images/IT-manager.jpg"
+			}
+		]
+	},
 	"degreeTabs": {
 		"title": "What degree do I need for a career in <strong>information technology and analytics?</strong>",
 		"description": "Thriving in the dynamic fields of technology and data analysis requires a solid educational foundation. While a bachelor's degree is a starting point, advancing your education to a master's level can significantly enhance your skills and unlock a wealth of opportunities.",
@@ -107,32 +235,6 @@
 			{
 				"title": "Financial Analytics",
 				"content": "<p>A degree in Financial Analytics focuses on using data analysis to inform financial decision-making.</p><p>Example degrees: Master of Financial Analytics, Master of Business Administration (MBA) with a concentration in Financial Analytics</p>"
-			}
-		]
-	},
-	"careerPaths": {
-		"title": "What kind of career is a good fit for me?",
-		"description": "Occupations that align with The Computer Whiz's career path center on leveraging technology and data for problem-solving and decision-making.",
-		"paths": [
-			{
-				"title": "IT Manager",
-				"description": "Oversee and manage the IT department of an organization.",
-				"imagePath": "/images/IT-manager.jpg"
-			},
-			{
-				"title": "Data Analyst",
-				"description": "Analyze and interpret data to inform business decisions and strategies.",
-				"imagePath": "/images/data-analyst.jpg"
-			},
-			{
-				"title": "Business Intelligence Analyst",
-				"description": "Use data and analytics tools to generate insights for the organization.",
-				"imagePath": "/images/business-intelligence-analyst.jpg"
-			},
-			{
-				"title": "Cybersecurity Analyst",
-				"description": "Protect the organization's computer systems and data from security breaches.",
-				"imagePath": "/images/cybersecurity-analyst.jpg"
 			}
 		]
 	},
