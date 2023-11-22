@@ -36,8 +36,8 @@ export default function Page() {
         <Tabs className="react-tabs" tabs={data.tabs} />
 
         <section className="nextSteps">
-          <div className="contentWrapper center-aligned">
-            <header className="row columns intro-text">
+          <div className="contentWrapper imgTextSection">
+            <header className="group row cols-2 center-aligned intro-text">
               <div className="column">
                 <h2
                   dangerouslySetInnerHTML={{
@@ -61,7 +61,7 @@ export default function Page() {
                 />
               </figure>
             </header>
-            <div className="steps row columns">
+            <div className="steps group row cols-2">
               <figure className="column highlighted-img">
                 <Image
                   src="/images/your-plan-includes.jpg"

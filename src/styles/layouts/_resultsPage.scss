@@ -602,6 +602,12 @@
 // nextSteps
 
 .nextSteps {
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
   .intro-text {
     padding-inline: clamp(tokens.$size-4, 2vw, tokens.$size-6);
     padding-block: clamp(tokens.$size-6, 4vw, tokens.$size-8);
@@ -617,13 +623,26 @@
         font-weight: tokens.$fontWeight-bold;
       }
     }
+
+    div.column {
+      order: 1;
+
+      @media (min-width: tokens.$mq-900) {
+        order: 0;
+      }
+    }
   }
 
   .steps {
     padding-inline: clamp(tokens.$size-4, 2vw, tokens.$size-6);
     padding-block: clamp(tokens.$size-6, 4vw, tokens.$size-8);
     gap: clamp(tokens.$size-5, 4vw, tokens.$size-9);
-    // width: 800px;
     max-width: tokens.$mq-1200;
+
+    @media (max-width: tokens.$mq-900) {
+      figure {
+        display: none;
+      }
+    }
   }
 }
