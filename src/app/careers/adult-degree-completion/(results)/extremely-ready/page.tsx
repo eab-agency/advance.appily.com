@@ -33,7 +33,7 @@ export default function Page() {
           animationData={extremelyReady}
         />
 
-        <Tabs className="react-tabs" tabs={data.tabs} />
+        <Tabs className="react-tabs adc-results-tabs" tabs={data.tabs} />
 
         <section className="nextSteps">
           <div className="contentWrapper imgTextSection">
