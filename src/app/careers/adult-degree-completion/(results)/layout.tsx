@@ -3,9 +3,9 @@ import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Link } from "@/types";
 import { Metadata } from "next";
 
-const title = "Your ideal role in business";
+const title = "Are you ready to return to school?";
 const description =
-  "Discover your ideal role in business and find schools that offer degrees to help you reach your goals.";
+  "Discover your readiness for a successful return to education and find schools that offer degrees to help you reach your goals.";
 
 export const metadata: Metadata = {
   openGraph: mergeOpenGraph({

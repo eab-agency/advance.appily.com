@@ -80,6 +80,7 @@ export default function Page() {
                     <h3>{data.nextSteps.steps.title}</h3>
                     <ul>
                       {data.nextSteps.steps.list.map((step, index) => (
+                        // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                         <li key={index} className="step"
                           dangerouslySetInnerHTML={{ __html: step.step.content || '' }}
                         />

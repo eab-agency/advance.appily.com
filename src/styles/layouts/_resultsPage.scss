@@ -71,14 +71,11 @@
         display: none;
       }
 
-      & > div {
+      & > div,
+      & > img {
         height: 50vw;
         position: relative;
         z-index: tokens.$layer-1;
-
-        image[width*="793"] {
-          display: none;
-        }
       }
 
       @media (min-width: tokens.$mq-900) {
