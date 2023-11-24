@@ -1,38 +1,43 @@
 {
 	"slug": "business-plan",
-	"title": "You've got this!",
-	"description": "no in use",
-	"detailedDescription": "<p>Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. This plan isn't just a guide; it's a reflection of your ambition, your dreams, and your future. </p><p>Here's what you're unlocking:<br/><ul><li>Clarity and Confidence: No more second-guessing. Every piece of advice here is tailored to help you navigate your educational journey with ease.</li><li>A Future Tailored to You: Your goals, your aspirations, your pace. Embrace the exciting opportunities that lie ahead.</li></ul></p><p>You've got the ambition and the drive. With this plan in hand, you're not just going back to school; you're moving forward in life. Let's dive in and advance your future together.</p>",
+	"heroSection": {
+		"title": "You've got this!",
+		"description": "<p>Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. This plan isn't just a guide; it's a reflection of your ambition, your dreams, and your future. </p><p>Here's what you're unlocking:<br/><ul><li>Clarity and Confidence: No more second-guessing. Every piece of advice here is tailored to help you navigate your educational journey with ease.</li><li>A Future Tailored to You: Your goals, your aspirations, your pace. Embrace the exciting opportunities that lie ahead.</li></ul></p><p>You've got the ambition and the drive. With this plan in hand, you're not just going back to school; you're moving forward in life. Let's dive in and advance your future together.</p>",
+		"image": {
+			"path": "/images/build-plan/business-plan.svg",
+			"altText": "Your business back to school plan"
+		}
+	},
 	"reasons": {
-    "title": "Is Earning My Bachelor’s Degree  <strong>Really Worth It?</strong>",
-    "description":"",
-    "image": {
-      "path": "/images/build-plan/value-of-a-degree.jpg",
-      "altText": "Graduate celebrating wearing a cap and gown"
-    },
-    "accordionList":[
-      {
-        "title": "Higher Earning Potential",
-        "description": "On average, bachelor's degree holders earn significantly more over their lifetime than those with only a high school diploma. Investing in your education can pave the way for a higher salary and improved financial stability."
-      },
-      {
-        "title": "Broader Career Opportunities",
-        "description": "Many positions, especially in growing industries like technology, healthcare, and finance, often require or prefer candidates with a bachelor's degree. By completing your degree, you unlock a wider range of job prospects."
-      },
-      {
-        "title": "Personal Growth & Development",
-        "description": "Beyond the career implications, college offers a holistic experience. You'll be exposed to diverse perspectives, subjects, and opportunities for personal and intellectual growth. This enriching environment can enhance your worldview, critical thinking skills, and interpersonal dynamics."
-      },
-      {
-        "title": "Networking Opportunities",
-        "description": "College isn't just about what you learn in the classroom. It's also about the connections you make. Alumni networks, professors, peers, internships, and campus organizations can all provide valuable connections that might benefit your future career."
-      },
-      {
-        "title": "Flexibility & Adaptability",
-        "description": "As industries evolve, those with a higher level of education tend to have an easier time adapting to changes in the job market. A bachelor's degree equips you with transferable skills that are valuable in a variety of roles."
-      }
-    ]
-  },
+		"title": "Is Earning My Bachelor’s Degree  <strong>Really Worth It?</strong>",
+		"description": "",
+		"image": {
+			"path": "/images/build-plan/value-of-a-degree.jpg",
+			"altText": "Graduate celebrating wearing a cap and gown"
+		},
+		"accordionList": [
+			{
+				"title": "Higher Earning Potential",
+				"description": "On average, bachelor's degree holders earn significantly more over their lifetime than those with only a high school diploma. Investing in your education can pave the way for a higher salary and improved financial stability."
+			},
+			{
+				"title": "Broader Career Opportunities",
+				"description": "Many positions, especially in growing industries like technology, healthcare, and finance, often require or prefer candidates with a bachelor's degree. By completing your degree, you unlock a wider range of job prospects."
+			},
+			{
+				"title": "Personal Growth & Development",
+				"description": "Beyond the career implications, college offers a holistic experience. You'll be exposed to diverse perspectives, subjects, and opportunities for personal and intellectual growth. This enriching environment can enhance your worldview, critical thinking skills, and interpersonal dynamics."
+			},
+			{
+				"title": "Networking Opportunities",
+				"description": "College isn't just about what you learn in the classroom. It's also about the connections you make. Alumni networks, professors, peers, internships, and campus organizations can all provide valuable connections that might benefit your future career."
+			},
+			{
+				"title": "Flexibility & Adaptability",
+				"description": "As industries evolve, those with a higher level of education tend to have an easier time adapting to changes in the job market. A bachelor's degree equips you with transferable skills that are valuable in a variety of roles."
+			}
+		]
+	},
 	"statsSource": "Association of Public and Land Grant Universities",
 	"stats": [
 		{

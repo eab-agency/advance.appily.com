@@ -10,21 +10,17 @@ import { useEffect, useRef } from "react";
 import {
   Accordion,
   AccordionSection,
-  Button,
   CareerPaths,
   CarouselWithForm,
-  ChoosingRightSchoolBusinessDegree,
-  KeepExploring,
   LinkedCardsSection,
   Stats,
   StickyCta,
   SubNavPlan,
-  Tabs,
   TabsSection,
   Testimonial,
   TextWithImage,
-  WhatDegrees,
 } from "@/components";
+import BuildPlanHero from "@/components/Heros/BuildPlanHero";
 import { useUser } from "@/context/context";
 import data from "@/data/AdcResults/results-business-plan.json";
 
@@ -37,28 +33,7 @@ export default function Page() {
   return data ? (
     <>
       <div className="resultContent">
-        <section className="resultsHero">
-          <div className="group">
-            <div className="heroContent column">
-              <div className="intro-title">
-                <span>Your Back-to-School Plan</span>
-              </div>
-              <h1>{data.title}</h1>
-              <div
-                dangerouslySetInnerHTML={{ __html: data.detailedDescription }}
-              />
-            </div>
-            <figure className="column">
-              {/* <Lottie animationData={computerWhiz} loop={true} /> */}
-              <Image
-                src="/images/build-plan/business-plan.svg"
-                alt="Your business back to school plan"
-                width={400}
-                height={400}
-              />
-            </figure>
-          </div>
-        </section>
+        <BuildPlanHero data={data.heroSection} />
 
         <SubNavPlan />
 
