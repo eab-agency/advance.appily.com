@@ -62,45 +62,7 @@ export default function Page() {
 
         <SubNavPlan />
 
-        <section id="value-of-a-degree" className="whyChoose">
-          <div className="group center-aligned cols-2">
-            <div className="column">
-              <div className="intro">
-                <h2>
-                  Is Earning My Bachelor’s Degree{" "}
-                  <strong>Really Worth It?</strong>
-                </h2>
-                {/* <p
-                  dangerouslySetInnerHTML={{
-                    __html: data.whyChoose.description,
-                  }}
-                />*/}
-              </div>
-              <div className="accordion-group">
-                {data.reasons.map((reason, index) => (
-                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                  <Accordion key={index} title={reason.title}>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: reason.description,
-                      }}
-                    />
-                  </Accordion>
-                ))}
-              </div>
-            </div>
-            <div className="column">
-              <figure className="highlighted-img">
-                <Image
-                  src="/images/build-plan/value-of-a-degree.jpg"
-                  width={480}
-                  height={480}
-                  alt="Graduate celebrating wearing a cap and gown"
-                />
-              </figure>
-            </div>
-          </div>
-        </section>
+        <AccordionSection data={data.reasons} />
 
         <Stats stats={data.stats} source={data.statsSource} />
 

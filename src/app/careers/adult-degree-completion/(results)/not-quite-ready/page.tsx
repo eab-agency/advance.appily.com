@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import notReady from "@/assets/lotties/dark-not-ready-dark-mode.json";
-import AdcResultsHero from "@/components/Heros/AdcResultsHero";
+import AdcResultsHero from "@/components/Heros/ReadynessResultsHero";
 import { useEffect, useRef, useState } from "react";
 
 import {

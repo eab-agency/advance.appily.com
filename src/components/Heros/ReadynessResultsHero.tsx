@@ -16,7 +16,7 @@ interface Props {
   animationState?: (animationState: boolean) => void;
 }
 
-export default function AdcResultsHero({ data, animationData, animationState }: Props) {
+export default function ReadynessResultsHero({ data, animationData, animationState }: Props) {
   const lottieRef = useRef<LottieType | null>(null);
   const adcResultDescription = useRef(null);
   const adcResult = useRef(null);

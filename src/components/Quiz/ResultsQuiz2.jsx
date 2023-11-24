@@ -11,7 +11,7 @@ import extremelyReady from "@/assets/lotties/extremely-ready-dark-mode.json";
 import ready from "@/assets/lotties/ready-dark-mode.json";
 import veryReady from "@/assets/lotties/very-ready-dark-mode.json";
 
-import AdcResultsHero from "@/components/Heros/AdcResultsHero";
+import AdcResultsHero from "@/components/Heros/ReadynessResultsHero";
 import readynessResults from "@/data/AdcResults/adc-readyness-results.json";
 
 const Results = ({ children, vertical, answers, formId, score = 0 }) => {

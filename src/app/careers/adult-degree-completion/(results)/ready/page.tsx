@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import ready from "@/assets/lotties/ready-dark-mode.json";
-import AdcResultsHero from "@/components/Heros/AdcResultsHero";
+import ReadynessResultsHero from "@/components/Heros/ReadynessResultsHero";
 import { useEffect, useRef, useState } from "react";
 
 import {
@@ -31,7 +31,7 @@ export default function Page() {
   return data ? (
     <>
       <div className="resultContent">
-        <AdcResultsHero
+        <ReadynessResultsHero
           data={heroData.ready}
           animationData={ready}
           animationState={handleShowContent}
