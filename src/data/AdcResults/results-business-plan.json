@@ -48,42 +48,52 @@
 		"author": "Ben Cater, Ph.D.",
 		"authorTitle": "Associate Dean of General Education, Point Loma Nazarene University"
 	},
-	"fundingYourDegree": [
-		{
-			"title": "Scholarships",
-			"icon": "education2-icon",
-			"content": "Scholarships are financial awards given to students based on merit, need, or specific criteria set by the provider. They don't need to be repaid."
-		},
-		{
-			"title": "Federal Aid",
-			"icon": "support-icon",
-			"content": "The U.S. Department of Education offers various financial aid options, including grants (which don't need to be repaid) and low-interest loans."
-		},
-		{
-			"title": "Tuiton Reimbursement",
-			"icon": "work-icon",
-			"content": "Check the Employee Handbook: Many companies outline their benefits, including tuition reimbursement, in the employee handbook or benefits guide."
-		},
-		{
-			"title": "Work Study",
-			"icon": "setting-icon",
-			"content": "Work-study is a federal program that provides part-time jobs to students, allowing them to earn money to help pay for school. After you enroll, your college's financial aid office can provide specifics on work-study opportunities."
-		},
-		{
-			"title": "Military",
-			"icon": "education-icon",
-			"content": "Veterans Affairs education benefits help Veterans, service members, and their qualified family members with needs like paying college tuition, finding the right school or training program, and getting career counseling."
-		},
-		{
-			"title": "Loans",
-			"icon": "finances-icon",
-			"content": "Loans are borrowed funds that must be repaid with interest. They can be federal or private."
-		}
-	],
+	"fundingYourDegree": {
+		"title": "Resources to Fund Your Education",
+		"description": "<p>Can this automatically have the tab selected related to <strong>“Which of the following funding opportunities would you be most interested in learning about?”</strong></p>",
+		"tabsList": [
+			{
+				"title": "Scholarships",
+				"icon": "education2-icon",
+				"content": "Scholarships are financial awards given to students based on merit, need, or specific criteria set by the provider. They don't need to be repaid."
+			},
+			{
+				"title": "Federal Aid",
+				"icon": "support-icon",
+				"content": "The U.S. Department of Education offers various financial aid options, including grants (which don't need to be repaid) and low-interest loans."
+			},
+			{
+				"title": "Tuiton Reimbursement",
+				"icon": "work-icon",
+				"content": "Check the Employee Handbook: Many companies outline their benefits, including tuition reimbursement, in the employee handbook or benefits guide."
+			},
+			{
+				"title": "Work Study",
+				"icon": "setting-icon",
+				"content": "Work-study is a federal program that provides part-time jobs to students, allowing them to earn money to help pay for school. After you enroll, your college's financial aid office can provide specifics on work-study opportunities."
+			},
+			{
+				"title": "Military",
+				"icon": "education-icon",
+				"content": "Veterans Affairs education benefits help Veterans, service members, and their qualified family members with needs like paying college tuition, finding the right school or training program, and getting career counseling."
+			},
+			{
+				"title": "Loans",
+				"icon": "finances-icon",
+				"content": "Loans are borrowed funds that must be repaid with interest. They can be federal or private."
+			}
+		]
+	},
 	"fileFafsa": {
+		"title": " Your First Step to Funding Your Degree: <strong>File the FAFSA</strong>",
+		"description": "<p>The Free Application for Federal Student Aid (FAFSA) is the gateway to a multitude of financial aid options. By completing it, you become eligible for federal grants, work-study programs, and loans. Plus, many states and colleges use FAFSA data to award their own financial aid.</p>",
 		"buttonLink": "https://studentaid.gov/h/apply-for-aid/fafsa",
 		"buttonText": "File Your FAFSA",
-		"importantThings": [
+		"image": {
+			"path": "/images/build-plan/file-your-fafsa.jpg",
+			"altText": "Student filing their FAFSA"
+		},
+		"accordionList": [
 			{
 				"title": "It Unlocks Financial Aid Opportunities",
 				"description": "The FAFSA is the gateway to a multitude of financial aid options. By completing it, you become eligible for federal grants, work-study programs, and loans. Plus, many states and colleges use FAFSA data to award their own financial aid."
@@ -138,8 +148,29 @@
 			}
 		]
 	},
+	"tools": {
+		"title": "Try These Tools",
+		"cardsList": [
+			{
+				"title": "Appily’s Scholarship Database",
+				"description": "The nation’s largest, multi-billion dollar scholarship database can help you discover funding opportunities that you don’t have to pay back.",
+				"link": "https://www.appily.com/scholarships"
+			},
+			{
+				"title": "ACE Credit for Prior Learning",
+				"description": "If you participated in military service, workplace training programs, apprenticeships, standardized exams, or other types of experiential learning outside the college classroom, you could receive college credit recommendations or validated competencies through Learning Evaluation.",
+				"link": "https://www.acenet.edu/Programs-Services/Pages/Credit-Transcripts/Students.aspx"
+			},
+			{
+				"title": "College-Level Exam Program (CLEP)",
+				"description": "CLEP exams let you test out of introductory courses and move to more advanced courses sooner, saving time toward your degree.",
+				"link": "https://www.acenet.edu/Programs-Services/Pages/Credit-Transcripts/Students.aspx"
+			}
+		]
+	},
 	"careersPaths": {
-		"paths": [
+		"title": "How Can Your Life Experience Shape Your Career Options?",
+		"tabsList": [
 			{
 				"title": "Military",
 				"content": "The discipline, leadership, and strategic skills honed during military service can open doors in sectors like defense contracting, government roles, or security management. Your experience can also be highly valued in project management and logistics, where your abilities to lead and coordinate are crucial.",
@@ -206,40 +237,199 @@
 				"description": "<p><strong>Job responsibilities:</strong> Manages the entire lifecycle of a product, from sourcing to delivery.</p><p><strong>Why pursue this career:</strong> A prudent choice given the increasing complexity and globalization of supply chains.</p><p><strong>Related degrees:</strong> Bachelor's in Supply Chain Management or Bachelor's in Business Administration</p>",
 				"imagePath": "/images/IT-manager.jpg"
 			}
+		],
+		"statsSource": "U.S. Bureau of Labor Statistics",
+		"stats": [
+			{
+				"number": "$76K",
+				"title": "",
+				"description": "<strong>Median salary</strong> for business and financial jobs, ranging from $50K to $96K"
+			},
+			{
+				"number": "Exceeds Avg",
+				"title": "",
+				"description": "Overall <strong>employment growth</strong> in business and management occupations in the next decade"
+			},
+			{
+				"number": "911K",
+				"title": "",
+				"description": "Openings in <strong>business and financial jobs</strong> projected each year over the next decade"
+			}
 		]
 	},
-	"degreeTabs": {
-		"title": "What degree do I need for a career in <strong>information technology and analytics?</strong>",
-		"description": "Thriving in the dynamic fields of technology and data analysis requires a solid educational foundation. While a bachelor's degree is a starting point, advancing your education to a master's level can significantly enhance your skills and unlock a wealth of opportunities.",
-		"degrees": [
+	"degreeGoals": {
+		"title": "How a Bachelor’s Degree Can Help You Reach Your Goals",
+		"tabsList": [
 			{
-				"title": "Management of Information Systems",
-				"content": "<p>A degree in Management of Information Systems combines business knowledge with expertise in managing information technology and data.</p><p>Example degrees: Master of Science in Management Information Systems (MS-MIS), Master of Business Administration (MBA) with a concentration in Information Systems Management</p>"
+				"title": "Advance Your Career",
+				"content": "<p>Earning a bachelor's degree can be a game-changer for career progression. Many managerial and specialized positions list a bachelor's as a minimum requirement. By broadening your knowledge base and honing key skills, you'll be positioning yourself for promotions, increased salary potential, and greater job responsibilities.</p><p><strong>Take the Next Step:</strong> Evaluate which degrees are most respected in your profession and begin researching programs that offer flexibility around your current job. Reach out to HR to understand potential career paths and how further education can accelerate your journey.</p>",
+				"icon": "advance-icon"
 			},
 			{
-				"title": "Information Technology",
-				"content": "<p>A degree in Information Technology covers various aspects of technology management and infrastructure.</p><p>Example degrees: Master of Information Technology (MIT), Master of Science in Information Technology (MSIT), Master of Business Administration (MBA) with a specialization in Information Technology</p>"
+				"title": "Switch Your Career",
+				"content": "<p>Thinking of a career shift? A bachelor's degree can provide the foundation you need to transition seamlessly. It not only equips you with new knowledge and skills but also demonstrates to potential employers your commitment to learning and adaptability. Plus, the networking opportunities during your studies can open doors to industries you haven't ventured into before.</p><p><strong>Take the Next Step:</strong> Identify transferable skills and consider degree options that complement them. Talk to career counselors and network with individuals in the field to gain clarity on the best educational route to your new career.</p>",
+				"icon": "switch-icon"
 			},
 			{
-				"title": "Business Analytics",
-				"content": "<p>A degree in Business Analytics focuses on using data analysis and statistics to inform business decision-making.</p><p>Example degrees: Master of Science in Business Analytics (MSBA), Master of Business Administration (MBA) with a focus on Business Analytics</p>"
+				"title": "Finish Your Degree",
+				"content": "<p>Picking up where you left off and completing your degree is commendable. Finishing your bachelor's not only offers a sense of accomplishment but can also unlock opportunities that were just out of reach before. Plus, in many industries, having a completed degree can make a notable difference in earning potential and job opportunities.</p><p><strong>Take the Next Step:</strong> Research how your credits may transfer at colleges or universities that have a program that interests you. Explore options like online courses or part-time schedules that accommodate your current lifestyle.</p>",
+				"icon": "education-icon"
 			},
 			{
-				"title": "Business Statistics",
-				"content": "<p>A degree in Business Statistics emphasizes analyzing and interpreting data to solve business problems.</p><p>Example degrees: Master of Science in Business Statistics, Master of Business Administration (MBA) with a concentration in Business Statistics</p>"
+				"title": "Explore New Opportunities",
+				"content": "<p>A bachelor's degree is a passport to new territories—intellectually, culturally, and professionally. It offers a chance to explore diverse subjects and discover new areas that could translate into unexpected career opportunities.</p><p><strong>Take the Next Step:</strong> Investigate interdisciplinary degree programs that allow for exploration while also making you marketable. Attend open houses and informational sessions at various colleges to see what sparks your interest.</p>",
+				"icon": "surprise-icon"
 			},
 			{
-				"title": "System Administrator",
-				"content": "<p>A degree in System Administration equips individuals with skills to manage and maintain computer systems and networks.</p><p>Example degrees: Master of Science in System Administration, Master of Information Technology with a specialization in System Administration</p>"
+				"title": "Self-Employed",
+				"content": "Your entrepreneurial background can propel you into leadership roles, consultancy, or business development. The initiative and innovation that come with being self-employed are sought after in the rapidly changing business landscape, tech startups, and creative industries.",
+				"icon": "work-icon"
 			},
 			{
-				"title": "Financial Analytics",
-				"content": "<p>A degree in Financial Analytics focuses on using data analysis to inform financial decision-making.</p><p>Example degrees: Master of Financial Analytics, Master of Business Administration (MBA) with a concentration in Financial Analytics</p>"
+				"title": "Transition from Military to Civilian Life",
+				"content": "<p>The discipline, leadership, and unique skills you've acquired in the military are invaluable. A bachelor's degree can complement these traits, helping you translate your military experience into civilian job roles. Additionally, the structured environment of academia can ease the transition, providing a supportive space to adapt while expanding your qualifications.</p><p><strong>Take the Next Step:</strong> Assess your military experience and how it can apply to civilian jobs. Utilize resources like the GI Bill and speak with veteran affairs advisors at colleges to understand how your service can financially support your education and inform your degree choice.</p>",
+				"icon": "free-time-icon"
+			},
+			{
+				"title": "Pursue Your Passions",
+				"content": "<p>Earning a bachelor's degree opens a pathway to living a life driven by your passions. Whether you're drawn to the arts, fascinated by science, or inspired to make social changes, higher education equips you with the expertise and credentials to turn your personal interests into a fulfilling career. A bachelor's degree program offers in-depth knowledge and specialized skills, transforming your natural interests into professional expertise.</p><p><strong>Take the Next Step:</strong> Reflect on what you love doing. Research degree programs that align with those interests and reach out to academic advisors or professionals in the field to gain insights into how your passions can translate into a viable career path.</p>",
+				"icon": "motivation-icon"
+			}
+		]
+	},
+	"bachelorDegrees": {
+		"title": "Best Business Bachelor’s Degrees",
+		"description": "In the dynamic world of commerce, degrees in business equip students with the tools and insights to navigate the complex corporate landscape. From managerial roles to financial planning, business degrees open doors to vast career opportunities with lucrative pay and growth potential.",
+		"paths": [
+			{
+				"title": "Business Administration",
+				"description": "<p>This versatile degree covers a range of business disciplines and prepares students for various managerial roles.</p><p>Example Degree: Bachelor of Science in Business Administration (BSBA)</p>",
+				"imagePath": "/images/IT-manager.jpg"
+			},
+			{
+				"title": "Finance",
+				"description": "<p>With a focus on investment strategies, banking, and financial planning, this degree often leads to high-paying roles in the finance sector.</p><p>Example Degree: Bachelor of Science in Finance</p>",
+				"imagePath": "/images/data-analyst.jpg"
+			},
+			{
+				"title": "Financial Analyst",
+				"description": "<p><strong>Job responsibilities:</strong> Evaluates investment opportunities and provides guidance to businesses or individuals.</p><p><strong>Why pursue this career:</strong> A wise choice given the critical role of financial planning in both corporate and personal finance.</p><p><strong>Related degrees:</strong> Bachelor's in Finance or Bachelor's in Economics</p>",
+				"imagePath": "/images/business-intelligence-analyst.jpg"
+			},
+			{
+				"title": "Marketing",
+				"description": "<p>This program equips students with strategies to drive business growth and can lead to roles in advertising, public relations, and market research.</p><p>Example Degree: Bachelor of Science in Marketing</p>",
+				"imagePath": "/images/cybersecurity-analyst.jpg"
+			}
+		]
+	},
+	"yourNextSteps": {
+		"title": "Ready to Take On Your Future? <strong>Start Here!</strong>",
+		"description": "<p>Returning to school as an adult can feel overwhelming, but breaking the process down into manageable steps can help alleviate some of that anxiety. Here’s a good place to start:</p>",
+		"image": {
+			"path": "/images/build-plan/more-ways-to-save.jpg",
+			"altText": "Your Next Steps"
+		},
+		"accordionList": [
+			{
+				"title": "Write your “why.”",
+				"description": "<p>Reflect on your <strong>motivations</strong> for returning to school. What are your career goals? How will further education help you achieve them?</p><p>We suggest writing your “why” somewhere you can refer to later. Not only will this help you decide on the right program, it can be a source of motivation when any obstacles pop up.</p>"
+			},
+			{
+				"title": "Write your “how.”",
+				"description": "<p>Consider your personal and professional <strong>responsibilities</strong> to determine what type of program (online, part-time, full-time) will fit into your life.</p><p>You don’t have to commit to a detailed schedule—and flexibility will be key—but knowing when you have pockets of time to dedicate to yourself and your studies can help you reach your goals.</p><p>We suggest including this with your “why.”</p>"
+			},
+			{
+				"title": "Follow the Steps to Apply!",
+				"description": "When you’re ready, scroll down to your step-by-step guide for applying for college. We’ll guide you through the process!"
+			}
+		]
+	},
+	"topBarriers": {
+		"title": "Let’s Address Your Top Barrier for Completing Your Degree",
+		"description": "<p>Remember, <strong>every challenge has a solution,</strong> and institutions are increasingly tailoring their services to accommodate non-traditional students. Taking the first step might be daunting, but resources and support are available to help you navigate your journey back to education.</p>",
+		"tabsList": [
+			{
+				"title": "Lack of Time",
+				"content": "Time management is crucial. Assess your daily schedule to find pockets of time that could be dedicated to studying. This might mean reorganizing or prioritizing tasks differently. Many institutions offer part-time programs or asynchronous online courses that allow you to work at your own pace.",
+				"icon": "advance-icon"
+			},
+			{
+				"title": "Family Commitments",
+				"content": "Open communication with family is important. Discuss your goals and how pursuing education will benefit the whole family in the long run. Look into schools with childcare facilities or family-friendly policies.",
+				"icon": "free-time-icon"
+			},
+			{
+				"title": "Work Commitments",
+				"content": "Aligning your education with your career can be mutually beneficial. Have a candid discussion with your employer about your educational pursuits. Many employers value continuous learning and might offer flexible work arrangements. Also, leverage time management techniques to balance work and study effectively.",
+				"icon": "education-icon"
+			},
+			{
+				"title": "Finances",
+				"content": "Understand that investing in your education is investing in your future. Look for financial aid options, scholarships, and payment plans that can ease the burden. Many institutions offer financial counseling to help you plan your education funding. Employer tuition reimbursement programs can also alleviate costs.",
+				"icon": "finances-icon"
+			},
+			{
+				"title": "Not Sure Which Career to Pursue",
+				"content": "Embarking on a new educational journey is an excellent opportunity to explore various careers. Utilize career assessment tools and counseling services to identify your strengths, interests, and the careers that align with them. Remember, it's okay to pivot or explore different paths until you find the one that resonates with you.",
+				"icon": "work-icon"
+			},
+			{
+				"title": "Unsure Which Degree I Need",
+				"content": "Choosing the right degree is crucial for aligning your education with your career goals.Research careers you're interested in and the educational requirements for those roles. ",
+				"icon": "education2-icon"
+			},
+			{
+				"title": "Other",
+				"content": "General hesitations or multiple obstacles can stem from a lack of information, fear of the unknown, or feeling overwhelmed by the prospect of change. Break down your concerns into manageable parts and address them systematically. Seek out stories of others who have successfully navigated similar challenges, and remember, educational institutions often have resources specifically designed to help non-traditional students.",
+				"icon": "other-icon"
+			}
+		]
+	},
+	"stepsGuide": {
+		"title": "Your Step-by-Step Guide for <strong>Applying to College</strong>",
+		"description": "<p>Applying to college as an adult can be a different experience than applying straight out of high school, but the core steps remain similar.</p>",
+		"image": {
+			"path": "/images/build-plan/more-ways-to-save.jpg",
+			"altText": "Your Next Steps"
+		},
+		"accordionList": [
+			{
+				"title": "Get Organized",
+				"description": "<ul><li>Create a <strong>folder</strong> on your desktop (or cloud storage like Google Drive) to keep copies of all your applications and correspondence.</li><li>Consider setting up a dedicated email address for your college-related communications to keep everything in one place.</li></ul>"
+			},
+			{
+				"title": "Research and Shortlist Schools",
+				"description": "<ul><li>Identify the schools and programs that align with your <strong>career goals and life situation.</strong> Consider factors like:<ul><li>Accreditation</li><li>Program length</li><li>Cost</li><li>Support for non-traditional students</li><li>Flexible learning options such as online and evening classes</li></ul></li></ul>"
+			},
+			{
+				"title": "Understand Application Requirements",
+				"description": "<ul><li>Each school will have its own set of requirements. Typically, these include:<ul><li>An application form</li><li>Transcripts</li><li>Test scores (if applicable)</li><li>Letters of recommendation</li><li>Personal statements or essays</li></ul></li><li>For adults who have been out of school for a while, emphasize <strong>professional experience</strong> and any <strong>recent educational pursuits.</strong></li></ul>"
+			},
+			{
+				"title": "Gather Necessary Documents & Letters",
+				"description": "<ul><li>Request <stong>transcripts</sgtrong> from high school and any post-secondary institutions you've attended. Note that some schools have an electronic transcript request system, which can expedite the process.</li><li>If the program requires standardized <strong>test scores</strong> (like the SAT, ACT, or GRE), and you haven’t taken them or your scores are outdated, register for the next available test date.</li><li>Begin drafting your <strong>personal statement</strong> or essay. Highlight your life and work experiences, your motivation for returning to school, and your long-term goals.</li><li>You may also need to provide <strong>letters of recommendation.</strong> Identify people who can vouch for your professional capabilities, work ethic, and potential as a student. These can be employers, colleagues, or mentors. Reach out to them early, providing information about the program you're applying to and why you feel they would be a good reference.</li></ul>"
+			},
+			{
+				"title": "Keep Track of Deadlines",
+				"description": "<ul><li>Create a <strong>timeline or spreadsheet</strong> with application deadlines for each school and program you're considering.</li><li>You may also consider adding deadlines to your <strong>calendar</strong> and set a reminder a few weeks out so you have plenty of time to apply.</li><li>Don’t forget about <strong>financial aid deadlines,</strong> which can differ from admission deadlines.</li></ul><p>Note: Many schools with online or flexible programs offer <strong>multiple start dates</strong> throughout the year. You don’t necessarily need to wait for a fall semester start date (which is often in August).</p>"
+			},
+			{
+				"title": "Complete Applications",
+				"description": "<ul><li>Fill out the application forms thoroughly. Some schools may have a simplified process for adult learners or non-traditional students.</li><li><strong>Proofread</strong> all materials, or have someone else review them to catch any errors.</li></ul>"
+			},
+			{
+				"title": "Submit Financial Aid Applications",
+				"description": "<ul><li>Complete the <strong>Free Application for Federal Student Aid (FAFSA)</strong> to be considered for federal grants, loans, and work-study programs.</li><li>Apply for <strong>scholarships</strong> and other <strong>financial aid</strong> programs offered by the schools, community organizations, or industry associations.</li></ul>"
+			},
+			{
+				"title": "Follow Up",
+				"description": "<ul><li>After submitting your applications, <strong>check in</strong> to ensure that all materials have been received.</li><li><strong>Stay engaged</strong> with the schools you’re interested in. Attend any informational webinars or virtual tours they offer.</li></ul>"
 			}
 		]
 	},
 	"textWithImage": {
-		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can amplify your tech prowess with an MBA in Information Technology that merges business strategy with tech innovation, enhancing your analytical and managerial skills.</p><p>Alternatively, a Master's in Data Analytics dives deep into harnessing data insights for business decisions. Or a Master's in Management of Information Systems gets into the finer details of managing information technology and data.</p><p>While both paths revolve around technology, the MBA offers a broader spectrum of business knowledge, making it the prime choice for The Computer Whiz envisioning a dynamic role in bridging tech and business realms.</p>",
+		"content": "<h2>Spotlight: Build Your Application Timeline</h2><p class='featuredParagraph'>Creating a well-structured application timeline is crucial for managing the college application process effectively, especially for adult learners who often juggle multiple responsibilities. Here's a sample timeline you can reference:</p><ul><li><strong>12-18 Months Out:</strong><ul><li>Begin research on programs and institutions.</li><li>Start preparing for any required standardized tests.</li></ul></li><li><strong>9-12 Months Out:</strong><ul><li>Take standardized tests if required.</li><li>Begin drafting personal statements or essays.</li><li>Request transcripts and letters of recommendation.</li></ul></li><li><strong>6-9 Months Out:</strong><ul><li>Finalize your list of schools and understand their deadlines.</li><li>Begin scholarship and financial aid research.</li></ul></li><li><strong>3-6 Months Out:</strong><ul><li>Complete and submit applications.</li><li>Apply for financial aid and scholarships.</li></ul></li><li><strong>1-3 Months Out:</strong><ul><li>Follow up on applications and financial aid.</li><li>Prepare for interviews if required.</li></ul></li><li><strong>Post-Submission:</strong><ul><li>Await responses and make informed decisions based on acceptances and financial aid packages offered.</li></ul></li></ul><p>Remember, this timeline is a general guide. Adjust it based on your personal circumstances and the specific requirements of the programs you're applying to.</p>",
 		"imagePath": "/images/ceo.jpg",
 		"altText": "CEO at a restaurant"
 	}

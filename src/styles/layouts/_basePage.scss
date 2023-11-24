@@ -232,4 +232,15 @@ div[class*="CarouselWithForm_carouselForm_"] {
 
 .tabsSection {
   background: var(--c-bg5);
+  &.bg-none {
+    background: none;
+
+    .react-tabs {
+      background: none;
+
+      &::before {
+        background: none;
+      }
+    }
+  }
 }
