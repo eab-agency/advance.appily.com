@@ -146,20 +146,28 @@
 				"description": "The Society for Human Resource Management (SHRM) reports that while it varies from year to year, on average, between 45-55% of employers offer tuition assistance."
 			}
 		],
-		"moreWays": [
-			{
-				"title": "Transfer as many credits as you can.",
-				"description": "<p>Many colleges accept credits from any previous college experience you have, up to a certain amount of hours. You could also pursue alternative ways of applying credits, such as:</p><ul><li>ACE: If you participated in military service, workplace training programs, apprenticeships, standardized exams, or other types of <strong>experiential learning outside the college classroom, you could receive college credit recommendations</strong> or validated competencies through Learning Evaluation.</li><li>CLEP: These exams let you <strong>test out of introductory courses</strong> and move to more advanced courses sooner, saving time toward your degree.</li></ul><p>Many colleges also offer their own testing programs that allow you the opportunity to test out of introductory-level courses.</p>"
+		"moreWays": {
+			"title": "3 More Ways to <strong>Save Money on Your Degree</strong>",
+			"description": "<p>Finding ways to cover tuition and other college costs is important — but you may also consider these ways to decrease the amount that needs covering.</p>",
+			"image": {
+				"path": "/images/build-plan/more-ways-to-save.jpg",
+				"altText": "Student filing their FAFSA"
 			},
-			{
-				"title": "Look for accelerated programs.",
-				"description": "<p>Since colleges often charge by credit hour, look for ones that offer programs with <strong>fewer total credits</strong> needed to complete your degree.</p>"
-			},
-			{
-				"title": "Take classes one at a time.",
-				"description": "Some degrees have asynchronous options where you can take one class at a time and complete your week’s work whenever it fits your schedule. This may make it easier to <strong>pay as you go</strong> — and fit it into your busy life."
-			}
-		]
+			"accordionList": [
+				{
+					"title": "Transfer as many credits as you can.",
+					"description": "<p>Many colleges accept credits from any previous college experience you have, up to a certain amount of hours. You could also pursue alternative ways of applying credits, such as:</p><ul><li>ACE: If you participated in military service, workplace training programs, apprenticeships, standardized exams, or other types of <strong>experiential learning outside the college classroom, you could receive college credit recommendations</strong> or validated competencies through Learning Evaluation.</li><li>CLEP: These exams let you <strong>test out of introductory courses</strong> and move to more advanced courses sooner, saving time toward your degree.</li></ul><p>Many colleges also offer their own testing programs that allow you the opportunity to test out of introductory-level courses.</p>"
+				},
+				{
+					"title": "Look for accelerated programs.",
+					"description": "<p>Since colleges often charge by credit hour, look for ones that offer programs with <strong>fewer total credits</strong> needed to complete your degree.</p>"
+				},
+				{
+					"title": "Take classes one at a time.",
+					"description": "Some degrees have asynchronous options where you can take one class at a time and complete your week’s work whenever it fits your schedule. This may make it easier to <strong>pay as you go</strong> — and fit it into your busy life."
+				}
+			]
+		}
 	},
 	"tools": {
 		"title": "Try These Tools",

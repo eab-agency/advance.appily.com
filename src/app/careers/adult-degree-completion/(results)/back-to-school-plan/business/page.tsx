@@ -6,9 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
-
 import {
-  Accordion,
   AccordionSection,
   CareerPaths,
   CarouselWithForm,
@@ -49,41 +47,7 @@ export default function Page() {
 
         <Stats stats={data.fileFafsa.stats} source={data.fileFafsa.statsSource} />
 
-        <section className="moreWaysToSave whyChoose">
-          <div className="group center-aligned cols-2">
-            <div className="column">
-              <div className="intro">
-                <h2>
-                  3 More Ways to{" "}
-                  <strong>Save Money on Your Degree</strong>
-                </h2>
-                <p>Finding ways to cover tuition and other college costs is important — but you may also consider these ways to decrease the amount that needs covering.</p>
-              </div>
-              <div className="accordion-group">
-                {data.fileFafsa.moreWays.map((reason, index) => (
-                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                  <Accordion key={index} title={reason.title}>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: reason.description,
-                      }}
-                    />
-                  </Accordion>
-                ))}
-              </div>
-            </div>
-            <div className="column">
-              <figure className="highlighted-img">
-                <Image
-                  src="/images/build-plan/more-ways-to-save.jpg"
-                  width={480}
-                  height={480}
-                  alt="Student filing their FAFSA"
-                />
-              </figure>
-            </div>
-          </div>
-        </section>
+        <AccordionSection data={data.fileFafsa.moreWays} />
 
         <LinkedCardsSection data={data.tools} />
 
