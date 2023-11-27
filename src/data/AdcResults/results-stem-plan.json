@@ -249,14 +249,14 @@
 				"imagePath": "/images/build-plan/civil-engineer.jpg"
 			},
 			{
-				"title": "Educational Administrator",
-				"description": "<p><strong>Job responsibilities:</strong> Manages the day-to-day operations of schools and educational institutions.</p><p><strong>Why pursue this career:</strong> A stable choice given the need for leadership in educational settings.</p><p><strong>Related degrees:</strong> Bachelor's in Education Administration</p>",
-				"imagePath": "/images/build-plan/educational-administrator.jpg"
+				"title": "IT Manager",
+				"description": "<p><strong>Job responsibilities:</strong> Oversees an organization's computer-related activities and technological needs.</p><p><strong>Why pursue this career:</strong> A prudent choice due to the pervasive reliance on technology in business operations.</p><p><strong>Related degrees:</strong> Bachelor's in Information Technology or Bachelor's in Computer Science</p>",
+				"imagePath": "/images/build-plan/it-manager.jpg"
 			},
 			{
-				"title": "Instructional Coordinator",
-				"description": "<p><strong>Job responsibilities:</strong> Develops curricula and oversees teaching standards and school curriculums.</p><p><strong>Why pursue this career:</strong> A prudent choice given the ongoing efforts to improve educational outcomes.</p><p><strong>Related degrees:</strong> Bachelor's in Education or Bachelor's in Curriculum and Instruction</p>",
-				"imagePath": "/images/build-plan/instructional-coordinator.jpg"
+				"title": "Biotechnologist",
+				"description": "<p><strong>Job responsibilities:</strong> Uses biological organisms to develop new products and technologies.</p><p><strong>Why pursue this career:</strong> A smart choice because of the rapid advancements and potential in the field of biotechnology.</p><p><strong>Related degrees:</strong> Bachelor's in Biotechnology or Bachelor's in Biology</p>",
+				"imagePath": "/images/build-plan/biotechnologist.jpg"
 			}
 		],
 		"statsSource": "U.S. Bureau of Labor Statistics",
@@ -319,23 +319,23 @@
 		]
 	},
 	"bachelorDegrees": {
-		"title": "Best Education Bachelor’s Degrees",
-		"description": "Education is the cornerstone of every society, and those who choose to impart knowledge play a crucial role in shaping the future. Earning a degree in education can lead to a fulfilling, stable career, whether you're nurturing young minds in the classroom or addressing unique learning needs.",
+		"title": "Best STEM Bachelor’s Degrees",
+		"description": "The STEM field drives innovation, pushing the boundaries of what's possible in our technologically advanced era. With industries like tech and engineering witnessing explosive growth, degrees in this sector offer a blend of creativity, problem-solving, and a promise of high returns.",
 		"paths": [
 			{
-				"title": "Elementary Education",
-				"description": "<p>Prepares students to teach young children and often leads to a stable career in public or private schools.</p><p>Example Degree: Bachelor of Science in Elementary Education</p>",
-				"imagePath": "/images/build-plan/elementary-education.jpg"
+				"title": "Computer Science",
+				"description": "<pWith tech industries booming, this degree offers a path to various high-paying roles in software development, AI, and more.</p><p>Example Degree: Bachelor of Science in Computer Science</p>",
+				"imagePath": "/images/build-plan/computer-science.jpg"
 			},
 			{
-				"title": "Secondary Education",
-				"description": "<p>Tailored for those aiming to teach high school students, with specializations available in subjects like math, science, or English.</p><p>Example Degree: Bachelor of Science in Secondary Education</p>",
-				"imagePath": "/images/build-plan/secondary-education.jpg"
+				"title": "Engineering",
+				"description": "<p>Specializations like mechanical, civil, or electrical engineering tend to have strong job placements and ROI.</p><p>Example Degree: Bachelor of Science in Engineering</p>",
+				"imagePath": "/images/build-plan/engineering.jpg"
 			},
 			{
-				"title": "Special Education",
-				"description": "<p>Focuses on teaching students with unique learning needs and often comes with increased demand.</p><p>Example Degree: Bachelor of Science in Special Education</p>",
-				"imagePath": "/images/build-plan/special-education.jpg"
+				"title": "Information Technology",
+				"description": "<p>Covers the management and security of information systems and can lead to roles in cybersecurity, network administration, and IT consulting.</p><p>Example Degree: Bachelor of Science in Information Technology</p>",
+				"imagePath": "/images/build-plan/information-technology.jpg"
 			}
 		]
 	},
