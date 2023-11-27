@@ -2,6 +2,7 @@ import { Accordion, Button } from '@/components'
 import Image from 'next/image'
 
 interface AccordionSectionProps {
+  id?: string
   data: {
     title: string
     description: string
@@ -18,9 +19,9 @@ interface AccordionSectionProps {
   }
 }
 
-export default function AccordionSection({ data }: AccordionSectionProps) {
+export default function AccordionSection({ data, id }: AccordionSectionProps) {
   return (
-    <section className="whyChoose">
+    <section id={id} className="whyChoose">
       <div className="group center-aligned cols-2">
         <div className="column">
           <div className="intro">

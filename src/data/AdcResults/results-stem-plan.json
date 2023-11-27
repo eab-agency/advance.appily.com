@@ -1,11 +1,11 @@
 {
-	"slug": "business-plan",
+	"slug": "education-plan",
 	"heroSection": {
 		"title": "You've got this!",
 		"description": "<p>Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. This plan isn't just a guide; it's a reflection of your ambition, your dreams, and your future. </p><p>Here's what you're unlocking:<br/><ul><li>Clarity and Confidence: No more second-guessing. Every piece of advice here is tailored to help you navigate your educational journey with ease.</li><li>A Future Tailored to You: Your goals, your aspirations, your pace. Embrace the exciting opportunities that lie ahead.</li></ul></p><p>You've got the ambition and the drive. With this plan in hand, you're not just going back to school; you're moving forward in life. Let's dive in and advance your future together.</p>",
 		"image": {
-			"path": "/images/build-plan/business-plan.svg",
-			"altText": "Your business back to school plan"
+			"path": "/images/build-plan/stem-plan.svg",
+			"altText": "Your STEM back to school plan"
 		}
 	},
 	"reasons": {
@@ -230,33 +230,33 @@
 		]
 	},
 	"topCareers": {
-		"title": "Top Careers in Business",
-		"description": "In the dynamic world of business, versatility and strategic acumen are paramount. The careers we've selected not only promise ample opportunities for advancement but also offer the potential for impactful roles in a variety of industries, ensuring that your investment in a business-related bachelor's degree yields substantial professional and financial rewards.",
+		"title": "Top Careers in STEM",
+		"description": "The Technology and STEM fields are the engines of innovation, driving the future forward. The career paths we've identified are at the forefront of this progress, offering not only lucrative salaries but also the excitement of being part of cutting-edge developments. A bachelor's degree in these areas is a ticket to a career at the pulse of technological advancement.",
 		"paths": [
 			{
-				"title": "Business Analyst",
-				"description": "<p><strong>Job responsibilities:</strong> Analyzes organizational processes, identifies inefficiencies, and recommends solutions.</p><p><strong>Why pursue this career:</strong> A smart choice due to the growing reliance on data-driven decision-making in business.</p><p><strong>Related degrees:</strong> Bachelor of Business Administration (BBA) or Bachelor's in Finance</p>",
-				"imagePath": "/images/build-plan/business-analyst.jpg"
+				"title": "Software Developer",
+				"description": "<p><strong>Job responsibilities:</strong> Designs and creates computer programs and applications.</p><p><strong>Why pursue this career:</strong> A wise choice due to the central role of technology in modern life.</p><p><strong>Related degrees:</strong> Bachelor's in Computer Science or Bachelor's in Software Engineering</p>",
+				"imagePath": "/images/build-plan/software-developer.jpg"
 			},
 			{
-				"title": "Marketing Manager",
-				"description": "<p><strong>Job responsibilities:</strong> Develops and oversees marketing strategies to promote products and services.</p><p><strong>Why pursue this career:</strong> A sound career due to the constant need for businesses to differentiate and compete.</p><p><strong>Related degrees:</strong> Bachelor's in Marketing or Bachelor's in Business Administration</p>",
-				"imagePath": "/images/build-plan/marketing-manager.jpg"
+				"title": "Data Analyst",
+				"description": "<p><strong>Job responsibilities:</strong> Interprets complex data sets to help companies make strategic decisions.</p><p><strong>Why pursue this career:</strong> A smart choice because of the increasing significance of data in business strategies.</p><p><strong>Related degrees:</strong> Bachelor's in Data Science or Bachelor's in Statistics</p>",
+				"imagePath": "/images/build-plan/data-analyst.jpg"
 			},
 			{
-				"title": "Financial Analyst",
-				"description": "<p><strong>Job responsibilities:</strong> Evaluates investment opportunities and provides guidance to businesses or individuals.</p><p><strong>Why pursue this career:</strong> A wise choice given the critical role of financial planning in both corporate and personal finance.</p><p><strong>Related degrees:</strong> Bachelor's in Finance or Bachelor's in Economics</p>",
-				"imagePath": "/images/build-plan/financial-analyst.jpg"
+				"title": "Civil Engineer",
+				"description": "<p><strong>Job responsibilities:</strong> Designs and supervises the construction of infrastructure projects.</p><p><strong>Why pursue this career:</strong> A stable choice given the ongoing need for urban development and infrastructure maintenance.</p><p><strong>Related degrees:</strong> Bachelor's in Civil Engineering</p>",
+				"imagePath": "/images/build-plan/civil-engineer.jpg"
 			},
 			{
-				"title": "Human Resources Manager",
-				"description": "<p><strong>Job responsibilities:</strong> Oversees employee relations, recruitment, and compliance with labor laws.</p><p><strong>Why pursue this career:</strong> A stable choice because of the enduring necessity of managing an organization's workforce.</p><p><strong>Related degrees:</strong> Bachelor's in Human Resources or Bachelor's in Business Administration</p>",
-				"imagePath": "/images/build-plan/human-resources-manager.jpg"
+				"title": "Educational Administrator",
+				"description": "<p><strong>Job responsibilities:</strong> Manages the day-to-day operations of schools and educational institutions.</p><p><strong>Why pursue this career:</strong> A stable choice given the need for leadership in educational settings.</p><p><strong>Related degrees:</strong> Bachelor's in Education Administration</p>",
+				"imagePath": "/images/build-plan/educational-administrator.jpg"
 			},
 			{
-				"title": "Supply Chain Manager",
-				"description": "<p><strong>Job responsibilities:</strong> Manages the entire lifecycle of a product, from sourcing to delivery.</p><p><strong>Why pursue this career:</strong> A prudent choice given the increasing complexity and globalization of supply chains.</p><p><strong>Related degrees:</strong> Bachelor's in Supply Chain Management or Bachelor's in Business Administration</p>",
-				"imagePath": "/images/build-plan/supply-chain-manager.jpg"
+				"title": "Instructional Coordinator",
+				"description": "<p><strong>Job responsibilities:</strong> Develops curricula and oversees teaching standards and school curriculums.</p><p><strong>Why pursue this career:</strong> A prudent choice given the ongoing efforts to improve educational outcomes.</p><p><strong>Related degrees:</strong> Bachelor's in Education or Bachelor's in Curriculum and Instruction</p>",
+				"imagePath": "/images/build-plan/instructional-coordinator.jpg"
 			}
 		],
 		"statsSource": "U.S. Bureau of Labor Statistics",
@@ -319,23 +319,23 @@
 		]
 	},
 	"bachelorDegrees": {
-		"title": "Best Business Bachelor’s Degrees",
-		"description": "In the dynamic world of commerce, degrees in business equip students with the tools and insights to navigate the complex corporate landscape. From managerial roles to financial planning, business degrees open doors to vast career opportunities with lucrative pay and growth potential.",
+		"title": "Best Education Bachelor’s Degrees",
+		"description": "Education is the cornerstone of every society, and those who choose to impart knowledge play a crucial role in shaping the future. Earning a degree in education can lead to a fulfilling, stable career, whether you're nurturing young minds in the classroom or addressing unique learning needs.",
 		"paths": [
 			{
-				"title": "Business Administration",
-				"description": "<p>This versatile degree covers a range of business disciplines and prepares students for various managerial roles.</p><p>Example Degree: Bachelor of Science in Business Administration (BSBA)</p>",
-				"imagePath": "/images/build-plan/business-administration.jpg"
+				"title": "Elementary Education",
+				"description": "<p>Prepares students to teach young children and often leads to a stable career in public or private schools.</p><p>Example Degree: Bachelor of Science in Elementary Education</p>",
+				"imagePath": "/images/build-plan/elementary-education.jpg"
 			},
 			{
-				"title": "Finance",
-				"description": "<p>With a focus on investment strategies, banking, and financial planning, this degree often leads to high-paying roles in the finance sector.</p><p>Example Degree: Bachelor of Science in Finance</p>",
-				"imagePath": "/images/build-plan/finance.jpg"
+				"title": "Secondary Education",
+				"description": "<p>Tailored for those aiming to teach high school students, with specializations available in subjects like math, science, or English.</p><p>Example Degree: Bachelor of Science in Secondary Education</p>",
+				"imagePath": "/images/build-plan/secondary-education.jpg"
 			},
 			{
-				"title": "Marketing",
-				"description": "<p>This program equips students with strategies to drive business growth and can lead to roles in advertising, public relations, and market research.</p><p>Example Degree: Bachelor of Science in Marketing</p>",
-				"imagePath": "/images/build-plan/marketing.jpg"
+				"title": "Special Education",
+				"description": "<p>Focuses on teaching students with unique learning needs and often comes with increased demand.</p><p>Example Degree: Bachelor of Science in Special Education</p>",
+				"imagePath": "/images/build-plan/special-education.jpg"
 			}
 		]
 	},

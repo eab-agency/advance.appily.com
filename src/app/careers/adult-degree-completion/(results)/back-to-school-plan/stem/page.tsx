@@ -20,7 +20,7 @@ import {
 } from "@/components";
 import BuildPlanHero from "@/components/Heros/BuildPlanHero";
 import { useUser } from "@/context/context";
-import data from "@/data/AdcResults/results-business-plan.json";
+import data from "@/data/AdcResults/results-stem-plan.json";
 
 export default function Page() {
   const carouselRef = useRef(null);

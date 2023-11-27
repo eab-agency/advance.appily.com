@@ -4,8 +4,8 @@
 		"title": "You've got this!",
 		"description": "<p>Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. This plan isn't just a guide; it's a reflection of your ambition, your dreams, and your future. </p><p>Here's what you're unlocking:<br/><ul><li>Clarity and Confidence: No more second-guessing. Every piece of advice here is tailored to help you navigate your educational journey with ease.</li><li>A Future Tailored to You: Your goals, your aspirations, your pace. Embrace the exciting opportunities that lie ahead.</li></ul></p><p>You've got the ambition and the drive. With this plan in hand, you're not just going back to school; you're moving forward in life. Let's dive in and advance your future together.</p>",
 		"image": {
-			"path": "/images/build-plan/business-plan.svg",
-			"altText": "Your business back to school plan"
+			"path": "/images/build-plan/health-care-plan.svg",
+			"altText": "Your Health Care, back to school plan"
 		}
 	},
 	"reasons": {
@@ -230,33 +230,33 @@
 		]
 	},
 	"topCareers": {
-		"title": "Top Careers in Business",
+		"title": "Top Careers in Health Care",
 		"description": "In the dynamic world of business, versatility and strategic acumen are paramount. The careers we've selected not only promise ample opportunities for advancement but also offer the potential for impactful roles in a variety of industries, ensuring that your investment in a business-related bachelor's degree yields substantial professional and financial rewards.",
 		"paths": [
 			{
-				"title": "Business Analyst",
-				"description": "<p><strong>Job responsibilities:</strong> Analyzes organizational processes, identifies inefficiencies, and recommends solutions.</p><p><strong>Why pursue this career:</strong> A smart choice due to the growing reliance on data-driven decision-making in business.</p><p><strong>Related degrees:</strong> Bachelor of Business Administration (BBA) or Bachelor's in Finance</p>",
-				"imagePath": "/images/build-plan/business-analyst.jpg"
+				"title": "Registered Nurse",
+				"description": "<p><strong>Job responsibilities:</strong> Provides patient care, support, and education in various healthcare settings.</p><p><strong>Why pursue this career:</strong> A smart choice due to the high demand for healthcare professionals.</p><p><strong>Related degrees:</strong> Bachelor of Science in Nursing (BSN)</p>",
+				"imagePath": "/images/build-plan/registered-nurse.jpg"
 			},
 			{
-				"title": "Marketing Manager",
-				"description": "<p><strong>Job responsibilities:</strong> Develops and oversees marketing strategies to promote products and services.</p><p><strong>Why pursue this career:</strong> A sound career due to the constant need for businesses to differentiate and compete.</p><p><strong>Related degrees:</strong> Bachelor's in Marketing or Bachelor's in Business Administration</p>",
-				"imagePath": "/images/build-plan/marketing-manager.jpg"
+				"title": "Healthcare Administrator",
+				"description": "<p><strong>Job responsibilities:</strong> Manages healthcare facilities, overseeing operations, staff, and budgets.</p><p><strong>Why pursue this career:</strong> A stable choice due to the increasing complexity of healthcare systems.</p><p><strong>Related degrees:</strong> Bachelor's in Healthcare Administration</p>",
+				"imagePath": "/images/build-plan/healthcare-administrator.jpg"
 			},
 			{
-				"title": "Financial Analyst",
-				"description": "<p><strong>Job responsibilities:</strong> Evaluates investment opportunities and provides guidance to businesses or individuals.</p><p><strong>Why pursue this career:</strong> A wise choice given the critical role of financial planning in both corporate and personal finance.</p><p><strong>Related degrees:</strong> Bachelor's in Finance or Bachelor's in Economics</p>",
-				"imagePath": "/images/build-plan/financial-analyst.jpg"
+				"title": "Physical Therapist",
+				"description": "<p><strong>Job responsibilities:</strong> Helps patients improve movement, manage pain, and recover from injuries.</p><p><strong>Why pursue this career:</strong>  A wise choice due to the growing emphasis on rehabilitation and preventative care.</p><p><strong>Related degrees:</strong> Bachelor's in Physical Therapy (Pre-PT or Health Science with a focus on Physical Therapy).</p>",
+				"imagePath": "/images/build-plan/physical-therapist.jpg"
 			},
 			{
-				"title": "Human Resources Manager",
-				"description": "<p><strong>Job responsibilities:</strong> Oversees employee relations, recruitment, and compliance with labor laws.</p><p><strong>Why pursue this career:</strong> A stable choice because of the enduring necessity of managing an organization's workforce.</p><p><strong>Related degrees:</strong> Bachelor's in Human Resources or Bachelor's in Business Administration</p>",
-				"imagePath": "/images/build-plan/human-resources-manager.jpg"
+				"title": "Occupational Therapist",
+				"description": "<p><strong>Job responsibilities:</strong> Assists patients in developing or regaining skills for daily living and working.</p><p><strong>Why pursue this career:</strong> A smart choice due to an aging population and increased focus on rehabilitative care.</p><p><strong>Related degrees:</strong> Bachelor's in Occupational Therapy (Pre-OT or Health Science with a focus on Occupational Therapy)</p>",
+				"imagePath": "/images/build-plan/occupational-therapist.jpg"
 			},
 			{
-				"title": "Supply Chain Manager",
-				"description": "<p><strong>Job responsibilities:</strong> Manages the entire lifecycle of a product, from sourcing to delivery.</p><p><strong>Why pursue this career:</strong> A prudent choice given the increasing complexity and globalization of supply chains.</p><p><strong>Related degrees:</strong> Bachelor's in Supply Chain Management or Bachelor's in Business Administration</p>",
-				"imagePath": "/images/build-plan/supply-chain-manager.jpg"
+				"title": "Clinical Psychologist",
+				"description": "<p><strong>Job responsibilities:</strong> Assesses, diagnoses, and treats psychological disorders through therapy.</p><p><strong>Why pursue this career:</strong> A prudent choice given the rising awareness and importance of mental health.</p><p><strong>Related degrees:</strong> Bachelor's in Psychology (typically requires further graduate study to become a clinical psychologist)</p>",
+				"imagePath": "/images/build-plan/clinical-psychologist.jpg"
 			}
 		],
 		"statsSource": "U.S. Bureau of Labor Statistics",
@@ -319,23 +319,23 @@
 		]
 	},
 	"bachelorDegrees": {
-		"title": "Best Business Bachelor’s Degrees",
-		"description": "In the dynamic world of commerce, degrees in business equip students with the tools and insights to navigate the complex corporate landscape. From managerial roles to financial planning, business degrees open doors to vast career opportunities with lucrative pay and growth potential.",
+		"title": "Best Health Care Bachelor’s Degrees",
+		"description": "The healthcare sector is ever-evolving, constantly in demand, and offers some of the most rewarding careers. Degrees in this field not only provide stable employment and competitive salaries but also the chance to make profound impacts on individual lives and communities.",
 		"paths": [
 			{
-				"title": "Business Administration",
-				"description": "<p>This versatile degree covers a range of business disciplines and prepares students for various managerial roles.</p><p>Example Degree: Bachelor of Science in Business Administration (BSBA)</p>",
-				"imagePath": "/images/build-plan/business-administration.jpg"
+				"title": "Nursing",
+				"description": "<p>This degree is in high demand, with nursing positions offering competitive salaries and job security.</p><p>Example Degree: Bachelor of Science in Nursing (BSN)</p>",
+				"imagePath": "/images/build-plan/nursing.jpg"
 			},
 			{
-				"title": "Finance",
-				"description": "<p>With a focus on investment strategies, banking, and financial planning, this degree often leads to high-paying roles in the finance sector.</p><p>Example Degree: Bachelor of Science in Finance</p>",
-				"imagePath": "/images/build-plan/finance.jpg"
+				"title": "Health Administration",
+				"description": "<p>Prepares students for managerial roles within hospitals and other healthcare organizations.</p><p>Example Degree: Bachelor of Science in Health Administration</p>",
+				"imagePath": "/images/build-plan/health-administrator.jpg"
 			},
 			{
-				"title": "Marketing",
-				"description": "<p>This program equips students with strategies to drive business growth and can lead to roles in advertising, public relations, and market research.</p><p>Example Degree: Bachelor of Science in Marketing</p>",
-				"imagePath": "/images/build-plan/marketing.jpg"
+				"title": "Psychology",
+				"description": "<p><strong>Job responsibilities:</strong> While many advanced positions in psychology require further studies, a BA in this field can lead to entry-level roles in counseling, HR, and market research.</p><p><strong>Why pursue this career:</strong> A wise choice given the critical role of financial planning in both corporate and personal finance.</p><p><strong>Related degrees:</strong> Bachelor of Arts in Psychology</p>",
+				"imagePath": "/images/build-plan/psychology.jpg"
 			}
 		]
 	},

@@ -1,27 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
 
 import styles from "@/styles/components/SubNav.module.scss";
 
 export function SubNavPlan() {
-	// const pathname = usePathname();
-
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const toggleMenu = () => {
-		if (isMenuOpen) {
-			setIsMenuOpen(false);
-		} else {
-			setIsMenuOpen(true);
-		}
+		setIsMenuOpen(!isMenuOpen);
 	};
 
 	return (
-		<nav className={styles.subNavigation}>
+		<nav className={styles.subNavigationPlan}>
 			<div className={styles.group}>
 				<button
 					type="button"
@@ -30,43 +24,60 @@ export function SubNavPlan() {
 					}
 					onClick={toggleMenu}
 				>
-					<h2>Explore Results</h2>
+					<h2>JUMP TO ...</h2>
 				</button>
 				<ul
 					className={`${styles.subNavItems} ${
 						isMenuOpen && styles.resultsOpen
 					}`}
 				>
-					<li>
-						<Link href="#value-of-a-degree">Value of a Degree</Link>
-					</li>
-					<li>
-						<Link href="#funding-degree">Funding Your Degree</Link>
-					</li>
-					<li>
-						<Link href="#career-path">Career Path</Link>
-					</li>
-					<li>
-						<Link href="#degree-and-schools">Degrees & Schools</Link>
-					</li>
-					<li>
-						<Link href="#your-next-steps">Your Next Steps</Link>
-					</li>
-					{/* {links.map(({ href, label }) => {
-						const isActive = pathname === href;
-						return (
-							<li key={`${href}${label}`}>
-								<Link
-									href={href}
-									className={isActive ? styles.active : styles.nonActive}
-								>
-									{label}
-								</Link>
-							</li>
-						);
-					})} */}
+					<NavItem href="#value-of-a-degree">Value of a Degree</NavItem>
+					<NavItem href="#funding-your-degree">Funding Your Degree</NavItem>
+					<NavItem href="#career-paths">Career Path</NavItem>
+					<NavItem href="#degrees-and-schools">Degrees & Schools</NavItem>
+					<NavItem href="#your-next-steps">Your Next Steps</NavItem>
 				</ul>
 			</div>
 		</nav>
 	);
 }
+
+const NavItem = ({ href, children }) => {
+	const pathname = useRouter();
+	// const isActive = pathname === href;
+
+	const scrollToWithOffset = (id, offset) => {
+		const element = document.querySelector(id);
+		if (element) {
+			const offsetTop = element.offsetTop - offset;
+			window.scrollTo({
+				top: offsetTop,
+				behavior: "smooth",
+			});
+		}
+	};
+
+	const handleClick = e => {
+		e.preventDefault();
+		const elementId = href.substring(1);
+		scrollToWithOffset(`#${elementId}`, 100);
+	};
+
+	const isActive = href => {
+		if (pathname.includes(href)) {
+			console.log("pathname includes #");
+			console.log(pathname);
+			return pathname === href;
+		}
+		// console.log("pathname does not include #");
+		// return pathname === href;
+	};
+
+	return (
+		<li className={isActive ? styles.linkActive : ""}>
+			<button type="button" onClick={handleClick}>
+				{children}
+			</button>
+		</li>
+	);
+};

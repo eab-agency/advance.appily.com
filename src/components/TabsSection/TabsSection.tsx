@@ -1,6 +1,7 @@
 import { Tabs } from "@/components/Tabs"
 
 interface TabsSectionProps {
+  id?: string
   data: {
     title: string
     description?: string
@@ -11,9 +12,9 @@ interface TabsSectionProps {
   }
 }
 
-export default function TabsSection({ data }: TabsSectionProps) {
+export default function TabsSection({ id, data }: TabsSectionProps) {
   return (
-    <section className="tabsSection column bg-none">
+    <section id={id} className="tabsSection column bg-none">
       <header className="center-aligned centered-content center-justified">
         <h2>{data.title}</h2>
         {data.description && <div

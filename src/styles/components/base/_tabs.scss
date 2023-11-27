@@ -190,6 +190,34 @@
         content: tokens.$i-time-mgt-icon;
       }
 
+      &.fork-knife-icon::before {
+        content: tokens.$i-fork-knife-icon;
+      }
+
+      &.health-icon::before {
+        content: tokens.$i-health-icon;
+      }
+
+      &.military-icon::before {
+        content: tokens.$i-military-icon;
+      }
+
+      &.other-icon::before {
+        content: tokens.$i-other-icon;
+      }
+
+      &.advance-icon::before {
+        content: tokens.$i-advance;
+      }
+
+      &.switch-icon::before {
+        content: tokens.$i-switch-icon;
+      }
+
+      &.surprise-icon::before {
+        content: tokens.$i-surprise-icon;
+      }
+
       span {
         position: relative;
         z-index: tokens.$layer-2;
@@ -336,6 +364,34 @@ div[class*="__tab-panel"] {
 
     &.time-management-icon::before {
       content: tokens.$i-time-mgt-icon;
+    }
+
+    &.fork-knife-icon::before {
+      content: tokens.$i-fork-knife-icon;
+    }
+
+    &.health-icon::before {
+      content: tokens.$i-health-icon;
+    }
+
+    &.military-icon::before {
+      content: tokens.$i-military-icon;
+    }
+
+    &.other-icon::before {
+      content: tokens.$i-other-icon;
+    }
+
+    &.advance-icon::before {
+      content: tokens.$i-advance;
+    }
+
+    &.switch-icon::before {
+      content: tokens.$i-switch-icon;
+    }
+
+    &.surprise-icon::before {
+      content: tokens.$i-surprise-icon;
     }
 
     .tab-copy {
