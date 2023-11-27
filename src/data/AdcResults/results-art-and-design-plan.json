@@ -1,11 +1,11 @@
 {
-	"slug": "education-plan",
+	"slug": "art-and-design-plan",
 	"heroSection": {
 		"title": "You've got this!",
 		"description": "<p>Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. This plan isn't just a guide; it's a reflection of your ambition, your dreams, and your future. </p><p>Here's what you're unlocking:<br/><ul><li>Clarity and Confidence: No more second-guessing. Every piece of advice here is tailored to help you navigate your educational journey with ease.</li><li>A Future Tailored to You: Your goals, your aspirations, your pace. Embrace the exciting opportunities that lie ahead.</li></ul></p><p>You've got the ambition and the drive. With this plan in hand, you're not just going back to school; you're moving forward in life. Let's dive in and advance your future together.</p>",
 		"image": {
-			"path": "/images/build-plan/education-plan.svg",
-			"altText": "Your education back to school plan"
+			"path": "/images/build-plan/art-and-design-plan.svg",
+			"altText": "Your Art & Design back to school plan"
 		}
 	},
 	"reasons": {
@@ -230,33 +230,33 @@
 		]
 	},
 	"topCareers": {
-		"title": "Top Careers in Education",
-		"description": "Education is a cornerstone for societal growth and personal development. The careers listed in this category are crucial for shaping future generations and offer a sense of fulfillment that transcends monetary gain. A bachelor's degree in education opens doors to diverse roles, ensuring a stable and rewarding career path.",
+		"title": "Top Careers in  Art & Design",
+		"description": "Careers in Art and Design merge passion with profession, allowing for creative expression while securing financial stability. The roles we've curated are in tune with contemporary trends, ensuring that your artistic talents find a rewarding outlet and recognition in the commercial realm through a specialized bachelor's degree.",
 		"paths": [
 			{
-				"title": "Elementary School Teacher",
-				"description": "<p><strong>Job responsibilities:</strong> Educates young children in fundamental subjects, fostering their development and learning.</p><p><strong>Why pursue this career:</strong> A wise choice because of the constant need for dedicated educators.</p><p><strong>Related degrees:</strong> Bachelor's in Elementary Education</p>",
-				"imagePath": "/images/build-plan/elementary-school-teacher.jpg"
+				"title": "Graphic Designer",
+				"description": "<p><strong>Job responsibilities:</strong> Creates visual content to communicate messages for various media.</p><p><strong>Why pursue this career:</strong> A wise choice given the importance of visual branding and digital content.</p><p><strong>Related degrees:</strong> Bachelor's in Graphic Design or Bachelor's in Visual Arts</p>",
+				"imagePath": "/images/build-plan/graphic-designer.jpg"
 			},
 			{
-				"title": "High School Teacher",
-				"description": "<p><strong>Job responsibilities:</strong> Teaches and mentors adolescents in a specific subject area, preparing them for college or the workforce.</p><p><strong>Why pursue this career:</strong> A smart choice due to the consistent demand for secondary education teachers.</p><p><strong>Related degrees:</strong> Bachelor's in Education with a concentration in a specific subject</p>",
-				"imagePath": "/images/build-plan/high-school-teacher.jpg"
+				"title": "UX/UI Designer",
+				"description": "<p><strong>Job responsibilities:</strong> Enhances user satisfaction by improving the usability and accessibility of a product.</p><p><strong>Why pursue this career:</strong> A smart choice because of the focus on customer experience in product development.</p><p><strong>Related degrees:</strong> Bachelor's in User Experience Design or Bachelor's in Graphic Design</p>",
+				"imagePath": "/images/build-plan/ux-ui-designer.jpg"
 			},
 			{
-				"title": "Special Education Teacher",
-				"description": "<p><strong>Job responsibilities:</strong> Works with students who have a wide range of learning, mental, emotional, and physical disabilities.</p><p><strong>Why pursue this career:</strong> A smart choice due to the specialized and growing demand for these roles.</p><p><strong>Related degrees:</strong> Bachelor's in Special Education</p>",
-				"imagePath": "/images/build-plan/special-education-teacher.jpg"
+				"title": "Interior Designer",
+				"description": "<p><strong>Job responsibilities:</strong> Plans and designs indoor spaces to be functional and aesthetically pleasing.</p><p><strong>Why pursue this career:</strong> A stable choice due to the continual need for residential and commercial design.</p><p><strong>Related degrees:</strong> Bachelor's in Interior Design</p>",
+				"imagePath": "/images/build-plan/interior-designer.jpg"
 			},
 			{
-				"title": "Educational Administrator",
-				"description": "<p><strong>Job responsibilities:</strong> Manages the day-to-day operations of schools and educational institutions.</p><p><strong>Why pursue this career:</strong> A stable choice given the need for leadership in educational settings.</p><p><strong>Related degrees:</strong> Bachelor's in Education Administration</p>",
-				"imagePath": "/images/build-plan/educational-administrator.jpg"
+				"title": "Art Director",
+				"description": "<p><strong>Job responsibilities:</strong> Oversees the visual style and images in magazines, newspapers, product packaging, and film and television productions.</p><p><strong>Why pursue this career:</strong> A prudent choice given the demand for compelling visual narratives in media and advertising.</p><p><strong>Related degrees:</strong> Bachelor's in Fine Arts or Bachelor's in Art Direction</p>",
+				"imagePath": "/images/build-plan/art-director.jpg"
 			},
 			{
-				"title": "Instructional Coordinator",
-				"description": "<p><strong>Job responsibilities:</strong> Develops curricula and oversees teaching standards and school curriculums.</p><p><strong>Why pursue this career:</strong> A prudent choice given the ongoing efforts to improve educational outcomes.</p><p><strong>Related degrees:</strong> Bachelor's in Education or Bachelor's in Curriculum and Instruction</p>",
-				"imagePath": "/images/build-plan/instructional-coordinator.jpg"
+				"title": "Multimedia Artist",
+				"description": "<p><strong>Job responsibilities:</strong> Creates animation and visual effects for television, movies, video games, and other forms of media.</p><p><strong>Why pursue this career:</strong> A smart choice due to the entertainment industry's expansion and the increasing demand for digital content.</p><p><strong>Related degrees:</strong> Bachelor's in Multimedia Arts or Bachelor's in Animation</p>",
+				"imagePath": "/images/build-plan/multimedia-artist.jpg"
 			}
 		],
 		"statsSource": "U.S. Bureau of Labor Statistics",
@@ -319,23 +319,23 @@
 		]
 	},
 	"bachelorDegrees": {
-		"title": "Best Education Bachelor’s Degrees",
-		"description": "Education is the cornerstone of every society, and those who choose to impart knowledge play a crucial role in shaping the future. Earning a degree in education can lead to a fulfilling, stable career, whether you're nurturing young minds in the classroom or addressing unique learning needs.",
+		"title": "Best Art & Design Bachelor’s Degrees",
+		"description": "The world of art and design fuses creativity with functionality, producing visual masterpieces that resonate. While often perceived as purely passion-driven, degrees in this sector can lead to thriving careers in various industries, from digital media to architecture.",
 		"paths": [
 			{
-				"title": "Elementary Education",
-				"description": "<p>Prepares students to teach young children and often leads to a stable career in public or private schools.</p><p>Example Degree: Bachelor of Science in Elementary Education</p>",
-				"imagePath": "/images/build-plan/elementary-education.jpg"
+				"title": "Graphic Design",
+				"description": "<p>Prepares students for careers in advertising, branding, and digital media design.</p><p>Example Degree: Bachelor of Fine Arts (BFA) in Graphic Design</p>",
+				"imagePath": "/images/build-plan/graphic-design.jpg"
 			},
 			{
-				"title": "Secondary Education",
-				"description": "<p>Tailored for those aiming to teach high school students, with specializations available in subjects like math, science, or English.</p><p>Example Degree: Bachelor of Science in Secondary Education</p>",
-				"imagePath": "/images/build-plan/secondary-education.jpg"
+				"title": "Animation",
+				"description": "<p>With the rise of digital media and gaming, animators are in high demand.</p><p>Example Degree: Bachelor of Arts in Animation</p>",
+				"imagePath": "/images/build-plan/animation.jpg"
 			},
 			{
-				"title": "Special Education",
-				"description": "<p>Focuses on teaching students with unique learning needs and often comes with increased demand.</p><p>Example Degree: Bachelor of Science in Special Education</p>",
-				"imagePath": "/images/build-plan/special-education.jpg"
+				"title": "Interior Design",
+				"description": "<p>Focuses on creating functional and aesthetic interior spaces and can lead to roles with architectural firms or freelance opportunities.</p><p>Example Degree: Bachelor of Fine Arts in Interior Design</p>",
+				"imagePath": "/images/build-plan/interior-design.jpg"
 			}
 		]
 	},

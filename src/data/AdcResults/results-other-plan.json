@@ -1,11 +1,11 @@
 {
-	"slug": "education-plan",
+	"slug": "criminal-justice-plan",
 	"heroSection": {
 		"title": "You've got this!",
 		"description": "<p>Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. This plan isn't just a guide; it's a reflection of your ambition, your dreams, and your future. </p><p>Here's what you're unlocking:<br/><ul><li>Clarity and Confidence: No more second-guessing. Every piece of advice here is tailored to help you navigate your educational journey with ease.</li><li>A Future Tailored to You: Your goals, your aspirations, your pace. Embrace the exciting opportunities that lie ahead.</li></ul></p><p>You've got the ambition and the drive. With this plan in hand, you're not just going back to school; you're moving forward in life. Let's dive in and advance your future together.</p>",
 		"image": {
-			"path": "/images/build-plan/education-plan.svg",
-			"altText": "Your education back to school plan"
+			"path": "/images/build-plan/unsure-plan.svg",
+			"altText": "Your Other/Unsure back to school plan"
 		}
 	},
 	"reasons": {
@@ -230,33 +230,38 @@
 		]
 	},
 	"topCareers": {
-		"title": "Top Careers in Education",
-		"description": "Education is a cornerstone for societal growth and personal development. The careers listed in this category are crucial for shaping future generations and offer a sense of fulfillment that transcends monetary gain. A bachelor's degree in education opens doors to diverse roles, ensuring a stable and rewarding career path.",
+		"title": "Top Careers for Bachelor’s Degree Holders",
+		"description": "A bachelor's degree is your gateway to a variety of rewarding careers across multiple industries. Each path we’ve highlighted is not just a step towards achieving your professional goals; it's a chance to make a meaningful contribution to society. These careers exemplify the diverse and impactful roles that await you with a bachelor's degree.",
 		"paths": [
 			{
-				"title": "Elementary School Teacher",
-				"description": "<p><strong>Job responsibilities:</strong> Educates young children in fundamental subjects, fostering their development and learning.</p><p><strong>Why pursue this career:</strong> A wise choice because of the constant need for dedicated educators.</p><p><strong>Related degrees:</strong> Bachelor's in Elementary Education</p>",
-				"imagePath": "/images/build-plan/elementary-school-teacher.jpg"
+				"title": "Business Analyst",
+				"description": "<p><strong>Job responsibilities:</strong> Analyzes organizational processes, identifies inefficiencies, and recommends solutions.</p><p><strong>Why pursue this career:</strong> A smart choice due to the growing reliance on data-driven decision-making in business.</p><p><strong>Related degrees:</strong> Bachelor of Business Administration (BBA) or Bachelor's in Finance</p>",
+				"imagePath": "/images/build-plan/business-analyst.jpg"
 			},
 			{
-				"title": "High School Teacher",
-				"description": "<p><strong>Job responsibilities:</strong> Teaches and mentors adolescents in a specific subject area, preparing them for college or the workforce.</p><p><strong>Why pursue this career:</strong> A smart choice due to the consistent demand for secondary education teachers.</p><p><strong>Related degrees:</strong> Bachelor's in Education with a concentration in a specific subject</p>",
-				"imagePath": "/images/build-plan/high-school-teacher.jpg"
+				"title": "Emergency Management Director",
+				"description": "<p><strong>Job responsibilities:</strong> Plans and coordinates responses to natural disasters and other emergencies.</p><p><strong>Why pursue this career:</strong> A smart choice due to the increasing frequency of natural disasters and the need for preparedness.</p><p><strong>Related degrees:</strong> Bachelor's in Emergency Management or Bachelor's in Public Safety Administration</p>",
+				"imagePath": "/images/build-plan/emergency-management-director.jpg"
 			},
 			{
-				"title": "Special Education Teacher",
-				"description": "<p><strong>Job responsibilities:</strong> Works with students who have a wide range of learning, mental, emotional, and physical disabilities.</p><p><strong>Why pursue this career:</strong> A smart choice due to the specialized and growing demand for these roles.</p><p><strong>Related degrees:</strong> Bachelor's in Special Education</p>",
-				"imagePath": "/images/build-plan/special-education-teacher.jpg"
+				"title": "Registered Nurse",
+				"description": "<p><strong>Job responsibilities:</strong> Provides patient care, support, and education in various healthcare settings.</p><p><strong>Why pursue this career:</strong> A smart choice due to the high demand for healthcare professionals.</p><p><strong>Related degrees:</strong> Bachelor of Science in Nursing (BSN)</p>",
+				"imagePath": "/images/build-plan/registered-nurse.jpg"
 			},
 			{
-				"title": "Educational Administrator",
-				"description": "<p><strong>Job responsibilities:</strong> Manages the day-to-day operations of schools and educational institutions.</p><p><strong>Why pursue this career:</strong> A stable choice given the need for leadership in educational settings.</p><p><strong>Related degrees:</strong> Bachelor's in Education Administration</p>",
-				"imagePath": "/images/build-plan/educational-administrator.jpg"
+				"title": "Software Developer",
+				"description": "<p><strong>Job responsibilities:</strong> Designs and creates computer programs and applications.</p><p><strong>Why pursue this career:</strong> A wise choice due to the central role of technology in modern life.</p><p><strong>Related degrees:</strong> Bachelor's in Computer Science or Bachelor's in Software Engineering</p>",
+				"imagePath": "/images/build-plan/software-developer.jpg"
 			},
 			{
-				"title": "Instructional Coordinator",
-				"description": "<p><strong>Job responsibilities:</strong> Develops curricula and oversees teaching standards and school curriculums.</p><p><strong>Why pursue this career:</strong> A prudent choice given the ongoing efforts to improve educational outcomes.</p><p><strong>Related degrees:</strong> Bachelor's in Education or Bachelor's in Curriculum and Instruction</p>",
-				"imagePath": "/images/build-plan/instructional-coordinator.jpg"
+				"title": "Teacher",
+				"description": "<p><strong>Job responsibilities:</strong> Educates young children in fundamental subjects, fostering their development and learning. Or, teaches and mentors adolescents in a specific subject area, preparing them for college or the workforce.</p><p><strong>Why pursue this career:</strong> A smart choice due to the consistent demand for teachers.</p><p><strong>Related degrees:</strong> Bachelor's in Education</p>",
+				"imagePath": "/images/build-plan/teacher.jpg"
+			},
+			{
+				"title": "UX/UI Designer",
+				"description": "<p><strong>Job responsibilities:</strong> Enhances user satisfaction by improving the usability and accessibility of a product.</p><p><strong>Why pursue this career:</strong> A smart choice because of the focus on customer experience in product development.</p><p><strong>Related degrees:</strong> Bachelor's in User Experience Design or Bachelor's in Graphic Design</p>",
+				"imagePath": "/images/build-plan/ux-ui-designer.jpg"
 			}
 		],
 		"statsSource": "U.S. Bureau of Labor Statistics",
@@ -319,18 +324,33 @@
 		]
 	},
 	"bachelorDegrees": {
-		"title": "Best Education Bachelor’s Degrees",
-		"description": "Education is the cornerstone of every society, and those who choose to impart knowledge play a crucial role in shaping the future. Earning a degree in education can lead to a fulfilling, stable career, whether you're nurturing young minds in the classroom or addressing unique learning needs.",
+		"title": "Popular Bachelor’s Degrees",
+		"description": "",
 		"paths": [
 			{
-				"title": "Elementary Education",
-				"description": "<p>Prepares students to teach young children and often leads to a stable career in public or private schools.</p><p>Example Degree: Bachelor of Science in Elementary Education</p>",
-				"imagePath": "/images/build-plan/elementary-education.jpg"
+				"title": "Business Administration",
+				"description": "<p>This versatile degree covers a range of business disciplines and prepares students for various managerial roles.</p><p>Example Degree: Bachelor of Science in Business Administration (BSBA)</p>",
+				"imagePath": "/images/build-plan/business-administration.jpg"
 			},
 			{
-				"title": "Secondary Education",
-				"description": "<p>Tailored for those aiming to teach high school students, with specializations available in subjects like math, science, or English.</p><p>Example Degree: Bachelor of Science in Secondary Education</p>",
-				"imagePath": "/images/build-plan/secondary-education.jpg"
+				"title": "Criminal Justice",
+				"description": "<p>Offers a foundation for careers in law enforcement, corrections, and court systems.</p><p>Example Degree: Bachelor of Science in Criminal Justice</p>",
+				"imagePath": "/images/build-plan/criminal-justice.jpg"
+			},
+			{
+				"title": "Information Technology",
+				"description": "<p>Covers the management and security of information systems and can lead to roles in cybersecurity, network administration, and IT consulting.</p><p>Example Degree: Bachelor of Science in Information Technology</p>",
+				"imagePath": "/images/build-plan/information-technology.jpg"
+			},
+			{
+				"title": "Marketing",
+				"description": "<p>This program equips students with strategies to drive business growth and can lead to roles in advertising, public relations, and market research.</p><p>Example Degree: Bachelor of Science in Marketing</p>",
+				"imagePath": "/images/build-plan/marketing.jpg"
+			},
+			{
+				"title": "Nursing",
+				"description": "<p>This degree is in high demand, with nursing positions offering competitive salaries and job security.</p><p>Example Degree: Bachelor of Science in Nursing (BSN)</p>",
+				"imagePath": "/images/build-plan/nursing.jpg"
 			},
 			{
 				"title": "Special Education",

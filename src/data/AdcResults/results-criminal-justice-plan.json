@@ -1,11 +1,11 @@
 {
-	"slug": "education-plan",
+	"slug": "criminal-justice-plan",
 	"heroSection": {
 		"title": "You've got this!",
 		"description": "<p>Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. This plan isn't just a guide; it's a reflection of your ambition, your dreams, and your future. </p><p>Here's what you're unlocking:<br/><ul><li>Clarity and Confidence: No more second-guessing. Every piece of advice here is tailored to help you navigate your educational journey with ease.</li><li>A Future Tailored to You: Your goals, your aspirations, your pace. Embrace the exciting opportunities that lie ahead.</li></ul></p><p>You've got the ambition and the drive. With this plan in hand, you're not just going back to school; you're moving forward in life. Let's dive in and advance your future together.</p>",
 		"image": {
-			"path": "/images/build-plan/education-plan.svg",
-			"altText": "Your education back to school plan"
+			"path": "/images/build-plan/criminal-justice-plan.svg",
+			"altText": "Your Criminal Justice back to school plan"
 		}
 	},
 	"reasons": {
@@ -230,33 +230,33 @@
 		]
 	},
 	"topCareers": {
-		"title": "Top Careers in Education",
-		"description": "Education is a cornerstone for societal growth and personal development. The careers listed in this category are crucial for shaping future generations and offer a sense of fulfillment that transcends monetary gain. A bachelor's degree in education opens doors to diverse roles, ensuring a stable and rewarding career path.",
+		"title": "Top Careers in Criminal Justice",
+		"description": "The Criminal Justice sector offers careers that are integral to the functioning and safety of society. The professions we've highlighted promise a blend of challenge, respect, and the chance to make a tangible difference in the community. Pursuing a bachelor's degree in Criminal Justice paves the way for a career that upholds justice and public welfare.",
 		"paths": [
 			{
-				"title": "Elementary School Teacher",
-				"description": "<p><strong>Job responsibilities:</strong> Educates young children in fundamental subjects, fostering their development and learning.</p><p><strong>Why pursue this career:</strong> A wise choice because of the constant need for dedicated educators.</p><p><strong>Related degrees:</strong> Bachelor's in Elementary Education</p>",
-				"imagePath": "/images/build-plan/elementary-school-teacher.jpg"
+				"title": "Police Officer",
+				"description": "<p><strong>Job responsibilities:</strong> Enforces laws, maintains public safety, and responds to emergency situations.</p><p><strong>Why pursue this career:</strong> A wise choice because of the essential role of law enforcement in communities.</p><p><strong>Related degrees:</strong> Bachelor's in Criminal Justice or Bachelor's in Law Enforcement</p>",
+				"imagePath": "/images/build-plan/police-officer.jpg"
 			},
 			{
-				"title": "High School Teacher",
-				"description": "<p><strong>Job responsibilities:</strong> Teaches and mentors adolescents in a specific subject area, preparing them for college or the workforce.</p><p><strong>Why pursue this career:</strong> A smart choice due to the consistent demand for secondary education teachers.</p><p><strong>Related degrees:</strong> Bachelor's in Education with a concentration in a specific subject</p>",
-				"imagePath": "/images/build-plan/high-school-teacher.jpg"
+				"title": "Forensic Analyst",
+				"description": "<p><strong>Job responsibilities:</strong> Gathers and analyzes physical evidence from crime scenes.</p><p><strong>Why pursue this career:</strong> A smart choice due to the growing reliance on scientific evidence in criminal investigations.</p><p><strong>Related degrees:</strong> Bachelor's in Forensic Science or Bachelor's in Biology with a forensic focus</p>",
+				"imagePath": "/images/build-plan/forensic-analyst.jpg"
 			},
 			{
-				"title": "Special Education Teacher",
-				"description": "<p><strong>Job responsibilities:</strong> Works with students who have a wide range of learning, mental, emotional, and physical disabilities.</p><p><strong>Why pursue this career:</strong> A smart choice due to the specialized and growing demand for these roles.</p><p><strong>Related degrees:</strong> Bachelor's in Special Education</p>",
-				"imagePath": "/images/build-plan/special-education-teacher.jpg"
+				"title": "Probation Officer",
+				"description": "<p><strong>Job responsibilities:</strong> Supervises offenders and helps rehabilitate them back into society.</p><p><strong>Why pursue this career:</strong> A stable choice given the focus on reducing recidivism and integrating individuals back into the community.</p><p><strong>Related degrees:</strong> Bachelor's in Criminal Justice or Bachelor's in Sociology</p>",
+				"imagePath": "/images/build-plan/probation-officer.jpg"
 			},
 			{
-				"title": "Educational Administrator",
-				"description": "<p><strong>Job responsibilities:</strong> Manages the day-to-day operations of schools and educational institutions.</p><p><strong>Why pursue this career:</strong> A stable choice given the need for leadership in educational settings.</p><p><strong>Related degrees:</strong> Bachelor's in Education Administration</p>",
-				"imagePath": "/images/build-plan/educational-administrator.jpg"
+				"title": "Crime Scene Investigator",
+				"description": "<p><strong>Job responsibilities:</strong> Collects and analyzes evidence from crime scenes.</p><p><strong>Why pursue this career:</strong> A prudent choice because of the critical role forensic evidence plays in solving crimes.</p><p><strong>Related degrees:</strong> Bachelor's in Forensic Science or Bachelor's in Criminal Justice</p>",
+				"imagePath": "/images/build-plan/crime-scene-investigator.jpg"
 			},
 			{
-				"title": "Instructional Coordinator",
-				"description": "<p><strong>Job responsibilities:</strong> Develops curricula and oversees teaching standards and school curriculums.</p><p><strong>Why pursue this career:</strong> A prudent choice given the ongoing efforts to improve educational outcomes.</p><p><strong>Related degrees:</strong> Bachelor's in Education or Bachelor's in Curriculum and Instruction</p>",
-				"imagePath": "/images/build-plan/instructional-coordinator.jpg"
+				"title": "Emergency Management Director",
+				"description": "<p><strong>Job responsibilities:</strong> Plans and coordinates responses to natural disasters and other emergencies.</p><p><strong>Why pursue this career:</strong> A smart choice due to the increasing frequency of natural disasters and the need for preparedness.</p><p><strong>Related degrees:</strong> Bachelor's in Emergency Management or Bachelor's in Public Safety Administration</p>",
+				"imagePath": "/images/build-plan/emergency-management-director.jpg"
 			}
 		],
 		"statsSource": "U.S. Bureau of Labor Statistics",
@@ -319,23 +319,23 @@
 		]
 	},
 	"bachelorDegrees": {
-		"title": "Best Education Bachelor’s Degrees",
-		"description": "Education is the cornerstone of every society, and those who choose to impart knowledge play a crucial role in shaping the future. Earning a degree in education can lead to a fulfilling, stable career, whether you're nurturing young minds in the classroom or addressing unique learning needs.",
+		"title": "Best Criminal Justice Bachelor’s Degrees",
+		"description": "The realm of criminal justice is vast, spanning law enforcement, forensic sciences, and the study of criminology. Earning a degree in this sector not only provides insights into the inner workings of the justice system but also offers numerous pathways to impactful, respected careers.",
 		"paths": [
 			{
-				"title": "Elementary Education",
-				"description": "<p>Prepares students to teach young children and often leads to a stable career in public or private schools.</p><p>Example Degree: Bachelor of Science in Elementary Education</p>",
-				"imagePath": "/images/build-plan/elementary-education.jpg"
+				"title": "Criminal Justice",
+				"description": "<p>Offers a foundation for careers in law enforcement, corrections, and court systems.</p><p>Example Degree: Bachelor of Science in Criminal Justice</p>",
+				"imagePath": "/images/build-plan/criminal-justice.jpg"
 			},
 			{
-				"title": "Secondary Education",
-				"description": "<p>Tailored for those aiming to teach high school students, with specializations available in subjects like math, science, or English.</p><p>Example Degree: Bachelor of Science in Secondary Education</p>",
-				"imagePath": "/images/build-plan/secondary-education.jpg"
+				"title": "Forensic Science",
+				"description": "<p>Prepares students for roles in crime scene investigation and laboratory analysis.</p><p>Example Degree: Bachelor of Arts in Forensic Science</p>",
+				"imagePath": "/images/build-plan/forensic-science.jpg"
 			},
 			{
-				"title": "Special Education",
-				"description": "<p>Focuses on teaching students with unique learning needs and often comes with increased demand.</p><p>Example Degree: Bachelor of Science in Special Education</p>",
-				"imagePath": "/images/build-plan/special-education.jpg"
+				"title": "Criminology",
+				"description": "<p>Focuses on the sociological and psychological aspects of crime, often leading to roles in social work, corrections, or law enforcement strategy.</p><p>Example Degree: Bachelor of Arts in Criminology</p>",
+				"imagePath": "/images/build-plan/criminology.jpg"
 			}
 		]
 	},
