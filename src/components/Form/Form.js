@@ -44,6 +44,8 @@ const AcquiaFormHandle = ({
 
 	const [formData, setFormData] = useState({});
 
+	const router = useRouter();
+
 	useEffect(() => {
 		if (acsForm) {
 			const { form, errors } = acsForm;
@@ -131,8 +133,6 @@ const AcquiaFormHandle = ({
 				// }
 				field,
 		);
-
-	const router = useRouter();
 
 	const onSubmit = async (values, { setSubmitting }) => {
 		// Create a copy of values and clear phone_number if text_optin is not checked
@@ -245,7 +245,7 @@ const AcquiaFormHandle = ({
 		>
 			{({ errors, isSubmitting, isValid, dirty }) =>
 				!isSent ? (
-					<Form className={styles.form}>
+					<Form className={styles.form} id={theForm?.name}>
 						{theFields.map(field => (
 							<GenerateField
 								field={field}
