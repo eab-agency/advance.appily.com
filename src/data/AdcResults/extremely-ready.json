@@ -14,7 +14,7 @@
 		{
 			"title": "Education",
 			"icon": "education2-icon",
-			"content": "<p>Your readiness level suggests that you have a mindset conducive to academic success. Whether you're building on prior experiences or embarking on a fresh journey, your enthusiasm and preparedness shine brightly.</p><p><strong>Next Steps:</strong> <a href='/careers/adult-degree-completion/build-plan' target='_blank' rel='noopener nofollow'>Answer a few more questions</a> to see how your experience, goals, and interests translate into a step-by-step plan to complete your degree.</p>"
+			"content": "<p>Your readiness level suggests that you have a mindset conducive to academic success. Whether you're building on prior experiences or embarking on a fresh journey, your enthusiasm and preparedness shine brightly.</p><p><strong>Next Steps:</strong> <a href='/adult-degree-completion/build-plan-quiz' target='_blank' rel='noopener nofollow'>Answer a few more questions</a> to see how your experience, goals, and interests translate into a step-by-step plan to complete your degree.</p>"
 		},
 		{
 			"title": "Career",
@@ -44,7 +44,7 @@
 		{
 			"title": "Finances",
 			"icon": "finances-icon",
-			"content": "<p>Your financial preparation puts you in a great spot. Look into scholarships or grants for added financial relief.</p><p><strong>Next Steps:</strong> Let us help you explore scholarships, grants, and financial aid options available for returning students. <a href='/careers/adult-degree-completion/build-plan' target='_blank' rel='nofollow noopener'>Answer a few more questions</a> to get your back-to-school plan.</p>"
+			"content": "<p>Your financial preparation puts you in a great spot. Look into scholarships or grants for added financial relief.</p><p><strong>Next Steps:</strong> Let us help you explore scholarships, grants, and financial aid options available for returning students. <a href='/adult-degree-completion/build-plan-quiz' target='_blank' rel='nofollow noopener'>Answer a few more questions</a> to get your back-to-school plan.</p>"
 		},
 		{
 			"title": "Age",
@@ -56,7 +56,7 @@
 		"title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
 		"introContent": "<p>You're set to soar in the academic world! Let's align your current readiness with a clear path forward. Answer a few more questions to receive your tailored back-to-school plan.",
 		"buttonText": "Build Your Personalized Plan",
-		"buttonLink": "/careers/adult-degree-completion/build-plan",
+		"buttonLink": "/adult-degree-completion/build-plan-quiz",
 		"steps": {
 			"title": "Your Plan Includes ...",
 			"list": [
@@ -92,7 +92,7 @@
 				}
 			],
 			"buttonText": "Get Started",
-			"buttonLink": "/careers/adult-degree-completion/build-plan"
+			"buttonLink": "/adult-degree-completion/build-plan-quiz"
 		}
 	}
 }
