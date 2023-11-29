@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import Question from "./Question";
 import ResetQuizButton from "./ResetQuizButton";
 import Results from "./Results";
-// import Score from "./Score";
+import Score from "./Score";
 
 export function Quiz({ vertical, quizData, resultsFormId, title }) {
 	const { location, globalPrivacyControl } = useUser();
@@ -79,6 +79,11 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 			Object.keys(updatedScores)[0],
 		);
 
+		if (associatedField === "age_range" && answer.value === 1) {
+			router.push("/appily-redirect");
+			return;
+		}
+
 		setQuizState({
 			...quizState,
 			currentQuestionIdx: currentQuestionIdx + 1,
@@ -112,10 +117,10 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 				<div className={styles.containerQuiz}>
 					<div className={styles.content}>
 						{/* NOTE: This score components will only show in dev mode */}
-						{/* <Score
+						<Score
 							score={personalityScores}
 							winningPersonality={quizState.highestScorePersonality}
-						/> */}
+						/>
 						<header className={styles.quizContentHead}>
 							<span className="intro-title">{title || "Take the Quiz"}</span>
 							<div className={styles.questionsCounter}>
