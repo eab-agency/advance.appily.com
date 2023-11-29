@@ -12,7 +12,6 @@
   "dependencies": {
     "@apollo/client": "^3.7.0",
     "@faceless-ui/css-grid": "^1.2.0",
-    "@vercel/analytics": "^1.0.2",
     "apollo-link-http": "^1.5.17",
     "cors": "^2.8.5",
     "escape-html": "^1.0.3",
