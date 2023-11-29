@@ -163,6 +163,13 @@ const AcquiaFormHandle = ({
 			if (!response1.ok) {
 				// Check if the first API request was successful
 				throw new Error("Network response was not ok");
+			} else {
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push({
+					event: "formSubmitSuccess",
+					formId: theForm.id,
+					formName: theForm.name,
+				});
 			}
 
 			// Make the second API request
