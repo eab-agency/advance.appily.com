@@ -1,3 +1,4 @@
+import isDevMode from "@/helpers/isDevMode";
 import styles from "@/styles/components/Question.module.scss";
 
 function Question({ handleAnswer, question, lastQuestion }) {
@@ -27,7 +28,7 @@ function Question({ handleAnswer, question, lastQuestion }) {
                 handleClick(question.question, answer, question.associatedField)
               }
             >
-              {answer.answer} | index: {answer.originalIndex} | weight: {answer.weight}
+              {answer.answer} {isDevMode() ? `index: ${answer.originalIndex} | weight: ${answer.weight}` : ''}
             </button>
           </li>
         ))}
