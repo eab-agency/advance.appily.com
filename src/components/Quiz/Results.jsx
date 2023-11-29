@@ -4,7 +4,7 @@ import Link from "next/link";
 import isDevMode from "@/helpers/isDevMode";
 import styles from '@/styles/components/Results.module.scss';
 
-const Results = ({ children, vertical, answers, formId }) => {
+const Results = ({ children, vertical, answers, formId, redirectUrl }) => {
   const formSubmitAnswers = {
     answers: answers.selectedAnswers,
     highestScorePersonality: answers.highestScorePersonality,
@@ -45,6 +45,20 @@ const Results = ({ children, vertical, answers, formId }) => {
       case 'scientist':
         return 'The Scientist';
 
+      // ADC Plan
+      case 'stem':
+        return 'Technology';
+      case 'business':
+        return 'Business';
+      case 'healthcare':
+        return 'Healthcare';
+      case 'education':
+        return 'Education';
+      case 'art-and-design':
+        return 'Art & Design';
+      case 'Criminal Justice':
+        return 'Criminal Justice';
+
       default:
         return 'Unknown Personality';
     }
@@ -79,7 +93,7 @@ const Results = ({ children, vertical, answers, formId }) => {
           <div className="leadForm">
             <h2>Where should we send your results?</h2>
             <Form
-              redirectTo={`/careers/${vertical}/${answers.highestScorePersonality}`}
+              redirectTo={redirectUrl}
               answers={formSubmitAnswers}
               user={null}
               id={formId || "2"}
@@ -87,7 +101,7 @@ const Results = ({ children, vertical, answers, formId }) => {
             />
             {devModeOnly && (
               <Link
-                href={`/careers/${vertical}/${answers.highestScorePersonality}`}
+                href={redirectUrl}
               >
                 Skip form (only shows in dev mode)
               </Link>

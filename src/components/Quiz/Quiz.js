@@ -10,6 +10,17 @@ import ResetQuizButton from "./ResetQuizButton";
 import Results from "./Results";
 import Score from "./Score";
 
+const getRedirectUrl = (vertical, highestScorePersonality) => {
+	console.log("🚀 ~ file: Quiz.js:14 ~ getRedirectUrl ~ vertical:", vertical);
+	if (vertical === "plan") {
+		return `/adult-degree-completion/${vertical}/${highestScorePersonality}`;
+	} else if (vertical === "specificVertical2") {
+		return `/specificPath2/${highestScorePersonality}`;
+	} else {
+		return `/careers/${vertical}/${highestScorePersonality}`;
+	}
+};
+
 export function Quiz({ vertical, quizData, resultsFormId, title }) {
 	const { location, globalPrivacyControl } = useUser();
 
@@ -80,7 +91,16 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 		);
 
 		if (associatedField === "age_range" && answer.value === 1) {
-			router.push("/appily-redirect");
+			router.push("/redirect/appily-redirect");
+			return;
+		}
+
+		if (
+			associatedField === "initial_question" &&
+			answer.value !== 2 &&
+			answer.value !== 3
+		) {
+			router.push("/redirect/helpful-resources");
 			return;
 		}
 
@@ -95,7 +115,9 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 		if (currentQuestionIdx === questions.length - 1) {
 			setQuizFinished(true);
 			if (location.notUS || globalPrivacyControl) {
-				router.push(`/careers/${vertical}/${highestScorePersonality}`);
+				const redirectUrl = getRedirectUrl(vertical, highestScorePersonality);
+				router.push(redirectUrl);
+				// router.push(`/careers/${vertical}/${highestScorePersonality}`);
 			}
 		}
 	};
@@ -110,6 +132,10 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 		});
 		setQuizFinished(false);
 	};
+	const redirectUrl = getRedirectUrl(
+		vertical,
+		quizState.highestScorePersonality,
+	);
 
 	return (
 		<>
@@ -141,11 +167,7 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 					<div className={styles.content}>
 						{/* Check if either location.notUS or globalPrivacyControl is true */}
 						{location && (location.notUS || globalPrivacyControl) ? (
-							<>
-								{router.push(
-									`/careers/${vertical}/${quizState.highestScorePersonality}`,
-								)}
-							</>
+							<>{router.push(redirectUrl)}</>
 						) : (
 							<>
 								{/* Show the Results component */}
@@ -153,6 +175,7 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 									vertical={vertical}
 									answers={quizState}
 									formId={resultsFormId}
+									redirectUrl={redirectUrl}
 								>
 									<ResetQuizButton
 										handleRetakeQuiz={handleRetakeQuiz}

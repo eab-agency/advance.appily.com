@@ -223,19 +223,19 @@
         },
         {
           "answer": "Technology / STEM",
-          "personality": "technology",
+          "personality": "stem",
           "weight": 100,
           "value": 4
         },
         {
           "answer": "Art & Design",
-          "personality": "artanddesign",
+          "personality": "art-and-design",
           "weight": 100,
           "value": 5
         },
         {
           "answer": "Criminal Justice",
-          "personality": "criminaljustice",
+          "personality": "criminal-justice",
           "weight": 100,
           "value": 5
         },
