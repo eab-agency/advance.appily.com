@@ -4,7 +4,7 @@
       "title": "Motivation",
       "question": "How motivated are you to earn your degree?",
       "associatedField": "quizresponse1",
-      "icon": "education-icon",
+      "icon": "motivation2-icon",
       "answers": [
         {
           "answer": "Earning a degree is a top priority for me",
@@ -42,6 +42,7 @@
       "title": "Studying",
       "question": "How do you feel about studying?",
       "associatedField": "quizresponse2",
+      "icon": "studying-icon",
       "answers": [
         {
           "answer": "I enjoy learning and definitely get into the zone studying",
@@ -79,6 +80,7 @@
       "title": "Education",
       "question": "What is your highest level of completed education?",
       "associatedField": "level_of_education",
+      "icon": "education2-icon",
       "answers": [
         {
           "answer": "Some High School",
@@ -116,6 +118,7 @@
       "title": "Career",
       "question": "How clear are you about your desired career path and the degree required to achieve it?",
       "associatedField": "quizresponse4",
+      "icon": "setting-icon",
       "answers": [
         {
           "answer": "I know what I want to do and the degree I need to earn",
@@ -147,6 +150,7 @@
       "title": "Free Time",
       "question": "How much free time do you tend to have each week?",
       "associatedField": "quizresponse5",
+      "icon": "free-time-icon",
       "answers": [
         {
           "answer": "I have a few hours of free time most days",
@@ -175,9 +179,10 @@
       ]
     },
     {
-      "title": "Time Management",
+      "title": "Time Mgmt",
       "question": "How are your time management skills?",
       "associatedField": "quizresponse6",
+      "icon": "time-management-icon",
       "answers": [
         {
           "answer": "I'm a time-management pro",
@@ -215,6 +220,7 @@
       "title": "Support",
       "question": "Do you have supporters who can offer guidance or encouragement for your goals?",
       "associatedField": "quizresponse7",
+      "icon": "support-icon",
       "answers": [
         {
           "answer": "I have a mentor or advisor",
@@ -252,6 +258,7 @@
       "title": "Technology",
       "question": "How comfortable are you with using technology for online learning and research?",
       "associatedField": "quizresponse8",
+      "icon": "technology-icon",
       "answers": [
         {
           "answer": "I am really comfortable with computers and would prefer learning online",
@@ -283,6 +290,7 @@
       "title": "Finances",
       "question": "Do you have a plan or financial resources in place to support your education?",
       "associatedField": "quizresponse9",
+      "icon": "finances-icon",
       "answers": [
         {
           "answer": "I have a plan and resources",
@@ -309,6 +317,7 @@
       "question": "What’s your age range?",
       "description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
       "associatedField": "quizresponse10",
+      "icon": "age-icon",
       "answers": [
         {
           "answer": "16-18",
@@ -355,5 +364,178 @@
       ]
     }
   ],
-  "score": 0
+  "score": 0,
+  "nextSteps": {
+    "extremelyReady": {
+      "title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
+      "introContent": "<p>You're set to soar in the academic world! Let's align your current readiness with a clear path forward. Answer a few more questions to receive your tailored back-to-school plan.",
+      "buttonText": "Build Your Personalized Plan",
+      "buttonLink": "/adult-degree-completion/build-plan-quiz",
+      "steps": {
+        "title": "Your Plan Includes ...",
+        "list": [
+          {
+            "step": {
+              "content": "<p><strong>Value of a Bachelor's Degree:</strong> Explore the return on investment, job prospects, and personal growth opportunities of higher education.<p/>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>How to Fund Your Degree:</strong> Discover resources for scholarships, grants, and strategies to reduce education costs.</p>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>Degrees & Schools:</strong> Learn how to pick the right degree and school based on your goals and the job market.<p/>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>Careers:</strong> Dive into high-demand careers and understand the degrees required to access them.<p/>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>Your Next Steps:</strong> Get a tailored checklist with immediate actions and a suggested timeline for your educational journey.<p/>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>Tools and Resources:</strong> Access a curated list of digital tools, insightful videos, and community forums to support your path back to school.<p/>"
+            }
+          }
+        ],
+        "buttonText": "Get Started",
+        "buttonLink": "/adult-degree-completion/build-plan-quiz"
+      }
+    },
+    "veryReady": {
+      "title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
+      "introContent": "<p>With just a few tweaks, your academic journey can be smooth sailing. Eager to pinpoint those areas? Answer a few more questions to receive your tailored back-to-school plan.</p>",
+      "buttonText": "Build Your Personalized Plan",
+      "buttonLink": "/adult-degree-completion/build-plan-quiz",
+      "steps": {
+        "title": "Your Plan Includes ...",
+        "list": [
+          {
+            "step": {
+              "content": "<p><strong>Value of a Bachelor's Degree:</strong> Explore the return on investment, job prospects, and personal growth opportunities of higher education.<p/>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>How to Fund Your Degree:</strong> Discover resources for scholarships, grants, and strategies to reduce education costs.</p>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>Degrees & Schools:</strong> Learn how to pick the right degree and school based on your goals and the job market.<p/>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>Careers:</strong> Dive into high-demand careers and understand the degrees required to access them.<p/>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>Your Next Steps:</strong> Get a tailored checklist with immediate actions and a suggested timeline for your educational journey.<p/>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>Tools and Resources:</strong> Access a curated list of digital tools, insightful videos, and community forums to support your path back to school.<p/>"
+            }
+          }
+        ],
+        "buttonText": "Get Started",
+        "buttonLink": "/adult-degree-completion/build-plan-quiz"
+      }
+    },
+    "ready": {
+      "title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
+      "introContent": "<p>Your potential is clear; let's bridge those minor gaps and pave your path. Answer a few more questions to receive your tailored back-to-school plan.</p>",
+      "buttonText": "Build Your Personalized Plan",
+      "buttonLink": "/adult-degree-completion/build-plan-quiz",
+      "steps": {
+        "title": "Your Plan Includes ...",
+        "list": [
+          {
+            "step": {
+              "content": "<p><strong>Value of a Bachelor's Degree:</strong> Explore the return on investment, job prospects, and personal growth opportunities of higher education.<p/>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>How to Fund Your Degree:</strong> Discover resources for scholarships, grants, and strategies to reduce education costs.</p>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>Degrees & Schools:</strong> Learn how to pick the right degree and school based on your goals and the job market.<p/>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>Careers:</strong> Dive into high-demand careers and understand the degrees required to access them.<p/>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>Your Next Steps:</strong> Get a tailored checklist with immediate actions and a suggested timeline for your educational journey.<p/>"
+            }
+          },
+          {
+            "step": {
+              "content": "<p><strong>Tools and Resources:</strong> Access a curated list of digital tools, insightful videos, and community forums to support your path back to school.<p/>"
+            }
+          }
+        ],
+        "buttonText": "Get Started",
+        "buttonLink": "/adult-degree-completion/build-plan-quiz"
+      }
+    }
+  },
+  "readinessResults": {
+    "notReady": {
+      "title": "When it comes to college, you're",
+      "result": "Not Quite Ready!",
+      "detailedDescription": "<p><strong>Take a moment to reflect.</strong> Your results suggest that you might benefit from a bit more preparation before diving into the academic realm. </p><p>Don't be disheartened. Everyone's journey is unique, and there's no rush. Consider leveraging resources, tools, and support to bolster your readiness. Remember, with determination and the right approach, you can overcome any hurdle and achieve your educational dreams.</p>",
+      "needHelpTitle": "Need help figuring out where to start?",
+      "needHelpCtaLabel": "Get a Personalized Plan",
+      "needHelpCtaLink": "/adult-degree-completion/build-plan-quiz"
+    },
+    "almostReady": {
+      "title": "When it comes to college, you're",
+      "result": "Almost Ready!",
+      "detailedDescription": "<p><strong>You're on the cusp!</strong> Your results show that you're almost ready to embark on your educational journey. It's clear you have the drive and some of the skills needed. However, there might be certain areas you'd like to develop further. </p><p>Consider seeking out preparatory courses, resources, or mentoring in those areas. With a bit more preparation, you'll be fully equipped to face the academic world with confidence.</p>",
+      "needHelpTitle": "Need help figuring out where to start?",
+      "needHelpCtaLabel": "Get a Personalized Plan",
+      "needHelpCtaLink": "/adult-degree-completion/build-plan-quiz"
+    },
+    "ready": {
+      "title": "When it comes to college, you're",
+      "result": "Ready!",
+      "detailedDescription": "<p><strong>Good news!</strong> You are ready to venture back into the world of education. While you exhibit strength in numerous areas, there might be certain aspects you feel less confident about. That's okay!</p><p>Remember, everyone has their unique strengths and areas of growth. Seek out resources, workshops, or counseling services to bridge any gaps, and you'll be all set for success.</p>",
+      "needHelpTitle": "Need help figuring out where to start?",
+      "needHelpCtaLabel": "Get a Personalized Plan",
+      "needHelpCtaLink": "/adult-degree-completion/build-plan-quiz"
+    },
+    "veryReady": {
+      "title": "When it comes to college, you're",
+      "result": "Very Ready!",
+      "detailedDescription": "<p><strong>Well done!</strong> Your results show that you're very ready to resume or start your educational journey. You have a solid foundation in many areas essential for academic success.</p><p>While there might be a few areas to work on or adjust, you're certainly on the right track. Keep refining those skills and seek resources or support where needed, and you'll thrive in any academic setting!</p>",
+      "needHelpTitle": "Need help figuring out where to start?",
+      "needHelpCtaLabel": "Get a Personalized Plan",
+      "needHelpCtaLink": "/adult-degree-completion/build-plan-quiz"
+    },
+    "extremelyReady": {
+      "title": "When it comes to college, you're",
+      "result": "Extremely Ready!",
+      "detailedDescription": "<p><strong>Congratulations!</strong> Your results indicate that you're extremely prepared to dive back into the academic world. You've showcased strengths in key areas such as time management, motivation, and support systems, which are crucial for success in higher education.</p><p>Remember, while you're well-prepared, every educational journey comes with its unique challenges. Stay adaptive, keep that confidence high, and embark on this exciting chapter!</p>",
+      "needHelpTitle": "Need help figuring out where to start?",
+      "needHelpCtaLabel": "Get a Personalized Plan",
+      "needHelpCtaLink": "/adult-degree-completion/build-plan-quiz"
+    }
+  }
 }

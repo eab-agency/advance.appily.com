@@ -88,7 +88,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 		if (currentQuestionIdx === questions.length - 1) {
 			setQuizFinished(true);
 			if (location.notUS || globalPrivacyControl) {
-				router.push(`/adc/results${resultParameters}`);
+				router.push(`/adc/results${resultParameters}&score=${score}}`);
 			}
 		}
 	};
@@ -135,7 +135,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 						{/* Check if either location.notUS or globalPrivacyControl is true */}
 						{location && (location.notUS || globalPrivacyControl) ? (
 							<>
-								<h1>oops, your browser is set to skip the quiz</h1>
+								<h1>oops, your browser is set to skip the quiz form</h1>
 								{/* {router.push(
 									`/careers/${vertical}/${quizState.highestScorePersonality}`,
 								)} */}

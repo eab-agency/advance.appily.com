@@ -59,7 +59,7 @@ export default function QuizLandingPage() {
 						<Button
 							label="Take the Quiz"
 							appearance="primary"
-							href="/adult-degree-completion/quiz/start"
+							href="readiness-quiz/start"
 							className="button btn-primary"
 						/>
 					</div>
