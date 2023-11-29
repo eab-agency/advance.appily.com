@@ -164,10 +164,6 @@ const AcquiaFormHandle = ({
 				// Check if the first API request was successful
 				throw new Error("Network response was not ok");
 			} else {
-				console.log(
-					"🚀 ~ file: Form.js ~ line 103 ~ onSubmit ~ response1",
-					response1,
-				);
 				window.dataLayer = window.dataLayer || [];
 				window.dataLayer.push({
 					event: "formSubmitSuccess",

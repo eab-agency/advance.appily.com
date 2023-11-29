@@ -9,10 +9,10 @@ export async function fetchQuizResult(vertical, slug) {
 
 		const dataDirectory = path.resolve(process.cwd(), "data");
 		const filePath = path.join(dataDirectory, `/results-${vertical}.json`);
-		console.log(
-			"🚀 ~ file: fetchQuizResults.ts:17 ~ fetchQuizResult ~ filePath:",
-			filePath,
-		);
+		// console.log(
+		// 	"🚀 ~ file: fetchQuizResults.ts:17 ~ fetchQuizResult ~ filePath:",
+		// 	filePath,
+		// );
 		const fileContents = await fs.readFile(filePath, "utf8").catch(error => {
 			throw new Error(`Error reading file: ${error.message}`);
 		});
