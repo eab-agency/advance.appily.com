@@ -16,19 +16,39 @@ const getAnimationData = async score => {
 		const data = await import(
 			"@/assets/lotties/extremely-ready-dark-mode.json"
 		);
-		return data.default;
+		return {
+			data: quizData.readinessResults.extremelyReady,
+			animationData: data.default,
+			nextSteps: quizData.nextSteps.extremelyReady,
+		};
 	} else if (score >= 31 && score <= 40) {
 		const data = await import("@/assets/lotties/very-ready-dark-mode.json");
-		return data.default;
+		return {
+			data: quizData.readinessResults.veryReady,
+			animationData: data.default,
+			nextSteps: quizData.nextSteps.veryReady,
+		};
 	} else if (score >= 21 && score <= 30) {
 		const data = await import("@/assets/lotties/ready-dark-mode.json");
-		return data.default;
+		return {
+			data: quizData.readinessResults.ready,
+			animationData: data.default,
+			nextSteps: quizData.nextSteps.ready,
+		};
 	} else if (score >= 11 && score <= 20) {
 		const data = await import("@/assets/lotties/almost-ready-dark-mode.json");
-		return data.default;
+		return {
+			data: quizData.readinessResults.ready,
+			animationData: data.default,
+			nextSteps: quizData.nextSteps.ready,
+		};
 	} else if (score >= 0 && score <= 10) {
 		const data = await import("@/assets/lotties/dark-not-ready-dark-mode.json");
-		return data.default;
+		return {
+			data: quizData.readinessResults.ready,
+			animationData: data.default,
+			nextSteps: quizData.nextSteps.ready,
+		};
 	}
 };
 
@@ -58,7 +78,7 @@ export default function ADCResultsPage({
 	useEffect(() => {
 		const loadAnimationData = async () => {
 			const data = await getAnimationData(score);
-			setAnimationData(data);
+			setAnimationData(data.animationData);
 		};
 
 		loadAnimationData();
@@ -192,7 +212,6 @@ export default function ADCResultsPage({
 	};
 
 	const readinessResult2 = getReadinessResult(score);
-	console.log("🚀 ~ file: page.tsx:154 ~ readinessResult2:", readinessResult2);
 
 	return (
 		<>

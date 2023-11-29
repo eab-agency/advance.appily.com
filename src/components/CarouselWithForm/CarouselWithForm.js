@@ -7,7 +7,10 @@ import SchoolCarousel from "@/components/SchoolCarousel";
 import { useUser } from "@/context/context";
 import styles from "@/styles/components/CarouselWithForm.module.scss";
 
-const CarouselWithForm = ({ formId = "4", data }) => {
+const CarouselWithForm = ({
+	formId = "4",
+	data = { title: "", description: "" },
+}) => {
 	const [visibleForm, setVisibleForm] = useState(false);
 	const { user, location, vertical, globalPrivacyControl } = useUser();
 
