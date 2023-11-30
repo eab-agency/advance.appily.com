@@ -11,6 +11,7 @@ import Results from "./Results";
 import Score from "./Score";
 
 const getRedirectUrl = (vertical, highestScorePersonality) => {
+	console.log("🚀 ~ file: Quiz.js:14 ~ getRedirectUrl ~ vertical:", vertical);
 	if (vertical === "plan") {
 		return `/adult-degree-completion/${vertical}/${highestScorePersonality}`;
 	} else if (vertical === "specificVertical2") {
