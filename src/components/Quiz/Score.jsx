@@ -19,7 +19,7 @@ const Score = ({ score, winningPersonality }) => {
 
   return (
     <div style={styles}>
-      <h2>Scores</h2>
+      <h2>Scores (isDevMode: {isDevMode})</h2>
       <ul>
         {typeof score === 'number' ? (
           <li>Score: {score}</li>
