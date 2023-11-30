@@ -9,17 +9,6 @@ import ResetQuizButton from "./ResetQuizButton";
 import Results from "./ResultsQuiz2";
 import Score from "./Score";
 
-const getRedirectUrl = (vertical, highestScorePersonality) => {
-	console.log("🚀 ~ file: Quiz.js:14 ~ getRedirectUrl ~ vertical:", vertical);
-	if (vertical === "plan") {
-		return `/adult-degree-completion/${vertical}/${highestScorePersonality}`;
-	} else if (vertical === "specificVertical2") {
-		return `/specificPath2/${highestScorePersonality}`;
-	} else {
-		return `/careers/${vertical}/${highestScorePersonality}`;
-	}
-};
-
 export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 	const { location, globalPrivacyControl } = useUser();
 	const { questions, score: initialScore } = quizData;
@@ -111,11 +100,6 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 		setQuizFinished(false);
 	};
 
-	const redirectUrl = getRedirectUrl(
-		vertical,
-		quizState.highestScorePersonality,
-	);
-
 	return (
 		<>
 			{!quizFinished ? (
@@ -148,7 +132,9 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 						{location && (location.notUS || globalPrivacyControl) ? (
 							<>
 								{/* <h1>oops, your browser is set to skip the quiz form</h1> */}
-								{router.push(redirectUrl)}
+								{router.push(
+									`/adult-degree-completion/results${resultParameters}&score=${score}}`,
+								)}
 							</>
 						) : (
 							<>
@@ -158,7 +144,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 									answers={quizState}
 									score={score}
 									formId={resultsFormId}
-									redirectUrl={redirectUrl}
+									redirectUrl={`/adult-degree-completion/results${resultParameters}&score=${score}}`}
 								>
 									<ResetQuizButton
 										handleRetakeQuiz={handleRetakeQuiz}
