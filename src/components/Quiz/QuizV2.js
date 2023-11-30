@@ -133,7 +133,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 							<>
 								{/* <h1>oops, your browser is set to skip the quiz form</h1> */}
 								{router.push(
-									`/adult-degree-completion/results${resultParameters}&score=${score}}`,
+									`/adult-degree-completion/results${quizState.resultParameters}&score=${score}}`,
 								)}
 							</>
 						) : (
@@ -144,7 +144,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 									answers={quizState}
 									score={score}
 									formId={resultsFormId}
-									redirectUrl={`/adult-degree-completion/results${resultParameters}&score=${score}}`}
+									redirectUrl={`/adult-degree-completion/results${quizState.resultParameters}&score=${score}}`}
 								>
 									<ResetQuizButton
 										handleRetakeQuiz={handleRetakeQuiz}
