@@ -27,13 +27,15 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 	const { questions, score: initialScore } = quizData;
 
 	const randomizedQuestions = quizData.questions.map(question => {
-		if (question.associatedField.startsWith("quizresponse")) {
-			const randomizedAnswers = question.answers.sort(
-				() => Math.random() - 0.5,
-			);
-			return { ...question, answers: randomizedAnswers };
+		if (
+			question.randomize === false ||
+			!question.associatedField.startsWith("quizresponse")
+		) {
+			return question;
 		}
-		return question;
+
+		const randomizedAnswers = question.answers.sort(() => Math.random() - 0.5);
+		return { ...question, answers: randomizedAnswers };
 	});
 
 	const [quizState, setQuizState] = useState({

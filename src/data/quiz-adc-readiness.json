@@ -318,6 +318,7 @@
       "description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
       "associatedField": "quizresponse10",
       "icon": "age-icon",
+      "randomize": false,
       "answers": [
         {
           "answer": "16-18",

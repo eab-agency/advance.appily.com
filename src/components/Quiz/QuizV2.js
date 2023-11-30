@@ -33,11 +33,15 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 					originalIndex: index,
 				}),
 			);
-			const randomizedAnswers = answersWithOriginalIndex.sort(
-				() => Math.random() - 0.5,
-			);
 
-			return { ...question, answers: randomizedAnswers };
+			let finalAnswers;
+			if (question.randomize === false) {
+				finalAnswers = answersWithOriginalIndex;
+			} else {
+				finalAnswers = answersWithOriginalIndex.sort(() => Math.random() - 0.5);
+			}
+
+			return { ...question, answers: finalAnswers };
 		});
 
 		setRandomizedQuestions(randomized);
