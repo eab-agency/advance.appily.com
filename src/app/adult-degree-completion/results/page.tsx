@@ -7,6 +7,7 @@ import {
 	Tabs,
 } from "@/components";
 import AdcResultsHero from "@/components/Heros/ReadynessResultsHero";
+import { useUser } from "@/context/context";
 import quizData from "@/data/quiz-adc-readiness.json";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -59,6 +60,11 @@ export default function ADCResultsPage({
 		[key: string]: string | string[] | undefined;
 	};
 }) {
+	const { setVertical, vertical } = useUser();
+	useEffect(() => {
+		setVertical("ADC");
+	}, []);
+
 	const carouselRef = useRef(null);
 	const [animationData, setAnimationData] = useState(null);
 	const [showContent, setShowContent] = useState(false);
