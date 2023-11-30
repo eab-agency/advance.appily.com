@@ -8,34 +8,37 @@
         {
           "answer": "I am considering a graduate-level degree",
           "weight": 5,
-          "value": 1
+          "value": "1",
+          "redirectTo": "/redirect/helpful-resources"
         },
         {
           "answer": "I am exploring earning or completing a bachelor’s degree",
           "weight": 5,
-          "value": 2
+          "value": "2"
         },
         {
           "answer": "I am thinking about earning an associate’s degree",
           "weight": 4,
-          "value": 3
+          "value": "3"
         },
         {
           "answer": "I am currently in school for an undergraduate degree and wish to transfer",
           "weight": 3,
-          "value": 4
+          "value": "4",
+          "redirectTo": "/redirect/helpful-resources"
         },
         {
           "answer": "I am not currently considering school or am only interested in professional licensure",
           "weight": 2,
-          "value": 5
+          "value": "5",
+          "redirectTo": "/redirect/helpful-resources"
         }
       ]
     },
     {
       "question": "What’s your age range?",
       "description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
-      "associatedField": "quizresponse1",
+      "associatedField": "age_range",
       "answers": [
         {
           "answer": "16-18",

@@ -11,7 +11,6 @@ import Results from "./Results";
 import Score from "./Score";
 
 const getRedirectUrl = (vertical, highestScorePersonality) => {
-	console.log("🚀 ~ file: Quiz.js:14 ~ getRedirectUrl ~ vertical:", vertical);
 	if (vertical === "plan") {
 		return `/adult-degree-completion/${vertical}/${highestScorePersonality}`;
 	} else if (vertical === "specificVertical2") {
@@ -98,11 +97,12 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 		}
 
 		if (
-			associatedField === "initial_question" &&
-			answer.value !== 2 &&
-			answer.value !== 3
+			associatedField === "education_journey__select1" &&
+			answer.value !== "2" &&
+			answer.value !== "3" &&
+			answer.redirectTo
 		) {
-			router.push("/redirect/helpful-resources");
+			router.push(answer.redirectTo);
 			return;
 		}
 
