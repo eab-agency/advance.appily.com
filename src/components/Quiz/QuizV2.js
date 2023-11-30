@@ -139,10 +139,10 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 						{/* Check if either location.notUS or globalPrivacyControl is true */}
 						{location && (location.notUS || globalPrivacyControl) ? (
 							<>
-								<h1>oops, your browser is set to skip the quiz form</h1>
-								{/* {router.push(
+								{/* <h1>oops, your browser is set to skip the quiz form</h1> */}
+								{router.push(
 									`/careers/${vertical}/${quizState.highestScorePersonality}`,
-								)} */}
+								)}
 							</>
 						) : (
 							<>
