@@ -7,83 +7,88 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 import {
-  AccordionSection,
-  CareerPaths,
-  CarouselWithForm,
-  LinkedCardsSection,
-  Stats,
-  StickyCta,
-  SubNavPlan,
-  TabsSection,
-  Testimonial,
-  TextWithImage,
+	AccordionSection,
+	CareerPaths,
+	CarouselWithForm,
+	LinkedCardsSection,
+	Stats,
+	StickyCta,
+	SubNavPlan,
+	TabsSection,
+	Testimonial,
+	TextWithImage,
 } from "@/components";
 import BuildPlanHero from "@/components/Heros/BuildPlanHero";
 import { useUser } from "@/context/context";
 import data from "@/data/AdcResults/results-other-plan.json";
 
 export default function Page() {
-  const carouselRef = useRef(null);
-  const { setVertical, vertical } = useUser();
-  useEffect(() => {
-    setVertical("Business");
-  }, []);
-  return data ? (
-    <>
-      <div className="resultContent">
-        <BuildPlanHero data={data.heroSection} />
+	const carouselRef = useRef(null);
+	const { setVertical, vertical } = useUser();
+	useEffect(() => {
+		setVertical("ADC");
+	}, []);
+	return data ? (
+		<>
+			<div className="resultContent">
+				<BuildPlanHero data={data.heroSection} />
 
-        <SubNavPlan />
+				<SubNavPlan />
 
-        <AccordionSection id="value-of-a-degree" data={data.reasons} />
+				<AccordionSection id="value-of-a-degree" data={data.reasons} />
 
-        <Stats stats={data.stats} source={data.statsSource} />
+				<Stats stats={data.stats} source={data.statsSource} />
 
-        <Testimonial testimonialData={data.testimonial} />
+				<Testimonial testimonialData={data.testimonial} />
 
-        <TabsSection id="funding-your-degree" data={data.fundingYourDegree} />
+				<TabsSection id="funding-your-degree" data={data.fundingYourDegree} />
 
-        <AccordionSection data={data.fileFafsa} />
+				<AccordionSection data={data.fileFafsa} />
 
-        <Stats stats={data.fileFafsa.stats} source={data.fileFafsa.statsSource} />
+				<Stats
+					stats={data.fileFafsa.stats}
+					source={data.fileFafsa.statsSource}
+				/>
 
-        <AccordionSection data={data.fileFafsa.moreWays} />
+				<AccordionSection data={data.fileFafsa.moreWays} />
 
-        <LinkedCardsSection data={data.tools} />
+				<LinkedCardsSection data={data.tools} />
 
-        <TabsSection id="career-paths" data={data.careersPaths} />
+				<TabsSection id="career-paths" data={data.careersPaths} />
 
-        <CareerPaths careerPaths={data.topCareers} />
+				<CareerPaths careerPaths={data.topCareers} />
 
-        <Stats stats={data.topCareers.stats} source={data.topCareers.statsSource} />
+				<Stats
+					stats={data.topCareers.stats}
+					source={data.topCareers.statsSource}
+				/>
 
-        <TabsSection id="degrees-and-schools" data={data.degreeGoals} />
+				<TabsSection id="degrees-and-schools" data={data.degreeGoals} />
 
-        <CareerPaths careerPaths={data.bachelorDegrees} />
+				<CareerPaths careerPaths={data.bachelorDegrees} />
 
-        <div
-          id="explore-your-school-matches"
-          className="carouselWithForm"
-          ref={carouselRef}
-        >
-          <CarouselWithForm formId="7" />
-        </div>
+				<div
+					id="explore-your-school-matches"
+					className="carouselWithForm"
+					ref={carouselRef}
+				>
+					<CarouselWithForm formId="15" />
+				</div>
 
-        <AccordionSection id="your-next-steps" data={data.yourNextSteps} />
+				<AccordionSection id="your-next-steps" data={data.yourNextSteps} />
 
-        <TabsSection data={data.topBarriers} />
+				<TabsSection data={data.topBarriers} />
 
-        <AccordionSection data={data.stepsGuide} />
+				<AccordionSection data={data.stepsGuide} />
 
-        <TextWithImage
-          content={data.textWithImage.content}
-          imagePath={data.textWithImage.imagePath}
-          className="whatever-you-need"
-          altText={data.textWithImage.altText}
-        />
-
-      </div>
-      <StickyCta trackedElement={carouselRef} />
-    </>
-  ) : null;
+				<TextWithImage
+					content={data.textWithImage.content}
+					imagePath={data.textWithImage.imagePath}
+					className="whatever-you-need"
+					altText={data.textWithImage.altText}
+				/>
+			</div>
+			<StickyCta trackedElement={carouselRef} />
+		</>
+	) : null;
 }

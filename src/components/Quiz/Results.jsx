@@ -100,11 +100,14 @@ const Results = ({ children, vertical, answers, formId, redirectUrl }) => {
               className={styles.formContainer}
             />
             {devModeOnly && (
-              <Link
-                href={redirectUrl}
-              >
-                Skip form (only shows in dev mode)
-              </Link>
+              <>
+                <Link
+                  href={redirectUrl}
+                >
+                  Skip form (only shows in dev mode)
+                </Link>
+                <code>{JSON.stringify(formSubmitAnswers)}</code>
+              </>
             )}
           </div>
           {children}

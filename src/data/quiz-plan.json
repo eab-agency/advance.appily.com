@@ -3,7 +3,7 @@
     {
       "question": "Before we get started...",
       "description": "Let’s make sure you’re in the right place!",
-      "associatedField": "initial_question",
+      "associatedField": "education_journey__select1",
       "answers": [
         {
           "answer": "I am considering a graduate-level degree",
@@ -35,7 +35,7 @@
     {
       "question": "What’s your age range?",
       "description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
-      "associatedField": "age_range",
+      "associatedField": "quizresponse1",
       "answers": [
         {
           "answer": "16-18",
@@ -76,7 +76,7 @@
     },
     {
       "question": "What is your highest level of completed education?",
-      "associatedField": "level_of_education",
+      "associatedField": "quizresponse2",
       "answers": [
         {
           "answer": "Some High School",
@@ -108,7 +108,7 @@
     {
       "question": "Are you currently enrolled in college?",
       "description": "This will help us make more accurate recommendations for ways you may be able to save time and money.",
-      "associatedField": "level_of_education",
+      "associatedField": "quizresponse3",
       "answers": [
         {
           "answer": "Yes",
@@ -124,7 +124,7 @@
     },
     {
       "question": "What is your main motivation for earning your degree?",
-      "associatedField": "quizresponse1",
+      "associatedField": "quizresponse4",
       "answers": [
         {
           "answer": "Advance in my current career",

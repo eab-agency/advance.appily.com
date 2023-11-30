@@ -1,16 +1,13 @@
+"use client"
 import Form from "@/components/Form";
 import Link from "next/link";
 
 import isDevMode from "@/helpers/isDevMode";
 import styles from '@/styles/components/Results.module.scss';
 
-import almostReady from "@/assets/lotties/almost-ready-dark-mode.json";
-import notReady from "@/assets/lotties/dark-not-ready-dark-mode.json";
-import extremelyReady from "@/assets/lotties/extremely-ready-dark-mode.json";
-import ready from "@/assets/lotties/ready-dark-mode.json";
-import veryReady from "@/assets/lotties/very-ready-dark-mode.json";
-
 import AdcResultsHero from "@/components/Heros/ReadynessResultsHero";
+import quizData from "@/data/quiz-adc.json";
+import { useEffect, useState } from "react";
 
 const getAnimationData = async (score) => {
   if (score >= 41 && score <= 50) {
@@ -32,7 +29,6 @@ const getAnimationData = async (score) => {
 }
 
 const Results = ({ children, vertical, answers, formId, score = 0 }) => {
-  console.log("🚀 ~ file: ResultsQuiz2.jsx:9 ~ Results ~ answers:", answers)
   const [animationData, setAnimationData] = useState(null);
   useEffect(() => {
     const loadAnimationData = async () => {
@@ -103,7 +99,6 @@ const Results = ({ children, vertical, answers, formId, score = 0 }) => {
         <AdcResultsHero
           data={readinessResult2?.data}
           animationData={readinessResult2?.animationData}
-          animationState={handleShowContent}
         />
       </div>
 
@@ -121,11 +116,14 @@ const Results = ({ children, vertical, answers, formId, score = 0 }) => {
               className={styles.formContainer}
             />
             {devModeOnly && (
-              <Link
-                href={`/${verticalName}/results${answers.resultParameters}&score=${score}`}
-              >
-                Skip form (only shows in dev mode)
-              </Link>
+              <>
+                <Link
+                  href={`/${verticalName}/results${answers.resultParameters}&score=${score}`}
+                >
+                  Skip form (only shows in dev mode)
+                </Link>
+                <code>{JSON.stringify(formSubmitAnswers)}</code>
+              </>
             )}
           </div>
           {children}

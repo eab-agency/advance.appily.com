@@ -79,7 +79,7 @@
     {
       "title": "Education",
       "question": "What is your highest level of completed education?",
-      "associatedField": "level_of_education",
+      "associatedField": "quizresponse3",
       "icon": "education2-icon",
       "answers": [
         {
