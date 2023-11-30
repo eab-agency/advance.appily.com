@@ -13,13 +13,13 @@ const styles = {
 };
 
 const Score = ({ score, winningPersonality }) => {
-  if (!isDevMode) {
+  if (!isDevMode()) {
     return null; // If isDevMode is false, return null to not render the component
   }
 
   return (
     <div style={styles}>
-      <h2>Scores (isDevMode: {isDevMode})</h2>
+      <h2>Scores (isDevMode: {isDevMode()})</h2>
       <ul>
         {typeof score === 'number' ? (
           <li>Score: {score}</li>
