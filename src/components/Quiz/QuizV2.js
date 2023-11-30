@@ -2,28 +2,18 @@
 import { useUser } from "@/context/context";
 import resultsData from "@/data/AdcResults/results-not-ready.json";
 import styles from "@/styles/components/Quiz.module.scss";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Question from "./Question";
 import ResetQuizButton from "./ResetQuizButton";
 import Results from "./ResultsQuiz2";
 import Score from "./Score";
 
-import {
-	CareerPaths,
-	CarouselWithForm,
-	ChoosingRightSchoolBusinessDegree,
-	KeepExploring,
-	Stats,
-	StickyCta,
-	Tabs,
-	TextWithImage,
-	WhatDegrees,
-} from "@/components";
-
 export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 	const { location, globalPrivacyControl } = useUser();
 	const { questions, score: initialScore } = quizData;
 	const [randomizedQuestions, setRandomizedQuestions] = useState([]);
+	const router = useRouter();
 
 	useEffect(() => {
 		const randomized = quizData.questions.map(question => {
