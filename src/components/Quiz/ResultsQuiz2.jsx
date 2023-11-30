@@ -6,7 +6,7 @@ import isDevMode from "@/helpers/isDevMode";
 import styles from '@/styles/components/Results.module.scss';
 
 import AdcResultsHero from "@/components/Heros/ReadynessResultsHero";
-import quizData from "@/data/quiz-adc.json";
+import quizData from "@/data/quiz-adc-readiness.json";
 import { useEffect, useState } from "react";
 
 const getAnimationData = async (score) => {

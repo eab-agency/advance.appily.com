@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 	}),
 };
 
-const VERTICAL = "adc";
+const VERTICAL = "adc-readiness";
 async function QuizHome() {
 	const quizData = await fetchQuizData(VERTICAL);
 

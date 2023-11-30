@@ -7,7 +7,7 @@ import {
 	Tabs,
 } from "@/components";
 import AdcResultsHero from "@/components/Heros/ReadynessResultsHero";
-import quizData from "@/data/quiz-adc.json";
+import quizData from "@/data/quiz-adc-readiness.json";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
