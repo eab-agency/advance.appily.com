@@ -9,10 +9,10 @@
   border-radius: tokens.$borderRadius-m;
   background-color: var(--c-orange-500);
   color: var(--c-navy-600);
-  font-size: clamp(tokens.$size-4, 3vw, tokens.$size-5);
+  font-size: clamp(tokens.$size-4, 2vw, tokens.$size-5);
   font-family: tokens.$f-serif;
   font-weight: tokens.$fontWeight-semibold;
-  line-height: 1;
+  line-height: 1.2;
   text-decoration: none;
   text-align: left;
   cursor: pointer;

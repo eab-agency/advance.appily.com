@@ -71,14 +71,11 @@
         display: none;
       }
 
-      & > div {
+      & > div,
+      & > img {
         height: 50vw;
         position: relative;
         z-index: tokens.$layer-1;
-
-        image[width*="793"] {
-          display: none;
-        }
       }
 
       @media (min-width: tokens.$mq-900) {
@@ -114,6 +111,10 @@
   position: relative;
   max-height: 23.3rem;
   overflow: hidden;
+
+  &.adcResult {
+    max-height: 36rem;
+  }
 
   .resultsHero {
     padding-bottom: 2em;
@@ -590,6 +591,55 @@
 
     p {
       font-size: clamp(tokens.$size-4, 1.5vw, tokens.$size-6);
+    }
+  }
+}
+
+// ===================================
+// nextSteps
+
+.nextSteps {
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .intro-text {
+    padding-inline: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+    padding-block: clamp(tokens.$size-6, 4vw, tokens.$size-8);
+    gap: clamp(tokens.$size-5, 4vw, tokens.$size-9);
+
+    h2 {
+      font-weight: tokens.$fontWeight-light;
+      font-size: clamp(tokens.$size-5, 4vw, tokens.$size-7);
+
+      strong {
+        display: block;
+        font-size: 1.5em;
+        font-weight: tokens.$fontWeight-bold;
+      }
+    }
+
+    div.column {
+      order: 1;
+
+      @media (min-width: tokens.$mq-900) {
+        order: 0;
+      }
+    }
+  }
+
+  .steps {
+    padding-inline: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+    padding-block: clamp(tokens.$size-6, 4vw, tokens.$size-8);
+    gap: clamp(tokens.$size-5, 4vw, tokens.$size-9);
+    max-width: tokens.$mq-1200;
+
+    @media (max-width: tokens.$mq-900) {
+      figure {
+        display: none;
+      }
     }
   }
 }

@@ -7,26 +7,26 @@ import { Metadata } from "next";
 
 const title = "Your ideal role is in reach";
 const description =
-	"Discover your ideal role and find schools that offer degrees to help you reach your goals.";
+  "Discover your ideal role and find schools that offer degrees to help you reach your goals.";
 
 export const metadata: Metadata = {
-	openGraph: mergeOpenGraph({
-		title: title,
-		description: description,
-	}),
-	twitter: mergeTwitter({
-		title: title,
-		description: description,
-	}),
-	title: title,
-	description: description,
+  openGraph: mergeOpenGraph({
+    title: title,
+    description: description,
+  }),
+  twitter: mergeTwitter({
+    title: title,
+    description: description,
+  }),
+  title: title,
+  description: description,
 };
 
 const RootPage = () => {
   return (
     <>
       <section className="pageHero">
-        <div className="group center-aligned">
+        <div className="group center-aligned center-justified">
           <h1>
             Welcome to <strong>Appily Advance</strong>
           </h1>
@@ -92,7 +92,7 @@ const RootPage = () => {
       </section>
 
       <div id="explore-your-school-matches">
-        <CarouselWithForm />
+        <CarouselWithForm formId="10" />
       </div>
 
       <section className="whyChoose">
@@ -106,9 +106,10 @@ const RootPage = () => {
               <p>
                 Appily is the future of higher education guidance, uniting
                 trusted tools that have empowered students for almost two
-                decades. Born from respected platforms including Cappex, Concourse,
-                YouVisit, and College Greenlight, Appily offers a seamless
-                experience for students of all ages on their journey to college.{" "}
+                decades. Born from respected platforms including Cappex,
+                Concourse, YouVisit, and College Greenlight, Appily offers a
+                seamless experience for students of all ages on their journey to
+                college.{" "}
               </p>
 
               <p>

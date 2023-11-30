@@ -56,7 +56,7 @@ export default function QuizLandingPage() {
 							label="Take the Quiz"
 							appearance="primary"
 							href="/careers/business/quiz/start"
-							className="button btn-primary"
+							className="button btn-primary btn-click-quiz"
 						/>
 					</div>
 					<figure className="column highlighted-img">

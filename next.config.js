@@ -9,7 +9,12 @@ const nextConfig = {
 		// !! WARN !!
 		ignoreBuildErrors: true,
 	},
+	env: {
+		ACS_PUBLIC_KEY: process.env.ACS_PUBLIC_KEY,
+		ACS_PRIVATE_KEY: process.env.ACS_PRIVATE_KEY,
+	},
 	images: {
+		// add comment to test pull requests for amplify
 		minimumCacheTTL: 6000,
 		domains: ["localhost", process.env.NEXT_PUBLIC_CMS_URL],
 		remotePatterns: [
@@ -30,6 +35,10 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "advance.appily.com",
+			},
+			{
+				protocol: "https",
+				hostname: "**.amplifyapp.com",
 			},
 		],
 	},

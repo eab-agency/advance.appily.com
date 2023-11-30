@@ -69,6 +69,7 @@
     border-left: 1px solid var(--c-border-3);
     border-right: 1px solid var(--c-border-3);
     border-bottom: 1px solid var(--c-border-3);
+    margin-bottom: tokens.$size-5;
 
     @media (min-width: tokens.$mq-600) {
       flex-direction: row;
