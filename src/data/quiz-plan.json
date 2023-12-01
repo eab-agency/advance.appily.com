@@ -104,23 +104,8 @@
       ]
     },
     {
-      "question": "Are you currently enrolled in college?",
-      "description": "This will help us make more accurate recommendations for ways you may be able to save time and money.",
-      "associatedField": "quizresponse3",
-      "answers": [
-        {
-          "answer": "Yes",
-          "weight": 5
-        },
-        {
-          "answer": "No",
-          "weight": 5
-        }
-      ]
-    },
-    {
       "question": "What is your main motivation for earning your degree?",
-      "associatedField": "quizresponse4",
+      "associatedField": "quizresponse3",
       "answers": [
         {
           "answer": "Advance in my current career",
@@ -150,7 +135,7 @@
     },
     {
       "question": "Do you have any of the following life or career experiences?",
-      "associatedField": "quizresponse5",
+      "associatedField": "quizresponse4",
       "answers": [
         {
           "answer": "Military",
@@ -184,7 +169,7 @@
     },
     {
       "question": "What field are you interested in?",
-      "associatedField": "quizresponse6",
+      "associatedField": "quizresponse5",
       "answers": [
         {
           "answer": "Business",
@@ -225,7 +210,7 @@
     },
     {
       "question": "What is the main barrier for you returning to school?",
-      "associatedField": "quizresponse7",
+      "associatedField": "quizresponse6",
       "answers": [
         {
           "answer": "Lack of time",
@@ -259,7 +244,7 @@
     },
     {
       "question": "Which of the following funding opportunities would you be most interested in learning about?",
-      "associatedField": "quizresponse8",
+      "associatedField": "quizresponse7",
       "answers": [
         {
           "answer": "Scholarships",
