@@ -56,16 +56,17 @@ const NavItem = ({ href, children, setIsMenuOpen }) => {
 	const pathname = useRouter();
 	// const isActive = pathname === href;
 
-	const scrollToWithOffset = (id, offsetRatio) => {
+	const scrollToWithOffset = id => {
 		const element = document.querySelector(id);
 		const windowWidth = window.innerWidth;
+		const offsetRatio = 0.1;
 
 		if (element) {
-			const offset =
-				windowWidth < 800
-					? windowWidth * offsetRatio * 5
-					: windowWidth * offsetRatio;
-			const offsetTop = element.offsetTop - offset;
+			const offset = windowWidth * offsetRatio;
+			const offsetTop =
+				windowWidth < 1100
+					? element.offsetTop - 380
+					: element.offsetTop - offset;
 
 			window.scrollTo({
 				top: offsetTop,
@@ -78,7 +79,7 @@ const NavItem = ({ href, children, setIsMenuOpen }) => {
 		e => {
 			e.preventDefault();
 			const elementId = href.substring(1);
-			scrollToWithOffset(`#${elementId}`, 0.1);
+			scrollToWithOffset(`#${elementId}`);
 			setIsMenuOpen(false);
 		},
 		[href, setIsMenuOpen],
