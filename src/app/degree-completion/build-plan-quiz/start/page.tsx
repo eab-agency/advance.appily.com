@@ -31,6 +31,7 @@ async function QuizHome() {
 				quizData={quizData}
 				resultsFormId="13"
 				title={title}
+				randomizeAnswers={false}
 			/>
 		)
 	);

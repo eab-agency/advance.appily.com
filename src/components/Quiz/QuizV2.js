@@ -9,10 +9,39 @@ import ResetQuizButton from "./ResetQuizButton";
 import Results from "./ResultsQuiz2";
 import Score from "./Score";
 
-export function QuizV2({ vertical, quizData, resultsFormId, title }) {
+export function QuizV2({
+	vertical,
+	quizData,
+	resultsFormId,
+	title,
+	randomizeAnswers = false,
+}) {
 	const { location, globalPrivacyControl } = useUser();
 	const { questions, score: initialScore } = quizData;
+	const [randomizedQuestions, setRandomizedQuestions] = useState([]);
 	const router = useRouter();
+
+	useEffect(() => {
+		const randomized = quizData.questions.map(question => {
+			const answersWithOriginalIndex = question.answers.map(
+				(answer, index) => ({
+					...answer,
+					originalIndex: index,
+				}),
+			);
+
+			let finalAnswers;
+			if (!randomizeAnswers || question.randomize === false) {
+				finalAnswers = answersWithOriginalIndex;
+			} else {
+				finalAnswers = answersWithOriginalIndex.sort(() => Math.random() - 0.5);
+			}
+
+			return { ...question, answers: finalAnswers };
+		});
+
+		setRandomizedQuestions(randomized);
+	}, [randomizeAnswers]);
 
 	const [quizState, setQuizState] = useState({
 		currentQuestionIdx: 0,
@@ -102,7 +131,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 						<div className="questions-container">
 							<Question
 								handleAnswer={handleAnswer}
-								question={quizData.questions[currentQuestionIdx]}
+								question={randomizedQuestions[currentQuestionIdx]}
 							/>
 						</div>
 					</div>

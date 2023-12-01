@@ -20,23 +20,39 @@ const getRedirectUrl = (vertical, highestScorePersonality) => {
 	}
 };
 
-export function Quiz({ vertical, quizData, resultsFormId, title }) {
+export function Quiz({
+	vertical,
+	quizData,
+	resultsFormId,
+	title,
+	randomizeAnswers = false,
+}) {
 	const { location, globalPrivacyControl } = useUser();
-
-	const router = useRouter();
 	const { questions, score: initialScore } = quizData;
+	const [randomizedQuestions, setRandomizedQuestions] = useState([]);
+	const router = useRouter();
 
-	const randomizedQuestions = quizData.questions.map(question => {
-		if (
-			question.randomize === false ||
-			!question.associatedField.startsWith("quizresponse")
-		) {
-			return question;
-		}
+	useEffect(() => {
+		const randomized = quizData.questions.map(question => {
+			const answersWithOriginalIndex = question.answers.map(
+				(answer, index) => ({
+					...answer,
+					originalIndex: index,
+				}),
+			);
 
-		const randomizedAnswers = question.answers.sort(() => Math.random() - 0.5);
-		return { ...question, answers: randomizedAnswers };
-	});
+			let finalAnswers;
+			if (!randomizeAnswers || question.randomize === false) {
+				finalAnswers = answersWithOriginalIndex;
+			} else {
+				finalAnswers = answersWithOriginalIndex.sort(() => Math.random() - 0.5);
+			}
+
+			return { ...question, answers: finalAnswers };
+		});
+
+		setRandomizedQuestions(randomized);
+	}, [randomizeAnswers]);
 
 	const [quizState, setQuizState] = useState({
 		currentQuestionIdx: 0,
