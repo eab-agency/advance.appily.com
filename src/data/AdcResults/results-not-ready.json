@@ -1,0 +1,122 @@
+{
+	"slug": "ready",
+	"heroData": {
+		"title": "When it comes to college, you're",
+		"result": "Not Quite Ready!",
+		"detailedDescription": "<p><strong>Take a moment to reflect.</strong> Your results suggest that you might benefit from a bit more preparation before diving into the academic realm. </p><p>Don't be disheartened. Everyone's journey is unique, and there's no rush. Consider leveraging resources, tools, and support to bolster your readiness. Remember, with determination and the right approach, you can overcome any hurdle and achieve your educational dreams.</p>",
+		"needHelpTitle": "Need help figuring out where to start?",
+		"needHelpCtaLabel": "Get a Personalized Plan",
+		"needHelpCtaLink": "/get-started"
+	},
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "You excel at leveraging technology and data to optimize processes and solve complex problems."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "You're proficient in technology, data analysis, and problem-solving."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "You enjoy working with computers and technology to analyze data and solve problems."
+		},
+		{
+			"title": "Setting",
+			"icon": "setting-icon",
+			"content": "You thrive in a technology-driven workplace with opportunities for data analysis."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "You may have taken courses in information technology, data analytics, or computer science. "
+		},
+		{
+			"title": "Experience",
+			"icon": "skills-icon",
+			"content": "Your work experience may include utilizing data analysis and technology for problem-solving."
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"stats": [
+		{
+			"number": "10%",
+			"title": "Growth",
+			"description": "in employment of computer and information technology occupations over the next decade (with some roles growing much faster)"
+		},
+		{
+			"number": "$101K",
+			"title": "Median Salary",
+			"description": "for computer and information technology occupations, ranging from $60K to $136K averages"
+		},
+		{
+			"number": "377K",
+			"title": "Job Openings",
+			"description": "predicted annually over the next decade in computer and information technology occupations"
+		}
+	],
+	"degreeTabs": {
+		"title": "What degree do I need for a career in <strong>information technology and analytics?</strong>",
+		"description": "Thriving in the dynamic fields of technology and data analysis requires a solid educational foundation. While a bachelor's degree is a starting point, advancing your education to a master's level can significantly enhance your skills and unlock a wealth of opportunities.",
+		"degrees": [
+			{
+				"title": "Management of Information Systems",
+				"content": "<p>A degree in Management of Information Systems combines business knowledge with expertise in managing information technology and data.</p><p>Example degrees: Master of Science in Management Information Systems (MS-MIS), Master of Business Administration (MBA) with a concentration in Information Systems Management</p>"
+			},
+			{
+				"title": "Information Technology",
+				"content": "<p>A degree in Information Technology covers various aspects of technology management and infrastructure.</p><p>Example degrees: Master of Information Technology (MIT), Master of Science in Information Technology (MSIT), Master of Business Administration (MBA) with a specialization in Information Technology</p>"
+			},
+			{
+				"title": "Business Analytics",
+				"content": "<p>A degree in Business Analytics focuses on using data analysis and statistics to inform business decision-making.</p><p>Example degrees: Master of Science in Business Analytics (MSBA), Master of Business Administration (MBA) with a focus on Business Analytics</p>"
+			},
+			{
+				"title": "Business Statistics",
+				"content": "<p>A degree in Business Statistics emphasizes analyzing and interpreting data to solve business problems.</p><p>Example degrees: Master of Science in Business Statistics, Master of Business Administration (MBA) with a concentration in Business Statistics</p>"
+			},
+			{
+				"title": "System Administrator",
+				"content": "<p>A degree in System Administration equips individuals with skills to manage and maintain computer systems and networks.</p><p>Example degrees: Master of Science in System Administration, Master of Information Technology with a specialization in System Administration</p>"
+			},
+			{
+				"title": "Financial Analytics",
+				"content": "<p>A degree in Financial Analytics focuses on using data analysis to inform financial decision-making.</p><p>Example degrees: Master of Financial Analytics, Master of Business Administration (MBA) with a concentration in Financial Analytics</p>"
+			}
+		]
+	},
+	"careerPaths": {
+		"title": "What kind of career is a good fit for me?",
+		"description": "Occupations that align with The Computer Whiz's career path center on leveraging technology and data for problem-solving and decision-making.",
+		"paths": [
+			{
+				"title": "IT Manager",
+				"description": "Oversee and manage the IT department of an organization.",
+				"imagePath": "/images/IT-manager.jpg"
+			},
+			{
+				"title": "Data Analyst",
+				"description": "Analyze and interpret data to inform business decisions and strategies.",
+				"imagePath": "/images/data-analyst.jpg"
+			},
+			{
+				"title": "Business Intelligence Analyst",
+				"description": "Use data and analytics tools to generate insights for the organization.",
+				"imagePath": "/images/business-intelligence-analyst.jpg"
+			},
+			{
+				"title": "Cybersecurity Analyst",
+				"description": "Protect the organization's computer systems and data from security breaches.",
+				"imagePath": "/images/cybersecurity-analyst.jpg"
+			}
+		]
+	},
+	"textWithImage": {
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can amplify your tech prowess with an MBA in Information Technology that merges business strategy with tech innovation, enhancing your analytical and managerial skills.</p><p>Alternatively, a Master's in Data Analytics dives deep into harnessing data insights for business decisions. Or a Master's in Management of Information Systems gets into the finer details of managing information technology and data.</p><p>While both paths revolve around technology, the MBA offers a broader spectrum of business knowledge, making it the prime choice for The Computer Whiz envisioning a dynamic role in bridging tech and business realms.</p>",
+		"imagePath": "/images/ceo.jpg",
+		"altText": "CEO at a restaurant"
+	}
+}

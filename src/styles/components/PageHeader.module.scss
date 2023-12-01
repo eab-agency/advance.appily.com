@@ -2,7 +2,6 @@
 @use "@/styles/global/tokens";
 
 .pageHeader {
-  // border-bottom: var(--bw-m) solid var(--c-border-3);
   background: var(--c-bg-body);
   position: sticky;
   top: 0;
@@ -10,7 +9,7 @@
   padding-block: 0.3em;
 
   &.noNav {
-    @media (min-width: tokens.$mq-1000) {
+    @media (min-width: tokens.$mq-1100) {
       padding-block: clamp(tokens.$padding-s, 5vw, tokens.$padding-m);
     }
   }
@@ -25,7 +24,7 @@
   gap: clamp(tokens.$size-2, 5vw, tokens.$size-7);
   position: relative;
 
-  @media (max-width: tokens.$mq-1000) {
+  @media (max-width: tokens.$mq-1100) {
     padding-block: clamp(tokens.$padding-s, 5vw, tokens.$padding-m);
   }
 }
