@@ -7,7 +7,7 @@
   justify-content: space-between;
   background: var(--c-bg12);
 
-  @media (min-width: tokens.$mq-1000) {
+  @media (min-width: tokens.$mq-1100) {
     padding-inline: clamp(tokens.$size-2, 4vw, tokens.$size-8);
   }
 
@@ -18,7 +18,7 @@
     width: 100%;
     max-width: tokens.$mq-1400;
 
-    @media (min-width: tokens.$mq-1000) {
+    @media (min-width: tokens.$mq-1100) {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
@@ -33,6 +33,7 @@
     border: none;
     flex-shrink: 0;
     text-align: center;
+    cursor: pointer;
 
     &::before {
       background: var(--c-navy-300);
@@ -49,7 +50,7 @@
       }
     }
 
-    @media (min-width: tokens.$mq-1000) {
+    @media (min-width: tokens.$mq-1100) {
       pointer-events: none;
     }
   }
@@ -78,7 +79,7 @@
       top: 50%;
       transform: translateY(-50%);
 
-      @media (min-width: tokens.$mq-1000) {
+      @media (min-width: tokens.$mq-1100) {
         content: "//";
         color: rgba(white, 0.5);
       }
@@ -88,7 +89,7 @@
   .resultsBtnClose h2::after {
     content: "+";
 
-    @media (min-width: tokens.$mq-1000) {
+    @media (min-width: tokens.$mq-1100) {
       content: "//";
       color: rgba(white, 0.5);
     }
@@ -107,7 +108,7 @@
       display: flex;
     }
 
-    @media (min-width: tokens.$mq-1000) {
+    @media (min-width: tokens.$mq-1100) {
       display: flex;
       flex-direction: row;
       width: fit-content;
@@ -118,7 +119,7 @@
       border-top: 1px solid var(--c-navy-400);
       background: rgba(black, 0.2);
 
-      @media (min-width: tokens.$mq-1000) {
+      @media (min-width: tokens.$mq-1100) {
         border-left: 1px solid var(--c-navy-400);
         background: none;
       }
@@ -174,7 +175,7 @@
   top: clamp(5rem, 5vw, 5.45rem);
   z-index: tokens.$layer-10;
 
-  @media (min-width: tokens.$mq-1000) {
+  @media (min-width: tokens.$mq-1100) {
     padding-inline: clamp(tokens.$size-2, 4vw, tokens.$size-8);
   }
 
@@ -185,7 +186,7 @@
     width: 100%;
     max-width: tokens.$mq-1400;
 
-    @media (min-width: tokens.$mq-1000) {
+    @media (min-width: tokens.$mq-1100) {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
@@ -200,6 +201,7 @@
     border: none;
     flex-shrink: 0;
     text-align: center;
+    cursor: pointer;
 
     &::before {
       background: var(--c-navy-300);
@@ -216,7 +218,7 @@
       }
     }
 
-    @media (min-width: tokens.$mq-1000) {
+    @media (min-width: tokens.$mq-1100) {
       pointer-events: none;
     }
   }
@@ -245,7 +247,7 @@
       top: 50%;
       transform: translateY(-50%);
 
-      @media (min-width: tokens.$mq-1000) {
+      @media (min-width: tokens.$mq-1100) {
         content: "//";
         color: rgba(white, 0.5);
       }
@@ -255,7 +257,7 @@
   .resultsBtnClose h2::after {
     content: "+";
 
-    @media (min-width: tokens.$mq-1000) {
+    @media (min-width: tokens.$mq-1100) {
       content: "//";
       color: rgba(white, 0.5);
     }
@@ -274,7 +276,7 @@
       display: flex;
     }
 
-    @media (min-width: tokens.$mq-1000) {
+    @media (min-width: tokens.$mq-1100) {
       display: flex;
       flex-direction: row;
       width: fit-content;
@@ -285,7 +287,7 @@
       border-top: 1px solid var(--c-navy-400);
       background: rgba(black, 0.2);
 
-      @media (min-width: tokens.$mq-1000) {
+      @media (min-width: tokens.$mq-1100) {
         border-left: 1px solid var(--c-navy-400);
         background: none;
       }
@@ -305,7 +307,7 @@
         border: none;
         cursor: pointer;
 
-        @media (max-width: tokens.$mq-1000) {
+        @media (max-width: tokens.$mq-1100) {
           width: 100%;
         }
 
