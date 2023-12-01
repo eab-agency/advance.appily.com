@@ -7,7 +7,8 @@
   margin: 0 auto;
   position: relative;
   background: var(--c-bg10);
-  padding-block: clamp(tokens.$padding-xxl, 5vw, tokens.$padding-xxxxl * 3);
+  padding-block: clamp(tokens.$padding-m, 2vw, tokens.$padding-xl);
+  // padding-bottom: clamp(tokens.$padding-xxl, 5vw, tokens.$padding-xxxxl * 3);
   padding-inline: clamp(tokens.$padding-xs, 5vw, tokens.$padding-xxxxl);
 
   @media (min-width: tokens.$mq-800) {

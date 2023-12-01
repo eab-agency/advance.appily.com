@@ -1,125 +1,125 @@
 {
-  "links": [
-    {
-      "label": "Degree Completion",
-      "href": "/degree-completion"
-    },
-    {
-      "label": "Health Care Careers",
-      "href": "/careers/healthcare"
-    },
-    {
-      "label": "Business Careers",
-      "href": "/careers/business"
-    }
-  ],
-  "introComparison": {
-    "title": "See If You’re Ready and <strong>Create a Personalized Degree Plan</strong>",
-    "description": "These quizzes are designed to help people over 23 who are considering returning to school to earn an undergraduate degree. If you’re currently in high school or college and looking to transfer, you’ll <a href='https://www.appily.com' target='_blank' rel='noopener noreferrer'>find more helpful resources on appily.com.</a>",
-    "cards": [
-      {
-        "card": {
-          "title": "Are You Ready for College?",
-          "iconLight": "/images/roi-icon-light.svg",
-          "iconDark": "/images/roi-icon.svg",
-          "description": "<h4>Get Your College Readiness Score</h4> <p>Going back to school can be a big investment of your time and money, so it’s a good idea to make sure you’re ready before you commit.</p>",
-          "buttonText": "Start the Readiness Quiz",
-          "buttonLink": "/degree-completion/readiness-quiz/start"
-        }
-      },
-      {
-        "card": {
-          "title": "Get Your Back-to-School Plan",
-          "description": "<h4>Let’s Build Your Personalized Plan</h4> <p>Answer a few questions and we’ll provide a step-by-step guide to everything from funding your education to tips for choosing the right degree and school for your career goals.</p>",
-          "buttonText": "Build Your Plan",
-          "buttonLink": "/degree-completion/build-plan-quiz/start"
-        }
-      }
-    ]
-  },
-  "carouselData": {
-    "title": "Explore Schools Near You",
-    "description": "<p>Appily partners with institutions across the country that are known for having exceptional programs and providing strong outcomes. </p><p>No matter which career you choose, you’re likely to find a path to success at these colleges and universities.</p>"
-  },
-  "pageTitle": "Are you asking yourself: <strong>Should I finish my degree?</strong>",
-  "answersQuestionsSection": {
-    "sectionTitle": "Get Answers to Your Questions",
-    "sectionDescription": "Whether you <a href='/degree-completion/readiness-quiz'>take the readiness quiz</a> or <a href='/degree-completion/build-plan-quiz'>build your personalized plan</a>, you’ll get valuable information that helps you answer these frequently asked questions:",
-    "questions": {
-      "question1": {
-        "image": "/images/financial-aid-options-for-adults.jpg",
-        "imageAlt": "Financial aid options for adults returning to college",
-        "title": "Are there financial aid options for adults returning to college?",
-        "content": "<p>Yes, there are many financial aid options for adults going back to school. You can get grants and scholarships, which are great because you don't have to pay them back. Check for special scholarships just for adult students. Don't forget about federal aid like Pell Grants, and some states have their own help too. </p><p>If your job offers tuition help, that's another way to pay for school. Student loans are also an option, but remember, you'll have to pay these back later. And, you might even get tax credits for going to school, which can save you money. </p><p>For more detailed information, answer a few questions and we’ll build you a back-to-school plan that includes in-depth answers about how to afford your undergraduate degree.</p>",
-        "buttonText": "Make Your Back-to-School Plan",
-        "buttonLink": "/degree-completion/build-plan-quiz"
-      },
-      "question2": {
-        "image": "/images/choose-the-right-degree.jpg",
-        "imageAlt": "How to choose the right degree for career advancement",
-        "title": "How can I choose the right degree for career advancement?",
-        "content": "<p>Choosing the right degree for your career is an important first step. Think about what you love doing and the jobs you want in the future. Look for degrees that match these jobs. Also, consider how the degree will fit into your life right now. Some fields, like technology or healthcare, are really growing and might offer good job chances.</p><p>If you share what field interests you, your back-to-school plan will give you advice on top careers and degrees that may be a good fit.</p>",
-        "buttonText": "Start Planning Now",
-        "buttonLink": "/degree-completion/build-plan-quiz"
-      },
-      "question3": {
-        "image": "/images/balance-work-or-family-and-school.jpg",
-        "imageAlt": "How to balance work or family and school",
-        "title": "How can I balance work or family and school?",
-        "content": "<p>Balancing school with work or family is tough but doable. Plan your time well. Use a calendar to keep track of schoolwork and family or job things. Online classes can be more flexible if you're busy. Don't forget to ask for help when you need it, whether it's childcare, study groups, or talking to your boss about a flexible schedule. </p><p>Your back-to-school plan will include more specific advice including free tools that can help you become a time management pro!</p>",
-        "buttonText": "Begin Building Your Plan",
-        "buttonLink": "/degree-completion/build-plan-quiz"
-      }
-    }
-  },
-  "testimonial": {
-    "text": "Every day presents new challenges and opportunities to make strategic decisions that shape the direction of the company. The ability to drive innovation, lead a team, and contribute to the growth of the organization is both fulfilling and empowering. Business is all about creating value, solving problems, and making a positive impact on the world. It's a dynamic and ever-evolving field that allows me to continuously learn and grow while making meaningful contributions to the bottom line and the community.",
-    "author": "Dana Jones",
-    "authorTitle": "Director of Creative Strategy and Innovation, EAB"
-  },
-  "rightCareer": [
-    {
-      "title": " Top 5 Reasons a Career in Health Care Could Be Right for You",
-      "description": "Are you considering a career in health care but unsure if it's the right fit for you? Here are the top five reasons why it might be:",
-      "reasons": [
-        {
-          "description": "<strong>Diverse Career Paths:</strong> The health care industry offers a wide range of career paths, from direct patient care roles like nursing and therapy, to support roles like hospital administration, medical analytics, and medical research."
-        },
-        {
-          "description": "<strong>Rewarding Work:</strong> Health care professionals have the opportunity to make a positive impact on others and improve their quality of life. If you're passionate about helping others and making a difference, health care could be a great fit for you."
-        },
-        {
-          "description": "<strong>Hands-On Work:</strong> If you enjoy hands-on work and thrive under pressure, direct patient care roles may be a perfect fit for you. These roles require excellent communication, problem-solving, and critical thinking skills, as well as attention to detail."
-        },
-        {
-          "description": "<strong>Technology and Data Analysis:</strong> Health care also offers many support roles that require a strong understanding of data analysis, research methodologies, and health care systems. If you enjoy working with data and technology, roles like medical analytics and medical research could be a great fit for you."
-        },
-        {
-          "description": "<strong>Career Advancement:</strong> The health care industry is constantly evolving and offers many opportunities for career advancement. Whether you're interested in pursuing additional degrees, moving up the career ladder, or exploring new specialties, health care offers many options for growth."
-        }
-      ],
-      "endCopy": "If you're still unsure if health care is the right fit for you, <a href='/quiz'>take our free health care career quiz.</a> It will help you identify how your interests, skills, and strengths align with different medical career paths and suggest the degrees you can earn to take the next step in your career."
-    }
-  ],
-  "contactForm": {
-    "title": "Explore Your Potencial School matches",
-    "description": "Let us know the best way to contact you with helpful information and  potential college or university  matches."
-  },
-  "statsAppily": [
-    {
-      "number": "600",
-      "title": "Institutions",
-      "description": "Trust Appily to match them with students like you"
-    },
-    {
-      "number": "Billions",
-      "title": "In Scholarships",
-      "description": "Can be applied for through Appily’s scholarship database"
-    },
-    {
-      "number": "4",
-      "title": "Trusted Tools",
-      "description": "Combine to make Appily your one-stop resource for finding a school"
-    }
-  ]
+	"links": [
+		{
+			"label": "Degree Completion",
+			"href": "/degree-completion"
+		},
+		{
+			"label": "Health Care Careers",
+			"href": "/careers/healthcare"
+		},
+		{
+			"label": "Business Careers",
+			"href": "/careers/business"
+		}
+	],
+	"introComparison": {
+		"title": "See If You’re Ready and <strong>Create a Personalized Degree Plan</strong>",
+		"description": "These quizzes are designed to help people over 23 who are considering returning to school to earn an undergraduate degree. If you’re currently in high school or college and looking to transfer, you’ll <a href='https://www.appily.com' target='_blank' rel='noopener noreferrer'>find more helpful resources on appily.com.</a>",
+		"cards": [
+			{
+				"card": {
+					"title": "Are You Ready for College?",
+					"iconLight": "/images/roi-icon-light.svg",
+					"iconDark": "/images/roi-icon.svg",
+					"description": "<h4>Get Your College Readiness Score</h4> <p>Going back to school can be a big investment of your time and money, so it’s a good idea to make sure you’re ready before you commit.</p>",
+					"buttonText": "Start the Readiness Quiz",
+					"buttonLink": "/degree-completion/readiness-quiz/start"
+				}
+			},
+			{
+				"card": {
+					"title": "Get Your Back-to-School Plan",
+					"description": "<h4>Let’s Build Your Personalized Plan</h4> <p>Answer a few questions and we’ll provide a step-by-step guide to everything from funding your education to tips for choosing the right degree and school for your career goals.</p>",
+					"buttonText": "Build Your Plan",
+					"buttonLink": "/degree-completion/build-plan-quiz/start"
+				}
+			}
+		]
+	},
+	"carouselData": {
+		"title": "Explore Schools Near You",
+		"description": "<p>Appily partners with institutions across the country that are known for having exceptional programs and providing strong outcomes. </p><p>No matter which career you choose, you’re likely to find a path to success at these colleges and universities.</p>"
+	},
+	"pageTitle": "Are you asking yourself: <strong>Should I finish my degree?</strong>",
+	"answersQuestionsSection": {
+		"sectionTitle": "Get Answers to Your Questions",
+		"sectionDescription": "Whether you <a href='/degree-completion/readiness-quiz'>take the readiness quiz</a> or <a href='/degree-completion/build-plan-quiz'>build your personalized plan</a>, you’ll get valuable information that helps you answer these frequently asked questions:",
+		"questions": {
+			"question1": {
+				"image": "/images/financial-aid-options-for-adults.jpg",
+				"imageAlt": "Financial aid options for adults returning to college",
+				"title": "Are there financial aid options for adults returning to college?",
+				"content": "<p>Yes, there are many financial aid options for adults going back to school. You can get grants and scholarships, which are great because you don't have to pay them back. Check for special scholarships just for adult students. Don't forget about federal aid like Pell Grants, and some states have their own help too. </p><p>If your job offers tuition help, that's another way to pay for school. Student loans are also an option, but remember, you'll have to pay these back later. And, you might even get tax credits for going to school, which can save you money. </p><p>For more detailed information, answer a few questions and we’ll build you a back-to-school plan that includes in-depth answers about how to afford your undergraduate degree.</p>",
+				"buttonText": "Make Your Back-to-School Plan",
+				"buttonLink": "/degree-completion/build-plan-quiz"
+			},
+			"question2": {
+				"image": "/images/choose-the-right-degree.jpg",
+				"imageAlt": "How to choose the right degree for career advancement",
+				"title": "How can I choose the right degree for career advancement?",
+				"content": "<p>Choosing the right degree for your career is an important first step. Think about what you love doing and the jobs you want in the future. Look for degrees that match these jobs. Also, consider how the degree will fit into your life right now. Some fields, like technology or healthcare, are really growing and might offer good job chances.</p><p>If you share what field interests you, your back-to-school plan will give you advice on top careers and degrees that may be a good fit.</p>",
+				"buttonText": "Start Planning Now",
+				"buttonLink": "/degree-completion/build-plan-quiz"
+			},
+			"question3": {
+				"image": "/images/balance-work-or-family-and-school.jpg",
+				"imageAlt": "How to balance work or family and school",
+				"title": "How can I balance work or family and school?",
+				"content": "<p>Balancing school with work or family is tough but doable. Plan your time well. Use a calendar to keep track of schoolwork and family or job things. Online classes can be more flexible if you're busy. Don't forget to ask for help when you need it, whether it's childcare, study groups, or talking to your boss about a flexible schedule. </p><p>Your back-to-school plan will include more specific advice including free tools that can help you become a time management pro!</p>",
+				"buttonText": "Begin Building Your Plan",
+				"buttonLink": "/degree-completion/build-plan-quiz"
+			}
+		}
+	},
+	"testimonial": {
+		"text": "Every day presents new challenges and opportunities to make strategic decisions that shape the direction of the company. The ability to drive innovation, lead a team, and contribute to the growth of the organization is both fulfilling and empowering. Business is all about creating value, solving problems, and making a positive impact on the world. It's a dynamic and ever-evolving field that allows me to continuously learn and grow while making meaningful contributions to the bottom line and the community.",
+		"author": "Dana Jones",
+		"authorTitle": "Director of Creative Strategy and Innovation, EAB"
+	},
+	"rightCareer": [
+		{
+			"title": " Top 5 Reasons a Career in Health Care Could Be Right for You",
+			"description": "Are you considering a career in health care but unsure if it's the right fit for you? Here are the top five reasons why it might be:",
+			"reasons": [
+				{
+					"description": "<strong>Diverse Career Paths:</strong> The health care industry offers a wide range of career paths, from direct patient care roles like nursing and therapy, to support roles like hospital administration, medical analytics, and medical research."
+				},
+				{
+					"description": "<strong>Rewarding Work:</strong> Health care professionals have the opportunity to make a positive impact on others and improve their quality of life. If you're passionate about helping others and making a difference, health care could be a great fit for you."
+				},
+				{
+					"description": "<strong>Hands-On Work:</strong> If you enjoy hands-on work and thrive under pressure, direct patient care roles may be a perfect fit for you. These roles require excellent communication, problem-solving, and critical thinking skills, as well as attention to detail."
+				},
+				{
+					"description": "<strong>Technology and Data Analysis:</strong> Health care also offers many support roles that require a strong understanding of data analysis, research methodologies, and health care systems. If you enjoy working with data and technology, roles like medical analytics and medical research could be a great fit for you."
+				},
+				{
+					"description": "<strong>Career Advancement:</strong> The health care industry is constantly evolving and offers many opportunities for career advancement. Whether you're interested in pursuing additional degrees, moving up the career ladder, or exploring new specialties, health care offers many options for growth."
+				}
+			],
+			"endCopy": "If you're still unsure if health care is the right fit for you, <a href='/quiz'>take our free health care career quiz.</a> It will help you identify how your interests, skills, and strengths align with different medical career paths and suggest the degrees you can earn to take the next step in your career."
+		}
+	],
+	"contactForm": {
+		"title": "Explore Your Potencial School matches",
+		"description": "Let us know the best way to contact you with helpful information and  potential college or university  matches."
+	},
+	"statsAppily": [
+		{
+			"number": "600",
+			"title": "Institutions",
+			"description": "Trust Appily to match them with students like you"
+		},
+		{
+			"number": "Billions",
+			"title": "In Scholarships",
+			"description": "Can be applied for through Appily’s scholarship database"
+		},
+		{
+			"number": "4",
+			"title": "Trusted Tools",
+			"description": "Combine to make Appily your one-stop resource for finding a school"
+		}
+	]
 }
