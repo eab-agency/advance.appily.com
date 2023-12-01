@@ -371,7 +371,7 @@
       "title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
       "introContent": "<p>You're set to soar in the academic world! Let's align your current readiness with a clear path forward. Answer a few more questions to receive your tailored back-to-school plan.",
       "buttonText": "Build Your Personalized Plan",
-      "buttonLink": "/adult-degree-completion/build-plan-quiz",
+      "buttonLink": "/degree-completion/build-plan-quiz",
       "steps": {
         "title": "Your Plan Includes ...",
         "list": [
@@ -407,14 +407,14 @@
           }
         ],
         "buttonText": "Get Started",
-        "buttonLink": "/adult-degree-completion/build-plan-quiz"
+        "buttonLink": "/degree-completion/build-plan-quiz"
       }
     },
     "veryReady": {
       "title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
       "introContent": "<p>With just a few tweaks, your academic journey can be smooth sailing. Eager to pinpoint those areas? Answer a few more questions to receive your tailored back-to-school plan.</p>",
       "buttonText": "Build Your Personalized Plan",
-      "buttonLink": "/adult-degree-completion/build-plan-quiz",
+      "buttonLink": "/degree-completion/build-plan-quiz",
       "steps": {
         "title": "Your Plan Includes ...",
         "list": [
@@ -450,14 +450,14 @@
           }
         ],
         "buttonText": "Get Started",
-        "buttonLink": "/adult-degree-completion/build-plan-quiz"
+        "buttonLink": "/degree-completion/build-plan-quiz"
       }
     },
     "ready": {
       "title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
       "introContent": "<p>Your potential is clear; let's bridge those minor gaps and pave your path. Answer a few more questions to receive your tailored back-to-school plan.</p>",
       "buttonText": "Build Your Personalized Plan",
-      "buttonLink": "/adult-degree-completion/build-plan-quiz",
+      "buttonLink": "/degree-completion/build-plan-quiz",
       "steps": {
         "title": "Your Plan Includes ...",
         "list": [
@@ -493,7 +493,7 @@
           }
         ],
         "buttonText": "Get Started",
-        "buttonLink": "/adult-degree-completion/build-plan-quiz"
+        "buttonLink": "/degree-completion/build-plan-quiz"
       }
     }
   },
@@ -504,7 +504,7 @@
       "detailedDescription": "<p><strong>Take a moment to reflect.</strong> Your results suggest that you might benefit from a bit more preparation before diving into the academic realm. </p><p>Don't be disheartened. Everyone's journey is unique, and there's no rush. Consider leveraging resources, tools, and support to bolster your readiness. Remember, with determination and the right approach, you can overcome any hurdle and achieve your educational dreams.</p>",
       "needHelpTitle": "Need help figuring out where to start?",
       "needHelpCtaLabel": "Get a Personalized Plan",
-      "needHelpCtaLink": "/adult-degree-completion/build-plan-quiz"
+      "needHelpCtaLink": "/degree-completion/build-plan-quiz"
     },
     "almostReady": {
       "title": "When it comes to college, you're",
@@ -512,7 +512,7 @@
       "detailedDescription": "<p><strong>You're on the cusp!</strong> Your results show that you're almost ready to embark on your educational journey. It's clear you have the drive and some of the skills needed. However, there might be certain areas you'd like to develop further. </p><p>Consider seeking out preparatory courses, resources, or mentoring in those areas. With a bit more preparation, you'll be fully equipped to face the academic world with confidence.</p>",
       "needHelpTitle": "Need help figuring out where to start?",
       "needHelpCtaLabel": "Get a Personalized Plan",
-      "needHelpCtaLink": "/adult-degree-completion/build-plan-quiz"
+      "needHelpCtaLink": "/degree-completion/build-plan-quiz"
     },
     "ready": {
       "title": "When it comes to college, you're",
@@ -520,7 +520,7 @@
       "detailedDescription": "<p><strong>Good news!</strong> You are ready to venture back into the world of education. While you exhibit strength in numerous areas, there might be certain aspects you feel less confident about. That's okay!</p><p>Remember, everyone has their unique strengths and areas of growth. Seek out resources, workshops, or counseling services to bridge any gaps, and you'll be all set for success.</p>",
       "needHelpTitle": "Need help figuring out where to start?",
       "needHelpCtaLabel": "Get a Personalized Plan",
-      "needHelpCtaLink": "/adult-degree-completion/build-plan-quiz"
+      "needHelpCtaLink": "/degree-completion/build-plan-quiz"
     },
     "veryReady": {
       "title": "When it comes to college, you're",
@@ -528,7 +528,7 @@
       "detailedDescription": "<p><strong>Well done!</strong> Your results show that you're very ready to resume or start your educational journey. You have a solid foundation in many areas essential for academic success.</p><p>While there might be a few areas to work on or adjust, you're certainly on the right track. Keep refining those skills and seek resources or support where needed, and you'll thrive in any academic setting!</p>",
       "needHelpTitle": "Need help figuring out where to start?",
       "needHelpCtaLabel": "Get a Personalized Plan",
-      "needHelpCtaLink": "/adult-degree-completion/build-plan-quiz"
+      "needHelpCtaLink": "/degree-completion/build-plan-quiz"
     },
     "extremelyReady": {
       "title": "When it comes to college, you're",
@@ -536,7 +536,7 @@
       "detailedDescription": "<p><strong>Congratulations!</strong> Your results indicate that you're extremely prepared to dive back into the academic world. You've showcased strengths in key areas such as time management, motivation, and support systems, which are crucial for success in higher education.</p><p>Remember, while you're well-prepared, every educational journey comes with its unique challenges. Stay adaptive, keep that confidence high, and embark on this exciting chapter!</p>",
       "needHelpTitle": "Need help figuring out where to start?",
       "needHelpCtaLabel": "Get a Personalized Plan",
-      "needHelpCtaLink": "/adult-degree-completion/build-plan-quiz"
+      "needHelpCtaLink": "/degree-completion/build-plan-quiz"
     }
   }
 }

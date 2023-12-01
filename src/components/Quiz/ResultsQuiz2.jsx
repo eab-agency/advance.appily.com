@@ -55,7 +55,7 @@ const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }
   // if score is between 41 and 50 set resultsPage to extremelyReady
   const resultsPage = score >= 41 && score <= 50 ? "extremely-ready" : score >= 31 && score <= 40 ? "very-ready" : score >= 21 && score <= 30 ? "ready" : score >= 11 && score <= 20 ? "almost-ready" : score >= 0 && score <= 10 ? "not-eady" : "not-ready";
 
-  const verticalName = vertical === "adc-readiness" ? "adult-degree-completion" : "graduate-degrees";
+  const verticalName = vertical === "adc-readiness" ? "degree-completion" : "graduate-degrees";
 
   const getReadinessResult = score => {
     if (score >= 41 && score <= 50) {

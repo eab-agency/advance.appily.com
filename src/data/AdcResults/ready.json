@@ -14,7 +14,7 @@
 		{
 			"title": "Education",
 			"icon": "education2-icon",
-			"content": "<p>You have a solid foundation and a readiness to embark on your academic endeavors. Your determination will serve you well as you navigate the challenges and rewards of higher education.</p><p><strong>Next Steps:</strong> <a href='/adult-degree-completion/build-plan-quiz' target='_blank' rel='noopener nofollow'>Answer a few more questions</a> to see how your experience, goals, and interests translate into a step-by-step plan to complete your degree.</p>"
+			"content": "<p>You have a solid foundation and a readiness to embark on your academic endeavors. Your determination will serve you well as you navigate the challenges and rewards of higher education.</p><p><strong>Next Steps:</strong> <a href='/degree-completion/build-plan-quiz' target='_blank' rel='noopener nofollow'>Answer a few more questions</a> to see how your experience, goals, and interests translate into a step-by-step plan to complete your degree.</p>"
 		},
 		{
 			"title": "Career",
@@ -44,7 +44,7 @@
 		{
 			"title": "Finances",
 			"icon": "finances-icon",
-			"content": "<p>Explore resources and avenues to solidify your financial plan for college.</p><p><strong>Next Steps:</strong> Let us help you explore scholarships, grants, and financial aid options available for returning students. <a href='/adult-degree-completion/build-plan-quiz' target='_blank' rel='nofollow noopener'>Answer a few more questions</a> to get your back-to-school plan.</p>"
+			"content": "<p>Explore resources and avenues to solidify your financial plan for college.</p><p><strong>Next Steps:</strong> Let us help you explore scholarships, grants, and financial aid options available for returning students. <a href='/degree-completion/build-plan-quiz' target='_blank' rel='nofollow noopener'>Answer a few more questions</a> to get your back-to-school plan.</p>"
 		},
 		{
 			"title": "Age",
@@ -56,7 +56,7 @@
 		"title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
 		"introContent": "<p>Your potential is clear; let's bridge those minor gaps and pave your path. Answer a few more questions to receive your tailored back-to-school plan.</p>",
 		"buttonText": "Build Your Personalized Plan",
-		"buttonLink": "/adult-degree-completion/build-plan-quiz",
+		"buttonLink": "/degree-completion/build-plan-quiz",
 		"steps": {
 			"title": "Your Plan Includes ...",
 			"list": [
@@ -92,7 +92,7 @@
 				}
 			],
 			"buttonText": "Get Started",
-			"buttonLink": "/adult-degree-completion/build-plan-quiz"
+			"buttonLink": "/degree-completion/build-plan-quiz"
 		}
 	}
 }

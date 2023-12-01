@@ -12,7 +12,7 @@ import Score from "./Score";
 
 const getRedirectUrl = (vertical, highestScorePersonality) => {
 	if (vertical === "plan") {
-		return `/adult-degree-completion/${vertical}/${highestScorePersonality}`;
+		return `/degree-completion/${vertical}/${highestScorePersonality}`;
 	} else if (vertical === "specificVertical2") {
 		return `/specificPath2/${highestScorePersonality}`;
 	} else {
