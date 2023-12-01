@@ -177,7 +177,7 @@
       font-size: clamp(tokens.$size-3, 2vw, tokens.$size-5);
       font-weight: tokens.$fontWeight-semibold;
       font-family: tokens.$f-serif;
-      color: var(--c-bodyPrimaryContrasted);
+      color: var(--c-bodyPrimary);
       margin-bottom: 1rem;
     }
 
@@ -191,22 +191,13 @@
       margin-bottom: 2em;
     }
 
-    .testimonialText,
-    .testimonialText p {
-      font-size: clamp(tokens.$size-3, 2vw, tokens.$size-7);
-      font-weight: tokens.$fontWeight-normal;
-
-      strong {
-        color: var(--c-headingQuaternary);
-        font-weight: tokens.$fontWeight-bold;
-      }
-    }
-
     .testimonialAuthor {
       border-top: 1px solid var(--c-bodyPrimary);
       padding-top: 1em;
       font-family: tokens.$f-sans;
 
+      p {
+      }
       small {
         font-style: italic;
         color: var(--c-bodyPrimary);
@@ -272,7 +263,6 @@
         }
 
         .card-content {
-          padding-top: 1.5em;
         }
       }
     }
@@ -400,18 +390,5 @@
         left: 0;
       }
     }
-  }
-}
-
-.answersQuestionsSection {
-  .intro-group {
-    h2 {
-      margin: 0;
-    }
-  }
-
-  h3 {
-    font-size: clamp(tokens.$size-6, 3vw, tokens.$size-7);
-    font-weight: tokens.$fontWeight-normal;
   }
 }

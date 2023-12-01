@@ -48,19 +48,6 @@ body {
     padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
     padding-block: clamp(tokens.$padding-xxl, 10vw, tokens.$padding-xxxxl);
     overflow: hidden;
-
-    header {
-      max-width: tokens.$mq-1200;
-
-      h2 {
-        font-size: clamp(2rem, 4vw, 3rem);
-      }
-
-      p {
-        font-size: clamp(1rem, 2vw, 1.5rem);
-        // color: var(--c-bg-body);
-      }
-    }
   }
 
   .group {
@@ -70,22 +57,19 @@ body {
     z-index: tokens.$layer-1;
 
     &.center-aligned {
+      justify-content: center;
+      align-items: center;
       width: 100%;
       max-width: tokens.$mq-1200;
 
       &.narrow {
         max-width: tokens.$mq-800;
       }
-
-      &.center-justified {
-        justify-content: center;
-        align-items: center;
-      }
     }
 
     h2 {
       strong {
-        font-size: 1.5em;
+        font-size: 1.7em;
         font-weight: tokens.$fontWeight-bold;
         display: block;
       }
@@ -141,10 +125,6 @@ body {
     border-radius: tokens.$borderRadius-xl;
     overflow: hidden;
     box-shadow: -1rem 1rem 0 var(--c-shadow1);
-
-    &.column {
-      max-width: 30rem;
-    }
   }
 }
 
@@ -156,91 +136,4 @@ div[class*="CarouselWithForm_carouselForm_"] {
 
 .centered-content {
   text-align: center;
-}
-
-.bgfilled {
-  background-color: var(--c-bg5);
-}
-
-.imgTextSection {
-  @media (max-width: tokens.$mq-900) {
-    .group {
-      align-items: flex-start;
-
-      figure.column {
-        order: 0;
-        max-width: 20rem;
-        width: 70%;
-        margin-bottom: 2rem;
-      }
-      .intro-text {
-        order: 1;
-      }
-    }
-  }
-}
-
-.featuredCard {
-  display: flex;
-  flex-direction: column;
-  padding: clamp(tokens.$padding-m, 4vw, tokens.$padding-xxxl);
-  background: var(--c-bg5);
-  border-radius: tokens.$borderRadius-xl;
-  transition: box-shadow 0.2s ease-in-out;
-}
-
-.rowOfCards {
-  background: var(--c-bg8);
-
-  h2 {
-    text-align: center;
-    font-size: clamp(tokens.$size-6, 4vw, tokens.$size-8);
-  }
-
-  .row {
-    gap: clamp(tokens.$size-6, 10vw, tokens.$size-10);
-    align-items: flex-start;
-
-    .cardContent {
-      .cardLink {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1em;
-        border-bottom: 1px solid var(--c-border-1);
-        text-decoration: none;
-
-        h3 {
-          margin: 0;
-        }
-
-        svg {
-          height: 1.5em;
-          width: 1.5em;
-          flex-shrink: 0;
-        }
-
-        &:hover {
-          h3 {
-            color: var(--c-link-hover);
-          }
-        }
-      }
-    }
-  }
-}
-
-.tabsSection {
-  background: var(--c-bg5);
-  &.bg-none {
-    background: none;
-
-    .react-tabs {
-      background: none;
-
-      &::before {
-        background: none;
-      }
-    }
-  }
 }

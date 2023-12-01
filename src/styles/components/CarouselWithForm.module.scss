@@ -10,8 +10,6 @@
   padding: 0;
   background: var(--c-bg1);
   padding-block: clamp(tokens.$padding-m, 5vw, tokens.$padding-l);
-  border-top: tokens.$borderWidth-l solid var(--c-border-3);
-  border-bottom: tokens.$borderWidth-l solid var(--c-border-3);
 
   &::before {
     content: "";
@@ -57,21 +55,17 @@
     padding-block: clamp(tokens.$padding-s, 10vw, tokens.$padding-xxxl);
     gap: 3em;
 
-    @media (min-width: tokens.$mq-1400) {
+    @media (min-width: tokens.$mq-1300) {
       flex-direction: row;
-      padding-inline: clamp(tokens.$padding-s, 10vw, tokens.$padding-xxxxl);
+      padding-inline: clamp(tokens.$padding-s, 10vw, tokens.$padding-xxxl);
     }
   }
 
   .intro {
     position: relative;
     z-index: tokens.$layer-3;
+    flex-shrink: 0;
     width: 80%;
-
-    @media (min-width: tokens.$mq-1400) {
-      width: clamp(10rem, 30vw, 30rem);
-      margin-top: -3rem;
-    }
 
     h2 {
       font-size: clamp(tokens.$size-6, 5vw, tokens.$size-8);
@@ -80,6 +74,10 @@
     }
     p {
       font-size: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+    }
+
+    @media (min-width: tokens.$mq-1300) {
+      max-width: 20rem;
     }
   }
 
@@ -90,7 +88,6 @@
     min-height: 35rem;
     padding-inline: 2em;
     overflow: hidden;
-    // flex-shrink: 0;
 
     @media (min-width: tokens.$mq-1300) {
       width: clamp(20rem, 80vw, 80rem);
@@ -165,20 +162,20 @@
     }
   }
 
-  // .intro {
-  //   // display: flex;
-  //   // flex-direction: column;
-  //   // width: 100%;
-  //   // max-width: tokens.$mq-900;
+  .intro {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: tokens.$mq-900;
 
-  //   h3 {
-  //     text-align: center;
-  //   }
-  //   p {
-  //     font-size: clamp(1rem, 1.3vw, 1.3rem);
-  //     text-align: center;
-  //   }
-  // }
+    h3 {
+      text-align: center;
+    }
+    p {
+      font-size: clamp(1rem, 1.3vw, 1.3rem);
+      text-align: center;
+    }
+  }
 
   // form {
   //   // margin: 2em auto;

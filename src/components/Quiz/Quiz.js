@@ -8,17 +8,7 @@ import React, { useEffect, useState } from "react";
 import Question from "./Question";
 import ResetQuizButton from "./ResetQuizButton";
 import Results from "./Results";
-import Score from "./Score";
-
-const getRedirectUrl = (vertical, highestScorePersonality) => {
-	if (vertical === "plan") {
-		return `/adult-degree-completion/${vertical}/${highestScorePersonality}`;
-	} else if (vertical === "specificVertical2") {
-		return `/specificPath2/${highestScorePersonality}`;
-	} else {
-		return `/careers/${vertical}/${highestScorePersonality}`;
-	}
-};
+// import Score from "./Score";
 
 export function Quiz({ vertical, quizData, resultsFormId, title }) {
 	const { location, globalPrivacyControl } = useUser();
@@ -27,15 +17,13 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 	const { questions, score: initialScore } = quizData;
 
 	const randomizedQuestions = quizData.questions.map(question => {
-		if (
-			question.randomize === false ||
-			!question.associatedField.startsWith("quizresponse")
-		) {
-			return question;
+		if (question.associatedField.startsWith("quizresponse")) {
+			const randomizedAnswers = question.answers.sort(
+				() => Math.random() - 0.5,
+			);
+			return { ...question, answers: randomizedAnswers };
 		}
-
-		const randomizedAnswers = question.answers.sort(() => Math.random() - 0.5);
-		return { ...question, answers: randomizedAnswers };
+		return question;
 	});
 
 	const [quizState, setQuizState] = useState({
@@ -91,21 +79,6 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 			Object.keys(updatedScores)[0],
 		);
 
-		if (associatedField === "age_range" && answer.value === 1) {
-			router.push("/redirect/appily-redirect");
-			return;
-		}
-
-		if (
-			associatedField === "education_journey__select1" &&
-			answer.value !== "2" &&
-			answer.value !== "3" &&
-			answer.redirectTo
-		) {
-			router.push(answer.redirectTo);
-			return;
-		}
-
 		setQuizState({
 			...quizState,
 			currentQuestionIdx: currentQuestionIdx + 1,
@@ -117,9 +90,7 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 		if (currentQuestionIdx === questions.length - 1) {
 			setQuizFinished(true);
 			if (location.notUS || globalPrivacyControl) {
-				const redirectUrl = getRedirectUrl(vertical, highestScorePersonality);
-				router.push(redirectUrl);
-				// router.push(`/careers/${vertical}/${highestScorePersonality}`);
+				router.push(`/careers/${vertical}/${highestScorePersonality}`);
 			}
 		}
 	};
@@ -134,10 +105,6 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 		});
 		setQuizFinished(false);
 	};
-	const redirectUrl = getRedirectUrl(
-		vertical,
-		quizState.highestScorePersonality,
-	);
 
 	return (
 		<>
@@ -145,10 +112,10 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 				<div className={styles.containerQuiz}>
 					<div className={styles.content}>
 						{/* NOTE: This score components will only show in dev mode */}
-						<Score
+						{/* <Score
 							score={personalityScores}
 							winningPersonality={quizState.highestScorePersonality}
-						/>
+						/> */}
 						<header className={styles.quizContentHead}>
 							<span className="intro-title">{title || "Take the Quiz"}</span>
 							<div className={styles.questionsCounter}>
@@ -169,7 +136,11 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 					<div className={styles.content}>
 						{/* Check if either location.notUS or globalPrivacyControl is true */}
 						{location && (location.notUS || globalPrivacyControl) ? (
-							<>{router.push(redirectUrl)}</>
+							<>
+								{router.push(
+									`/careers/${vertical}/${quizState.highestScorePersonality}`,
+								)}
+							</>
 						) : (
 							<>
 								{/* Show the Results component */}
@@ -177,7 +148,6 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 									vertical={vertical}
 									answers={quizState}
 									formId={resultsFormId}
-									redirectUrl={redirectUrl}
 								>
 									<ResetQuizButton
 										handleRetakeQuiz={handleRetakeQuiz}

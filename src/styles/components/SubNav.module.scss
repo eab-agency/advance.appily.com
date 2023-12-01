@@ -7,7 +7,7 @@
   justify-content: space-between;
   background: var(--c-bg12);
 
-  @media (min-width: tokens.$mq-1100) {
+  @media (min-width: tokens.$mq-1000) {
     padding-inline: clamp(tokens.$size-2, 4vw, tokens.$size-8);
   }
 
@@ -18,7 +18,7 @@
     width: 100%;
     max-width: tokens.$mq-1400;
 
-    @media (min-width: tokens.$mq-1100) {
+    @media (min-width: tokens.$mq-1000) {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
@@ -33,7 +33,6 @@
     border: none;
     flex-shrink: 0;
     text-align: center;
-    cursor: pointer;
 
     &::before {
       background: var(--c-navy-300);
@@ -50,7 +49,7 @@
       }
     }
 
-    @media (min-width: tokens.$mq-1100) {
+    @media (min-width: tokens.$mq-1000) {
       pointer-events: none;
     }
   }
@@ -79,7 +78,7 @@
       top: 50%;
       transform: translateY(-50%);
 
-      @media (min-width: tokens.$mq-1100) {
+      @media (min-width: tokens.$mq-1000) {
         content: "//";
         color: rgba(white, 0.5);
       }
@@ -89,7 +88,7 @@
   .resultsBtnClose h2::after {
     content: "+";
 
-    @media (min-width: tokens.$mq-1100) {
+    @media (min-width: tokens.$mq-1000) {
       content: "//";
       color: rgba(white, 0.5);
     }
@@ -108,7 +107,7 @@
       display: flex;
     }
 
-    @media (min-width: tokens.$mq-1100) {
+    @media (min-width: tokens.$mq-1000) {
       display: flex;
       flex-direction: row;
       width: fit-content;
@@ -119,7 +118,7 @@
       border-top: 1px solid var(--c-navy-400);
       background: rgba(black, 0.2);
 
-      @media (min-width: tokens.$mq-1100) {
+      @media (min-width: tokens.$mq-1000) {
         border-left: 1px solid var(--c-navy-400);
         background: none;
       }
@@ -158,195 +157,6 @@
           }
         }
       }
-    }
-  }
-}
-
-// =============================
-// Subnav Build Your Plan
-
-.subNavigationPlan {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--c-bg12);
-  position: sticky;
-  top: clamp(5rem, 5vw, 5.45rem);
-  z-index: tokens.$layer-10;
-
-  @media (min-width: tokens.$mq-1100) {
-    padding-inline: clamp(tokens.$size-2, 4vw, tokens.$size-8);
-  }
-
-  .group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: tokens.$mq-1400;
-
-    @media (min-width: tokens.$mq-1100) {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      width: fit-content;
-      max-width: 100%;
-    }
-  }
-
-  .resultsBtnOpen,
-  .resultsBtnClose {
-    background: none;
-    border: none;
-    flex-shrink: 0;
-    text-align: center;
-    cursor: pointer;
-
-    &::before {
-      background: var(--c-navy-300);
-      z-index: tokens.$layer-1;
-    }
-    &::after {
-      background: var(--c-navy-400);
-      z-index: tokens.$layer-1;
-    }
-
-    &:hover {
-      h2 {
-        color: var(--c-white);
-      }
-    }
-
-    @media (min-width: tokens.$mq-1100) {
-      pointer-events: none;
-    }
-  }
-
-  h2 {
-    text-transform: uppercase;
-    font-weight: tokens.$fontWeight-normal;
-    color: var(--c-navy-300);
-    font-size: clamp(tokens.$size-3, 4vw, tokens.$size-4);
-    margin: 0;
-    position: relative;
-    padding-block: 0.8em;
-    padding-right: 2em;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    z-index: tokens.$layer-10;
-
-    &::after {
-      content: "-";
-      font-weight: 900;
-      letter-spacing: -0.2em;
-      font-size: 1.5em;
-      position: absolute;
-      right: 0.5em;
-      top: 50%;
-      transform: translateY(-50%);
-
-      @media (min-width: tokens.$mq-1100) {
-        content: "//";
-        color: rgba(white, 0.5);
-      }
-    }
-  }
-
-  .resultsBtnClose h2::after {
-    content: "+";
-
-    @media (min-width: tokens.$mq-1100) {
-      content: "//";
-      color: rgba(white, 0.5);
-    }
-  }
-
-  .subNavItems {
-    display: none;
-    flex-direction: column;
-    padding-inline: 0;
-    width: 100%;
-    gap: 0;
-    list-style: none;
-    margin: 0;
-
-    &.resultsOpen {
-      display: flex;
-    }
-
-    @media (min-width: tokens.$mq-1100) {
-      display: flex;
-      flex-direction: row;
-      width: fit-content;
-      max-width: 100%;
-    }
-
-    li {
-      border-top: 1px solid var(--c-navy-400);
-      background: rgba(black, 0.2);
-
-      @media (min-width: tokens.$mq-1100) {
-        border-left: 1px solid var(--c-navy-400);
-        background: none;
-      }
-
-      a,
-      button {
-        display: block;
-        padding-block: clamp(tokens.$size-1, 2vw, tokens.$size-4);
-        padding-inline: clamp(tokens.$size-2, 4vw, tokens.$size-4);
-        text-align: center;
-        text-transform: uppercase;
-        font-size: clamp(tokens.$size-3, 2vw, tokens.$size-4);
-        color: var(--c-white);
-        text-decoration: none;
-        position: relative;
-        background: none;
-        border: none;
-        cursor: pointer;
-
-        @media (max-width: tokens.$mq-1100) {
-          width: 100%;
-        }
-
-        &::before {
-          content: "";
-          display: block;
-          height: 0.3em;
-          width: 90%;
-          background: var(--c-teal-400);
-          position: absolute;
-          top: 0.2em;
-          left: 50%;
-          transform: translateX(-50%);
-          opacity: 0;
-          transition: all 0.1s ease-out;
-        }
-
-        &:hover,
-        &:focus,
-        &:active {
-          background: var(--c-navy-400);
-
-          &::before {
-            top: -0.2em;
-            opacity: 1;
-          }
-        }
-      }
-
-      // &.linkActive {
-      //   background: red;
-      //   a {
-      //     background: var(--c-navy-400);
-      //     &::before {
-      //       top: -0.2em;
-      //       opacity: 1;
-      //     }
-      //   }
-      // }
     }
   }
 }
