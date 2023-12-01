@@ -69,6 +69,11 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 		const answerWeight = score + answer.weight;
 		const newParam = `q${currentQuestionIdx + 1}=${answer.originalIndex}`;
 
+		if (associatedField === "age_range" && answer.value === 1) {
+			router.push("/redirect/appily-redirect");
+			return;
+		}
+
 		setQuizState(prevState => ({
 			...prevState,
 			currentQuestionIdx: currentQuestionIdx + 1,

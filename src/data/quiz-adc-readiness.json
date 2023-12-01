@@ -316,7 +316,7 @@
       "title": "Age",
       "question": "What’s your age range?",
       "description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
-      "associatedField": "quizresponse10",
+      "associatedField": "age_range",
       "icon": "age-icon",
       "randomize": false,
       "answers": [
