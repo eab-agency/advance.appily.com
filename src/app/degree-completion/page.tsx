@@ -3,13 +3,10 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 import {
-	Accordion,
 	Button,
 	CarouselWithForm,
-	Header,
 	Stats,
 	StickyCta,
-	Testimonial,
 	WhatIsCappex,
 } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";

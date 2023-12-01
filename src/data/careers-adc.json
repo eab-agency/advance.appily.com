@@ -24,7 +24,7 @@
           "iconDark": "/images/roi-icon.svg",
           "description": "<h4>Get Your College Readiness Score</h4> <p>Going back to school can be a big investment of your time and money, so it’s a good idea to make sure you’re ready before you commit.</p>",
           "buttonText": "Start the Readiness Quiz",
-          "buttonLink": "/degree-completion/readiness-quiz"
+          "buttonLink": "/degree-completion/readiness-quiz/start"
         }
       },
       {
@@ -32,7 +32,7 @@
           "title": "Get Your Back-to-School Plan",
           "description": "<h4>Let’s Build Your Personalized Plan</h4> <p>Answer a few questions and we’ll provide a step-by-step guide to everything from funding your education to tips for choosing the right degree and school for your career goals.</p>",
           "buttonText": "Build Your Plan",
-          "buttonLink": "/degree-completion/build-plan-quiz"
+          "buttonLink": "/degree-completion/build-plan-quiz/start"
         }
       }
     ]
