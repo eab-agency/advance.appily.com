@@ -41,7 +41,7 @@ export default function Page() {
 
         <Testimonial testimonialData={data.testimonial} />
 
-        <TabsSection id="funding-your-degree" data={data.fundingYourDegree} />
+        <TabsSection id="funding-your-degree" data={data.fundingYourDegree} className="no-content-media" />
 
         <AccordionSection data={data.fileFafsa} />
 

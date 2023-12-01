@@ -10,11 +10,12 @@ interface TabsSectionProps {
       content: string
     }[]
   }
+  className?: string
 }
 
-export default function TabsSection({ id, data }: TabsSectionProps) {
+export default function TabsSection({ id, data, className }: TabsSectionProps) {
   return (
-    <section id={id} className="tabsSection column bg-none">
+    <section id={id} className={`${className} tabsSection column bg-none`}>
       <header className="center-aligned centered-content center-justified">
         <h2>{data.title}</h2>
         {data.description && <div
