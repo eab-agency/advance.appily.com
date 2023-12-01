@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
-import { MdClose, MdMenu } from "react-icons/md";
+import { useCallback, useState } from "react";
+// import { MdClose, MdMenu } from "react-icons/md";
 
 import styles from "@/styles/components/SubNav.module.scss";
 
@@ -31,25 +31,42 @@ export function SubNavPlan() {
 						isMenuOpen && styles.resultsOpen
 					}`}
 				>
-					<NavItem href="#value-of-a-degree">Value of a Degree</NavItem>
-					<NavItem href="#funding-your-degree">Funding Your Degree</NavItem>
-					<NavItem href="#career-paths">Career Path</NavItem>
-					<NavItem href="#degrees-and-schools">Degrees & Schools</NavItem>
-					<NavItem href="#your-next-steps">Your Next Steps</NavItem>
+					<NavItem href="#value-of-a-degree" setIsMenuOpen={setIsMenuOpen}>
+						Value of a Degree
+					</NavItem>
+					<NavItem href="#funding-your-degree" setIsMenuOpen={setIsMenuOpen}>
+						Funding Your Degree
+					</NavItem>
+					<NavItem href="#career-paths" setIsMenuOpen={setIsMenuOpen}>
+						Career Path
+					</NavItem>
+					<NavItem href="#degrees-and-schools" setIsMenuOpen={setIsMenuOpen}>
+						Degrees & Schools
+					</NavItem>
+					<NavItem href="#your-next-steps" setIsMenuOpen={setIsMenuOpen}>
+						Your Next Steps
+					</NavItem>
 				</ul>
 			</div>
 		</nav>
 	);
 }
 
-const NavItem = ({ href, children }) => {
+const NavItem = ({ href, children, setIsMenuOpen }) => {
 	const pathname = useRouter();
 	// const isActive = pathname === href;
 
-	const scrollToWithOffset = (id, offset) => {
+	const scrollToWithOffset = (id, offsetRatio) => {
 		const element = document.querySelector(id);
+		const windowWidth = window.innerWidth;
+
 		if (element) {
+			const offset =
+				windowWidth < 800
+					? windowWidth * offsetRatio * 5
+					: windowWidth * offsetRatio;
 			const offsetTop = element.offsetTop - offset;
+
 			window.scrollTo({
 				top: offsetTop,
 				behavior: "smooth",
@@ -57,11 +74,15 @@ const NavItem = ({ href, children }) => {
 		}
 	};
 
-	const handleClick = e => {
-		e.preventDefault();
-		const elementId = href.substring(1);
-		scrollToWithOffset(`#${elementId}`, 100);
-	};
+	const handleClick = useCallback(
+		e => {
+			e.preventDefault();
+			const elementId = href.substring(1);
+			scrollToWithOffset(`#${elementId}`, 0.1);
+			setIsMenuOpen(false);
+		},
+		[href, setIsMenuOpen],
+	);
 
 	const isActive = href => {
 		if (pathname.includes(href)) {
