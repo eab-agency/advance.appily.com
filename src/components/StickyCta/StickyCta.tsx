@@ -19,9 +19,14 @@ const StickyCta: React.FC<stickyProps> = ({ trackedElement }) => {
 
 	const currentPath = usePathname();
 
-	const quizRoute = currentPath?.includes("business")
-		? "/careers/business/quiz"
-		: "/careers/healthcare/quiz";
+	let quizRoute;
+	if (currentPath?.includes("business")) {
+		quizRoute = "/careers/business/quiz";
+	} else if (currentPath?.includes("degree-completion")) {
+		quizRoute = "/degree-completion/readiness-quiz";
+	} else {
+		quizRoute = "/careers/healthcare/quiz";
+	}
 
 	useEffect(() => {
 		if (trackedElement) {

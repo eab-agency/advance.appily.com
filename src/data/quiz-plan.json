@@ -83,28 +83,23 @@
       "answers": [
         {
           "answer": "Some High School",
-          "weight": 2,
-          "value": 1
+          "weight": 2
         },
         {
           "answer": "High School Diploma or GED",
-          "weight": 5,
-          "value": 2
+          "weight": 5
         },
         {
           "answer": "Some College, No Degree",
-          "weight": 5,
-          "value": 3
+          "weight": 5
         },
         {
           "answer": "Certification or Associate's Degree",
-          "weight": 5,
-          "value": 4
+          "weight": 5
         },
         {
           "answer": "Bachelor's Degree or Higher",
-          "weight": 5,
-          "value": 5
+          "weight": 5
         }
       ]
     },
@@ -115,13 +110,11 @@
       "answers": [
         {
           "answer": "Yes",
-          "weight": 5,
-          "value": "yes"
+          "weight": 5
         },
         {
           "answer": "No",
-          "weight": 5,
-          "value": "no"
+          "weight": 5
         }
       ]
     },
@@ -131,33 +124,27 @@
       "answers": [
         {
           "answer": "Advance in my current career",
-          "weight": 5,
-          "value": 1
+          "weight": 5
         },
         {
           "answer": "Switch to a new career field",
-          "weight": 4,
-          "value": 2
+          "weight": 4
         },
         {
           "answer": "Finish the degree I started",
-          "weight": 4,
-          "value": 3
+          "weight": 4
         },
         {
           "answer": "Explore new interests and opportunities",
-          "weight": 3,
-          "value": 4
+          "weight": 3
         },
         {
           "answer": "Pursue my passion",
-          "weight": 4,
-          "value": 3
+          "weight": 4
         },
         {
           "answer": "Transition from the military to civilian life",
-          "weight": 4,
-          "value": 3
+          "weight": 4
         }
       ]
     },
@@ -167,38 +154,31 @@
       "answers": [
         {
           "answer": "Military",
-          "weight": 5,
-          "value": 1
+          "weight": 5
         },
         {
           "answer": "Service industry or hospitality",
-          "weight": 4,
-          "value": 2
+          "weight": 4
         },
         {
           "answer": "Retail",
-          "weight": 3,
-          "value": 3
+          "weight": 3
         },
         {
           "answer": "Health care",
-          "weight": 2,
-          "value": 4
+          "weight": 2
         },
         {
           "answer": "Self-employed",
-          "weight": 2,
-          "value": 4
+          "weight": 2
         },
         {
           "answer": "Stay-at-home parent",
-          "weight": 2,
-          "value": 4
+          "weight": 2
         },
         {
           "answer": "None of these",
-          "weight": 2,
-          "value": 4
+          "weight": 2
         }
       ]
     },
@@ -209,44 +189,37 @@
         {
           "answer": "Business",
           "personality": "business",
-          "weight": 100,
-          "value": 1
+          "weight": 100
         },
         {
           "answer": "Health Care",
           "personality": "healthcare",
-          "weight": 100,
-          "value": 2
+          "weight": 100
         },
         {
           "answer": "Education",
           "personality": "education",
-          "weight": 100,
-          "value": 3
+          "weight": 100
         },
         {
           "answer": "Technology / STEM",
           "personality": "stem",
-          "weight": 100,
-          "value": 4
+          "weight": 100
         },
         {
           "answer": "Art & Design",
           "personality": "art-and-design",
-          "weight": 100,
-          "value": 5
+          "weight": 100
         },
         {
           "answer": "Criminal Justice",
           "personality": "criminal-justice",
-          "weight": 100,
-          "value": 5
+          "weight": 100
         },
         {
           "answer": "Other/Unsure",
           "personality": "other",
-          "weight": 100,
-          "value": 5
+          "weight": 100
         }
       ]
     },
@@ -256,38 +229,31 @@
       "answers": [
         {
           "answer": "Lack of time",
-          "weight": 5,
-          "value": 1
+          "weight": 5
         },
         {
           "answer": "Family commitments",
-          "weight": 5,
-          "value": 2
+          "weight": 5
         },
         {
           "answer": "Work commitments",
-          "weight": 4,
-          "value": 3
+          "weight": 4
         },
         {
           "answer": "Finances",
-          "weight": 3,
-          "value": 4
+          "weight": 3
         },
         {
           "answer": "Not sure which career to pursue",
-          "weight": 2,
-          "value": 5
+          "weight": 2
         },
         {
           "answer": "Unsure which degree I need",
-          "weight": 2,
-          "value": 5
+          "weight": 2
         },
         {
           "answer": "Other",
-          "weight": 2,
-          "value": 5
+          "weight": 2
         }
       ]
     },
@@ -297,33 +263,27 @@
       "answers": [
         {
           "answer": "Scholarships",
-          "weight": 5,
-          "value": 1
+          "weight": 5
         },
         {
           "answer": "Federal aid",
-          "weight": 5,
-          "value": 2
+          "weight": 5
         },
         {
           "answer": "Employer tuition reimbursement",
-          "weight": 5,
-          "value": 3
+          "weight": 5
         },
         {
           "answer": "Work-study",
-          "weight": 3,
-          "value": 4
+          "weight": 3
         },
         {
           "answer": "Military and veteran benefits",
-          "weight": 3,
-          "value": 4
+          "weight": 3
         },
         {
           "answer": "Loans",
-          "weight": 3,
-          "value": 4
+          "weight": 3
         }
       ]
     }

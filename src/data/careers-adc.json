@@ -15,7 +15,7 @@
 	],
 	"introComparison": {
 		"title": "See If You’re Ready and <strong>Create a Personalized Degree Plan</strong>",
-		"description": "These quizzes are designed to help people over 23 who are considering returning to school to earn an undergraduate degree. If you’re currently in high school or college and looking to transfer, you’ll <a href='https://www.appily.com' target='_blank' rel='noopener noreferrer'>find more helpful resources on appily.com.",
+		"description": "These quizzes are designed to help people over 23 who are considering returning to school to earn an undergraduate degree. If you’re currently in high school or college and looking to transfer, you’ll <a href='https://www.appily.com' target='_blank' rel='noopener noreferrer'>find more helpful resources on appily.com.</a>",
 		"cards": [
 			{
 				"card": {
@@ -24,7 +24,7 @@
 					"iconDark": "/images/roi-icon.svg",
 					"description": "<h4>Get Your College Readiness Score</h4> <p>Going back to school can be a big investment of your time and money, so it’s a good idea to make sure you’re ready before you commit.</p>",
 					"buttonText": "Start the Readiness Quiz",
-					"buttonLink": "/degree-completion/readiness-quiz"
+					"buttonLink": "/degree-completion/readiness-quiz/start"
 				}
 			},
 			{
@@ -32,14 +32,14 @@
 					"title": "Get Your Back-to-School Plan",
 					"description": "<h4>Let’s Build Your Personalized Plan</h4> <p>Answer a few questions and we’ll provide a step-by-step guide to everything from funding your education to tips for choosing the right degree and school for your career goals.</p>",
 					"buttonText": "Build Your Plan",
-					"buttonLink": "/degree-completion/build-plan-quiz"
+					"buttonLink": "/degree-completion/build-plan-quiz/start"
 				}
 			}
 		]
 	},
 	"carouselData": {
 		"title": "Explore Schools Near You",
-		"description": "<p>Appily partners with institutions across the country that are known for having <strong>exceptional programs</strong> and providing strong outcomes. </p><p>No matter which career you choose, you’re likely to find a path to success at these colleges and universities.</p>"
+		"description": "<p>Appily partners with institutions across the country that are known for having exceptional programs and providing strong outcomes. </p><p>No matter which career you choose, you’re likely to find a path to success at these colleges and universities.</p>"
 	},
 	"pageTitle": "Are you asking yourself: <strong>Should I finish my degree?</strong>",
 	"answersQuestionsSection": {
@@ -104,14 +104,6 @@
 	"contactForm": {
 		"title": "Explore Your Potencial School matches",
 		"description": "Let us know the best way to contact you with helpful information and  potential college or university  matches."
-	},
-	"takeQuiz": {
-		"image": "/images/ready-to-find-your-role.jpg",
-		"imageAlt": "Take our free quiz",
-		"title": "Ready to Find Your Role?",
-		"description": "In less than three minutes, you could discover which role could be a good fit for you—and the steps you can take to advance your career.",
-		"buttonText": "Take the Quiz",
-		"buttonLink": "/degree-completion/quiz"
 	},
 	"statsAppily": [
 		{
