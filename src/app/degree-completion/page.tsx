@@ -228,30 +228,6 @@ const BusinessSeoPage = () => {
 				<Stats stats={data.statsAppily} className="stats-section" />
 			</WhatIsCappex>
 
-			<section className="takeQuiz full-content">
-				<div className="group row">
-					<div className="column">
-						<figure>
-							<Image
-								src={data.takeQuiz.image}
-								width={900}
-								height={900}
-								alt={data.takeQuiz.imageAlt}
-							/>
-						</figure>
-					</div>
-					<div className="content column">
-						<h2>{data.takeQuiz.title}</h2>
-						<p>{data.takeQuiz.description}</p>
-						<Button
-							type="button"
-							label={data.takeQuiz.buttonText}
-							href={data.takeQuiz.buttonLink}
-							className="button btn-primary"
-						/>
-					</div>
-				</div>
-			</section>
 			<StickyCta />
 		</>
 	);
