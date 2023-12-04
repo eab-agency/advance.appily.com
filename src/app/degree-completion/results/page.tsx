@@ -303,7 +303,7 @@ export default function ADCResultsPage({
 							className="carouselWithForm"
 							ref={carouselRef}
 						>
-							<CarouselWithForm formId="14" />
+							<CarouselWithForm formId="14" collectData={false} />
 						</div>
 
 						<KeepExploring trackedElement={carouselRef} />

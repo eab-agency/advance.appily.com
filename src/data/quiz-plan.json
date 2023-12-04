@@ -22,13 +22,7 @@
           "redirectTo": "/redirect/helpful-resources-undergrad"
         },
         {
-          "answer": "I am considering a master's degree",
-          "weight": 5,
-          "value": "1",
-          "redirectTo": "/redirect/helpful-resources-grad"
-        },
-        {
-          "answer": "I am interested in earning a PhD or professional doctorate",
+          "answer": "I am considering a graduate-level degree",
           "weight": 5,
           "value": "1",
           "redirectTo": "/redirect/helpful-resources-grad"

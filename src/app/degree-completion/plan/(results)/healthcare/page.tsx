@@ -74,7 +74,7 @@ export default function Page() {
 					className="carouselWithForm"
 					ref={carouselRef}
 				>
-					<CarouselWithForm formId="15" />
+					<CarouselWithForm formId="15" collectData={false} />
 				</div>
 
 				<AccordionSection id="your-next-steps" data={data.yourNextSteps} />
