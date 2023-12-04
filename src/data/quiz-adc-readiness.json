@@ -5,7 +5,7 @@
       "associatedField": "education_journey__select1",
       "answers": [
         {
-          "answer": "I am considering a graduate-level degree.",
+          "answer": "I am considering a master's degree.",
           "personality": "initial",
           "weight": 1,
           "value": "3",

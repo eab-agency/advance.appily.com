@@ -6,7 +6,7 @@
       "associatedField": "education_journey__select1",
       "answers": [
         {
-          "answer": "I am considering a graduate-level degree",
+          "answer": "I am considering a master's degree",
           "weight": 5,
           "value": "1",
           "redirectTo": "/redirect/helpful-resources"
