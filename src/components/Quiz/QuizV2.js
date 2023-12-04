@@ -55,11 +55,17 @@ export function QuizV2({
 	const [quizFinished, setQuizFinished] = useState(
 		currentQuestionIdx === questions.length - 1,
 	);
+	const [resetQuiz, setResetQuiz] = useState(false);
 
 	useEffect(() => {
 		// Save the entire quiz state to local storage whenever it changes
 		setQuizState(quizState);
 	}, [quizState]);
+
+	// when quiz is reset, scroll to top (solves for mobile)
+	useEffect(() => {
+		if (resetQuiz) window.scrollTo(0, 0);
+	}, [resetQuiz]);
 
 	const handleAnswer = (question, answer, associatedField) => {
 		const updatedAnswers = [
@@ -108,6 +114,7 @@ export function QuizV2({
 			isFinished: false,
 			resultParameters: "",
 		});
+		setResetQuiz(true);
 		setQuizFinished(false);
 	};
 
