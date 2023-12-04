@@ -222,7 +222,7 @@ export default function ADCResultsPage({
         {showContent && (
           <>
             {/* <Tabs className="react-tabs adc-results-tabs" tabs={data.tabs} /> */}
-            <Tabs className="react-tabs adc-results-tabs" tabs={tabs} />
+            <Tabs className="react-tabs adc-results-tabs" tabs={tabs} id={1} />
 
             <section className="nextSteps">
               <div className="contentWrapper imgTextSection">
@@ -289,6 +289,13 @@ export default function ADCResultsPage({
               </div>
             </section>
 
+            <div
+              id="explore-your-school-matches"
+              className="carouselWithForm"
+              ref={carouselRef}
+            >
+              <CarouselWithForm formId="14" collectData={false} />
+            </div>
             <div
               id="explore-your-school-matches"
               className="carouselWithForm"

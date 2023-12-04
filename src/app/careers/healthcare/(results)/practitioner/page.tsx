@@ -46,7 +46,7 @@ export default function Page() {
 
 				{links && <SubNav links={links} />}
 
-				<Tabs className="react-tabs" tabs={data.tabs} />
+				<Tabs className="react-tabs" tabs={data.tabs} id={1} />
 
 				<section className="career-path">
 					<div className="group cols-2">
@@ -144,7 +144,7 @@ export default function Page() {
 							often preferred, especially for more senior management roles.
 						</p>
 					</div>
-					<Tabs tabs={data.degreeTabs} className="degree-tabs" />
+					<Tabs tabs={data.degreeTabs} className="degree-tabs" id={2} />
 				</section>
 				<section className="certificates">
 					<Accordion title="Does The Practitioner need a license, certification, or registration?">
@@ -179,7 +179,7 @@ export default function Page() {
 					className="carouselWithForm"
 					ref={carouselRef}
 				>
-					<CarouselWithForm formId="3" />
+					<CarouselWithForm formId="3" collectData={false} />
 				</div>
 
 				<KeepExploring />
