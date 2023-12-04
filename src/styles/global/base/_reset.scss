@@ -214,3 +214,9 @@ button:-moz-focusring,
 summary {
   display: list-item;
 }
+
+code {
+  display: block;
+  width: 100%;
+  word-wrap: break-word;
+}
