@@ -138,7 +138,7 @@
 			{
 				"number": "85%",
 				"title": "Receive Aid",
-				"description": "Approximately 85% of full-time undergraduate students who <a href='https://studentaid.gov/h/apply-for-aid/fafsa'>file the FAFSA</a> receive some kind of financial aid, according to the National Center for Education Statistics (NCES)."
+				"description": "Approximately 85% of full-time undergraduate students who <a href='https://studentaid.gov/h/apply-for-aid/fafsa' target='_blank'>file the FAFSA</a> receive some kind of financial aid, according to the National Center for Education Statistics (NCES)."
 			},
 			{
 				"number": "~Half",
