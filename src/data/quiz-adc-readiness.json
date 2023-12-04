@@ -3,9 +3,10 @@
     {
       "question": "Where are you in your educational journey?",
       "associatedField": "education_journey__select1",
+      "description": "Let’s make sure you’re in the right place!",
       "answers": [
         {
-          "answer": "I am considering a master's degree.",
+          "answer": "I am considering a graduate-level degree",
           "personality": "initial",
           "weight": 1,
           "value": "3",
@@ -44,6 +45,7 @@
     {
       "title": "Motivation",
       "question": "How motivated are you to earn your degree?",
+      "description": "No matter your answer, we’ll give you some tips and tools to get excited about your next steps.",
       "associatedField": "quizresponse1",
       "icon": "motivation2-icon",
       "answers": [
@@ -129,6 +131,7 @@
     {
       "title": "Studying",
       "question": "How do you feel about studying?",
+      "description": "We’ll share tools and approaches for studying that could spark your interest.",
       "associatedField": "quizresponse2",
       "icon": "studying-icon",
       "answers": [
@@ -162,6 +165,7 @@
     {
       "title": "Education",
       "question": "What is your highest level of completed education?",
+      "description": "We’ll provide guidance no matter where you are in your journey.",
       "associatedField": "level_of_degree_seeking",
       "icon": "education2-icon",
       "answers": [
@@ -195,6 +199,7 @@
     {
       "title": "Career",
       "question": "How clear are you about your desired career path and the degree required to achieve it?",
+      "description": "Now is the perfect time to think about where you’re going and how you’ll get there!",
       "associatedField": "quizresponse4",
       "icon": "setting-icon",
       "answers": [
@@ -223,6 +228,7 @@
     {
       "title": "Free Time",
       "question": "How much free time do you tend to have each week?",
+      "description": "We’ll share some tips for how to make the most of the time you do have!",
       "associatedField": "quizresponse5",
       "icon": "free-time-icon",
       "answers": [
@@ -251,6 +257,7 @@
     {
       "title": "Time Mgmt",
       "question": "How are your time management skills?",
+      "description": "No matter your skill level, there are lots of tools to help you manage your time even better. We’ll share them!",
       "associatedField": "quizresponse6",
       "icon": "time-management-icon",
       "answers": [
@@ -284,6 +291,7 @@
     {
       "title": "Support",
       "question": "Do you have supporters who can offer guidance or encouragement for your goals?",
+      "description": "If you need more support, let’s find ways to connect you with resources!",
       "associatedField": "quizresponse7",
       "icon": "support-icon",
       "answers": [
@@ -317,6 +325,7 @@
     {
       "title": "Technology",
       "question": "How comfortable are you with using technology for online learning and research?",
+      "description": "Today, schools offer many ways to learn that will meet you where you’re comfortable.",
       "associatedField": "preferred_modality",
       "icon": "technology-icon",
       "answers": [
@@ -345,6 +354,7 @@
     {
       "title": "Finances",
       "question": "Do you have a plan or financial resources in place to support your education?",
+      "description": "There are lots of resources out there, it’s just a matter of finding (and pursuing) them!",
       "associatedField": "quizresponse9",
       "icon": "finances-icon",
       "answers": [
