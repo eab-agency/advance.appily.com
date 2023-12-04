@@ -173,6 +173,8 @@
   border-top: 0.2em solid var(--c-teal-500);
 
   .formWrapper {
+    width: 100%;
+
     .leadForm {
       width: 100%;
       max-width: tokens.$mq-800;

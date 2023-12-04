@@ -191,7 +191,7 @@ $borders: (
 );
 
 $miscellaneous: (
-  "error": #cc0000,
+  "error": colors.$c-error,
   "success": #00e50b,
   "warning": #ffb700,
   "texture": colors.$c-slateGray,
