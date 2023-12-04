@@ -6,10 +6,9 @@
       "associatedField": "education_journey__select1",
       "answers": [
         {
-          "answer": "I am considering a graduate-level degree",
-          "weight": 5,
-          "value": "1",
-          "redirectTo": "/redirect/helpful-resources"
+          "answer": "I am thinking about earning or completing an associate’s degree",
+          "weight": 4,
+          "value": "3"
         },
         {
           "answer": "I am exploring earning or completing a bachelor’s degree",
@@ -17,21 +16,28 @@
           "value": "2"
         },
         {
-          "answer": "I am thinking about earning an associate’s degree",
-          "weight": 4,
-          "value": "3"
-        },
-        {
           "answer": "I am currently in school for an undergraduate degree and wish to transfer",
           "weight": 3,
           "value": "4",
-          "redirectTo": "/redirect/helpful-resources"
+          "redirectTo": "/redirect/helpful-resources-undergrad"
+        },
+        {
+          "answer": "I am considering a master's degree",
+          "weight": 5,
+          "value": "1",
+          "redirectTo": "/redirect/helpful-resources-grad"
+        },
+        {
+          "answer": "I am interested in earning a PhD or professional doctorate",
+          "weight": 5,
+          "value": "1",
+          "redirectTo": "/redirect/helpful-resources-grad"
         },
         {
           "answer": "I am not currently considering school or am only interested in professional licensure",
           "weight": 2,
           "value": "5",
-          "redirectTo": "/redirect/helpful-resources"
+          "redirectTo": "/redirect/helpful-resources-grad"
         }
       ]
     },
@@ -104,23 +110,8 @@
       ]
     },
     {
-      "question": "Are you currently enrolled in college?",
-      "description": "This will help us make more accurate recommendations for ways you may be able to save time and money.",
-      "associatedField": "quizresponse3",
-      "answers": [
-        {
-          "answer": "Yes",
-          "weight": 5
-        },
-        {
-          "answer": "No",
-          "weight": 5
-        }
-      ]
-    },
-    {
       "question": "What is your main motivation for earning your degree?",
-      "associatedField": "quizresponse4",
+      "associatedField": "quizresponse3",
       "answers": [
         {
           "answer": "Advance in my current career",
@@ -150,7 +141,7 @@
     },
     {
       "question": "Do you have any of the following life or career experiences?",
-      "associatedField": "quizresponse5",
+      "associatedField": "quizresponse4",
       "answers": [
         {
           "answer": "Military",
@@ -184,7 +175,7 @@
     },
     {
       "question": "What field are you interested in?",
-      "associatedField": "quizresponse6",
+      "associatedField": "quizresponse5",
       "answers": [
         {
           "answer": "Business",
@@ -225,7 +216,7 @@
     },
     {
       "question": "What is the main barrier for you returning to school?",
-      "associatedField": "quizresponse7",
+      "associatedField": "quizresponse6",
       "answers": [
         {
           "answer": "Lack of time",
@@ -259,7 +250,7 @@
     },
     {
       "question": "Which of the following funding opportunities would you be most interested in learning about?",
-      "associatedField": "quizresponse8",
+      "associatedField": "quizresponse7",
       "answers": [
         {
           "answer": "Scholarships",
