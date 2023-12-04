@@ -23,7 +23,7 @@ const StickyCta: React.FC<stickyProps> = ({ trackedElement }) => {
 	if (currentPath?.includes("business")) {
 		quizRoute = "/careers/business/quiz";
 	} else if (currentPath?.includes("degree-completion")) {
-		quizRoute = "/degree-completion/readiness-quiz";
+		quizRoute = "/degree-completion/build-plan-quiz";
 	} else {
 		quizRoute = "/careers/healthcare/quiz";
 	}
