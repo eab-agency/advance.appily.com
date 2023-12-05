@@ -2,6 +2,7 @@
 
 .adcResultsHero {
   position: relative;
+  gap: 0;
 
   .adcResultsTitle {
     text-align: center;
@@ -9,6 +10,7 @@
     flex-direction: column;
     padding-bottom: 2em;
     position: relative;
+    margin-bottom: -1em;
 
     @media (min-width: tokens.$mq-800) {
       padding-bottom: 2em;

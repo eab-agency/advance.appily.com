@@ -1,6 +1,6 @@
 @use "@/styles/global/tokens";
 
-body {
+:where(body) {
   background: var(--c-bg-body);
   display: flex;
   flex-direction: column;
