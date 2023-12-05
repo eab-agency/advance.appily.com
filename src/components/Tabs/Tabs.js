@@ -6,7 +6,7 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 // import 'react-tabs/style/react-tabs.css'
 // import styles from '@/styles/global/components/Tabs.module.scss';
 
-const TabComponent = ({ tabs, className, id = 0 }) => {
+const TabComponent = ({ tabs, className, id = "0" }) => {
 	const searchParams = useSearchParams();
 	const selectedTabKey = `tab-${id}`;
 	const selectedTab = Number(searchParams.get(selectedTabKey)) || 0;
@@ -26,6 +26,7 @@ const TabComponent = ({ tabs, className, id = 0 }) => {
 		>
 			<TabList>
 				{tabs.map((tab, index) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 					<Tab className={tab.icon || "skills-icon"} key={index}>
 						<span>{tab.title}</span>
 					</Tab>
@@ -33,6 +34,7 @@ const TabComponent = ({ tabs, className, id = 0 }) => {
 			</TabList>
 
 			{tabs.map((tab, index) => (
+				// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 				<TabPanel className={tab.icon || "skills-icon"} key={index}>
 					<div className="tab-copy">
 						<h2>{tab.title}</h2>

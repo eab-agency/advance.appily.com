@@ -58,7 +58,10 @@ export function formatFormDataForAppilyPartnerAPI(
 	for (const key in formData) {
 		if (key.startsWith("quizresponse")) {
 			const answer = formData[key].split(" | ")[1];
-			const question = formData[key].split(" | ")[0];
+			let question = formData[key].split(" | ")[0];
+			if (question.length > 85) {
+				question = question.substring(0, 85);
+			}
 			if (question !== "" && answer !== "") {
 				const existingQuestionAnswerForm = questionAnswerForms.find(
 					form => form.question === question,
