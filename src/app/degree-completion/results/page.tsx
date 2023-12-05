@@ -96,89 +96,16 @@ export default function ADCResultsPage({
     setShowContent(animationState);
   };
 
+  const buildContent = (question, selectedQuizResponse, index) => {
+    const answer = question.answers[selectedQuizResponse]?.answer || "Incorrect parameter used";
+    const dynamicContent = question.answers[selectedQuizResponse]?.dynamicContent || "No content";
+    return `<p>${answer}</p> ${dynamicContent}`;
+  };
+
+  const selectedQuizResponses = Array.from({ length: 11 }, (_, i) => Number(searchParams[`q${i + 1}`]) || 0);
+
   const tabs = quizData.questions.map((question, index) => {
-    let content;
-    switch (index) {
-      case 0:
-        content =
-          `<p>${question.answers[selectedQuizResponse1]?.answer ??
-          "Incorrect paramter used"
-          }</p> ${question.answers[selectedQuizResponse1]?.dynamicContent}` ??
-          "No content for question 1";
-        break;
-      case 1:
-        content =
-          `<p>${question.answers[selectedQuizResponse2]?.answer ??
-          "Incorrect paramter used"
-          }</p> ${question.answers[selectedQuizResponse2]?.dynamicContent}` ??
-          "No content for question 2";
-        break;
-      case 2:
-        content =
-          `<p>${question.answers[selectedQuizResponse3]?.answer ??
-          "Incorrect paramter used"
-          }</p> ${question.answers[selectedQuizResponse3]?.dynamicContent}` ??
-          "No content for question 3";
-        break;
-      case 3:
-        content =
-          `<p>${question.answers[selectedQuizResponse4]?.answer ??
-          "Incorrect paramter used"
-          }</p> ${question.answers[selectedQuizResponse4]?.dynamicContent}` ??
-          "No content for question 4";
-        break;
-      case 4:
-        content =
-          `<p>${question.answers[selectedQuizResponse5]?.answer ??
-          "Incorrect paramter used"
-          }</p> ${question.answers[selectedQuizResponse5]?.dynamicContent}` ??
-          "No content for question 5";
-        break;
-      case 5:
-        content =
-          `<p>${question.answers[selectedQuizResponse6]?.answer ??
-          "Incorrect paramter used"
-          }</p> ${question.answers[selectedQuizResponse6]?.dynamicContent}` ??
-          "No content for question 6";
-        break;
-      case 6:
-        content =
-          `<p>${question.answers[selectedQuizResponse7]?.answer ??
-          "Incorrect paramter used"
-          }</p> ${question.answers[selectedQuizResponse7]?.dynamicContent}` ??
-          "No content for question 7";
-        break;
-      case 7:
-        content =
-          `<p>${question.answers[selectedQuizResponse8]?.answer ??
-          "Incorrect paramter used"
-          }</p> ${question.answers[selectedQuizResponse8]?.dynamicContent}` ??
-          "No content for question 8";
-        break;
-      case 8:
-        content =
-          `<p>${question.answers[selectedQuizResponse9]?.answer ??
-          "Incorrect paramter used"
-          }</p> ${question.answers[selectedQuizResponse9]?.dynamicContent}` ??
-          "No content for question 9";
-        break;
-      case 9:
-        content =
-          `<p>${question.answers[selectedQuizResponse10]?.answer ??
-          "Incorrect paramter used"
-          }</p> ${question.answers[selectedQuizResponse10]?.dynamicContent}` ??
-          "No content for question 10";
-        break;
-      case 10:
-        content =
-          `<p>${question.answers[selectedQuizResponse11]?.answer ??
-          "Incorrect paramter used"
-          }</p> ${question.answers[selectedQuizResponse11]?.dynamicContent}` ??
-          "No content for question 10";
-        break;
-      default:
-        content = "Default null content";
-    }
+    const content = buildContent(question, selectedQuizResponses[index], index);
     return { ...question, content };
   });
 
