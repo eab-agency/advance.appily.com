@@ -68,20 +68,6 @@ export default function HighlightedCtaSection({ highlightedCtaSectionData, track
             No matter where you're at right now, a tailored plan can make all the difference. From pinpointing the right degree to uncovering financial aids and job prospects, we're here to help guide your next steps.
           </p>
           <Button href="build-plan-quiz" className="button btn-primary" label="Make My Back-to-School Plan" />
-          {/* <Button type="button" onClick={handleClick} appearance="primary" className="button btn-primary" label="Make My Back-to-School Plan" /> */}
-          {/* <a
-            href="https://www.bls.gov/ooh/healthcare/home.htm"
-            target="_blank"
-            rel="noreferrer"
-            className="button externalLink"
-          >
-            <span>
-              Bureau of Labor Statistics{" "}
-              <i>
-                <BiLinkExternal />
-              </i>
-            </span>
-          </a> */}
         </div>
       </div>
     </section>

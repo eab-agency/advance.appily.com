@@ -262,19 +262,19 @@
 		"statsSource": "U.S. Bureau of Labor Statistics",
 		"stats": [
 			{
-				"number": "$76K",
+				"number": "$101K",
 				"title": "",
-				"description": "<strong>Median salary</strong> for business and financial jobs, ranging from $50K to $96K"
+				"description": "<strong>Median salary</strong> for computer and IT jobs, ranging from $60K to $137K"
 			},
 			{
-				"number": "Exceeds Avg",
+				"number": "Above Avg",
 				"title": "",
-				"description": "Overall <strong>employment growth</strong> in business and management occupations in the next decade"
+				"description": "Overall <strong>employment growth</strong> in computer and IT jobs in the next decade"
 			},
 			{
-				"number": "911K",
+				"number": "378K",
 				"title": "",
-				"description": "Openings in <strong>business and financial jobs</strong> projected each year over the next decade"
+				"description": "Openings in <strong>computer and IT jobs</strong> projected each year over the next decade"
 			}
 		]
 	},
