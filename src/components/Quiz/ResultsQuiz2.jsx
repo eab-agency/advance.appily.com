@@ -44,19 +44,6 @@ const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }
   };
   const devModeOnly = isDevMode();
 
-  if (answers.selectedAnswers.some(answerObj => answerObj.answer === "Some High School")) {
-    return (
-      <>
-        <h2>you're too young. go away! 🤣</h2>
-      </>
-    )
-  }
-
-  // if score is between 41 and 50 set resultsPage to extremelyReady
-  const resultsPage = score >= 41 && score <= 50 ? "extremely-ready" : score >= 31 && score <= 40 ? "very-ready" : score >= 21 && score <= 30 ? "ready" : score >= 11 && score <= 20 ? "almost-ready" : score >= 0 && score <= 10 ? "not-eady" : "not-ready";
-
-  const verticalName = vertical === "adc-readiness" ? "degree-completion" : "graduate-degrees";
-
   const getReadinessResult = score => {
     if (score >= 41 && score <= 50) {
       return {
@@ -109,7 +96,7 @@ const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }
           <div className="leadForm">
             <h2>Where should we send your results?</h2>
             <Form
-              redirectTo={`/${verticalName}/results${answers.resultParameters}&score=${score}`}
+              redirectTo={`/degree-completion/results${answers.resultParameters}&score=${score}`}
               answers={formSubmitAnswers}
               user={null}
               id={formId || "2"}
@@ -118,7 +105,7 @@ const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }
             {devModeOnly && (
               <>
                 <Link
-                  href={`/${verticalName}/results${answers.resultParameters}&score=${score}`}
+                  href={`/degree-completion/results${answers.resultParameters}&score=${score}`}
                 >
                   Skip form (only shows in dev mode)
                 </Link>
