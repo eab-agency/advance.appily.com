@@ -296,13 +296,6 @@ export default function ADCResultsPage({
             >
               <CarouselWithForm formId="14" collectData={false} />
             </div>
-            <div
-              id="explore-your-school-matches"
-              className="carouselWithForm"
-              ref={carouselRef}
-            >
-              <CarouselWithForm formId="14" />
-            </div>
 
             <HighlightedCtaSection />
           </>
