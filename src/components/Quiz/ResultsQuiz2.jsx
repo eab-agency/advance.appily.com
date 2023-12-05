@@ -29,6 +29,7 @@ const getAnimationData = async (score) => {
 }
 
 const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }) => {
+  console.log("🚀 ~ file: ResultsQuiz2.jsx:32 ~ Results ~ answers:", answers)
   const [animationData, setAnimationData] = useState(null);
   useEffect(() => {
     const loadAnimationData = async () => {
@@ -38,10 +39,7 @@ const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }
 
     loadAnimationData();
   }, [score]);
-  const formSubmitAnswers = {
-    answers: answers.selectedAnswers,
-    highestScorePersonality: answers.highestScorePersonality,
-  };
+
   const devModeOnly = isDevMode();
 
   const getReadinessResult = score => {
@@ -50,18 +48,21 @@ const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }
         data: quizData.readinessResults.extremelyReady,
         animationData,
         nextSteps: quizData.nextSteps.extremelyReady,
+        highestScorePersonality: "extremelyReady",
       };
     } else if (score >= 31 && score <= 40) {
       return {
         data: quizData.readinessResults.veryReady,
         animationData,
         nextSteps: quizData.nextSteps.veryReady,
+        highestScorePersonality: "veryReady",
       };
     } else if (score >= 21 && score <= 30) {
       return {
         data: quizData.readinessResults.ready,
         animationData,
         nextSteps: quizData.nextSteps.ready,
+        highestScorePersonality: "ready",
       };
     } else if (score >= 11 && score <= 20) {
       return {
@@ -79,6 +80,11 @@ const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }
   };
 
   const readinessResult2 = getReadinessResult(score);
+
+  const formSubmitAnswers = {
+    answers: answers.selectedAnswers,
+    highestScorePersonality: readinessResult2.highestScorePersonality,
+  };
 
   return (
     <>
