@@ -262,19 +262,19 @@
 		"statsSource": "U.S. Bureau of Labor Statistics",
 		"stats": [
 			{
-				"number": "$76K",
+				"number": "$45K",
 				"title": "",
-				"description": "<strong>Median salary</strong> for business and financial jobs, ranging from $50K to $96K"
+				"description": "<strong>Median salary</strong> for protective service jobs, ranging from $35K to $69K"
 			},
 			{
-				"number": "Exceeds Avg",
+				"number": "Limited",
 				"title": "",
-				"description": "Overall <strong>employment growth</strong> in business and management occupations in the next decade"
+				"description": "Overall <strong>employment growth</strong> in protective service jobs in the next decade"
 			},
 			{
-				"number": "911K",
+				"number": "410K",
 				"title": "",
-				"description": "Openings in <strong>business and financial jobs</strong> projected each year over the next decade"
+				"description": "Openings in <strong>protective service jobs</strong> projected each year over the next decade"
 			}
 		]
 	},

@@ -262,19 +262,19 @@
 		"statsSource": "U.S. Bureau of Labor Statistics",
 		"stats": [
 			{
-				"number": "$76K",
+				"number": "$78K",
 				"title": "",
-				"description": "<strong>Median salary</strong> for business and financial jobs, ranging from $50K to $96K"
+				"description": "<strong>Median salary</strong> for health care jobs, ranging from $44K to $159K"
 			},
 			{
-				"number": "Exceeds Avg",
+				"number": "Above Average",
 				"title": "",
-				"description": "Overall <strong>employment growth</strong> in business and management occupations in the next decade"
+				"description": "Overall <strong>employment growth</strong> in health care jobs in the next decade"
 			},
 			{
-				"number": "911K",
+				"number": "1.8M",
 				"title": "",
-				"description": "Openings in <strong>business and financial jobs</strong> projected each year over the next decade"
+				"description": "Openings in <strong>health care jobs</strong> projected each year over the next decade"
 			}
 		]
 	},
