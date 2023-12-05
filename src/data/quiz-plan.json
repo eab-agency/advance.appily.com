@@ -1,7 +1,7 @@
 {
   "questions": [
     {
-      "question": "Before we get started...",
+      "question": "Before we get started, where are you in your back-to-school plan?",
       "description": "Let’s make sure you’re in the right place!",
       "associatedField": "education_journey__select1",
       "answers": [
