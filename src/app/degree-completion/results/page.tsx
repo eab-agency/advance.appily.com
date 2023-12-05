@@ -2,7 +2,6 @@
 import {
   Button,
   CarouselWithForm,
-  KeepExploring,
   StickyCta,
   Tabs,
 } from "@/components";
@@ -12,6 +11,7 @@ import { useUser } from "@/context/context";
 import quizData from "@/data/quiz-adc-readiness.json";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+
 
 const getAnimationData = async score => {
   if (score >= 41 && score <= 50) {
@@ -70,17 +70,6 @@ export default function ADCResultsPage({
   const [animationData, setAnimationData] = useState(null);
   const [showContent, setShowContent] = useState(false);
 
-  const selectedQuizResponse1 = Number(searchParams.q1) || 0;
-  const selectedQuizResponse2 = Number(searchParams.q2) || 0;
-  const selectedQuizResponse3 = Number(searchParams.q3) || 0;
-  const selectedQuizResponse4 = Number(searchParams.q4) || 0;
-  const selectedQuizResponse5 = Number(searchParams.q5) || 0;
-  const selectedQuizResponse6 = Number(searchParams.q6) || 0;
-  const selectedQuizResponse7 = Number(searchParams.q7) || 0;
-  const selectedQuizResponse8 = Number(searchParams.q8) || 0;
-  const selectedQuizResponse9 = Number(searchParams.q9) || 0;
-  const selectedQuizResponse10 = Number(searchParams.q10) || 0;
-  const selectedQuizResponse11 = Number(searchParams.q11) || 0;
   const score = Number(searchParams.score) || 50;
 
   useEffect(() => {
@@ -104,10 +93,11 @@ export default function ADCResultsPage({
 
   const selectedQuizResponses = Array.from({ length: 11 }, (_, i) => Number(searchParams[`q${i + 1}`]) || 0);
 
-  const tabs = quizData.questions.map((question, index) => {
-    const content = buildContent(question, selectedQuizResponses[index], index);
+  const tabs = quizData.questions.slice(1).map((question, index) => {
+    const content = buildContent(question, selectedQuizResponses[index + 1], index + 1);
     return { ...question, content };
   });
+
 
   const getReadinessResult = score => {
     if (score >= 41 && score <= 50) {
