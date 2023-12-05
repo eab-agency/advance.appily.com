@@ -1,277 +1,277 @@
 {
-  "questions": [
-    {
-      "question": "<span className='intro-title'>Before we get started,</span> where are you in your back-to-school plan?",
-      "description": "Let’s make sure you’re in the right place!",
-      "associatedField": "education_journey__select1",
-      "answers": [
-        {
-          "answer": "I am thinking about earning or completing an associate’s degree",
-          "weight": 4,
-          "value": "3"
-        },
-        {
-          "answer": "I am exploring earning or completing a bachelor’s degree",
-          "weight": 5,
-          "value": "2"
-        },
-        {
-          "answer": "I am currently in school for an undergraduate degree and wish to transfer",
-          "weight": 3,
-          "value": "4",
-          "redirectTo": "/redirect/helpful-resources-undergrad"
-        },
-        {
-          "answer": "I am considering a graduate-level degree",
-          "weight": 5,
-          "value": "1",
-          "redirectTo": "/redirect/helpful-resources-grad"
-        },
-        {
-          "answer": "I am not currently considering school or am only interested in professional licensure",
-          "weight": 2,
-          "value": "5",
-          "redirectTo": "/redirect/helpful-resources-grad"
-        }
-      ]
-    },
-    {
-      "question": "What’s your age range?",
-      "description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
-      "associatedField": "age_range",
-      "answers": [
-        {
-          "answer": "16-18",
-          "weight": 5,
-          "value": 1
-        },
-        {
-          "answer": "19-23",
-          "weight": 5,
-          "value": 2
-        },
-        {
-          "answer": "24-29",
-          "weight": 5,
-          "value": 3
-        },
-        {
-          "answer": "33-39",
-          "weight": 5,
-          "value": 4
-        },
-        {
-          "answer": "40-49",
-          "weight": 5,
-          "value": 5
-        },
-        {
-          "answer": "50-65",
-          "weight": 5,
-          "value": 6
-        },
-        {
-          "answer": "65+",
-          "weight": 5,
-          "value": 7
-        }
-      ]
-    },
-    {
-      "question": "What is your highest level of completed education?",
-      "associatedField": "quizresponse2",
-      "answers": [
-        {
-          "answer": "Some High School",
-          "weight": 2
-        },
-        {
-          "answer": "High School Diploma or GED",
-          "weight": 5
-        },
-        {
-          "answer": "Some College, No Degree",
-          "weight": 5
-        },
-        {
-          "answer": "Certification or Associate's Degree",
-          "weight": 5
-        },
-        {
-          "answer": "Bachelor's Degree or Higher",
-          "weight": 5
-        }
-      ]
-    },
-    {
-      "question": "What is your main motivation for earning your degree?",
-      "associatedField": "quizresponse3",
-      "answers": [
-        {
-          "answer": "Advance in my current career",
-          "weight": 5
-        },
-        {
-          "answer": "Switch to a new career field",
-          "weight": 4
-        },
-        {
-          "answer": "Finish the degree I started",
-          "weight": 4
-        },
-        {
-          "answer": "Explore new interests and opportunities",
-          "weight": 3
-        },
-        {
-          "answer": "Pursue my passion",
-          "weight": 4
-        },
-        {
-          "answer": "Transition from the military to civilian life",
-          "weight": 4
-        }
-      ]
-    },
-    {
-      "question": "Do you have any of the following life or career experiences?",
-      "associatedField": "quizresponse4",
-      "answers": [
-        {
-          "answer": "Military",
-          "weight": 5
-        },
-        {
-          "answer": "Service industry or hospitality",
-          "weight": 4
-        },
-        {
-          "answer": "Retail",
-          "weight": 3
-        },
-        {
-          "answer": "Health care",
-          "weight": 2
-        },
-        {
-          "answer": "Self-employed",
-          "weight": 2
-        },
-        {
-          "answer": "Stay-at-home parent",
-          "weight": 2
-        },
-        {
-          "answer": "None of these",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "question": "What field are you interested in?",
-      "associatedField": "industry",
-      "answers": [
-        {
-          "answer": "Business",
-          "personality": "business",
-          "weight": 100
-        },
-        {
-          "answer": "Health Care",
-          "personality": "healthcare",
-          "weight": 100
-        },
-        {
-          "answer": "Education",
-          "personality": "education",
-          "weight": 100
-        },
-        {
-          "answer": "Technology / STEM",
-          "personality": "stem",
-          "weight": 100
-        },
-        {
-          "answer": "Art & Design",
-          "personality": "art-and-design",
-          "weight": 100
-        },
-        {
-          "answer": "Criminal Justice",
-          "personality": "criminal-justice",
-          "weight": 100
-        },
-        {
-          "answer": "Other/Unsure",
-          "personality": "other",
-          "weight": 100
-        }
-      ]
-    },
-    {
-      "question": "What is the main barrier for you returning to school?",
-      "associatedField": "quizresponse6",
-      "answers": [
-        {
-          "answer": "Lack of time",
-          "weight": 5
-        },
-        {
-          "answer": "Family commitments",
-          "weight": 5
-        },
-        {
-          "answer": "Work commitments",
-          "weight": 4
-        },
-        {
-          "answer": "Finances",
-          "weight": 3
-        },
-        {
-          "answer": "Not sure which career to pursue",
-          "weight": 2
-        },
-        {
-          "answer": "Unsure which degree I need",
-          "weight": 2
-        },
-        {
-          "answer": "Other",
-          "weight": 2
-        }
-      ]
-    },
-    {
-      "question": "Which of the following funding opportunities would you be most interested in learning about?",
-      "associatedField": "quizresponse7",
-      "answers": [
-        {
-          "answer": "Scholarships",
-          "weight": 5
-        },
-        {
-          "answer": "Federal aid",
-          "weight": 5
-        },
-        {
-          "answer": "Employer tuition reimbursement",
-          "weight": 5
-        },
-        {
-          "answer": "Work-study",
-          "weight": 3
-        },
-        {
-          "answer": "Military and veteran benefits",
-          "weight": 3
-        },
-        {
-          "answer": "Loans",
-          "weight": 3
-        }
-      ]
-    }
-  ],
-  "score": {}
+	"questions": [
+		{
+			"question": "<span className='intro-title'>Before we get started,</span> where are you in your back-to-school plan?",
+			"description": "Let’s make sure you’re in the right place!",
+			"associatedField": "education_journey__select1",
+			"answers": [
+				{
+					"answer": "I am thinking about earning or completing an associate’s degree",
+					"weight": 4,
+					"value": "3"
+				},
+				{
+					"answer": "I am exploring earning or completing a bachelor’s degree",
+					"weight": 5,
+					"value": "2"
+				},
+				{
+					"answer": "I am currently in school for an undergraduate degree and wish to transfer",
+					"weight": 3,
+					"value": "4",
+					"redirectTo": "/redirect/helpful-resources-undergrad"
+				},
+				{
+					"answer": "I am considering a graduate-level degree",
+					"weight": 5,
+					"value": "1",
+					"redirectTo": "/redirect/helpful-resources-grad"
+				},
+				{
+					"answer": "I am not currently considering school or am only interested in professional licensure",
+					"weight": 2,
+					"value": "5",
+					"redirectTo": "/redirect/helpful-resources-grad"
+				}
+			]
+		},
+		{
+			"question": "What’s your age range?",
+			"description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
+			"associatedField": "age_range",
+			"answers": [
+				{
+					"answer": "16-18",
+					"weight": 5,
+					"value": 1
+				},
+				{
+					"answer": "19-23",
+					"weight": 5,
+					"value": 2
+				},
+				{
+					"answer": "24-29",
+					"weight": 5,
+					"value": 3
+				},
+				{
+					"answer": "33-39",
+					"weight": 5,
+					"value": 4
+				},
+				{
+					"answer": "40-49",
+					"weight": 5,
+					"value": 5
+				},
+				{
+					"answer": "50-65",
+					"weight": 5,
+					"value": 6
+				},
+				{
+					"answer": "65+",
+					"weight": 5,
+					"value": 7
+				}
+			]
+		},
+		{
+			"question": "What is your highest level of completed education?",
+			"associatedField": "quizresponse2",
+			"answers": [
+				{
+					"answer": "Some High School",
+					"weight": 2
+				},
+				{
+					"answer": "High School Diploma or GED",
+					"weight": 5
+				},
+				{
+					"answer": "Some College, No Degree",
+					"weight": 5
+				},
+				{
+					"answer": "Certification or Associate's Degree",
+					"weight": 5
+				},
+				{
+					"answer": "Bachelor's Degree or Higher",
+					"weight": 5
+				}
+			]
+		},
+		{
+			"question": "What is your main motivation for earning your degree?",
+			"associatedField": "quizresponse3",
+			"answers": [
+				{
+					"answer": "Advance in my current career",
+					"weight": 5
+				},
+				{
+					"answer": "Switch to a new career field",
+					"weight": 4
+				},
+				{
+					"answer": "Finish the degree I started",
+					"weight": 4
+				},
+				{
+					"answer": "Explore new interests and opportunities",
+					"weight": 3
+				},
+				{
+					"answer": "Pursue my passion",
+					"weight": 4
+				},
+				{
+					"answer": "Transition from the military to civilian life",
+					"weight": 4
+				}
+			]
+		},
+		{
+			"question": "Which of the following life or career experiences is impacting your back-to-school plans the most?",
+			"associatedField": "quizresponse4",
+			"answers": [
+				{
+					"answer": "Military",
+					"weight": 5
+				},
+				{
+					"answer": "Service industry or hospitality",
+					"weight": 4
+				},
+				{
+					"answer": "Retail",
+					"weight": 3
+				},
+				{
+					"answer": "Health care",
+					"weight": 2
+				},
+				{
+					"answer": "Self-employed",
+					"weight": 2
+				},
+				{
+					"answer": "Stay-at-home parent",
+					"weight": 2
+				},
+				{
+					"answer": "None of these",
+					"weight": 2
+				}
+			]
+		},
+		{
+			"question": "What field are you interested in?",
+			"associatedField": "industry",
+			"answers": [
+				{
+					"answer": "Business",
+					"personality": "business",
+					"weight": 100
+				},
+				{
+					"answer": "Health Care",
+					"personality": "healthcare",
+					"weight": 100
+				},
+				{
+					"answer": "Education",
+					"personality": "education",
+					"weight": 100
+				},
+				{
+					"answer": "Technology / STEM",
+					"personality": "stem",
+					"weight": 100
+				},
+				{
+					"answer": "Art & Design",
+					"personality": "art-and-design",
+					"weight": 100
+				},
+				{
+					"answer": "Criminal Justice",
+					"personality": "criminal-justice",
+					"weight": 100
+				},
+				{
+					"answer": "Other/Unsure",
+					"personality": "other",
+					"weight": 100
+				}
+			]
+		},
+		{
+			"question": "What is the main barrier for you returning to school?",
+			"associatedField": "quizresponse6",
+			"answers": [
+				{
+					"answer": "Lack of time",
+					"weight": 5
+				},
+				{
+					"answer": "Family commitments",
+					"weight": 5
+				},
+				{
+					"answer": "Work commitments",
+					"weight": 4
+				},
+				{
+					"answer": "Finances",
+					"weight": 3
+				},
+				{
+					"answer": "Not sure which career to pursue",
+					"weight": 2
+				},
+				{
+					"answer": "Unsure which degree I need",
+					"weight": 2
+				},
+				{
+					"answer": "Other",
+					"weight": 2
+				}
+			]
+		},
+		{
+			"question": "Which of the following funding opportunities would you be most interested in learning about?",
+			"associatedField": "quizresponse7",
+			"answers": [
+				{
+					"answer": "Scholarships",
+					"weight": 5
+				},
+				{
+					"answer": "Federal aid",
+					"weight": 5
+				},
+				{
+					"answer": "Employer tuition reimbursement",
+					"weight": 5
+				},
+				{
+					"answer": "Work-study",
+					"weight": 3
+				},
+				{
+					"answer": "Military and veteran benefits",
+					"weight": 3
+				},
+				{
+					"answer": "Loans",
+					"weight": 3
+				}
+			]
+		}
+	],
+	"score": {}
 }
