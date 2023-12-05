@@ -169,7 +169,7 @@
     },
     {
       "question": "What field are you interested in?",
-      "associatedField": "quizresponse5",
+      "associatedField": "industry",
       "answers": [
         {
           "answer": "Business",
