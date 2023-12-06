@@ -82,10 +82,6 @@
     }
   }
 
-  select {
-    min-height: 2.6em;
-  }
-
   input:focus {
     border-color: var(--c-teal-500);
     outline: none;
@@ -97,8 +93,14 @@
   }
 
   select {
+    min-height: 2.6em;
     width: auto;
     max-width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: "";
   }
 
   &.text,
@@ -123,6 +125,22 @@
     font-size: tokens.$size-2;
     color: var(--c-bodyPrimary);
     padding-block: 0.5em;
+  }
+
+  &.select {
+    .fieldContainer {
+      width: fit-content;
+      position: relative;
+
+      &::after {
+        content: "\25BC"; /* Unicode character for a down arrow */
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        pointer-events: none; /* Ensure the arrow doesn't interfere with clicks */
+      }
+    }
   }
 }
 
@@ -155,6 +173,12 @@
         font-weight: tokens.$fontWeight-light;
       }
     }
+  }
+}
+
+.empty {
+  select {
+    text-indent: -999em;
   }
 }
 
