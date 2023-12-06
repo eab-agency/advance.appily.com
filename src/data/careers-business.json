@@ -1,6 +1,10 @@
 {
 	"links": [
 		{
+			"label": "Adult Degree Completion",
+			"href": "/adult-degree-completion"
+		},
+		{
 			"label": "Health Care Careers",
 			"href": "/careers/healthcare"
 		},
@@ -82,7 +86,6 @@
 					"description": "<strong>Career Advancement:</strong> The health care industry is constantly evolving and offers many opportunities for career advancement. Whether you're interested in pursuing additional degrees, moving up the career ladder, or exploring new specialties, health care offers many options for growth."
 				}
 			],
-
 			"endCopy": "If you're still unsure if health care is the right fit for you, <a href='/quiz'>take our free health care career quiz.</a> It will help you identify how your interests, skills, and strengths align with different medical career paths and suggest the degrees you can earn to take the next step in your career."
 		}
 	],

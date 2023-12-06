@@ -1,0 +1,98 @@
+{
+	"slug": "ready",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation2-icon",
+			"content": "<p>Your drive is evident. Keep your goals in sight and push forward.</p><p><strong>Next Steps:</strong> Channel this motivation by setting clear academic goals, creating a study schedule, and building a support system to help keep you on track.</p>"
+		},
+		{
+			"title": "Studying",
+			"icon": "studying-icon",
+			"content": "<p>Stay curious. The right resources can make studying engaging.</p><p><strong>Next Steps:</strong> Seek courses or professors known for engaging content and presentation. Join clubs or groups related to your subjects of interest to keep the passion alive outside of study hours.</p>"
+		},
+		{
+			"title": "Education",
+			"icon": "education2-icon",
+			"content": "<p>You have a solid foundation and a readiness to embark on your academic endeavors. Your determination will serve you well as you navigate the challenges and rewards of higher education.</p><p><strong>Next Steps:</strong> <a href='/adult-degree-completion/build-plan-quiz' target='_blank' rel='noopener nofollow'>Answer a few more questions</a> to see how your experience, goals, and interests translate into a step-by-step plan to complete your degree.</p>"
+		},
+		{
+			"title": "Career",
+			"icon": "setting-icon",
+			"content": "<p>Seek clarity on aligning your aspirations with the right degree.</p><p><strong>Next Steps:</strong> Engage with professionals in your desired field, seek internships or mentorship opportunities, and actively participate in relevant workshops or seminars to further solidify your path and build connections.</p>"
+		},
+		{
+			"title": "Free Time",
+			"icon": "free-time-icon",
+			"content": "<p>Prioritize your tasks to make the most of your available hours.</p><p><strong>Next Steps:</strong> Plan out a weekly schedule, allocating specific times for studying, breaks, and recreational activities. This will help ensure you remain consistent in managing your time.</p>"
+		},
+		{
+			"title": "Time Mgmt",
+			"icon": "time-management-icon",
+			"content": "<p>Your time management skills are decent. Consider tools or apps to further enhance them.</p><p><strong>Next Steps:</strong> Look into advanced organizational tools or apps that can help you track assignments and milestones (such as Trello, Notion, or My Study Life), and perhaps explore leadership roles in group projects or study groups.</p>"
+		},
+		{
+			"title": "Support",
+			"icon": "support-icon",
+			"content": "<p>While self-reliant, don't shy away from seeking support. College communities can be enriching.</p><p><strong>Next Steps:</strong> Explore on-campus or online resources that can provide support. This might include counseling services, academic workshops, or student groups. Building connections can enhance your college experience and provide support when needed.</p>"
+		},
+		{
+			"title": "Technology",
+			"icon": "technology-icon",
+			"content": "<p>Online classes can be a great avenue. Explore tools to make the experience smoother.</p><p><strong>Next Steps:</strong> Check out various online platforms and familiarize yourself with their interfaces. Taking a short online course or tutorial can help you adjust to the digital learning environment.</p>"
+		},
+		{
+			"title": "Finances",
+			"icon": "finances-icon",
+			"content": "<p>Explore resources and avenues to solidify your financial plan for college.</p><p><strong>Next Steps:</strong> Let us help you explore scholarships, grants, and financial aid options available for returning students. <a href='/adult-degree-completion/build-plan-quiz' target='_blank' rel='nofollow noopener'>Answer a few more questions</a> to get your back-to-school plan.</p>"
+		},
+		{
+			"title": "Age",
+			"icon": "age-icon",
+			"content": "<p>No matter your age, you're in an excellent position to thrive academically.</p>"
+		}
+	],
+	"nextSteps": {
+		"title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
+		"introContent": "<p>Your potential is clear; let's bridge those minor gaps and pave your path. Answer a few more questions to receive your tailored back-to-school plan.</p>",
+		"buttonText": "Build Your Personalized Plan",
+		"buttonLink": "/adult-degree-completion/build-plan-quiz",
+		"steps": {
+			"title": "Your Plan Includes ...",
+			"list": [
+				{
+					"step": {
+						"content": "<p><strong>Value of a Bachelor's Degree:</strong> Explore the return on investment, job prospects, and personal growth opportunities of higher education.<p/>"
+					}
+				},
+				{
+					"step": {
+						"content": "<p><strong>How to Fund Your Degree:</strong> Discover resources for scholarships, grants, and strategies to reduce education costs.</p>"
+					}
+				},
+				{
+					"step": {
+						"content": "<p><strong>Degrees & Schools:</strong> Learn how to pick the right degree and school based on your goals and the job market.<p/>"
+					}
+				},
+				{
+					"step": {
+						"content": "<p><strong>Careers:</strong> Dive into high-demand careers and understand the degrees required to access them.<p/>"
+					}
+				},
+				{
+					"step": {
+						"content": "<p><strong>Your Next Steps:</strong> Get a tailored checklist with immediate actions and a suggested timeline for your educational journey.<p/>"
+					}
+				},
+				{
+					"step": {
+						"content": "<p><strong>Tools and Resources:</strong> Access a curated list of digital tools, insightful videos, and community forums to support your path back to school.<p/>"
+					}
+				}
+			],
+			"buttonText": "Get Started",
+			"buttonLink": "/adult-degree-completion/build-plan-quiz"
+		}
+	}
+}
