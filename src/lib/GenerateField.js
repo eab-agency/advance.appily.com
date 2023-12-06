@@ -118,27 +118,34 @@ const GenerateField = ({ field, error, formData }) => {
 				setFieldValue(alias, event.target.value);
 			};
 
+			const showSelectOption = inputValue === "";
+
 			return (
 				<div
 					className={`${styles.qGroup}  ${field.alias} ${styles[field.type]} ${
 						error ? styles.isInvalid : ""
-					}`}
+					} ${inputValue !== "" ? styles.notEmpty : styles.empty}`}
 					key={field.id}
 				>
-					<div className={styles.fieldLabel}>
-						<label htmlFor={alias}>{label}</label>
-						{isRequired && <span className="required">*</span>}
+					<div className={styles.fieldContainer}>
+						<label htmlFor={alias}>
+							{isRequired && <span className="required">*</span>}
+
+							<Field
+								name={alias}
+								as="select"
+								value={inputValue === null ? "" : inputValue}
+								onChange={handleSelectChange}
+								className={error ? "is-invalid" : ""}
+							>
+								{showSelectOption ? null : <option value="">Select</option>}
+								{selectOptions}
+							</Field>
+							<span className={styles.fieldLabel}>
+								{label} {isRequired && <span className="required">*</span>}
+							</span>
+						</label>
 					</div>
-					<Field
-						name={alias}
-						as="select"
-						value={inputValue === null ? "" : inputValue}
-						onChange={handleSelectChange}
-						className={error ? "is-invalid" : ""}
-					>
-						<option value="">Select</option>
-						{selectOptions}
-					</Field>
 					{error && error}
 					{helpMessage && <small>{helpMessage}</small>}
 				</div>
