@@ -17,6 +17,7 @@ function Question({ handleAnswer, question, lastQuestion }) {
         className="question-copy"
         dangerouslySetInnerHTML={{ __html: question.question }}
       />
+      <h3 dangerouslySetInnerHTML={{ __html: question.description }} />
       <ul className={`${styles.questions} ${styles[questionNumeral]}`}>
         {question.answers.map((answer, index) => (
           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>

@@ -9,6 +9,15 @@ const nextConfig = {
 		// !! WARN !!
 		ignoreBuildErrors: true,
 	},
+	async redirects() {
+		return [
+			{
+				source: "/adult-degree-completion/:slug*",
+				destination: "/degree-completion/:slug*",
+				permanent: true,
+			},
+		];
+	},
 	env: {
 		ACS_PUBLIC_KEY: process.env.ACS_PUBLIC_KEY,
 		ACS_PRIVATE_KEY: process.env.ACS_PRIVATE_KEY,

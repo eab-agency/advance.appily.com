@@ -2,7 +2,6 @@ import { promises as fs } from "fs";
 import path from "path";
 
 export default async function handler(req, res) {
-	// console.log("🚀 ~ file: questions-old.js:5 ~ handler ~ req:", req);
 	// Find the absolute path of the data directory
 	const vertical = req.query.vertical || "healthcare";
 	const dataDirectory = path.join(process.cwd(), "src/data");

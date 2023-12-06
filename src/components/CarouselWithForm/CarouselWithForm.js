@@ -10,6 +10,7 @@ import styles from "@/styles/components/CarouselWithForm.module.scss";
 const CarouselWithForm = ({
 	formId = "4",
 	data = { title: "", description: "" },
+	collectData = true,
 }) => {
 	const [visibleForm, setVisibleForm] = useState(false);
 	const { user, location, vertical, globalPrivacyControl } = useUser();
@@ -17,7 +18,7 @@ const CarouselWithForm = ({
 	const [selectedSchool, setSelectedSchool] = useState(null);
 
 	const onCarouselClick = school => {
-		if (location.notUS || globalPrivacyControl) {
+		if (location.notUS || globalPrivacyControl || collectData) {
 			window.open(school.links[0].link.url, "_blank");
 		} else {
 			setSelectedSchool(school);

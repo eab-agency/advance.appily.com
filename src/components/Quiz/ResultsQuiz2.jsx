@@ -29,6 +29,7 @@ const getAnimationData = async (score) => {
 }
 
 const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }) => {
+  console.log("🚀 ~ file: ResultsQuiz2.jsx:32 ~ Results ~ answers:", answers)
   const [animationData, setAnimationData] = useState(null);
   useEffect(() => {
     const loadAnimationData = async () => {
@@ -38,24 +39,8 @@ const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }
 
     loadAnimationData();
   }, [score]);
-  const formSubmitAnswers = {
-    answers: answers.selectedAnswers,
-    highestScorePersonality: answers.highestScorePersonality,
-  };
+
   const devModeOnly = isDevMode();
-
-  if (answers.selectedAnswers.some(answerObj => answerObj.answer === "Some High School")) {
-    return (
-      <>
-        <h2>you're too young. go away! 🤣</h2>
-      </>
-    )
-  }
-
-  // if score is between 41 and 50 set resultsPage to extremelyReady
-  const resultsPage = score >= 41 && score <= 50 ? "extremely-ready" : score >= 31 && score <= 40 ? "very-ready" : score >= 21 && score <= 30 ? "ready" : score >= 11 && score <= 20 ? "almost-ready" : score >= 0 && score <= 10 ? "not-eady" : "not-ready";
-
-  const verticalName = vertical === "adc-readiness" ? "adult-degree-completion" : "graduate-degrees";
 
   const getReadinessResult = score => {
     if (score >= 41 && score <= 50) {
@@ -63,18 +48,21 @@ const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }
         data: quizData.readinessResults.extremelyReady,
         animationData,
         nextSteps: quizData.nextSteps.extremelyReady,
+        highestScorePersonality: "extremelyReady",
       };
     } else if (score >= 31 && score <= 40) {
       return {
         data: quizData.readinessResults.veryReady,
         animationData,
         nextSteps: quizData.nextSteps.veryReady,
+        highestScorePersonality: "veryReady",
       };
     } else if (score >= 21 && score <= 30) {
       return {
         data: quizData.readinessResults.ready,
         animationData,
         nextSteps: quizData.nextSteps.ready,
+        highestScorePersonality: "ready",
       };
     } else if (score >= 11 && score <= 20) {
       return {
@@ -93,6 +81,11 @@ const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }
 
   const readinessResult2 = getReadinessResult(score);
 
+  const formSubmitAnswers = {
+    answers: answers.selectedAnswers,
+    highestScorePersonality: readinessResult2.highestScorePersonality,
+  };
+
   return (
     <>
       <div className="preResultsContainer adcResult">
@@ -109,7 +102,7 @@ const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }
           <div className="leadForm">
             <h2>Where should we send your results?</h2>
             <Form
-              redirectTo={`/${verticalName}/results${answers.resultParameters}&score=${score}`}
+              redirectTo={`/degree-completion/results${answers.resultParameters}&score=${score}`}
               answers={formSubmitAnswers}
               user={null}
               id={formId || "2"}
@@ -118,7 +111,7 @@ const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }
             {devModeOnly && (
               <>
                 <Link
-                  href={`/${verticalName}/results${answers.resultParameters}&score=${score}`}
+                  href={`/degree-completion/results${answers.resultParameters}&score=${score}`}
                 >
                   Skip form (only shows in dev mode)
                 </Link>

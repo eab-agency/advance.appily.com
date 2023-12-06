@@ -149,22 +149,25 @@ const GenerateField = ({ field, error, formData }) => {
 				<div
 					className={`${styles.qGroup}  ${field.alias} ${styles[field.type]} ${
 						error ? styles.isInvalid : ""
-					}`}
+					} ${inputValue !== "" ? styles.notEmpty : ""}`}
 					key={field.id}
 				>
-					<div className={styles.fieldLabel}>
-						<label htmlFor={alias}>{label}</label>
-						{isRequired && <span className="required">*</span>}
+					<div className={styles.fieldContainer}>
+						<label htmlFor={alias}>
+							<Field
+								name={alias}
+								type="text"
+								value={inputValue === null ? "" : inputValue}
+								onChange={event => setFieldValue(alias, event.target.value)}
+								placeholder={properties.placeholder}
+								className={error ? "is-invalid" : ""}
+							/>
+							<span className={styles.fieldLabel}>
+								{label} {isRequired && <span className="required">*</span>}
+							</span>
+						</label>
 					</div>
-					<Field
-						name={alias}
-						type="text"
-						value={inputValue === null ? "" : inputValue}
-						onChange={event => setFieldValue(alias, event.target.value)}
-						placeholder={properties.placeholder}
-						className={error ? "is-invalid" : ""}
-					/>
-					{error && <span>{error}</span>}
+					{error && <div className={styles.fieldError}>{error}</div>}
 					{helpMessage && <small>{helpMessage}</small>}
 				</div>
 			) : (

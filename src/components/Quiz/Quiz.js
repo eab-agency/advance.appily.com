@@ -12,7 +12,7 @@ import Score from "./Score";
 
 const getRedirectUrl = (vertical, highestScorePersonality) => {
 	if (vertical === "plan") {
-		return `/adult-degree-completion/${vertical}/${highestScorePersonality}`;
+		return `/degree-completion/${vertical}/${highestScorePersonality}`;
 	} else if (vertical === "specificVertical2") {
 		return `/specificPath2/${highestScorePersonality}`;
 	} else {
@@ -20,23 +20,39 @@ const getRedirectUrl = (vertical, highestScorePersonality) => {
 	}
 };
 
-export function Quiz({ vertical, quizData, resultsFormId, title }) {
+export function Quiz({
+	vertical,
+	quizData,
+	resultsFormId,
+	title,
+	randomizeAnswers = false,
+}) {
 	const { location, globalPrivacyControl } = useUser();
-
-	const router = useRouter();
 	const { questions, score: initialScore } = quizData;
+	const [randomizedQuestions, setRandomizedQuestions] = useState([]);
+	const router = useRouter();
 
-	const randomizedQuestions = quizData.questions.map(question => {
-		if (
-			question.randomize === false ||
-			!question.associatedField.startsWith("quizresponse")
-		) {
-			return question;
-		}
+	useEffect(() => {
+		const randomized = quizData.questions.map(question => {
+			const answersWithOriginalIndex = question.answers.map(
+				(answer, index) => ({
+					...answer,
+					originalIndex: index,
+				}),
+			);
 
-		const randomizedAnswers = question.answers.sort(() => Math.random() - 0.5);
-		return { ...question, answers: randomizedAnswers };
-	});
+			let finalAnswers;
+			if (!randomizeAnswers || question.randomize === false) {
+				finalAnswers = answersWithOriginalIndex;
+			} else {
+				finalAnswers = answersWithOriginalIndex.sort(() => Math.random() - 0.5);
+			}
+
+			return { ...question, answers: finalAnswers };
+		});
+
+		setRandomizedQuestions(randomized);
+	}, [randomizeAnswers]);
 
 	const [quizState, setQuizState] = useState({
 		currentQuestionIdx: 0,
@@ -49,11 +65,17 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 	const [quizFinished, setQuizFinished] = useState(
 		currentQuestionIdx === questions.length - 1,
 	);
+	const [resetQuiz, setResetQuiz] = useState(false);
 
 	useEffect(() => {
 		// Save the entire quiz state to local storage whenever it changes
 		setQuizState(quizState);
 	}, [quizState]);
+
+	// when quiz is reset, scroll to top (solves for mobile)
+	useEffect(() => {
+		if (resetQuiz) window.scrollTo(0, 0);
+	}, [resetQuiz]);
 
 	const handleAnswer = (question, answer, associatedField) => {
 		const updatedAnswers = [
@@ -133,6 +155,7 @@ export function Quiz({ vertical, quizData, resultsFormId, title }) {
 			isFinished: false,
 		});
 		setQuizFinished(false);
+		setResetQuiz(true);
 	};
 	const redirectUrl = getRedirectUrl(
 		vertical,

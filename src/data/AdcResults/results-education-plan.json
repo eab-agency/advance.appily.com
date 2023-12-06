@@ -2,7 +2,7 @@
 	"slug": "education-plan",
 	"heroSection": {
 		"title": "You've got this!",
-		"description": "<p>Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. This plan isn't just a guide; it's a reflection of your ambition, your dreams, and your future. </p><p>Here's what you're unlocking:<br/><ul><li>Clarity and Confidence: No more second-guessing. Every piece of advice here is tailored to help you navigate your educational journey with ease.</li><li>A Future Tailored to You: Your goals, your aspirations, your pace. Embrace the exciting opportunities that lie ahead.</li></ul></p><p>You've got the ambition and the drive. With this plan in hand, you're not just going back to school; you're moving forward in life. Let's dive in and advance your future together.</p>",
+		"description": "<p>Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. </p><p>Your plan includes:<br/><ul><li>Advice for completing your bachelor’s</li><li>Funding tips and tricks</li><li>Career and degree options based on your area of interest</li><li>And more!</li></ul></p><p>We know there’s a lot of information here, and we don’t expect you to read it all at once. We suggest bookmarking this link so you can come back later!</p>",
 		"image": {
 			"path": "/images/build-plan/education-plan.svg",
 			"altText": "Your education back to school plan"
@@ -138,7 +138,7 @@
 			{
 				"number": "85%",
 				"title": "Receive Aid",
-				"description": "Approximately 85% of full-time undergraduate students who <a href='https://studentaid.gov/h/apply-for-aid/fafsa'>file the FAFSA</a> receive some kind of financial aid, according to the National Center for Education Statistics (NCES)."
+				"description": "Approximately 85% of full-time undergraduate students who <a href='https://studentaid.gov/h/apply-for-aid/fafsa' target='_blank'>file the FAFSA</a> receive some kind of financial aid, according to the National Center for Education Statistics (NCES)."
 			},
 			{
 				"number": "~Half",
@@ -262,19 +262,19 @@
 		"statsSource": "U.S. Bureau of Labor Statistics",
 		"stats": [
 			{
-				"number": "$76K",
+				"number": "$57K",
 				"title": "",
-				"description": "<strong>Median salary</strong> for business and financial jobs, ranging from $50K to $96K"
+				"description": "<strong>Median salary</strong> for health care jobs, ranging from $35K to $80K"
 			},
 			{
-				"number": "Exceeds Avg",
+				"number": "Average",
 				"title": "",
-				"description": "Overall <strong>employment growth</strong> in business and management occupations in the next decade"
+				"description": "Overall <strong>employment growth</strong> in education jobs in the next decade"
 			},
 			{
-				"number": "911K",
+				"number": "858K",
 				"title": "",
-				"description": "Openings in <strong>business and financial jobs</strong> projected each year over the next decade"
+				"description": "Openings in <strong>education jobs</strong> projected each year over the next decade"
 			}
 		]
 	},

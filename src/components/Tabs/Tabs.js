@@ -6,14 +6,15 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 // import 'react-tabs/style/react-tabs.css'
 // import styles from '@/styles/global/components/Tabs.module.scss';
 
-const TabComponent = ({ tabs, className }) => {
+const TabComponent = ({ tabs, className, id = "0" }) => {
 	const searchParams = useSearchParams();
-	const selectedTab = Number(searchParams.get("tab")) || 0;
+	const selectedTabKey = `tab-${id}`;
+	const selectedTab = Number(searchParams.get(selectedTabKey)) || 0;
 	const router = useRouter();
 
 	const handleSelect = index => {
 		const currentParams = new URLSearchParams(searchParams.toString());
-		currentParams.set("tab", index);
+		currentParams.set(selectedTabKey, index);
 		router.replace(`?${currentParams.toString()}`, { scroll: false });
 	};
 
@@ -25,6 +26,7 @@ const TabComponent = ({ tabs, className }) => {
 		>
 			<TabList>
 				{tabs.map((tab, index) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 					<Tab className={tab.icon || "skills-icon"} key={index}>
 						<span>{tab.title}</span>
 					</Tab>
@@ -32,6 +34,7 @@ const TabComponent = ({ tabs, className }) => {
 			</TabList>
 
 			{tabs.map((tab, index) => (
+				// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 				<TabPanel className={tab.icon || "skills-icon"} key={index}>
 					<div className="tab-copy">
 						<h2>{tab.title}</h2>

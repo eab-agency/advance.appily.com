@@ -112,10 +112,6 @@
   max-height: 23.3rem;
   overflow: hidden;
 
-  &.adcResult {
-    max-height: 36rem;
-  }
-
   .resultsHero {
     padding-bottom: 2em;
 
@@ -160,6 +156,18 @@
       );
     }
   }
+
+  &.adcResult {
+    max-height: clamp(23.3rem, 60vw, 30rem);
+
+    @media (min-width: tokens.$mq-900) {
+      max-height: 36rem;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .engageForm {
@@ -173,6 +181,8 @@
   border-top: 0.2em solid var(--c-teal-500);
 
   .formWrapper {
+    max-width: 100%;
+
     .leadForm {
       width: 100%;
       max-width: tokens.$mq-800;

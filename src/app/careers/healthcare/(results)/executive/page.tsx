@@ -45,7 +45,7 @@ export default function Page() {
 
 				{links && <SubNav links={links} />}
 
-				<Tabs className="react-tabs" tabs={data.tabs} />
+				<Tabs className="react-tabs" tabs={data.tabs} id={1} />
 
 				<section className="career-path">
 					<div className="group cols-2">
@@ -113,7 +113,7 @@ export default function Page() {
 								roles.
 							</p>
 						</div>
-						<Tabs className="degree-tabs" tabs={data.degreeTabs} />
+						<Tabs className="degree-tabs" tabs={data.degreeTabs} id={2} />
 					</div>
 				</section>
 
@@ -163,7 +163,7 @@ export default function Page() {
 					className="carouselWithForm"
 					ref={carouselRef}
 				>
-					<CarouselWithForm formId="3" />
+					<CarouselWithForm formId="3" collectData={false} />
 				</div>
 
 				<KeepExploring />

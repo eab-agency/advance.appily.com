@@ -9,7 +9,13 @@ import ResetQuizButton from "./ResetQuizButton";
 import Results from "./ResultsQuiz2";
 import Score from "./Score";
 
-export function QuizV2({ vertical, quizData, resultsFormId, title }) {
+export function QuizV2({
+	vertical,
+	quizData,
+	resultsFormId,
+	title,
+	randomizeAnswers = false,
+}) {
 	const { location, globalPrivacyControl } = useUser();
 	const { questions, score: initialScore } = quizData;
 	const [randomizedQuestions, setRandomizedQuestions] = useState([]);
@@ -25,7 +31,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 			);
 
 			let finalAnswers;
-			if (question.randomize === false) {
+			if (!randomizeAnswers || question.randomize === false) {
 				finalAnswers = answersWithOriginalIndex;
 			} else {
 				finalAnswers = answersWithOriginalIndex.sort(() => Math.random() - 0.5);
@@ -35,7 +41,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 		});
 
 		setRandomizedQuestions(randomized);
-	}, []);
+	}, [randomizeAnswers]);
 
 	const [quizState, setQuizState] = useState({
 		currentQuestionIdx: 0,
@@ -49,11 +55,17 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 	const [quizFinished, setQuizFinished] = useState(
 		currentQuestionIdx === questions.length - 1,
 	);
+	const [resetQuiz, setResetQuiz] = useState(false);
 
 	useEffect(() => {
 		// Save the entire quiz state to local storage whenever it changes
 		setQuizState(quizState);
 	}, [quizState]);
+
+	// when quiz is reset, scroll to top (solves for mobile)
+	useEffect(() => {
+		if (resetQuiz) window.scrollTo(0, 0);
+	}, [resetQuiz]);
 
 	const handleAnswer = (question, answer, associatedField) => {
 		const updatedAnswers = [
@@ -69,6 +81,11 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 		const answerWeight = score + answer.weight;
 		const newParam = `q${currentQuestionIdx + 1}=${answer.originalIndex}`;
 
+		if (associatedField === "age_range" && answer.value === 1) {
+			router.push("/redirect/appily-redirect");
+			return;
+		}
+
 		setQuizState(prevState => ({
 			...prevState,
 			currentQuestionIdx: currentQuestionIdx + 1,
@@ -83,7 +100,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 			setQuizFinished(true);
 			if (location.notUS || globalPrivacyControl) {
 				router.push(
-					`/adult-degree-completion/results${resultParameters}&score=${score}}`,
+					`/degree-completion/results${resultParameters}&score=${score}}`,
 				);
 			}
 		}
@@ -97,6 +114,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 			isFinished: false,
 			resultParameters: "",
 		});
+		setResetQuiz(true);
 		setQuizFinished(false);
 	};
 
@@ -133,7 +151,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 							<>
 								{/* <h1>oops, your browser is set to skip the quiz form</h1> */}
 								{router.push(
-									`/adult-degree-completion/results${quizState.resultParameters}&score=${score}}`,
+									`/degree-completion/results${quizState.resultParameters}&score=${score}}`,
 								)}
 							</>
 						) : (
@@ -144,7 +162,7 @@ export function QuizV2({ vertical, quizData, resultsFormId, title }) {
 									answers={quizState}
 									score={score}
 									formId={resultsFormId}
-									redirectUrl={`/adult-degree-completion/results${quizState.resultParameters}&score=${score}}`}
+									redirectUrl={`/degree-completion/results${quizState.resultParameters}&score=${score}}`}
 								>
 									<ResetQuizButton
 										handleRetakeQuiz={handleRetakeQuiz}

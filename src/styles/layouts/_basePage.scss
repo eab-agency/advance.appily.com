@@ -1,6 +1,6 @@
 @use "@/styles/global/tokens";
 
-body {
+:where(body) {
   background: var(--c-bg-body);
   display: flex;
   flex-direction: column;
@@ -241,6 +241,12 @@ div[class*="CarouselWithForm_carouselForm_"] {
       &::before {
         background: none;
       }
+    }
+  }
+
+  &.no-content-media {
+    div[class*="__tab-panel"][class*="-selected"]::before {
+      display: none;
     }
   }
 }

@@ -5,7 +5,13 @@ interface FormData {
 	phone_number: string;
 	zip_code: string;
 	area_of_interest: string;
-	[key: string]: string;
+	formId: number;
+	state_code: string;
+	education_journey__select1?: string;
+	education_journey__select?: string;
+	preferred_modality?: string;
+	years_of_work_experience?: string;
+	[key: string]: string | number | undefined;
 }
 
 interface StudentAddressForm {
@@ -58,7 +64,10 @@ export function formatFormDataForAppilyPartnerAPI(
 	for (const key in formData) {
 		if (key.startsWith("quizresponse")) {
 			const answer = formData[key].split(" | ")[1];
-			const question = formData[key].split(" | ")[0];
+			let question = formData[key].split(" | ")[0];
+			if (question.length > 85) {
+				question = question.substring(0, 85);
+			}
 			if (question !== "" && answer !== "") {
 				const existingQuestionAnswerForm = questionAnswerForms.find(
 					form => form.question === question,
@@ -72,16 +81,22 @@ export function formatFormDataForAppilyPartnerAPI(
 		}
 	}
 
-	if (formData.quiz_result && formData.formName) {
+	if (formData.quiz_result && formData.formId) {
 		let appendedQuestion = "generic_microsite_persona_quiz";
-		if (formData.formName === "Business Quiz Form") {
+		if (formData.formId === 13) {
+			appendedQuestion = "adc_plan_quiz";
+		}
+		if (formData.formId === 12) {
+			appendedQuestion = "adc_readiness_quiz";
+		}
+		if (formData.formId === 6) {
 			appendedQuestion = "business_microsite_persona_quiz";
-		} else if (formData.formName === "Healthcare Quiz Form") {
+		} else if (formData.formId === 2) {
 			appendedQuestion = "healthcare_microsite_persona_quiz";
 		}
 		questionAnswerForms.push({
 			question: appendedQuestion,
-			answers: [formData.quiz_result],
+			answers: [String(formData.quiz_result)],
 		});
 	}
 
@@ -99,7 +114,7 @@ export function formatFormDataForAppilyPartnerAPI(
 		lastName: formData.last_name,
 		studentAddressForm: {
 			zipCode: formData.zip_code,
-			stateCode: formData.state1 || formData.state,
+			stateCode: formData.state_code,
 		},
 		studentAreaOfInterestForm: {
 			areaOfInterestId: formData.area_of_interest,

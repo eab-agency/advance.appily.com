@@ -114,6 +114,10 @@ const AcquiaFormHandle = ({
 		utmSource,
 		answers.areaOfInterest,
 	]);
+	console.log(
+		"🚀 ~ file: Form.js:110 ~ answers.highestScorePersonality:",
+		answers.highestScorePersonality,
+	);
 
 	if (error) return <p>Error loading form.</p>;
 	if (!acsForm) return <p className="loading">Loading...</p>;
