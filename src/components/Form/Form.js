@@ -167,6 +167,13 @@ const AcquiaFormHandle = ({
 			if (!response1.ok) {
 				// Check if the first API request was successful
 				throw new Error("Network response was not ok");
+			} else {
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push({
+					event: "formSubmitSuccess",
+					formId: theForm.id,
+					formName: theForm.name,
+				});
 			}
 
 			// Make the second API request
@@ -249,7 +256,7 @@ const AcquiaFormHandle = ({
 		>
 			{({ errors, isSubmitting, isValid, dirty }) =>
 				!isSent ? (
-					<Form className={styles.form}>
+					<Form className={styles.form} id={theForm?.name}>
 						{theFields.map(field => (
 							<GenerateField
 								field={field}

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "format": "biome format --write ./src"
@@ -12,7 +13,6 @@
   "dependencies": {
     "@apollo/client": "^3.7.0",
     "@faceless-ui/css-grid": "^1.2.0",
-    "@vercel/analytics": "^1.0.2",
     "apollo-link-http": "^1.5.17",
     "cors": "^2.8.5",
     "escape-html": "^1.0.3",
@@ -21,6 +21,7 @@
     "iron-session": "^6.3.1",
     "lottie-react": "^2.4.0",
     "next": "^13.5.3",
+    "next-sitemap": "^4.2.3",
     "payload-admin-bar": "^1.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
