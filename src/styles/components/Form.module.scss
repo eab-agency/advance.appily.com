@@ -124,7 +124,24 @@
   small {
     font-size: tokens.$size-2;
     color: var(--c-bodyPrimary);
-    padding-block: 0.5em;
+    margin-bottom: 0;
+    padding-block: 0.5em 0;
+  }
+
+  &.select {
+    .fieldContainer {
+      width: fit-content;
+      position: relative;
+
+      &::after {
+        content: "\25BC"; /* Unicode character for a down arrow */
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        pointer-events: none; /* Ensure the arrow doesn't interfere with clicks */
+      }
+    }
   }
 
   &.select {
