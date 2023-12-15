@@ -1,4 +1,4 @@
-interface FormData {
+interface FormDataInterface {
 	preferred_email: string;
 	first_name: string;
 	last_name: string;
@@ -10,7 +10,7 @@ interface FormData {
 	education_journey__select1?: string;
 	education_journey__select?: string;
 	preferred_modality?: string;
-	years_of_work_experience?: string;
+	years_of_work_experience?: number;
 	[key: string]: string | number | undefined;
 }
 
@@ -34,7 +34,7 @@ interface StudentQuestionAnswerForm {
 
 interface StudentInfoForm {
 	levelOfDegreeSeekingId?: string;
-	yearsOfWorkExperience?: string;
+	yearsOfWorkExperience?: number;
 	modalityIds?: string[];
 }
 
@@ -57,8 +57,12 @@ interface StudentFormData {
 }
 
 export function formatFormDataForAppilyPartnerAPI(
-	formData: FormData,
+	formData: FormDataInterface,
 ): StudentFormData {
+	console.log(
+		"🚀🚀🚀🚀🚀🚀 ~ file: formatFormDataForAppilyPartnerAPI.ts:62 ~ formData:",
+		formData,
+	);
 	const questionAnswerForms: QuestionAnswerForm[] = [];
 
 	for (const key in formData) {
@@ -128,7 +132,7 @@ export function formatFormDataForAppilyPartnerAPI(
 			modalityIds: formData.preferred_modality
 				? [formData.preferred_modality]
 				: [],
-			yearsOfWorkExperience: formData.years_of_work_experience,
+			yearsOfWorkExperience: formData?.years_of_work_experience,
 		},
 	};
 
@@ -140,5 +144,9 @@ export function formatFormDataForAppilyPartnerAPI(
 	// 	formattedData.collegeIds = ["154095"];
 	// }
 
+	// console.log(
+	// 	"🚀 ~ file: formatFormDataForAppilyPartnerAPI.ts:144 ~ formattedData:",
+	// 	formattedData,
+	// );
 	return formattedData;
 }
