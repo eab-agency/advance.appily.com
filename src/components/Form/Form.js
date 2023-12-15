@@ -46,6 +46,11 @@ const AcquiaFormHandle = ({
 
 	const router = useRouter();
 
+	// console log when formValues changes
+	// useEffect(() => {
+	// 	console.log("🚀🚀🚀🚀🚀 ~ file: Form.js:51- formValues:", formValues);
+	// }, [formValues]);
+
 	useEffect(() => {
 		if (acsForm) {
 			const { form, errors } = acsForm;
@@ -62,14 +67,16 @@ const AcquiaFormHandle = ({
 	}, [acsForm]);
 
 	useEffect(() => {
-		// console.log('theFields', theFields);
 		if (theFields.length > 0 && !fieldsProcessed) {
-			// console.log('🚨 the fields', theFields);
-			const newFormValues = {};
+			const newFormValues = { ...formValues };
+
 			theFields.forEach(field => {
 				if (field.alias === "quiz_result") {
 					newFormValues[field.alias] = answers.highestScorePersonality;
 				} else if (field.alias === "paid_social_source_of_con") {
+					// Handle specific logic for this field if needed
+				} else if (field.alias === "state1" || field.alias === "state") {
+					newFormValues[field.alias] = location.region_iso_code;
 				} else if (field.alias === "school_carousel") {
 					newFormValues[field.alias] = school.title;
 				} else {
@@ -87,6 +94,7 @@ const AcquiaFormHandle = ({
 						});
 					}
 				}
+
 				if (user) {
 					if (field.alias === "preferred_email") {
 						newFormValues[field.alias] = user.email;
@@ -97,6 +105,7 @@ const AcquiaFormHandle = ({
 					}
 				}
 			});
+
 			setFormValues(prev => ({
 				...prev,
 				...newFormValues,
@@ -114,10 +123,6 @@ const AcquiaFormHandle = ({
 		utmSource,
 		answers.areaOfInterest,
 	]);
-	console.log(
-		"🚀 ~ file: Form.js:110 ~ answers.highestScorePersonality:",
-		answers.highestScorePersonality,
-	);
 
 	if (error) return <p>Error loading form.</p>;
 	if (!acsForm) return <p className="loading">Loading...</p>;
@@ -148,12 +153,13 @@ const AcquiaFormHandle = ({
 		try {
 			const theFormData = {
 				...updatedValues,
+				// moved these to
 				formId: theForm.id,
 				formName: theForm.name,
 				messenger: 1,
-				state1: location.region_iso_code,
+				// state1: location.region_iso_code,
+				// state: location.region_iso_code,
 			};
-			// console.log("🚀🚀🚀 ~ file: Form.js:80- theFormData:", theFormData);
 
 			// Make the first API request to ACS
 			const response1 = await fetch(`/api/submit?formId=${theForm.id}`, {

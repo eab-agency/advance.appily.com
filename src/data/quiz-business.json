@@ -251,6 +251,48 @@
       ]
     },
     {
+      "question": "I have this many years of work experience:",
+      "associatedField": "years_of_work_experience",
+      "randomize": false,
+      "answers": [
+        {
+          "answer": "Less than 2 years",
+          "personality": "initial",
+          "weight": 1,
+          "value": 1,
+          "label": "0-2"
+        },
+        {
+          "answer": "2-4",
+          "personality": "initial",
+          "weight": 1,
+          "value": 2,
+          "label": "2-4"
+        },
+        {
+          "answer": "5-7",
+          "personality": "initial",
+          "weight": 1,
+          "value": 5,
+          "label": "5-7"
+        },
+        {
+          "answer": "7-15",
+          "personality": "initial",
+          "weight": 1,
+          "value": 7,
+          "label": "7-15"
+        },
+        {
+          "answer": "16 or more years",
+          "personality": "initial",
+          "weight": 1,
+          "value": 16,
+          "label": "16 or more years"
+        }
+      ]
+    },
+    {
       "question": "We're curious how accurate your results are!<br /><strong>Which of these areas would most appeal to you?</strong>",
       "associatedField": "area_of_interest",
       "answers": [

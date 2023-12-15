@@ -1,311 +1,311 @@
 {
-	"questions": [
-		{
-			"question": "How motivated are you to earn your degree?",
-			"associatedField": "education_journey__select1",
-			"answers": [
-				{
-					"answer": "Earning a degree is a top priority for me",
-					"personality": "initial",
-					"weight": 1,
-					"value": "3",
-					"label": "Graduate"
-				},
-				{
-					"answer": "I’m ready and think I can balance school and life",
-					"personality": "initial",
-					"weight": 1,
-					"value": "2",
-					"label": "Bachelors"
-				},
-				{
-					"answer": "I’m almost ready to go back to school, but worry life will get in the way",
-					"personality": "initial",
-					"weight": 1,
-					"value": "2",
-					"label": "Transfer"
-				},
-				{
-					"answer": "I might be ready soon but it’s still not enough of a priority",
-					"personality": "initial",
-					"weight": 1,
-					"value": "6",
-					"label": "Other"
-				},
-				{
-					"answer": "I’m not very motivated at all",
-					"personality": "initial",
-					"weight": 1,
-					"value": "6",
-					"label": "Other"
-				}
-			]
-		},
-		{
-			"question": "At work, a primary motivator for me is...",
-			"associatedField": "quizresponse1",
-			"answers": [
-				{
-					"answer": "Inspiring and leading others to achieve common goals and success.",
-					"personality": "fearless-leader",
-					"weight": 1
-				},
-				{
-					"answer": "Finding innovative ways to connect with audiences and build strong brands.",
-					"personality": "creative-marketer",
-					"weight": 1
-				},
-				{
-					"answer": "Managing finances and investments to maximize profitability and financial success.",
-					"personality": "money-maestro",
-					"weight": 1
-				},
-				{
-					"answer": "Taking risks and creating new ventures to drive business growth and success.",
-					"personality": "self-starter",
-					"weight": 1
-				},
-				{
-					"answer": "Leveraging technology and data to optimize processes and solve complex problems.",
-					"personality": "computer-whiz",
-					"weight": 1
-				},
-				{
-					"answer": "Supporting and developing teams, creating positive work environments, and nurturing talent.",
-					"personality": "people-person",
-					"weight": 1
-				}
-			]
-		},
-		{
-			"question": "I prefer working...",
-			"associatedField": "quizresponse2",
-			"answers": [
-				{
-					"answer": "Leading collaboratively with teams to achieve objectives.",
-					"personality": "fearless-leader",
-					"weight": 1
-				},
-				{
-					"answer": "Creatively, to develop marketing campaigns and strategies.",
-					"personality": "creative-marketer",
-					"weight": 1
-				},
-				{
-					"answer": "With financial data and numbers to make informed decisions.",
-					"personality": "money-maestro",
-					"weight": 1
-				},
-				{
-					"answer": "Independently and taking ownership of projects.",
-					"personality": "self-starter",
-					"weight": 1
-				},
-				{
-					"answer": "With computers and technology to analyze data and solve problems.",
-					"personality": "computer-whiz",
-					"weight": 1
-				},
-				{
-					"answer": "Collaboratively with colleagues and clients to build strong relationships.",
-					"personality": "people-person",
-					"weight": 1
-				}
-			]
-		},
-		{
-			"question": "My ideal work setting is...",
-			"associatedField": "quizresponse3",
-			"answers": [
-				{
-					"answer": "A dynamic and fast-paced corporate environment.",
-					"personality": "fearless-leader",
-					"weight": 1
-				},
-				{
-					"answer": "A creative and innovative workspace that fosters ideas.",
-					"personality": "creative-marketer",
-					"weight": 1
-				},
-				{
-					"answer": "A financial institution or investment firm.",
-					"personality": "money-maestro",
-					"weight": 1
-				},
-				{
-					"answer": "A startup or entrepreneurial setting.",
-					"personality": "self-starter",
-					"weight": 1
-				},
-				{
-					"answer": "A technology-driven workplace with opportunities for data analysis.",
-					"personality": "computer-whiz",
-					"weight": 1
-				},
-				{
-					"answer": "A people-centric organization that values teamwork and growth.",
-					"personality": "people-person",
-					"weight": 1
-				}
-			]
-		},
-		{
-			"question": "My biggest professional strengths are...",
-			"associatedField": "quizresponse4",
-			"answers": [
-				{
-					"answer": "Exceptional leadership and strategic decision-making.",
-					"personality": "fearless-leader",
-					"weight": 1
-				},
-				{
-					"answer": "Creativity, communication, and brand-building skills.",
-					"personality": "creative-marketer",
-					"weight": 1
-				},
-				{
-					"answer": "Strong analytical and financial management abilities.",
-					"personality": "money-maestro",
-					"weight": 1
-				},
-				{
-					"answer": "An entrepreneurial mindset and risk-taking capabilities.",
-					"personality": "self-starter",
-					"weight": 1
-				},
-				{
-					"answer": "Proficiency in technology, data analysis, and problem-solving.",
-					"personality": "computer-whiz",
-					"weight": 1
-				},
-				{
-					"answer": "Empathy, communication, and team-building skills.",
-					"personality": "people-person",
-					"weight": 1
-				}
-			]
-		},
-		{
-			"question": "I have taken college courses in...",
-			"associatedField": "quizresponse5",
-			"answers": [
-				{
-					"answer": "Business administration, management, or leadership.",
-					"personality": "fearless-leader",
-					"weight": 1
-				},
-				{
-					"answer": "Marketing, communication, or design.",
-					"personality": "creative-marketer",
-					"weight": 1
-				},
-				{
-					"answer": "Finance, economics, or accounting.",
-					"personality": "money-maestro",
-					"weight": 1
-				},
-				{
-					"answer": "Entrepreneurship, business development, or innovation.",
-					"personality": "self-starter",
-					"weight": 1
-				},
-				{
-					"answer": "Information technology, data analytics, or computer science.",
-					"personality": "computer-whiz",
-					"weight": 1
-				},
-				{
-					"answer": "Human resources, organizational behavior, or psychology.",
-					"personality": "people-person",
-					"weight": 1
-				}
-			]
-		},
-		{
-			"question": "My professional experience includes...",
-			"associatedField": "quizresponse6",
-			"answers": [
-				{
-					"answer": "Leadership roles, managing teams, and making critical decisions.",
-					"personality": "fearless-leader",
-					"weight": 1
-				},
-				{
-					"answer": "Developing and executing marketing campaigns and strategies.",
-					"personality": "creative-marketer",
-					"weight": 1
-				},
-				{
-					"answer": "Financial analysis, budgeting, and managing investments.",
-					"personality": "money-maestro",
-					"weight": 1
-				},
-				{
-					"answer": "Starting and running a business or leading entrepreneurial projects.",
-					"personality": "self-starter",
-					"weight": 1
-				},
-				{
-					"answer": "Utilizing data analysis and technology for problem-solving.",
-					"personality": "computer-whiz",
-					"weight": 1
-				},
-				{
-					"answer": "Managing teams, handling employee relations, and fostering collaboration.",
-					"personality": "people-person",
-					"weight": 1
-				}
-			]
-		},
-		{
-			"question": "We're curious how accurate your results are!<br /><strong>Which of these areas would most appeal to you?</strong>",
-			"associatedField": "area_of_interest",
-			"answers": [
-				{
-					"answer": "Executive & Leadership",
-					"value": "14",
-					"personality": "fearless-leader",
-					"weight": 0
-				},
-				{
-					"answer": "Creative & Marketing",
-					"value": "11",
-					"personality": "computer-marketer",
-					"weight": 0
-				},
-				{
-					"answer": "Operations, Project Management, & HR",
-					"value": "9",
-					"personality": "people-person",
-					"weight": 0
-				},
-				{
-					"answer": "Information Technology & Analytics",
-					"value": "10",
-					"personality": "computer-whiz",
-					"weight": 0
-				},
-				{
-					"answer": "Entrepreneurship",
-					"value": "12",
-					"personality": "self-starter",
-					"weight": 0
-				},
-				{
-					"answer": "Finance, Accounting, & Economics",
-					"value": "13",
-					"personality": "money-maestro",
-					"weight": 0
-				}
-			]
-		}
-	],
-	"score": {
-		"fearless-leader": 0,
-		"creative-marketer": 0,
-		"money-maestro": 0,
-		"self-starter": 0,
-		"computer-whiz": 0,
-		"people-person": 0
-	}
+  "questions": [
+    {
+      "question": "How motivated are you to earn your degree?",
+      "associatedField": "education_journey__select1",
+      "answers": [
+        {
+          "answer": "Earning a degree is a top priority for me",
+          "personality": "initial",
+          "weight": 1,
+          "value": "3",
+          "label": "Graduate"
+        },
+        {
+          "answer": "I’m ready and think I can balance school and life",
+          "personality": "initial",
+          "weight": 1,
+          "value": "2",
+          "label": "Bachelors"
+        },
+        {
+          "answer": "I’m almost ready to go back to school, but worry life will get in the way",
+          "personality": "initial",
+          "weight": 1,
+          "value": "2",
+          "label": "Transfer"
+        },
+        {
+          "answer": "I might be ready soon but it’s still not enough of a priority",
+          "personality": "initial",
+          "weight": 1,
+          "value": "6",
+          "label": "Other"
+        },
+        {
+          "answer": "I’m not very motivated at all",
+          "personality": "initial",
+          "weight": 1,
+          "value": "6",
+          "label": "Other"
+        }
+      ]
+    },
+    {
+      "question": "At work, a primary motivator for me is...",
+      "associatedField": "quizresponse1",
+      "answers": [
+        {
+          "answer": "Inspiring and leading others to achieve common goals and success.",
+          "personality": "fearless-leader",
+          "weight": 1
+        },
+        {
+          "answer": "Finding innovative ways to connect with audiences and build strong brands.",
+          "personality": "creative-marketer",
+          "weight": 1
+        },
+        {
+          "answer": "Managing finances and investments to maximize profitability and financial success.",
+          "personality": "money-maestro",
+          "weight": 1
+        },
+        {
+          "answer": "Taking risks and creating new ventures to drive business growth and success.",
+          "personality": "self-starter",
+          "weight": 1
+        },
+        {
+          "answer": "Leveraging technology and data to optimize processes and solve complex problems.",
+          "personality": "computer-whiz",
+          "weight": 1
+        },
+        {
+          "answer": "Supporting and developing teams, creating positive work environments, and nurturing talent.",
+          "personality": "people-person",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "question": "I prefer working...",
+      "associatedField": "quizresponse2",
+      "answers": [
+        {
+          "answer": "Leading collaboratively with teams to achieve objectives.",
+          "personality": "fearless-leader",
+          "weight": 1
+        },
+        {
+          "answer": "Creatively, to develop marketing campaigns and strategies.",
+          "personality": "creative-marketer",
+          "weight": 1
+        },
+        {
+          "answer": "With financial data and numbers to make informed decisions.",
+          "personality": "money-maestro",
+          "weight": 1
+        },
+        {
+          "answer": "Independently and taking ownership of projects.",
+          "personality": "self-starter",
+          "weight": 1
+        },
+        {
+          "answer": "With computers and technology to analyze data and solve problems.",
+          "personality": "computer-whiz",
+          "weight": 1
+        },
+        {
+          "answer": "Collaboratively with colleagues and clients to build strong relationships.",
+          "personality": "people-person",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "question": "My ideal work setting is...",
+      "associatedField": "quizresponse3",
+      "answers": [
+        {
+          "answer": "A dynamic and fast-paced corporate environment.",
+          "personality": "fearless-leader",
+          "weight": 1
+        },
+        {
+          "answer": "A creative and innovative workspace that fosters ideas.",
+          "personality": "creative-marketer",
+          "weight": 1
+        },
+        {
+          "answer": "A financial institution or investment firm.",
+          "personality": "money-maestro",
+          "weight": 1
+        },
+        {
+          "answer": "A startup or entrepreneurial setting.",
+          "personality": "self-starter",
+          "weight": 1
+        },
+        {
+          "answer": "A technology-driven workplace with opportunities for data analysis.",
+          "personality": "computer-whiz",
+          "weight": 1
+        },
+        {
+          "answer": "A people-centric organization that values teamwork and growth.",
+          "personality": "people-person",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "question": "My biggest professional strengths are...",
+      "associatedField": "quizresponse4",
+      "answers": [
+        {
+          "answer": "Exceptional leadership and strategic decision-making.",
+          "personality": "fearless-leader",
+          "weight": 1
+        },
+        {
+          "answer": "Creativity, communication, and brand-building skills.",
+          "personality": "creative-marketer",
+          "weight": 1
+        },
+        {
+          "answer": "Strong analytical and financial management abilities.",
+          "personality": "money-maestro",
+          "weight": 1
+        },
+        {
+          "answer": "An entrepreneurial mindset and risk-taking capabilities.",
+          "personality": "self-starter",
+          "weight": 1
+        },
+        {
+          "answer": "Proficiency in technology, data analysis, and problem-solving.",
+          "personality": "computer-whiz",
+          "weight": 1
+        },
+        {
+          "answer": "Empathy, communication, and team-building skills.",
+          "personality": "people-person",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "question": "I have taken college courses in...",
+      "associatedField": "quizresponse5",
+      "answers": [
+        {
+          "answer": "Business administration, management, or leadership.",
+          "personality": "fearless-leader",
+          "weight": 1
+        },
+        {
+          "answer": "Marketing, communication, or design.",
+          "personality": "creative-marketer",
+          "weight": 1
+        },
+        {
+          "answer": "Finance, economics, or accounting.",
+          "personality": "money-maestro",
+          "weight": 1
+        },
+        {
+          "answer": "Entrepreneurship, business development, or innovation.",
+          "personality": "self-starter",
+          "weight": 1
+        },
+        {
+          "answer": "Information technology, data analytics, or computer science.",
+          "personality": "computer-whiz",
+          "weight": 1
+        },
+        {
+          "answer": "Human resources, organizational behavior, or psychology.",
+          "personality": "people-person",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "question": "My professional experience includes...",
+      "associatedField": "quizresponse6",
+      "answers": [
+        {
+          "answer": "Leadership roles, managing teams, and making critical decisions.",
+          "personality": "fearless-leader",
+          "weight": 1
+        },
+        {
+          "answer": "Developing and executing marketing campaigns and strategies.",
+          "personality": "creative-marketer",
+          "weight": 1
+        },
+        {
+          "answer": "Financial analysis, budgeting, and managing investments.",
+          "personality": "money-maestro",
+          "weight": 1
+        },
+        {
+          "answer": "Starting and running a business or leading entrepreneurial projects.",
+          "personality": "self-starter",
+          "weight": 1
+        },
+        {
+          "answer": "Utilizing data analysis and technology for problem-solving.",
+          "personality": "computer-whiz",
+          "weight": 1
+        },
+        {
+          "answer": "Managing teams, handling employee relations, and fostering collaboration.",
+          "personality": "people-person",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "question": "We're curious how accurate your results are!<br /><strong>Which of these areas would most appeal to you?</strong>",
+      "associatedField": "area_of_interest",
+      "answers": [
+        {
+          "answer": "Executive & Leadership",
+          "value": "14",
+          "personality": "fearless-leader",
+          "weight": 0
+        },
+        {
+          "answer": "Creative & Marketing",
+          "value": "11",
+          "personality": "computer-marketer",
+          "weight": 0
+        },
+        {
+          "answer": "Operations, Project Management, & HR",
+          "value": "9",
+          "personality": "people-person",
+          "weight": 0
+        },
+        {
+          "answer": "Information Technology & Analytics",
+          "value": "10",
+          "personality": "computer-whiz",
+          "weight": 0
+        },
+        {
+          "answer": "Entrepreneurship",
+          "value": "12",
+          "personality": "self-starter",
+          "weight": 0
+        },
+        {
+          "answer": "Finance, Accounting, & Economics",
+          "value": "13",
+          "personality": "money-maestro",
+          "weight": 0
+        }
+      ]
+    }
+  ],
+  "score": {
+    "fearless-leader": 0,
+    "creative-marketer": 0,
+    "money-maestro": 0,
+    "self-starter": 0,
+    "computer-whiz": 0,
+    "people-person": 0
+  }
 }
