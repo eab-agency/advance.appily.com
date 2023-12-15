@@ -29,7 +29,7 @@ const getAnimationData = async (score) => {
 }
 
 const Results = ({ children, vertical, answers, formId, score = 0, redirectUrl }) => {
-  console.log("🚀 ~ file: ResultsQuiz2.jsx:32 ~ Results ~ answers:", answers)
+  // console.log("🚀 ~ file: ResultsQuiz2.jsx:32 ~ Results ~ answers:", answers)
   const [animationData, setAnimationData] = useState(null);
   useEffect(() => {
     const loadAnimationData = async () => {

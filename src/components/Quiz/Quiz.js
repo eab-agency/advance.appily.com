@@ -45,14 +45,26 @@ export function Quiz({
 			if (!randomizeAnswers || question.randomize === false) {
 				finalAnswers = answersWithOriginalIndex;
 			} else {
-				finalAnswers = answersWithOriginalIndex.sort(() => Math.random() - 0.5);
+				finalAnswers = shuffleArray(answersWithOriginalIndex);
 			}
 
 			return { ...question, answers: finalAnswers };
 		});
 
 		setRandomizedQuestions(randomized);
-	}, [randomizeAnswers]);
+
+		function shuffleArray(array) {
+			const shuffledArray = [...array];
+			for (let i = shuffledArray.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				[shuffledArray[i], shuffledArray[j]] = [
+					shuffledArray[j],
+					shuffledArray[i],
+				];
+			}
+			return shuffledArray;
+		}
+	}, [randomizeAnswers, quizData.questions]);
 
 	const [quizState, setQuizState] = useState({
 		currentQuestionIdx: 0,

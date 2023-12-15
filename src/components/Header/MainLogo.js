@@ -9,24 +9,22 @@ export default function MainLogo() {
 	const [logo, setLogo] = useState(null);
 
 	useEffect(() => {
+		const matchColorMode = window.matchMedia("(prefers-color-scheme: dark)");
+
 		const logoLight = "/images/appily-advance-logo-light.svg";
 		const logoDark = "/images/appily-advance-logo-dark.svg";
 
-		const matchColorMode = window.matchMedia("(prefers-color-scheme: dark)");
+		const handleLogoChange = e => {
+			setLogo(e.matches ? logoDark : logoLight);
+		};
 
-		if (matchColorMode.matches) {
-			setLogo(logoDark);
-		} else {
-			setLogo(logoLight);
-		}
+		matchColorMode.addEventListener("change", handleLogoChange);
 
-		matchColorMode.addEventListener("change", e => {
-			if (e.matches) {
-				setLogo(logoDark);
-			} else {
-				setLogo(logoLight);
-			}
-		});
+		setLogo(matchColorMode.matches ? logoDark : logoLight);
+
+		return () => {
+			matchColorMode.removeEventListener("change", handleLogoChange);
+		};
 	}, []);
 
 	return (

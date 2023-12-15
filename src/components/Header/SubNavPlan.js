@@ -87,8 +87,8 @@ const NavItem = ({ href, children, setIsMenuOpen }) => {
 
 	const isActive = href => {
 		if (pathname.includes(href)) {
-			console.log("pathname includes #");
-			console.log(pathname);
+			// console.log("pathname includes #");
+			// console.log(pathname);
 			return pathname === href;
 		}
 		// console.log("pathname does not include #");
