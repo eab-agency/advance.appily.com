@@ -265,6 +265,12 @@
       "associatedField": "area_of_interest",
       "answers": [
         {
+          "answer": "Allied Health",
+          "value": "15",
+          "personality": "practitioner",
+          "weight": 0
+        },
+        {
           "answer": "Diagnostic Services",
           "value": "2",
           "personality": "analyst",
