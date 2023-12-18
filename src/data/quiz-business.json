@@ -5,11 +5,11 @@
       "associatedField": "education_journey__select1",
       "answers": [
         {
-          "answer": "I am considering a graduate-level business degree.",
+          "answer": "I am considering a master's degree in business.",
           "personality": "initial",
           "weight": 1,
           "value": "3",
-          "label": "Graduate"
+          "label": "Masters"
         },
         {
           "answer": "I am exploring a business degree at the undergraduate level.",
@@ -17,6 +17,13 @@
           "weight": 1,
           "value": "2",
           "label": "Bachelors"
+        },
+        {
+          "answer": "I am interested in a PhD or doctoral business degree.",
+          "personality": "initial",
+          "weight": 1,
+          "value": "4",
+          "label": "PhD"
         },
         {
           "answer": "I am currently in school for an undergraduate business degree and wish to transfer.",
