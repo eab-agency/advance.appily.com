@@ -5,11 +5,11 @@
       "associatedField": "education_journey__select1",
       "answers": [
         {
-          "answer": "I am considering a graduate-level health care degree.",
+          "answer": "I am considering a master's degree in health care.",
           "personality": "initial",
           "weight": 1,
           "value": "3",
-          "label": "Graduate"
+          "label": "Masters"
         },
         {
           "answer": "I am exploring a health care degree at the undergraduate level.",
@@ -23,6 +23,12 @@
           "personality": "initial",
           "value": "2",
           "label": "Transfer"
+        },
+        {
+          "answer": "I am interested in a professional doctorate or PhD in health care.",
+          "personality": "initial",
+          "value": "4",
+          "label": "PhD"
         },
         {
           "answer": "I am not currently considering school or I am pursuing a non-health care degree.",
@@ -264,12 +270,6 @@
       "question": "We're curious how accurate your results are!<br /><strong>Which of these areas would most appeal to you?</strong>",
       "associatedField": "area_of_interest",
       "answers": [
-        {
-          "answer": "Allied Health",
-          "value": "15",
-          "personality": "practitioner",
-          "weight": 0
-        },
         {
           "answer": "Diagnostic Services",
           "value": "2",
