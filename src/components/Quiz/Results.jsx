@@ -12,6 +12,7 @@ const Results = ({ children, vertical, answers, formId, redirectUrl }) => {
   const devModeOnly = isDevMode();
 
   const roleResult = () => {
+    console.log("🚀 ~ file: Results.jsx:16 ~ roleResult ~ answers.highestScorePersonality:", answers.highestScorePersonality)
     switch (answers.highestScorePersonality) {
 
       // Business
