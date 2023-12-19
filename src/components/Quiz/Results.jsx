@@ -12,6 +12,7 @@ const Results = ({ children, vertical, answers, formId, redirectUrl }) => {
   const devModeOnly = isDevMode();
 
   const roleResult = () => {
+    console.log("🚀 ~ file: Results.jsx:16 ~ roleResult ~ answers.highestScorePersonality:", answers.highestScorePersonality)
     switch (answers.highestScorePersonality) {
 
       // Business
@@ -56,8 +57,10 @@ const Results = ({ children, vertical, answers, formId, redirectUrl }) => {
         return 'Education';
       case 'art-and-design':
         return 'Art & Design';
-      case 'Criminal Justice':
+      case 'criminal-justice':
         return 'Criminal Justice';
+      case 'other':
+        return 'Open for anything';
 
       default:
         return 'Unknown Personality';
