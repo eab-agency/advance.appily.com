@@ -12,69 +12,83 @@ const Results = ({ children, vertical, answers, formId, redirectUrl }) => {
   const devModeOnly = isDevMode();
 
   const roleResult = () => {
-    console.log("🚀 ~ file: Results.jsx:16 ~ roleResult ~ answers.highestScorePersonality:", answers.highestScorePersonality)
     switch (answers.highestScorePersonality) {
 
       // Business
       case 'creative-marketer':
-        return 'The Creative Marketer';
-
+        return {
+          title: 'Your ideal role could be ... ',
+          role: 'The Creative Marketer',
+        }
       case 'fearless-leader':
-        return 'The Fearless Leader';
-
+        return {
+          title: 'Your ideal role could be ... ',
+          role: 'The Fearless Leader',
+        }
       case 'people-person':
-        return 'The People Person';
-
+        return {
+          title: 'Your ideal role could be ... ',
+          role: 'The People Person',
+        }
       case 'money-maestro':
-        return 'The Money Maestro';
-
+        return {
+          title: 'Your ideal role could be ... ',
+          role: 'The Money Maestro',
+        }
       case 'computer-whiz':
-        return 'The Computer Whiz';
-
+        return {
+          title: 'Your ideal role could be ... ',
+          role: 'The Computer Whiz',
+        }
       case 'self-starter':
-        return 'The Self Starter';
+        return {
+          title: 'Your ideal role could be ... ',
+          role: 'The Self Starter',
+        }
 
       // Healthcare
       case 'executive':
-        return 'The Executive';
+        return {
+          title: 'Your ideal role could be ... ',
+          role: 'The Executive',
+        }
       case 'practitioner':
-        return 'The Practitioner';
+        return {
+          title: 'Your ideal role could be ... ',
+          role: 'The Practitioner',
+        }
       case 'educator':
-        return 'The Educator';
+        return {
+          title: 'Your ideal role could be ... ',
+          role: 'The Educator',
+        }
       case 'analyst':
-        return 'The Analyst';
+        return {
+          title: 'Your ideal role could be ... ',
+          role: 'The Analyst',
+        }
       case 'scientist':
-        return 'The Scientist';
-
-      // ADC Plan
-      case 'stem':
-        return 'Technology';
-      case 'business':
-        return 'Business';
-      case 'healthcare':
-        return 'Healthcare';
-      case 'education':
-        return 'Education';
-      case 'art-and-design':
-        return 'Art & Design';
-      case 'criminal-justice':
-        return 'Criminal Justice';
-      case 'other':
-        return 'Open for anything';
+        return {
+          title: 'Your ideal role could be ... ',
+          role: 'The Scientist',
+        }
 
       default:
-        return 'Unknown Personality';
+        return {
+          title: 'Your Degree-Ready Plan',
+          role: "You've Got This!",
+        }
     }
   }
-
+  const roleAndTitle = roleResult();
   return (
     <>
       <div className="preResultsContainer">
         <section className="resultsHero">
           <div className="group">
             <div className="heroContent column">
-              <div className="intro-title"><span>Your ideal role could be ... </span></div>
-              <h1>{roleResult()}</h1>
+              <div className="intro-title"><span>{roleAndTitle.title}</span></div>
+              <h1>{roleAndTitle.role}</h1>
               <p>
                 Learn why we thought this role could be a good fit for you! Then,
                 discover <strong>related careers</strong>, average{" "}
