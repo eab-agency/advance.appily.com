@@ -3,6 +3,7 @@
 import fearlessLeader from "@/assets/lotties/fearlessLeader.json";
 import Lottie from "lottie-react";
 import { useEffect, useRef } from "react";
+import { Suspense } from "react";
 
 import {
 	CareerPaths,
@@ -20,6 +21,9 @@ import {
 import { useUser } from "@/context/context";
 import dataLinks from "@/data/links-business.json";
 import data from "@/data/results-fearless-leader.json";
+function TabsFallback() {
+	return <>Tabs loading...</>;
+}
 
 export default function Page() {
 	const carouselRef = useRef(null);
@@ -47,7 +51,9 @@ export default function Page() {
 				</section>
 
 				{links && <SubNav links={links} />}
-				<Tabs className="react-tabs" tabs={data.tabs} />
+				<Suspense fallback={<TabsFallback />}>
+					<Tabs className="react-tabs" tabs={data.tabs} />
+				</Suspense>
 
 				<CareerPaths careerPaths={data.careerPaths} />
 
