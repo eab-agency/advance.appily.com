@@ -1,10 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-// import computerWhiz from "@/assets/lotties/computerWhiz.json";
-// import Lottie from "lottie-react";
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { Suspense } from "react";
 
 import {
 	AccordionSection,
