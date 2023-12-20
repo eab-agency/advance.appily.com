@@ -4,18 +4,18 @@ const appilyAPI =
 	process.env.NODE_ENV === "development"
 		? process.env.DEV_APPILY_API_URL
 		: process.env.APPILY_API_URL || "";
-console.log("🚀 ~ file: route.ts:4 ~ appilyAPI:", appilyAPI);
+// console.log("🚀 ~ file: route.ts:4 ~ appilyAPI:", appilyAPI);
 
 const partnerKey =
 	process.env.NODE_ENV === "development"
 		? process.env.DEV_APPILY_API_KEY
 		: process.env.APPILY_API_KEY;
-console.log("🚀 ~ file: route.ts:9 ~ partnerKey:", partnerKey);
+// console.log("🚀 ~ file: route.ts:9 ~ partnerKey:", partnerKey);
 
 const partnerExternalId = process.env.PARTNER_EXTERNAL_ID;
-console.log("🚀 ~ file: route.ts:14 ~ partnerExternalId:", partnerExternalId);
+// console.log("🚀 ~ file: route.ts:14 ~ partnerExternalId:", partnerExternalId);
 const programExternalId = process.env.PROGRAM_EXTERNAL_ID;
-console.log("🚀 ~ file: route.ts:16 ~ programExternalId:", programExternalId);
+// console.log("🚀 ~ file: route.ts:16 ~ programExternalId:", programExternalId);
 
 export async function POST(request: Request) {
 	try {
@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 		formattedData.partnerKey = partnerKey || "";
 		if (process.env.NODE_ENV === "development") {
 			console.log(
-				"🚀 ~ file: route.ts:25 ~ POST ~ formattedData:",
+				"🚀 ~ file: route.ts:25 ~ POST ~ formattedData in development mode:",
 				JSON.stringify(formattedData),
 			);
 		}

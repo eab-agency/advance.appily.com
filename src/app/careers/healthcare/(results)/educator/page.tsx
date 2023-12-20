@@ -8,7 +8,6 @@ import {
 	StickyCta,
 	SubNav,
 	Tabs,
-	TextWithImage,
 } from "@/components";
 import { useUser } from "@/context/context";
 import dataLinks from "@/data/links-healthcare.json";
@@ -16,6 +15,11 @@ import data from "@/data/results-educator.json";
 import styles from "@/styles/components/FinalPage.module.scss";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { Suspense } from "react";
+
+function TabsFallback() {
+	return <>Tabs loading...</>;
+}
 
 export default function Page() {
 	const { results: links } = dataLinks;
@@ -45,7 +49,9 @@ export default function Page() {
 
 				{links && <SubNav links={links} />}
 
-				<Tabs className="react-tabs" tabs={data.tabs} id={1} />
+				<Suspense fallback={<TabsFallback />}>
+					<Tabs className="react-tabs" tabs={data.tabs} id="1" />
+				</Suspense>
 
 				<section className="career-path rows-2">
 					<div className="group cols-2">
@@ -154,7 +160,9 @@ export default function Page() {
 								least a master’s degree.
 							</p>
 						</div>
-						<Tabs tabs={data.degreeTabs} className="degree-tabs" id={2} />
+						<Suspense fallback={<TabsFallback />}>
+							<Tabs tabs={data.degreeTabs} className="degree-tabs" id="2" />
+						</Suspense>
 					</div>
 				</section>
 

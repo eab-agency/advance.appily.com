@@ -2,6 +2,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { Suspense } from "react";
 
 import {
 	Accordion,
@@ -11,11 +12,14 @@ import {
 	StickyCta,
 	SubNav,
 	Tabs,
-	TextWithImage,
 } from "@/components";
 import { useUser } from "@/context/context";
 import dataLinks from "@/data/links-healthcare.json";
 import data from "@/data/results-analyst.json";
+
+function TabsFallback() {
+	return <>Tabs loading...</>;
+}
 
 export default function Page() {
 	const carouselRef = useRef(null);
@@ -45,7 +49,9 @@ export default function Page() {
 
 				{links && <SubNav links={links} />}
 
-				<Tabs className="react-tabs" tabs={data.tabs} />
+				<Suspense fallback={<TabsFallback />}>
+					<Tabs className="react-tabs" tabs={data.tabs} />
+				</Suspense>
 
 				<section className="career-path">
 					<div className="group cols-2">
@@ -113,7 +119,9 @@ export default function Page() {
 								master's degree.
 							</p>
 						</div>
-						<Tabs tabs={data.degreeTabs} className="degree-tabs" />
+						<Suspense fallback={<TabsFallback />}>
+							<Tabs tabs={data.degreeTabs} className="degree-tabs" />
+						</Suspense>
 					</div>
 				</section>
 
