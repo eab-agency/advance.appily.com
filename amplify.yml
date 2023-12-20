@@ -6,7 +6,7 @@ frontend:
         - yarn install
     build:
       commands:
-        - env | grep -e ACS_PRIVATE_KEY -e ACS_PUBLIC_KEY -e APPILY_API_KEY -e APPILY_API_URL -e PARTNER_EXTERNAL_ID >> .env.production
+        - env | grep -e ACS_PRIVATE_KEY -e ACS_PUBLIC_KEY -e APPILY_API_KEY -e APPILY_API_URL -e PARTNER_EXTERNAL_ID -e PROGRAM_EXTERNAL_ID >> .env.production
         - yarn run build
   artifacts:
     baseDirectory: .next
