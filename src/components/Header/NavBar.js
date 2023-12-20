@@ -30,6 +30,7 @@ export function NavBar({ links }) {
 				type="button"
 				className={isMenuOpen ? styles.hamburgerOpen : styles.hamburgerClose}
 				onClick={toggleMenu}
+				aria-label={isMenuOpen ? "Close menu" : "Open menu"}
 			>
 				{isMenuOpen ? <MdClose /> : <MdMenu />}
 			</button>
