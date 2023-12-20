@@ -1,4 +1,5 @@
 import { Tabs } from "@/components/Tabs";
+import { Suspense } from "react";
 
 interface TabsSectionProps {
 	id?: string;
@@ -13,6 +14,10 @@ interface TabsSectionProps {
 	className?: string;
 }
 
+function TabsFallback() {
+	return <>Tabs loading...</>;
+}
+
 export default function TabsSection({ id, data, className }: TabsSectionProps) {
 	return (
 		<section id={id} className={`${className} tabsSection column bg-none`}>
@@ -22,7 +27,10 @@ export default function TabsSection({ id, data, className }: TabsSectionProps) {
 					<div dangerouslySetInnerHTML={{ __html: data.description }} />
 				)}
 			</header>
-			<Tabs className="react-tabs" tabs={data.tabsList} id={id} />
+
+			<Suspense fallback={<TabsFallback />}>
+				<Tabs className="react-tabs" tabs={data.tabsList} id={id} />
+			</Suspense>
 		</section>
 	);
 }
