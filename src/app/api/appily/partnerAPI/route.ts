@@ -52,12 +52,13 @@ export async function POST(request: Request) {
 				error: data.meta.error,
 				validationMessages: data.meta.validationMessages,
 			};
+			console.error("🚨🚨🚨🚨 Error: ", errorResponse);
 			return Response.json({ errorResponse });
 		} else {
 			return Response.json({ data });
 		}
 	} catch (error) {
-		// console.error("🚨🚨🚨🚨 Error: ", error);
+		console.error("🚨🚨🚨🚨 Error: ", error);
 		return Response.json({ error: "An error occurred" });
 	}
 }
