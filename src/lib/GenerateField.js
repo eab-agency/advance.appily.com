@@ -220,6 +220,7 @@ const GenerateField = ({ field, error, formData }) => {
 									<div key={option.value} className={styles.checkBox}>
 										<Field
 											id={option.value}
+											name={option.value}
 											type="checkbox"
 											value={option.value}
 											checked={inputValue.includes(option.value)}
