@@ -85,7 +85,7 @@
     outline: none;
 
     & + span {
-      transform: translateX(-0.5em) translateY(-1.7rem) scale(0.8);
+      transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
       color: var(--c-teal-700);
     }
   }
@@ -94,11 +94,7 @@
     min-height: 2.6em;
     width: auto;
     max-width: 100%;
-    // appearance: none;
-    // -webkit-appearance: none;
-    // -moz-appearance: none;
-    // text-indent: 1px;
-    // text-overflow: "";
+    min-width: 12em;
   }
 
   &.text,
@@ -157,6 +153,11 @@
       input {
         width: 1em;
         height: 1em;
+
+        &:checked {
+          background-color: var(--c-teal-500);
+          border-color: var(--c-teal-500);
+        }
       }
       label {
         font-size: tokens.$size-3;
@@ -166,10 +167,9 @@
   }
 }
 
-.empty {
-  select {
-    text-indent: -999em;
-    color: transparent;
+.select.empty {
+  .fieldLabel {
+    transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
   }
 }
 
