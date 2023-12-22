@@ -29,27 +29,36 @@
 
     & > label {
       width: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+
+      @media (min-width: tokens.$mq-800) {
+        flex-direction: row;
+      }
     }
   }
 
   .fieldLabel {
     display: flex;
     line-height: 1;
-    margin-bottom: -0.05em;
-    margin-left: 0.5em;
-    z-index: 100;
-    padding-inline: 0.2em;
-    position: absolute;
-    top: 50%;
-    left: 0.5em;
-    transform: translateY(-50%);
-    transform-origin: left center;
-    width: fit-content;
     color: var(--c-teal-700);
     font-size: tokens.$size-4;
     color: var(--c-black);
     pointer-events: none;
     transition: all 0.2s ease-in-out;
+
+    @media (min-width: tokens.$mq-800) {
+      margin-bottom: -0.05em;
+      margin-left: 0.5em;
+      z-index: 100;
+      padding-inline: 0.2em;
+      position: absolute;
+      top: 50%;
+      left: 0.5em;
+      transform: translateY(-50%);
+      transform-origin: left center;
+      width: fit-content;
+    }
   }
 
   .fieldError {
@@ -124,8 +133,10 @@
 
   &.select {
     .fieldContainer {
-      width: fit-content;
-      position: relative;
+      @media (min-width: tokens.$mq-800) {
+        width: fit-content;
+        position: relative;
+      }
     }
   }
 }
@@ -168,8 +179,10 @@
 }
 
 .select.empty {
-  .fieldLabel {
-    transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+  @media (min-width: tokens.$mq-800) {
+    .fieldLabel {
+      transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+    }
   }
 }
 
