@@ -82,32 +82,32 @@
       "associatedField": "quizresponse2",
       "answers": [
         {
-          "answer": "Leading collaboratively with teams to achieve objectives.",
+          "answer": "Collaboratively with students, other educators, and parents in a supportive educational community.",
           "personality": "educator",
           "weight": 1
         },
         {
-          "answer": "Creatively, to develop marketing campaigns and strategies.",
+          "answer": "Closely with special education professionals, therapists, and families in specialized learning environments.",
           "personality": "facilitator",
           "weight": 1
         },
         {
-          "answer": "With financial data and numbers to make informed decisions.",
+          "answer": "In leadership roles, collaborating with educators, staff, and stakeholders in an educational setting.",
           "personality": "administrator",
           "weight": 1
         },
         {
-          "answer": "Independently and taking ownership of projects.",
+          "answer": "One-on-one or in small groups, providing tailored advice and support in educational institutions.",
           "personality": "advisor",
           "weight": 1
         },
         {
-          "answer": "With computers and technology to analyze data and solve problems.",
+          "answer": "Either independently or collaboratively, focusing on curriculum design and educational material development.",
           "personality": "developer",
           "weight": 1
         },
         {
-          "answer": "Collaboratively with colleagues and clients to build strong relationships.",
+          "answer": "In research or policy environments, often collaborating with educational organizations and government bodies.",
           "personality": "advocate",
           "weight": 1
         }
