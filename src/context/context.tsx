@@ -41,21 +41,26 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 	// check if window.OneTrust is defined and if so, set a listener for the OneTrustUpdated event
 	useEffect(() => {
 		const handleOneTrustUpdated = () => {
+      console.log("🚀 ~ file: context.tsx:49 ~ handleOneTrustUpdated ~ handleOneTrustUpdated:", handleOneTrustUpdated)
 			if (window.OneTrust) {
+        console.log("Setting OneTrust")
 				setOneTrust(window.OneTrust);
 			}
 		};
 
 		if (typeof window !== "undefined") {
 			if (window.OneTrust) {
+        console.log("Setting OneTrust")
 				setOneTrust(window.OneTrust);
 			} else {
+        console.log("Adding event listener for OneTrustUpdated")
 				window.addEventListener("OneTrustUpdated", handleOneTrustUpdated);
 			}
 		}
 
 		return () => {
 			if (typeof window !== "undefined") {
+        console.log("Removing event listener for OneTrustUpdated")
 				window.removeEventListener("OneTrustUpdated", handleOneTrustUpdated);
 			}
 		};
@@ -100,6 +105,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 	useEffect(() => {
 		if (oneTrust) {
 			const { country, region } = oneTrust.getGeolocationData();
+			console.log("🚀 ~ file: context.tsx:103 ~ useEffect ~ country, region:", country, region)
 			setLocation({
 				region_iso_code: region,
 				country_code: country,
