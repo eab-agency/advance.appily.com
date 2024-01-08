@@ -45,7 +45,7 @@
     font-size: tokens.$size-4;
     color: var(--c-black);
     pointer-events: none;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.12s ease-out;
 
     @media (min-width: tokens.$mq-800) {
       margin-bottom: -0.05em;
@@ -94,8 +94,11 @@
     outline: none;
 
     & + span {
-      transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
       color: var(--c-teal-700);
+
+      @media (min-width: tokens.$mq-800) {
+        transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+      }
     }
   }
 
@@ -145,8 +148,8 @@
   display: none;
 }
 
-.checkboxGroupLabel {
-}
+// .checkboxGroupLabel {
+// }
 
 .checkboxGroupContainer {
   padding-block: 0.5em;
@@ -180,15 +183,20 @@
 
 .select.empty {
   @media (min-width: tokens.$mq-800) {
-    .fieldLabel {
-      transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+    select {
+      text-indent: -999em;
     }
+    // .fieldLabel {
+    //   // transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+    // }
   }
 }
 
 .notEmpty {
-  .fieldLabel {
-    transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+  @media (min-width: tokens.$mq-800) {
+    .fieldLabel {
+      transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+    }
   }
 }
 
@@ -196,9 +204,9 @@
   display: flex;
   flex-direction: row-reverse;
 
-  .checkboxGroupLabel {
-    // order: 1;
-  }
+  // .checkboxGroupLabel {
+  //   // order: 1;
+  // }
 
   .checkboxGroupContainer {
     width: 1.8em;

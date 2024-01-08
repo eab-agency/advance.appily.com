@@ -118,8 +118,6 @@ const GenerateField = ({ field, error, formData }) => {
 				setFieldValue(alias, event.target.value);
 			};
 
-			const showSelectOption = inputValue === "";
-
 			return (
 				<div
 					className={`${styles.qGroup}  ${field.alias} ${styles[field.type]} ${
@@ -138,7 +136,7 @@ const GenerateField = ({ field, error, formData }) => {
 								onChange={handleSelectChange}
 								className={error ? "is-invalid" : ""}
 							>
-								{showSelectOption ? null : <option value="">Select</option>}
+								<option value="">Select</option>
 								{selectOptions}
 							</Field>
 							<span className={styles.fieldLabel}>
