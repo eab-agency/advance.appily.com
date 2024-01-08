@@ -4,7 +4,7 @@ import { statesToMatchAgainst } from "@/helpers/getMatchedSchool";
 import isDevMode from "@/helpers/isDevMode";
 
 const LocationInDevMode = () => {
-	const { location, setLocation } = useUser();
+	const { location, setLocation, globalPrivacyControl } = useUser();
 
 	const setInputLocation = selectedLocation => {
 		setLocation({ region_iso_code: selectedLocation });
@@ -30,6 +30,13 @@ const LocationInDevMode = () => {
 					<p>Region: {location.region_iso_code}</p>
 					<p>Country: {location.country_code}</p>
 					<p>Not US: {location.notUS ? "true" : "false"}</p>
+					<p>
+						global privacy set on browser: {globalPrivacyControl ? "yes" : "no"}
+					</p>
+					<p>
+						Will skip forms:{" "}
+						{globalPrivacyControl || location.notUS ? "yes" : "no"}
+					</p>
 				</>
 			) : (
 				<p>Location: loading...</p>
