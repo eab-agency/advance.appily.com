@@ -154,32 +154,32 @@
       "associatedField": "quizresponse4",
       "answers": [
         {
-          "answer": "Exceptional leadership and strategic decision-making.",
+          "answer": "Effective communication, adaptability, and the ability to engage students creatively.",
           "personality": "educator",
           "weight": 1
         },
         {
-          "answer": "Creativity, communication, and brand-building skills.",
+          "answer": "Empathy, patience, and the skill to adapt learning experiences for individual needs.",
           "personality": "facilitator",
           "weight": 1
         },
         {
-          "answer": "Strong analytical and financial management abilities.",
+          "answer": "Leadership, strategic planning, and resource management.",
           "personality": "administrator",
           "weight": 1
         },
         {
-          "answer": "An entrepreneurial mindset and risk-taking capabilities.",
+          "answer": "Interpersonal communication, active listening, and problem-solving.",
           "personality": "advisor",
           "weight": 1
         },
         {
-          "answer": "Proficiency in technology, data analysis, and problem-solving.",
+          "answer": "Creativity in instructional design and a deep understanding of learning methodologies.",
           "personality": "developer",
           "weight": 1
         },
         {
-          "answer": "Empathy, communication, and team-building skills.",
+          "answer": "Analytical thinking, persuasive communication, and navigating complex educational systems.",
           "personality": "advocate",
           "weight": 1
         }
@@ -190,32 +190,32 @@
       "associatedField": "quizresponse5",
       "answers": [
         {
-          "answer": "Business administration, management, or leadership.",
+          "answer": "Education, pedagogy, psychology, or specific subject areas relevant to teaching.",
           "personality": "educator",
           "weight": 1
         },
         {
-          "answer": "Marketing, communication, or design.",
+          "answer": "Special education, psychology, or related fields focusing on diverse educational needs.",
           "personality": "facilitator",
           "weight": 1
         },
         {
-          "answer": "Finance, economics, or accounting.",
+          "answer": "Educational leadership, administration, or related disciplines such as business management.",
           "personality": "administrator",
           "weight": 1
         },
         {
-          "answer": "Entrepreneurship, business development, or innovation.",
+          "answer": "Counseling, psychology, educational guidance, or student development.",
           "personality": "advisor",
           "weight": 1
         },
         {
-          "answer": "Information technology, data analytics, or computer science.",
+          "answer": "Curriculum design, instructional technology, or related fields in content creation and educational theory.",
           "personality": "developer",
           "weight": 1
         },
         {
-          "answer": "Human resources, organizational behavior, or psychology.",
+          "answer": "Education policy, public policy, research methodology, or related areas of study.",
           "personality": "advocate",
           "weight": 1
         }
@@ -226,32 +226,32 @@
       "associatedField": "quizresponse6",
       "answers": [
         {
-          "answer": "Leadership roles, managing teams, and making critical decisions.",
+          "answer": "Roles in teaching, mentoring, or educational facilitation, including experience in diverse learning environments.",
           "personality": "educator",
           "weight": 1
         },
         {
-          "answer": "Developing and executing marketing campaigns and strategies.",
+          "answer": "Working with special needs individuals, in caregiving roles, or in positions requiring tailored support strategies.",
           "personality": "facilitator",
           "weight": 1
         },
         {
-          "answer": "Financial analysis, budgeting, and managing investments.",
+          "answer": "Management, administrative, or leadership positions within or outside the education sector.",
           "personality": "administrator",
           "weight": 1
         },
         {
-          "answer": "Starting and running a business or leading entrepreneurial projects.",
+          "answer": "Mentoring, advising, or roles focused on personal and professional development support.",
           "personality": "advisor",
           "weight": 1
         },
         {
-          "answer": "Utilizing data analysis and technology for problem-solving.",
+          "answer": "Content creation, instructional planning, or roles involving the design of educational experiences.",
           "personality": "developer",
           "weight": 1
         },
         {
-          "answer": "Managing teams, handling employee relations, and fostering collaboration.",
+          "answer": "Engaging in research, policy analysis, or advocacy work, especially in roles requiring critical thinking in complex systems.",
           "personality": "advocate",
           "weight": 1
         }
