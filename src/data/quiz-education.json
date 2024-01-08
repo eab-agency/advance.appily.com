@@ -312,19 +312,13 @@
         {
           "answer": "Creative & Marketing",
           "value": "11",
-          "personality": "computer-marketer",
+          "personality": "facilitator",
           "weight": 0
         },
         {
-          "answer": "Operations, Project Management, & HR",
-          "value": "9",
-          "personality": "advocate",
-          "weight": 0
-        },
-        {
-          "answer": "Information Technology & Analytics",
-          "value": "10",
-          "personality": "developer",
+          "answer": "Finance, Accounting, & Economics",
+          "value": "13",
+          "personality": "administrator",
           "weight": 0
         },
         {
@@ -334,9 +328,15 @@
           "weight": 0
         },
         {
-          "answer": "Finance, Accounting, & Economics",
-          "value": "13",
-          "personality": "administrator",
+          "answer": "Information Technology & Analytics",
+          "value": "10",
+          "personality": "developer",
+          "weight": 0
+        },
+        {
+          "answer": "Operations, Project Management, & HR",
+          "value": "9",
+          "personality": "advocate",
           "weight": 0
         }
       ]

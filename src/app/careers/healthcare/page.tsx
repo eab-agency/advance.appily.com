@@ -164,7 +164,7 @@ const HealthCareSeoPage = () => {
 						<Button
 							type="button"
 							label={data.takeQuiz.buttonText}
-							href="/careers/business/quiz"
+							href="/careers/education/quiz"
 							className="button btn-primary btn-click-quiz"
 						/>
 					</div>
