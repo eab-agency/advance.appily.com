@@ -1,0 +1,353 @@
+{
+  "questions": [
+    {
+      "question": "Where are you in your educational journey?",
+      "associatedField": "education_journey__select1",
+      "answers": [
+        {
+          "answer": "I am considering a master's degree in business.",
+          "personality": "initial",
+          "weight": 1,
+          "value": "3",
+          "label": "Masters"
+        },
+        {
+          "answer": "I am exploring a business degree at the undergraduate level.",
+          "personality": "initial",
+          "weight": 1,
+          "value": "2",
+          "label": "Bachelors"
+        },
+        {
+          "answer": "I am interested in a PhD or doctoral business degree.",
+          "personality": "initial",
+          "weight": 1,
+          "value": "4",
+          "label": "PhD"
+        },
+        {
+          "answer": "I am currently in school for an undergraduate business degree and wish to transfer.",
+          "personality": "initial",
+          "weight": 1,
+          "value": "2",
+          "label": "Transfer"
+        },
+        {
+          "answer": "I am not currently considering school or I am pursuing a non-business degree.",
+          "personality": "initial",
+          "weight": 1,
+          "value": "6",
+          "label": "Other"
+        }
+      ]
+    },
+    {
+      "question": "At work, a primary motivator for me is...",
+      "associatedField": "quizresponse1",
+      "answers": [
+        {
+          "answer": "Guiding and inspiring young people, and finding fulfillment in facilitating understanding and intellectual growth.",
+          "personality": "educator",
+          "weight": 1
+        },
+        {
+          "answer": "Supporting diverse learning needs and ensuring accessibility in education for all students.",
+          "personality": "facilitator",
+          "weight": 1
+        },
+        {
+          "answer": "Leading, organizing, and improving educational systems and institutions.",
+          "personality": "administrator",
+          "weight": 1
+        },
+        {
+          "answer": "Providing guidance and support to students in their academic and career journeys.",
+          "personality": "advisor",
+          "weight": 1
+        },
+        {
+          "answer": "Creating effective and innovative educational content and curricula.",
+          "personality": "developer",
+          "weight": 1
+        },
+        {
+          "answer": "Shaping and improving the educational landscape through policy and research.",
+          "personality": "advocate",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "question": "I prefer working...",
+      "associatedField": "quizresponse2",
+      "answers": [
+        {
+          "answer": "Leading collaboratively with teams to achieve objectives.",
+          "personality": "educator",
+          "weight": 1
+        },
+        {
+          "answer": "Creatively, to develop marketing campaigns and strategies.",
+          "personality": "facilitator",
+          "weight": 1
+        },
+        {
+          "answer": "With financial data and numbers to make informed decisions.",
+          "personality": "administrator",
+          "weight": 1
+        },
+        {
+          "answer": "Independently and taking ownership of projects.",
+          "personality": "advisor",
+          "weight": 1
+        },
+        {
+          "answer": "With computers and technology to analyze data and solve problems.",
+          "personality": "developer",
+          "weight": 1
+        },
+        {
+          "answer": "Collaboratively with colleagues and clients to build strong relationships.",
+          "personality": "advocate",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "question": "My ideal work setting is...",
+      "associatedField": "quizresponse3",
+      "answers": [
+        {
+          "answer": "A dynamic and fast-paced corporate environment.",
+          "personality": "educator",
+          "weight": 1
+        },
+        {
+          "answer": "A creative and innovative workspace that fosters ideas.",
+          "personality": "facilitator",
+          "weight": 1
+        },
+        {
+          "answer": "A financial institution or investment firm.",
+          "personality": "administrator",
+          "weight": 1
+        },
+        {
+          "answer": "A startup or entrepreneurial setting.",
+          "personality": "advisor",
+          "weight": 1
+        },
+        {
+          "answer": "A technology-driven workplace with opportunities for data analysis.",
+          "personality": "developer",
+          "weight": 1
+        },
+        {
+          "answer": "A people-centric organization that values teamwork and growth.",
+          "personality": "advocate",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "question": "My biggest professional strengths are...",
+      "associatedField": "quizresponse4",
+      "answers": [
+        {
+          "answer": "Exceptional leadership and strategic decision-making.",
+          "personality": "educator",
+          "weight": 1
+        },
+        {
+          "answer": "Creativity, communication, and brand-building skills.",
+          "personality": "facilitator",
+          "weight": 1
+        },
+        {
+          "answer": "Strong analytical and financial management abilities.",
+          "personality": "administrator",
+          "weight": 1
+        },
+        {
+          "answer": "An entrepreneurial mindset and risk-taking capabilities.",
+          "personality": "advisor",
+          "weight": 1
+        },
+        {
+          "answer": "Proficiency in technology, data analysis, and problem-solving.",
+          "personality": "developer",
+          "weight": 1
+        },
+        {
+          "answer": "Empathy, communication, and team-building skills.",
+          "personality": "advocate",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "question": "I have taken college courses in...",
+      "associatedField": "quizresponse5",
+      "answers": [
+        {
+          "answer": "Business administration, management, or leadership.",
+          "personality": "educator",
+          "weight": 1
+        },
+        {
+          "answer": "Marketing, communication, or design.",
+          "personality": "facilitator",
+          "weight": 1
+        },
+        {
+          "answer": "Finance, economics, or accounting.",
+          "personality": "administrator",
+          "weight": 1
+        },
+        {
+          "answer": "Entrepreneurship, business development, or innovation.",
+          "personality": "advisor",
+          "weight": 1
+        },
+        {
+          "answer": "Information technology, data analytics, or computer science.",
+          "personality": "developer",
+          "weight": 1
+        },
+        {
+          "answer": "Human resources, organizational behavior, or psychology.",
+          "personality": "advocate",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "question": "My professional experience includes...",
+      "associatedField": "quizresponse6",
+      "answers": [
+        {
+          "answer": "Leadership roles, managing teams, and making critical decisions.",
+          "personality": "educator",
+          "weight": 1
+        },
+        {
+          "answer": "Developing and executing marketing campaigns and strategies.",
+          "personality": "facilitator",
+          "weight": 1
+        },
+        {
+          "answer": "Financial analysis, budgeting, and managing investments.",
+          "personality": "administrator",
+          "weight": 1
+        },
+        {
+          "answer": "Starting and running a business or leading entrepreneurial projects.",
+          "personality": "advisor",
+          "weight": 1
+        },
+        {
+          "answer": "Utilizing data analysis and technology for problem-solving.",
+          "personality": "developer",
+          "weight": 1
+        },
+        {
+          "answer": "Managing teams, handling employee relations, and fostering collaboration.",
+          "personality": "advocate",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "question": "I have this many years of work experience:",
+      "associatedField": "years_of_work_experience",
+      "randomize": false,
+      "answers": [
+        {
+          "answer": "Less than 2 years",
+          "personality": "initial",
+          "weight": 1,
+          "value": 1,
+          "label": "0-2"
+        },
+        {
+          "answer": "2-4",
+          "personality": "initial",
+          "weight": 1,
+          "value": 2,
+          "label": "2-4"
+        },
+        {
+          "answer": "5-7",
+          "personality": "initial",
+          "weight": 1,
+          "value": 5,
+          "label": "5-7"
+        },
+        {
+          "answer": "7-15",
+          "personality": "initial",
+          "weight": 1,
+          "value": 7,
+          "label": "7-15"
+        },
+        {
+          "answer": "16 or more years",
+          "personality": "initial",
+          "weight": 1,
+          "value": 16,
+          "label": "16 or more years"
+        }
+      ]
+    },
+    {
+      "question": "We're curious how accurate your results are!<br /><strong>Which of these areas would most appeal to you?</strong>",
+      "associatedField": "area_of_interest",
+      "answers": [
+        {
+          "answer": "Executive & Leadership",
+          "value": "14",
+          "personality": "educator",
+          "weight": 0
+        },
+        {
+          "answer": "Creative & Marketing",
+          "value": "11",
+          "personality": "computer-marketer",
+          "weight": 0
+        },
+        {
+          "answer": "Operations, Project Management, & HR",
+          "value": "9",
+          "personality": "advocate",
+          "weight": 0
+        },
+        {
+          "answer": "Information Technology & Analytics",
+          "value": "10",
+          "personality": "developer",
+          "weight": 0
+        },
+        {
+          "answer": "Entrepreneurship",
+          "value": "12",
+          "personality": "advisor",
+          "weight": 0
+        },
+        {
+          "answer": "Finance, Accounting, & Economics",
+          "value": "13",
+          "personality": "administrator",
+          "weight": 0
+        }
+      ]
+    }
+  ],
+  "score": {
+    "educator": 0,
+    "facilitator": 0,
+    "administrator": 0,
+    "advisor": 0,
+    "developer": 0,
+    "advocate": 0
+  }
+}
