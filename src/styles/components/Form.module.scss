@@ -162,8 +162,8 @@
       gap: 0.3em;
 
       input {
-        width: 1em;
-        height: 1em;
+        width: 1.8em;
+        height: 1.8em;
 
         &:checked {
           background-color: var(--c-teal-500);
@@ -194,9 +194,20 @@
 
 .textOptin {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
 
   .checkboxGroupLabel {
-    order: 1;
+    // order: 1;
+  }
+
+  .checkboxGroupContainer {
+    width: 1.8em;
+    padding: 0;
+  }
+
+  .checkboxGroup {
+    input + label {
+      display: none;
+    }
   }
 }
