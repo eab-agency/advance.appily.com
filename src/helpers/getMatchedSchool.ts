@@ -12,7 +12,7 @@ type statesToMatchAgainst = {
 	[key: string]: string[];
 };
 
-const statesToMatchAgainst: statesToMatchAgainst = {
+export const statesToMatchAgainst: statesToMatchAgainst = {
 	AL: ["AL", "FL", "GA", "MS", "TN"],
 	AK: ["AK", "CA", "HI", "OR", "WA"],
 	AZ: ["AZ", "CA", "CO", "NV", "NM", "UT"],
