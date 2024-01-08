@@ -118,32 +118,32 @@
       "associatedField": "quizresponse3",
       "answers": [
         {
-          "answer": "A dynamic and fast-paced corporate environment.",
+          "answer": "Varied educational environments, ranging from traditional classrooms to interactive online platforms.",
           "personality": "educator",
           "weight": 1
         },
         {
-          "answer": "A creative and innovative workspace that fosters ideas.",
+          "answer": "Adaptable educational settings equipped to meet a range of special needs.",
           "personality": "facilitator",
           "weight": 1
         },
         {
-          "answer": "A financial institution or investment firm.",
+          "answer": "Administrative offices within schools or educational organizations where strategic decisions are made.",
           "personality": "administrator",
           "weight": 1
         },
         {
-          "answer": "A startup or entrepreneurial setting.",
+          "answer": "Academic advising centers, career counseling offices, or other educational institutions.",
           "personality": "advisor",
           "weight": 1
         },
         {
-          "answer": "A technology-driven workplace with opportunities for data analysis.",
+          "answer": "Environments focused on educational content creation, such as educational departments or remote workspaces.",
           "personality": "developer",
           "weight": 1
         },
         {
-          "answer": "A people-centric organization that values teamwork and growth.",
+          "answer": "Settings like think tanks, research organizations, or educational institutions where policy and research are key.",
           "personality": "advocate",
           "weight": 1
         }
