@@ -19,8 +19,8 @@ import {
 } from "@/components";
 
 import { useUser } from "@/context/context";
-import dataLinks from "@/data/links-business.json";
-import data from "@/data/results-creative-marketer.json";
+import dataLinks from "@/data/links-education.json";
+import data from "@/data/results/education/facilitator.json";
 
 function TabsFallback() {
 	return <>Tabs loading...</>;
@@ -57,18 +57,9 @@ export default function Page() {
 					<Tabs className="react-tabs" tabs={data.tabs} />
 				</Suspense>
 
-				<CareerPaths careerPaths={data.careerPaths} />
-
 				<Stats stats={data.stats} source={data.statsSource} />
 
-				<TextWithImage
-					content={data.textWithImage.content}
-					imagePath={data.textWithImage.imagePath}
-					className="whatever-you-need"
-					altText={data.textWithImage.altText}
-				/>
-
-				<WhatDegrees whatDegreesData={data.degreeTabs} />
+				{/* <WhatDegrees whatDegreesData={data.degreeTabs} /> */}
 
 				<div
 					id="explore-your-school-matches"

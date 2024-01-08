@@ -1,9 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
-import peoplePerson from "@/assets/lotties/peoplePerson.json";
-import data from "@/data/results-people-person.json";
+import creativeMarketer from "@/assets/lotties/creativeMarketer.json";
 import Lottie from "lottie-react";
-import { useEffect, useRef } from "react";
 import { Suspense } from "react";
+import { useEffect, useRef } from "react";
 
 import {
 	CareerPaths,
@@ -17,8 +17,10 @@ import {
 	TextWithImage,
 	WhatDegrees,
 } from "@/components";
+
 import { useUser } from "@/context/context";
-import dataLinks from "@/data/links-business.json";
+import dataLinks from "@/data/links-education.json";
+import data from "@/data/results/education/advocate.json";
 
 function TabsFallback() {
 	return <>Tabs loading...</>;
@@ -27,11 +29,10 @@ function TabsFallback() {
 export default function Page() {
 	const carouselRef = useRef(null);
 	const { results: links } = dataLinks;
-	const { setVertical } = useUser();
+	const { setVertical, vertical } = useUser();
 	useEffect(() => {
 		setVertical("Education");
 	}, []);
-
 	return (
 		<>
 			<div className="resultContent">
@@ -45,7 +46,7 @@ export default function Page() {
 							<p>{data.detailedDescription}</p>
 						</div>
 						<figure className="column">
-							<Lottie animationData={peoplePerson} loop={true} />
+							<Lottie animationData={creativeMarketer} loop={true} />
 						</figure>
 					</div>
 				</section>
@@ -56,17 +57,9 @@ export default function Page() {
 					<Tabs className="react-tabs" tabs={data.tabs} />
 				</Suspense>
 
-				<CareerPaths careerPaths={data.careerPaths} />
-
 				<Stats stats={data.stats} source={data.statsSource} />
 
-				<TextWithImage
-					content={data.textWithImage.content}
-					imagePath={data.textWithImage.imagePath}
-					className="whatever-you-need"
-					altText={data.textWithImage.altText}
-				/>
-				<WhatDegrees whatDegreesData={data.degreeTabs} />
+				{/* <WhatDegrees whatDegreesData={data.degreeTabs} /> */}
 
 				<div
 					id="explore-your-school-matches"
@@ -77,8 +70,10 @@ export default function Page() {
 				</div>
 
 				<ChoosingRightSchoolBusinessDegree />
+
 				<KeepExploring trackedElement={carouselRef} />
 			</div>
+
 			<StickyCta trackedElement={carouselRef} />
 		</>
 	);
