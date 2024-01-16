@@ -22,7 +22,9 @@ function WhatDegrees({ whatDegreesData }: WhatDegreesProps) {
 			<div className="group column">
 				<div className="intro-text">
 					<h2 dangerouslySetInnerHTML={{ __html: whatDegreesData.title }} />
-					<p>{whatDegreesData.description}</p>
+					<p
+						dangerouslySetInnerHTML={{ __html: whatDegreesData.description }}
+					/>
 				</div>
 				<div className="accordionGroup">
 					{whatDegreesData.degrees.map(degree => (

@@ -1,66 +1,140 @@
 {
-	"slug": "educator",
-	"title": "The Educator",
-	"description": "You enjoy working with numbers and data to identify patterns and solve problems. You have a keen eye for detail and are able to see the big picture while also paying attention to the small details.",
-	"detailedDescription": "<p>You have a natural talent for teaching and sharing knowledge. In your eyes, every classroom is a world of potential and every student, a chance to make a lasting impact. You thrive in environments where you can impart wisdom, foster curiosity, and witness the growth of your learners. </p><p>Your strength lies in your ability to communicate complex ideas in simple, engaging ways. </p><p>If shaping minds and inspiring the next generation excites you, a career as an Educator is your true calling.</p>",
-	"tabs": [
-		{
-			"title": "Motivation",
-			"icon": "motivation-icon",
-			"content": "You are passionate about guiding and inspiring young people. You find fulfillment in facilitating understanding and intellectual growth."
-		},
-		{
-			"title": "Skills",
-			"icon": "skills-icon",
-			"content": "Strong communication, adaptability to different learning styles, and the ability to create an engaging learning environment."
-		},
-		{
-			"title": "Works With",
-			"icon": "work-icon",
-			"content": "You’d do well working collaboratively with students, other educators, and potentially parents, fostering a supportive educational community."
-		},
-		{
-			"title": "Setting",
-			"icon": "setting-icon",
-			"content": "ou could thrive in varied educational environments, from traditional classrooms to online platforms, where dynamic interaction is key."
-		},
-		{
-			"title": "Education",
-			"icon": "education-icon",
-			"content": "You may have a background in education, psychology, or any subject area with pedagogical knowledge or training."
-		},
-		{
-			"title": "Experience",
-			"icon": "skills-icon",
-			"content": "You may have experience in teaching, training, mentoring, or any role involving the transfer of knowledge and skills."
-		}
-	],
-	"statsSource": "",
-	"stats": [
-		{
-			"number": "17%",
-			"title": "Growth",
-			"description": "In employment of health information technologists and medical registrars over the next decade"
-		},
-		{
-			"number": "$55K",
-			"title": "Median Salary",
-			"description": "For health information technologists and medical registrars, ranging from $30K to $98K averages"
-		},
-		{
-			"number": "3.4K",
-			"title": "Job Openings",
-			"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
-		}
-	],
-	"degreeTabs": [
-		{
-			"title": "Master's",
-			"content": "<p>If you do have a bachelor’s degree and want to further specialize your studies, these are some popular master’s in the health information field:</p><ul><li><strong>Master’s in Health Informatics:</strong> This degree can prepare you to analyze data and improve data systems with the goal of improving public health systems, healthcare delivery systems, and patient outcomes.</li><li><strong>Master’s in Bioinformatics:</strong> This degree provides skills in both biotechnology and computer science which opens doors in a wide range of analysis-driven careers.</li><li><strong>Master’s in Health Care Analytics:</strong> This degree focuses more on the data side, helping you comply with key legal, regulatory, and ethical constraints around sensitive client data and practices advanced analysis and reporting techniques.</li></ul><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
-		},
-		{
-			"title": "Bachelor's",
-			"content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Information Management.</strong> You can often earn these degrees online.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
-		}
-	]
+  "slug": "educator",
+  "title": "The Educator",
+  "detailedDescription": "<p>You have a natural talent for teaching and sharing knowledge. In your eyes, every classroom is a world of potential and every student, a chance to make a lasting impact. You thrive in environments where you can impart wisdom, foster curiosity, and witness the growth of your learners. </p><p>Your strength lies in your ability to communicate complex ideas in simple, engaging ways. </p><p>If shaping minds and inspiring the next generation excites you, a career as an Educator is your true calling.</p>",
+  "tabs": [
+    {
+      "title": "Motivation",
+      "icon": "motivation-icon",
+      "content": "You are passionate about guiding and inspiring young people. You find fulfillment in facilitating understanding and intellectual growth."
+    },
+    {
+      "title": "Skills",
+      "icon": "skills-icon",
+      "content": "Strong communication, adaptability to different learning styles, and the ability to create an engaging learning environment."
+    },
+    {
+      "title": "Works With",
+      "icon": "work-icon",
+      "content": "You’d do well working collaboratively with students, other educators, and potentially parents, fostering a supportive educational community."
+    },
+    {
+      "title": "Setting",
+      "icon": "setting-icon",
+      "content": "You could thrive in varied educational environments, from traditional classrooms to online platforms, where dynamic interaction is key."
+    },
+    {
+      "title": "Education",
+      "icon": "education-icon",
+      "content": "You may have a background in education, psychology, or any subject area with pedagogical knowledge or training."
+    },
+    {
+      "title": "Experience",
+      "icon": "skills-icon",
+      "content": "You may have experience in teaching, training, mentoring, or any role involving the transfer of knowledge and skills."
+    }
+  ],
+  "statsSource": "U.S. Bureau of Labor Statistics",
+  "stats": [
+    {
+      "number": "Average",
+      "title": "Growth",
+      "description": "In employment of health information technologists and medical registrars over the next decade"
+    },
+    {
+      "number": "$57K",
+      "title": "Median Salary",
+      "description": "For instructional education occupations, ranging from $31K to $66K averages"
+    },
+    {
+      "number": "858K",
+      "title": "Job Openings",
+      "description": "Predicted annually over the next decade in  instructional education roles"
+    }
+  ],
+  "careerPaths": {
+    "title": "What kind of career is a good fit for me?",
+    "description": "You're likely to thrive in careers that involve <strong>nurturing, inspiring, and instructing students across a variety of age groups and subjects.</strong>",
+    "paths": [
+      {
+        "title": "Preschool Teacher",
+        "description": "Foster early childhood development by engaging toddlers in foundational learning through play and structured activities.",
+        "imagePath": "/images/ceo.jpg"
+      },
+      {
+        "title": "Elementary School Teacher",
+        "description": "Cultivate a love of learning in young students by teaching a range of basic subjects and fostering a positive classroom environment.",
+        "imagePath": "/images/cfo.jpg"
+      },
+      {
+        "title": "Middle School Teacher",
+        "description": "Guide pre-adolescents through an important developmental period by teaching specific subjects and supporting their emotional and social growth.",
+        "imagePath": "/images/ceo.jpg"
+      },
+      {
+        "title": "High School Teacher",
+        "description": "Specialize in teaching a specific subject area to teenagers, preparing them for college and careers while developing critical thinking and subject mastery.",
+        "imagePath": "/images/director-or-associate-director.jpg"
+      },
+      {
+        "title": "ESL Teacher",
+        "description": "Teach English to non-native speakers, focusing on language skills, cultural nuances, and effective communication.",
+        "imagePath": "/images/director-or-associate-director.jpg"
+      },
+      {
+        "title": "Elective Teacher",
+        "description": "Engage students in specialized subjects such as PE, Art, Drama, Music, or Career and Technical Education, fostering specific skills and interests.",
+        "imagePath": "/images/director-or-associate-director.jpg"
+      }
+    ]
+  },
+  "degreeTabs": {
+    "title": "What graduate degree do I need to advance my <strong>teaching career?</strong>",
+    "description": "While most teaching positions require only a bachelor's degree, obtaining a Master's degree can significantly enhance your teaching skills, deepen your subject knowledge, and open doors to advanced opportunities. A graduate degree not only elevates your expertise but also often leads to <strong>better salary prospects</strong> and a <strong>greater impact</strong> in the field of education.",
+    "degrees": [
+      {
+        "title": "Master's in Teaching (MAT)",
+        "content": "<p>Focused on practical teaching skills, this degree is often pursued by those entering the teaching profession, offering subject-specific methodologies and classroom management techniques.</p><p>This program is ideal for people who are seeking to become classroom teachers or want to enhance their teaching skills, often leading to initial teaching certification.</p><p>Example degrees include Master of Arts in Teaching (MAT) in ...</p><ul><li>Elementary Education: Focuses on teaching methods and curriculum development for young learners, typically in grades K-6.</li><li>Secondary Education: Specializes in teaching adolescents, often in a specific subject area such as English, Math, Science, or Social Studies, typically for grades 7-12.</li><li>Special Education: Prepares educators to work with students who have special needs, including learning disabilities, emotional and behavioral disorders, and physical disabilities.</li><li>Early Childhood Education: Concentrates on teaching and managing classrooms for pre-kindergarten and kindergarten students, with an emphasis on early development.</li><li>English as a Second Language (ESL): Equips teachers to instruct non-native English speakers, focusing on language acquisition and cultural nuances.</li><li>STEM Education (Science, Technology, Engineering, and Mathematics): Prepares teachers to specialize in these in-demand areas, often integrating technology and hands-on learning.</li><li>Physical Education and Health: Focuses on teaching health, wellness, and physical education, including sports and fitness training.</li><li>Arts Education: Specializes in teaching visual arts, music, drama, or dance, often incorporating creative expression and performance in the curriculum.</li><li>Reading and Literacy: Concentrates on teaching reading and literacy skills, critical for early childhood and elementary education.</li><li>Educational Technology: Focuses on integrating technology into the classroom, including the use of educational software, digital tools, and online learning platforms.</li></ul>"
+      },
+      {
+        "title": "Master of Education (MEd)",
+        "content": "<p>This degree deepens teaching skills and understanding of educational theories, often with a focus on specific student age groups or subject areas.</p><p>This program is ideal for current educators or education professionals looking to advance their careers, specialize in a particular area of education, or move into educational leadership roles.</p><p>Example degrees include Master of Education (MEd) in ...</p><ul><li>Educational Leadership and Administration: Focuses on developing skills for leadership roles such as principal, superintendent, or educational administrator.</li><li>Curriculum and Instruction: Concentrates on designing, evaluating, and implementing curricula and instructional strategies in schools.</li><li>Special Education: Specializes in teaching strategies and interventions for students with diverse learning needs, including disabilities.</li><li>Educational Technology: Emphasizes the integration of technology into education, covering topics like digital learning tools and instructional design.</li><li>Counseling and Guidance: Prepares graduates for roles in school counseling, focusing on student mental health, academic guidance, and career planning.</li><li>Higher Education Administration: Tailors towards those interested in working in post-secondary education administration, focusing on issues like student affairs, academic policies, and university governance.</li><li>Early Childhood Education: Focuses on teaching and administrative strategies for early childhood settings, including child development and learning in the early years.</li><li>Reading and Literacy: Concentrates on literacy development, reading instruction, and intervention strategies for struggling readers.</li><li>ESL/TESOL (English as a Second Language/Teaching English to Speakers of Other Languages): Prepares educators to teach English language learners both in the U.S. and abroad.</li><li>Education Policy and Research: Focuses on the study of educational policies, their impact, and how educational research can inform and improve these policies.</li></ul>"
+      },
+      {
+        "title": "Education Master's in Your Field",
+        "content": "<p>Tailors the study of education to a specific field, combining subject matter expertise with pedagogical skills. Ideal for those who wish to teach or advance their knowledge in a particular subject area.</p><p>This program is ideal for individuals who want to combine their passion for a specific subject, like art or science, with advanced pedagogical skills to teach or lead in that specific field.</p><p>Example degrees:</p>    <ul>      <li>Master of Art Education</li>      <li>Master of Science in Music Education</li>      <li>Master of Physical Education</li>      <li>Masters in Creative Writing and Literature for Educators</li>    </ul><p>There are many similarities between a Master of Teaching with a Concentration and an Education Master’s in your field. The main difference is the focus:</p><ul>  <li>An Education Master’s in your field delves deeper into your discipline from an educational perspective, blending your subject area and teaching</li>  <li>A Master of Teaching with a Concentration is more about general teaching skills with a focus on your discipline.</li></ul>"
+      },
+      {
+        "title": "Master's in Educational Technology",
+        "content": "<p>Focuses on integrating technology into educational settings, covering areas like digital learning tools,    instructional design, and online education strategies.</p><p>This program is ideal for educators or professionals who aim to integrate and leverage technology in educational    settings, focusing on enhancing learning experiences through digital tools and resources.</p><p>Example Degrees:</p>        <ul>            <li>M.Ed. in Educational Technology</li>            <li>MA in Instructional Design and Technology</li>            <li>MS in Learning Technologies</li>            <li>M.Ed. in Digital Learning and Leading</li>            <li>MA in Technology, Innovation, and Education</li>        </ul>"
+      }
+    ]
+  },
+  "introComparison": {
+    "title": "What’s the difference between a <strong>Master’s in Teaching and a Master’s in Education?</strong>",
+    "description": "The short answer is that the MAT is more focused on the art and science of classroom teaching, often leading to initial teacher certification, while the M.Ed. offers a broader exploration of educational topics and is geared towards professional advancement and specialization within the field of education.",
+    "cards": [
+      {
+        "card": {
+          "title": "Master's in Teaching (MAT)",
+          "iconLight": "/images/build-plan/ready-for-college.svg",
+          "iconDark": "/images/build-plan/ready-for-college-light.svg",
+          "description": "<p><strong>Focus:</strong> The MAT is primarily focused on preparing individuals for classroom teaching. It is often pursued by those who have a bachelor's degree in a field other than education and are looking to gain the necessary credentials and skills for a teaching career.</p><p><strong>Curriculum:</strong> The curriculum is heavily centered on teaching methodologies, classroom management, pedagogical theories, and practical teaching skills. It typically includes a significant component of student teaching or classroom practicum.</p><p><strong>Outcome:</strong> Graduates usually become classroom teachers. The degree is often a pathway to initial teacher certification or licensure in many regions.</p><p><strong>Suitability:</strong> Ideal for those seeking to enter the teaching profession or for current teachers who want to deepen their teaching skills and possibly specialize in a subject area or grade level.</p>"
+        }
+      },
+      {
+        "card": {
+          "title": "Master's in Education (M.Ed.)",
+          "iconLight": "/images/build-plan/build-your-plan.svg",
+          "iconDark": "/images/build-plan/build-your-plan-light.svg",
+          "description": "<p><strong>Focus:</strong> The M.Ed. is a broader degree that encompasses various aspects of education. It is suited for current educators or professionals in the education sector who want to advance their careers or specialize in areas like administration, curriculum development, or educational policy.</p><p><strong>Curriculum:</strong> The curriculum can vary widely depending on the chosen specialization. It may cover topics such as educational leadership, educational technology, special education, counseling, or curriculum and instruction.</p><p><strong>Outcome:</strong> Graduates often pursue careers beyond classroom teaching, such as school administration, educational policy, curriculum development, or specialize in areas like special education or educational technology.</p><p><strong>Suitability:</strong> Ideal for educators and professionals in the education sector seeking career advancement, leadership roles, or a shift to a specialized area within education.</p>"
+        }
+      }
+    ]
+  },
+  "textWithImage": {
+    "content": "<h2>Do I need a certification to teach?</h2><p>Yes, you generally need a certification to teach, especially in public schools. Certification, often referred to as a teaching credential or license, is a requirement that ensures teachers have the necessary education, skills, and knowledge to effectively educate students.</p><p>The process typically involves completing an accredited teacher preparation program, earning a bachelor's degree (at minimum), and passing relevant exams.</p><p>Private schools might have different requirements, but most still prefer or require certified teachers.</p><p>The specifics can vary by region or country, so it's important to check the requirements in the area where you intend to teach.</p>",
+    "imagePath": "/images/ceo.jpg",
+    "altText": "CEO at a restaurant"
+  }
 }

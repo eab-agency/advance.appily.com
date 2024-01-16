@@ -22,3 +22,4 @@ export { WhatDegrees } from "./WhatDegrees";
 export { ChoosingRightSchoolBusinessDegree } from "./ChoosingRightSchoolBusinessDegree";
 export { WhatIsCappex } from "./WhatIsCappex";
 export { LinkedCardsSection } from "./LinkedCardsSection";
+export { IconCard } from "./IconCard";

@@ -1,66 +1,139 @@
 {
   "slug": "facilitator",
-  "title": "facilitator",
-  "description": "You enjoy working with numbers and data to identify patterns and solve problems. You have a keen eye for detail and are able to see the big picture while also paying attention to the small details.",
-  "detailedDescription": "You’re a person who likes connecting the dots. You think in systems and see patterns where others might not. You probably enjoy working with computers and a complex spreadsheet doesn’t phase you. You may already have a background in analytics or information systems and are interested in transferring those skills to health care—or you may be in an administrative role looking to upskill.",
+  "title": "The Facilitator",
+  "detailedDescription": "<p>Your strength lies in your ability to support and guide individuals with unique learning needs. You excel in creating inclusive learning environments where every student feels valued and empowered.</p><p>Your patience, empathy, and innovative approaches to teaching make you an invaluable asset in Special Education. </p><p>If making education accessible and meaningful to all learners resonates with you, then being a Facilitator in Special Education is where you belong.</p>",
   "tabs": [
     {
       "title": "Motivation",
       "icon": "motivation-icon",
-      "content": "The Analyst likes to develop and maintain systems and solve problems. They often enjoy solving puzzles presented by data."
+      "content": "You are committed to supporting diverse learning needs and ensuring accessibility in education for all students."
     },
     {
       "title": "Skills",
       "icon": "skills-icon",
-      "content": "This role is skilled at organization, project management, data analysis, and creative problem solving."
+      "content": "Empathy, patience, and the ability to design and adapt learning experiences to suit individual needs."
     },
     {
       "title": "Works With",
       "icon": "work-icon",
-      "content": "Careers in The Analyst’s path tend to work with medical professionals and computer systems."
+      "content": "You’d do well in environments that require close collaboration with special education professionals, therapists, and families."
     },
     {
       "title": "Setting",
       "icon": "setting-icon",
-      "content": "An office or hospital are common workplaces for The Analyst, but they may also work for a technical services or administrative support organization."
+      "content": "You likely prefer educational settings that are adaptable and equipped to meet a range of special needs, from classrooms to specialized resource centers."
     },
     {
       "title": "Education",
       "icon": "education-icon",
-      "content": "Jobs in this field often require college courses in things like biology, computer science, math, and management. Some roles require a bachelor’s or master’s degree."
+      "content": "You may have studied special education, psychology, or related fields that focus on diverse learning requirements."
     },
     {
       "title": "Experience",
       "icon": "skills-icon",
-      "content": "People with experience working with computers, databases, or information systems tend to be a good fit for The Analyst’s career path."
+      "content": "You may have had roles involving care, counseling, coaching, or any field that requires an understanding of unique individual needs."
     }
   ],
-  "statsSource": "",
+  "statsSource": "U.S. Bureau of Labor Statistics",
   "stats": [
     {
-      "number": "17%",
+      "number": "Average",
       "title": "Growth",
-      "description": "In employment of health information technologists and medical registrars over the next decade"
+      "description": "In employment of instructional education occupations over the next decade"
     },
     {
-      "number": "$55K",
+      "number": "$57K",
       "title": "Median Salary",
-      "description": "For health information technologists and medical registrars, ranging from $30K to $98K averages"
+      "description": "For instructional education occupations, ranging from $31K to $66K averages"
     },
     {
-      "number": "3.4K",
+      "number": "858K",
       "title": "Job Openings",
-      "description": "Predicted annually over the next decade due to workers retiring or transferring careers"
+      "description": "Predicted annually over the next decade in instructional education roles"
     }
   ],
-  "degreeTabs": [
-    {
-      "title": "Master's",
-      "content": "<p>If you do have a bachelor’s degree and want to further specialize your studies, these are some popular master’s in the health information field:</p><ul><li><strong>Master’s in Health Informatics:</strong> This degree can prepare you to analyze data and improve data systems with the goal of improving public health systems, healthcare delivery systems, and patient outcomes.</li><li><strong>Master’s in Bioinformatics:</strong> This degree provides skills in both biotechnology and computer science which opens doors in a wide range of analysis-driven careers.</li><li><strong>Master’s in Health Care Analytics:</strong> This degree focuses more on the data side, helping you comply with key legal, regulatory, and ethical constraints around sensitive client data and practices advanced analysis and reporting techniques.</li></ul><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
-    },
-    {
-      "title": "Bachelor's",
-      "content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Information Management.</strong> You can often earn these degrees online.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
-    }
-  ]
+  "careerPaths": {
+    "title": "What kind of career is a good fit for me?",
+    "description": "You're likely to excel in roles that require <strong>specialized educational strategies to support students with unique learning needs.</strong>",
+    "paths": [
+      {
+        "title": "Special Education Teacher",
+        "description": "Tailor educational experiences for students with diverse learning needs in early childhood, elementary, middle, or high school settings.",
+        "imagePath": "/images/ceo.jpg"
+      },
+      {
+        "title": "Teacher for Individuals with Autism ",
+        "description": "Develop and implement specialized teaching methods to support students on the autism spectrum, enhancing their learning and social skills.",
+        "imagePath": "/images/cfo.jpg"
+      },
+      {
+        "title": "Teacher for Individuals with Hearing or Sight Impairments ",
+        "description": "Adapt teaching strategies to support students with sensory impairments, facilitating their access to education.",
+        "imagePath": "/images/ceo.jpg"
+      },
+      {
+        "title": "Teacher for Individuals with Speech of Language Impairments",
+        "description": "Assist students in overcoming communication barriers, focusing on developing effective speech and language skills.",
+        "imagePath": "/images/director-or-associate-director.jpg"
+      },
+      {
+        "title": "Teacher for the Gifted and Talented",
+        "description": "Provide advanced, challenging educational experiences for gifted students, fostering their exceptional abilities and talents.",
+        "imagePath": "/images/director-or-associate-director.jpg"
+      }
+    ]
+  },
+  "degreeTabs": {
+    "title": "What graduate degree do I need to advance my <strong>special education teaching career?</strong>",
+    "description": "While a bachelor's degree is the minimum requirement for a career in special education teaching, pursuing a Master's can profoundly enrich your understanding and techniques for working with diverse learners. This advanced education equips you with specialized strategies to effectively address the unique needs of students with disabilities and can lead to <strong>career advancement, higher earning potential, and a more profound impact</strong> in the lives of your students.",
+    "degrees": [
+      {
+        "title": "Master's in Special Education",
+        "content": "<p>Focuses on teaching strategies and interventions for students with diverse learning needs, including disabilities. It covers curriculum adaptation, inclusive teaching practices, and behavioral management.</p><p>Example Degrees:</p><ul><li>Master of Science in Special Education</li><li>M.Ed. in Special Education: Autism Spectrum Disorders</li><li>MA in Special Education: Emotional/Behavioral Disorders</li><li>M.Ed. in Special Education: Learning Disabilities</li><li>Master of Arts in Teaching Special Education</li></ul>"
+      },
+      {
+        "title": "Master's in Applied Behavior Analysis (ABA)",
+        "content": "<p>Specializes in behavior modification techniques, crucial for working with students with behavioral challenges. This program is ideal for those looking to implement ABA therapy in educational settings.</p><p>Example Degrees:</p><ul><li>MS in Applied Behavior Analysis</li><li>MA in Special Education with ABA focus</li><li>M.Ed. in Autism Spectrum Disorders and Behavior Analysis</li><li>MA in Psychology: Applied Behavior Analysis</li><li>MS in Education with a specialization in Applied Behavior Analysis</li></ul>"
+      },
+      {
+        "title": "Master's in Educational Psychology",
+        "content": "<p>Provides an understanding of how students learn, with a focus on cognitive processes and effective instructional strategies. Ideal for special educators interested in the psychological aspects of learning and development.</p><p>Example Degrees:</p><ul><li>MA in Educational Psychology</li><li>M.Ed. in Educational Psychology</li><li>MS in Educational Psychology and Technology</li><li>MA in School Psychology</li><li>Master of Education in Learning and Cognition</li></ul>"
+      },
+      {
+        "title": "Master's in Curriculum and Instruction with a Focus on Special Education",
+        "content": "<p>Concentrates on developing and implementing curricula tailored for special education. It blends curriculum design with special education strategies.</p><p>Example Degrees:</p><ul><li>M.Ed. in Curriculum and Instruction: Special Education</li><li>MA in Teaching with a Specialization in Special Education</li><li>MS in Curriculum and Instruction with an Emphasis in Special Education</li><li>Master of Arts in Special Education Curriculum and Instruction</li><li>M.Ed. in Differentiated Instruction</li></ul>"
+      },
+      {
+        "title": "Master's in Early Childhood Special Education",
+        "content": "<p>Focuses on teaching and supporting young children with special needs. It covers developmental milestones, early intervention techniques, and family engagement strategies.</p><p>Example Degrees:</p><ul><li>M.Ed. in Early Childhood Special Education</li><li>MS in Early Childhood Special Education</li><li>MA in Early Childhood Education and Special Education</li></ul>"
+      }
+    ]
+  },
+  "introComparison": {
+    "title": "What’s the difference between a <strong>Master’s in Teaching and a Master’s in Education?</strong>",
+    "description": "The short answer is that the MAT is more focused on the art and science of classroom teaching, often leading to initial teacher certification, while the M.Ed. offers a broader exploration of educational topics and is geared towards professional advancement and specialization within the field of education.",
+    "cards": [
+      {
+        "card": {
+          "title": "Master's in Teaching (MAT)",
+          "iconLight": "/images/build-plan/ready-for-college.svg",
+          "iconDark": "/images/build-plan/ready-for-college-light.svg",
+          "description": "<p><strong>Focus:</strong> The MAT is primarily focused on preparing individuals for classroom teaching. It is often pursued by those who have a bachelor's degree in a field other than education and are looking to gain the necessary credentials and skills for a teaching career.</p><p><strong>Curriculum:</strong> The curriculum is heavily centered on teaching methodologies, classroom management, pedagogical theories, and practical teaching skills. It typically includes a significant component of student teaching or classroom practicum.</p><p><strong>Outcome:</strong> Graduates usually become classroom teachers. The degree is often a pathway to initial teacher certification or licensure in many regions.</p><p><strong>Suitability:</strong> Ideal for those seeking to enter the teaching profession or for current teachers who want to deepen their teaching skills and possibly specialize in a subject area or grade level.</p>"
+        }
+      },
+      {
+        "card": {
+          "title": "Master's in Education (M.Ed.)",
+          "iconLight": "/images/build-plan/build-your-plan.svg",
+          "iconDark": "/images/build-plan/build-your-plan-light.svg",
+          "description": "<p><strong>Focus:</strong> The M.Ed. is a broader degree that encompasses various aspects of education. It is suited for current educators or professionals in the education sector who want to advance their careers or specialize in areas like administration, curriculum development, or educational policy.</p><p><strong>Curriculum:</strong> The curriculum can vary widely depending on the chosen specialization. It may cover topics such as educational leadership, educational technology, special education, counseling, or curriculum and instruction.</p><p><strong>Outcome:</strong> Graduates often pursue careers beyond classroom teaching, such as school administration, educational policy, curriculum development, or specialize in areas like special education or educational technology.</p><p><strong>Suitability:</strong> Ideal for educators and professionals in the education sector seeking career advancement, leadership roles, or a shift to a specialized area within education.</p>"
+        }
+      }
+    ]
+  },
+  "textWithImage": {
+    "content": "<h2>Do I need a certification to teach special education?</h2><p>Yes, you do need a certification to teach special education. In most regions, teaching special education requires a specific certification or endorsement in addition to the standard teaching credentials.</p><p>This certification ensures that special education teachers have the specialized knowledge and skills necessary to effectively educate students with a variety of learning needs, disabilities, and challenges.</p><p>The process typically involves completing a special education teacher preparation program and passing relevant exams. The exact requirements can vary depending on the state or country in which you plan to teach.</p>",
+    "imagePath": "/images/ceo.jpg",
+    "altText": "CEO at a restaurant"
+  }
 }
