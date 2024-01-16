@@ -5,35 +5,35 @@
       "associatedField": "education_journey__select1",
       "answers": [
         {
-          "answer": "I am considering a master's degree in business.",
+          "answer": "I am considering a master's degree in education.",
           "personality": "initial",
           "weight": 1,
           "value": "3",
           "label": "Masters"
         },
         {
-          "answer": "I am exploring a business degree at the undergraduate level.",
+          "answer": "I am exploring a education degree at the undergraduate level.",
           "personality": "initial",
           "weight": 1,
           "value": "2",
           "label": "Bachelors"
         },
         {
-          "answer": "I am interested in a PhD or doctoral business degree.",
+          "answer": "I am interested in a PhD or doctoral education degree.",
           "personality": "initial",
           "weight": 1,
           "value": "4",
           "label": "PhD"
         },
         {
-          "answer": "I am currently in school for an undergraduate business degree and wish to transfer.",
+          "answer": "I am currently in school for an undergraduate education degree and wish to transfer.",
           "personality": "initial",
           "weight": 1,
           "value": "2",
           "label": "Transfer"
         },
         {
-          "answer": "I am not currently considering school or I am pursuing a non-business degree.",
+          "answer": "I am not currently considering school or I am pursuing a non-education degree.",
           "personality": "initial",
           "weight": 1,
           "value": "6",
