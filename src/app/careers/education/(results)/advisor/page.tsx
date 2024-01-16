@@ -68,68 +68,14 @@ export default function Page() {
 				<Stats stats={data.stats} source={data.statsSource} />
 
 				<WhatDegrees whatDegreesData={data.degreeTabs} />
-				{data.introComparison && (
-					<section className="comparison">
-						<div className="group column center-aligned center-justified">
-							<div className="intro-text">
-								<h2
-									dangerouslySetInnerHTML={{
-										__html: data.introComparison.title,
-									}}
-								/>
-								<p
-									dangerouslySetInnerHTML={{
-										__html: data.introComparison.description,
-									}}
-								/>
-							</div>
 
-							<div className="infograph row cols-2">
-								<IconCard
-									title={data.introComparison.cards[0].card.title}
-									iconUrl={
-										themeMode === "dark"
-											? data.introComparison.cards[0].card.iconLight
-											: data.introComparison.cards[0].card.iconDark
-									}
-									iconAlt="ROI (Return on Investment) icon"
-									className="roi-card"
-								>
-									<div
-										dangerouslySetInnerHTML={{
-											__html: data.introComparison.cards[0].card.description,
-										}}
-									/>
-								</IconCard>
-
-								<IconCard
-									title={data.introComparison.cards[1].card.title}
-									iconUrl={
-										themeMode === "dark"
-											? data.introComparison.cards[1].card.iconLight
-											: data.introComparison.cards[1].card.iconDark
-									}
-									iconAlt="Career Opportunities icon"
-									className="career-card"
-								>
-									<div
-										dangerouslySetInnerHTML={{
-											__html: data.introComparison.cards[1].card.description,
-										}}
-									/>
-								</IconCard>
-							</div>
-						</div>
-					</section>
-				)}
-
-				<div
+				{/* <div
 					id="explore-your-school-matches"
 					className="carouselWithForm"
 					ref={carouselRef}
 				>
 					<CarouselWithForm formId="7" collectData={false} />
-				</div>
+				</div> */}
 				<TextWithImage
 					content={data.textWithImage.content}
 					imagePath={data.textWithImage.imagePath}

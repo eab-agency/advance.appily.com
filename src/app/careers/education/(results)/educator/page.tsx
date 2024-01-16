@@ -122,13 +122,13 @@ export default function Page() {
 					</div>
 				</section>
 
-				<div
+				{/* <div
 					id="explore-your-school-matches"
 					className="carouselWithForm"
 					ref={carouselRef}
 				>
 					<CarouselWithForm formId="7" collectData={false} />
-				</div>
+				</div> */}
 				<TextWithImage
 					content={data.textWithImage.content}
 					imagePath={data.textWithImage.imagePath}
