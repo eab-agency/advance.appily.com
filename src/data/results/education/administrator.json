@@ -1,66 +1,139 @@
 {
   "slug": "administrator",
-  "title": "administrator",
-  "description": "You enjoy working with numbers and data to identify patterns and solve problems. You have a keen eye for detail and are able to see the big picture while also paying attention to the small details.",
-  "detailedDescription": "You’re a person who likes connecting the dots. You think in systems and see patterns where others might not. You probably enjoy working with computers and a complex spreadsheet doesn’t phase you. You may already have a background in analytics or information systems and are interested in transferring those skills to health care—or you may be in an administrative role looking to upskill.",
+  "title": "The Administrator",
+  "detailedDescription": "<p>As an Administrator, you're the backbone of educational institutions. You possess a knack for leadership, organization, and strategic planning.</p><p>Your role is crucial in shaping the educational landscape, whether it's through managing resources, overseeing faculty, or implementing policies.</p><p>If you find fulfillment in leading educational initiatives and ensuring the smooth operation of schools or educational programs, the role of an Administrator is ideally suited for you.</p>",
   "tabs": [
     {
       "title": "Motivation",
       "icon": "motivation-icon",
-      "content": "The Analyst likes to develop and maintain systems and solve problems. They often enjoy solving puzzles presented by data."
+      "content": "You are driven to lead, organize, and improve educational systems and institutions."
     },
     {
       "title": "Skills",
       "icon": "skills-icon",
-      "content": "This role is skilled at organization, project management, data analysis, and creative problem solving."
+      "content": "Leadership, strategic planning, and the ability to manage both people and resources effectively."
     },
     {
       "title": "Works With",
       "icon": "work-icon",
-      "content": "Careers in The Analyst’s path tend to work with medical professionals and computer systems."
+      "content": "You’d do well collaborating with educators, staff, and stakeholders to enhance the educational environment."
     },
     {
       "title": "Setting",
       "icon": "setting-icon",
-      "content": "An office or hospital are common workplaces for The Analyst, but they may also work for a technical services or administrative support organization."
+      "content": "You may enjoy working in educational institutions or administrative offices where strategic decision-making and oversight are key."
     },
     {
       "title": "Education",
       "icon": "education-icon",
-      "content": "Jobs in this field often require college courses in things like biology, computer science, math, and management. Some roles require a bachelor’s or master’s degree."
+      "content": "You may have a background in educational leadership, administration, or related fields such as business or management."
     },
     {
       "title": "Experience",
       "icon": "skills-icon",
-      "content": "People with experience working with computers, databases, or information systems tend to be a good fit for The Analyst’s career path."
+      "content": "You might have experience in management, administration, or leadership roles, even outside the educational sector."
     }
   ],
-  "statsSource": "",
+  "statsSource": "U.S. Bureau of Labor Statistics",
   "stats": [
     {
-      "number": "17%",
+      "number": "Average",
       "title": "Growth",
-      "description": "In employment of health information technologists and medical registrars over the next decade"
+      "description": "In employment of instructional education occupations over the next decade"
     },
     {
-      "number": "$55K",
+      "number": "$95K",
       "title": "Median Salary",
-      "description": "For health information technologists and medical registrars, ranging from $30K to $98K averages"
+      "description": "For educational leadership occupations, ranging from $89K to $101K averages"
     },
     {
-      "number": "3.4K",
+      "number": "22K",
       "title": "Job Openings",
-      "description": "Predicted annually over the next decade due to workers retiring or transferring careers"
+      "description": "Predicted annually over the next decade in educational leadership roles"
     }
   ],
-  "degreeTabs": [
-    {
-      "title": "Master's",
-      "content": "<p>If you do have a bachelor’s degree and want to further specialize your studies, these are some popular master’s in the health information field:</p><ul><li><strong>Master’s in Health Informatics:</strong> This degree can prepare you to analyze data and improve data systems with the goal of improving public health systems, healthcare delivery systems, and patient outcomes.</li><li><strong>Master’s in Bioinformatics:</strong> This degree provides skills in both biotechnology and computer science which opens doors in a wide range of analysis-driven careers.</li><li><strong>Master’s in Health Care Analytics:</strong> This degree focuses more on the data side, helping you comply with key legal, regulatory, and ethical constraints around sensitive client data and practices advanced analysis and reporting techniques.</li></ul><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
-    },
-    {
-      "title": "Bachelor's",
-      "content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Information Management.</strong> You can often earn these degrees online.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
-    }
-  ]
+  "careerPaths": {
+    "title": "What kind of career is a good fit for me?",
+    "description": "You're likely to excel in roles that require <strong>specialized educational strategies to support students with unique learning needs.</strong>",
+    "paths": [
+      {
+        "title": "Special Education Teacher",
+        "description": "Tailor educational experiences for students with diverse learning needs in early childhood, elementary, middle, or high school settings.",
+        "imagePath": "/images/ceo.jpg"
+      },
+      {
+        "title": "Teacher for Individuals with Autism ",
+        "description": "Develop and implement specialized teaching methods to support students on the autism spectrum, enhancing their learning and social skills.",
+        "imagePath": "/images/cfo.jpg"
+      },
+      {
+        "title": "Teacher for Individuals with Hearing or Sight Impairments ",
+        "description": "Adapt teaching strategies to support students with sensory impairments, facilitating their access to education.",
+        "imagePath": "/images/ceo.jpg"
+      },
+      {
+        "title": "Teacher for Individuals with Speech of Language Impairments",
+        "description": "Assist students in overcoming communication barriers, focusing on developing effective speech and language skills.",
+        "imagePath": "/images/director-or-associate-director.jpg"
+      },
+      {
+        "title": "Teacher for the Gifted and Talented",
+        "description": "Provide advanced, challenging educational experiences for gifted students, fostering their exceptional abilities and talents.",
+        "imagePath": "/images/director-or-associate-director.jpg"
+      }
+    ]
+  },
+  "degreeTabs": {
+    "title": "What degree do I need for an <strong>administration career path?</strong>",
+    "description": "For a career in school administration, pursuing a Master's degree is highly beneficial, as it equips you with <strong>essential management skills, an understanding of educational policies, and leadership strategies</strong> necessary for effective school administration. Additionally, obtaining a Doctorate can further enhance your expertise, <strong>opening doors to higher-level positions and offering opportunities to significantly influence educational practices and policies.<strong>",
+    "degrees": [
+      {
+        "title": "Master's in Educational Leadership and Administration",
+        "content": "<p>Focuses on preparing individuals for leadership roles in schools, including principals and district leaders. It covers topics like school management, educational policy, and leadership theories.</p><p>Example Degrees:</p><ul><li>Master of Education (M.Ed.) in Educational Leadership</li><li>Master of Arts (MA) in Educational Administration</li><li>Master of Science (MS) in Educational Administration and Supervision</li><li>Master of Arts in Educational Leadership and Management</li><li>Master of Science in School Leadership</li></ul>"
+      },
+      {
+        "title": "Master's in School Administration",
+        "content": "<p>Concentrates on the administrative aspects of running a school, including human resources, school finance, and legal issues in education.</p><p>Example Degrees:</p><ul><li>M.Ed. in School Administration</li><li>MA in School Administration and Leadership</li><li>MS in Education Administration</li><li>Executive Master of Education in School Administration</li><li>Master of Arts in Educational Leadership and School Administration</li></ul>"
+      },
+      {
+        "title": "Doctor of Education (Ed.D.) in Educational Leadership",
+        "content": "<p>A doctoral program aimed at developing advanced skills in leadership, policy formation, and organizational change in education. This degree often focuses on applying research to practical challenges in education systems.</p><p>Example Degrees:</p><ul><li>Ed.D. in Educational Leadership</li><li>Ed.D. in School Leadership</li><li>Doctorate in Education Administration</li><li>Ed.D. in Educational Management and Leadership</li><li>Ed.D. in Educational Leadership and Policy</li></ul>"
+      },
+      {
+        "title": "Doctor of Philosophy (Ph.D.) in Educational Administration",
+        "content": "<p>This research-focused doctoral program prepares individuals for senior leadership roles and policy development in education. It is ideal for those interested in academic research or teaching at the university level.</p><p>Example Degrees:</p><ul><li>Ph.D. in Educational Administration</li><li>Ph.D. in Education Policy and Leadership</li><li>Doctorate in Education Leadership and Administration</li><li>Ph.D. in Higher Education Administration</li><li>Ph.D. in School Leadership and Policy Studies</li></ul>"
+      },
+      {
+        "title": "Master's in Public Administration (MPA) with an Education Focus",
+        "content": "<p>This degree blends public administration with a focus on education, preparing individuals for administrative roles in public education settings. It covers broader aspects of public service management as they relate to education.</p><p>Example Degrees:</p><ul><li>MPA with a specialization in Education Policy and Administration</li><li>Master of Public Administration in Educational Leadership</li><li>MPA in Public and Nonprofit Management (Education Concentration)</li><li>Executive MPA with a focus on Education Administration</li><li>Master of Public Administration in School Leadership</li></ul>"
+      }
+    ]
+  },
+  "introComparison": {
+    "title": "What’s the difference between a <strong>Master’s in Teaching and a Master’s in Education?</strong>",
+    "description": "The short answer is that the MAT is more focused on the art and science of classroom teaching, often leading to initial teacher certification, while the M.Ed. offers a broader exploration of educational topics and is geared towards professional advancement and specialization within the field of education.",
+    "cards": [
+      {
+        "card": {
+          "title": "Master's in Teaching (MAT)",
+          "iconLight": "/images/build-plan/ready-for-college.svg",
+          "iconDark": "/images/build-plan/ready-for-college-light.svg",
+          "description": "<p><strong>Focus:</strong> The MAT is primarily focused on preparing individuals for classroom teaching. It is often pursued by those who have a bachelor's degree in a field other than education and are looking to gain the necessary credentials and skills for a teaching career.</p><p><strong>Curriculum:</strong> The curriculum is heavily centered on teaching methodologies, classroom management, pedagogical theories, and practical teaching skills. It typically includes a significant component of student teaching or classroom practicum.</p><p><strong>Outcome:</strong> Graduates usually become classroom teachers. The degree is often a pathway to initial teacher certification or licensure in many regions.</p><p><strong>Suitability:</strong> Ideal for those seeking to enter the teaching profession or for current teachers who want to deepen their teaching skills and possibly specialize in a subject area or grade level.</p>"
+        }
+      },
+      {
+        "card": {
+          "title": "Master's in Education (M.Ed.)",
+          "iconLight": "/images/build-plan/build-your-plan.svg",
+          "iconDark": "/images/build-plan/build-your-plan-light.svg",
+          "description": "<p><strong>Focus:</strong> The M.Ed. is a broader degree that encompasses various aspects of education. It is suited for current educators or professionals in the education sector who want to advance their careers or specialize in areas like administration, curriculum development, or educational policy.</p><p><strong>Curriculum:</strong> The curriculum can vary widely depending on the chosen specialization. It may cover topics such as educational leadership, educational technology, special education, counseling, or curriculum and instruction.</p><p><strong>Outcome:</strong> Graduates often pursue careers beyond classroom teaching, such as school administration, educational policy, curriculum development, or specialize in areas like special education or educational technology.</p><p><strong>Suitability:</strong> Ideal for educators and professionals in the education sector seeking career advancement, leadership roles, or a shift to a specialized area within education.</p>"
+        }
+      }
+    ]
+  },
+  "textWithImage": {
+    "content": "<h2>Do I need a certification to become a school administrator?</h2><p>Yes, to become a school administrator, you generally need a specific certification, often in addition to a Master's degree in Educational Leadership or Administration. </p><p>This certification ensures you have the necessary management skills and educational knowledge. The process usually involves completing an accredited administrative preparation program and passing relevant exams. </p><p>Requirements can vary by region, and experience in teaching or educational roles is often a prerequisite. It's important to check the specific certification requirements in your area.</p>",
+    "imagePath": "/images/ceo.jpg",
+    "altText": "CEO at a restaurant"
+  }
 }
