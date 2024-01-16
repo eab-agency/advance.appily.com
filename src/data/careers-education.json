@@ -16,77 +16,89 @@
   "pageTitle": "Which type of<strong>eduction career</strong> is right for you?",
   "quizSection": {
     "title": "Take Our Free Education Career Quiz to Find Out",
-    "content": "<p>If you want to work in education but you don’t know which job fits your skills and interests, <strong>this free quiz can help find a good fit</strong> and you plan your next steps.</p><p>The Bureau of Labor Statistics predicts about <strong>nearly one million jobs in business</strong> will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p><strong>In less than three minutes, you could discover which type of business career could be a good fit for you.</strong> We’ll also connect you with schools near you that offer degrees to help you reach your goals.</p>",
+    "content": "<p>Are you a teacher looking to stay in education but leave the classroom? Maybe you’re ready to advance your current education career? Or are you in a different field but want to apply your skills to helping shape the future? </p><p>If you want to work in education but you don’t know which job fits your skills and interests, <strong>this free quiz can help find a good fit</strong> and you plan your next steps.</p><p>The Bureau of Labor Statistics predicts nearly <strong>900 thousand jobs in education</strong> will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p><strong>In less than three minutes, you could discover which type of education career could be a good fit for you.</strong> We’ll also connect you with schools near you that offer degrees to help you reach your goals.</p>",
     "buttonText": "Take the Quiz"
   },
   "stats": [
     {
-      "number": "8%",
+      "number": "Average",
       "title": "Growth",
-      "description": "in employment of management occupations over the next decade"
+      "description": "In employment of education occupations over the next decade"
     },
     {
-      "number": "$76K",
+      "number": "$57K",
       "title": "Median Salary",
-      "description": "for business-related occupations, ranging from $50K to $96K"
+      "description": "For education occupations, ranging from $35K to $101K averages"
     },
     {
-      "number": "911K",
+      "number": "858K",
       "title": "Job Openings",
-      "description": "predicted annually over the next decade in business-related occupations"
+      "description": "Predicted annually over the next decade in the field of education"
     }
   ],
   "statsSource": "U.S. Bureau of Labor Statistics",
   "whyChoose": {
-    "title": "MBA vs. Specific Business Master’s Degrees:",
-    "subTitle": "What's the Difference?",
-    "description": "An MBA (Master of Business Administration) and a business master’s degree—such as an M.S. in Management—are both <strong>graduate-level programs that focus on business and management education.</strong> However, there are some differences between the two:",
+    "title": "5 Good Answers to the Question:",
+    "subTitle": "Why Become a Teacher?",
+    "description": "Teaching is more than just a job; it's a calling that makes a real difference in the world. For those pondering a career in education, here are five compelling reasons to take the plunge into teaching.",
     "reasons": [
       {
-        "title": "Curriculum",
-        "description": "MBA programs often have a more comprehensive curriculum, covering a wider range of business topics such as finance, accounting, marketing, strategy, and operations. A business master’s program has a more specialized focus, such as finance, accounting, or marketing."
+        "title": "Inspire Future Generations",
+        "description": "Teaching gives you the chance to impact the lives of students, inspiring and guiding future generations. As a teacher, you become a role model, shaping young minds and sparking curiosity about the world."
       },
       {
-        "title": "Focus",
-        "description": "An MBA program typically focuses on developing general management skills, such as leadership, critical thinking, and problem-solving. A Master's in Business program may have a more technical or specialized focus, such as accounting or finance."
+        "title": "Make a Societal Impact",
+        "description": "Teachers play a pivotal role in shaping society. By educating the youth, you contribute to the development of informed, thoughtful, and responsible citizens, making a lasting impact on the community and the world at large."
       },
       {
-        "title": "Work Experience",
-        "description": "MBA programs usually require applicants to have several years of work experience, while a Master's in Business program may not require any work experience or may only require a short period of experience."
+        "title": "Get Creative and Intellectual Stimulation",
+        "description": "Teaching is an intellectually stimulating career that constantly challenges you to be creative in lesson planning and finding ways to engage diverse learners. It's a field that keeps you learning and growing professionally."
       },
       {
-        "title": "Cost",
-        "description": "MBA programs are often more expensive than a Master's in Business program, partly due to the higher caliber of students and faculty, and partly due to the greater resources required to run a comprehensive program."
+        "title": "Building Relationships and Community",
+        "description": "As a teacher, you become part of a larger community of educators, students, and families. These relationships are rewarding and enriching, offering a sense of belonging and the joy of working collaboratively towards educational goals."
+      },
+      {
+        "title": "Career Flexibility and Security",
+        "description": "The demand for qualified teachers makes teaching a career with great job security. Furthermore, teaching skills are transferable worldwide, offering flexibility in where you can work – whether it's different states, countries, or educational settings."
       }
     ]
   },
   "testimonial": {
-    "text": "Every day presents new challenges and opportunities to make strategic decisions that shape the direction of the company. The ability to drive innovation, lead a team, and contribute to the growth of the organization is both fulfilling and empowering. Business is all about creating value, solving problems, and making a positive impact on the world. It's a dynamic and ever-evolving field that allows me to continuously learn and grow while making meaningful contributions to the bottom line and the community.",
-    "author": "Dana Jones",
-    "authorTitle": "Director of Creative Strategy and Innovation, EAB"
+    "text": "If you look behind every exceptional person there is an exceptional teacher.",
+    "author": "Stephen Hawking"
   },
   "rightCareer": [
     {
       "title": " Top 5 Reasons a Career in Health Care Could Be Right for You",
-      "description": "Are you considering a career in health care but unsure if it's the right fit for you? Here are the top five reasons why it might be:",
+      "description": "Teachers have a diverse skill set that opens doors to many career opportunities, both within and outside traditional classroom settings. Here are some good career options for teachers:",
       "reasons": [
         {
-          "description": "<strong>Diverse Career Paths:</strong> The health care industry offers a wide range of career paths, from direct patient care roles like nursing and therapy, to support roles like hospital administration, medical analytics, and medical research."
+          "title": "Educational Consultant",
+          "description": "Advising schools, educational organizations, or publishers on curriculum development, teaching strategies, and educational technologies."
         },
         {
-          "description": "<strong>Rewarding Work:</strong> Health care professionals have the opportunity to make a positive impact on others and improve their quality of life. If you're passionate about helping others and making a difference, health care could be a great fit for you."
+          "title": "Curriculum Developer or Instructional Designer",
+          "description": "Designing and revising curriculum, developing instructional materials, and training teachers on new content or teaching methods."
         },
         {
-          "description": "<strong>Hands-On Work:</strong> If you enjoy hands-on work and thrive under pressure, direct patient care roles may be a perfect fit for you. These roles require excellent communication, problem-solving, and critical thinking skills, as well as attention to detail."
+          "title": "School Administrator",
+          "description": "Roles like principal or vice-principal, focusing on managing school operations, staff, and policies."
         },
         {
-          "description": "<strong>Technology and Data Analysis:</strong> Health care also offers many support roles that require a strong understanding of data analysis, research methodologies, and health care systems. If you enjoy working with data and technology, roles like medical analytics and medical research could be a great fit for you."
+          "title": "Educational Policy Analyst",
+          "description": "Working with governmental agencies, non-profits, or think tanks to analyze, develop, and implement educational policies."
         },
         {
-          "description": "<strong>Career Advancement:</strong> The health care industry is constantly evolving and offers many opportunities for career advancement. Whether you're interested in pursuing additional degrees, moving up the career ladder, or exploring new specialties, health care offers many options for growth."
+          "title": "Instructional Designer",
+          "description": "Creating educational content and courses, particularly for online platforms or corporate training programs."
+        },
+        {
+          "title": "Academic Advisor or Counselor",
+          "description": "Helping students navigate their educational paths, including course selection, career advice, and personal development."
         }
       ],
-      "endCopy": "If you're still unsure if health care is the right fit for you, <a href='/quiz'>take our free health care career quiz.</a> It will help you identify how your interests, skills, and strengths align with different medical career paths and suggest the degrees you can earn to take the next step in your career."
+      "endCopy": "<a href='/careers/education/quiz'>The Education Career Quiz</a> can help you discover how your particular interests and skills can translate to careers like these!"
     }
   ],
   "contactForm": {

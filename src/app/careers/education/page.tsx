@@ -15,6 +15,7 @@ import {
 import { IconCard } from "@/components/IconCard/IconCard";
 import { useUser } from "@/context/context";
 import data from "@/data/careers-education.json";
+import Link from "next/link";
 
 /* eslint-disable react/no-danger */
 const BusinessSeoPage = () => {
@@ -105,9 +106,9 @@ const BusinessSeoPage = () => {
 				<div className="group center-aligned cols-2">
 					<div className="column">
 						<div className="intro">
+							<h2>{data.whyChoose.title}</h2>
 							<h2>
-								MBA vs. Specific Business Master’s Degrees:{" "}
-								<strong>What's the Difference?</strong>
+								<strong>{data.whyChoose.subTitle}</strong>
 							</h2>
 							<p
 								dangerouslySetInnerHTML={{
@@ -127,6 +128,13 @@ const BusinessSeoPage = () => {
 								</Accordion>
 							))}
 						</div>
+						<p>
+							<Link href="/careers/education/quia">
+								Take the Education Career Quiz
+							</Link>{" "}
+							to see if your skills and interests make you a great fit for a
+							classroom setting!
+						</p>
 					</div>
 					<div className="column">
 						<figure className="highlighted-img">
@@ -143,85 +151,36 @@ const BusinessSeoPage = () => {
 
 			<Testimonial testimonialData={data.testimonial} />
 
-			<section className="comparison">
-				<div className="group column center-aligned center-justified">
-					<div className="intro-text">
+			<section className="rightCareer">
+				<div className="group column center-aligned">
+					<div className="column">
 						<h2>
-							MBA vs. Specific Business Master's Degrees:{" "}
-							<strong>Maximizing Your Career Investment</strong>
+							What are Some Good Jobs for <strong>Former Teachers?</strong>
 						</h2>
-						<p>
-							In the pursuit of advancing one's career in the dynamic realm of
-							business, the choice between pursuing a Master of Business
-							Administration (MBA) or a specialized business master's degree is
-							pivotal. Both pathways offer distinct advantages, but
-							understanding the nuances of their respective Return on Investment
-							(ROI) and career prospects is essential for informed
-							decision-making.
-						</p>
+						<p>{data.rightCareer[0].description}</p>
 					</div>
-
-					<div className="infograph row cols-2">
-						<IconCard
-							title="ROI (Return on Investment):"
-							iconUrl={
-								themeMode === "dark"
-									? "/images/roi-icon-light.svg"
-									: "/images/roi-icon.svg"
-							}
-							iconAlt="ROI (Return on Investment) icon"
-							className="roi-card"
-						>
-							<h4>MBA:</h4>
-							<p>
-								Higher ROI due to broader business knowledge, leadership
-								training, and networking opportunities.
-							</p>
-							<p>
-								Higher starting salaries and potential for significant long-term
-								earnings.
-							</p>
-							<h4>Specific Business Master's:</h4>
-							<p>
-								Good ROI, especially for those with a clear career path in a
-								specialized field (e.g., finance, accounting).
-							</p>
-						</IconCard>
-
-						<IconCard
-							title="Career Opportunities:"
-							iconUrl={
-								themeMode === "dark"
-									? "/images/career-opportunity-icon-light.svg"
-									: "/images/career-opportunity-icon.svg"
-							}
-							iconAlt="Career Opportunities icon"
-							className="career-card"
-						>
-							<h4>MBA:</h4>
-							<p>
-								Diverse range of industries (finance, consulting, marketing,
-								entrepreneurship).
-							</p>
-							<p>Versatile skills for career advancement.</p>
-							<h4>Specific Business Master's:</h4>
-							<p>
-								Specialized education in a particular field (e.g., finance,
-								accounting).
-							</p>
-							<p>Tailored skills for specific career paths.</p>
-						</IconCard>
+					<div className="accordion-group">
+						{data.rightCareer[0].reasons.map((reason, index) => (
+							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+							<Accordion key={index} title={reason.title}>
+								<p
+									dangerouslySetInnerHTML={{
+										__html: reason.description,
+									}}
+								/>
+							</Accordion>
+						))}
 					</div>
+					<p
+						dangerouslySetInnerHTML={{ __html: data.rightCareer[0].endCopy }}
+					/>
 				</div>
 			</section>
-
-			<div id="explore-your-school-matches" ref={carouselRef}>
+			{/* <div id="explore-your-school-matches" ref={carouselRef}>
 				<CarouselWithForm formId="8" />
-			</div>
+			</div> */}
 
-			<WhatIsCappex>
-				<Stats stats={data.statsAppily} className="stats-section" />
-			</WhatIsCappex>
+			<WhatIsCappex />
 
 			<section className="takeQuiz full-content">
 				<div className="group row">
