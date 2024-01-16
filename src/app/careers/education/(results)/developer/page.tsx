@@ -2,13 +2,13 @@
 "use client";
 import creativeMarketer from "@/assets/lotties/creativeMarketer.json";
 import Lottie from "lottie-react";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { useEffect, useRef } from "react";
 
 import {
 	CareerPaths,
 	CarouselWithForm,
-	ChoosingRightSchoolBusinessDegree,
+	IconCard,
 	KeepExploring,
 	Stats,
 	StickyCta,
@@ -30,6 +30,8 @@ export default function Page() {
 	const carouselRef = useRef(null);
 	const { results: links } = dataLinks;
 	const { setVertical, vertical } = useUser();
+	const [themeMode, setThemeMode] = useState("light");
+
 	useEffect(() => {
 		setVertical("Education");
 	}, []);
@@ -43,7 +45,11 @@ export default function Page() {
 								<span>Your ideal role could be ...</span>
 							</div>
 							<h1>{data.title}</h1>
-							<p>{data.detailedDescription}</p>
+							<p
+								dangerouslySetInnerHTML={{
+									__html: data.detailedDescription,
+								}}
+							/>
 						</div>
 						<figure className="column">
 							<Lottie animationData={creativeMarketer} loop={true} />
@@ -57,9 +63,65 @@ export default function Page() {
 					<Tabs className="react-tabs" tabs={data.tabs} />
 				</Suspense>
 
+				<CareerPaths careerPaths={data.careerPaths} />
+
 				<Stats stats={data.stats} source={data.statsSource} />
 
-				{/* <WhatDegrees whatDegreesData={data.degreeTabs} /> */}
+				<WhatDegrees whatDegreesData={data.degreeTabs} />
+				{data.introComparison && (
+					<section className="comparison">
+						<div className="group column center-aligned center-justified">
+							<div className="intro-text">
+								<h2
+									dangerouslySetInnerHTML={{
+										__html: data.introComparison.title,
+									}}
+								/>
+								<p
+									dangerouslySetInnerHTML={{
+										__html: data.introComparison.description,
+									}}
+								/>
+							</div>
+
+							<div className="infograph row cols-2">
+								<IconCard
+									title={data.introComparison.cards[0].card.title}
+									iconUrl={
+										themeMode === "dark"
+											? data.introComparison.cards[0].card.iconLight
+											: data.introComparison.cards[0].card.iconDark
+									}
+									iconAlt="ROI (Return on Investment) icon"
+									className="roi-card"
+								>
+									<div
+										dangerouslySetInnerHTML={{
+											__html: data.introComparison.cards[0].card.description,
+										}}
+									/>
+								</IconCard>
+
+								<IconCard
+									title={data.introComparison.cards[1].card.title}
+									iconUrl={
+										themeMode === "dark"
+											? data.introComparison.cards[1].card.iconLight
+											: data.introComparison.cards[1].card.iconDark
+									}
+									iconAlt="Career Opportunities icon"
+									className="career-card"
+								>
+									<div
+										dangerouslySetInnerHTML={{
+											__html: data.introComparison.cards[1].card.description,
+										}}
+									/>
+								</IconCard>
+							</div>
+						</div>
+					</section>
+				)}
 
 				<div
 					id="explore-your-school-matches"
@@ -68,9 +130,12 @@ export default function Page() {
 				>
 					<CarouselWithForm formId="7" collectData={false} />
 				</div>
-
-				<ChoosingRightSchoolBusinessDegree />
-
+				<TextWithImage
+					content={data.textWithImage.content}
+					imagePath={data.textWithImage.imagePath}
+					className="whatever-you-need"
+					altText={data.textWithImage.altText}
+				/>
 				<KeepExploring trackedElement={carouselRef} />
 			</div>
 
