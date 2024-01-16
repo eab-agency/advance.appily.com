@@ -59,32 +59,32 @@
       {
         "title": "Preschool Teacher",
         "description": "Foster early childhood development by engaging toddlers in foundational learning through play and structured activities.",
-        "imagePath": "/images/ceo.jpg"
+        "imagePath": "/images/career-preschool-teacher.jpg"
       },
       {
         "title": "Elementary School Teacher",
         "description": "Cultivate a love of learning in young students by teaching a range of basic subjects and fostering a positive classroom environment.",
-        "imagePath": "/images/cfo.jpg"
+        "imagePath": "/images/career-elementary-school-teacher.jpg"
       },
       {
         "title": "Middle School Teacher",
         "description": "Guide pre-adolescents through an important developmental period by teaching specific subjects and supporting their emotional and social growth.",
-        "imagePath": "/images/ceo.jpg"
+        "imagePath": "/images/career-middle-school-teacher.jpg"
       },
       {
         "title": "High School Teacher",
         "description": "Specialize in teaching a specific subject area to teenagers, preparing them for college and careers while developing critical thinking and subject mastery.",
-        "imagePath": "/images/director-or-associate-director.jpg"
+        "imagePath": "/images/career-high-school-teacher.jpg"
       },
       {
         "title": "ESL Teacher",
         "description": "Teach English to non-native speakers, focusing on language skills, cultural nuances, and effective communication.",
-        "imagePath": "/images/director-or-associate-director.jpg"
+        "imagePath": "/images/career-esl-teacher.jpg"
       },
       {
         "title": "Elective Teacher",
         "description": "Engage students in specialized subjects such as PE, Art, Drama, Music, or Career and Technical Education, fostering specific skills and interests.",
-        "imagePath": "/images/director-or-associate-director.jpg"
+        "imagePath": "/images/carreer-elective-teacher.jpg"
       }
     ]
   },

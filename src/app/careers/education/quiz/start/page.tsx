@@ -29,7 +29,7 @@ async function QuizHome() {
 			<Quiz
 				vertical={VERTICAL}
 				quizData={quizData}
-				resultsFormId="6"
+				resultsFormId="16"
 				title={title}
 				randomizeAnswers={true}
 			/>
