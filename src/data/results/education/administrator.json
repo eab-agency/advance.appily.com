@@ -109,28 +109,6 @@
       }
     ]
   },
-  "introComparison": {
-    "title": "What’s the difference between a <strong>Master’s in Teaching and a Master’s in Education?</strong>",
-    "description": "The short answer is that the MAT is more focused on the art and science of classroom teaching, often leading to initial teacher certification, while the M.Ed. offers a broader exploration of educational topics and is geared towards professional advancement and specialization within the field of education.",
-    "cards": [
-      {
-        "card": {
-          "title": "Master's in Teaching (MAT)",
-          "iconLight": "/images/build-plan/ready-for-college.svg",
-          "iconDark": "/images/build-plan/ready-for-college-light.svg",
-          "description": "<p><strong>Focus:</strong> The MAT is primarily focused on preparing individuals for classroom teaching. It is often pursued by those who have a bachelor's degree in a field other than education and are looking to gain the necessary credentials and skills for a teaching career.</p><p><strong>Curriculum:</strong> The curriculum is heavily centered on teaching methodologies, classroom management, pedagogical theories, and practical teaching skills. It typically includes a significant component of student teaching or classroom practicum.</p><p><strong>Outcome:</strong> Graduates usually become classroom teachers. The degree is often a pathway to initial teacher certification or licensure in many regions.</p><p><strong>Suitability:</strong> Ideal for those seeking to enter the teaching profession or for current teachers who want to deepen their teaching skills and possibly specialize in a subject area or grade level.</p>"
-        }
-      },
-      {
-        "card": {
-          "title": "Master's in Education (M.Ed.)",
-          "iconLight": "/images/build-plan/build-your-plan.svg",
-          "iconDark": "/images/build-plan/build-your-plan-light.svg",
-          "description": "<p><strong>Focus:</strong> The M.Ed. is a broader degree that encompasses various aspects of education. It is suited for current educators or professionals in the education sector who want to advance their careers or specialize in areas like administration, curriculum development, or educational policy.</p><p><strong>Curriculum:</strong> The curriculum can vary widely depending on the chosen specialization. It may cover topics such as educational leadership, educational technology, special education, counseling, or curriculum and instruction.</p><p><strong>Outcome:</strong> Graduates often pursue careers beyond classroom teaching, such as school administration, educational policy, curriculum development, or specialize in areas like special education or educational technology.</p><p><strong>Suitability:</strong> Ideal for educators and professionals in the education sector seeking career advancement, leadership roles, or a shift to a specialized area within education.</p>"
-        }
-      }
-    ]
-  },
   "textWithImage": {
     "content": "<h2>Do I need a certification to become a school administrator?</h2><p>Yes, to become a school administrator, you generally need a specific certification, often in addition to a Master's degree in Educational Leadership or Administration. </p><p>This certification ensures you have the necessary management skills and educational knowledge. The process usually involves completing an accredited administrative preparation program and passing relevant exams. </p><p>Requirements can vary by region, and experience in teaching or educational roles is often a prerequisite. It's important to check the specific certification requirements in your area.</p>",
     "imagePath": "/images/ceo.jpg",
