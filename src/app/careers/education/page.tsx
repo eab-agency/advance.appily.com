@@ -59,10 +59,10 @@ const BusinessSeoPage = () => {
 					/>
 					<figure className="heroImage">
 						<Image
-							src="/images/business-hero-image.jpg"
+							src="/images/education-hero-image.jpg"
 							width={1000}
 							height={1000}
-							alt="Business woman wor"
+							alt="Man teaching a class"
 						/>
 					</figure>
 				</div>
@@ -72,10 +72,10 @@ const BusinessSeoPage = () => {
 					<div className="column">
 						<figure className="highlighted-img">
 							<Image
-								src="/images/take-our-free-quiz.jpg"
+								src="/images/education-take-free-quiz.jpg"
 								width={480}
 								height={480}
-								alt="Profesional man researching online"
+								alt="Teacher at the front of a classroom"
 							/>
 						</figure>
 					</div>
@@ -139,10 +139,10 @@ const BusinessSeoPage = () => {
 					<div className="column">
 						<figure className="highlighted-img">
 							<Image
-								src="/images/whats-the-difference-mba-specific-master.jpg"
+								src="/images/education-why-become-a-teacher.jpg"
 								width={480}
 								height={480}
-								alt="Man using a tablet device"
+								alt="Man helping a student with a computer program"
 							/>
 						</figure>
 					</div>
