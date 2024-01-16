@@ -1,66 +1,135 @@
 {
   "slug": "advisor",
-  "title": "Advisor",
-  "description": "You enjoy working with numbers and data to identify patterns and solve problems. You have a keen eye for detail and are able to see the big picture while also paying attention to the small details.",
-  "detailedDescription": "You’re a person who likes connecting the dots. You think in systems and see patterns where others might not. You probably enjoy working with computers and a complex spreadsheet doesn’t phase you. You may already have a background in analytics or information systems and are interested in transferring those skills to health care—or you may be in an administrative role looking to upskill.",
+  "title": "The Advisor",
+  "detailedDescription": "<p>In the role of an Advisor, you are a beacon of guidance and support for students. Your expertise lies in understanding and addressing the diverse academic and personal needs of learners.</p><p>Whether it's helping students navigate their educational paths or providing career advice, your insights are invaluable.</p><p>If you're passionate about mentoring students and aiding them in achieving their goals, then a career as an Advisor is your perfect match.</p>",
   "tabs": [
     {
       "title": "Motivation",
       "icon": "motivation-icon",
-      "content": "The Analyst likes to develop and maintain systems and solve problems. They often enjoy solving puzzles presented by data."
+      "content": "You are dedicated to providing guidance and support to students in their academic and career journeys."
     },
     {
       "title": "Skills",
       "icon": "skills-icon",
-      "content": "This role is skilled at organization, project management, data analysis, and creative problem solving."
+      "content": "Strong interpersonal communication, active listening, and problem-solving abilities."
     },
     {
       "title": "Works With",
       "icon": "work-icon",
-      "content": "Careers in The Analyst’s path tend to work with medical professionals and computer systems."
+      "content": "You’d probably like working closely with students, educators, and possibly external organizations to provide comprehensive guidance."
     },
     {
       "title": "Setting",
       "icon": "setting-icon",
-      "content": "An office or hospital are common workplaces for The Analyst, but they may also work for a technical services or administrative support organization."
+      "content": "You may enjoy working in academic institutions, career centers, or counseling offices where personal interaction is prevalent."
     },
     {
       "title": "Education",
       "icon": "education-icon",
-      "content": "Jobs in this field often require college courses in things like biology, computer science, math, and management. Some roles require a bachelor’s or master’s degree."
+      "content": "You have likely studied counseling, psychology, education, or related fields that provide insights into student support and development."
     },
     {
       "title": "Experience",
       "icon": "skills-icon",
-      "content": "People with experience working with computers, databases, or information systems tend to be a good fit for The Analyst’s career path."
+      "content": "You might have had a role that involves mentoring, advising, or supporting individuals in personal or professional development."
     }
   ],
-  "statsSource": "",
+  "statsSource": "U.S. Bureau of Labor Statistics",
   "stats": [
     {
-      "number": "17%",
+      "number": "Faster Than Average",
       "title": "Growth",
-      "description": "In employment of health information technologists and medical registrars over the next decade"
+      "description": "In employment of counseling occupations over the next decade"
     },
     {
-      "number": "$55K",
+      "number": "$60K",
       "title": "Median Salary",
-      "description": "For health information technologists and medical registrars, ranging from $30K to $98K averages"
+      "description": "For counseling occupations"
     },
     {
-      "number": "3.4K",
+      "number": "27K",
       "title": "Job Openings",
-      "description": "Predicted annually over the next decade due to workers retiring or transferring careers"
+      "description": "Predicted annually over the next decade in counseling roles"
     }
   ],
-  "degreeTabs": [
-    {
-      "title": "Master's",
-      "content": "<p>If you do have a bachelor’s degree and want to further specialize your studies, these are some popular master’s in the health information field:</p><ul><li><strong>Master’s in Health Informatics:</strong> This degree can prepare you to analyze data and improve data systems with the goal of improving public health systems, healthcare delivery systems, and patient outcomes.</li><li><strong>Master’s in Bioinformatics:</strong> This degree provides skills in both biotechnology and computer science which opens doors in a wide range of analysis-driven careers.</li><li><strong>Master’s in Health Care Analytics:</strong> This degree focuses more on the data side, helping you comply with key legal, regulatory, and ethical constraints around sensitive client data and practices advanced analysis and reporting techniques.</li></ul><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
-    },
-    {
-      "title": "Bachelor's",
-      "content": "<p>If you don’t already have a bachelor’s degree, many universities offer a <strong>Bachelor’s in Health Information Management.</strong> You can often earn these degrees online.</p><p>Colleges and universities have different names for their programs, so your preferred institution might call the degree by a different name—just look for a description that includes both health care and informatics or analytics.</p>"
-    }
-  ]
+  "careerPaths": {
+    "title": "What kind of career is a good fit for me?",
+    "description": "You're likely to excel in roles that require <strong>specialized educational strategies to support students with unique learning needs.</strong>",
+    "paths": [
+      {
+        "title": "Special Education Teacher",
+        "description": "Tailor educational experiences for students with diverse learning needs in early childhood, elementary, middle, or high school settings.",
+        "imagePath": "/images/ceo.jpg"
+      },
+      {
+        "title": "Teacher for Individuals with Autism ",
+        "description": "Develop and implement specialized teaching methods to support students on the autism spectrum, enhancing their learning and social skills.",
+        "imagePath": "/images/cfo.jpg"
+      },
+      {
+        "title": "Teacher for Individuals with Hearing or Sight Impairments ",
+        "description": "Adapt teaching strategies to support students with sensory impairments, facilitating their access to education.",
+        "imagePath": "/images/ceo.jpg"
+      },
+      {
+        "title": "Teacher for Individuals with Speech of Language Impairments",
+        "description": "Assist students in overcoming communication barriers, focusing on developing effective speech and language skills.",
+        "imagePath": "/images/director-or-associate-director.jpg"
+      },
+      {
+        "title": "Teacher for the Gifted and Talented",
+        "description": "Provide advanced, challenging educational experiences for gifted students, fostering their exceptional abilities and talents.",
+        "imagePath": "/images/director-or-associate-director.jpg"
+      }
+    ]
+  },
+  "degreeTabs": {
+    "title": "What degree do I need for an <strong>advising career path?</strong>",
+    "description": "While a bachelor's degree may suffice for some entry-level advising positions, obtaining a Master's degree can significantly enhance your advising skills and broaden your understanding of student development and educational systems. Pursuing a graduate degree in these areas not only <strong>deepens your expertise</strong> but also often <strong>leads to more advanced opportunities,</strong> potentially <strong>higher salaries,</strong> and a <strong>greater impact</strong> in guiding and supporting students.",
+    "degrees": [
+      {
+        "title": "Master's in School Counseling",
+        "content": "<p>Prepares individuals to provide academic, career, social, and emotional guidance to students in educational settings.</p><p>Example Degrees:</p><ul><li>Master of Education in School Counseling</li><li>MA in Counseling with a specialization in School Counseling</li><li>MS in Professional School Counseling</li><li>M.Ed. in School Counseling and Psychology</li><li>MA in Educational Psychology with a concentration in School Counseling</li></ul>"
+      },
+      {
+        "title": "Master's or Doctoral Program in School Psychology",
+        "content": "<p>Focuses on psychological principles in the educational context, including assessment, intervention, and support for students' mental health and educational needs.</p><p>Example Degrees:</p><ul><li>Ed.S. (Educational Specialist) in School Psychology</li><li>Psy.D. (Doctor of Psychology) in School Psychology</li><li>Ph.D. in School Psychology</li><li>MA in School Psychology</li><li>MS in Education with a concentration in School Psychology</li></ul><p>A Master's program in School Psychology equips students for practical, school-based roles, while a Doctoral program provides more extensive training, a broader scope of practice, and opportunities for research, higher education teaching, and advanced clinical work.</p>"
+      },
+      {
+        "title": "Master's in Career Development or Career Counseling",
+        "content": "<p>Equips individuals with the skills to assist students in understanding and planning their career paths, including career counseling and guidance.</p><p>Example Degrees:</p><ul><li>MS in Counseling with a focus on Career Development</li><li>MA in Career Counseling</li><li>M.Ed. in Counseling and Career Development</li><li>MS in School Counseling with a Career Counseling emphasis</li><li>Master of Arts in Educational Psychology with a specialization in Career Counseling</li></ul>"
+      },
+      {
+        "title": "Master's in Library and Information Science (MLIS)",
+        "content": "<p>Prepares individuals to manage school libraries, focusing on information management, digital literacy, and fostering a learning environment in the library setting.</p><p>Example Degrees:</p><ul><li>Master of Library and Information Science with a School Library specialization</li><li>MS in Library Science with a focus on Youth Services</li><li>MA in Information and Library Studies with a School Librarian track</li><li>MLIS in School Media</li><li>M.Ed. in Library and Information Technology</li></ul>"
+      }
+    ]
+  },
+  "introComparison": {
+    "title": "What’s the difference between a <strong>Master’s in Teaching and a Master’s in Education?</strong>",
+    "description": "The short answer is that the MAT is more focused on the art and science of classroom teaching, often leading to initial teacher certification, while the M.Ed. offers a broader exploration of educational topics and is geared towards professional advancement and specialization within the field of education.",
+    "cards": [
+      {
+        "card": {
+          "title": "Master's in Teaching (MAT)",
+          "iconLight": "/images/build-plan/ready-for-college.svg",
+          "iconDark": "/images/build-plan/ready-for-college-light.svg",
+          "description": "<p><strong>Focus:</strong> The MAT is primarily focused on preparing individuals for classroom teaching. It is often pursued by those who have a bachelor's degree in a field other than education and are looking to gain the necessary credentials and skills for a teaching career.</p><p><strong>Curriculum:</strong> The curriculum is heavily centered on teaching methodologies, classroom management, pedagogical theories, and practical teaching skills. It typically includes a significant component of student teaching or classroom practicum.</p><p><strong>Outcome:</strong> Graduates usually become classroom teachers. The degree is often a pathway to initial teacher certification or licensure in many regions.</p><p><strong>Suitability:</strong> Ideal for those seeking to enter the teaching profession or for current teachers who want to deepen their teaching skills and possibly specialize in a subject area or grade level.</p>"
+        }
+      },
+      {
+        "card": {
+          "title": "Master's in Education (M.Ed.)",
+          "iconLight": "/images/build-plan/build-your-plan.svg",
+          "iconDark": "/images/build-plan/build-your-plan-light.svg",
+          "description": "<p><strong>Focus:</strong> The M.Ed. is a broader degree that encompasses various aspects of education. It is suited for current educators or professionals in the education sector who want to advance their careers or specialize in areas like administration, curriculum development, or educational policy.</p><p><strong>Curriculum:</strong> The curriculum can vary widely depending on the chosen specialization. It may cover topics such as educational leadership, educational technology, special education, counseling, or curriculum and instruction.</p><p><strong>Outcome:</strong> Graduates often pursue careers beyond classroom teaching, such as school administration, educational policy, curriculum development, or specialize in areas like special education or educational technology.</p><p><strong>Suitability:</strong> Ideal for educators and professionals in the education sector seeking career advancement, leadership roles, or a shift to a specialized area within education.</p>"
+        }
+      }
+    ]
+  },
+  "textWithImage": {
+    "content": "<p>Yes, certification is typically required for school counselors, advisors, and librarians, with specific requirementsvarying based on the role and location.</p><ol><li><strong>School Counselor:</strong> Certification or licensure is generally required to work as a school counselor. This often involvescompleting a master's degree in school counseling, a period of supervised experience, and passing a state or nationalexam. Requirements can vary by state or country.</li><li><strong>School Psychologist:</strong> To become a school psychologist, certification or licensure is typically required, involvingcompletion of a graduate program in school psychology, a supervised internship, and passing a relevant exam, withspecific requirements varying by state or country.</li><li><strong>Advisor:</strong> The requirements for academic or career advisors can vary. While not always mandatory, certification canenhance professional credibility. Some roles might require a relevant master's degree (such as in counseling oreducation), and specific certifications can be pursued through professional organizations.</li><li><strong>Librarian:</strong> To become a school librarian, certification or a specific librarian credential is often required,particularly for public schools. This typically involves completing a master's degree in library science (MLS or MLIS)from an ALA-accredited program and passing any required state-level certification exams.</li></ol><p>It's important to check the specific certification and licensure requirements for the region where you intend to work.</p>",
+    "imagePath": "/images/ceo.jpg",
+    "altText": "CEO at a restaurant"
+  }
 }
