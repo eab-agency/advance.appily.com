@@ -95,7 +95,7 @@ export function formatFormDataForAppilyPartnerAPI(
 		}
 		if (formData.formId === 6) {
 			appendedQuestion = "business_microsite_persona_quiz";
-		} else if (formData.formId === 2) {
+		} else if (formData.formId === 16) {
 			appendedQuestion = "healthcare_microsite_persona_quiz";
 		}
 		questionAnswerForms.push({
@@ -104,10 +104,25 @@ export function formatFormDataForAppilyPartnerAPI(
 		});
 	}
 
+	// biome-ignore lint/style/useConst: <explanation>
 	let studentQuestionAnswerForm: StudentQuestionAnswerForm | undefined;
-	if (questionAnswerForms.length > 0) {
-		studentQuestionAnswerForm = { questionAnswerForms };
-	}
+	const modifiedQuestionAnswerForms = questionAnswerForms.map(form => {
+		const modifiedAnswers = form.answers.map(answer => {
+			if (answer.length > 85) {
+				return answer.substring(0, 85);
+			}
+			return answer;
+		});
+
+		return {
+			...form,
+			answers: modifiedAnswers,
+		};
+	});
+
+	studentQuestionAnswerForm = {
+		questionAnswerForms: modifiedQuestionAnswerForms,
+	};
 
 	const formattedData: StudentFormData = {
 		partnerExternalId: "",
