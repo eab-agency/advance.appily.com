@@ -1,130 +1,130 @@
 {
-  "links": [
-    {
-      "label": "Degree Completion",
-      "href": "/degree-completion"
-    },
-    {
-      "label": "Health Care Careers",
-      "href": "/careers/healthcare"
-    },
-    {
-      "label": "Business Careers",
-      "href": "/careers/business"
-    }
-  ],
-  "pageTitle": "Which type of<strong>eduction career</strong> is right for you?",
-  "quizSection": {
-    "title": "Take Our Free Education Career Quiz to Find Out",
-    "content": "<p>Are you a teacher looking to stay in education but leave the classroom? Maybe you’re ready to advance your current education career? Or are you in a different field but want to apply your skills to helping shape the future? </p><p>If you want to work in education but you don’t know which job fits your skills and interests, <strong>this free quiz can help find a good fit</strong> and you plan your next steps.</p><p>The Bureau of Labor Statistics predicts nearly <strong>900 thousand jobs in education</strong> will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p><strong>In less than three minutes, you could discover which type of education career could be a good fit for you.</strong> We’ll also connect you with schools near you that offer degrees to help you reach your goals.</p>",
-    "buttonText": "Take the Quiz"
-  },
-  "stats": [
-    {
-      "number": "Average",
-      "title": "Growth",
-      "description": "In employment of education occupations over the next decade"
-    },
-    {
-      "number": "$57K",
-      "title": "Median Salary",
-      "description": "For education occupations, ranging from $35K to $101K averages"
-    },
-    {
-      "number": "858K",
-      "title": "Job Openings",
-      "description": "Predicted annually over the next decade in the field of education"
-    }
-  ],
-  "statsSource": "U.S. Bureau of Labor Statistics",
-  "whyChoose": {
-    "title": "5 Good Answers to the Question:",
-    "subTitle": "Why Become a Teacher?",
-    "description": "Teaching is more than just a job; it's a calling that makes a real difference in the world. For those pondering a career in education, here are five compelling reasons to take the plunge into teaching.",
-    "reasons": [
-      {
-        "title": "Inspire Future Generations",
-        "description": "Teaching gives you the chance to impact the lives of students, inspiring and guiding future generations. As a teacher, you become a role model, shaping young minds and sparking curiosity about the world."
-      },
-      {
-        "title": "Make a Societal Impact",
-        "description": "Teachers play a pivotal role in shaping society. By educating the youth, you contribute to the development of informed, thoughtful, and responsible citizens, making a lasting impact on the community and the world at large."
-      },
-      {
-        "title": "Get Creative and Intellectual Stimulation",
-        "description": "Teaching is an intellectually stimulating career that constantly challenges you to be creative in lesson planning and finding ways to engage diverse learners. It's a field that keeps you learning and growing professionally."
-      },
-      {
-        "title": "Building Relationships and Community",
-        "description": "As a teacher, you become part of a larger community of educators, students, and families. These relationships are rewarding and enriching, offering a sense of belonging and the joy of working collaboratively towards educational goals."
-      },
-      {
-        "title": "Career Flexibility and Security",
-        "description": "The demand for qualified teachers makes teaching a career with great job security. Furthermore, teaching skills are transferable worldwide, offering flexibility in where you can work – whether it's different states, countries, or educational settings."
-      }
-    ]
-  },
-  "testimonial": {
-    "text": "If you look behind every exceptional person there is an exceptional teacher.",
-    "author": "Stephen Hawking"
-  },
-  "rightCareer": [
-    {
-      "title": " Top 5 Reasons a Career in Health Care Could Be Right for You",
-      "description": "Teachers have a diverse skill set that opens doors to many career opportunities, both within and outside traditional classroom settings. Here are some good career options for teachers:",
-      "reasons": [
-        {
-          "title": "Educational Consultant",
-          "description": "Advising schools, educational organizations, or publishers on curriculum development, teaching strategies, and educational technologies."
-        },
-        {
-          "title": "Curriculum Developer or Instructional Designer",
-          "description": "Designing and revising curriculum, developing instructional materials, and training teachers on new content or teaching methods."
-        },
-        {
-          "title": "School Administrator",
-          "description": "Roles like principal or vice-principal, focusing on managing school operations, staff, and policies."
-        },
-        {
-          "title": "Educational Policy Analyst",
-          "description": "Working with governmental agencies, non-profits, or think tanks to analyze, develop, and implement educational policies."
-        },
-        {
-          "title": "Instructional Designer",
-          "description": "Creating educational content and courses, particularly for online platforms or corporate training programs."
-        },
-        {
-          "title": "Academic Advisor or Counselor",
-          "description": "Helping students navigate their educational paths, including course selection, career advice, and personal development."
-        }
-      ],
-      "endCopy": "<a href='/careers/education/quiz'>The Education Career Quiz</a> can help you discover how your particular interests and skills can translate to careers like these!"
-    }
-  ],
-  "contactForm": {
-    "title": "Explore Your Potencial School matches",
-    "description": "Let us know the best way to contact you with helpful information and  potential college or university  matches."
-  },
-  "takeQuiz": {
-    "title": "Ready to Find Your Role?",
-    "description": "In less than three minutes, you could discover which role could be a good fit for you—and the steps you can take to advance your career.",
-    "buttonText": "Take the Quiz"
-  },
-  "statsAppily": [
-    {
-      "number": "600",
-      "title": "Institutions",
-      "description": "Trust Appily to match them with students like you"
-    },
-    {
-      "number": "Billions",
-      "title": "In Scholarships",
-      "description": "Can be applied for through Appily’s scholarship database"
-    },
-    {
-      "number": "4",
-      "title": "Trusted Tools",
-      "description": "Combine to make Appily your one-stop resource for finding a school"
-    }
-  ]
+	"links": [
+		{
+			"label": "Degree Completion",
+			"href": "/degree-completion"
+		},
+		{
+			"label": "Health Care Careers",
+			"href": "/careers/healthcare"
+		},
+		{
+			"label": "Business Careers",
+			"href": "/careers/business"
+		}
+	],
+	"pageTitle": "Which type of<strong>education career</strong> is right for you?",
+	"quizSection": {
+		"title": "Take Our Free Education Career Quiz to Find Out",
+		"content": "<p>Are you a teacher looking to stay in education but leave the classroom? Maybe you’re ready to advance your current education career? Or are you in a different field but want to apply your skills to helping shape the future? </p><p>If you want to work in education but you don’t know which job fits your skills and interests, <strong>this free quiz can help find a good fit</strong> and you plan your next steps.</p><p>The Bureau of Labor Statistics predicts nearly <strong>900 thousand jobs in education</strong> will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p><strong>In less than three minutes, you could discover which type of education career could be a good fit for you.</strong> We’ll also connect you with schools near you that offer degrees to help you reach your goals.</p>",
+		"buttonText": "Take the Quiz"
+	},
+	"stats": [
+		{
+			"number": "Average",
+			"title": "Growth",
+			"description": "In employment of education occupations over the next decade"
+		},
+		{
+			"number": "$57K",
+			"title": "Median Salary",
+			"description": "For education occupations, ranging from $35K to $101K averages"
+		},
+		{
+			"number": "858K",
+			"title": "Job Openings",
+			"description": "Predicted annually over the next decade in the field of education"
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"whyChoose": {
+		"title": "5 Good Answers to the Question:",
+		"subTitle": "Why Become a Teacher?",
+		"description": "Teaching is more than just a job; it's a calling that makes a real difference in the world. For those pondering a career in education, here are five compelling reasons to take the plunge into teaching.",
+		"reasons": [
+			{
+				"title": "Inspire Future Generations",
+				"description": "Teaching gives you the chance to impact the lives of students, inspiring and guiding future generations. As a teacher, you become a role model, shaping young minds and sparking curiosity about the world."
+			},
+			{
+				"title": "Make a Societal Impact",
+				"description": "Teachers play a pivotal role in shaping society. By educating the youth, you contribute to the development of informed, thoughtful, and responsible citizens, making a lasting impact on the community and the world at large."
+			},
+			{
+				"title": "Get Creative and Intellectual Stimulation",
+				"description": "Teaching is an intellectually stimulating career that constantly challenges you to be creative in lesson planning and finding ways to engage diverse learners. It's a field that keeps you learning and growing professionally."
+			},
+			{
+				"title": "Building Relationships and Community",
+				"description": "As a teacher, you become part of a larger community of educators, students, and families. These relationships are rewarding and enriching, offering a sense of belonging and the joy of working collaboratively towards educational goals."
+			},
+			{
+				"title": "Career Flexibility and Security",
+				"description": "The demand for qualified teachers makes teaching a career with great job security. Furthermore, teaching skills are transferable worldwide, offering flexibility in where you can work – whether it's different states, countries, or educational settings."
+			}
+		]
+	},
+	"testimonial": {
+		"text": "If you look behind every exceptional person there is an exceptional teacher.",
+		"author": "Stephen Hawking"
+	},
+	"rightCareer": [
+		{
+			"title": " Top 5 Reasons a Career in Health Care Could Be Right for You",
+			"description": "Teachers have a diverse skill set that opens doors to many career opportunities, both within and outside traditional classroom settings. Here are some good career options for teachers:",
+			"reasons": [
+				{
+					"title": "Educational Consultant",
+					"description": "Advising schools, educational organizations, or publishers on curriculum development, teaching strategies, and educational technologies."
+				},
+				{
+					"title": "Curriculum Developer or Instructional Designer",
+					"description": "Designing and revising curriculum, developing instructional materials, and training teachers on new content or teaching methods."
+				},
+				{
+					"title": "School Administrator",
+					"description": "Roles like principal or vice-principal, focusing on managing school operations, staff, and policies."
+				},
+				{
+					"title": "Educational Policy Analyst",
+					"description": "Working with governmental agencies, non-profits, or think tanks to analyze, develop, and implement educational policies."
+				},
+				{
+					"title": "Instructional Designer",
+					"description": "Creating educational content and courses, particularly for online platforms or corporate training programs."
+				},
+				{
+					"title": "Academic Advisor or Counselor",
+					"description": "Helping students navigate their educational paths, including course selection, career advice, and personal development."
+				}
+			],
+			"endCopy": "<a href='/careers/education/quiz'>The Education Career Quiz</a> can help you discover how your particular interests and skills can translate to careers like these!"
+		}
+	],
+	"contactForm": {
+		"title": "Explore Your Potencial School matches",
+		"description": "Let us know the best way to contact you with helpful information and  potential college or university  matches."
+	},
+	"takeQuiz": {
+		"title": "Ready to Find Your Role?",
+		"description": "In less than three minutes, you could discover which role could be a good fit for you—and the steps you can take to advance your career.",
+		"buttonText": "Take the Quiz"
+	},
+	"statsAppily": [
+		{
+			"number": "600",
+			"title": "Institutions",
+			"description": "Trust Appily to match them with students like you"
+		},
+		{
+			"number": "Billions",
+			"title": "In Scholarships",
+			"description": "Can be applied for through Appily’s scholarship database"
+		},
+		{
+			"number": "4",
+			"title": "Trusted Tools",
+			"description": "Combine to make Appily your one-stop resource for finding a school"
+		}
+	]
 }
