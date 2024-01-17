@@ -1,117 +1,112 @@
 {
-  "slug": "administrator",
-  "title": "The Administrator",
-  "detailedDescription": "<p>As an Administrator, you're the backbone of educational institutions. You possess a knack for leadership, organization, and strategic planning.</p><p>Your role is crucial in shaping the educational landscape, whether it's through managing resources, overseeing faculty, or implementing policies.</p><p>If you find fulfillment in leading educational initiatives and ensuring the smooth operation of schools or educational programs, the role of an Administrator is ideally suited for you.</p>",
-  "tabs": [
-    {
-      "title": "Motivation",
-      "icon": "motivation-icon",
-      "content": "You are driven to lead, organize, and improve educational systems and institutions."
-    },
-    {
-      "title": "Skills",
-      "icon": "skills-icon",
-      "content": "Leadership, strategic planning, and the ability to manage both people and resources effectively."
-    },
-    {
-      "title": "Works With",
-      "icon": "work-icon",
-      "content": "You’d do well collaborating with educators, staff, and stakeholders to enhance the educational environment."
-    },
-    {
-      "title": "Setting",
-      "icon": "setting-icon",
-      "content": "You may enjoy working in educational institutions or administrative offices where strategic decision-making and oversight are key."
-    },
-    {
-      "title": "Education",
-      "icon": "education-icon",
-      "content": "You may have a background in educational leadership, administration, or related fields such as business or management."
-    },
-    {
-      "title": "Experience",
-      "icon": "skills-icon",
-      "content": "You might have experience in management, administration, or leadership roles, even outside the educational sector."
-    }
-  ],
-  "statsSource": "U.S. Bureau of Labor Statistics",
-  "stats": [
-    {
-      "number": "Average",
-      "title": "Growth",
-      "description": "In employment of instructional education occupations over the next decade"
-    },
-    {
-      "number": "$95K",
-      "title": "Median Salary",
-      "description": "For educational leadership occupations, ranging from $89K to $101K averages"
-    },
-    {
-      "number": "22K",
-      "title": "Job Openings",
-      "description": "Predicted annually over the next decade in educational leadership roles"
-    }
-  ],
-  "careerPaths": {
-    "title": "What kind of career is a good fit for me?",
-    "description": "You're likely to excel in roles that require <strong>specialized educational strategies to support students with unique learning needs.</strong>",
-    "paths": [
-      {
-        "title": "Special Education Teacher",
-        "description": "Tailor educational experiences for students with diverse learning needs in early childhood, elementary, middle, or high school settings.",
-        "imagePath": "/images/ceo.jpg"
-      },
-      {
-        "title": "Teacher for Individuals with Autism ",
-        "description": "Develop and implement specialized teaching methods to support students on the autism spectrum, enhancing their learning and social skills.",
-        "imagePath": "/images/cfo.jpg"
-      },
-      {
-        "title": "Teacher for Individuals with Hearing or Sight Impairments ",
-        "description": "Adapt teaching strategies to support students with sensory impairments, facilitating their access to education.",
-        "imagePath": "/images/ceo.jpg"
-      },
-      {
-        "title": "Teacher for Individuals with Speech of Language Impairments",
-        "description": "Assist students in overcoming communication barriers, focusing on developing effective speech and language skills.",
-        "imagePath": "/images/director-or-associate-director.jpg"
-      },
-      {
-        "title": "Teacher for the Gifted and Talented",
-        "description": "Provide advanced, challenging educational experiences for gifted students, fostering their exceptional abilities and talents.",
-        "imagePath": "/images/director-or-associate-director.jpg"
-      }
-    ]
-  },
-  "degreeTabs": {
-    "title": "What degree do I need for an <strong>administration career path?</strong>",
-    "description": "For a career in school administration, pursuing a Master's degree is highly beneficial, as it equips you with <strong>essential management skills, an understanding of educational policies, and leadership strategies</strong> necessary for effective school administration. Additionally, obtaining a Doctorate can further enhance your expertise, <strong>opening doors to higher-level positions and offering opportunities to significantly influence educational practices and policies.<strong>",
-    "degrees": [
-      {
-        "title": "Master's in Educational Leadership and Administration",
-        "content": "<p>Focuses on preparing individuals for leadership roles in schools, including principals and district leaders. It covers topics like school management, educational policy, and leadership theories.</p><p>Example Degrees:</p><ul><li>Master of Education (M.Ed.) in Educational Leadership</li><li>Master of Arts (MA) in Educational Administration</li><li>Master of Science (MS) in Educational Administration and Supervision</li><li>Master of Arts in Educational Leadership and Management</li><li>Master of Science in School Leadership</li></ul>"
-      },
-      {
-        "title": "Master's in School Administration",
-        "content": "<p>Concentrates on the administrative aspects of running a school, including human resources, school finance, and legal issues in education.</p><p>Example Degrees:</p><ul><li>M.Ed. in School Administration</li><li>MA in School Administration and Leadership</li><li>MS in Education Administration</li><li>Executive Master of Education in School Administration</li><li>Master of Arts in Educational Leadership and School Administration</li></ul>"
-      },
-      {
-        "title": "Doctor of Education (Ed.D.) in Educational Leadership",
-        "content": "<p>A doctoral program aimed at developing advanced skills in leadership, policy formation, and organizational change in education. This degree often focuses on applying research to practical challenges in education systems.</p><p>Example Degrees:</p><ul><li>Ed.D. in Educational Leadership</li><li>Ed.D. in School Leadership</li><li>Doctorate in Education Administration</li><li>Ed.D. in Educational Management and Leadership</li><li>Ed.D. in Educational Leadership and Policy</li></ul>"
-      },
-      {
-        "title": "Doctor of Philosophy (Ph.D.) in Educational Administration",
-        "content": "<p>This research-focused doctoral program prepares individuals for senior leadership roles and policy development in education. It is ideal for those interested in academic research or teaching at the university level.</p><p>Example Degrees:</p><ul><li>Ph.D. in Educational Administration</li><li>Ph.D. in Education Policy and Leadership</li><li>Doctorate in Education Leadership and Administration</li><li>Ph.D. in Higher Education Administration</li><li>Ph.D. in School Leadership and Policy Studies</li></ul>"
-      },
-      {
-        "title": "Master's in Public Administration (MPA) with an Education Focus",
-        "content": "<p>This degree blends public administration with a focus on education, preparing individuals for administrative roles in public education settings. It covers broader aspects of public service management as they relate to education.</p><p>Example Degrees:</p><ul><li>MPA with a specialization in Education Policy and Administration</li><li>Master of Public Administration in Educational Leadership</li><li>MPA in Public and Nonprofit Management (Education Concentration)</li><li>Executive MPA with a focus on Education Administration</li><li>Master of Public Administration in School Leadership</li></ul>"
-      }
-    ]
-  },
-  "textWithImage": {
-    "content": "<h2>Do I need a certification to become a school administrator?</h2><p>Yes, to become a school administrator, you generally need a specific certification, often in addition to a Master's degree in Educational Leadership or Administration. </p><p>This certification ensures you have the necessary management skills and educational knowledge. The process usually involves completing an accredited administrative preparation program and passing relevant exams. </p><p>Requirements can vary by region, and experience in teaching or educational roles is often a prerequisite. It's important to check the specific certification requirements in your area.</p>",
-    "imagePath": "/images/ceo.jpg",
-    "altText": "CEO at a restaurant"
-  }
+	"slug": "administrator",
+	"title": "The Administrator",
+	"detailedDescription": "<p>As an Administrator, you're the backbone of educational institutions. You possess a knack for leadership, organization, and strategic planning.</p><p>Your role is crucial in shaping the educational landscape, whether it's through managing resources, overseeing faculty, or implementing policies.</p><p>If you find fulfillment in leading educational initiatives and ensuring the smooth operation of schools or educational programs, the role of an Administrator is ideally suited for you.</p>",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "You are driven to lead, organize, and improve educational systems and institutions."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "Leadership, strategic planning, and the ability to manage both people and resources effectively."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "You’d do well collaborating with educators, staff, and stakeholders to enhance the educational environment."
+		},
+		{
+			"title": "Setting",
+			"icon": "setting-icon",
+			"content": "You may enjoy working in educational institutions or administrative offices where strategic decision-making and oversight are key."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "You may have a background in educational leadership, administration, or related fields such as business or management."
+		},
+		{
+			"title": "Experience",
+			"icon": "skills-icon",
+			"content": "You might have experience in management, administration, or leadership roles, even outside the educational sector."
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"stats": [
+		{
+			"number": "Average",
+			"title": "Growth",
+			"description": "In employment of instructional education occupations over the next decade"
+		},
+		{
+			"number": "$95K",
+			"title": "Median Salary",
+			"description": "For educational leadership occupations, ranging from $89K to $101K averages"
+		},
+		{
+			"number": "22K",
+			"title": "Job Openings",
+			"description": "Predicted annually over the next decade in educational leadership roles"
+		}
+	],
+	"careerPaths": {
+		"title": "What kind of career is a good fit for me?",
+		"description": "You're well-suited for roles that involve <strong>leading, managing, and enhancing educational environments and systems.</strong>",
+		"paths": [
+			{
+				"title": "School Principal",
+				"description": "Oversee the daily operations of a school, lead educational programs, and ensure a safe and effective learning environment for students.",
+				"imagePath": "/images/education/school-principal.webp"
+			},
+			{
+				"title": "School Vice Principal",
+				"description": "Assist in managing school activities, discipline, and administrative tasks, supporting the principal in creating a positive educational setting.",
+				"imagePath": "/images/education/school-vice-principal.webp"
+			},
+			{
+				"title": "School Administrator",
+				"description": "Coordinate and supervise various educational and administrative aspects within a school or educational department.",
+				"imagePath": "/images/education/school-administrator.webp"
+			},
+			{
+				"title": "Superintendent",
+				"description": "Oversee and lead an entire school district, making strategic decisions that affect multiple schools, staff, and the educational curriculum.",
+				"imagePath": "/images/education/superintendent.webp"
+			}
+		]
+	},
+	"degreeTabs": {
+		"title": "What degree do I need for an <strong>administration career path?</strong>",
+		"description": "For a career in school administration, pursuing a Master's degree is highly beneficial, as it equips you with <strong>essential management skills, an understanding of educational policies, and leadership strategies</strong> necessary for effective school administration. Additionally, obtaining a Doctorate can further enhance your expertise, <strong>opening doors to higher-level positions and offering opportunities to significantly influence educational practices and policies.<strong>",
+		"degrees": [
+			{
+				"title": "Master's in Educational Leadership and Administration",
+				"content": "<p>Focuses on preparing individuals for leadership roles in schools, including principals and district leaders. It covers topics like school management, educational policy, and leadership theories.</p><p>Example Degrees:</p><ul><li>Master of Education (M.Ed.) in Educational Leadership</li><li>Master of Arts (MA) in Educational Administration</li><li>Master of Science (MS) in Educational Administration and Supervision</li><li>Master of Arts in Educational Leadership and Management</li><li>Master of Science in School Leadership</li></ul>"
+			},
+			{
+				"title": "Master's in School Administration",
+				"content": "<p>Concentrates on the administrative aspects of running a school, including human resources, school finance, and legal issues in education.</p><p>Example Degrees:</p><ul><li>M.Ed. in School Administration</li><li>MA in School Administration and Leadership</li><li>MS in Education Administration</li><li>Executive Master of Education in School Administration</li><li>Master of Arts in Educational Leadership and School Administration</li></ul>"
+			},
+			{
+				"title": "Doctor of Education (Ed.D.) in Educational Leadership",
+				"content": "<p>A doctoral program aimed at developing advanced skills in leadership, policy formation, and organizational change in education. This degree often focuses on applying research to practical challenges in education systems.</p><p>Example Degrees:</p><ul><li>Ed.D. in Educational Leadership</li><li>Ed.D. in School Leadership</li><li>Doctorate in Education Administration</li><li>Ed.D. in Educational Management and Leadership</li><li>Ed.D. in Educational Leadership and Policy</li></ul>"
+			},
+			{
+				"title": "Doctor of Philosophy (Ph.D.) in Educational Administration",
+				"content": "<p>This research-focused doctoral program prepares individuals for senior leadership roles and policy development in education. It is ideal for those interested in academic research or teaching at the university level.</p><p>Example Degrees:</p><ul><li>Ph.D. in Educational Administration</li><li>Ph.D. in Education Policy and Leadership</li><li>Doctorate in Education Leadership and Administration</li><li>Ph.D. in Higher Education Administration</li><li>Ph.D. in School Leadership and Policy Studies</li></ul>"
+			},
+			{
+				"title": "Master's in Public Administration (MPA) with an Education Focus",
+				"content": "<p>This degree blends public administration with a focus on education, preparing individuals for administrative roles in public education settings. It covers broader aspects of public service management as they relate to education.</p><p>Example Degrees:</p><ul><li>MPA with a specialization in Education Policy and Administration</li><li>Master of Public Administration in Educational Leadership</li><li>MPA in Public and Nonprofit Management (Education Concentration)</li><li>Executive MPA with a focus on Education Administration</li><li>Master of Public Administration in School Leadership</li></ul>"
+			}
+		]
+	},
+	"textWithImage": {
+		"content": "<h2>Do I need a certification to become a school administrator?</h2><p>Yes, to become a school administrator, you generally need a specific certification, often in addition to a Master's degree in Educational Leadership or Administration. </p><p>This certification ensures you have the necessary management skills and educational knowledge. The process usually involves completing an accredited administrative preparation program and passing relevant exams. </p><p>Requirements can vary by region, and experience in teaching or educational roles is often a prerequisite. It's important to check the specific certification requirements in your area.</p>",
+		"imagePath": "/images/education/certification-school-administrator.webp",
+		"altText": "School Administrator"
+	}
 }

@@ -1,117 +1,117 @@
 {
-  "slug": "developer",
-  "title": "The Developer",
-  "detailedDescription": "<p>As a Developer in curriculum and instructional design, you're the architect of educational experiences.</p><p>You have a talent for crafting engaging, effective, and innovative learning materials. Your work is instrumental in shaping how subjects are taught and understood.</p><p>If you're passionate about creating educational content that enhances learning and keeps pace with the modern world, then being a Developer is where your skills will truly shine.</p>",
-  "tabs": [
-    {
-      "title": "Motivation",
-      "icon": "motivation-icon",
-      "content": "You would likely excel at creating effective and innovative educational content and curricula."
-    },
-    {
-      "title": "Skills",
-      "icon": "skills-icon",
-      "content": "Creative thinking, instructional design, and a good understanding of how people learn."
-    },
-    {
-      "title": "Works With",
-      "icon": "work-icon",
-      "content": "You may prefer working independently or in collaboration with educators and subject matter experts to develop educational materials."
-    },
-    {
-      "title": "Setting",
-      "icon": "setting-icon",
-      "content": "You could enjoy working in educational institutions, content development teams, or remote work environments focusing on educational material creation."
-    },
-    {
-      "title": "Education",
-      "icon": "education-icon",
-      "content": "You may have a background in education, curriculum design, instructional technology, or any field requiring content creation and structuring."
-    },
-    {
-      "title": "Experience",
-      "icon": "skills-icon",
-      "content": "You might have experience in content creation, teaching, training, or any role that involves educational planning and design."
-    }
-  ],
-  "statsSource": "U.S. Bureau of Labor Statistics",
-  "stats": [
-    {
-      "number": "Average",
-      "title": "Growth",
-      "description": "In employment of instructional coordinator occupations over the next decade"
-    },
-    {
-      "number": "$67K",
-      "title": "Median Salary",
-      "description": "For instructional coordinator occupations"
-    },
-    {
-      "number": "19K",
-      "title": "Job Openings",
-      "description": "Predicted annually over the next decade in instructional coordinator roles"
-    }
-  ],
-  "careerPaths": {
-    "title": "What kind of career is a good fit for me?",
-    "description": "You will thrive in careers centered around <strong>creating, organizing, and improving educational content and instructional methods.</strong>",
-    "paths": [
-      {
-        "title": "Curriculum Developer",
-        "description": "Design and revise school curricula, ensuring educational content meets learning objectives and standards.",
-        "imagePath": "/images/ceo.jpg"
-      },
-      {
-        "title": "Instructional Coordinator",
-        "description": "Oversee school curriculums and teaching standards, work with teachers to implement new content and teaching strategies.",
-        "imagePath": "/images/cfo.jpg"
-      },
-      {
-        "title": "Instructional Designer",
-        "description": "Develop instructional materials and courses, often for specific educational programs or online learning platforms.",
-        "imagePath": "/images/ceo.jpg"
-      },
-      {
-        "title": "Assessment and Testing Developer",
-        "description": "Create, evaluate, and implement various educational assessments and tools to measure student learning and progress.",
-        "imagePath": "/images/director-or-associate-director.jpg"
-      },
-      {
-        "title": "Educational Technology Specialist",
-        "description": "Integrate technology into the classroom, developing digital resources and strategies to enhance learning experiences.",
-        "imagePath": "/images/director-or-associate-director.jpg"
-      }
-    ]
-  },
-  "degreeTabs": {
-    "title": "What degree do I need for an <strong>curriculum and assessment development career path?</strong>",
-    "description": "For a career in curriculum and assessment development, pursuing an advanced degree is highly beneficial. A Master's offers specialized knowledge in designing effective educational programs and creating meaningful assessments. A Doctorate allows for deeper research and more opportunities in higher education, leadership, and policy-making. These advanced degrees not only <strong>enhance your skills</strong> but also <strong>position you for influential roles</strong> in shaping educational standards and practices.",
-    "degrees": [
-      {
-        "title": "Master's in Curriculum and Instruction Design",
-        "content": "<p>Focuses on developing and implementing effective curricula and instructional strategies, including course design, pedagogical methods, and evaluation.</p><p>Example Degrees:</p><ul><li>Master of Education (M.Ed.) in Curriculum and Instruction</li><li>MA or MS in Instructional Design</li><li>MS in Curriculum Development and Instructional Technology</li><li>M.Ed. in Learning Design and Technology</li><li>MA in Education with a specialization in Curriculum and Teaching</li></ul>"
-      },
-      {
-        "title": "Masters in Educational Assessment",
-        "content": "<p>Concentrates on the creation, evaluation, and implementation of various educational assessments and tests, often including psychometrics and evaluation techniques.</p><p>Example Degrees:</p><ul><li>M.Ed. in Educational Measurement and Evaluation</li><li>MS in Educational Assessment</li><li>MA in Educational Research and Evaluation</li><li>M.Ed. in Assessment, Testing, and Measurement in Education</li><li>MA in Language Testing and Assessment</li></ul>"
-      },
-      {
-        "title": "Master's in Educational Technology",
-        "content": "<p>Prepares educators to integrate and apply technology in educational settings, covering digital tools, e-learning, and instructional technology.</p><p>Example Degrees:</p><ul><li>M.Ed. in Educational Technology</li><li>MS in Instructional Design and Technology</li><li>MA in Educational Technology and Online Learning</li><li>Master of Science in Learning Technologies</li><li>M.Ed. in Digital Learning and Leading</li></ul>"
-      },
-      {
-        "title": "Doctor of Education (Ed.D.) in Curriculum and Teaching",
-        "content": "<p>This doctoral program focuses on advanced study in curriculum development and teaching strategies, blending research with practical approaches to improve educational outcomes and teacher effectiveness.</p><p>Example Degrees:</p><ul><li>Ed.D. in Curriculum, Instruction, and Assessment</li><li>Doctorate in Education with a specialization in Curriculum Leadership</li><li>Ed.D. in Teaching and Learning</li><li>Doctor of Education in Curriculum and Instruction</li></ul>"
-      },
-      {
-        "title": "Ph.D. in Education with Specialization",
-        "content": "<p>A research-focused doctoral program that delves into theoretical and practical aspects of curriculum design, development, and implementation, often aimed at those seeking careers in higher education, research, or high-level educational consulting.</p><p>Example Degrees:</p><ul><li>Ph.D. in Education with a specialization in Curriculum Development</li><li>Doctor of Philosophy in Curriculum and Instruction</li><li>Ph.D. in Education: Curriculum and Teaching</li><li>Doctorate in Curriculum Studies</li><li>Ph.D. in Instructional Design and Technology</li></ul>"
-      }
-    ]
-  },
-  "textWithImage": {
-    "content": "<h2>Do I need a certification to design curriculum?</h2><p>While not always mandatory, certification can be highly beneficial for instructional and curriculum design roles, especially in public education systems.</p><p>Certification in these areas typically demonstrates that professionals have specialized knowledge and skills in developing effective curricula and instructional materials. The process may involve completing a relevant master's program, such as in Curriculum and Instruction or Educational Technology, and obtaining a specialized certification in curriculum design or instructional development. </p><p>Requirements can vary based on the employer and the specific role. </p><p>In higher education or corporate settings, certification may be less emphasized, but it still adds significant value to your professional profile. It's important to research the specific expectations and requirements in your area or intended field of work.</p>",
-    "imagePath": "/images/ceo.jpg",
-    "altText": "CEO at a restaurant"
-  }
+	"slug": "developer",
+	"title": "The Developer",
+	"detailedDescription": "<p>As a Developer in curriculum and instructional design, you're the architect of educational experiences.</p><p>You have a talent for crafting engaging, effective, and innovative learning materials. Your work is instrumental in shaping how subjects are taught and understood.</p><p>If you're passionate about creating educational content that enhances learning and keeps pace with the modern world, then being a Developer is where your skills will truly shine.</p>",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "You would likely excel at creating effective and innovative educational content and curricula."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "Creative thinking, instructional design, and a good understanding of how people learn."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "You may prefer working independently or in collaboration with educators and subject matter experts to develop educational materials."
+		},
+		{
+			"title": "Setting",
+			"icon": "setting-icon",
+			"content": "You could enjoy working in educational institutions, content development teams, or remote work environments focusing on educational material creation."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "You may have a background in education, curriculum design, instructional technology, or any field requiring content creation and structuring."
+		},
+		{
+			"title": "Experience",
+			"icon": "skills-icon",
+			"content": "You might have experience in content creation, teaching, training, or any role that involves educational planning and design."
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"stats": [
+		{
+			"number": "Average",
+			"title": "Growth",
+			"description": "In employment of instructional coordinator occupations over the next decade"
+		},
+		{
+			"number": "$67K",
+			"title": "Median Salary",
+			"description": "For instructional coordinator occupations"
+		},
+		{
+			"number": "19K",
+			"title": "Job Openings",
+			"description": "Predicted annually over the next decade in instructional coordinator roles"
+		}
+	],
+	"careerPaths": {
+		"title": "What kind of career is a good fit for me?",
+		"description": "You will thrive in careers centered around <strong>creating, organizing, and improving educational content and instructional methods.</strong>",
+		"paths": [
+			{
+				"title": "Curriculum Developer",
+				"description": "Design and revise school curricula, ensuring educational content meets learning objectives and standards.",
+				"imagePath": "/images/education/curriculum-developer.webp"
+			},
+			{
+				"title": "Instructional Coordinator",
+				"description": "Oversee school curriculums and teaching standards, work with teachers to implement new content and teaching strategies.",
+				"imagePath": "/images/education/instructional-coordinator.webp"
+			},
+			{
+				"title": "Instructional Designer",
+				"description": "Develop instructional materials and courses, often for specific educational programs or online learning platforms.",
+				"imagePath": "/images/education/instructional-designer.webp"
+			},
+			{
+				"title": "Assessment and Testing Developer",
+				"description": "Create, evaluate, and implement various educational assessments and tools to measure student learning and progress.",
+				"imagePath": "/images/education/assessment-testing-developer.webp"
+			},
+			{
+				"title": "Educational Technology Specialist",
+				"description": "Integrate technology into the classroom, developing digital resources and strategies to enhance learning experiences.",
+				"imagePath": "/images/education/educational-technology-expert.webp"
+			}
+		]
+	},
+	"degreeTabs": {
+		"title": "What degree do I need for an <strong>curriculum and assessment development career path?</strong>",
+		"description": "For a career in curriculum and assessment development, pursuing an advanced degree is highly beneficial. A Master's offers specialized knowledge in designing effective educational programs and creating meaningful assessments. A Doctorate allows for deeper research and more opportunities in higher education, leadership, and policy-making. These advanced degrees not only <strong>enhance your skills</strong> but also <strong>position you for influential roles</strong> in shaping educational standards and practices.",
+		"degrees": [
+			{
+				"title": "Master's in Curriculum and Instruction Design",
+				"content": "<p>Focuses on developing and implementing effective curricula and instructional strategies, including course design, pedagogical methods, and evaluation.</p><p>Example Degrees:</p><ul><li>Master of Education (M.Ed.) in Curriculum and Instruction</li><li>MA or MS in Instructional Design</li><li>MS in Curriculum Development and Instructional Technology</li><li>M.Ed. in Learning Design and Technology</li><li>MA in Education with a specialization in Curriculum and Teaching</li></ul>"
+			},
+			{
+				"title": "Masters in Educational Assessment",
+				"content": "<p>Concentrates on the creation, evaluation, and implementation of various educational assessments and tests, often including psychometrics and evaluation techniques.</p><p>Example Degrees:</p><ul><li>M.Ed. in Educational Measurement and Evaluation</li><li>MS in Educational Assessment</li><li>MA in Educational Research and Evaluation</li><li>M.Ed. in Assessment, Testing, and Measurement in Education</li><li>MA in Language Testing and Assessment</li></ul>"
+			},
+			{
+				"title": "Master's in Educational Technology",
+				"content": "<p>Prepares educators to integrate and apply technology in educational settings, covering digital tools, e-learning, and instructional technology.</p><p>Example Degrees:</p><ul><li>M.Ed. in Educational Technology</li><li>MS in Instructional Design and Technology</li><li>MA in Educational Technology and Online Learning</li><li>Master of Science in Learning Technologies</li><li>M.Ed. in Digital Learning and Leading</li></ul>"
+			},
+			{
+				"title": "Doctor of Education (Ed.D.) in Curriculum and Teaching",
+				"content": "<p>This doctoral program focuses on advanced study in curriculum development and teaching strategies, blending research with practical approaches to improve educational outcomes and teacher effectiveness.</p><p>Example Degrees:</p><ul><li>Ed.D. in Curriculum, Instruction, and Assessment</li><li>Doctorate in Education with a specialization in Curriculum Leadership</li><li>Ed.D. in Teaching and Learning</li><li>Doctor of Education in Curriculum and Instruction</li></ul>"
+			},
+			{
+				"title": "Ph.D. in Education with Specialization",
+				"content": "<p>A research-focused doctoral program that delves into theoretical and practical aspects of curriculum design, development, and implementation, often aimed at those seeking careers in higher education, research, or high-level educational consulting.</p><p>Example Degrees:</p><ul><li>Ph.D. in Education with a specialization in Curriculum Development</li><li>Doctor of Philosophy in Curriculum and Instruction</li><li>Ph.D. in Education: Curriculum and Teaching</li><li>Doctorate in Curriculum Studies</li><li>Ph.D. in Instructional Design and Technology</li></ul>"
+			}
+		]
+	},
+	"textWithImage": {
+		"content": "<h2>Do I need a certification to design curriculum?</h2><p>While not always mandatory, certification can be highly beneficial for instructional and curriculum design roles, especially in public education systems.</p><p>Certification in these areas typically demonstrates that professionals have specialized knowledge and skills in developing effective curricula and instructional materials. The process may involve completing a relevant master's program, such as in Curriculum and Instruction or Educational Technology, and obtaining a specialized certification in curriculum design or instructional development. </p><p>Requirements can vary based on the employer and the specific role. </p><p>In higher education or corporate settings, certification may be less emphasized, but it still adds significant value to your professional profile. It's important to research the specific expectations and requirements in your area or intended field of work.</p>",
+		"imagePath": "/images/education/certification-design-curriculum.webp",
+		"altText": "Teacher in front of a blackboad"
+	}
 }

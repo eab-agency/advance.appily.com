@@ -1,112 +1,112 @@
 {
-  "slug": "advocate",
-  "title": "The Advocate",
-  "detailedDescription": "<p>Your role as an Advocate in education policy, research, and consulting is pivotal. You're driven by a passion for educational equity and improvement.</p><p>Your work involves researching, analyzing, and influencing policies that shape the educational landscape. If you're committed to making a systemic impact, ensuring equal opportunities, and advocating for positive change in education, then the path of an Advocate is where you'll make your mark.</p>",
-  "tabs": [
-    {
-      "title": "Motivation",
-      "icon": "motivation-icon",
-      "content": "You likely have a passion for shaping and improving the educational landscape through policy and research."
-    },
-    {
-      "title": "Skills",
-      "icon": "skills-icon",
-      "content": "Analytical and critical thinking, effective communication, and an ability to understand and navigate complex systems."
-    },
-    {
-      "title": "Works With",
-      "icon": "work-icon",
-      "content": "You would do well collaborating with policymakers, educational leaders, and advocacy groups to drive systemic change."
-    },
-    {
-      "title": "Setting",
-      "icon": "setting-icon",
-      "content": "You may prefer to work at think tanks, research organizations, or educational institutions where policy and research play a pivotal role."
-    },
-    {
-      "title": "Education",
-      "icon": "education-icon",
-      "content": "You may have studied education policy, public policy, research methods, or related disciplines."
-    },
-    {
-      "title": "Experience",
-      "icon": "skills-icon",
-      "content": "You have have had roles involving research, analysis, advocacy, or any work that involves critical thinking and problem-solving in complex systems."
-    }
-  ],
-  "statsSource": "U.S. Bureau of Labor Statistics",
-  "stats": [
-    {
-      "number": "Average",
-      "title": "Growth",
-      "description": "In employment of educational consulting occupations over the next decade"
-    },
-    {
-      "number": "$65K",
-      "title": "Median Salary",
-      "description": "For educational consulting occupations, ranging from $40K to $103K averages"
-    },
-    {
-      "number": "19K",
-      "title": "Job Openings",
-      "description": "Predicted annually over the next decade in educational consultant roles"
-    }
-  ],
-  "careerPaths": {
-    "title": "What kind of career is a good fit for me?",
-    "description": "Roles that involve <strong>shaping, analyzing, and advocating for educational policies and reforms</strong> are a perfect match for you.",
-    "paths": [
-      {
-        "title": "Education Policy Analyst or Advisor",
-        "description": "Research and analyze educational policies, providing insights and recommendations for improvements and changes.",
-        "imagePath": "/images/ceo.jpg"
-      },
-      {
-        "title": "Education Researcher",
-        "description": "Conduct studies on educational practices and outcomes, contributing to the broader understanding of effective education strategies.",
-        "imagePath": "/images/cfo.jpg"
-      },
-      {
-        "title": "Education Consultant",
-        "description": "Advise educational institutions, organizations, or government bodies on best practices, innovations, and policy changes.",
-        "imagePath": "/images/ceo.jpg"
-      },
-      {
-        "title": "Advocate or Lobbyist for Educational Equity and Reform",
-        "description": "Work towards ensuring equal educational opportunities and advocating for systemic changes in education policies and practices.",
-        "imagePath": "/images/director-or-associate-director.jpg"
-      }
-    ]
-  },
-  "degreeTabs": {
-    "title": "What degree do I need for an <strong>educational policy reform career path?</strong>",
-    "description": "For a career in educational policy reform, a Master's or Doctoral degree is highly beneficial. These advanced degrees not only equip you with a <strong>deeper understanding</strong> of policy-making processes, research methodologies, and advocacy strategies but also <strong>position you for influential roles</strong> in shaping and reforming education policies, potentially leading to <strong>more significant career opportunities</strong> and the ability to <strong>drive substantial changes</strong> in the education sector.",
-    "degrees": [
-      {
-        "title": "Master's in Education Policy",
-        "content": "<p>Concentrates on the analysis, development, and implementation of policies in the education sector, including understanding policy impacts on educational systems and practices.</p><p>Example Degrees:</p><ul><li>Master of Education (M.Ed.) in Education Policy</li><li>MA in Education Policy</li><li>MS in Education Policy and Management</li><li>MPP (Master of Public Policy) with a specialization in Education Policy</li><li>MA in Educational Leadership and Policy Studies</li></ul>"
-      },
-      {
-        "title": "Master's in Public Policy (MPP) with an Education Focus",
-        "content": "<p>Provides a broad understanding of public policy-making with a specialization in education, preparing graduates for roles in policy analysis and advocacy in the education sector.</p><p>Example Degrees:</p><ul><li>MPP with a specialization in Education Policy</li><li>Master of Public Policy in Education Reform</li><li>MPP in Public and Nonprofit Management (Education Concentration)</li><li>MA in Public Policy and Administration: Education Policy</li><li>MPP in Social and Education Policy</li></ul>"
-      },
-      {
-        "title": "Master's in Educational Leadership and Administration",
-        "content": "<p>Prepares individuals for leadership roles in education, focusing on the administrative and managerial aspects of educational systems and how they intersect with policy.</p><p>Example Degrees:</p><ul><li>M.Ed. in Educational Leadership</li><li>MA in Educational Administration and Policy</li><li>MS in Educational Leadership and Policy Analysis</li><li>M.Ed. in Administration and Supervision (Education Policy Focus)</li><li>Master of Arts in School Leadership (Education Policy Concentration)</li></ul>"
-      },
-      {
-        "title": "Ph.D. in Education Policy",
-        "content": "<p>A research-focused doctoral program that delves into advanced theoretical and practical aspects of education policy, ideal for those seeking careers in higher education, research, or high-level policy advising.</p><p>Example Degrees:</p><ul><li>Ph.D. in Education Policy</li><li>Doctor of Philosophy in Education Policy and Administration</li><li>Ph.D. in Educational Leadership and Policy Studies</li><li>Doctorate in Education Policy and Reform</li><li>Ph.D. in Educational Theory and Policy</li></ul>"
-      },
-      {
-        "title": "Master's in Educational Research and Evaluation",
-        "content": "<p>Focuses on research methodologies and evaluation techniques to assess the effectiveness of educational programs and policies.</p><p>Example Degrees:</p><ul><li>M.Ed. in Educational Research and Evaluation</li><li>MS in Educational Assessment and Evaluation</li><li>MA in Educational Measurement and Research</li><li>Master of Arts in Educational and Psychological Research</li><li>MS in Research, Measurement, and Statistics (Education Focus)</li></ul>"
-      }
-    ]
-  },
-  "textWithImage": {
-    "content": "<h2>Do I need a certification to pursue educational policy reform?</h2><p>Yes, to become a school administrator, you generally need a specific certification, often in addition to a Master's degree in Educational Leadership or Administration. </p><p>This certification ensures you have the necessary management skills and educational knowledge. The process usually involves completing an accredited administrative preparation program and passing relevant exams. </p><p>Requirements can vary by region, and experience in teaching or educational roles is often a prerequisite. It's important to check the specific certification requirements in your area.</p>",
-    "imagePath": "/images/ceo.jpg",
-    "altText": "CEO at a restaurant"
-  }
+	"slug": "advocate",
+	"title": "The Advocate",
+	"detailedDescription": "<p>Your role as an Advocate in education policy, research, and consulting is pivotal. You're driven by a passion for educational equity and improvement.</p><p>Your work involves researching, analyzing, and influencing policies that shape the educational landscape. If you're committed to making a systemic impact, ensuring equal opportunities, and advocating for positive change in education, then the path of an Advocate is where you'll make your mark.</p>",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "You likely have a passion for shaping and improving the educational landscape through policy and research."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "Analytical and critical thinking, effective communication, and an ability to understand and navigate complex systems."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "You would do well collaborating with policymakers, educational leaders, and advocacy groups to drive systemic change."
+		},
+		{
+			"title": "Setting",
+			"icon": "setting-icon",
+			"content": "You may prefer to work at think tanks, research organizations, or educational institutions where policy and research play a pivotal role."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "You may have studied education policy, public policy, research methods, or related disciplines."
+		},
+		{
+			"title": "Experience",
+			"icon": "skills-icon",
+			"content": "You have have had roles involving research, analysis, advocacy, or any work that involves critical thinking and problem-solving in complex systems."
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"stats": [
+		{
+			"number": "Average",
+			"title": "Growth",
+			"description": "In employment of educational consulting occupations over the next decade"
+		},
+		{
+			"number": "$65K",
+			"title": "Median Salary",
+			"description": "For educational consulting occupations, ranging from $40K to $103K averages"
+		},
+		{
+			"number": "19K",
+			"title": "Job Openings",
+			"description": "Predicted annually over the next decade in educational consultant roles"
+		}
+	],
+	"careerPaths": {
+		"title": "What kind of career is a good fit for me?",
+		"description": "Roles that involve <strong>shaping, analyzing, and advocating for educational policies and reforms</strong> are a perfect match for you.",
+		"paths": [
+			{
+				"title": "Education Policy Analyst or Advisor",
+				"description": "Research and analyze educational policies, providing insights and recommendations for improvements and changes.",
+				"imagePath": "/images/education/education-policy-analyst-advisor.webp"
+			},
+			{
+				"title": "Education Researcher",
+				"description": "Conduct studies on educational practices and outcomes, contributing to the broader understanding of effective education strategies.",
+				"imagePath": "/images/education/education-researcher.webp"
+			},
+			{
+				"title": "Education Consultant",
+				"description": "Advise educational institutions, organizations, or government bodies on best practices, innovations, and policy changes.",
+				"imagePath": "/images/education/education-consultant.webp"
+			},
+			{
+				"title": "Advocate or Lobbyist for Educational Equity and Reform",
+				"description": "Work towards ensuring equal educational opportunities and advocating for systemic changes in education policies and practices.",
+				"imagePath": "/images/education/advocate-edu-equity-reform.webp"
+			}
+		]
+	},
+	"degreeTabs": {
+		"title": "What degree do I need for an <strong>educational policy reform career path?</strong>",
+		"description": "For a career in educational policy reform, a Master's or Doctoral degree is highly beneficial. These advanced degrees not only equip you with a <strong>deeper understanding</strong> of policy-making processes, research methodologies, and advocacy strategies but also <strong>position you for influential roles</strong> in shaping and reforming education policies, potentially leading to <strong>more significant career opportunities</strong> and the ability to <strong>drive substantial changes</strong> in the education sector.",
+		"degrees": [
+			{
+				"title": "Master's in Education Policy",
+				"content": "<p>Concentrates on the analysis, development, and implementation of policies in the education sector, including understanding policy impacts on educational systems and practices.</p><p>Example Degrees:</p><ul><li>Master of Education (M.Ed.) in Education Policy</li><li>MA in Education Policy</li><li>MS in Education Policy and Management</li><li>MPP (Master of Public Policy) with a specialization in Education Policy</li><li>MA in Educational Leadership and Policy Studies</li></ul>"
+			},
+			{
+				"title": "Master's in Public Policy (MPP) with an Education Focus",
+				"content": "<p>Provides a broad understanding of public policy-making with a specialization in education, preparing graduates for roles in policy analysis and advocacy in the education sector.</p><p>Example Degrees:</p><ul><li>MPP with a specialization in Education Policy</li><li>Master of Public Policy in Education Reform</li><li>MPP in Public and Nonprofit Management (Education Concentration)</li><li>MA in Public Policy and Administration: Education Policy</li><li>MPP in Social and Education Policy</li></ul>"
+			},
+			{
+				"title": "Master's in Educational Leadership and Administration",
+				"content": "<p>Prepares individuals for leadership roles in education, focusing on the administrative and managerial aspects of educational systems and how they intersect with policy.</p><p>Example Degrees:</p><ul><li>M.Ed. in Educational Leadership</li><li>MA in Educational Administration and Policy</li><li>MS in Educational Leadership and Policy Analysis</li><li>M.Ed. in Administration and Supervision (Education Policy Focus)</li><li>Master of Arts in School Leadership (Education Policy Concentration)</li></ul>"
+			},
+			{
+				"title": "Ph.D. in Education Policy",
+				"content": "<p>A research-focused doctoral program that delves into advanced theoretical and practical aspects of education policy, ideal for those seeking careers in higher education, research, or high-level policy advising.</p><p>Example Degrees:</p><ul><li>Ph.D. in Education Policy</li><li>Doctor of Philosophy in Education Policy and Administration</li><li>Ph.D. in Educational Leadership and Policy Studies</li><li>Doctorate in Education Policy and Reform</li><li>Ph.D. in Educational Theory and Policy</li></ul>"
+			},
+			{
+				"title": "Master's in Educational Research and Evaluation",
+				"content": "<p>Focuses on research methodologies and evaluation techniques to assess the effectiveness of educational programs and policies.</p><p>Example Degrees:</p><ul><li>M.Ed. in Educational Research and Evaluation</li><li>MS in Educational Assessment and Evaluation</li><li>MA in Educational Measurement and Research</li><li>Master of Arts in Educational and Psychological Research</li><li>MS in Research, Measurement, and Statistics (Education Focus)</li></ul>"
+			}
+		]
+	},
+	"textWithImage": {
+		"content": "<h2>Do I need a certification to pursue educational policy reform?</h2><p>Yes, to become a school administrator, you generally need a specific certification, often in addition to a Master's degree in Educational Leadership or Administration. </p><p>This certification ensures you have the necessary management skills and educational knowledge. The process usually involves completing an accredited administrative preparation program and passing relevant exams. </p><p>Requirements can vary by region, and experience in teaching or educational roles is often a prerequisite. It's important to check the specific certification requirements in your area.</p>",
+		"imagePath": "/images/education/certification-educational-policy-reform.webp",
+		"altText": "Woman seated at a desk in front of a library"
+	}
 }
