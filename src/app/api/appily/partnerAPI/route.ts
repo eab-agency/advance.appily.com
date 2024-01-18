@@ -19,7 +19,7 @@ const programExternalId = process.env.PROGRAM_EXTERNAL_ID;
 
 export async function POST(request: Request) {
 	logger.error("🚀 ~ appilyAPI:", appilyAPI);
-	logger.error("🚀 ~ partnerKey:", appilyAPI);
+	logger.error("🚀 ~ partnerKey:", partnerKey);
 
 	try {
 		const res = await request.json();
@@ -44,7 +44,7 @@ export async function POST(request: Request) {
 			);
 		}
 
-		logger.error("info bar", JSON.stringify(formattedData));
+		logger.error("info bar: formattedData", JSON.stringify(formattedData));
 
 		const responseFromAppily = await fetch(
 			`${appilyAPI}/partner/v1/register-student/adult-learner`,
@@ -60,7 +60,7 @@ export async function POST(request: Request) {
 		if (responseFromAppily.status !== 200) {
 			logger.error(
 				"🚨🚨🚨 responseFromAppily.status",
-				responseFromAppily.status,
+				JSON.stringify(responseFromAppily),
 			);
 			// console.log("🚨🚨🚨 ~ POST ~ responseFromAppily:", responseFromAppily);
 			throw new Error(
