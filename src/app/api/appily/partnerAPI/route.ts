@@ -25,8 +25,20 @@ export async function POST(request: Request) {
 
 		const formattedData = formatFormDataForAppilyPartnerAPI(res);
 		formattedData.partnerExternalId = partnerExternalId || "";
+		console.log(
+			"🚀 ~ POST ~ formattedData.partnerExternalId:",
+			formattedData.partnerExternalId,
+		);
 		formattedData.programExternalId = programExternalId || "";
+		console.log(
+			"🚀 ~ POST ~ formattedData.programExternalId:",
+			formattedData.programExternalId,
+		);
 		formattedData.partnerKey = partnerKey || "";
+		console.log(
+			"🚀 ~ POST ~ formattedData.partnerKey:",
+			formattedData.partnerKey,
+		);
 		if (process.env.NODE_ENV === "development") {
 			console.log(
 				"🚀 ~ file: route.ts:25 ~ POST ~ formattedData in development mode:",
