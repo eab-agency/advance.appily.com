@@ -48,7 +48,7 @@ export async function POST(request: Request) {
 		);
 
 		if (responseFromAppily.status !== 200) {
-			logger.error("error bar", responseFromAppily));
+			logger.error("error bar", responseFromAppily);
 			console.log("🚨🚨🚨 ~ POST ~ responseFromAppily:", responseFromAppily);
 			throw new Error(
 				`HTTP request failed with status ${responseFromAppily.status}`,
@@ -64,7 +64,7 @@ export async function POST(request: Request) {
 				error: data.meta.error,
 				validationMessages: data.meta.validationMessages,
 			};
-      logger.error("error bar", errorResponse);
+			logger.error("error bar", errorResponse);
 			console.error("🚨🚨 Error: ", errorResponse);
 			return Response.json({ errorResponse });
 		} else {
