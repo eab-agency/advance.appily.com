@@ -48,7 +48,7 @@ export async function POST(request: Request) {
 		);
 
 		if (responseFromAppily.status !== 200) {
-			logger.error("error bar", JSON.stringify(responseFromAppily));
+			logger.error("error bar", responseFromAppily));
 			console.log("🚨🚨🚨 ~ POST ~ responseFromAppily:", responseFromAppily);
 			throw new Error(
 				`HTTP request failed with status ${responseFromAppily.status}`,
@@ -57,13 +57,14 @@ export async function POST(request: Request) {
 
 		const data = await responseFromAppily.json();
 		console.log("🚀 ~ POST ~ data response:", data);
-		logger.info("info bar", data);
+		logger.info("info bar: data response", data);
 
 		if (data.meta && data.meta.success === false) {
 			const errorResponse = {
 				error: data.meta.error,
 				validationMessages: data.meta.validationMessages,
 			};
+      logger.error("error bar", errorResponse);
 			console.error("🚨🚨 Error: ", errorResponse);
 			return Response.json({ errorResponse });
 		} else {
@@ -71,7 +72,7 @@ export async function POST(request: Request) {
 		}
 	} catch (error) {
 		console.error("🚨🚨🚨🚨 Error: ", error);
-		logger.error("error bar", JSON.stringify(error));
+		logger.error("error bar", error);
 		return Response.json({ error: "An error occurred" });
 	}
 }
