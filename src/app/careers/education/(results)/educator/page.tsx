@@ -34,6 +34,14 @@ export default function Page() {
   const [themeMode, setThemeMode] = useState("light");
 
   useEffect(() => {
+    if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
+      setThemeMode("dark");
+    } else {
+      setThemeMode("light");
+    }
+  }, []);
+
+  useEffect(() => {
     setVertical("Education");
   }, []);
   return (
