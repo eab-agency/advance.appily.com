@@ -1,4 +1,6 @@
 import { formatFormDataForAppilyPartnerAPI } from "@/lib/formatFormDataForAppilyPartnerAPI";
+import { ConsoleLogger } from "aws-amplify/utils";
+const logger = new ConsoleLogger("foo");
 
 const appilyAPI =
 	process.env.NODE_ENV === "development"
@@ -32,6 +34,8 @@ export async function POST(request: Request) {
 			);
 		}
 
+		logger.info("info bar", JSON.stringify(formattedData));
+
 		const responseFromAppily = await fetch(
 			`${appilyAPI}/partner/v1/register-student/adult-learner`,
 			{
@@ -44,6 +48,7 @@ export async function POST(request: Request) {
 		);
 
 		if (responseFromAppily.status !== 200) {
+			logger.error("error bar", JSON.stringify(responseFromAppily));
 			throw new Error(
 				`HTTP request failed with status ${responseFromAppily.status}`,
 			);
@@ -63,6 +68,7 @@ export async function POST(request: Request) {
 		}
 	} catch (error) {
 		console.error("🚨🚨🚨🚨 Error: ", error);
+		logger.error("error bar", JSON.stringify(error));
 		return Response.json({ error: "An error occurred" });
 	}
 }
