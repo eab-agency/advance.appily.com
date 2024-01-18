@@ -69,6 +69,8 @@ export async function POST(request: Request) {
 		}
 
 		const data = await responseFromAppily.json();
+		console.log("🚀 ~ POST ~ data response:", data);
+		logger.info("info bar", data);
 
 		if (data.meta && data.meta.success === false) {
 			const errorResponse = {
