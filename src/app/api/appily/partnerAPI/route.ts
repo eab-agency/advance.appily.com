@@ -24,6 +24,8 @@ export async function POST(request: Request) {
 		const res = await request.json();
 
 		const formattedData = formatFormDataForAppilyPartnerAPI(res);
+		console.log("🚀 ~ process.env.NODE_ENV:", process.env.NODE_ENV);
+
 		formattedData.partnerExternalId = partnerExternalId || "";
 		console.log(
 			"🚀 ~ POST ~ formattedData.partnerExternalId:",
