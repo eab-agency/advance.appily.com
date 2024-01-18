@@ -59,8 +59,16 @@ export async function POST(request: Request) {
 
 		if (responseFromAppily.status !== 200) {
 			logger.error(
+				"🚨🚨🚨 responseFromAppily.headers",
+				responseFromAppily.headers,
+			);
+			logger.error(
+				"🚨🚨🚨 responseFromAppily.statusText",
+				responseFromAppily.statusText,
+			);
+			logger.error(
 				"🚨🚨🚨 responseFromAppily.status",
-				JSON.stringify(responseFromAppily),
+				responseFromAppily.status,
 			);
 			// console.log("🚨🚨🚨 ~ POST ~ responseFromAppily:", responseFromAppily);
 			throw new Error(
