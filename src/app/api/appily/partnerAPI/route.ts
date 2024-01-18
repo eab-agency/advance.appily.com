@@ -24,23 +24,9 @@ export async function POST(request: Request) {
 		const res = await request.json();
 
 		const formattedData = formatFormDataForAppilyPartnerAPI(res);
-		console.log("🚀 ~ process.env.NODE_ENV:", process.env.NODE_ENV);
-
 		formattedData.partnerExternalId = partnerExternalId || "";
-		console.log(
-			"🚀 ~ POST ~ formattedData.partnerExternalId:",
-			formattedData.partnerExternalId,
-		);
 		formattedData.programExternalId = programExternalId || "";
-		console.log(
-			"🚀 ~ POST ~ formattedData.programExternalId:",
-			formattedData.programExternalId,
-		);
 		formattedData.partnerKey = partnerKey || "";
-		console.log(
-			"🚀 ~ POST ~ formattedData.partnerKey:",
-			formattedData.partnerKey,
-		);
 		if (process.env.NODE_ENV === "development") {
 			console.log(
 				"🚀 ~ file: route.ts:25 ~ POST ~ formattedData in development mode:",
@@ -63,6 +49,7 @@ export async function POST(request: Request) {
 
 		if (responseFromAppily.status !== 200) {
 			logger.error("error bar", JSON.stringify(responseFromAppily));
+			console.log("🚨🚨🚨 ~ POST ~ responseFromAppily:", responseFromAppily);
 			throw new Error(
 				`HTTP request failed with status ${responseFromAppily.status}`,
 			);
