@@ -6,16 +6,11 @@ const appilyAPI =
 	process.env.NODE_ENV === "development"
 		? process.env.DEV_APPILY_API_URL
 		: process.env.APPILY_API_URL || "";
-logger.info("🚀 ~ appilyAPI:", appilyAPI);
-// console.log("🚀 ~ file: route.ts:4 ~ appilyAPI:", appilyAPI);
 
 const partnerKey =
 	process.env.NODE_ENV === "development"
 		? process.env.DEV_APPILY_API_KEY
 		: process.env.APPILY_API_KEY;
-logger.info("🚀 ~ partnerKey:", appilyAPI);
-
-// console.log("🚀 ~ file: route.ts:9 ~ partnerKey:", partnerKey);
 
 const partnerExternalId = process.env.PARTNER_EXTERNAL_ID;
 // console.log("🚀 ~ file: route.ts:14 ~ partnerExternalId:", partnerExternalId);
@@ -23,15 +18,15 @@ const programExternalId = process.env.PROGRAM_EXTERNAL_ID;
 // console.log("🚀 ~ file: route.ts:16 ~ programExternalId:", programExternalId);
 
 export async function POST(request: Request) {
+	logger.info("🚀 ~ appilyAPI:", appilyAPI);
+	logger.info("🚀 ~ partnerKey:", appilyAPI);
+
 	try {
 		const res = await request.json();
 
 		const formattedData = formatFormDataForAppilyPartnerAPI(res);
 		formattedData.partnerExternalId = partnerExternalId || "";
-		logger.info(
-			"🚀 ~ POST ~ formattedData.partnerExternalId:",
-			formattedData.partnerExternalId,
-		);
+
 		formattedData.programExternalId = programExternalId || "";
 		logger.info(
 			"🚀 ~ POST ~ formattedData.partnerExternalId:",
@@ -67,7 +62,7 @@ export async function POST(request: Request) {
 				"🚨🚨🚨 responseFromAppily.status",
 				responseFromAppily.status,
 			);
-			console.log("🚨🚨🚨 ~ POST ~ responseFromAppily:", responseFromAppily);
+			// console.log("🚨🚨🚨 ~ POST ~ responseFromAppily:", responseFromAppily);
 			throw new Error(
 				`HTTP request failed with status ${responseFromAppily.status}`,
 			);
