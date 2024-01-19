@@ -4,6 +4,10 @@ import Link from "next/link";
 import isDevMode from "@/helpers/isDevMode";
 import styles from '@/styles/components/Results.module.scss';
 
+function toTitleCase(str) {
+  return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
 const Results = ({ children, vertical, answers, formId, redirectUrl }) => {
   const formSubmitAnswers = {
     answers: answers.selectedAnswers,
@@ -12,66 +16,35 @@ const Results = ({ children, vertical, answers, formId, redirectUrl }) => {
   const devModeOnly = isDevMode();
 
   const roleResult = () => {
+    console.log("🚀 ~ roleResult ~ answers.highestScorePersonality:", answers.highestScorePersonality)
     switch (answers.highestScorePersonality) {
 
       // Business
       case 'creative-marketer':
-        return {
-          title: 'Your ideal role could be ... ',
-          role: 'The Creative Marketer',
-        }
       case 'fearless-leader':
-        return {
-          title: 'Your ideal role could be ... ',
-          role: 'The Fearless Leader',
-        }
       case 'people-person':
-        return {
-          title: 'Your ideal role could be ... ',
-          role: 'The People Person',
-        }
       case 'money-maestro':
-        return {
-          title: 'Your ideal role could be ... ',
-          role: 'The Money Maestro',
-        }
       case 'computer-whiz':
-        return {
-          title: 'Your ideal role could be ... ',
-          role: 'The Computer Whiz',
-        }
       case 'self-starter':
-        return {
-          title: 'Your ideal role could be ... ',
-          role: 'The Self Starter',
-        }
 
       // Healthcare
       case 'executive':
-        return {
-          title: 'Your ideal role could be ... ',
-          role: 'The Executive',
-        }
       case 'practitioner':
-        return {
-          title: 'Your ideal role could be ... ',
-          role: 'The Practitioner',
-        }
       case 'educator':
-        return {
-          title: 'Your ideal role could be ... ',
-          role: 'The Educator',
-        }
       case 'analyst':
-        return {
-          title: 'Your ideal role could be ... ',
-          role: 'The Analyst',
-        }
       case 'scientist':
+
+      // Education
+      case 'administrator':
+      case 'advisor':
+      case 'advocate':
+      case 'developer':
+      case 'facilitator':
         return {
           title: 'Your ideal role could be ... ',
-          role: 'The Scientist',
+          role: `The ${answers.highestScorePersonality}`,
         }
+
 
       default:
         return {
