@@ -8,7 +8,7 @@ import { Metadata } from "next";
 import headerImg from "@images/business-hero-image.webp";
 import takeQuizImg from "@images/take-our-free-quiz.webp";
 
-const title = "Your ideal role is in reach";
+const title = "Your ideal role is in reach | Appily Advance";
 const description =
 	"Discover your ideal role and find schools that offer degrees to help you reach your goals.";
 
