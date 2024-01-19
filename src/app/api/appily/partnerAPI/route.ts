@@ -28,15 +28,8 @@ export async function POST(request: Request) {
 		formattedData.partnerExternalId = partnerExternalId || "";
 
 		formattedData.programExternalId = programExternalId || "";
-		// logger.error(
-		// 	"🚀 ~ POST ~ formattedData.partnerExternalId:",
-		// 	formattedData.programExternalId,
-		// );
 		formattedData.partnerKey = partnerKey || "";
-		// logger.error(
-		// 	"🚀 ~ POST ~ formattedData.partnerExternalId:",
-		// 	formattedData.partnerKey,
-		// );
+
 		if (process.env.NODE_ENV === "development") {
 			console.log(
 				"🚀 ~ file: route.ts:25 ~ POST ~ formattedData in development mode:",
@@ -89,6 +82,7 @@ export async function POST(request: Request) {
 			console.error("🚨🚨 Error: ", errorResponse);
 			return Response.json({ errorResponse });
 		} else {
+			logger.error("successful data: ", data);
 			return Response.json({ data });
 		}
 	} catch (error) {
