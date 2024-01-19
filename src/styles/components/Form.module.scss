@@ -31,6 +31,7 @@
       width: 100%;
       display: flex;
       flex-direction: column-reverse;
+      color: var(--c-bodyPrimary);
 
       @media (min-width: tokens.$mq-800) {
         flex-direction: row;
@@ -49,7 +50,7 @@
     line-height: 1;
     color: var(--c-teal-700);
     font-size: tokens.$size-4;
-    color: var(--c-black);
+    color: var(--c-bodyPrimary);
     pointer-events: none;
     transition: all 0.2s ease-in-out;
 
@@ -59,6 +60,7 @@
       z-index: 100;
       padding-inline: 0.2em;
       position: absolute;
+      color: var(--c-black);
       top: 50%;
       left: 0.5em;
       transform: translateY(-50%);
@@ -93,7 +95,14 @@
 
     &:hover {
       border-color: var(--c-teal-500);
-      background: var(--c-teal-50);
+
+      // @media (min-width: tokens.$mq-800) {
+      //   background: var(--c-teal-50);
+      // }
+      // light mode
+      @media (prefers-color-scheme: light) {
+        background: var(--c-teal-100);
+      }
     }
   }
 
@@ -102,11 +111,12 @@
     outline: none;
 
     & + span {
-      transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
-      color: var(--c-teal-700);
+      // transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+      color: var(--c-teal-300);
 
       @media (min-width: tokens.$mq-800) {
         transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+        color: var(--c-teal-700);
       }
     }
   }
@@ -138,7 +148,7 @@
 
   small {
     font-size: tokens.$size-2;
-    color: var(--c-slateGray-900);
+    color: var(--c-bodyPrimary);
     margin-bottom: 0;
     padding-block: 0.5em 0;
   }
@@ -209,6 +219,7 @@
 .textOptin {
   display: flex;
   flex-direction: row-reverse;
+  color: var(--c-bodyPrimary);
 
   // .checkboxGroupLabel {
   //   // order: 1;
