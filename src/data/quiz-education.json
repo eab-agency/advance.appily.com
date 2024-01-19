@@ -304,38 +304,38 @@
       "associatedField": "area_of_interest",
       "answers": [
         {
-          "answer": "Executive & Leadership",
-          "value": "14",
+          "answer": "Classroom Instruction",
+          "value": "16",
           "personality": "educator",
           "weight": 0
         },
         {
-          "answer": "Creative & Marketing",
-          "value": "11",
+          "answer": "Special Education",
+          "value": "17",
           "personality": "facilitator",
           "weight": 0
         },
         {
-          "answer": "Finance, Accounting, & Economics",
-          "value": "13",
+          "answer": "School Leadership and Administration",
+          "value": "18",
           "personality": "administrator",
           "weight": 0
         },
         {
-          "answer": "Entrepreneurship",
-          "value": "12",
+          "answer": "Student Support and Guidance",
+          "value": "19",
           "personality": "advisor",
           "weight": 0
         },
         {
-          "answer": "Information Technology & Analytics",
-          "value": "10",
+          "answer": "Curriculum Development and Instruction",
+          "value": "20",
           "personality": "developer",
           "weight": 0
         },
         {
-          "answer": "Operations, Project Management, & HR",
-          "value": "9",
+          "answer": "Education Policy, Research, and Consulting",
+          "value": "21",
           "personality": "advocate",
           "weight": 0
         }
