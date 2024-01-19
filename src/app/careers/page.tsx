@@ -7,9 +7,9 @@ import Link from "next/link";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
-const title = "Your ideal role is in reach";
+const title = "Discover Your Career";
 const description =
-	"Discover your ideal role and find schools that offer degrees to help you reach your goals.";
+	"Looking for the career that’s best for you? Choose your career path and the degree to help you reach your goals with Appily Advance.";
 
 export const metadata: Metadata = {
 	openGraph: mergeOpenGraph({
@@ -30,7 +30,7 @@ const CareersSeoPage = () => {
 			<section className="pageHero">
 				<div className="group center-aligned center-justified">
 					<h1>
-						Wondering <strong>which careeer</strong> is right for you?
+						Wondering <strong>which career</strong> is right for you?
 					</h1>
 					<figure className="heroImage">
 						<Image
@@ -115,7 +115,7 @@ const CareersSeoPage = () => {
 							<Button
 								type="button"
 								href="/careers/business/quiz/start"
-								label="Business Quiz"
+								label="Business Career Quiz"
 								className="button btn-primary btn-click-quiz"
 							/>
 						</IconCard>
@@ -145,7 +145,7 @@ const CareersSeoPage = () => {
 							<Button
 								type="button"
 								href="/careers/healthcare/quiz/start"
-								label="Healthcare Quiz"
+								label="Healthcare Career Quiz"
 								className="button btn-primary btn-click-quiz"
 							/>
 						</IconCard>

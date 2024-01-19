@@ -1,0 +1,28 @@
+{
+  "results": [
+    {
+      "href": "educator",
+      "label": "The Educator"
+    },
+    {
+      "href": "facilitator",
+      "label": "The Facilitator"
+    },
+    {
+      "href": "administrator",
+      "label": "The Administrator"
+    },
+    {
+      "href": "advisor",
+      "label": "The Advisor"
+    },
+    {
+      "href": "developer",
+      "label": "The Developer"
+    },
+    {
+      "href": "advocate",
+      "label": "The Advocate"
+    }
+  ]
+}

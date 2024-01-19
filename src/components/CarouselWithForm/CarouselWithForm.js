@@ -18,7 +18,7 @@ const CarouselWithForm = ({
 	const [selectedSchool, setSelectedSchool] = useState(null);
 
 	const onCarouselClick = school => {
-		if (location.notUS || globalPrivacyControl || collectData) {
+		if (location.notUS || globalPrivacyControl || !collectData) {
 			window.open(school.links[0].link.url, "_blank");
 		} else {
 			setSelectedSchool(school);

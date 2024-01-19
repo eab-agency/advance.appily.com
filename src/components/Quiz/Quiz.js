@@ -28,6 +28,7 @@ export function Quiz({
 	randomizeAnswers = false,
 }) {
 	const { location, globalPrivacyControl } = useUser();
+	// console.log("🚀 ~ file: Quiz.js:31 ~ location:", location)
 	const { questions, score: initialScore } = quizData;
 	const [randomizedQuestions, setRandomizedQuestions] = useState([]);
 	const router = useRouter();

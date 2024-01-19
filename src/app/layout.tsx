@@ -2,6 +2,7 @@ import Analytics from "@/lib/Analytics";
 import { Metadata } from "next";
 import React, { Suspense } from "react";
 
+import LocationInDevMode from "@/components/PageLayouts/LocationInDevMode";
 import data from "@/data/careers-business.json";
 import { Providers } from "../providers";
 import { mergeOpenGraph } from "../seo/mergeOpenGraph";
@@ -42,6 +43,7 @@ export default async function RootLayout({
 				</Suspense>
 				<Providers>
 					<Header links={data.links} />
+					<LocationInDevMode />
 					<main className="layout-wrapper">{children}</main>
 					<Footer />
 				</Providers>

@@ -41,21 +41,37 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 	// check if window.OneTrust is defined and if so, set a listener for the OneTrustUpdated event
 	useEffect(() => {
 		const handleOneTrustUpdated = () => {
+			// console.log(
+			// 	"🚀 ~ file: context.tsx:49 ~ handleOneTrustUpdated ~ handleOneTrustUpdated:",
+			// 	handleOneTrustUpdated,
+			// );
 			if (window.OneTrust) {
+				// console.log("Setting OneTrust");
 				setOneTrust(window.OneTrust);
 			}
 		};
 
 		if (typeof window !== "undefined") {
 			if (window.OneTrust) {
+				// console.log("window is defined... Setting OneTrust");
 				setOneTrust(window.OneTrust);
 			} else {
+				// console.log("Adding event listener for OneTrustUpdated");
 				window.addEventListener("OneTrustUpdated", handleOneTrustUpdated);
+
+				const intervalId = setInterval(() => {
+					if (window.OneTrust) {
+						// console.log("OneTrust is now available... Setting OneTrust");
+						setOneTrust(window.OneTrust);
+						clearInterval(intervalId); // Clear the interval once OneTrust is available
+					}
+				}, 1000);
 			}
 		}
 
 		return () => {
 			if (typeof window !== "undefined") {
+				console.log("Removing event listener for OneTrustUpdated");
 				window.removeEventListener("OneTrustUpdated", handleOneTrustUpdated);
 			}
 		};
@@ -70,24 +86,15 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 		}
 	}, []);
 
-	// Uncomment the below to simulate a 4XX error when making a GET request to apiURL
-	// Create a new instance of axios mock
-	// const mock = new MockAdapter(axios);
-	// console.log(
-	//     '🐛🐛🐛🐛 MockAdapter: Simulating a 4XX error for GET request to',
-	//     apiURL
-	// );
-	// mock.onGet(apiURL).reply(416, { error: 'Bad Request' });
-
 	// const [location, setLocation] = useLocalStorage('489hLocation', null);
 	const [location, setLocation] = useState<{
-		region_iso_code: string;
-		country_code: string;
+		region_iso_code: string | null;
+		country_code: string | null;
 		notUS: boolean;
 	} | null>({
-		region_iso_code: "VA",
-		country_code: "US",
-		notUS: false,
+		region_iso_code: null,
+		country_code: null,
+		notUS: true,
 	});
 
 	const [formData, setFormData] = useState<any>(null);
@@ -99,9 +106,9 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 	// check oneTrust.getGeolocation(), that returns an object of { country: 'US', region: 'CA' }, and set location
 	useEffect(() => {
 		if (oneTrust) {
-			const { country, region } = oneTrust.getGeolocationData();
+			const { country, state } = oneTrust.getGeolocationData();
 			setLocation({
-				region_iso_code: region,
+				region_iso_code: state,
 				country_code: country,
 				notUS: country !== "US",
 			});
@@ -113,13 +120,9 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 		const fetchData = async () => {
 			if (location) {
 				const matchedSchoolInternal = await getMatchedSchool(
-					location?.region_iso_code,
+					location?.region_iso_code || "VA",
 					vertical,
 				);
-				// console.log(
-				// 	"🚀 ~ file: context.tsx:116 ~ fetchData ~ matchedSchoolInternal:",
-				// 	matchedSchoolInternal,
-				// );
 				// grab first school from schools and set matchedSchool
 				setMatchedSchools(matchedSchoolInternal);
 			}
