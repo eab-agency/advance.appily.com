@@ -38,7 +38,9 @@ export default function Page() {
 								<span>Your ideal role could be ...</span>
 							</div>
 							<h1>{data.title}</h1>
-							<p>{data.detailedDescription}</p>
+							<div
+								dangerouslySetInnerHTML={{ __html: data.detailedDescription }}
+							/>
 						</div>
 						{/* <figure className="column">
               <Lottie animationData={computerWhiz} loop={true} />

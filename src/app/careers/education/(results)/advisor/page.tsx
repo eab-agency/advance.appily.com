@@ -46,7 +46,7 @@ export default function Page() {
 								<span>Your ideal role could be ...</span>
 							</div>
 							<h1>{data.title}</h1>
-							<p
+							<div
 								dangerouslySetInnerHTML={{
 									__html: data.detailedDescription,
 								}}
