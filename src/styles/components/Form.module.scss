@@ -35,6 +35,12 @@
       @media (min-width: tokens.$mq-800) {
         flex-direction: row;
       }
+      display: flex;
+      flex-direction: column-reverse;
+
+      @media (min-width: tokens.$mq-800) {
+        flex-direction: row;
+      }
     }
   }
 
@@ -45,7 +51,7 @@
     font-size: tokens.$size-4;
     color: var(--c-black);
     pointer-events: none;
-    transition: all 0.12s ease-out;
+    transition: all 0.2s ease-in-out;
 
     @media (min-width: tokens.$mq-800) {
       margin-bottom: -0.05em;
@@ -73,6 +79,7 @@
   }
 
   input:not([type="checkbox"]),
+  input:not([type="checkbox"]),
   select {
     font-size: tokens.$size-5;
     padding: 0.9em 0.5em 0.5em;
@@ -81,6 +88,7 @@
     background-color: var(--c-slateGray-100);
     font-family: tokens.$f-sans;
     min-width: 12rem;
+    border-radius: 0.3em;
     border-radius: 0.3em;
 
     &:hover {
@@ -94,6 +102,7 @@
     outline: none;
 
     & + span {
+      transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
       color: var(--c-teal-700);
 
       @media (min-width: tokens.$mq-800) {
@@ -183,12 +192,9 @@
 
 .select.empty {
   @media (min-width: tokens.$mq-800) {
-    select {
-      text-indent: -999em;
+    .fieldLabel {
+      transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
     }
-    // .fieldLabel {
-    //   // transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
-    // }
   }
 }
 
@@ -207,6 +213,46 @@
   // .checkboxGroupLabel {
   //   // order: 1;
   // }
+
+  .checkboxGroupContainer {
+    width: 1.8em;
+    padding: 0;
+  }
+
+  .checkboxGroup {
+    input + label {
+      display: none;
+    }
+  }
+}
+
+.textOptin {
+  display: flex;
+  flex-direction: row-reverse;
+
+  .checkboxGroupLabel {
+    // order: 1;
+  }
+
+  .checkboxGroupContainer {
+    width: 1.8em;
+    padding: 0;
+  }
+
+  .checkboxGroup {
+    input + label {
+      display: none;
+    }
+  }
+}
+
+.textOptin {
+  display: flex;
+  flex-direction: row-reverse;
+
+  .checkboxGroupLabel {
+    // order: 1;
+  }
 
   .checkboxGroupContainer {
     width: 1.8em;
