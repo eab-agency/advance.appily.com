@@ -30,27 +30,36 @@ export default function QuizLandingPage() {
 					<div className="column">
 						<header>
 							<h1>
-								Forge Your Path <strong>in Education</strong>
+								Chart Your Course <strong>in Education</strong>
 							</h1>
 						</header>
 						<p>
+							Are you a teacher looking to stay in education but leave the
+							classroom? Maybe you’re ready to advance your current education
+							career? Or are you in a different field but want to apply your
+							skills to helping shape the future?
+						</p>
+						<p>
 							If you want to work in education but you don’t know which job fits
 							your skills and interests,{" "}
-							<strong>this free quiz can help find a good fit</strong> and you
-							plan your next steps.
+							<strong>this free quiz can help find a good fit</strong>
+							and you plan your next steps.
 						</p>
 						<p>
-							The Bureau of Labor Statistics predicts about nearly one million
-							jobs in business will be created each year over the next decade.
-							Many colleges and universities offer flexible, affordable degrees
-							or certificates that can help you get a head start in transferring
-							your skills to a new or more advanced role.
+							The Bureau of Labor Statistics predicts nearly{" "}
+							<strong>900 thousand jobs in education</strong> will be created
+							each year over the next decade. Many colleges and universities
+							offer flexible, affordable degrees or certificates that can help
+							you get a head start in transferring your skills to a new or more
+							advanced role.
 						</p>
 						<p>
-							In less than three minutes, you could discover which type of
-							business career could be a good fit for you. We’ll also connect
-							you with schools near you that offer degrees to help you reach
-							your goals..
+							<strong>
+								In less than three minutes, you could discover which type of
+								education career could be a good fit for you.
+							</strong>{" "}
+							We’ll also connect you with schools near you that offer degrees to
+							help you reach your goals.
 						</p>
 						<Button
 							label="Take the Quiz"
@@ -61,7 +70,7 @@ export default function QuizLandingPage() {
 					</div>
 					<figure className="column highlighted-img">
 						<Image
-							src="/images/cappex-define-your-future-img.jpg"
+							src="/images/education/teacher-in-front-of-blackboard.jpg"
 							alt="Define Your Future in Education"
 							// fill
 							width={500}
