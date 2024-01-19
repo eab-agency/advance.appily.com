@@ -59,14 +59,14 @@ interface StudentFormData {
 export function formatFormDataForAppilyPartnerAPI(
 	formData: FormDataInterface,
 ): StudentFormData {
-	console.log(
-		"🚀🚀🚀🚀🚀🚀 ~ file: formatFormDataForAppilyPartnerAPI.ts:62 ~ formData:",
-		formData,
-	);
 	const questionAnswerForms: QuestionAnswerForm[] = [];
 
 	for (const key in formData) {
 		if (key.startsWith("quizresponse")) {
+			// if null, skip
+			if (!formData[key]) {
+				continue;
+			}
 			const answer = formData[key].split(" | ")[1];
 			let question = formData[key].split(" | ")[0];
 			if (question.length > 85) {

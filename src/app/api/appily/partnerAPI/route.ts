@@ -18,7 +18,7 @@ const programExternalId = process.env.PROGRAM_EXTERNAL_ID;
 // console.log("🚀 ~ file: route.ts:16 ~ programExternalId:", programExternalId);
 
 export async function POST(request: Request) {
-	// logger.error("🚀 ~ appilyAPI:", appilyAPI);
+	logger.error("🚀 ~ Submitting data to:", appilyAPI);
 	// logger.error("🚀 ~ partnerKey:", partnerKey);
 
 	try {
@@ -38,10 +38,10 @@ export async function POST(request: Request) {
 		// 	formattedData.partnerKey,
 		// );
 		if (process.env.NODE_ENV === "development") {
-			console.log(
-				"🚀 ~ file: route.ts:25 ~ POST ~ formattedData in development mode:",
-				JSON.stringify(formattedData),
-			);
+			// console.log(
+			// 	"🚀 ~ file: route.ts:25 ~ POST ~ formattedData in development mode:",
+			// 	JSON.stringify(formattedData),
+			// );
 		}
 
 		// logger.error("info bar: formattedData", JSON.stringify(formattedData));
@@ -86,7 +86,7 @@ export async function POST(request: Request) {
 				validationMessages: data.meta.validationMessages,
 			};
 			logger.error("error bar", errorResponse);
-			console.error("🚨🚨 Error: ", errorResponse);
+			// console.error("🚨🚨 Error: ", errorResponse);
 			return Response.json({ errorResponse });
 		} else {
 			return Response.json({ data });
