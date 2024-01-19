@@ -1,70 +1,70 @@
 {
-	"slug": "scientist",
-	"title": "Scientist",
-	"description": "You are naturally curious and enjoy solving complex problems. You are methodical, analytical, and enjoy using data and research to drive your decisions.",
-	"detailedDescription": "You’re an intensely curious person with a drive to learn how things work or make groundbreaking discoveries. You may enjoy reading a patient’s lab results to find things a physician can help them improve—or you may be driven to cure a disease or find a treatment that will change many lives. You probably have a background in science but may also be a skilled writer.",
-	"tabs": [
-		{
-			"title": "Motivation",
-			"icon": "motivation-icon",
-			"content": "The Scientist likes to figure out how things work and wants to make groundbreaking discoveries."
-		},
-		{
-			"title": "Skills",
-			"icon": "skills-icon",
-			"content": "This role is skilled at critical thinking, observation, and data analysis. They can also communicate complex ideas simply while speaking and writing."
-		},
-		{
-			"title": "Works With",
-			"icon": "work-icon",
-			"content": "Careers in The Scientist’s path usually work with other scientists or medical professionals."
-		},
-		{
-			"title": "Setting",
-			"icon": "setting-icon",
-			"content": "A lab or university are the most common workplaces for The Scientist, but they may also work in a hospital or office."
-		},
-		{
-			"title": "Education",
-			"icon": "education-icon",
-			"content": "Jobs in this field often require at least a bachelor’s degree in a physical science, and many prefer a Ph.D. or medical degree."
-		},
-		{
-			"title": "Experience",
-			"icon": "experience-icon",
-			"content": "People with experience working in a lab setting or doing research and writing proposals tend to be a good fit for The Scientist’s career path."
-		}
-	],
-	"statsSource": "",
-	"stats": [
-		{
-			"number": "17%",
-			"title": "Growth",
-			"description": "In employment of medical scientists over the next decade"
-		},
-		{
-			"number": "$95K",
-			"title": "Median Salary",
-			"description": "For medical scientists, ranging from $50K to $166K averages"
-		},
-		{
-			"number": "10K",
-			"title": "Job Openings",
-			"description": "Predicted annually over the next decade due to workers retiring or transferring careers"
-		}
-	],
-	"degreeTabs": [
-		{
-			"title": "Doctoral",
-			"content": "<p>PhD programs for medical scientists typically focus on research in a particular field, such as immunology, neurology, or cancer. Popular PhD options include:</p><ul><li><strong>PhD in Biology:</strong> This degree can prepare you for research in fields such as microbiology, environmental science, pharmaceutical development, genetics and more</li><li><strong>PhD in Chemistry:</strong> This degree can prepare you for research in fields such as pharmacology, biomedicine, toxicology, and more.</li></ul><p>Medical scientists also may pursue these medical degrees:</p><ul><li>Medical Doctor (MD)</li><li>Doctor of Dental Surgery (DDS)</li><li>Doctor of Dental Medicine (DMD)</li><li>Doctor of Osteopathic Medicine (DO)</li><li>Doctor of Pharmacy (PharmD)</li><li>Doctor of Nursing Practice (DNP)</li></ul>"
-		},
-		{
-			"title": "Master's",
-			"content": "<p>A good master’s degree for those pursuing a medical science career is a <strong>Master of Science in Medical Science.</strong> It’s goal is to help medical students prepare to become competent physicians, but it can also prepare you for a more research-focused career.</p><p>Another option is the <strong>Master of Science in Clinical Research,</strong> which focuses more on quantitative and analytic skills in patient-oriented and translational research, as well as more traditional clinical investigation.</p>"
-		},
-		{
-			"title": "Bachelor's",
-			"content": "<p>If you’re just getting started down the path of The Scientist, it’s a good idea to earn your <strong>Bachelor of Science in Biology or Chemistry.</strong> This will give you a strong foundation for future degrees.</p><p>Another options is a <strong>Bachelor of Science in Health Sciences,</strong> which can give you a strong skill base for clinical research. You’ll get an learn how to conduct research studies to ensure the safety and effectiveness of new drugs, devices, diagnostics and treatment regimens.</p>"
-		}
-	]
+  "slug": "scientist",
+  "title": "Scientist",
+  "description": "You are naturally curious and enjoy solving complex problems. You are methodical, analytical, and enjoy using data and research to drive your decisions.",
+  "detailedDescription": "<p>You’re an intensely curious person with a drive to learn how things work or make groundbreaking discoveries. You may enjoy reading a patient’s lab results to find things a physician can help them improve—or you may be driven to cure a disease or find a treatment that will change many lives. You probably have a background in science but may also be a skilled writer.</p>",
+  "tabs": [
+    {
+      "title": "Motivation",
+      "icon": "motivation-icon",
+      "content": "The Scientist likes to figure out how things work and wants to make groundbreaking discoveries."
+    },
+    {
+      "title": "Skills",
+      "icon": "skills-icon",
+      "content": "This role is skilled at critical thinking, observation, and data analysis. They can also communicate complex ideas simply while speaking and writing."
+    },
+    {
+      "title": "Works With",
+      "icon": "work-icon",
+      "content": "Careers in The Scientist’s path usually work with other scientists or medical professionals."
+    },
+    {
+      "title": "Setting",
+      "icon": "setting-icon",
+      "content": "A lab or university are the most common workplaces for The Scientist, but they may also work in a hospital or office."
+    },
+    {
+      "title": "Education",
+      "icon": "education-icon",
+      "content": "Jobs in this field often require at least a bachelor’s degree in a physical science, and many prefer a Ph.D. or medical degree."
+    },
+    {
+      "title": "Experience",
+      "icon": "experience-icon",
+      "content": "People with experience working in a lab setting or doing research and writing proposals tend to be a good fit for The Scientist’s career path."
+    }
+  ],
+  "statsSource": "",
+  "stats": [
+    {
+      "number": "17%",
+      "title": "Growth",
+      "description": "In employment of medical scientists over the next decade"
+    },
+    {
+      "number": "$95K",
+      "title": "Median Salary",
+      "description": "For medical scientists, ranging from $50K to $166K averages"
+    },
+    {
+      "number": "10K",
+      "title": "Job Openings",
+      "description": "Predicted annually over the next decade due to workers retiring or transferring careers"
+    }
+  ],
+  "degreeTabs": [
+    {
+      "title": "Doctoral",
+      "content": "<p>PhD programs for medical scientists typically focus on research in a particular field, such as immunology, neurology, or cancer. Popular PhD options include:</p><ul><li><strong>PhD in Biology:</strong> This degree can prepare you for research in fields such as microbiology, environmental science, pharmaceutical development, genetics and more</li><li><strong>PhD in Chemistry:</strong> This degree can prepare you for research in fields such as pharmacology, biomedicine, toxicology, and more.</li></ul><p>Medical scientists also may pursue these medical degrees:</p><ul><li>Medical Doctor (MD)</li><li>Doctor of Dental Surgery (DDS)</li><li>Doctor of Dental Medicine (DMD)</li><li>Doctor of Osteopathic Medicine (DO)</li><li>Doctor of Pharmacy (PharmD)</li><li>Doctor of Nursing Practice (DNP)</li></ul>"
+    },
+    {
+      "title": "Master's",
+      "content": "<p>A good master’s degree for those pursuing a medical science career is a <strong>Master of Science in Medical Science.</strong> It’s goal is to help medical students prepare to become competent physicians, but it can also prepare you for a more research-focused career.</p><p>Another option is the <strong>Master of Science in Clinical Research,</strong> which focuses more on quantitative and analytic skills in patient-oriented and translational research, as well as more traditional clinical investigation.</p>"
+    },
+    {
+      "title": "Bachelor's",
+      "content": "<p>If you’re just getting started down the path of The Scientist, it’s a good idea to earn your <strong>Bachelor of Science in Biology or Chemistry.</strong> This will give you a strong foundation for future degrees.</p><p>Another options is a <strong>Bachelor of Science in Health Sciences,</strong> which can give you a strong skill base for clinical research. You’ll get an learn how to conduct research studies to ensure the safety and effectiveness of new drugs, devices, diagnostics and treatment regimens.</p>"
+    }
+  ]
 }
