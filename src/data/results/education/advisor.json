@@ -1,0 +1,113 @@
+{
+	"slug": "advisor",
+	"title": "The Advisor",
+	"detailedDescription": "<p>In the role of an Advisor, you are a beacon of guidance and support for students. Your expertise lies in understanding and addressing the diverse academic and personal needs of learners.</p><p>Whether it's helping students navigate their educational paths or providing career advice, your insights are invaluable.</p><p>If you're passionate about mentoring students and aiding them in achieving their goals, then a career as an Advisor is your perfect match.</p>",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "You are dedicated to providing guidance and support to students in their academic and career journeys."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "Strong interpersonal communication, active listening, and problem-solving abilities."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "You’d probably like working closely with students, educators, and possibly external organizations to provide comprehensive guidance."
+		},
+		{
+			"title": "Setting",
+			"icon": "setting-icon",
+			"content": "You may enjoy working in academic institutions, career centers, or counseling offices where personal interaction is prevalent."
+		},
+		{
+			"title": "Education",
+			"icon": "education-icon",
+			"content": "You have likely studied counseling, psychology, education, or related fields that provide insights into student support and development."
+		},
+		{
+			"title": "Experience",
+			"icon": "skills-icon",
+			"content": "You might have had a role that involves mentoring, advising, or supporting individuals in personal or professional development."
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"stats": [
+		{
+			"number": "Faster Than Average",
+			"title": "Growth",
+			"description": "In employment of counseling occupations over the next decade"
+		},
+		{
+			"number": "$60K",
+			"title": "Median Salary",
+			"description": "For counseling occupations"
+		},
+		{
+			"number": "27K",
+			"title": "Job Openings",
+			"description": "Predicted annually over the next decade in counseling roles"
+		}
+	],
+	"careerPaths": {
+		"title": "What kind of career is a good fit for me?",
+		"description": "You're likely to excel in roles that require <strong>specialized educational strategies to support students with unique learning needs.</strong>",
+		"paths": [
+			{
+				"title": "School Counselor",
+				"description": "Support students' academic, career, social, and emotional development, often acting as a guide and advocate to help them navigate their educational journey and personal challenges.",
+				"imagePath": "/images/education/school-counselor.webp"
+			},
+			{
+				"title": "School Psychologist",
+				"description": "School Psychologist",
+				"imagePath": "/images/education/school-psychologist.webp"
+			},
+			{
+				"title": "Academic Advisor",
+				"description": "Guide students in their educational journey, helping them select courses, prepare for college, and achieve academic success.",
+				"imagePath": "/images/education/acadmic-advisor.webp"
+			},
+			{
+				"title": "Career Advisor",
+				"description": "Assist students and individuals in exploring career paths, developing job-search skills, and making informed career decisions.",
+				"imagePath": "/images/education/career-advisor.webp"
+			},
+			{
+				"title": "Librarian",
+				"description": "Manage library resources, assist students in research, and foster a love of reading and lifelong learning.",
+				"imagePath": "/images/education/librarian.webp"
+			}
+		]
+	},
+	"degreeTabs": {
+		"title": "What degree do I need for an <strong>advising career path?</strong>",
+		"description": "While a bachelor's degree may suffice for some entry-level advising positions, obtaining a Master's degree can significantly enhance your advising skills and broaden your understanding of student development and educational systems. Pursuing a graduate degree in these areas not only <strong>deepens your expertise</strong> but also often <strong>leads to more advanced opportunities,</strong> potentially <strong>higher salaries,</strong> and a <strong>greater impact</strong> in guiding and supporting students.",
+		"degrees": [
+			{
+				"title": "Master's in School Counseling",
+				"content": "<p>Prepares individuals to provide academic, career, social, and emotional guidance to students in educational settings.</p><p>Example Degrees:</p><ul><li>Master of Education in School Counseling</li><li>MA in Counseling with a specialization in School Counseling</li><li>MS in Professional School Counseling</li><li>M.Ed. in School Counseling and Psychology</li><li>MA in Educational Psychology with a concentration in School Counseling</li></ul>"
+			},
+			{
+				"title": "Master's or Doctoral Program in School Psychology",
+				"content": "<p>Focuses on psychological principles in the educational context, including assessment, intervention, and support for students' mental health and educational needs.</p><p>Example Degrees:</p><ul><li>Ed.S. (Educational Specialist) in School Psychology</li><li>Psy.D. (Doctor of Psychology) in School Psychology</li><li>Ph.D. in School Psychology</li><li>MA in School Psychology</li><li>MS in Education with a concentration in School Psychology</li></ul><p>A Master's program in School Psychology equips students for practical, school-based roles, while a Doctoral program provides more extensive training, a broader scope of practice, and opportunities for research, higher education teaching, and advanced clinical work.</p>"
+			},
+			{
+				"title": "Master's in Career Development or Career Counseling",
+				"content": "<p>Equips individuals with the skills to assist students in understanding and planning their career paths, including career counseling and guidance.</p><p>Example Degrees:</p><ul><li>MS in Counseling with a focus on Career Development</li><li>MA in Career Counseling</li><li>M.Ed. in Counseling and Career Development</li><li>MS in School Counseling with a Career Counseling emphasis</li><li>Master of Arts in Educational Psychology with a specialization in Career Counseling</li></ul>"
+			},
+			{
+				"title": "Master's in Library and Information Science (MLIS)",
+				"content": "<p>Prepares individuals to manage school libraries, focusing on information management, digital literacy, and fostering a learning environment in the library setting.</p><p>Example Degrees:</p><ul><li>Master of Library and Information Science with a School Library specialization</li><li>MS in Library Science with a focus on Youth Services</li><li>MA in Information and Library Studies with a School Librarian track</li><li>MLIS in School Media</li><li>M.Ed. in Library and Information Technology</li></ul>"
+			}
+		]
+	},
+	"textWithImage": {
+		"content": "<h2>Do I need a certification for advising roles?</h2><p>Yes, certification is typically required for school counselors, advisors, and librarians, with specific requirementsvarying based on the role and location.</p><ol><li><strong>School Counselor:</strong> Certification or licensure is generally required to work as a school counselor. This often involvescompleting a master's degree in school counseling, a period of supervised experience, and passing a state or nationalexam. Requirements can vary by state or country.</li><li><strong>School Psychologist:</strong> To become a school psychologist, certification or licensure is typically required, involvingcompletion of a graduate program in school psychology, a supervised internship, and passing a relevant exam, withspecific requirements varying by state or country.</li><li><strong>Advisor:</strong> The requirements for academic or career advisors can vary. While not always mandatory, certification canenhance professional credibility. Some roles might require a relevant master's degree (such as in counseling oreducation), and specific certifications can be pursued through professional organizations.</li><li><strong>Librarian:</strong> To become a school librarian, certification or a specific librarian credential is often required,particularly for public schools. This typically involves completing a master's degree in library science (MLS or MLIS)from an ALA-accredited program and passing any required state-level certification exams.</li></ol><p>It's important to check the specific certification and licensure requirements for the region where you intend to work.</p>",
+		"imagePath": "/images/education/certification-advising-roles.webp",
+		"altText": "Advisor seated alone on a chair"
+	}
+}

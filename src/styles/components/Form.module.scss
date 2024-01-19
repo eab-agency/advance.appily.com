@@ -29,27 +29,44 @@
 
     & > label {
       width: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      color: var(--c-bodyPrimary);
+
+      @media (min-width: tokens.$mq-800) {
+        flex-direction: row;
+      }
+      display: flex;
+      flex-direction: column-reverse;
+
+      @media (min-width: tokens.$mq-800) {
+        flex-direction: row;
+      }
     }
   }
 
   .fieldLabel {
     display: flex;
     line-height: 1;
-    margin-bottom: -0.05em;
-    margin-left: 0.5em;
-    z-index: 100;
-    padding-inline: 0.2em;
-    position: absolute;
-    top: 50%;
-    left: 0.5em;
-    transform: translateY(-50%);
-    transform-origin: left center;
-    width: fit-content;
     color: var(--c-teal-700);
     font-size: tokens.$size-4;
-    color: var(--c-black);
+    color: var(--c-bodyPrimary);
     pointer-events: none;
     transition: all 0.2s ease-in-out;
+
+    @media (min-width: tokens.$mq-800) {
+      margin-bottom: -0.05em;
+      margin-left: 0.5em;
+      z-index: 100;
+      padding-inline: 0.2em;
+      position: absolute;
+      color: var(--c-black);
+      top: 50%;
+      left: 0.5em;
+      transform: translateY(-50%);
+      transform-origin: left center;
+      width: fit-content;
+    }
   }
 
   .fieldError {
@@ -63,10 +80,9 @@
     width: fit-content;
   }
 
-  input,
+  input:not([type="checkbox"]),
+  input:not([type="checkbox"]),
   select {
-    border-top-left-radius: tokens.$borderRadius-s;
-    border-top-right-radius: tokens.$borderRadius-s;
     font-size: tokens.$size-5;
     padding: 0.9em 0.5em 0.5em;
     width: 100%;
@@ -74,11 +90,19 @@
     background-color: var(--c-slateGray-100);
     font-family: tokens.$f-sans;
     min-width: 12rem;
-    border-bottom: 3px solid transparent;
+    border-radius: 0.3em;
+    border-radius: 0.3em;
 
     &:hover {
       border-color: var(--c-teal-500);
-      background: var(--c-teal-50);
+
+      // @media (min-width: tokens.$mq-800) {
+      //   background: var(--c-teal-50);
+      // }
+      // light mode
+      @media (prefers-color-scheme: light) {
+        background: var(--c-teal-100);
+      }
     }
   }
 
@@ -87,8 +111,13 @@
     outline: none;
 
     & + span {
-      transform: translateX(-0.5em) translateY(-1.7rem) scale(0.8);
-      color: var(--c-teal-700);
+      // transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+      color: var(--c-teal-300);
+
+      @media (min-width: tokens.$mq-800) {
+        transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+        color: var(--c-teal-700);
+      }
     }
   }
 
@@ -96,11 +125,7 @@
     min-height: 2.6em;
     width: auto;
     max-width: 100%;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: "";
+    min-width: 12em;
   }
 
   &.text,
@@ -130,32 +155,9 @@
 
   &.select {
     .fieldContainer {
-      width: fit-content;
-      position: relative;
-
-      &::after {
-        content: "\25BC"; /* Unicode character for a down arrow */
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        pointer-events: none; /* Ensure the arrow doesn't interfere with clicks */
-      }
-    }
-  }
-
-  &.select {
-    .fieldContainer {
-      width: fit-content;
-      position: relative;
-
-      &::after {
-        content: "\25BC"; /* Unicode character for a down arrow */
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        pointer-events: none; /* Ensure the arrow doesn't interfere with clicks */
+      @media (min-width: tokens.$mq-800) {
+        width: fit-content;
+        position: relative;
       }
     }
   }
@@ -165,8 +167,8 @@
   display: none;
 }
 
-.checkboxGroupLabel {
-}
+// .checkboxGroupLabel {
+// }
 
 .checkboxGroupContainer {
   padding-block: 0.5em;
@@ -182,8 +184,13 @@
       gap: 0.3em;
 
       input {
-        width: 1em;
-        height: 1em;
+        width: 1.8em;
+        height: 1.8em;
+
+        &:checked {
+          background-color: var(--c-teal-500);
+          border-color: var(--c-teal-500);
+        }
       }
       label {
         font-size: tokens.$size-3;
@@ -193,15 +200,79 @@
   }
 }
 
-.empty {
-  select {
-    text-indent: -999em;
-    color: transparent;
+.select.empty {
+  @media (min-width: tokens.$mq-800) {
+    .fieldLabel {
+      transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+    }
   }
 }
 
 .notEmpty {
-  .fieldLabel {
-    transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+  @media (min-width: tokens.$mq-800) {
+    .fieldLabel {
+      transform: translateX(-0.5em) translateY(-1.5rem) scale(0.8);
+    }
+  }
+}
+
+.textOptin {
+  display: flex;
+  flex-direction: row-reverse;
+  color: var(--c-bodyPrimary);
+
+  // .checkboxGroupLabel {
+  //   // order: 1;
+  // }
+
+  .checkboxGroupContainer {
+    width: 1.8em;
+    padding: 0;
+  }
+
+  .checkboxGroup {
+    input + label {
+      display: none;
+    }
+  }
+}
+
+.textOptin {
+  display: flex;
+  flex-direction: row-reverse;
+
+  .checkboxGroupLabel {
+    // order: 1;
+  }
+
+  .checkboxGroupContainer {
+    width: 1.8em;
+    padding: 0;
+  }
+
+  .checkboxGroup {
+    input + label {
+      display: none;
+    }
+  }
+}
+
+.textOptin {
+  display: flex;
+  flex-direction: row-reverse;
+
+  .checkboxGroupLabel {
+    // order: 1;
+  }
+
+  .checkboxGroupContainer {
+    width: 1.8em;
+    padding: 0;
+  }
+
+  .checkboxGroup {
+    input + label {
+      display: none;
+    }
   }
 }
