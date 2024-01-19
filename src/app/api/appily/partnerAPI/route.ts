@@ -18,8 +18,8 @@ const programExternalId = process.env.PROGRAM_EXTERNAL_ID;
 // console.log("🚀 ~ file: route.ts:16 ~ programExternalId:", programExternalId);
 
 export async function POST(request: Request) {
-	logger.error("🚀 ~ appilyAPI:", appilyAPI);
-	logger.error("🚀 ~ partnerKey:", partnerKey);
+	// logger.error("🚀 ~ appilyAPI:", appilyAPI);
+	// logger.error("🚀 ~ partnerKey:", partnerKey);
 
 	try {
 		const res = await request.json();
@@ -28,15 +28,15 @@ export async function POST(request: Request) {
 		formattedData.partnerExternalId = partnerExternalId || "";
 
 		formattedData.programExternalId = programExternalId || "";
-		logger.error(
-			"🚀 ~ POST ~ formattedData.partnerExternalId:",
-			formattedData.programExternalId,
-		);
+		// logger.error(
+		// 	"🚀 ~ POST ~ formattedData.partnerExternalId:",
+		// 	formattedData.programExternalId,
+		// );
 		formattedData.partnerKey = partnerKey || "";
-		logger.error(
-			"🚀 ~ POST ~ formattedData.partnerExternalId:",
-			formattedData.partnerKey,
-		);
+		// logger.error(
+		// 	"🚀 ~ POST ~ formattedData.partnerExternalId:",
+		// 	formattedData.partnerKey,
+		// );
 		if (process.env.NODE_ENV === "development") {
 			console.log(
 				"🚀 ~ file: route.ts:25 ~ POST ~ formattedData in development mode:",
@@ -44,7 +44,7 @@ export async function POST(request: Request) {
 			);
 		}
 
-		logger.error("info bar: formattedData", JSON.stringify(formattedData));
+		// logger.error("info bar: formattedData", JSON.stringify(formattedData));
 
 		const responseFromAppily = await fetch(
 			`${appilyAPI}/partner/v1/register-student/adult-learner`,
@@ -77,8 +77,8 @@ export async function POST(request: Request) {
 		}
 
 		const data = await responseFromAppily.json();
-		console.log("🚀 ~ POST ~ data response:", data);
-		logger.error("info bar: data response", data);
+		// console.log("🚀 ~ POST ~ data response:", data);
+		// logger.error("info bar: data response", data);
 
 		if (data.meta && data.meta.success === false) {
 			const errorResponse = {
