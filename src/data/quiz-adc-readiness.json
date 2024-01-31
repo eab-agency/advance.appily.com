@@ -28,6 +28,13 @@
           "label": "Masters"
         },
         {
+          "answer": "Earning a doctoral degree.",
+          "personality": "initial",
+          "weight": 1,
+          "value": "4",
+          "label": "PhD"
+        },
+        {
           "answer": "Earning a certificate.",
           "personality": "initial",
           "weight": 1,
@@ -52,13 +59,65 @@
           "answer": "Not considering a degree right now.",
           "personality": "initial",
           "weight": 1,
-          "value": "3",
+          "value": null,
           "label": "NoDegreeSeeking"
         }
       ]
     },
     {
-      "question": "How many years of work experience to you have?",
+      "title": "Age",
+      "question": "What’s your age range?",
+      "description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
+      "associatedField": "age_range",
+      "icon": "age-icon",
+      "randomize": false,
+      "answers": [
+        {
+          "answer": "16-18",
+          "weight": 5,
+          "value": 1,
+          "dynamicContent": "<p>🌱 Early Achiever! Now is a great time to be considering your educational opportunities! It sounds like you’re considering college after high school, so we encourage you to visit appily.com for helpful information for first-time freshman.</p><p>Advice: Your age gives you the advantage of time. Explore varied subjects to discover your passion. Consider community college courses, online certifications, or early college programs. Remember, every learning opportunity builds a foundation for your future.</p>"
+        },
+        {
+          "answer": "19-23",
+          "weight": 5,
+          "value": 2,
+          "dynamicContent": "<p>🚀 Energetic Explorer! You're in the prime years of tertiary education. If you're thinking of resuming or starting afresh, now is an opportune moment.</p><p>Advice: Reevaluate what you want from your degree and academic experience. Whether it's for a career shift or personal growth, ensure you're aligned with your goals. Check out scholarship opportunities tailored for your age group.</p>"
+        },
+        {
+          "answer": "24-29",
+          "weight": 5,
+          "value": 3,
+          "dynamicContent": "<p>🔍 Determined Dreamer! You're in a phase where personal and professional growth are paramount. Returning to school can be a valuable asset in your journey.</p><p>Advice: Think about how further education can enhance your career or personal development. Many in this age group pursue postgraduate courses, certifications, or skill-based training. Balance is key – many juggle work, studies, and personal life successfully at this age.</p>"
+        },
+        {
+          "answer": "30-39",
+          "weight": 5,
+          "value": 4,
+          "dynamicContent": "<p>🌟 Prime Pursuer! You've accumulated experiences, and you understand the world better. This wisdom can be a strength in the academic world.</p><p>Advice: Consider how a degree or course can complement your life journey so far. Flexible learning options, like part-time courses or online degrees, can fit seamlessly into your established routine.</p>"
+        },
+        {
+          "answer": "40-49",
+          "weight": 5,
+          "value": 5,
+          "dynamicContent": "<p>🌉 Bridge Builder! You've crossed many milestones, but there's always room to build more bridges. Education can be one of them.</p><p>Advice: Reflect on what you wish to achieve. Whether it's a career change, personal fulfillment, or a hobby, it's achievable. Online courses, night classes, or workshops can be ideal. Your life experience is an asset in discussions and perspectives.</p>"
+        },
+        {
+          "answer": "50-65",
+          "weight": 5,
+          "value": 6,
+          "dynamicContent": "<p>🌳 Wise Wanderer! Life has taught you a lot, but the quest for knowledge is unending. Your maturity can offer a unique perspective in the learning environment.</p><p>Advice: Consider what you're passionate about. Many in this age bracket study for the sheer joy of learning. Also, research institutions with programs or discounts for mature students. Your rich life experiences can also be a mentoring opportunity for younger students.</p>"
+        },
+        {
+          "answer": "65+",
+          "weight": 5,
+          "value": 7,
+          "dynamicContent": "<p>🦉 Sage Student! Education has no expiration date. Your wealth of experiences can only enrich your learning journey further.</p><p>Advice: Dive into subjects you've always been curious about. Community classes, online courses, or university audits are great options. Engage with younger peers – it’s a mutual learning experience. Many institutions appreciate and welcome the depth and diversity mature students bring to the table.</p>"
+        }
+      ]
+    },
+    {
+      "question": "How many years of work experience do you have?",
       "associatedField": "years_of_work_experience",
       "randomize": false,
       "answers": [
@@ -133,58 +192,7 @@
         }
       ]
     },
-    {
-      "title": "Age",
-      "question": "What’s your age range?",
-      "description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
-      "associatedField": "age_range",
-      "icon": "age-icon",
-      "randomize": false,
-      "answers": [
-        {
-          "answer": "16-18",
-          "weight": 5,
-          "value": 1,
-          "dynamicContent": "<p>🌱 Early Achiever! Now is a great time to be considering your educational opportunities! It sounds like you’re considering college after high school, so we encourage you to visit appily.com for helpful information for first-time freshman.</p><p>Advice: Your age gives you the advantage of time. Explore varied subjects to discover your passion. Consider community college courses, online certifications, or early college programs. Remember, every learning opportunity builds a foundation for your future.</p>"
-        },
-        {
-          "answer": "19-23",
-          "weight": 5,
-          "value": 2,
-          "dynamicContent": "<p>🚀 Energetic Explorer! You're in the prime years of tertiary education. If you're thinking of resuming or starting afresh, now is an opportune moment.</p><p>Advice: Reevaluate what you want from your degree and academic experience. Whether it's for a career shift or personal growth, ensure you're aligned with your goals. Check out scholarship opportunities tailored for your age group.</p>"
-        },
-        {
-          "answer": "24-29",
-          "weight": 5,
-          "value": 3,
-          "dynamicContent": "<p>🔍 Determined Dreamer! You're in a phase where personal and professional growth are paramount. Returning to school can be a valuable asset in your journey.</p><p>Advice: Think about how further education can enhance your career or personal development. Many in this age group pursue postgraduate courses, certifications, or skill-based training. Balance is key – many juggle work, studies, and personal life successfully at this age.</p>"
-        },
-        {
-          "answer": "33-39",
-          "weight": 5,
-          "value": 4,
-          "dynamicContent": "<p>🌟 Prime Pursuer! You've accumulated experiences, and you understand the world better. This wisdom can be a strength in the academic world.</p><p>Advice: Consider how a degree or course can complement your life journey so far. Flexible learning options, like part-time courses or online degrees, can fit seamlessly into your established routine.</p>"
-        },
-        {
-          "answer": "40-49",
-          "weight": 5,
-          "value": 5,
-          "dynamicContent": "<p>🌉 Bridge Builder! You've crossed many milestones, but there's always room to build more bridges. Education can be one of them.</p><p>Advice: Reflect on what you wish to achieve. Whether it's a career change, personal fulfillment, or a hobby, it's achievable. Online courses, night classes, or workshops can be ideal. Your life experience is an asset in discussions and perspectives.</p>"
-        },
-        {
-          "answer": "50-65",
-          "weight": 5,
-          "value": 6,
-          "dynamicContent": "<p>🌳 Wise Wanderer! Life has taught you a lot, but the quest for knowledge is unending. Your maturity can offer a unique perspective in the learning environment.</p><p>Advice: Consider what you're passionate about. Many in this age bracket study for the sheer joy of learning. Also, research institutions with programs or discounts for mature students. Your rich life experiences can also be a mentoring opportunity for younger students.</p>"
-        },
-        {
-          "answer": "65+",
-          "weight": 5,
-          "value": 7,
-          "dynamicContent": "<p>🦉 Sage Student! Education has no expiration date. Your wealth of experiences can only enrich your learning journey further.</p><p>Advice: Dive into subjects you've always been curious about. Community classes, online courses, or university audits are great options. Engage with younger peers – it’s a mutual learning experience. Many institutions appreciate and welcome the depth and diversity mature students bring to the table.</p>"
-        }
-      ]
-    },
+   
     {
       "title": "Studying",
       "question": "How do you feel about studying?",
