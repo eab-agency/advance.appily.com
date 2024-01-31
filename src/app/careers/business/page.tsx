@@ -215,9 +215,9 @@ const BusinessSeoPage = () => {
         </div>
       </section>
 
-      <div id="explore-your-school-matches" ref={carouselRef}>
+      {/* <div id="explore-your-school-matches" ref={carouselRef}>
         <CarouselWithForm formId="8" />
-      </div>
+      </div> */}
 
       <WhatIsCappex>
         <Stats stats={data.statsAppily} className="stats-section" />

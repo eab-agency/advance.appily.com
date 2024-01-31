@@ -163,9 +163,9 @@ const CareersSeoPage = () => {
 				</div>
 			</section>
 
-			<div id="explore-your-school-matches">
+			{/* <div id="explore-your-school-matches">
 				<CarouselWithForm />
-			</div>
+			</div> */}
 
 			<section className="whyChoose">
 				<div className="group center-aligned cols-2">
