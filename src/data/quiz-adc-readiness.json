@@ -59,7 +59,7 @@
           "answer": "Not considering a degree right now.",
           "personality": "initial",
           "weight": 1,
-          "value": "null",
+          "value": "x",
           "label": "NoDegreeSeeking"
         }
       ]
@@ -397,21 +397,25 @@
         {
           "answer": "I am really comfortable with computers and would prefer learning online",
           "weight": 5,
+          "value": "1",
           "dynamicContent": "<p>💻 Digital Dynamo! Your comfort with computers positions you well for the world of online learning, which can offer flexibility and a wide array of resources. Next Steps: Check out various online platforms and familiarize yourself with their interfaces. Taking a short online course or tutorial can help you adjust to the digital learning environment.</p>"
         },
         {
           "answer": "I’m okay with computers, but would prefer a mix of online and in-person learning",
           "weight": 5,
+          "value": "2",
           "dynamicContent": "<p>🌐 Open-Minded Explorer! Your willingness to embrace online learning is commendable. The tech skills required can often be picked up quickly. Next Steps: Start with beginner tutorials on popular online learning platforms. Seek out tech support resources or join online forums for new learners where you can ask questions and get guidance.</p>"
         },
         {
           "answer": "I think I would do better with in-person classes and textbooks",
           "weight": 5,
+          "value": "3",
           "dynamicContent": "<p>📖 Traditionalist at Heart! Valuing face-to-face interactions and physical materials is valid. There's something unique about the classic classroom experience. Next Steps: While keeping your preference in mind, consider exploring blended learning options which combine both online and offline methods. This could provide a balanced academic experience tailored to your comfort level.</p>"
         },
         {
           "answer": "I’m not sure if online or in-person would be a good fit for me",
           "weight": 3,
+          "value": "4",
           "dynamicContent": "<p>🤷 Exploration Phase! It's alright to be uncertain. Both online and traditional learning have their perks. Next Steps: Consider a trial period for both methods. Enroll in a short online course and also attend a local workshop or class. Experiencing both environments can help you gauge your comfort and preferences.</p>"
         }
       ]
