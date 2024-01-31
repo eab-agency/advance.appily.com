@@ -5,7 +5,7 @@ import Image from "next/image";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
-const title = "Forge Your Path in Education";
+const title = "Chart Your Course in Education";
 const description = "Appily Education Quiz";
 
 export const metadata: Metadata = {
