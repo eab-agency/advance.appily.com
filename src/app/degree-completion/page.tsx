@@ -117,9 +117,9 @@ const BusinessSeoPage = () => {
         </div>
       </section>
 
-      <div id="explore-your-school-matches" ref={carouselRef}>
+      {/* <div id="explore-your-school-matches" ref={carouselRef}>
         <CarouselWithForm formId="11" data={data.carouselData} />
-      </div>
+      </div> */}
 
       <section className="answersQuestionsSection column bgfilled imgTextSection">
         <header className="group column intro-group">

@@ -138,9 +138,9 @@ const HealthCareSeoPage = () => {
 				</div>
 			</section>
 
-			<div id="explore-your-school-matches" ref={carouselRef}>
+			{/* <div id="explore-your-school-matches" ref={carouselRef}>
 				<CarouselWithForm />
-			</div>
+			</div> */}
 
 			<WhatIsCappex>
 				<Stats stats={data.statsAppily} className="stats-section" />
