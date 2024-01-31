@@ -42,7 +42,7 @@
           "label": "licensure"
         },
         {
-          "answer": "Transferring to complete an business degree (currently in undergrad).",
+          "answer": "Transferring to complete a business degree (currently in undergrad).",
           "personality": "initial",
           "weight": 1,
           "value": "2",
