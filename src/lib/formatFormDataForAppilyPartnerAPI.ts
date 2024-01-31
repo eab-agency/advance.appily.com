@@ -124,6 +124,17 @@ export function formatFormDataForAppilyPartnerAPI(
 		questionAnswerForms: modifiedQuestionAnswerForms,
 	};
 
+	let studentInfoForm: any = {
+		modalityIds: formData.preferred_modality ? [formData.preferred_modality] : [],
+		yearsOfWorkExperience: formData?.years_of_work_experience,
+	  };
+	  
+	  if (formData.education_journey__select1 !== null) {
+		studentInfoForm.levelOfDegreeSeekingId = formData.education_journey__select1;
+	  } else if (formData.education_journey__select !== null) {
+		studentInfoForm.levelOfDegreeSeekingId = formData.education_journey__select;
+	  }
+
 	const formattedData: StudentFormData = {
 		partnerExternalId: "",
 		programExternalId: "",

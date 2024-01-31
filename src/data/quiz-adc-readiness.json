@@ -59,7 +59,7 @@
           "answer": "Not considering a degree right now.",
           "personality": "initial",
           "weight": 1,
-          "value": null,
+          "value": "null",
           "label": "NoDegreeSeeking"
         }
       ]

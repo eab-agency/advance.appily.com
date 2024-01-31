@@ -52,14 +52,14 @@
           "answer": "Earning a non-education degree.",
           "personality": "initial",
           "weight": 1,
-          "value": null,
+          "value": "null",
           "label": "Non-Degree"
         },
         {
           "answer": "Not considering a degree right now.",
           "personality": "initial",
           "weight": 1,
-          "value": null,
+          "value": "null",
           "label": "NoDegree"
         }
       ]
