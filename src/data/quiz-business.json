@@ -49,13 +49,6 @@
           "label": "Transfer"
         },
         {
-          "answer": "Earning a non-business degree.",
-          "personality": "initial",
-          "weight": 1,
-          "value": "x",
-          "label": "Non-Degree"
-        },
-        {
           "answer": "Not considering a degree right now.",
           "personality": "initial",
           "weight": 1,
