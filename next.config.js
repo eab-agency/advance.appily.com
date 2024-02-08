@@ -1,6 +1,26 @@
 /** @type {import('next').NextConfig} */
 const path = require("path");
 
+const robotHeader = {
+	headers: [
+		{
+			key: "X-Robots-Tag",
+			value: "noindex",
+		},
+	],
+	source: "/(career/healthcare|career/business)/:path*",
+};
+
+const strictTransportHeader = {
+    source: '/(.*)',
+    headers: [
+      {
+        key: 'Strict-Transport-Security',
+        value: 'max-age=63072000; includeSubDomains; preload',
+      },
+    ],
+  };
+
 const nextConfig = {
 	typescript: {
 		// !! WARN !!
@@ -71,16 +91,10 @@ const nextConfig = {
 		const headers = [];
 
 		if (!process.env.NEXT_PUBLIC_IS_LIVE) {
-			headers.push({
-				headers: [
-					{
-						key: "X-Robots-Tag",
-						value: "noindex",
-					},
-				],
-				source: "/(career/healthcare|career/business)/:path*",
-			});
+			headers.push(robotHeader);
 		}
+
+		headers.push(strictTransportHeader);
 
 		return headers;
 	},
