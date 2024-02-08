@@ -63,7 +63,7 @@
 	},
 	"fundingYourDegree": {
 		"title": "Resources to Fund Your Education",
-		"description": "<p>Can this automatically have the tab selected related to <strong>“Which of the following funding opportunities would you be most interested in learning about?”</strong></p>",
+		
 		"tabsList": [
 			{
 				"title": "Scholarships",
