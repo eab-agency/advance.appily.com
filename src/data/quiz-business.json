@@ -1,42 +1,71 @@
 {
   "questions": [
     {
-      "question": "Where are you in your educational journey?",
+      "question": "The next step in my educational journey is earning a business related  ...",
       "associatedField": "education_journey__select1",
+      "randomize": false,
       "answers": [
         {
-          "answer": "I am considering a master's degree in business.",
-          "personality": "initial",
-          "weight": 1,
-          "value": "3",
-          "label": "Masters"
-        },
-        {
-          "answer": "I am exploring a business degree at the undergraduate level.",
+          "answer": "Associate's degree",
           "personality": "initial",
           "weight": 1,
           "value": "2",
           "label": "Bachelors"
         },
         {
-          "answer": "I am interested in a PhD or doctoral business degree.",
+          "answer": "Bachelor's degree",
+          "personality": "initial",
+          "weight": 1,
+          "value": "2",
+          "label": "Bachelors"
+        },
+        {
+          "answer": "Master's degree",
+          "personality": "initial",
+          "weight": 1,
+          "value": "3",
+          "label": "Masters"
+        },
+        {
+          "answer": "Professional doctorate or PhD",
           "personality": "initial",
           "weight": 1,
           "value": "4",
           "label": "PhD"
         },
         {
-          "answer": "I am currently in school for an undergraduate business degree and wish to transfer.",
+          "answer": "Certificate",
           "personality": "initial",
           "weight": 1,
-          "value": "2",
-          "label": "Transfer"
+          "value": "5",
+          "label": "Certificate"
         },
         {
-          "answer": "I am not currently considering school or I am pursuing a non-business degree.",
+          "answer": "Professional License",
           "personality": "initial",
           "weight": 1,
           "value": "6",
+          "label": "Professional License"
+        },
+        {
+          "answer": "Undergraduate degree, as a transfer student",
+          "personality": "initial",
+          "weight": 1,
+          "value": null,
+          "label": "Transfer"
+        },
+        {
+          "answer": "I want to earn a degree that's not in business",
+          "personality": "initial",
+          "weight": 1,
+          "value": null,
+          "label": "non business"
+        },
+        {
+          "answer": "I'm not interested in a degree right now",
+          "personality": "initial",
+          "weight": 1,
+          "value": null,
           "label": "Other"
         }
       ]
