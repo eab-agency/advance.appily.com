@@ -1,59 +1,65 @@
 {
   "questions": [
     {
-      "question": "Before we get started, what’s the next step in your educational journey?",
+      "question": "The next step in my educational journey is earning an education related  ...",
       "associatedField": "education_journey__select1",
       "randomize": false,
       "answers": [
         {
-          "answer": "Earning an undergraduate education degree.",
+          "answer": "Undergraduate degree",
           "personality": "initial",
           "weight": 1,
           "value": "2",
           "label": "Bachelors"
         },
         {
-          "answer": "Earning a master’s degree in education.",
+          "answer": "Master's degree",
           "personality": "initial",
           "weight": 1,
           "value": "3",
           "label": "Masters"
         },
-      
         {
-          "answer": "Earning a professional doctorate or PhD in education.",
+          "answer": "Professional doctorate or PhD",
           "personality": "initial",
           "weight": 1,
           "value": "4",
           "label": "PhD"
         },
         {
-          "answer": "Earning a graduate certificate in education.",
+          "answer": "Certificate",
           "personality": "initial",
           "weight": 1,
           "value": "5",
-          "label": "certificate"
+          "label": "Certificate"
         },
         {
-          "answer": "Pursuing professional licensure in education.",
+          "answer": "Professional License",
           "personality": "initial",
           "weight": 1,
           "value": "6",
-          "label": "licensure"
+          "label": "Professional License"
         },
         {
-          "answer": "Transferring to complete an education degree (currently in undergrad).",
+          "answer": "Undergraduate degree, as a transfer student",
           "personality": "initial",
           "weight": 1,
-          "value": "2",
+          "value": null,
           "label": "Transfer"
         },
         {
-          "answer": "Not considering a degree right now.",
+          "answer": "I want to earn a degree that's not in education",
           "personality": "initial",
           "weight": 1,
-          "value": "x",
-          "label": "NoDegree"
+          "value": null,
+          "label": "non education"
+        },
+        {
+          "answer": "I'm not interested in a degree right now",
+          "personality": "initial",
+          "weight": 1,
+          "value": null,
+          "label": "Other"
         }
       ]
     },
