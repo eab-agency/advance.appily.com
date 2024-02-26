@@ -2,6 +2,7 @@ import { Button } from "@/components";
 import Image from "next/image";
 // eslint-disable-next-line import/no-unresolved
 
+import percentageSplit from "@/lib/percentageSplit";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 };
 
 export default function QuizLandingPage() {
+	const inPercentageRange = percentageSplit(0.25);
 	return (
 		<>
 			<div className="quiz-wrapper">
@@ -49,12 +51,24 @@ export default function QuizLandingPage() {
 							<strong>discover which role could be a good fit for you</strong>
 							—and the steps you can take to advance your career.
 						</p>
-						<Button
+						
+						{inPercentageRange ? (
+							<Button
+							label="Get Started +"
+							appearance="primary"
+							href="https://my.appilyqa.com/register/quiz/healthcarecareers1/"
+							className="button btn-primary btn-click-quiz"
+							/>
+									) : (
+										<Button
 							label="Get Started"
 							appearance="primary"
 							href="/careers/healthcare/quiz/start"
 							className="button btn-primary btn-click-quiz"
 						/>
+											)
+											}
+
 					</div>
 					<figure className="column highlighted-img">
 						<Image
