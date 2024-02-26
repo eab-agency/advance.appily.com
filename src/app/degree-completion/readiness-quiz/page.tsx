@@ -52,10 +52,10 @@ export default function QuizLandingPage() {
 						</ul>
 						<p>
 							This quiz will look at your time, plans, and motivation. Each
-							question is designed to show if you're on the right path to
+							question is designed to show if you&apos;re on the right path to
 							succeed in your studies.
 						</p>
-						<p>So, are you excited to find out? Let’s get started!</p>
+						<p>So, are you excited to find out? Let&apos;s get started!</p>
 						<Button
 							label="Take the Quiz"
 							appearance="primary"

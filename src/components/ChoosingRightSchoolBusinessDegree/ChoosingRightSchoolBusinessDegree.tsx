@@ -10,7 +10,7 @@ export function ChoosingRightSchoolBusinessDegree() {
           </h2>
           <p>
             Embarking on your journey to earn a business degree is an exciting step
-            toward a rewarding career path. As you navigate this decision, it's
+            toward a rewarding career path. As you navigate this decision, it&apos;s
             crucial to focus on the aspects that truly matter and align with your
             aspirations. While rankings might catch your attention, remember that
             the perfect fit goes beyond numbers. Here are{" "}
@@ -22,15 +22,15 @@ export function ChoosingRightSchoolBusinessDegree() {
         <div className="accordionGroup">
           <Accordion title="Convenience">
             <p>
-              Choosing a school that's within reach not only minimizes commute
+              Choosing a school that&apos;s within reach not only minimizes commute
               stress but also fosters a stronger sense of community. Proximity opens
               doors to local networking events, internship opportunities, and a
-              chance to immerse yourself in your city's business ecosystem.
+              chance to immerse yourself in your city&apos;s business ecosystem.
             </p>
           </Accordion>
           <Accordion title="Flexibility">
             <p>
-              Life doesn't pause while you pursue your degree. Opt for a school that
+              Life doesn&apos;t pause while you pursue your degree. Opt for a school that
               offers flexible schedules, online learning options, and part-time
               programs. This allows you to balance your academic journey with
               personal commitments, ensuring a smoother transition into higher
@@ -39,7 +39,7 @@ export function ChoosingRightSchoolBusinessDegree() {
           </Accordion>
           <Accordion title="Cost">
             <p>
-              Higher education is an investment, and it's essential to find a school
+              Higher education is an investment, and it&apos;s essential to find a school
               that aligns with your budget. Explore scholarship opportunities,
               financial aid, and programs that provide a strong return on investment
               by offering real-world skills that resonate with employers.
@@ -50,7 +50,7 @@ export function ChoosingRightSchoolBusinessDegree() {
               Business is a vast landscape, encompassing various disciplines from
               finance to marketing, entrepreneurship to data analytics. Seek a
               school that offers specialized tracks or concentrations that resonate
-              with your passion and career goals. Customization ensures you're
+              with your passion and career goals. Customization ensures you&apos;re
               equipped with the skills most relevant to your chosen path.
             </p>
           </Accordion>
@@ -66,7 +66,7 @@ export function ChoosingRightSchoolBusinessDegree() {
         </div>
         <div className="sectionFooter">
           <p>
-            Remember, the "best" school isn't defined solely by rankings; it's the
+            Remember, the &quot;best&quot; school isn&apos;t defined solely by rankings; it&apos;s the
             one that{" "}
             <strong>aligns with your needs, aspirations, and values.</strong> As you
             embark on your business degree journey, prioritize factors that resonate

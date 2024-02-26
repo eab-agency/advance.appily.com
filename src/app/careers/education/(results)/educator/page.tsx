@@ -43,7 +43,7 @@ export default function Page() {
 
   useEffect(() => {
     setVertical("Education");
-  }, []);
+  }, [setVertical]);
   return (
     <>
       <div className="resultContent">

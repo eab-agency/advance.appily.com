@@ -54,9 +54,9 @@ const HealthCareSeoPage = () => {
     </li>
   ));
 
-  return (
-    <>
-      <PageHero
+	return (
+		<>
+			<PageHero
         image={{
           src: data.pageHero.image.src,
           alt: data.pageHero.image.alt,
@@ -96,63 +96,7 @@ const HealthCareSeoPage = () => {
           </div>
         </div>
       </section>
-
-	return (
-		<>
-			<section className="pageHero">
-				<div className="group center-aligned center-justified">
-					<h1
-						dangerouslySetInnerHTML={{
-							__html: data.pageTitle,
-						}}
-					/>
-					<figure className="heroImage">
-						<Image
-							src="/images/which-health-care-career.jpg"
-							width={800}
-							height={480}
-							alt="Health care professional in a laboratory"
-						/>
-					</figure>
-				</div>
-			</section>
-			<section className="quizSection">
-				<div className="group center-aligned row cols-2">
-					<div className="column">
-						<figure className="highlighted-img">
-							<Image
-								src="/images/profesional-man-researching-online.jpg"
-								width={1000}
-								height={1000}
-								alt="Profesional man researching online"
-							/>
-						</figure>
-					</div>
-					<div className="column intro-text">
-						<h2>{data.quizSection.title}</h2>
-						<div
-							dangerouslySetInnerHTML={{
-								__html: data.quizSection.content,
-							}}
-						/>
-						{inPercentageRange ? (
-						<Button
-							type="button"
-							label="Take the Quiz +"
-							href="https://my.appilyqa.com/register/quiz/healthcarecareers1/"
-							className="button btn-primary btn-click-quiz"
-						/>
-						) : (
-							<Button
-							type="button"
-							label={data.quizSection.buttonText}
-							href="/careers/healthcare/quiz/start"
-							className="button btn-primary btn-click-quiz"
-						/>
-						)}
-					</div>
-				</div>
-			</section>
+      
       <Stats
         stats={data.stats}
         source={data.statsSource}

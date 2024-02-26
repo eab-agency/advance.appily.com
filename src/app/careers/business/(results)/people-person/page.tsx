@@ -30,7 +30,7 @@ export default function Page() {
 	const { setVertical } = useUser();
 	useEffect(() => {
 		setVertical("Business");
-	}, []);
+	}, [setVertical]);
 
 	return (
 		<>

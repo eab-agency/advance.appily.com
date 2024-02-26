@@ -34,12 +34,12 @@ export default function QuizLandingPage() {
             </header>
             <p>
               Stepping back into the world of education might seem daunting, but
-              remember, <strong>every great journey begins with a single step</strong>—and you're
+              remember, <strong>every great journey begins with a single step</strong>—and you&apos;re
               already on your way.
             </p>
             <p>Your plan will include:</p>
             <ul>
-              <li>Information about the <strong>lifetime value</strong> of a bachelor's degree</li>
+              <li>Information about the <strong>lifetime value</strong> of a bachelor&apos;s degree</li>
               <li>Tips for <strong>reducing cost</strong> and funding your degree</li>
               <li>In-demand <strong>career paths</strong> in your area of interest</li>
               <li><strong>Degrees and schools</strong> that can help you reach your goals</li>

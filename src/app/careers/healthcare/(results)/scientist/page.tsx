@@ -26,7 +26,7 @@ export default function Page() {
 	const { setVertical, vertical } = useUser();
 	useEffect(() => {
 		setVertical("Health Care");
-	}, []);
+	}, [setVertical]);
 
 	return (
 		<>
