@@ -1,5 +1,9 @@
 {
 	"slug": "criminal-justice-plan",
+	"metaData": {
+		"title": "Your Other/Unsure Back to School Plan",
+		"description": "Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. Your plan includes advice for completing your bachelor’s, funding tips and tricks, career and degree options based on your area of interest, and more! We know there’s a lot of information here, and we don’t expect you to read it all at once. We suggest bookmarking this link so you can come back later!"
+	},
 	"heroSection": {
 		"title": "You've got this!",
 		"description": "<p>Stepping back into the world of education might seem daunting, but remember, every great journey begins with a single step—and you're already on your way. </p><p>Your plan includes:<br/><ul><li>Advice for completing your bachelor’s</li><li>Funding tips and tricks</li><li>Career and degree options based on your area of interest</li><li>And more!</li></ul></p><p>We know there’s a lot of information here, and we don’t expect you to read it all at once. We suggest bookmarking this link so you can come back later!</p>",
@@ -63,7 +67,7 @@
 	},
 	"fundingYourDegree": {
 		"title": "Resources to Fund Your Education",
-		
+
 		"tabsList": [
 			{
 				"title": "Scholarships",

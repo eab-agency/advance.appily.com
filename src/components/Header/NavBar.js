@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { FiExternalLink } from "react-icons/fi";
 import { MdClose, MdMenu } from "react-icons/md";
 
 import styles from "@/styles/components/NavBar.module.scss";
@@ -49,6 +50,16 @@ export function NavBar({ links }) {
 						</li>
 					);
 				})}
+				<li>
+					<Link
+						href="https://www.appily.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+						className={styles.externalLink}
+					>
+						First-Time Freshmen <FiExternalLink />
+					</Link>
+				</li>
 			</ul>
 		</nav>
 	);

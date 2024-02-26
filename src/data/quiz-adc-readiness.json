@@ -1,595 +1,595 @@
 {
-  "questions": [
-    {
-      "question": "Where are you in your educational journey?",
-      "associatedField": "education_journey__select1",
-      "description": "Let’s make sure you’re in the right place!",
-      "answers": [
-        {
-          "answer": "I am exploring earning or completing a bachelor’s degree.",
-          "personality": "initial",
-          "weight": 1,
-          "value": "2",
-          "label": "Bachelors"
-        },
-        {
-          "answer": "I am thinking about earning or completing an associate’s degree.",
-          "personality": "initial",
-          "weight": 1,
-          "value": "6",
-          "label": "Associates"
-        },
-        {
-          "answer": "I am currently in school for an undergraduate degree and wish to transfer.",
-          "personality": "initial",
-          "weight": 1,
-          "value": "2",
-          "label": "Transfer"
-        },
-        {
-          "answer": "I am not currently considering school or am only interested in professional licensure.",
-          "personality": "initial",
-          "weight": 1,
-          "value": "6",
-          "label": "Other"
-        },
-        {
-          "answer": "I am considering a graduate-level degree",
-          "personality": "initial",
-          "weight": 1,
-          "value": "3",
-          "label": "Graduate"
-        }
-      ]
-    },
-    {
-      "question": "How many years of work experience to you have?",
-      "associatedField": "years_of_work_experience",
-      "randomize": false,
-      "answers": [
-        {
-          "answer": "Less than 2 years",
-          "personality": "initial",
-          "weight": 1,
-          "value": 1,
-          "label": "0-2"
-        },
-        {
-          "answer": "2-4",
-          "personality": "initial",
-          "weight": 1,
-          "value": 2,
-          "label": "2-4"
-        },
-        {
-          "answer": "5-7",
-          "personality": "initial",
-          "weight": 1,
-          "value": 5,
-          "label": "5-7"
-        },
-        {
-          "answer": "7-15",
-          "personality": "initial",
-          "weight": 1,
-          "value": 7,
-          "label": "7-15"
-        },
-        {
-          "answer": "16 or more years",
-          "personality": "initial",
-          "weight": 1,
-          "value": 16,
-          "label": "16 or more years"
-        }
-      ]
-    },
-    {
-      "title": "Motivation",
-      "question": "How motivated are you to earn your degree?",
-      "description": "No matter your answer, we’ll give you some tips and tools to get excited about your next steps.",
-      "associatedField": "quizresponse1",
-      "icon": "motivation2-icon",
-      "answers": [
-        {
-          "answer": "Earning a degree is a top priority for me",
-          "weight": 5,
-          "dynamicContent": "<p>I have lots of free time.</p><p>🌟 <strong>That's fantastic!</strong> Having ample free time provides a great opportunity to immerse yourself in your studies and fully engage with the college experience. This flexibility will allow you to manage coursework, participate in extracurricular activities, and still have time for self-care.</p><p>Next Steps: Think about how you can best allocate this time towards your studies, and perhaps consider joining study groups, attending workshops, or taking on additional courses.</p>"
-        },
-        {
-          "answer": "I'm ready and think I can balance school and life",
-          "weight": 5,
-          "dynamicContent": "<p>👍 Great to hear! Being able to carve out time regularly indicates that you have a good balance in your life. With this level of time management, you can comfortably handle college coursework and also engage in additional activities.</p><p>Next Steps: Plan out a weekly schedule, allocating specific times for studying, breaks, and recreational activities. This will help ensure you remain consistent in managing your time.</p>"
-        },
-        {
-          "answer": "I'm almost ready to go back to school, but worry life will get in the way",
-          "weight": 4,
-          "dynamicContent": "<p>🤔 Valid Concerns! Life's unpredictability can be challenging. Acknowledging potential roadblocks is a constructive approach.</p><p>Next Steps: Prioritize building a flexible study schedule. Share your goals with friends and family, so they can offer support. Consider joining study groups or online communities for accountability and encouragement.</p>"
-        },
-        {
-          "answer": "I might be ready soon but it's still not enough of a priority",
-          "weight": 3,
-          "dynamicContent": "<p>🌱 Growth in Progress! Sometimes we need a bit more time to realize and act on our priorities. That's okay!</p><p>Next Steps: Reflect on the reasons you're considering going back to school. Attend informational sessions or workshops to reignite your motivation. Speak with graduates to understand the tangible benefits of completing your degree.</p>"
-        },
-        {
-          "answer": "I'm not very motivated at all",
-          "weight": 2,
-          "dynamicContent": "<p>🌀 Finding Motivation. Everyone's journey is unique. It's essential to discover what drives you and ignites your passion.</p><p>Next Steps: Seek inspiration by speaking with successful individuals in fields you admire. Consider exploring different subjects or career paths. Sometimes, uncovering a new interest can reignite motivation.</p>"
-        }
-      ]
-    },
-    {
-      "title": "Age",
-      "question": "What’s your age range?",
-      "description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
-      "associatedField": "age_range",
-      "icon": "age-icon",
-      "randomize": false,
-      "answers": [
-        {
-          "answer": "16-18",
-          "weight": 5,
-          "value": 1,
-          "dynamicContent": "<p>🌱 Early Achiever! Now is a great time to be considering your educational opportunities! It sounds like you’re considering college after high school, so we encourage you to visit appily.com for helpful information for first-time freshman.</p><p>Advice: Your age gives you the advantage of time. Explore varied subjects to discover your passion. Consider community college courses, online certifications, or early college programs. Remember, every learning opportunity builds a foundation for your future.</p>"
-        },
-        {
-          "answer": "19-23",
-          "weight": 5,
-          "value": 2,
-          "dynamicContent": "<p>🚀 Energetic Explorer! You're in the prime years of tertiary education. If you're thinking of resuming or starting afresh, now is an opportune moment.</p><p>Advice: Reevaluate what you want from your degree and academic experience. Whether it's for a career shift or personal growth, ensure you're aligned with your goals. Check out scholarship opportunities tailored for your age group.</p>"
-        },
-        {
-          "answer": "24-29",
-          "weight": 5,
-          "value": 3,
-          "dynamicContent": "<p>🔍 Determined Dreamer! You're in a phase where personal and professional growth are paramount. Returning to school can be a valuable asset in your journey.</p><p>Advice: Think about how further education can enhance your career or personal development. Many in this age group pursue postgraduate courses, certifications, or skill-based training. Balance is key – many juggle work, studies, and personal life successfully at this age.</p>"
-        },
-        {
-          "answer": "33-39",
-          "weight": 5,
-          "value": 4,
-          "dynamicContent": "<p>🌟 Prime Pursuer! You've accumulated experiences, and you understand the world better. This wisdom can be a strength in the academic world.</p><p>Advice: Consider how a degree or course can complement your life journey so far. Flexible learning options, like part-time courses or online degrees, can fit seamlessly into your established routine.</p>"
-        },
-        {
-          "answer": "40-49",
-          "weight": 5,
-          "value": 5,
-          "dynamicContent": "<p>🌉 Bridge Builder! You've crossed many milestones, but there's always room to build more bridges. Education can be one of them.</p><p>Advice: Reflect on what you wish to achieve. Whether it's a career change, personal fulfillment, or a hobby, it's achievable. Online courses, night classes, or workshops can be ideal. Your life experience is an asset in discussions and perspectives.</p>"
-        },
-        {
-          "answer": "50-65",
-          "weight": 5,
-          "value": 6,
-          "dynamicContent": "<p>🌳 Wise Wanderer! Life has taught you a lot, but the quest for knowledge is unending. Your maturity can offer a unique perspective in the learning environment.</p><p>Advice: Consider what you're passionate about. Many in this age bracket study for the sheer joy of learning. Also, research institutions with programs or discounts for mature students. Your rich life experiences can also be a mentoring opportunity for younger students.</p>"
-        },
-        {
-          "answer": "65+",
-          "weight": 5,
-          "value": 7,
-          "dynamicContent": "<p>🦉 Sage Student! Education has no expiration date. Your wealth of experiences can only enrich your learning journey further.</p><p>Advice: Dive into subjects you've always been curious about. Community classes, online courses, or university audits are great options. Engage with younger peers – it’s a mutual learning experience. Many institutions appreciate and welcome the depth and diversity mature students bring to the table.</p>"
-        }
-      ]
-    },
-    {
-      "title": "Studying",
-      "question": "How do you feel about studying?",
-      "description": "We’ll share tools and approaches for studying that could spark your interest.",
-      "associatedField": "quizresponse2",
-      "icon": "studying-icon",
-      "answers": [
-        {
-          "answer": "I enjoy learning and definitely get into the zone studying",
-          "weight": 5,
-          "dynamicContent": "<p>📚 Study Superstar! Your love for learning and ability to deeply focus will undoubtedly benefit you in your academic pursuits.</p><p>Next Steps: Consider sharing your study techniques with peers or starting a study group. You might also explore advanced courses or subjects to continually challenge and excite your learning spirit.</p>"
-        },
-        {
-          "answer": "I don't mind studying if I'm interested in the topic",
-          "weight": 4,
-          "dynamicContent": "<p>🔍 Interest-Driven Learner! Having genuine interest in a topic can enhance retention and comprehension.</p><p>Next Steps: Seek courses or professors known for engaging content and presentation. Join clubs or groups related to your subjects of interest to keep the passion alive outside of study hours.</p>"
-        },
-        {
-          "answer": "I don't mind studying if I like the way information is presented",
-          "weight": 4,
-          "dynamicContent": "<p>🎨 Presentation Matters! Recognizing the formats that resonate with you can guide you to the most effective study resources.</p><p>Next Steps: Look for textbooks, online resources, or courses that align with your preferred presentation style. Giving feedback to instructors can also influence how material is taught in the future.</p>"
-        },
-        {
-          "answer": "I've struggled with studying in the past, but think I might be ready now",
-          "weight": 3,
-          "dynamicContent": "<p>🌅 New Beginnings! Past struggles don't define your future. It's commendable to acknowledge past challenges and feel open to trying again.</p><p>Next Steps: Consider seeking out academic workshops or tutors to build effective study habits. Engage in active learning techniques and regularly assess which methods work best for you.</p>"
-        },
-        {
-          "answer": "I can't make myself study no matter what",
-          "weight": 2,
-          "dynamicContent": "<p>🌀 Seeking Drive! It's important to understand the root cause. Is it the subject, method, environment, or something deeper?</p><p>Next Steps: Reflect on past study experiences to pinpoint challenges. It might be helpful to discuss your feelings with a counselor or academic advisor. Sometimes, a change in environment, method, or subject can reignite the drive.</p>"
-        }
-      ]
-    },
-    {
-      "title": "Education",
-      "question": "What is your highest level of completed education?",
-      "description": "We’ll provide guidance no matter where you are in your journey.",
-      "associatedField": "level_of_degree_seeking",
-      "icon": "education2-icon",
-      "answers": [
-        {
-          "answer": "Some High School",
-          "weight": 2,
-          "dynamicContent": "<p>🌟 Early Bird Scholar! Your proactive thinking will serve you well in your upcoming academic pursuits. Next Steps: Consider dual enrollment opportunities or advanced placement (AP) courses. This will not only expose you to college-level material but also earn you credits, setting you ahead of the curve.</p>"
-        },
-        {
-          "answer": "High School Diploma or GED",
-          "weight": 5,
-          "dynamicContent": "<p>🚀 Education Enthusiast! Standing at the cusp of a new journey, you have the drive and foundational knowledge to embark on this academic adventure. Next Steps: Attend college fairs or orientation sessions. These will give you a firsthand feel of the college vibe and help you align your expectations with reality.</p>"
-        },
-        {
-          "answer": "Some College, No Degree",
-          "weight": 5,
-          "dynamicContent": "<p>🔍 College Explorer! Having tasted the college experience, you're more familiar than you think. Next Steps: Reflect on your previous stint in college, both the highs and the lows. Use this knowledge to plan a more fulfilling and efficient return to the academic world.</p>"
-        },
-        {
-          "answer": "Certification or Associate's Degree",
-          "weight": 5,
-          "dynamicContent": "<p>📘 Academic Adventurer! Being in the thick of the college experience already gives you a fantastic edge. Next Steps: Dive into opportunities like internships, college clubs, or networking events to enrich your current academic experience. It'll provide both knowledge and connections for your future.</p>"
-        },
-        {
-          "answer": "Bachelor's Degree or Higher",
-          "weight": 5,
-          "dynamicContent": "<p>🎓 Degree Trailblazer! Your previous academic accomplishments have set a sturdy foundation for any further studies you wish to pursue. Next Steps: Leverage your past credits by consulting an academic advisor. By doing so, you can potentially fast-track your next degree and stay on course for your goals.</p>"
-        }
-      ]
-    },
-    {
-      "title": "Career",
-      "question": "How clear are you about your desired career path and the degree required to achieve it?",
-      "description": "Now is the perfect time to think about where you’re going and how you’ll get there!",
-      "associatedField": "quizresponse4",
-      "icon": "setting-icon",
-      "answers": [
-        {
-          "answer": "I know what I want to do and the degree I need to earn",
-          "weight": 5,
-          "dynamicContent": "<p>🎯 On Target! Having a clear vision of your career path and the required degree is an excellent advantage. It allows you to streamline your studies and tailor your coursework to your future goals. Next Steps: Engage with professionals in your desired field, seek internships or mentorship opportunities, and actively participate in relevant workshops or seminars to further solidify your path and build connections.</p>"
-        },
-        {
-          "answer": "I know what I want to do, but not which degree I need",
-          "weight": 4,
-          "dynamicContent": "<p>🔍 Direction Established! Recognizing your career goals is a significant first step. Now, it's all about aligning those aspirations with the right educational path. Next Steps: Consult with academic advisors or career counselors. They can guide you toward degrees that best align with your career aspirations. Attending college or career fairs can also give you insights into potential paths.</p>"
-        },
-        {
-          "answer": "I know what I want to study, but not which career to pursue",
-          "weight": 4,
-          "dynamicContent": "<p>📚 Passion First! Following what you're passionate about studying can often lead to discovering a fulfilling career path that resonates with your interests. Next Steps: Dive into your studies and engage with professors or professionals in that field. Join relevant student clubs or online communities to explore potential careers related to your area of study.</p>"
-        },
-        {
-          "answer": "I don’t know what I want to do or what I want to study ",
-          "weight": 3,
-          "dynamicContent": "<p>🌱 Exploration Ahead! This is a time of discovery. Embrace the journey of finding both your academic and career passions. Next Steps: Attend career workshops, engage in informational interviews, or take a variety of introductory courses to discover what resonates with you. Seeking guidance from career counselors can also help clarify your interests and options.</p>"
-        }
-      ]
-    },
-    {
-      "title": "Free Time",
-      "question": "How much free time do you tend to have each week?",
-      "description": "We’ll share some tips for how to make the most of the time you do have!",
-      "associatedField": "quizresponse5",
-      "icon": "free-time-icon",
-      "answers": [
-        {
-          "answer": "I have a few hours of free time most days",
-          "weight": 5,
-          "dynamicContent": "<p>🌟 That's fantastic! Having ample free time provides a great opportunity to immerse yourself in your studies and fully engage with the college experience. This flexibility will allow you to manage coursework, participate in extracurricular activities, and still have time for self-care. Next Steps: Think about how you can best allocate this time towards your studies, and perhaps consider joining study groups, attending workshops, or taking on additional courses.</p>"
-        },
-        {
-          "answer": "I have at least an hour a few days a week",
-          "weight": 4,
-          "dynamicContent": "<p>👍 Great to hear! Being able to carve out time regularly indicates that you have a good balance in your life. With this level of time management, you can comfortably handle college coursework and also engage in additional activities. Next Steps: Plan out a weekly schedule, allocating specific times for studying, breaks, and recreational activities. This will help ensure you remain consistent in managing your time.</p>"
-        },
-        {
-          "answer": "A few hours total a week",
-          "weight": 3,
-          "dynamicContent": "<p>⏳ Every minute counts! A few dedicated hours each week can make a significant difference in your studies. It's all about ensuring that the time you do have is focused and productive. Next Steps: Make the most of the time you have by creating a distraction-free study environment. Consider tools like the Pomodoro Technique to maximize your focus during these shorter study sessions.</p>"
-        },
-        {
-          "answer": "I have almost no free time",
-          "weight": 2,
-          "dynamicContent": "<p>🔍 Quality over quantity! While your time might be limited, it's the quality of your study sessions that matter most. Even short, focused periods of study can be impactful.</p><p>Next Steps: Prioritize your most critical assignments and tasks. Use tools or apps to help you streamline your studies and to stay organized. Also, consider communicating with professors or academic advisors about your time constraints—they might have additional resources or advice.</p>"
-        }
-      ]
-    },
-    {
-      "title": "Time Mgmt",
-      "question": "How are your time management skills?",
-      "description": "No matter your skill level, there are lots of tools to help you manage your time even better. We’ll share them!",
-      "associatedField": "quizresponse6",
-      "icon": "time-management-icon",
-      "answers": [
-        {
-          "answer": "I'm a time-management pro",
-          "weight": 5,
-          "dynamicContent": "<p>🌟 Congratulations! Your mastery over time management is a great strength. College often requires juggling multiple assignments, projects, and deadlines. Your proficiency will serve you well, helping you stay on top of your coursework with ease. Consider sharing your strategies with peers; they might benefit from your expertise! Next Steps: Look into advanced organizational tools or apps that can help you track assignments and milestones (such as Trello, Notion, or My Study Life), and perhaps explore leadership roles in group projects or study groups.</p>"
-        },
-        {
-          "answer": "I'm pretty confident in my time-management skills",
-          "weight": 4,
-          "dynamicContent": "<p>👏 Well done! Your solid grasp of time management will be an asset in the college environment. With a few tweaks and enhancements, you could elevate your skills to pro level. Next Steps: Continue refining your skills. Practice makes perfect, and there are plenty of apps and tools (such as Trello, Notion, or My Study Life) that can support your efforts. You could also consider taking a time management workshop or earning a specialization on Coursera.</p>"
-        },
-        {
-          "answer": "I'm doing okay, but there's room for improvement",
-          "weight": 3,
-          "dynamicContent": "<p>🌱 You're on the right path! Recognizing that there's room for improvement is the first step to mastering time management. With a bit of focus, you'll be better prepared for the demands of college life. Next Steps: Look for resources like online tutorials, planners, or apps that can help you structure your time better. Setting specific goals each week can also provide direction and purpose.</p>"
-        },
-        {
-          "answer": "I could use a bit more confidence",
-          "weight": 3,
-          "dynamicContent": "<p>💡 Awareness is key! Acknowledging where you can grow is crucial. By building your confidence and time-management abilities, you'll be setting yourself up for academic success. Next Steps: Try setting small, daily goals to practice managing your time. Don't hesitate to seek out mentorship or advice from those who excel in this area.</p>"
-        },
-        {
-          "answer": "I need some help with time management",
-          "weight": 2,
-          "dynamicContent": "<p>🔍 You're not alone! Many students find time management challenging. The good news is that there are plenty of tools and strategies out there to help you succeed. Next Steps: Start with the basics. Create a daily schedule, prioritize tasks, and break larger projects into manageable chunks. There are also numerous courses and workshops available that focus specifically on time management for students.</p>"
-        }
-      ]
-    },
-    {
-      "title": "Support",
-      "question": "Do you have supporters who can offer guidance or encouragement for your goals?",
-      "description": "If you need more support, let’s find ways to connect you with resources!",
-      "associatedField": "quizresponse7",
-      "icon": "support-icon",
-      "answers": [
-        {
-          "answer": "I have a mentor or advisor",
-          "weight": 5,
-          "dynamicContent": "<p>🌟 That's invaluable! Mentors and advisors can provide guidance, share experiences, and offer insight that can be pivotal to your academic success. Their support can help you navigate challenges and open doors to opportunities. Next Steps: Regularly meet or check-in with your mentor/advisor. Discuss your goals, progress, and any concerns you have. Their expertise can help you shape your academic journey effectively.</p>"
-        },
-        {
-          "answer": "My family or friends are very supportive",
-          "weight": 5,
-          "dynamicContent": "<p>❤️ A strong foundation! The support and understanding of loved ones can be a game-changer in your college journey. They can provide emotional support, encouragement, and a listening ear during challenging times. Next Steps: Keep your family and friends in the loop about your progress and any challenges you face. Their perspectives and encouragement can boost your motivation and resilience.</p>"
-        },
-        {
-          "answer": "I have an online community I trust",
-          "weight": 4,
-          "dynamicContent": "<p>🌐 Connected & empowered! Online communities can offer resources, advice, and camaraderie. Engaging with like-minded individuals can offer new perspectives and solutions that you might not have considered. Next Steps: Actively participate in discussions, ask questions, and share your experiences. The collective wisdom of an online community can be a rich resource.</p>"
-        },
-        {
-          "answer": "I have some support but am mostly self-reliant",
-          "weight": 3,
-          "dynamicContent": "<p>💪 Inner strength shines! While having external support is beneficial, being self-reliant equips you with the determination and resilience to push through challenges independently. Next Steps: Consider expanding your support network. Join study groups, attend networking events, or participate in online forums. While self-reliance is powerful, a broader support system can offer additional advantages.</p>"
-        },
-        {
-          "answer": "I’m pretty much on my own",
-          "weight": 2,
-          "dynamicContent": "<p>🌱 You've got grit! Going it alone can be tough, but it also showcases your determination and drive. Remember, it's never too late to seek out or build a support system. Next Steps: Explore on-campus or online resources that can provide support. This might include counseling services, academic workshops, or student groups. Building connections can enhance your college experience and provide support when needed.</p>"
-        }
-      ]
-    },
-    {
-      "title": "Technology",
-      "question": "How comfortable are you with using technology for online learning and research?",
-      "description": "Today, schools offer many ways to learn that will meet you where you’re comfortable.",
-      "associatedField": "preferred_modality",
-      "icon": "technology-icon",
-      "answers": [
-        {
-          "answer": "I am really comfortable with computers and would prefer learning online",
-          "weight": 5,
-          "dynamicContent": "<p>💻 Digital Dynamo! Your comfort with computers positions you well for the world of online learning, which can offer flexibility and a wide array of resources. Next Steps: Check out various online platforms and familiarize yourself with their interfaces. Taking a short online course or tutorial can help you adjust to the digital learning environment.</p>"
-        },
-        {
-          "answer": "I’m okay with computers, but would prefer a mix of online and in-person learning",
-          "weight": 5,
-          "dynamicContent": "<p>🌐 Open-Minded Explorer! Your willingness to embrace online learning is commendable. The tech skills required can often be picked up quickly. Next Steps: Start with beginner tutorials on popular online learning platforms. Seek out tech support resources or join online forums for new learners where you can ask questions and get guidance.</p>"
-        },
-        {
-          "answer": "I think I would do better with in-person classes and textbooks",
-          "weight": 5,
-          "dynamicContent": "<p>📖 Traditionalist at Heart! Valuing face-to-face interactions and physical materials is valid. There's something unique about the classic classroom experience. Next Steps: While keeping your preference in mind, consider exploring blended learning options which combine both online and offline methods. This could provide a balanced academic experience tailored to your comfort level.</p>"
-        },
-        {
-          "answer": "I’m not sure if online or in-person would be a good fit for me",
-          "weight": 3,
-          "dynamicContent": "<p>🤷 Exploration Phase! It's alright to be uncertain. Both online and traditional learning have their perks. Next Steps: Consider a trial period for both methods. Enroll in a short online course and also attend a local workshop or class. Experiencing both environments can help you gauge your comfort and preferences.</p>"
-        }
-      ]
-    },
-    {
-      "title": "Finances",
-      "question": "Do you have a plan or financial resources in place to support your education?",
-      "description": "There are lots of resources out there, it’s just a matter of finding (and pursuing) them!",
-      "associatedField": "quizresponse9",
-      "icon": "finances-icon",
-      "answers": [
-        {
-          "answer": "I have a plan and resources",
-          "weight": 5,
-          "dynamicContent": "<p>💰 Fantastic start! Being financially prepared is crucial for a stress-free college journey. Having a plan and resources means you can focus on your studies without financial worries hanging over your head. Next Steps: Regularly review and adjust your budget as needed and consider building an emergency fund, if you haven’t already. If you want to double check that you’re using every available resource, we can help you make a personalized plan that may uncover new funding opportunities.</p>"
-        },
-        {
-          "answer": "I have a plan, but I’m not sure I can secure resources",
-          "weight": 4,
-          "dynamicContent": "<p>📝 Planning is half the battle! Having a plan in place is an excellent first step. Now, it's all about finding and securing the resources to support that plan. We can help you make a personalized plan — including ways to fund your education. Next Steps: Let us help you explore scholarships, grants, and financial aid options available for returning students. Answer a few more questions to get your back-to-school plan.</p>"
-        },
-        {
-          "answer": "I need help making a plan and discovering resources available to me",
-          "weight": 3,
-          "dynamicContent": "<p>🔍 Let's get started! Planning and resource allocation is a journey, and there's no better time to begin than now. We can help you make a personalized plan — including ways to fund your education. Next Steps: Let us guide you toward scholarships, grants, and financial aid opportunities for returning students. Answer a few more questions to get your back-to-school plan.</p>"
-        }
-      ]
-    }
-  ],
-  "score": 0,
-  "nextSteps": {
-    "extremelyReady": {
-      "title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
-      "introContent": "<p>You're set to soar in the academic world! Let's align your current readiness with a clear path forward. Answer a few more questions to receive your tailored back-to-school plan.",
-      "buttonText": "Build Your Personalized Plan",
-      "buttonLink": "/degree-completion/build-plan-quiz",
-      "steps": {
-        "title": "Your Plan Includes ...",
-        "list": [
-          {
-            "step": {
-              "content": "<p><strong>Value of a Bachelor's Degree:</strong> Explore the return on investment, job prospects, and personal growth opportunities of higher education.<p/>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>How to Fund Your Degree:</strong> Discover resources for scholarships, grants, and strategies to reduce education costs.</p>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>Degrees & Schools:</strong> Learn how to pick the right degree and school based on your goals and the job market.<p/>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>Careers:</strong> Dive into high-demand careers and understand the degrees required to access them.<p/>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>Your Next Steps:</strong> Get a tailored checklist with immediate actions and a suggested timeline for your educational journey.<p/>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>Tools and Resources:</strong> Access a curated list of digital tools, insightful videos, and community forums to support your path back to school.<p/>"
-            }
-          }
-        ],
-        "buttonText": "Get Started",
-        "buttonLink": "/degree-completion/build-plan-quiz"
-      }
-    },
-    "veryReady": {
-      "title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
-      "introContent": "<p>With just a few tweaks, your academic journey can be smooth sailing. Eager to pinpoint those areas? Answer a few more questions to receive your tailored back-to-school plan.</p>",
-      "buttonText": "Build Your Personalized Plan",
-      "buttonLink": "/degree-completion/build-plan-quiz",
-      "steps": {
-        "title": "Your Plan Includes ...",
-        "list": [
-          {
-            "step": {
-              "content": "<p><strong>Value of a Bachelor's Degree:</strong> Explore the return on investment, job prospects, and personal growth opportunities of higher education.<p/>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>How to Fund Your Degree:</strong> Discover resources for scholarships, grants, and strategies to reduce education costs.</p>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>Degrees & Schools:</strong> Learn how to pick the right degree and school based on your goals and the job market.<p/>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>Careers:</strong> Dive into high-demand careers and understand the degrees required to access them.<p/>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>Your Next Steps:</strong> Get a tailored checklist with immediate actions and a suggested timeline for your educational journey.<p/>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>Tools and Resources:</strong> Access a curated list of digital tools, insightful videos, and community forums to support your path back to school.<p/>"
-            }
-          }
-        ],
-        "buttonText": "Get Started",
-        "buttonLink": "/degree-completion/build-plan-quiz"
-      }
-    },
-    "ready": {
-      "title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
-      "introContent": "<p>Your potential is clear; let's bridge those minor gaps and pave your path. Answer a few more questions to receive your tailored back-to-school plan.</p>",
-      "buttonText": "Build Your Personalized Plan",
-      "buttonLink": "/degree-completion/build-plan-quiz",
-      "steps": {
-        "title": "Your Plan Includes ...",
-        "list": [
-          {
-            "step": {
-              "content": "<p><strong>Value of a Bachelor's Degree:</strong> Explore the return on investment, job prospects, and personal growth opportunities of higher education.<p/>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>How to Fund Your Degree:</strong> Discover resources for scholarships, grants, and strategies to reduce education costs.</p>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>Degrees & Schools:</strong> Learn how to pick the right degree and school based on your goals and the job market.<p/>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>Careers:</strong> Dive into high-demand careers and understand the degrees required to access them.<p/>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>Your Next Steps:</strong> Get a tailored checklist with immediate actions and a suggested timeline for your educational journey.<p/>"
-            }
-          },
-          {
-            "step": {
-              "content": "<p><strong>Tools and Resources:</strong> Access a curated list of digital tools, insightful videos, and community forums to support your path back to school.<p/>"
-            }
-          }
-        ],
-        "buttonText": "Get Started",
-        "buttonLink": "/degree-completion/build-plan-quiz"
-      }
-    }
-  },
-  "readinessResults": {
-    "notReady": {
-      "title": "When it comes to college, you're",
-      "result": "Not Quite Ready!",
-      "detailedDescription": "<p><strong>Take a moment to reflect.</strong> Your results suggest that you might benefit from a bit more preparation before diving into the academic realm. </p><p>Don't be disheartened. Everyone's journey is unique, and there's no rush. Consider leveraging resources, tools, and support to bolster your readiness. Remember, with determination and the right approach, you can overcome any hurdle and achieve your educational dreams.</p>",
-      "needHelpTitle": "Need help figuring out where to start?",
-      "needHelpCtaLabel": "Get a Personalized Plan",
-      "needHelpCtaLink": "/degree-completion/build-plan-quiz"
-    },
-    "almostReady": {
-      "title": "When it comes to college, you're",
-      "result": "Almost Ready!",
-      "detailedDescription": "<p><strong>You're on the cusp!</strong> Your results show that you're almost ready to embark on your educational journey. It's clear you have the drive and some of the skills needed. However, there might be certain areas you'd like to develop further. </p><p>Consider seeking out preparatory courses, resources, or mentoring in those areas. With a bit more preparation, you'll be fully equipped to face the academic world with confidence.</p>",
-      "needHelpTitle": "Need help figuring out where to start?",
-      "needHelpCtaLabel": "Get a Personalized Plan",
-      "needHelpCtaLink": "/degree-completion/build-plan-quiz"
-    },
-    "ready": {
-      "title": "When it comes to college, you're",
-      "result": "Ready!",
-      "detailedDescription": "<p><strong>Good news!</strong> You are ready to venture back into the world of education. While you exhibit strength in numerous areas, there might be certain aspects you feel less confident about. That's okay!</p><p>Remember, everyone has their unique strengths and areas of growth. Seek out resources, workshops, or counseling services to bridge any gaps, and you'll be all set for success.</p>",
-      "needHelpTitle": "Need help figuring out where to start?",
-      "needHelpCtaLabel": "Get a Personalized Plan",
-      "needHelpCtaLink": "/degree-completion/build-plan-quiz"
-    },
-    "veryReady": {
-      "title": "When it comes to college, you're",
-      "result": "Very Ready!",
-      "detailedDescription": "<p><strong>Well done!</strong> Your results show that you're very ready to resume or start your educational journey. You have a solid foundation in many areas essential for academic success.</p><p>While there might be a few areas to work on or adjust, you're certainly on the right track. Keep refining those skills and seek resources or support where needed, and you'll thrive in any academic setting!</p>",
-      "needHelpTitle": "Need help figuring out where to start?",
-      "needHelpCtaLabel": "Get a Personalized Plan",
-      "needHelpCtaLink": "/degree-completion/build-plan-quiz"
-    },
-    "extremelyReady": {
-      "title": "When it comes to college, you're",
-      "result": "Extremely Ready!",
-      "detailedDescription": "<p><strong>Congratulations!</strong> Your results indicate that you're extremely prepared to dive back into the academic world. You've showcased strengths in key areas such as time management, motivation, and support systems, which are crucial for success in higher education.</p><p>Remember, while you're well-prepared, every educational journey comes with its unique challenges. Stay adaptive, keep that confidence high, and embark on this exciting chapter!</p>",
-      "needHelpTitle": "Need help figuring out where to start?",
-      "needHelpCtaLabel": "Get a Personalized Plan",
-      "needHelpCtaLink": "/degree-completion/build-plan-quiz"
-    }
-  }
+	"questions": [
+		{
+			"question": "Where are you in your educational journey?",
+			"associatedField": "education_journey__select1",
+			"description": "Let’s make sure you’re in the right place!",
+			"answers": [
+				{
+					"answer": "I am exploring earning or completing a bachelor’s degree.",
+					"personality": "initial",
+					"weight": 1,
+					"value": "2",
+					"label": "Bachelors"
+				},
+				{
+					"answer": "I am thinking about earning or completing an associate’s degree.",
+					"personality": "initial",
+					"weight": 1,
+					"value": "6",
+					"label": "Associates"
+				},
+				{
+					"answer": "I am currently in school for an undergraduate degree and wish to transfer.",
+					"personality": "initial",
+					"weight": 1,
+					"value": "2",
+					"label": "Transfer"
+				},
+				{
+					"answer": "I am not currently considering school or am only interested in professional licensure.",
+					"personality": "initial",
+					"weight": 1,
+					"value": "6",
+					"label": "Other"
+				},
+				{
+					"answer": "I am considering a graduate-level degree",
+					"personality": "initial",
+					"weight": 1,
+					"value": "3",
+					"label": "Graduate"
+				}
+			]
+		},
+		{
+			"question": "How many years of work experience to you have?",
+			"associatedField": "years_of_work_experience",
+			"randomize": false,
+			"answers": [
+				{
+					"answer": "Less than 2 years",
+					"personality": "initial",
+					"weight": 1,
+					"value": 1,
+					"label": "0-2"
+				},
+				{
+					"answer": "2-4",
+					"personality": "initial",
+					"weight": 1,
+					"value": 2,
+					"label": "2-4"
+				},
+				{
+					"answer": "5-7",
+					"personality": "initial",
+					"weight": 1,
+					"value": 5,
+					"label": "5-7"
+				},
+				{
+					"answer": "7-15",
+					"personality": "initial",
+					"weight": 1,
+					"value": 7,
+					"label": "7-15"
+				},
+				{
+					"answer": "16 or more years",
+					"personality": "initial",
+					"weight": 1,
+					"value": 16,
+					"label": "16 or more years"
+				}
+			]
+		},
+		{
+			"title": "Motivation",
+			"question": "How motivated are you to earn your degree?",
+			"description": "No matter your answer, we’ll give you some tips and tools to get excited about your next steps.",
+			"associatedField": "quizresponse1",
+			"icon": "motivation2-icon",
+			"answers": [
+				{
+					"answer": "Earning a degree is a top priority for me",
+					"weight": 5,
+					"dynamicContent": "<p>I have lots of free time.</p><p>🌟 <strong>That's fantastic!</strong> Having ample free time provides a great opportunity to immerse yourself in your studies and fully engage with the college experience. This flexibility will allow you to manage coursework, participate in extracurricular activities, and still have time for self-care.</p><p>Next Steps: Think about how you can best allocate this time towards your studies, and perhaps consider joining study groups, attending workshops, or taking on additional courses.</p>"
+				},
+				{
+					"answer": "I'm ready and think I can balance school and life",
+					"weight": 5,
+					"dynamicContent": "<p>👍 Great to hear! Being able to carve out time regularly indicates that you have a good balance in your life. With this level of time management, you can comfortably handle college coursework and also engage in additional activities.</p><p>Next Steps: Plan out a weekly schedule, allocating specific times for studying, breaks, and recreational activities. This will help ensure you remain consistent in managing your time.</p>"
+				},
+				{
+					"answer": "I'm almost ready to go back to school, but worry life will get in the way",
+					"weight": 4,
+					"dynamicContent": "<p>🤔 Valid Concerns! Life's unpredictability can be challenging. Acknowledging potential roadblocks is a constructive approach.</p><p>Next Steps: Prioritize building a flexible study schedule. Share your goals with friends and family, so they can offer support. Consider joining study groups or online communities for accountability and encouragement.</p>"
+				},
+				{
+					"answer": "I might be ready soon but it's still not enough of a priority",
+					"weight": 3,
+					"dynamicContent": "<p>🌱 Growth in Progress! Sometimes we need a bit more time to realize and act on our priorities. That's okay!</p><p>Next Steps: Reflect on the reasons you're considering going back to school. Attend informational sessions or workshops to reignite your motivation. Speak with graduates to understand the tangible benefits of completing your degree.</p>"
+				},
+				{
+					"answer": "I'm not very motivated at all",
+					"weight": 2,
+					"dynamicContent": "<p>🌀 Finding Motivation. Everyone's journey is unique. It's essential to discover what drives you and ignites your passion.</p><p>Next Steps: Seek inspiration by speaking with successful individuals in fields you admire. Consider exploring different subjects or career paths. Sometimes, uncovering a new interest can reignite motivation.</p>"
+				}
+			]
+		},
+		{
+			"title": "Age",
+			"question": "What’s your age range?",
+			"description": "It’s never too early (or late) to go back to school! But knowing your approximate age will help us provide relevant advice.",
+			"associatedField": "age_range",
+			"icon": "age-icon",
+			"randomize": false,
+			"answers": [
+				{
+					"answer": "16-18",
+					"weight": 5,
+					"value": 1,
+					"dynamicContent": "<p>🌱 Early Achiever! Now is a great time to be considering your educational opportunities! It sounds like you’re considering college after high school, so we encourage you to visit appily.com for helpful information for first-time freshman.</p><p>Advice: Your age gives you the advantage of time. Explore varied subjects to discover your passion. Consider community college courses, online certifications, or early college programs. Remember, every learning opportunity builds a foundation for your future.</p>"
+				},
+				{
+					"answer": "19-23",
+					"weight": 5,
+					"value": 2,
+					"dynamicContent": "<p>🚀 Energetic Explorer! You're in the prime years of tertiary education. If you're thinking of resuming or starting afresh, now is an opportune moment.</p><p>Advice: Reevaluate what you want from your degree and academic experience. Whether it's for a career shift or personal growth, ensure you're aligned with your goals. Check out scholarship opportunities tailored for your age group.</p>"
+				},
+				{
+					"answer": "24-29",
+					"weight": 5,
+					"value": 3,
+					"dynamicContent": "<p>🔍 Determined Dreamer! You're in a phase where personal and professional growth are paramount. Returning to school can be a valuable asset in your journey.</p><p>Advice: Think about how further education can enhance your career or personal development. Many in this age group pursue postgraduate courses, certifications, or skill-based training. Balance is key – many juggle work, studies, and personal life successfully at this age.</p>"
+				},
+				{
+					"answer": "33-39",
+					"weight": 5,
+					"value": 4,
+					"dynamicContent": "<p>🌟 Prime Pursuer! You've accumulated experiences, and you understand the world better. This wisdom can be a strength in the academic world.</p><p>Advice: Consider how a degree or course can complement your life journey so far. Flexible learning options, like part-time courses or online degrees, can fit seamlessly into your established routine.</p>"
+				},
+				{
+					"answer": "40-49",
+					"weight": 5,
+					"value": 5,
+					"dynamicContent": "<p>🌉 Bridge Builder! You've crossed many milestones, but there's always room to build more bridges. Education can be one of them.</p><p>Advice: Reflect on what you wish to achieve. Whether it's a career change, personal fulfillment, or a hobby, it's achievable. Online courses, night classes, or workshops can be ideal. Your life experience is an asset in discussions and perspectives.</p>"
+				},
+				{
+					"answer": "50-65",
+					"weight": 5,
+					"value": 6,
+					"dynamicContent": "<p>🌳 Wise Wanderer! Life has taught you a lot, but the quest for knowledge is unending. Your maturity can offer a unique perspective in the learning environment.</p><p>Advice: Consider what you're passionate about. Many in this age bracket study for the sheer joy of learning. Also, research institutions with programs or discounts for mature students. Your rich life experiences can also be a mentoring opportunity for younger students.</p>"
+				},
+				{
+					"answer": "65+",
+					"weight": 5,
+					"value": 7,
+					"dynamicContent": "<p>🦉 Sage Student! Education has no expiration date. Your wealth of experiences can only enrich your learning journey further.</p><p>Advice: Dive into subjects you've always been curious about. Community classes, online courses, or university audits are great options. Engage with younger peers – it’s a mutual learning experience. Many institutions appreciate and welcome the depth and diversity mature students bring to the table.</p>"
+				}
+			]
+		},
+		{
+			"title": "Studying",
+			"question": "How do you feel about studying?",
+			"description": "We’ll share tools and approaches for studying that could spark your interest.",
+			"associatedField": "quizresponse2",
+			"icon": "studying-icon",
+			"answers": [
+				{
+					"answer": "I enjoy learning and definitely get into the zone studying",
+					"weight": 5,
+					"dynamicContent": "<p>📚 Study Superstar! Your love for learning and ability to deeply focus will undoubtedly benefit you in your academic pursuits.</p><p>Next Steps: Consider sharing your study techniques with peers or starting a study group. You might also explore advanced courses or subjects to continually challenge and excite your learning spirit.</p>"
+				},
+				{
+					"answer": "I don't mind studying if I'm interested in the topic",
+					"weight": 4,
+					"dynamicContent": "<p>🔍 Interest-Driven Learner! Having genuine interest in a topic can enhance retention and comprehension.</p><p>Next Steps: Seek courses or professors known for engaging content and presentation. Join clubs or groups related to your subjects of interest to keep the passion alive outside of study hours.</p>"
+				},
+				{
+					"answer": "I don't mind studying if I like the way information is presented",
+					"weight": 4,
+					"dynamicContent": "<p>🎨 Presentation Matters! Recognizing the formats that resonate with you can guide you to the most effective study resources.</p><p>Next Steps: Look for textbooks, online resources, or courses that align with your preferred presentation style. Giving feedback to instructors can also influence how material is taught in the future.</p>"
+				},
+				{
+					"answer": "I've struggled with studying in the past, but think I might be ready now",
+					"weight": 3,
+					"dynamicContent": "<p>🌅 New Beginnings! Past struggles don't define your future. It's commendable to acknowledge past challenges and feel open to trying again.</p><p>Next Steps: Consider seeking out academic workshops or tutors to build effective study habits. Engage in active learning techniques and regularly assess which methods work best for you.</p>"
+				},
+				{
+					"answer": "I can't make myself study no matter what",
+					"weight": 2,
+					"dynamicContent": "<p>🌀 Seeking Drive! It's important to understand the root cause. Is it the subject, method, environment, or something deeper?</p><p>Next Steps: Reflect on past study experiences to pinpoint challenges. It might be helpful to discuss your feelings with a counselor or academic advisor. Sometimes, a change in environment, method, or subject can reignite the drive.</p>"
+				}
+			]
+		},
+		{
+			"title": "Education",
+			"question": "What is your highest level of completed education?",
+			"description": "We’ll provide guidance no matter where you are in your journey.",
+			"associatedField": "level_of_degree_seeking",
+			"icon": "education2-icon",
+			"answers": [
+				{
+					"answer": "Some High School",
+					"weight": 2,
+					"dynamicContent": "<p>🌟 Early Bird Scholar! Your proactive thinking will serve you well in your upcoming academic pursuits. Next Steps: Consider dual enrollment opportunities or advanced placement (AP) courses. This will not only expose you to college-level material but also earn you credits, setting you ahead of the curve.</p>"
+				},
+				{
+					"answer": "High School Diploma or GED",
+					"weight": 5,
+					"dynamicContent": "<p>🚀 Education Enthusiast! Standing at the cusp of a new journey, you have the drive and foundational knowledge to embark on this academic adventure. Next Steps: Attend college fairs or orientation sessions. These will give you a firsthand feel of the college vibe and help you align your expectations with reality.</p>"
+				},
+				{
+					"answer": "Some College, No Degree",
+					"weight": 5,
+					"dynamicContent": "<p>🔍 College Explorer! Having tasted the college experience, you're more familiar than you think. Next Steps: Reflect on your previous stint in college, both the highs and the lows. Use this knowledge to plan a more fulfilling and efficient return to the academic world.</p>"
+				},
+				{
+					"answer": "Certification or Associate's Degree",
+					"weight": 5,
+					"dynamicContent": "<p>📘 Academic Adventurer! Being in the thick of the college experience already gives you a fantastic edge. Next Steps: Dive into opportunities like internships, college clubs, or networking events to enrich your current academic experience. It'll provide both knowledge and connections for your future.</p>"
+				},
+				{
+					"answer": "Bachelor's Degree or Higher",
+					"weight": 5,
+					"dynamicContent": "<p>🎓 Degree Trailblazer! Your previous academic accomplishments have set a sturdy foundation for any further studies you wish to pursue. Next Steps: Leverage your past credits by consulting an academic advisor. By doing so, you can potentially fast-track your next degree and stay on course for your goals.</p>"
+				}
+			]
+		},
+		{
+			"title": "Career",
+			"question": "How clear are you about your desired career path and the degree required to achieve it?",
+			"description": "Now is the perfect time to think about where you’re going and how you’ll get there!",
+			"associatedField": "quizresponse4",
+			"icon": "setting-icon",
+			"answers": [
+				{
+					"answer": "I know what I want to do and the degree I need to earn",
+					"weight": 5,
+					"dynamicContent": "<p>🎯 On Target! Having a clear vision of your career path and the required degree is an excellent advantage. It allows you to streamline your studies and tailor your coursework to your future goals. Next Steps: Engage with professionals in your desired field, seek internships or mentorship opportunities, and actively participate in relevant workshops or seminars to further solidify your path and build connections.</p>"
+				},
+				{
+					"answer": "I know what I want to do, but not which degree I need",
+					"weight": 4,
+					"dynamicContent": "<p>🔍 Direction Established! Recognizing your career goals is a significant first step. Now, it's all about aligning those aspirations with the right educational path. Next Steps: Consult with academic advisors or career counselors. They can guide you toward degrees that best align with your career aspirations. Attending college or career fairs can also give you insights into potential paths.</p>"
+				},
+				{
+					"answer": "I know what I want to study, but not which career to pursue",
+					"weight": 4,
+					"dynamicContent": "<p>📚 Passion First! Following what you're passionate about studying can often lead to discovering a fulfilling career path that resonates with your interests. Next Steps: Dive into your studies and engage with professors or professionals in that field. Join relevant student clubs or online communities to explore potential careers related to your area of study.</p>"
+				},
+				{
+					"answer": "I don’t know what I want to do or what I want to study ",
+					"weight": 3,
+					"dynamicContent": "<p>🌱 Exploration Ahead! This is a time of discovery. Embrace the journey of finding both your academic and career passions. Next Steps: Attend career workshops, engage in informational interviews, or take a variety of introductory courses to discover what resonates with you. Seeking guidance from career counselors can also help clarify your interests and options.</p>"
+				}
+			]
+		},
+		{
+			"title": "Free Time",
+			"question": "How much free time do you tend to have each week?",
+			"description": "We’ll share some tips for how to make the most of the time you do have!",
+			"associatedField": "quizresponse5",
+			"icon": "free-time-icon",
+			"answers": [
+				{
+					"answer": "I have a few hours of free time most days",
+					"weight": 5,
+					"dynamicContent": "<p>🌟 That's fantastic! Having ample free time provides a great opportunity to immerse yourself in your studies and fully engage with the college experience. This flexibility will allow you to manage coursework, participate in extracurricular activities, and still have time for self-care. Next Steps: Think about how you can best allocate this time towards your studies, and perhaps consider joining study groups, attending workshops, or taking on additional courses.</p>"
+				},
+				{
+					"answer": "I have at least an hour a few days a week",
+					"weight": 4,
+					"dynamicContent": "<p>👍 Great to hear! Being able to carve out time regularly indicates that you have a good balance in your life. With this level of time management, you can comfortably handle college coursework and also engage in additional activities. Next Steps: Plan out a weekly schedule, allocating specific times for studying, breaks, and recreational activities. This will help ensure you remain consistent in managing your time.</p>"
+				},
+				{
+					"answer": "A few hours total a week",
+					"weight": 3,
+					"dynamicContent": "<p>⏳ Every minute counts! A few dedicated hours each week can make a significant difference in your studies. It's all about ensuring that the time you do have is focused and productive. Next Steps: Make the most of the time you have by creating a distraction-free study environment. Consider tools like the Pomodoro Technique to maximize your focus during these shorter study sessions.</p>"
+				},
+				{
+					"answer": "I have almost no free time",
+					"weight": 2,
+					"dynamicContent": "<p>🔍 Quality over quantity! While your time might be limited, it's the quality of your study sessions that matter most. Even short, focused periods of study can be impactful.</p><p>Next Steps: Prioritize your most critical assignments and tasks. Use tools or apps to help you streamline your studies and to stay organized. Also, consider communicating with professors or academic advisors about your time constraints—they might have additional resources or advice.</p>"
+				}
+			]
+		},
+		{
+			"title": "Time Mgmt",
+			"question": "How are your time management skills?",
+			"description": "No matter your skill level, there are lots of tools to help you manage your time even better. We’ll share them!",
+			"associatedField": "quizresponse6",
+			"icon": "time-management-icon",
+			"answers": [
+				{
+					"answer": "I'm a time-management pro",
+					"weight": 5,
+					"dynamicContent": "<p>🌟 Congratulations! Your mastery over time management is a great strength. College often requires juggling multiple assignments, projects, and deadlines. Your proficiency will serve you well, helping you stay on top of your coursework with ease. Consider sharing your strategies with peers; they might benefit from your expertise! Next Steps: Look into advanced organizational tools or apps that can help you track assignments and milestones (such as Trello, Notion, or My Study Life), and perhaps explore leadership roles in group projects or study groups.</p>"
+				},
+				{
+					"answer": "I'm pretty confident in my time-management skills",
+					"weight": 4,
+					"dynamicContent": "<p>👏 Well done! Your solid grasp of time management will be an asset in the college environment. With a few tweaks and enhancements, you could elevate your skills to pro level. Next Steps: Continue refining your skills. Practice makes perfect, and there are plenty of apps and tools (such as Trello, Notion, or My Study Life) that can support your efforts. You could also consider taking a time management workshop or earning a specialization on Coursera.</p>"
+				},
+				{
+					"answer": "I'm doing okay, but there's room for improvement",
+					"weight": 3,
+					"dynamicContent": "<p>🌱 You're on the right path! Recognizing that there's room for improvement is the first step to mastering time management. With a bit of focus, you'll be better prepared for the demands of college life. Next Steps: Look for resources like online tutorials, planners, or apps that can help you structure your time better. Setting specific goals each week can also provide direction and purpose.</p>"
+				},
+				{
+					"answer": "I could use a bit more confidence",
+					"weight": 3,
+					"dynamicContent": "<p>💡 Awareness is key! Acknowledging where you can grow is crucial. By building your confidence and time-management abilities, you'll be setting yourself up for academic success. Next Steps: Try setting small, daily goals to practice managing your time. Don't hesitate to seek out mentorship or advice from those who excel in this area.</p>"
+				},
+				{
+					"answer": "I need some help with time management",
+					"weight": 2,
+					"dynamicContent": "<p>🔍 You're not alone! Many students find time management challenging. The good news is that there are plenty of tools and strategies out there to help you succeed. Next Steps: Start with the basics. Create a daily schedule, prioritize tasks, and break larger projects into manageable chunks. There are also numerous courses and workshops available that focus specifically on time management for students.</p>"
+				}
+			]
+		},
+		{
+			"title": "Support",
+			"question": "Do you have supporters who can offer guidance or encouragement for your goals?",
+			"description": "If you need more support, let’s find ways to connect you with resources!",
+			"associatedField": "quizresponse7",
+			"icon": "support-icon",
+			"answers": [
+				{
+					"answer": "I have a mentor or advisor",
+					"weight": 5,
+					"dynamicContent": "<p>🌟 That's invaluable! Mentors and advisors can provide guidance, share experiences, and offer insight that can be pivotal to your academic success. Their support can help you navigate challenges and open doors to opportunities. Next Steps: Regularly meet or check-in with your mentor/advisor. Discuss your goals, progress, and any concerns you have. Their expertise can help you shape your academic journey effectively.</p>"
+				},
+				{
+					"answer": "My family or friends are very supportive",
+					"weight": 5,
+					"dynamicContent": "<p>❤️ A strong foundation! The support and understanding of loved ones can be a game-changer in your college journey. They can provide emotional support, encouragement, and a listening ear during challenging times. Next Steps: Keep your family and friends in the loop about your progress and any challenges you face. Their perspectives and encouragement can boost your motivation and resilience.</p>"
+				},
+				{
+					"answer": "I have an online community I trust",
+					"weight": 4,
+					"dynamicContent": "<p>🌐 Connected & empowered! Online communities can offer resources, advice, and camaraderie. Engaging with like-minded individuals can offer new perspectives and solutions that you might not have considered. Next Steps: Actively participate in discussions, ask questions, and share your experiences. The collective wisdom of an online community can be a rich resource.</p>"
+				},
+				{
+					"answer": "I have some support but am mostly self-reliant",
+					"weight": 3,
+					"dynamicContent": "<p>💪 Inner strength shines! While having external support is beneficial, being self-reliant equips you with the determination and resilience to push through challenges independently. Next Steps: Consider expanding your support network. Join study groups, attend networking events, or participate in online forums. While self-reliance is powerful, a broader support system can offer additional advantages.</p>"
+				},
+				{
+					"answer": "I’m pretty much on my own",
+					"weight": 2,
+					"dynamicContent": "<p>🌱 You've got grit! Going it alone can be tough, but it also showcases your determination and drive. Remember, it's never too late to seek out or build a support system. Next Steps: Explore on-campus or online resources that can provide support. This might include counseling services, academic workshops, or student groups. Building connections can enhance your college experience and provide support when needed.</p>"
+				}
+			]
+		},
+		{
+			"title": "Technology",
+			"question": "How comfortable are you with using technology for online learning and research?",
+			"description": "Today, schools offer many ways to learn that will meet you where you’re comfortable.",
+			"associatedField": "preferred_modality",
+			"icon": "technology-icon",
+			"answers": [
+				{
+					"answer": "I am really comfortable with computers and would prefer learning online",
+					"weight": 5,
+					"dynamicContent": "<p>💻 Digital Dynamo! Your comfort with computers positions you well for the world of online learning, which can offer flexibility and a wide array of resources. Next Steps: Check out various online platforms and familiarize yourself with their interfaces. Taking a short online course or tutorial can help you adjust to the digital learning environment.</p>"
+				},
+				{
+					"answer": "I’m okay with computers, but would prefer a mix of online and in-person learning",
+					"weight": 5,
+					"dynamicContent": "<p>🌐 Open-Minded Explorer! Your willingness to embrace online learning is commendable. The tech skills required can often be picked up quickly. Next Steps: Start with beginner tutorials on popular online learning platforms. Seek out tech support resources or join online forums for new learners where you can ask questions and get guidance.</p>"
+				},
+				{
+					"answer": "I think I would do better with in-person classes and textbooks",
+					"weight": 5,
+					"dynamicContent": "<p>📖 Traditionalist at Heart! Valuing face-to-face interactions and physical materials is valid. There's something unique about the classic classroom experience. Next Steps: While keeping your preference in mind, consider exploring blended learning options which combine both online and offline methods. This could provide a balanced academic experience tailored to your comfort level.</p>"
+				},
+				{
+					"answer": "I’m not sure if online or in-person would be a good fit for me",
+					"weight": 3,
+					"dynamicContent": "<p>🤷 Exploration Phase! It's alright to be uncertain. Both online and traditional learning have their perks. Next Steps: Consider a trial period for both methods. Enroll in a short online course and also attend a local workshop or class. Experiencing both environments can help you gauge your comfort and preferences.</p>"
+				}
+			]
+		},
+		{
+			"title": "Finances",
+			"question": "Do you have a plan or financial resources in place to support your education?",
+			"description": "There are lots of resources out there, it’s just a matter of finding (and pursuing) them!",
+			"associatedField": "quizresponse9",
+			"icon": "finances-icon",
+			"answers": [
+				{
+					"answer": "I have a plan and resources",
+					"weight": 5,
+					"dynamicContent": "<p>💰 Fantastic start! Being financially prepared is crucial for a stress-free college journey. Having a plan and resources means you can focus on your studies without financial worries hanging over your head. Next Steps: Regularly review and adjust your budget as needed and consider building an emergency fund, if you haven’t already. If you want to double check that you’re using every available resource, we can help you make a personalized plan that may uncover new funding opportunities.</p>"
+				},
+				{
+					"answer": "I have a plan, but I’m not sure I can secure resources",
+					"weight": 4,
+					"dynamicContent": "<p>📝 Planning is half the battle! Having a plan in place is an excellent first step. Now, it's all about finding and securing the resources to support that plan. We can help you make a personalized plan — including ways to fund your education. Next Steps: Let us help you explore scholarships, grants, and financial aid options available for returning students. Answer a few more questions to get your back-to-school plan.</p>"
+				},
+				{
+					"answer": "I need help making a plan and discovering resources available to me",
+					"weight": 3,
+					"dynamicContent": "<p>🔍 Let's get started! Planning and resource allocation is a journey, and there's no better time to begin than now. We can help you make a personalized plan — including ways to fund your education. Next Steps: Let us guide you toward scholarships, grants, and financial aid opportunities for returning students. Answer a few more questions to get your back-to-school plan.</p>"
+				}
+			]
+		}
+	],
+	"score": 0,
+	"nextSteps": {
+		"extremelyReady": {
+			"title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
+			"introContent": "<p>You're set to soar in the academic world! Let's align your current readiness with a clear path forward. Answer a few more questions to receive your tailored back-to-school plan.",
+			"buttonText": "Build Your Personalized Plan",
+			"buttonLink": "/degree-completion/build-plan-quiz",
+			"steps": {
+				"title": "Your Plan Includes ...",
+				"list": [
+					{
+						"step": {
+							"content": "<p><strong>Value of a Bachelor's Degree:</strong> Explore the return on investment, job prospects, and personal growth opportunities of higher education.<p/>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>How to Fund Your Degree:</strong> Discover resources for scholarships, grants, and strategies to reduce education costs.</p>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>Degrees & Schools:</strong> Learn how to pick the right degree and school based on your goals and the job market.<p/>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>Careers:</strong> Dive into high-demand careers and understand the degrees required to access them.<p/>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>Your Next Steps:</strong> Get a tailored checklist with immediate actions and a suggested timeline for your educational journey.<p/>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>Tools and Resources:</strong> Access a curated list of digital tools, insightful videos, and community forums to support your path back to school.<p/>"
+						}
+					}
+				],
+				"buttonText": "Get Started",
+				"buttonLink": "/degree-completion/build-plan-quiz"
+			}
+		},
+		"veryReady": {
+			"title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
+			"introContent": "<p>With just a few tweaks, your academic journey can be smooth sailing. Eager to pinpoint those areas? Answer a few more questions to receive your tailored back-to-school plan.</p>",
+			"buttonText": "Build Your Personalized Plan",
+			"buttonLink": "/degree-completion/build-plan-quiz",
+			"steps": {
+				"title": "Your Plan Includes ...",
+				"list": [
+					{
+						"step": {
+							"content": "<p><strong>Value of a Bachelor's Degree:</strong> Explore the return on investment, job prospects, and personal growth opportunities of higher education.<p/>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>How to Fund Your Degree:</strong> Discover resources for scholarships, grants, and strategies to reduce education costs.</p>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>Degrees & Schools:</strong> Learn how to pick the right degree and school based on your goals and the job market.<p/>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>Careers:</strong> Dive into high-demand careers and understand the degrees required to access them.<p/>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>Your Next Steps:</strong> Get a tailored checklist with immediate actions and a suggested timeline for your educational journey.<p/>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>Tools and Resources:</strong> Access a curated list of digital tools, insightful videos, and community forums to support your path back to school.<p/>"
+						}
+					}
+				],
+				"buttonText": "Get Started",
+				"buttonLink": "/degree-completion/build-plan-quiz"
+			}
+		},
+		"ready": {
+			"title": "Based on Your Results: <strong>What Are Your Next Steps?</strong>",
+			"introContent": "<p>Your potential is clear; let's bridge those minor gaps and pave your path. Answer a few more questions to receive your tailored back-to-school plan.</p>",
+			"buttonText": "Build Your Personalized Plan",
+			"buttonLink": "/degree-completion/build-plan-quiz",
+			"steps": {
+				"title": "Your Plan Includes ...",
+				"list": [
+					{
+						"step": {
+							"content": "<p><strong>Value of a Bachelor's Degree:</strong> Explore the return on investment, job prospects, and personal growth opportunities of higher education.<p/>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>How to Fund Your Degree:</strong> Discover resources for scholarships, grants, and strategies to reduce education costs.</p>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>Degrees & Schools:</strong> Learn how to pick the right degree and school based on your goals and the job market.<p/>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>Careers:</strong> Dive into high-demand careers and understand the degrees required to access them.<p/>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>Your Next Steps:</strong> Get a tailored checklist with immediate actions and a suggested timeline for your educational journey.<p/>"
+						}
+					},
+					{
+						"step": {
+							"content": "<p><strong>Tools and Resources:</strong> Access a curated list of digital tools, insightful videos, and community forums to support your path back to school.<p/>"
+						}
+					}
+				],
+				"buttonText": "Get Started",
+				"buttonLink": "/degree-completion/build-plan-quiz"
+			}
+		}
+	},
+	"readinessResults": {
+		"notReady": {
+			"title": "When it comes to college, you're",
+			"result": "Not Quite Ready!",
+			"detailedDescription": "<p><strong>Take a moment to reflect.</strong> Your results suggest that you might benefit from a bit more preparation before diving into the academic realm. </p><p>Don't be disheartened. Everyone's journey is unique, and there's no rush. Consider leveraging resources, tools, and support to bolster your readiness. Remember, with determination and the right approach, you can overcome any hurdle and achieve your educational dreams.</p>",
+			"needHelpTitle": "Need help figuring out where to start?",
+			"needHelpCtaLabel": "Get a Personalized Plan",
+			"needHelpCtaLink": "/degree-completion/build-plan-quiz"
+		},
+		"almostReady": {
+			"title": "When it comes to college, you're",
+			"result": "Almost Ready!",
+			"detailedDescription": "<p><strong>You're on the cusp!</strong> Your results show that you're almost ready to embark on your educational journey. It's clear you have the drive and some of the skills needed. However, there might be certain areas you'd like to develop further. </p><p>Consider seeking out preparatory courses, resources, or mentoring in those areas. With a bit more preparation, you'll be fully equipped to face the academic world with confidence.</p>",
+			"needHelpTitle": "Need help figuring out where to start?",
+			"needHelpCtaLabel": "Get a Personalized Plan",
+			"needHelpCtaLink": "/degree-completion/build-plan-quiz"
+		},
+		"ready": {
+			"title": "When it comes to college, you're",
+			"result": "Ready!",
+			"detailedDescription": "<p><strong>Good news!</strong> You are ready to venture back into the world of education. While you exhibit strength in numerous areas, there might be certain aspects you feel less confident about. That's okay!</p><p>Remember, everyone has their unique strengths and areas of growth. Seek out resources, workshops, or counseling services to bridge any gaps, and you'll be all set for success.</p>",
+			"needHelpTitle": "Need help figuring out where to start?",
+			"needHelpCtaLabel": "Get a Personalized Plan",
+			"needHelpCtaLink": "/degree-completion/build-plan-quiz"
+		},
+		"veryReady": {
+			"title": "When it comes to college, you're",
+			"result": "Very Ready!",
+			"detailedDescription": "<p><strong>Well done!</strong> Your results show that you're very ready to resume or start your educational journey. You have a solid foundation in many areas essential for academic success.</p><p>While there might be a few areas to work on or adjust, you're certainly on the right track. Keep refining those skills and seek resources or support where needed, and you'll thrive in any academic setting!</p>",
+			"needHelpTitle": "Need help figuring out where to start?",
+			"needHelpCtaLabel": "Get a Personalized Plan",
+			"needHelpCtaLink": "/degree-completion/build-plan-quiz"
+		},
+		"extremelyReady": {
+			"title": "When it comes to college, you're",
+			"result": "Extremely Ready!",
+			"detailedDescription": "<p><strong>Congratulations!</strong> Your results indicate that you're extremely prepared to dive back into the academic world. You've showcased strengths in key areas such as time management, motivation, and support systems, which are crucial for success in higher education.</p><p>Remember, while you're well-prepared, every educational journey comes with its unique challenges. Stay adaptive, keep that confidence high, and embark on this exciting chapter!</p>",
+			"needHelpTitle": "Need help figuring out where to start?",
+			"needHelpCtaLabel": "Get a Personalized Plan",
+			"needHelpCtaLink": "/degree-completion/build-plan-quiz"
+		}
+	}
 }
