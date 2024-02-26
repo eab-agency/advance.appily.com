@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import {
 	Accordion,
@@ -15,13 +15,20 @@ import {
 import MainLogo from "@/components/Header/MainLogo";
 import { useUser } from "@/context/context";
 import data from "@/data/careers-healthcare.json";
+import percentageSplit from "@/lib/percentageSplit";
 
 /* eslint-disable react/no-danger */
 const HealthCareSeoPage = () => {
 	const { setVertical, vertical } = useUser();
 	useEffect(() => {
 		setVertical("Health Care");
-	}, []);
+	}, [setVertical]);
+	const [inPercentageRange, setInPercentageRange] = useState(false);
+	useEffect(() => {
+		// Move the randomization logic to the client side
+		setInPercentageRange(percentageSplit(0.25));
+	  }, []);
+
 	const reasonsArray = data.whyChoose.reasons;
 	const rightCareerArray = data.rightCareer[0].reasons;
 	const rightCareerList = rightCareerArray.map((reason, index) => (
@@ -75,12 +82,21 @@ const HealthCareSeoPage = () => {
 								__html: data.quizSection.content,
 							}}
 						/>
+						{inPercentageRange ? (
 						<Button
+							type="button"
+							label="Take the Quiz +"
+							href="https://my.appilyqa.com/register/quiz/healthcarecareers1/"
+							className="button btn-primary btn-click-quiz"
+						/>
+						) : (
+							<Button
 							type="button"
 							label={data.quizSection.buttonText}
 							href="/careers/healthcare/quiz/start"
 							className="button btn-primary btn-click-quiz"
 						/>
+						)}
 					</div>
 				</div>
 			</section>

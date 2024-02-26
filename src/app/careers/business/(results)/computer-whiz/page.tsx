@@ -31,7 +31,7 @@ export default function Page() {
 	const { setVertical, vertical } = useUser();
 	useEffect(() => {
 		setVertical("Business");
-	}, []);
+	}, [setVertical]);
 	return data ? (
 		<>
 			<div className="resultContent">
