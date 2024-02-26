@@ -13,11 +13,13 @@ function Question({ handleAnswer, question, lastQuestion }) {
 
   return (
     <>
-      <h2
+    <div className="question">
+        <h2
         className="question-copy"
         dangerouslySetInnerHTML={{ __html: question.question }}
-      />
-      <h3 dangerouslySetInnerHTML={{ __html: question.description }} />
+        />
+        <p className="question-description" dangerouslySetInnerHTML={{ __html: question.description }} />
+    </div>
       <ul className={`${styles.questions} ${styles[questionNumeral]}`}>
         {question.answers.map((answer, index) => (
           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>

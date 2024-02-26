@@ -1,0 +1,138 @@
+@use "sass:color";
+
+.scoreCard {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  gap: 0.5em;
+  padding: 0.2em 0.5em;
+  background-color: rgb(34 34 34);
+  z-index: 100;
+  border: 1px solid black;
+  margin-bottom: 2em;
+
+  p {
+    font-size: 0.9rem;
+    font-family: monospace;
+    color: white;
+    margin: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: block;
+      font-family: monospace;
+      font-weight: bold;
+      color: #00ff12;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      border-left: 2px dotted rgb(111, 111, 111);
+      padding: 0.1em 0.8em;
+    }
+  }
+}
+
+.containerStyles {
+  display: block;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgb(34 34 34);
+  padding: 0.2rem;
+  border-top: 1px solid black;
+  transition: all 0.3s ease;
+  padding-left: 2em;
+  transform: translateY(100%);
+
+  .devInfoContainer {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+  }
+
+  &.open {
+    transform: translateY(0);
+
+    .devBoxOpener {
+      &::after {
+        transform: rotate(135deg);
+        top: -0.2em;
+      }
+    }
+  }
+
+  p {
+    display: block;
+    margin: 0;
+    color: white;
+    font-size: 0.9rem;
+    border-right: 1px dotted rgb(111, 111, 111);
+    padding: 0.5em 0.8em;
+    font-family: monospace;
+  }
+}
+
+.locationValue {
+  font-weight: bold;
+  color: #00ff12;
+  text-transform: uppercase;
+}
+
+.selectState {
+  display: block;
+  margin: 0;
+  color: white;
+  font-size: 0.9rem;
+  border-right: 1px dotted rgb(111, 111, 111);
+  padding: 0.5em 0.8em;
+  font-family: monospace;
+}
+
+.devBoxOpener {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 1em;
+  transform: translateY(-100%);
+  z-index: 9999;
+  background-color: rgb(34 34 34);
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 0.8em 1em;
+  color: white;
+  gap: 1em;
+  font-weight: bold;
+  font-family: monospace;
+  text-transform: uppercase;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-right: 3px solid #00ff12;
+    border-top: 3px solid #00ff12;
+    transform: rotate(-45deg);
+    top: 0.2em;
+    position: relative;
+  }
+
+  &:hover {
+    background-color: #00ff12;
+    color: black;
+
+    &::after {
+      border-color: black;
+    }
+  }
+}

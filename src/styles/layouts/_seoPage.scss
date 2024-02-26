@@ -22,7 +22,7 @@
     }
 
     h1 {
-      padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+      // padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
       padding-block: clamp(tokens.$padding-m, 6vw, tokens.$padding-xxxxl);
 
       @media (min-width: tokens.$mq-900) {
@@ -71,6 +71,16 @@
           border-bottom-left-radius: 100%;
         }
       }
+    }
+  }
+
+  .content-container {
+    padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+    flex: 1 0 40%;
+
+    p {
+      font-size: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+      color: var(--c-bodyPrimary);
     }
   }
 }
@@ -252,6 +262,7 @@
         box-shadow: -0.5rem 0.5rem 0 var(--c-shadow2);
         color: var(--c-bodyPrimary);
         padding: clamp(tokens.$padding-m, 3vw, tokens.$padding-xxl);
+        flex: 1 1 calc(50% - clamp(1rem, 6vw, 4rem));
 
         .icon-card-head {
           display: flex;
@@ -413,5 +424,16 @@
   h3 {
     font-size: clamp(tokens.$size-6, 3vw, tokens.$size-7);
     font-weight: tokens.$fontWeight-normal;
+  }
+}
+
+.buttons-group {
+  display: flex;
+  justify-content: center;
+  gap: clamp(tokens.$size-2, 4vw, tokens.$size-6);
+  margin-top: clamp(tokens.$size-4, 4vw, tokens.$size-8);
+
+  &.stacked {
+    flex-direction: column;
   }
 }

@@ -18,7 +18,8 @@
 .container {
   display: flex;
   align-items: center;
-  max-width: tokens.$mq-1500;
+  justify-content: space-between;
+  // max-width: tokens.$mq-1500;
   margin: 0 auto;
   padding-inline: clamp(tokens.$padding-m, 5vw, tokens.$padding-xl);
   gap: clamp(tokens.$size-2, 5vw, tokens.$size-7);

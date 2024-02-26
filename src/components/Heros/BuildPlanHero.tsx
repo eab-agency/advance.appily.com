@@ -33,6 +33,7 @@ export default function BuildPlanHero({ data }: BuildPlanHeroProps) {
             alt={data.image.altText}
             width={400}
             height={400}
+            priority={true}
           />
         </figure>
       </div>

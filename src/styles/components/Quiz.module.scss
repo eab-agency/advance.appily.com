@@ -14,11 +14,12 @@
   padding-inline: clamp(tokens.$size-4, 8vw, tokens.$size-10);
 
   .quizContentHead {
-    margin-bottom: 3em;
+    margin-bottom: clamp(tokens.$size-5, 8vw, tokens.$size-8);
 
     span {
       color: var(--c-bodySecondary);
-      font-size: 1.5rem;
+      font-size: clamp(tokens.$size-4, 3vw, tokens.$size-6);
+      line-height: 1.2;
       font-weight: 600;
     }
   }
@@ -30,10 +31,6 @@
     padding: 0;
   }
 }
-
-// .deco-image {
-//     @include layouts.decoImage;
-// }
 
 .questionsCounter {
   display: block;
