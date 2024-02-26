@@ -169,7 +169,7 @@ const CareersSeoPage = () => {
                 fits your goals and skills!
               </p>
               <p>
-                In today's dynamic job market, finding the right career path can
+                In today&apos;s dynamic job market, finding the right career path can
                 be a daunting task. Appily understands the importance of a
                 fulfilling and purpose-driven career.{" "}
                 <strong>
