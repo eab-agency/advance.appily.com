@@ -1,57 +1,53 @@
-"use client";
+// "use client";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 import {
   Button,
-  CarouselWithForm,
   Stats,
   StickyCta,
   WhatIsCappex,
 } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";
-import { useUser } from "@/context/context";
 import data from "@/data/careers-adc.json";
+
+import PageHero from "@/components/Heros/PageHero";
+import { mergeOpenGraph, mergeTwitter } from "@/seo";
+import { Metadata } from "next";
+
+const title = data.metaData.title;
+const description = data.metaData.description;
+
+export const metadata: Metadata = {
+  title: title,
+  description: description,
+  openGraph: mergeOpenGraph({
+    title: title,
+    description: description,
+  }),
+  twitter: mergeTwitter({
+    title: title,
+    description: description,
+  }),
+};
 
 /* eslint-disable react/no-danger */
 const BusinessSeoPage = () => {
-  const { setVertical } = useUser();
-  useEffect(() => {
-    setVertical("ADC");
-  }, []);
-
-  const carouselRef = useRef(null);
-
-  const [themeMode, setThemeMode] = useState("light");
-
-  useEffect(() => {
-    if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
-      setThemeMode("dark");
-    } else {
-      setThemeMode("light");
-    }
-  }, []);
 
   return (
     <>
-      <section className="pageHero">
-        <div className="group center-aligned center-justified">
-          <h1
-            dangerouslySetInnerHTML={{
-              __html: data.pageTitle,
-            }}
-          />
-          <figure className="heroImage">
-            <Image
-              src="/images/appily-adc-hero.jpg"
-              width={1000}
-              height={1000}
-              alt="Business woman working"
-            />
-          </figure>
-        </div>
-      </section>
-
+      <PageHero
+        image={{
+          src: "/images/appily-adc-hero.jpg",
+          alt: "Business woman working",
+        }}
+      >
+        <h1
+          dangerouslySetInnerHTML={{
+            __html: data.pageTitle,
+          }}
+        />
+      </PageHero>
       <section className="comparison">
         <div className="group column center-aligned center-justified">
           <div className="intro-text">
@@ -70,12 +66,9 @@ const BusinessSeoPage = () => {
           <div className="infograph row cols-2">
             <IconCard
               title={data.introComparison.cards[0].card.title}
-              iconUrl={
-                themeMode === "dark"
-                  ? data.introComparison.cards[0].card.iconLight
-                  : data.introComparison.cards[0].card.iconDark
-              }
-              iconAlt="ROI (Return on Investment) icon"
+              iconUrl={data.introComparison.cards[0].card.iconUrl}
+              iconAlt={data.introComparison.cards[0].card.iconAlt}
+              darkMode={true}
               className="roi-card"
             >
               <div
@@ -93,12 +86,9 @@ const BusinessSeoPage = () => {
 
             <IconCard
               title={data.introComparison.cards[1].card.title}
-              iconUrl={
-                themeMode === "dark"
-                  ? data.introComparison.cards[1].card.iconLight
-                  : data.introComparison.cards[1].card.iconDark
-              }
-              iconAlt="Career Opportunities icon"
+              iconUrl={data.introComparison.cards[1].card.iconUrl}
+              iconAlt={data.introComparison.cards[1].card.iconAlt}
+              darkMode={true}
               className="career-card"
             >
               <div
@@ -116,10 +106,6 @@ const BusinessSeoPage = () => {
           </div>
         </div>
       </section>
-
-      {/* <div id="explore-your-school-matches" ref={carouselRef}>
-        <CarouselWithForm formId="11" data={data.carouselData} />
-      </div> */}
 
       <section className="answersQuestionsSection column bgfilled imgTextSection">
         <header className="group column intro-group">
@@ -225,7 +211,7 @@ const BusinessSeoPage = () => {
         <Stats stats={data.statsAppily} className="stats-section" />
       </WhatIsCappex>
 
-      <StickyCta />
+      <StickyCta ctaLabel="Get Your Back-to-School Plan" />
     </>
   );
 };

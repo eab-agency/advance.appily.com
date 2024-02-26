@@ -6,20 +6,20 @@ import percentageSplit from "@/lib/percentageSplit";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
-const title = "Define Your Future in Health Care";
-const description = "Appily Health Care Quiz";
+const title = "Health Care Career Quiz";
+const description = "Take our free quiz, Define Your Future in Health Care, to see which career and degree paths might be right for you.";
 
 export const metadata: Metadata = {
-	title: title,
-	description: description,
-	openGraph: mergeOpenGraph({
-		title: title,
-		description: description,
-	}),
-	twitter: mergeTwitter({
-		title: title,
-		description: description,
-	}),
+  title: title,
+  description: description,
+  openGraph: mergeOpenGraph({
+    title: title,
+    description: description,
+  }),
+  twitter: mergeTwitter({
+    title: title,
+    description: description,
+  }),
 };
 
 export default function QuizLandingPage() {

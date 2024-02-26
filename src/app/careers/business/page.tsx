@@ -1,27 +1,39 @@
-"use client";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 import {
   Accordion,
   Button,
-  CarouselWithForm,
-  Header,
   Stats,
   StickyCta,
   Testimonial,
-  WhatIsCappex,
 } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";
-import { useUser } from "@/context/context";
 import data from "@/data/careers-business.json";
+
+import PageHero from "@/components/Heros/PageHero";
+import { mergeOpenGraph, mergeTwitter } from "@/seo";
+import { Metadata } from "next";
+
+const title = data.metaData.title;
+const description = data.metaData.description;
+
+export const metadata: Metadata = {
+  title: title,
+  description: description,
+  openGraph: mergeOpenGraph({
+    title: title,
+    description: description,
+  }),
+  twitter: mergeTwitter({
+    title: title,
+    description: description,
+  }),
+};
+
 
 /* eslint-disable react/no-danger */
 const BusinessSeoPage = () => {
-  const { setVertical } = useUser();
-  useEffect(() => {
-    setVertical("Business");
-  }, []);
   const reasonsArray = data.whyChoose.reasons;
   const rightCareerArray = data.rightCareer[0].reasons;
   const rightCareerList = rightCareerArray.map((reason, index) => (
@@ -35,46 +47,30 @@ const BusinessSeoPage = () => {
     </li>
   ));
 
-  const carouselRef = useRef(null);
-
-  const [themeMode, setThemeMode] = useState("light");
-
-  useEffect(() => {
-    if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
-      setThemeMode("dark");
-    } else {
-      setThemeMode("light");
-    }
-  }, []);
 
   return (
     <>
-      <section className="pageHero">
-        <div className="group center-aligned center-justified">
-          <h1
-            dangerouslySetInnerHTML={{
-              __html: data.pageTitle,
-            }}
-          />
-          <figure className="heroImage">
-            <Image
-              src="/images/business-hero-image.jpg"
-              width={1000}
-              height={1000}
-              alt="Business woman wor"
-            />
-          </figure>
-        </div>
-      </section>
+      <PageHero
+        image={{
+          src: data.pageHero.image.src,
+          alt: data.pageHero.image.alt,
+        }}
+      >
+        <h1
+          dangerouslySetInnerHTML={{
+            __html: data.pageTitle,
+          }}
+        />
+      </PageHero>
       <section className="quizSection">
         <div className="group center-aligned row cols-2">
           <div className="column">
             <figure className="highlighted-img">
               <Image
-                src="/images/take-our-free-quiz.jpg"
+                src={data.quizSection.image.src}
                 width={480}
                 height={480}
-                alt="Profesional man researching online"
+                alt={data.quizSection.image.alt}
               />
             </figure>
           </div>
@@ -88,7 +84,7 @@ const BusinessSeoPage = () => {
             <Button
               appearance="primary"
               label={data.quizSection.buttonText}
-              href="/careers/business/quiz"
+              href={data.quizSection.buttonLink}
               className="button btn-primary btn-click-quiz"
             />
           </div>
@@ -105,10 +101,7 @@ const BusinessSeoPage = () => {
         <div className="group center-aligned cols-2">
           <div className="column">
             <div className="intro">
-              <h2>
-                MBA vs. Specific Business Master’s Degrees:{" "}
-                <strong>What's the Difference?</strong>
-              </h2>
+              <h2 dangerouslySetInnerHTML={{ __html: data.whyChoose.title }} />
               <p
                 dangerouslySetInnerHTML={{
                   __html: data.whyChoose.description,
@@ -131,10 +124,10 @@ const BusinessSeoPage = () => {
           <div className="column">
             <figure className="highlighted-img">
               <Image
-                src="/images/whats-the-difference-mba-specific-master.jpg"
+                src={data.whyChoose.image.src}
                 width={480}
                 height={480}
-                alt="Man using a tablet device"
+                alt={data.whyChoose.image.alt}
               />
             </figure>
           </div>
@@ -146,29 +139,15 @@ const BusinessSeoPage = () => {
       <section className="comparison">
         <div className="group column center-aligned center-justified">
           <div className="intro-text">
-            <h2>
-              MBA vs. Specific Business Master's Degrees:{" "}
-              <strong>Maximizing Your Career Investment</strong>
-            </h2>
-            <p>
-              In the pursuit of advancing one's career in the dynamic realm of
-              business, the choice between pursuing a Master of Business
-              Administration (MBA) or a specialized business master's degree is
-              pivotal. Both pathways offer distinct advantages, but
-              understanding the nuances of their respective Return on Investment
-              (ROI) and career prospects is essential for informed
-              decision-making.
-            </p>
+            <h2 dangerouslySetInnerHTML={{ __html: data.comparisonSection.title }} />
+            <p dangerouslySetInnerHTML={{ __html: data.comparisonSection.description }} />
           </div>
 
           <div className="infograph row cols-2">
             <IconCard
               title="ROI (Return on Investment):"
-              iconUrl={
-                themeMode === "dark"
-                  ? "/images/roi-icon-light.svg"
-                  : "/images/roi-icon.svg"
-              }
+              iconUrl="/images/roi-icon.svg"
+              darkMode={true}
               iconAlt="ROI (Return on Investment) icon"
               className="roi-card"
             >
@@ -190,11 +169,8 @@ const BusinessSeoPage = () => {
 
             <IconCard
               title="Career Opportunities:"
-              iconUrl={
-                themeMode === "dark"
-                  ? "/images/career-opportunity-icon-light.svg"
-                  : "/images/career-opportunity-icon.svg"
-              }
+              iconUrl="/images/career-opportunity-icon.svg"
+              darkMode={true}
               iconAlt="Career Opportunities icon"
               className="career-card"
             >
@@ -215,23 +191,15 @@ const BusinessSeoPage = () => {
         </div>
       </section>
 
-      {/* <div id="explore-your-school-matches" ref={carouselRef}>
-        <CarouselWithForm formId="8" />
-      </div> */}
-
-      <WhatIsCappex>
-        <Stats stats={data.statsAppily} className="stats-section" />
-      </WhatIsCappex>
-
       <section className="takeQuiz full-content">
         <div className="group row">
           <div className="column">
             <figure>
               <Image
-                src="/images/ready-to-find-your-role.jpg"
+                src={data.takeQuiz.image.src}
                 width={900}
                 height={900}
-                alt="Take our free quiz"
+                alt={data.takeQuiz.image.alt}
               />
             </figure>
           </div>
@@ -241,13 +209,13 @@ const BusinessSeoPage = () => {
             <Button
               type="button"
               label={data.takeQuiz.buttonText}
-              href="/careers/business/quiz"
+              href={data.takeQuiz.buttonLink}
               className="button btn-primary btn-click-quiz"
             />
           </div>
         </div>
       </section>
-      <StickyCta />
+      <StickyCta ctaLabel="Take the Business Career Quiz" />
     </>
   );
 };

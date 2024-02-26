@@ -58,6 +58,24 @@
 }
 
 .questions-container {
+  .question {
+    margin-bottom: 3em;
+
+    h2 {
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      display: block;
+      font-family: tokens.$f-sans;
+      font-weight: 300;
+      font-size: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+      line-height: 1.2;
+      padding-left: 0.5em;
+      border-left: 2px solid var(--c-orange-300);
+    }
+  }
+
   ul {
     list-style: none;
     display: flex;

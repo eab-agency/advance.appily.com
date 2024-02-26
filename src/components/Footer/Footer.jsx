@@ -22,11 +22,19 @@ const Footer = () => {
     <footer className={styles.pageFooter}>
       <div className={styles.wrapper}>
         <div className={styles.legalInfo}>
+          <div className={styles.logoContainer}>
           <figure className={styles.logo}>
             <Image src="/images/appily-logo.svg" alt="Appily Logo" fill />
           </figure>
-          <div className={styles.legalLinks}>
-            <ul>
+          <div className={styles.copyright}>
+            <p>
+              © {new Date().getFullYear()} All rights reserved.{" "}
+              <a href="https://www.appily.com">www.Appily.com</a>
+            </p>
+          </div>
+          </div>
+          <nav className={styles.legalLinks}>
+            <ul className="footer-col-1">
               <li>
                 <a
                   href="https://www.appily.com/about"
@@ -45,6 +53,8 @@ const Footer = () => {
                   Terms and Conditions
                 </a>
               </li>
+              {/* </ul>
+              <ul className="footer-col-2"> */}
               <li>
                 <a
                   href="https://www.appily.com/privacy-policy"
@@ -63,6 +73,9 @@ const Footer = () => {
                   California Privacy Notice
                 </a>
               </li>
+              {/* </ul>
+              <ul className="footer-col-3"> */}
+
               <li>
                 <a
                   href="https://www.appily.com/your-privacy-rights"
@@ -81,6 +94,8 @@ const Footer = () => {
                   Data Attribution
                 </a>
               </li>
+              {/* </ul>
+              <ul className="footer-col-4"> */}
               <li>
                 <Button
                   type="button"
@@ -90,14 +105,10 @@ const Footer = () => {
                 />
               </li>
             </ul>
-          </div>
-          <div className={styles.copyright}>
-            <p>
-              © {new Date().getFullYear()} All rights reserved.{" "}
-              <a href="https://www.appily.com">www.Appily.com</a>
-            </p>
-          </div>
+
+          </nav>
         </div>
+
       </div>
     </footer>
   );
