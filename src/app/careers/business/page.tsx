@@ -160,7 +160,7 @@ const BusinessSeoPage = () => {
                 Higher starting salaries and potential for significant long-term
                 earnings.
               </p>
-              <h4>Specific Business Master's:</h4>
+              <h4>Specific Business Master&apos;s:</h4>
               <p>
                 Good ROI, especially for those with a clear career path in a
                 specialized field (e.g., finance, accounting).
@@ -180,7 +180,7 @@ const BusinessSeoPage = () => {
                 entrepreneurship).
               </p>
               <p>Versatile skills for career advancement.</p>
-              <h4>Specific Business Master's:</h4>
+              <h4>Specific Business Master&apos;s:</h4>
               <p>
                 Specialized education in a particular field (e.g., finance,
                 accounting).
