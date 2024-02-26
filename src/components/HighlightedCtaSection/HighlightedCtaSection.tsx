@@ -65,7 +65,7 @@ export default function HighlightedCtaSection({ highlightedCtaSectionData, track
         <div className="contentWrapper">
           <h2>Ready to Make a Plan?</h2>
           <p>
-            No matter where you're at right now, a tailored plan can make all the difference. From pinpointing the right degree to uncovering financial aids and job prospects, we're here to help guide your next steps.
+            No matter where you&apos;re at right now, a tailored plan can make all the difference. From pinpointing the right degree to uncovering financial aids and job prospects, we&apos;re here to help guide your next steps.
           </p>
           <Button href="build-plan-quiz" className="button btn-primary" label="Make My Back-to-School Plan" />
         </div>
