@@ -54,7 +54,7 @@ export default function QuizLandingPage() {
             </p>
             <p>
               <strong>
-                In less than three minutes, you could discover which type of
+                In less than three minutes, you could discover which type of{" "}
                 education career could be a good fit for you.
               </strong>{" "}
               We’ll also connect you with schools near you that offer degrees to

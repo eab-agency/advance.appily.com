@@ -3,9 +3,9 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 16
-        - nvm use 16
-        - nvm alias default 16
+        - nvm install 18
+        - nvm use 18
+        - nvm alias default 18
         - yarn install
     build:
       commands:

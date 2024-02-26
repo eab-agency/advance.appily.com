@@ -46,7 +46,7 @@ export default function QuizLandingPage() {
               your skills to a new or more advanced role.
             </p>
             <p>
-              In less than three minutes, you could discover which type of
+              In less than three minutes, you could discover which type of{" "}
               business career could be a good fit for you. We’ll also connect
               you with schools near you that offer degrees to help you reach
               your goals..
