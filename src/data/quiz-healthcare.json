@@ -27,13 +27,6 @@
           "label": "PhD"
         },
         {
-          "answer": "Certificate",
-          "personality": "initial",
-          "weight": 1,
-          "value": "5",
-          "label": "Certificate"
-        },
-        {
           "answer": "Professional License",
           "personality": "initial",
           "weight": 1,

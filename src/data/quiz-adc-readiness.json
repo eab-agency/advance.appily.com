@@ -35,13 +35,6 @@
           "label": "PhD"
         },
         {
-          "answer": "Earning a certificate.",
-          "personality": "initial",
-          "weight": 1,
-          "value": "5",
-          "label": "Certificate"
-        },
-        {
           "answer": "Pursuing professional licensure.",
           "personality": "initial",
           "weight": 1,
