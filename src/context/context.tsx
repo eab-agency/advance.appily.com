@@ -26,11 +26,12 @@ interface UserLocationContextProps {
 			notUS: boolean;
 		} | null>
 	>;
+	globalPrivacyControl: boolean;
 	vertical: string;
 	setVertical: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const UserLocationContext = createContext<UserLocationContextProps>(null!);
+const UserLocationContext = createContext<UserLocationContextProps>({null!});
 
 function ContextProvider({ children }: { children: React.ReactNode }) {
 	const [matchedSchools, setMatchedSchools] = useState<any[]>([]);

@@ -66,8 +66,7 @@ export const fetchCarouselCards = async (): Promise<CarouselCard[]> => {
 export const fetchCarouselCardsByStateAndLeadType = async (
 	incomingLocations?: string[],
 	leadTypeId?: string,
-): Promise<CarouselCard[]> => {
-	// console.log("🟡🟡🟡🟡 ~ file: index.ts:45 ~ leadTypeId:", leadTypeId);
+): Promise<CarouselCard[] | undefined> => {
 
 	if (leadTypeId) {
 		const { data } = await fetch(
@@ -90,6 +89,8 @@ export const fetchCarouselCardsByStateAndLeadType = async (
 
 		return data?.CarouselCards?.docs;
 	}
+
+	return undefined;
 };
 
 export const fetchReaminingCarouselCards = async (

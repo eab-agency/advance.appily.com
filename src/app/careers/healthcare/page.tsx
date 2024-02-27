@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 import {
   Accordion,
@@ -35,11 +35,8 @@ export const metadata: Metadata = {
 
 /* eslint-disable react/no-danger */
 const HealthCareSeoPage = () => {
-	const [inPercentageRange, setInPercentageRange] = useState(false);
-	useEffect(() => {
-		// Move the randomization logic to the client side
-		setInPercentageRange(percentageSplit(0.25));
-	  }, []);
+	
+    const inPercentageRange = percentageSplit(0.25); 
 
   const reasonsArray = data.whyChoose.reasons;
   const rightCareerArray = data.rightCareer.reasons;
