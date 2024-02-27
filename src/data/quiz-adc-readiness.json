@@ -35,13 +35,6 @@
           "label": "PhD"
         },
         {
-          "answer": "Pursuing professional licensure.",
-          "personality": "initial",
-          "weight": 1,
-          "value": "6",
-          "label": "Licensure"
-        },
-        {
           "answer": "Transferring to complete a degree (currently in undergrad).",
           "personality": "initial",
           "weight": 1,

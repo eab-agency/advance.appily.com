@@ -27,13 +27,6 @@
           "label": "PhD"
         },
         {
-          "answer": "Professional License",
-          "personality": "initial",
-          "weight": 1,
-          "value": "6",
-          "label": "Professional License"
-        },
-        {
           "answer": "Undergraduate degree, as a transfer student",
           "personality": "initial",
           "weight": 1,
