@@ -24,7 +24,7 @@ export default function Page() {
 	const { setVertical, vertical } = useUser();
 	useEffect(() => {
 		setVertical("ADC");
-	}, []);
+	}, [setVertical]);
 	return data ? (
 		<>
 			<div className="resultContent">

@@ -113,16 +113,7 @@ const AcquiaFormHandle = ({
 
 			setFieldsProcessed(true);
 		}
-	}, [
-		answers.answers,
-		answers.highestScorePersonality,
-		theFields,
-		user,
-		fieldsProcessed,
-		school,
-		utmSource,
-		answers.areaOfInterest,
-	]);
+	}, [answers.answers, answers.highestScorePersonality, theFields, user, fieldsProcessed, school, utmSource, answers.areaOfInterest, formValues, location.region_iso_code]);
 
 	if (error) return <p>Error loading form.</p>;
 	if (!acsForm) return <p className="loading">Loading...</p>;
@@ -279,7 +270,7 @@ const AcquiaFormHandle = ({
 						<h2>Thank you for your submission!</h2>
 						{isDevMode() && (
 							<p>
-								If you weren't in dev mode, you would be redirecting to{" "}
+								If you weren&apos;t in dev mode, you would be redirecting to{" "}
 								<Link href={redirectTo}>{redirectTo}</Link>
 							</p>
 						)}

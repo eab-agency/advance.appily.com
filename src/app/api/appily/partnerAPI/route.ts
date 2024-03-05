@@ -31,10 +31,10 @@ export async function POST(request: Request) {
 		formattedData.partnerKey = partnerKey || "";
 
 		if (process.env.NODE_ENV === "development") {
-			// console.log(
-			// 	"🚀 ~ file: route.ts:25 ~ POST ~ formattedData in development mode:",
-			// 	JSON.stringify(formattedData),
-			// );
+			console.log(
+				"🚀 ~ file: route.ts:25 ~ POST ~ formattedData in development mode:",
+				JSON.stringify(formattedData),
+			);
 		}
 
 		// logger.error("info bar: formattedData", JSON.stringify(formattedData));
