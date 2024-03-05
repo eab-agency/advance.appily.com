@@ -84,12 +84,22 @@ const HealthCareSeoPage = () => {
                 __html: data.quizSection.content,
               }}
             />
-            <Button
+
+{inPercentageRange ? (
+							<Button
+							label="Get Started +"
+							href="https://my.appilyuat.com/register/quiz/healthcarecareers1/"
+							className="button btn-primary btn-click-quiz"
+							/>
+									) : (
+										<Button
               type="button"
               label={data.quizSection.buttonText}
               href={data.quizSection.buttonLink}
               className="button btn-primary btn-click-quiz"
             />
+											)
+											}
           </div>
         </div>
       </section>
@@ -159,12 +169,23 @@ const HealthCareSeoPage = () => {
           <div className="content column">
             <h2>{data.takeQuiz.title}</h2>
             <p>{data.takeQuiz.description}</p>
-            <Button
+
+{inPercentageRange ? (
+							<Button
+							label="Get Started +"
+							href="https://my.appilyuat.com/register/quiz/healthcarecareers1/"
+							className="button btn-primary btn-click-quiz"
+							/>
+									) : (
+										<Button
               type="button"
-              label={data.takeQuiz.buttonText}
+              label="boss"
               href={data.takeQuiz.buttonLink}
               className="button btn-primary btn-click-quiz"
             />
+											)
+											}
+
           </div>
         </div>
       </section>
