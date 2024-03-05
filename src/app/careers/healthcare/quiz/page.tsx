@@ -56,7 +56,7 @@ export default function QuizLandingPage() {
 							<Button
 							label="Get Started +"
 							appearance="primary"
-							href="https://my.appilyqa.com/register/quiz/healthcarecareers1/"
+							href="https://my.appilyuat.com/register/quiz/healthcarecareers1/"
 							className="button btn-primary btn-click-quiz"
 							/>
 									) : (
