@@ -26,6 +26,7 @@ interface UserLocationContextProps {
 			notUS: boolean;
 		} | null>
 	>;
+	globalPrivacyControl: boolean;
 	vertical: string;
 	setVertical: React.Dispatch<React.SetStateAction<string>>;
 }

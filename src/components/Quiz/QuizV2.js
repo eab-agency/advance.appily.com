@@ -42,7 +42,7 @@ export function QuizV2({
 		});
 
 		setRandomizedQuestions(randomized);
-	}, [randomizeAnswers]);
+	}, [quizData.questions, randomizeAnswers]);
 
 	const [quizState, setQuizState] = useState({
 		currentQuestionIdx: 0,

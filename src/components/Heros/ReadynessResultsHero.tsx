@@ -44,7 +44,7 @@ export default function ReadynessResultsHero({ data, animationData, animationSta
 
   useEffect(() => {
     animationState?.(animationStateValue);
-  }, [animationStateValue]);
+  }, [animationState, animationStateValue]);
 
   const handleComplete = () => {
     setAnimationStateValue(true);

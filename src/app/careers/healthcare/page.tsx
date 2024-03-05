@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 
 import {
   Accordion,
@@ -8,6 +9,7 @@ import {
   Testimonial,
 } from "@/components";
 import data from "@/data/careers-healthcare.json";
+import percentageSplit from "@/lib/percentageSplit";
 
 
 import PageHero from "@/components/Heros/PageHero";
@@ -33,6 +35,9 @@ export const metadata: Metadata = {
 
 /* eslint-disable react/no-danger */
 const HealthCareSeoPage = () => {
+	
+    const inPercentageRange = percentageSplit(0.25); 
+
   const reasonsArray = data.whyChoose.reasons;
   const rightCareerArray = data.rightCareer.reasons;
   const rightCareerList = rightCareerArray.map((reason, index) => (
@@ -46,9 +51,9 @@ const HealthCareSeoPage = () => {
     </li>
   ));
 
-  return (
-    <>
-      <PageHero
+	return (
+		<>
+			<PageHero
         image={{
           src: data.pageHero.image.src,
           alt: data.pageHero.image.alt,
@@ -79,16 +84,26 @@ const HealthCareSeoPage = () => {
                 __html: data.quizSection.content,
               }}
             />
-            <Button
+
+{inPercentageRange ? (
+							<Button
+							label="Get Started +"
+							href="https://my.appily.com/register/quiz/healthcarecareers1/"
+							className="button btn-primary btn-click-quiz"
+							/>
+									) : (
+										<Button
               type="button"
               label={data.quizSection.buttonText}
               href={data.quizSection.buttonLink}
               className="button btn-primary btn-click-quiz"
             />
+											)
+											}
           </div>
         </div>
       </section>
-
+      
       <Stats
         stats={data.stats}
         source={data.statsSource}
@@ -154,12 +169,23 @@ const HealthCareSeoPage = () => {
           <div className="content column">
             <h2>{data.takeQuiz.title}</h2>
             <p>{data.takeQuiz.description}</p>
-            <Button
+
+{inPercentageRange ? (
+							<Button
+							label="Get Started +"
+							href="https://my.appily.com/register/quiz/healthcarecareers1/"
+							className="button btn-primary btn-click-quiz"
+							/>
+									) : (
+										<Button
               type="button"
-              label={data.takeQuiz.buttonText}
+              label="boss"
               href={data.takeQuiz.buttonLink}
               className="button btn-primary btn-click-quiz"
             />
+											)
+											}
+
           </div>
         </div>
       </section>

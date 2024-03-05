@@ -8,9 +8,7 @@
 		"postbuild": "next-sitemap",
 		"start": "next start",
 		"lint": "next lint",
-		"format": "biome format --write ./src",
-		"pull": "networksetup -connectpppoeservice 'Cato Networks VPN' && sleep 2 && git pull",
-		"push": "networksetup -connectpppoeservice 'Cato Networks VPN' && sleep 2 && git push"
+		"format": "biome format --write ./src"
 	},
 	"dependencies": {
 		"@apollo/client": "^3.7.0",

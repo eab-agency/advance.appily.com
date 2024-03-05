@@ -23,7 +23,7 @@ const QuestionsTitle = ({ quizState, questions, titles }) => {
     };
 
     shuffleTitles();
-  }, [titles]);
+  }, [titleIndices, titles]);
 
   // Calculate the current title index based on the quiz state
   let currentTitleIndex = -1;

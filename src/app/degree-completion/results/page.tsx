@@ -63,7 +63,7 @@ export default function ADCResultsPage({
 	const { setVertical, vertical } = useUser();
 	useEffect(() => {
 		setVertical("ADC");
-	}, []);
+	}, [setVertical]);
 
 	const carouselRef = useRef(null);
 	const [animationData, setAnimationData] = useState(null);
@@ -74,7 +74,9 @@ export default function ADCResultsPage({
 	useEffect(() => {
 		const loadAnimationData = async () => {
 			const data = await getAnimationData(score);
-			setAnimationData(data.animationData);
+			if (data) {
+				setAnimationData(data.animationData as any); // Add the correct type for animationData
+			}
 		};
 
 		loadAnimationData();
@@ -147,7 +149,14 @@ export default function ADCResultsPage({
 		<>
 			<div className="resultContent">
 				<AdcResultsHero
-					data={readinessResult2?.data}
+					data={readinessResult2?.data || {
+						title: '',
+						result: '',
+						detailedDescription: '',
+						needHelpTitle: '',
+						needHelpCtaLabel: '',
+						needHelpCtaLink: '',
+					}}
 					animationData={readinessResult2?.animationData}
 					animationState={handleShowContent}
 				/>
@@ -169,19 +178,19 @@ export default function ADCResultsPage({
 									<div className="column">
 										<h2
 											dangerouslySetInnerHTML={{
-												__html: readinessResult2.nextSteps.title,
+												__html: readinessResult2?.nextSteps.title ?? '',
 											}}
 										/>
 										<div
 											dangerouslySetInnerHTML={{
-												__html: readinessResult2.nextSteps.introContent,
+												__html: readinessResult2?.nextSteps.introContent ?? '',
 											}}
 										/>
 										<Button
 											appearance="primary"
 											className="button btn-primary"
-											href={readinessResult2.nextSteps.buttonLink}
-											label={readinessResult2.nextSteps.buttonText}
+											href={readinessResult2?.nextSteps?.buttonLink ?? ''}
+											label={readinessResult2?.nextSteps?.buttonText ?? ''}
 										/>
 									</div>
 									<figure className="column highlighted-img">
@@ -203,25 +212,23 @@ export default function ADCResultsPage({
 										/>
 									</figure>
 									<div className="column featuredCard">
-										<h3>{readinessResult2.nextSteps.steps.title}</h3>
+										<h3>{readinessResult2?.nextSteps.steps.title}</h3>
 										<ul>
-											{readinessResult2.nextSteps.steps.list.map(
-												(step, index) => (
-													<li
-														key={index}
-														className="step"
-														dangerouslySetInnerHTML={{
-															__html: step.step.content || "",
-														}}
-													/>
-												),
-											)}
+											{readinessResult2?.nextSteps?.steps?.list.map((step, index) => (
+												<li
+													key={index}
+													className="step"
+													dangerouslySetInnerHTML={{
+														__html: step.step.content || "",
+													}}
+												/>
+											))}
 										</ul>
 										<Button
 											appearance="primary"
 											className="button btn-primary"
-											href={readinessResult2.nextSteps.steps.buttonLink}
-											label={readinessResult2.nextSteps.steps.buttonText}
+											href={readinessResult2?.nextSteps?.steps?.buttonLink ?? ''}
+											label={readinessResult2?.nextSteps?.steps?.buttonText ?? ''}
 										/>
 									</div>
 								</div>

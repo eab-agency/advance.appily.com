@@ -124,6 +124,32 @@ export function formatFormDataForAppilyPartnerAPI(
 		questionAnswerForms: modifiedQuestionAnswerForms,
 	};
 
+	// biome-ignore lint/style/useConst: <explanation>
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	let studentInfoForm: any = {
+		modalityIds: formData.preferred_modality
+			? [formData.preferred_modality]
+			: [],
+		yearsOfWorkExperience: formData?.years_of_work_experience,
+	};
+
+	if (
+		formData.education_journey__select1 &&
+		formData.education_journey__select1 !== "null" &&
+		formData.education_journey__select1 !== null &&
+		formData.education_journey__select1 !== "x"
+	) {
+		studentInfoForm.levelOfDegreeSeekingId =
+			formData.education_journey__select1;
+	} else if (
+		formData.education_journey__select &&
+		formData.education_journey__select !== "null" &&
+		formData.education_journey__select !== null &&
+		formData.education_journey__select !== "x"
+	) {
+		studentInfoForm.levelOfDegreeSeekingId = formData.education_journey__select;
+	}
+
 	const formattedData: StudentFormData = {
 		partnerExternalId: "",
 		programExternalId: "",
@@ -140,15 +166,7 @@ export function formatFormDataForAppilyPartnerAPI(
 		},
 		studentQuestionAnswerForm,
 		studentTypeId: 3,
-		studentInfoForm: {
-			levelOfDegreeSeekingId:
-				formData.education_journey__select1 ||
-				formData.education_journey__select,
-			modalityIds: formData.preferred_modality
-				? [formData.preferred_modality]
-				: [],
-			yearsOfWorkExperience: formData?.years_of_work_experience,
-		},
+		studentInfoForm: studentInfoForm,
 	};
 
 	// TODO: Uncomment this when we have a phone number field and TCPA finalized in partnerAPI
