@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 export default function QuizLandingPage() {
-	const inPercentageRange = percentageSplit(0.99);
+	const inPercentageRange = percentageSplit(0.25);
 	return (
 		<>
 			<div className="quiz-wrapper">
@@ -56,7 +56,7 @@ export default function QuizLandingPage() {
 							<Button
 							label="Get Started +"
 							appearance="primary"
-							href="https://my.appilyuat.com/register/quiz/healthcarecareers1/"
+							href="https://my.appily.com/register/quiz/healthcarecareers1/"
 							className="button btn-primary btn-click-quiz"
 							/>
 									) : (

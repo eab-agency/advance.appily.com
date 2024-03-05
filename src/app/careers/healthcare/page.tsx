@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 /* eslint-disable react/no-danger */
 const HealthCareSeoPage = () => {
 	
-    const inPercentageRange = percentageSplit(0.99); 
+    const inPercentageRange = percentageSplit(0.25); 
 
   const reasonsArray = data.whyChoose.reasons;
   const rightCareerArray = data.rightCareer.reasons;
@@ -88,7 +88,7 @@ const HealthCareSeoPage = () => {
 {inPercentageRange ? (
 							<Button
 							label="Get Started +"
-							href="https://my.appilyuat.com/register/quiz/healthcarecareers1/"
+							href="https://my.appily.com/register/quiz/healthcarecareers1/"
 							className="button btn-primary btn-click-quiz"
 							/>
 									) : (
@@ -173,7 +173,7 @@ const HealthCareSeoPage = () => {
 {inPercentageRange ? (
 							<Button
 							label="Get Started +"
-							href="https://my.appilyuat.com/register/quiz/healthcarecareers1/"
+							href="https://my.appily.com/register/quiz/healthcarecareers1/"
 							className="button btn-primary btn-click-quiz"
 							/>
 									) : (
