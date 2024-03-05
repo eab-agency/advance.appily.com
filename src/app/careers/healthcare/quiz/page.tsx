@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 export default function QuizLandingPage() {
-	const inPercentageRange = percentageSplit(0.25);
+	const inPercentageRange = percentageSplit(0.99);
 	return (
 		<>
 			<div className="quiz-wrapper">

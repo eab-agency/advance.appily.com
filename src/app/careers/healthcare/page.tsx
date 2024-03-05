@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 /* eslint-disable react/no-danger */
 const HealthCareSeoPage = () => {
 	
-    const inPercentageRange = percentageSplit(0.25); 
+    const inPercentageRange = percentageSplit(0.99); 
 
   const reasonsArray = data.whyChoose.reasons;
   const rightCareerArray = data.rightCareer.reasons;
