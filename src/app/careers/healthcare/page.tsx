@@ -34,7 +34,22 @@ export const metadata: Metadata = {
 
 
 /* eslint-disable react/no-danger */
-const HealthCareSeoPage = () => {
+export default function HealthCareSeoPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
+  // convert searchParams back to a url parameter string
+  const searchParamsString = new URLSearchParams(
+    Object.entries(searchParams).reduce((params, [key, value]) => {
+      if (typeof value === 'string') {
+        params[key] = value;
+      } else if (Array.isArray(value)) {
+        params[key] = value.join(',');
+      }
+      return params;
+    }, {} as Record<string, string>)
+  ).toString();
 	
     const inPercentageRange = percentageSplit(0.25); 
 
@@ -88,7 +103,8 @@ const HealthCareSeoPage = () => {
 {inPercentageRange ? (
 							<Button
 							label="Get Started +"
-							href="https://my.appily.com/register/quiz/healthcarecareers1/"
+              href={`https://my.appily.com/register/quiz/healthcarecareers1/?${searchParamsString}`}
+							// href=`https://my.appily.com/register/quiz/healthcarecareers1/`
 							className="button btn-primary btn-click-quiz"
 							/>
 									) : (
@@ -193,5 +209,3 @@ const HealthCareSeoPage = () => {
     </>
   );
 };
-
-export default HealthCareSeoPage;
