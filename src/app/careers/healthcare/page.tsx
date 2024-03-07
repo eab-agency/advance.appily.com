@@ -179,7 +179,7 @@ const HealthCareSeoPage = () => {
 									) : (
 										<Button
               type="button"
-              label="boss"
+              label={data.takeQuiz.buttonText}
               href={data.takeQuiz.buttonLink}
               className="button btn-primary btn-click-quiz"
             />
