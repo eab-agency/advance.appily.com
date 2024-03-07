@@ -1,13 +1,26 @@
 import { Button } from "@/components";
 import Image from "next/image";
-// eslint-disable-next-line import/no-unresolved
 
-import percentageSplit from "@/lib/percentageSplit";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
+import RandomComponent from "@/hooks/useRandomComponent";
 
 const title = "Health Care Career Quiz";
 const description = "Take our free quiz, Define Your Future in Health Care, to see which career and degree paths might be right for you.";
+
+const ButtonOne = <Button
+label="Get Started +"
+appearance="primary"
+href="https://my.appily.com/register/quiz/healthcarecareers1/"
+className="button btn-primary btn-click-quiz"
+/>
+
+const ButtonTwo = <Button
+label="Get Started"
+appearance="primary"
+href="/careers/healthcare/quiz/start"
+className="button btn-primary btn-click-quiz"
+/>
 
 export const metadata: Metadata = {
   title: title,
@@ -23,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 export default function QuizLandingPage() {
-	const inPercentageRange = percentageSplit(0.25);
+	
 	return (
 		<>
 			<div className="quiz-wrapper">
@@ -51,23 +64,7 @@ export default function QuizLandingPage() {
 							<strong>discover which role could be a good fit for you</strong>
 							—and the steps you can take to advance your career.
 						</p>
-						
-						{inPercentageRange ? (
-							<Button
-							label="Get Started +"
-							appearance="primary"
-							href="https://my.appily.com/register/quiz/healthcarecareers1/"
-							className="button btn-primary btn-click-quiz"
-							/>
-									) : (
-										<Button
-							label="Get Started"
-							appearance="primary"
-							href="/careers/healthcare/quiz/start"
-							className="button btn-primary btn-click-quiz"
-						/>
-											)
-											}
+						<RandomComponent ButtonOne={ButtonOne} ButtonTwo={ButtonTwo} />
 
 					</div>
 					<figure className="column highlighted-img">

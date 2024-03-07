@@ -1,4 +1,4 @@
-function percentageSplit(initialPercentage = 0.5) {
+function percentageSplit(initialPercentage = 0.25) {
     // Generate a random number between 0 and 1
     const randomNum = Math.random();
   
