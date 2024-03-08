@@ -1,15 +1,13 @@
 import { Button } from "@/components";
+import ABButton from "@/components/Button/ABButton";
 import Image from "next/image";
 
-import percentageSplit from "@/lib/percentageSplit";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 import RandomComponent from "@/hooks/useRandomComponent";
 
 const title = "Health Care Career Quiz";
 const description = "Take our free quiz, Define Your Future in Health Care, to see which career and degree paths might be right for you.";
-
-
 
 export const metadata: Metadata = {
   title: title,
@@ -24,31 +22,17 @@ export const metadata: Metadata = {
   }),
 };
 
-export default function QuizLandingPage({
-	searchParams,
-  }: {
-	searchParams: { [key: string]: string | string[] | undefined }
-  }) {
-	// convert searchParams back to a url parameter string
-	const searchParamsString = new URLSearchParams(
-	  Object.entries(searchParams).reduce((params, [key, value]) => {
-		if (typeof value === 'string') {
-		  params[key] = value;
-		} else if (Array.isArray(value)) {
-		  params[key] = value.join(',');
-		}
-		return params;
-	  }, {} as Record<string, string>)
-	).toString();
+export default function QuizLandingPage() {
 	
-	const ButtonOne = <Button
+	
+	const ButtonOne = <ABButton
 	label="Get Started +"
 	appearance="primary"
-	href={`https://my.appily.com/register/quiz/healthcarecareers1/?${searchParamsString}`}
+	href="https://my.appily.com/register/quiz/healthcarecareers1/"
 	className="button btn-primary btn-click-quiz"
 	/>
 	
-	const ButtonTwo = <Button
+	const ButtonTwo = <ABButton
 	label="Get Started"
 	appearance="primary"
 	href="/careers/healthcare/quiz/start"
