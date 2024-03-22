@@ -1,3 +1,5 @@
+'use client'
+
 import NextImage, { StaticImageData } from 'next/image'
 import React from 'react'
 

@@ -43,7 +43,7 @@ export default async function RootLayout({
 				</Suspense>
 				<Providers>
 					<Header links={data.links} />
-					<LocationInDevMode />
+					{/* <LocationInDevMode /> */}
 					<main className="layout-wrapper">{children}</main>
 					<Footer />
 				</Providers>

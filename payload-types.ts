@@ -40,7 +40,7 @@ export interface Page {
   title: string;
   publishedDate?: string;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
+    type: 'none' | 'landingPage' | 'resultPage';
     richText: {
       [k: string]: unknown;
     }[];
@@ -58,7 +58,9 @@ export interface Page {
       };
       id?: string;
     }[];
+    title?: string;
     media: string | Media;
+    animation: string | Media;
   };
   layout: (
     | {
