@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const QuestionsTitle = ({ quizState, questions, titles }) => {
   const [shuffledTitles, setShuffledTitles] = useState([]);
@@ -6,7 +6,10 @@ const QuestionsTitle = ({ quizState, questions, titles }) => {
 
   useEffect(() => {
     // Initialize the title indices when the component mounts
-    setTitleIndices(Array.from({ length: titles.length }, (_, i) => i));
+    // setTitleIndices(Array.from({ length: titles.length }, (_, i) => i));
+    const newTitleIndex = titleIndices[0];
+    const newTitleIndices = titleIndices.filter((_, index) => index !== 0);
+    setTitleIndices(newTitleIndices.concat(newTitleIndex));
 
     const shuffleTitles = () => {
       if (titleIndices.length === 0) {
@@ -17,17 +20,22 @@ const QuestionsTitle = ({ quizState, questions, titles }) => {
       const randomIndex = Math.floor(Math.random() * titleIndices.length);
       const newTitleIndex = titleIndices[randomIndex];
       // Remove the selected index from the list of indices
-      setTitleIndices(prevIndices => prevIndices.filter(idx => idx !== newTitleIndex));
+      setTitleIndices((prevIndices) =>
+        prevIndices.filter((idx) => idx !== newTitleIndex),
+      );
       // Update shuffledTitles with the selected title
-      setShuffledTitles(prevTitles => [...prevTitles, titles[newTitleIndex]]);
+      setShuffledTitles((prevTitles) => [...prevTitles, titles[newTitleIndex]]);
     };
 
     shuffleTitles();
-  }, [titleIndices, titles]);
+  }, [titles]);
 
   // Calculate the current title index based on the quiz state
   let currentTitleIndex = -1;
-  if (quizState.currentQuestionIdx >= 1 && quizState.currentQuestionIdx <= questions.length) {
+  if (
+    quizState.currentQuestionIdx >= 1 &&
+    quizState.currentQuestionIdx <= questions.length
+  ) {
     currentTitleIndex = quizState.currentQuestionIdx + 1; // Adjust to match the array index
   }
 
@@ -36,8 +44,8 @@ const QuestionsTitle = ({ quizState, questions, titles }) => {
       {currentTitleIndex === -1
         ? "Are you ready?"
         : currentTitleIndex === titles.length
-          ? "You're almost there!"
-          : shuffledTitles[currentTitleIndex] || "Keep the momentum going!"}
+        ? "You're almost there!"
+        : shuffledTitles[currentTitleIndex] || "Keep the momentum going!"}
     </span>
   );
 };

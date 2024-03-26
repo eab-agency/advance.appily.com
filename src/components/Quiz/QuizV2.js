@@ -69,6 +69,7 @@ export function QuizV2({
 	}, [resetQuiz]);
 
 	const handleAnswer = (question, answer, associatedField) => {
+		console.log("🚀 ~ handleAnswer ~ associatedField:", associatedField)
 		const updatedAnswers = [
 			...selectedAnswers,
 			{
