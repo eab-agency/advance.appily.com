@@ -87,24 +87,286 @@ export interface Page {
         blockType: 'cta';
       }
     | {
-        backgroundColor?: 'white' | 'black';
+        colorSchema?: 'blackwhite';
+        enableHighlight?: boolean;
+        type?: 'row' | 'column';
+        rows?: {
+          columns?: {
+            size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
+            blocks: (
+              | {
+                  number: string;
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'stats';
+                }
+              | {
+                  author?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  authortitle?: string;
+                  alignment?: 'left' | 'center' | 'right';
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'testimonial';
+                }
+              | {
+                  colorSchema?: 'blackwhite';
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  image: string | Media;
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'career';
+                }
+              | {
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  icon: string | Media;
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'comparison';
+                }
+              | {
+                  numberedItems?: boolean;
+                  accordions?: {
+                    title: string;
+                    richText: {
+                      [k: string]: unknown;
+                    }[];
+                    links?: {
+                      link: {
+                        type?: 'reference' | 'custom';
+                        newTab?: boolean;
+                        reference: {
+                          value: string | Page;
+                          relationTo: 'pages';
+                        };
+                        url: string;
+                        label: string;
+                        appearance?: 'primary' | 'secondary';
+                      };
+                      id?: string;
+                    }[];
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'accordion';
+                }
+              | {
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'richText';
+                }
+              | {
+                  mediaBlockBackgroundColor?: 'white' | 'black';
+                  position?: 'default' | 'fullscreen';
+                  media: string | Media;
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'mediaBlock';
+                }
+              | {
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'ButtonGroup';
+                }
+            )[];
+            id?: string;
+          }[];
+          id?: string;
+        }[];
         columns?: {
           size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
-          richText: {
-            [k: string]: unknown;
-          }[];
-          enableLink?: boolean;
-          link?: {
-            type?: 'reference' | 'custom';
-            newTab?: boolean;
-            reference: {
-              value: string | Page;
-              relationTo: 'pages';
-            };
-            url: string;
-            label: string;
-            appearance?: 'default' | 'primary' | 'secondary';
-          };
+          blocks: (
+            | {
+                number: string;
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'stats';
+              }
+            | {
+                author?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                authortitle?: string;
+                alignment?: 'left' | 'center' | 'right';
+                id?: string;
+                blockName?: string;
+                blockType: 'testimonial';
+              }
+            | {
+                colorSchema?: 'blackwhite';
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                image: string | Media;
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'career';
+              }
+            | {
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                icon: string | Media;
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'comparison';
+              }
+            | {
+                numberedItems?: boolean;
+                accordions?: {
+                  title: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'accordion';
+              }
+            | {
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'richText';
+              }
+            | {
+                mediaBlockBackgroundColor?: 'white' | 'black';
+                position?: 'default' | 'fullscreen';
+                media: string | Media;
+                id?: string;
+                blockName?: string;
+                blockType: 'mediaBlock';
+              }
+            | {
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'ButtonGroup';
+              }
+          )[];
           id?: string;
         }[];
         id?: string;
@@ -158,6 +420,233 @@ export interface Page {
         id?: string;
         blockName?: string;
         blockType: 'archive';
+      }
+    | {
+        colorSchema?: 'blackwhite';
+        enableHighlight?: boolean;
+        rows?: {
+          size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
+          Block: (
+            | {
+                number: string;
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'stats';
+              }
+            | {
+                author?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                authortitle?: string;
+                alignment?: 'left' | 'center' | 'right';
+                id?: string;
+                blockName?: string;
+                blockType: 'testimonial';
+              }
+            | {
+                colorSchema?: 'blackwhite';
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                image: string | Media;
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'career';
+              }
+            | {
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                icon: string | Media;
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'comparison';
+              }
+            | {
+                numberedItems?: boolean;
+                accordions?: {
+                  title: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'accordion';
+              }
+          )[];
+          id?: string;
+        }[];
+        columns?: {
+          size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
+          Block: (
+            | {
+                number: string;
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'stats';
+              }
+            | {
+                author?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                authortitle?: string;
+                alignment?: 'left' | 'center' | 'right';
+                id?: string;
+                blockName?: string;
+                blockType: 'testimonial';
+              }
+            | {
+                colorSchema?: 'blackwhite';
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                image: string | Media;
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'career';
+              }
+            | {
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                icon: string | Media;
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'comparison';
+              }
+            | {
+                numberedItems?: boolean;
+                accordions?: {
+                  title: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'accordion';
+              }
+          )[];
+          id?: string;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'twoColumnBlock';
+      }
+    | {
+        colorSchema?: 'blackwhite';
+        statistics?: {
+          number: string;
+          title?: string;
+          richText: {
+            [k: string]: unknown;
+          }[];
+          id?: string;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'statistics';
       }
   )[];
   slug?: string;
@@ -315,7 +804,7 @@ export interface Post {
   title: string;
   publishedDate?: string;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
+    type: 'none' | 'landingPage' | 'resultPage';
     richText: {
       [k: string]: unknown;
     }[];
@@ -333,7 +822,9 @@ export interface Post {
       };
       id?: string;
     }[];
+    title?: string;
     media: string | Media;
+    animation: string | Media;
   };
   layout: (
     | {
@@ -360,24 +851,286 @@ export interface Post {
         blockType: 'cta';
       }
     | {
-        backgroundColor?: 'white' | 'black';
+        colorSchema?: 'blackwhite';
+        enableHighlight?: boolean;
+        type?: 'row' | 'column';
+        rows?: {
+          columns?: {
+            size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
+            blocks: (
+              | {
+                  number: string;
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'stats';
+                }
+              | {
+                  author?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  authortitle?: string;
+                  alignment?: 'left' | 'center' | 'right';
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'testimonial';
+                }
+              | {
+                  colorSchema?: 'blackwhite';
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  image: string | Media;
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'career';
+                }
+              | {
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  icon: string | Media;
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'comparison';
+                }
+              | {
+                  numberedItems?: boolean;
+                  accordions?: {
+                    title: string;
+                    richText: {
+                      [k: string]: unknown;
+                    }[];
+                    links?: {
+                      link: {
+                        type?: 'reference' | 'custom';
+                        newTab?: boolean;
+                        reference: {
+                          value: string | Page;
+                          relationTo: 'pages';
+                        };
+                        url: string;
+                        label: string;
+                        appearance?: 'primary' | 'secondary';
+                      };
+                      id?: string;
+                    }[];
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'accordion';
+                }
+              | {
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'richText';
+                }
+              | {
+                  mediaBlockBackgroundColor?: 'white' | 'black';
+                  position?: 'default' | 'fullscreen';
+                  media: string | Media;
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'mediaBlock';
+                }
+              | {
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'ButtonGroup';
+                }
+            )[];
+            id?: string;
+          }[];
+          id?: string;
+        }[];
         columns?: {
           size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
-          richText: {
-            [k: string]: unknown;
-          }[];
-          enableLink?: boolean;
-          link?: {
-            type?: 'reference' | 'custom';
-            newTab?: boolean;
-            reference: {
-              value: string | Page;
-              relationTo: 'pages';
-            };
-            url: string;
-            label: string;
-            appearance?: 'default' | 'primary' | 'secondary';
-          };
+          blocks: (
+            | {
+                number: string;
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'stats';
+              }
+            | {
+                author?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                authortitle?: string;
+                alignment?: 'left' | 'center' | 'right';
+                id?: string;
+                blockName?: string;
+                blockType: 'testimonial';
+              }
+            | {
+                colorSchema?: 'blackwhite';
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                image: string | Media;
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'career';
+              }
+            | {
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                icon: string | Media;
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'comparison';
+              }
+            | {
+                numberedItems?: boolean;
+                accordions?: {
+                  title: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'accordion';
+              }
+            | {
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'richText';
+              }
+            | {
+                mediaBlockBackgroundColor?: 'white' | 'black';
+                position?: 'default' | 'fullscreen';
+                media: string | Media;
+                id?: string;
+                blockName?: string;
+                blockType: 'mediaBlock';
+              }
+            | {
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'ButtonGroup';
+              }
+          )[];
           id?: string;
         }[];
         id?: string;

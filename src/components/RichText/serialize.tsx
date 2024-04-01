@@ -19,8 +19,8 @@ type Leaf = {
   [key: string]: unknown
 }
 
-const serialize = (children: Children): React.ReactElement[] =>
-  children.map((node, i) => {
+const serialize = (children?: Children): React.ReactNode[] =>
+  children?.map((node, i) => {
     if (Text.isText(node)) {
       let text = <span dangerouslySetInnerHTML={{ __html: escapeHTML(node.text) }} />
 
@@ -61,21 +61,21 @@ const serialize = (children: Children): React.ReactElement[] =>
 
     switch (node.type) {
       case 'h1':
-        return <h1 key={i}>{serialize(node.children)}</h1>
+        return <h1 key={i}>{serialize(node?.children)}</h1>
       case 'h2':
-        return <h2 key={i}>{serialize(node.children)}</h2>
+        return <h2 key={i}>{serialize(node?.children)}</h2>
       case 'h3':
-        return <h3 key={i}>{serialize(node.children)}</h3>
+        return <h3 key={i}>{serialize(node?.children)}</h3>
       case 'h4':
-        return <h4 key={i}>{serialize(node.children)}</h4>
+        return <h4 key={i}>{serialize(node?.children)}</h4>
       case 'h5':
-        return <h5 key={i}>{serialize(node.children)}</h5>
+        return <h5 key={i}>{serialize(node?.children)}</h5>
       case 'h6':
-        return <h6 key={i}>{serialize(node.children)}</h6>
+        return <h6 key={i}>{serialize(node?.children)}</h6>
       case 'quote':
-        return <blockquote key={i}>{serialize(node.children)}</blockquote>
+        return <blockquote key={i}>{serialize(node?.children)}</blockquote>
       case 'ul':
-        return <ul key={i}>{serialize(node.children)}</ul>
+        return <ul key={i}>{serialize(node?.children)}</ul>
       case 'ol':
         return <ol key={i}>{serialize(node.children)}</ol>
       case 'li':
@@ -83,29 +83,26 @@ const serialize = (children: Children): React.ReactElement[] =>
       case 'link':
         return (
           <a
-            href={escapeHTML(node.url)}
             key={i}
-            {...(node.newTab
-              ? {
-                  target: '_blank',
-                  rel: 'noopener noreferrer',
-                }
-              : {})}
+            type={node.linkType === 'internal' ? 'reference' : 'custom'}
+            href={node.url}
+            // reference={node.doc as any}
+            // newTab={Boolean(node?.newTab)}
           >
-            {serialize(node.children)}
+            {serialize(node?.children)}
           </a>
         )
 
       case 'label':
-        return <Label key={i}>{serialize(node.children)}</Label>
+        return <Label key={i}>{serialize(node?.children)}</Label>
 
       case 'large-body': {
-        return <LargeBody key={i}>{serialize(node.children)}</LargeBody>
+        return <LargeBody key={i}>{serialize(node?.children)}</LargeBody>
       }
 
       default:
-        return <p key={i}>{serialize(node.children)}</p>
+        return <p key={i}>{serialize(node?.children)}</p>
     }
-  })
+  }) || []
 
 export default serialize
