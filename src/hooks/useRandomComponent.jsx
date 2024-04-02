@@ -7,7 +7,7 @@ const RandomButton = ({ ButtonOne, ButtonTwo }) => {
   const [showButtonOne, setShowButtonOne] = useState(false);
 
   useEffect(() => {
-    const inPercentageRange = percentageSplit(25);
+    const inPercentageRange = percentageSplit();
     console.log("🚀:", inPercentageRange);
     setShowButtonOne(inPercentageRange);
   }, []);
