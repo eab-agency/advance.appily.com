@@ -51,7 +51,7 @@ export default function HealthCareSeoPage({
     }, {} as Record<string, string>)
   ).toString();
 	
-    const inPercentageRange = percentageSplit(0.25); 
+    const inPercentageRange = percentageSplit(0); 
 
   const reasonsArray = data.whyChoose.reasons;
   const rightCareerArray = data.rightCareer.reasons;

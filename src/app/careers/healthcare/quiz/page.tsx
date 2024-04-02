@@ -1,9 +1,9 @@
-import ABButton from "@/components/Button/ABButton";
 import Image from "next/image";
 
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 import RandomComponent from "@/hooks/useRandomComponent";
+import ABButton from "@/components/Button/ABButton";
 
 const title = "Health Care Career Quiz";
 const description = "Take our free quiz, Define Your Future in Health Care, to see which career and degree paths might be right for you.";
