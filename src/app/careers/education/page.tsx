@@ -1,5 +1,7 @@
+import React, { Suspense } from "react";
+import RandomComponent from "@/hooks/useRandomComponent";
+import ABButton from "@/components/Button/ABButton";
 import Image from "next/image";
-import React from "react";
 
 import {
   Accordion,
@@ -34,6 +36,21 @@ export const metadata: Metadata = {
 
 /* eslint-disable react/no-danger */
 const BusinessSeoPage = () => {
+
+  const ButtonOne = <ABButton
+	label="Take the Quiz +"
+	appearance="primary"
+	href="https://my.appily.com/register/adult/educationcareers1"
+	className="button btn-primary btn-click-quiz"
+	/>
+	
+	const ButtonTwo = <ABButton
+	label="Take the Quiz"
+	appearance="primary"
+	href="/careers/education/quiz/start"
+	className="button btn-primary btn-click-quiz"
+	/>
+
   const reasonsArray = data.whyChoose.reasons;
   const rightCareerArray = data.rightCareer[0].reasons;
   const rightCareerList = rightCareerArray.map((reason, index) => (
@@ -80,12 +97,9 @@ const BusinessSeoPage = () => {
                 __html: data.quizSection.content,
               }}
             />
-            <Button
-              appearance="primary"
-              label={data.quizSection.buttonText}
-              href="/careers/education/quiz/start"
-              className="button btn-primary btn-click-quiz"
-            />
+            <Suspense>
+              <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+            </Suspense>
           </div>
         </div>
       </section>

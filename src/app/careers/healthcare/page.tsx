@@ -51,7 +51,7 @@ export default function HealthCareSeoPage({
     }, {} as Record<string, string>)
   ).toString();
 	
-    const inPercentageRange = percentageSplit(0); 
+    const inPercentageRange = percentageSplit(); 
 
   const reasonsArray = data.whyChoose.reasons;
   const rightCareerArray = data.rightCareer.reasons;
@@ -103,8 +103,8 @@ export default function HealthCareSeoPage({
 {inPercentageRange ? (
 							<Button
 							label="Get Started +"
-              href={`https://my.appily.com/register/quiz/healthcarecareers1/?${searchParamsString}`}
-							// href=`https://my.appily.com/register/quiz/healthcarecareers1/`
+              href={`https://my.appily.com/register/adult/healthcarecareers1/?${searchParamsString}`}
+							// href=`https://my.appily.com/register/adult/healthcarecareers1/`
 							className="button btn-primary btn-click-quiz"
 							/>
 									) : (
@@ -189,7 +189,7 @@ export default function HealthCareSeoPage({
 {inPercentageRange ? (
 							<Button
 							label="Get Started +"
-							href="https://my.appily.com/register/quiz/healthcarecareers1/"
+							href="https://my.appily.com/register/adult/healthcarecareers1/"
 							className="button btn-primary btn-click-quiz"
 							/>
 									) : (

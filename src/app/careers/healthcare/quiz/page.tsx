@@ -1,9 +1,10 @@
-import ABButton from "@/components/Button/ABButton";
+import React, { Suspense } from "react";
 import Image from "next/image";
 
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 import RandomComponent from "@/hooks/useRandomComponent";
+import ABButton from "@/components/Button/ABButton";
 
 const title = "Health Care Career Quiz";
 const description = "Take our free quiz, Define Your Future in Health Care, to see which career and degree paths might be right for you.";
@@ -27,7 +28,7 @@ export default function QuizLandingPage() {
 	const ButtonOne = <ABButton
 	label="Get Started +"
 	appearance="primary"
-	href="https://my.appily.com/register/quiz/healthcarecareers1/"
+	href="https://my.appily.com/register/adult/healthcarecareers1/"
 	className="button btn-primary btn-click-quiz"
 	/>
 	
@@ -65,7 +66,9 @@ export default function QuizLandingPage() {
 							<strong>discover which role could be a good fit for you</strong>
 							—and the steps you can take to advance your career.
 						</p>
-						<RandomComponent ButtonOne={ButtonOne} ButtonTwo={ButtonTwo} />
+						<Suspense>
+              <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+            </Suspense>
 
 					</div>
 					<figure className="column highlighted-img">

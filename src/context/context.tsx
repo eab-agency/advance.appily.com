@@ -21,9 +21,9 @@ interface UserLocationContextProps {
 	setUtmSource: React.Dispatch<React.SetStateAction<any>>;
 	setLocation: React.Dispatch<
 		React.SetStateAction<{
-			region_iso_code: string;
-			country_code: string;
-			notUS: boolean;
+			region_iso_code?: string;
+			country_code?: string;
+			notUS?: boolean;
 		} | null>
 	>;
 	globalPrivacyControl: boolean;

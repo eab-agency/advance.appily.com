@@ -28,6 +28,7 @@ const QuestionsTitle = ({ quizState, questions, titles }) => {
     };
 
     shuffleTitles();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [titles]);
 
   // Calculate the current title index based on the quiz state
