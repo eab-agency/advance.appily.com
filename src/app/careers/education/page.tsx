@@ -1,7 +1,7 @@
+import React, { Suspense } from "react";
 import RandomComponent from "@/hooks/useRandomComponent";
 import ABButton from "@/components/Button/ABButton";
 import Image from "next/image";
-import React from "react";
 
 import {
   Accordion,
@@ -97,7 +97,9 @@ const BusinessSeoPage = () => {
                 __html: data.quizSection.content,
               }}
             />
-            <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+            <Suspense>
+              <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+            </Suspense>
           </div>
         </div>
       </section>

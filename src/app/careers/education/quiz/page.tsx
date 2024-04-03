@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import RandomComponent from "@/hooks/useRandomComponent";
 import ABButton from "@/components/Button/ABButton";
 import Image from "next/image";
@@ -74,7 +75,9 @@ export default function QuizLandingPage() {
               We’ll also connect you with schools near you that offer degrees to
               help you reach your goals.
             </p>
-            <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+            <Suspense>
+              <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+            </Suspense>
 
           </div>
           <figure className="column highlighted-img">

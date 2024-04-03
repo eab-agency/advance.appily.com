@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import Image from "next/image";
 
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
@@ -65,7 +66,9 @@ export default function QuizLandingPage() {
 							<strong>discover which role could be a good fit for you</strong>
 							—and the steps you can take to advance your career.
 						</p>
-						<RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+						<Suspense>
+              <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+            </Suspense>
 
 					</div>
 					<figure className="column highlighted-img">
