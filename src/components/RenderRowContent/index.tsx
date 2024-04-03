@@ -1,23 +1,14 @@
-import RichText from '../RichText';
-import { Stats } from '../Stats';
-import classes from './index.module.scss';
+import RenderColumncontent from '../RenderColumnContent';
 
 const RenderRowcontent = ({ rows }) => {
   return (
-    <div className={classes.rowcontent}>
+    <div>
       {rows &&
         rows.length > 0 &&
         rows.map((row, rowIndex) => {
           return (
-            <div key={rowIndex} className={classes.row}>
-              {row.blocks &&
-                row.blocks.map((block, blockIndex) => {
-                  return (
-                    <div key={blockIndex}>
-                       {blockRenderers[block.blockType](block)}
-                    </div>
-                  );
-                })}
+            <div key={rowIndex}>
+                <RenderColumncontent columns={row.columns} />
             </div>
           );
         })}
@@ -25,8 +16,4 @@ const RenderRowcontent = ({ rows }) => {
   );
 };
 
-const blockRenderers = {
-    stats: (block) => <Stats stats={block} />,
-    richText: (block) => <RichText content={block.richText} />
-  };
 export default RenderRowcontent;

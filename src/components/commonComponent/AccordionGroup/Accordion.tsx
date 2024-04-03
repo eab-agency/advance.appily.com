@@ -4,8 +4,9 @@ import { BiSolidMinusCircle, BiSolidPlusCircle } from "react-icons/bi";
 
 import styles from "@/styles/components/Accordion.module.scss";
 import RichText from "../../RichText";
+import ButtonGroup from "../ButtonGroup";
 
-export const Accordion = ({ title, richText }) => {
+export const Accordion = ({ title, richText,links }) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 
 	const togglePanel = () => {
@@ -38,6 +39,9 @@ export const Accordion = ({ title, richText }) => {
 			{isExpanded && <div className={styles["accordion-body"]}>
                 <RichText content={richText}/>
                 </div>}
+			
+			<ButtonGroup data={links} />
+			
 		</div>
 	);
 };

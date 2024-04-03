@@ -94,11 +94,13 @@ export const FORM_BLOCK = `
 `
 
 export const STATISTICS = `
-...on Stats {
+...on Statistics {
   blockType
-  number
-  title
-  richText
+  statistics {
+    number
+    title
+    richText
+  }
 }
 `
 export const TESTIMONIAL = `
@@ -169,19 +171,6 @@ export const CONTENT = `
   colorSchema
   enableHighlight
   rows{
-    columns{
-      size
-      blocks {
-        ${STATISTICS}
-        ${TESTIMONIAL}
-        ${ACCORDIONBLOCK}
-        ${CAREERBLOCK}
-        ${BUTTONGROUPBLOCK}
-        ${RICHTEXTBLOCK}
-        ${COMPARISONBLOCK}
-        ${MEDIA_BLOCK}
-      }
-    }
     columns{
       size
       blocks {

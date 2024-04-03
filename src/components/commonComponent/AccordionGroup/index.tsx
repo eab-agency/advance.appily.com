@@ -42,13 +42,11 @@ export default function AccordionSection({
 	id,
 	newTab = false,
 }: AccordionSectionProps) {
-	console.log(data,'data**')
 	return (
 					<div className="accordion-group">
 						{data.accordions.map((val, index) => (
 							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-							<Accordion key={index} title={val.title} richText={val.richText}/>
-							
+							<Accordion key={index} title={val.title} richText={val.richText} links={val} />	
 							
 						))}
 					</div>

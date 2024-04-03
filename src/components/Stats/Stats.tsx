@@ -2,9 +2,10 @@ import styles from "@/styles/components/Stats.module.scss";
 import RichText from "../RichText";
 
 interface StatsProps {
-  stats: Stat[] | Stat; // Update the type of stats prop to accept either an array of Stat or a single Stat object
-  source?: string;
-  className?: string;
+  data: {
+  blockType: string;
+  statistics: Stat[]; // Update the type of stats prop to accept either an array of Stat or a single Stat object
+  }
 }
 
 interface Stat {
@@ -16,15 +17,13 @@ interface Stat {
 }
 
 /* eslint-disable react/no-danger */
-function Stats({ stats, source, className = "" }: StatsProps) {
-  // Convert stats to an array
-  const statsArray: Stat[] = Array.isArray(stats) ? stats : [stats];
-
+function Stats({ data }: StatsProps) {
+ 
   return (
-    <section className={`${styles.stats} ${className}`}>
+    <section className={`${styles.stats}`}>
       <div className="group center-aligned">
         <ul className="group center-aligned">
-          {statsArray.map((stat, index) => (
+          {data?.statistics.map((stat, index) => (
             <li key={index}>
               <h3>
                 <strong>{stat.number}</strong>
@@ -34,7 +33,7 @@ function Stats({ stats, source, className = "" }: StatsProps) {
             </li>
           ))}
         </ul>
-        <p className={styles.source}>{source}</p>
+        {/* <p className={styles.source}>{source}</p> */}
       </div>
     </section>
   );

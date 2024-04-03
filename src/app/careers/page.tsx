@@ -54,6 +54,16 @@ const CareersSeoPage = () => {
 							/>
 						</figure>
 					</div>
+					<div className="column">
+						<figure className="highlighted-img">
+							<Image
+								src="/images/take-our-free-quiz.jpg"
+								width={480}
+								height={480}
+								alt="Profesional man researching online"
+							/>
+						</figure>
+					</div>
 					<div className="column intro-text">
 						<h2>Feeling lost, stuck, or just ready for a change?</h2>
 						<div>

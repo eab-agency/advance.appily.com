@@ -95,14 +95,18 @@ export interface Page {
             size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
             blocks: (
               | {
-                  number: string;
-                  title?: string;
-                  richText: {
-                    [k: string]: unknown;
+                  statistics?: {
+                    number: string;
+                    title?: string;
+                    richText: {
+                      [k: string]: unknown;
+                    }[];
+                    id?: string;
                   }[];
+                  source?: string;
                   id?: string;
                   blockName?: string;
-                  blockType: 'stats';
+                  blockType: 'statistics';
                 }
               | {
                   author?: string;
@@ -235,14 +239,18 @@ export interface Page {
           size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
           blocks: (
             | {
-                number: string;
-                title?: string;
-                richText: {
-                  [k: string]: unknown;
+                statistics?: {
+                  number: string;
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  id?: string;
                 }[];
+                source?: string;
                 id?: string;
                 blockName?: string;
-                blockType: 'stats';
+                blockType: 'statistics';
               }
             | {
                 author?: string;
@@ -420,233 +428,6 @@ export interface Page {
         id?: string;
         blockName?: string;
         blockType: 'archive';
-      }
-    | {
-        colorSchema?: 'blackwhite';
-        enableHighlight?: boolean;
-        rows?: {
-          size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
-          Block: (
-            | {
-                number: string;
-                title?: string;
-                richText: {
-                  [k: string]: unknown;
-                }[];
-                id?: string;
-                blockName?: string;
-                blockType: 'stats';
-              }
-            | {
-                author?: string;
-                richText: {
-                  [k: string]: unknown;
-                }[];
-                authortitle?: string;
-                alignment?: 'left' | 'center' | 'right';
-                id?: string;
-                blockName?: string;
-                blockType: 'testimonial';
-              }
-            | {
-                colorSchema?: 'blackwhite';
-                title?: string;
-                richText: {
-                  [k: string]: unknown;
-                }[];
-                image: string | Media;
-                links?: {
-                  link: {
-                    type?: 'reference' | 'custom';
-                    newTab?: boolean;
-                    reference: {
-                      value: string | Page;
-                      relationTo: 'pages';
-                    };
-                    url: string;
-                    label: string;
-                    appearance?: 'primary' | 'secondary';
-                  };
-                  id?: string;
-                }[];
-                id?: string;
-                blockName?: string;
-                blockType: 'career';
-              }
-            | {
-                title?: string;
-                richText: {
-                  [k: string]: unknown;
-                }[];
-                icon: string | Media;
-                links?: {
-                  link: {
-                    type?: 'reference' | 'custom';
-                    newTab?: boolean;
-                    reference: {
-                      value: string | Page;
-                      relationTo: 'pages';
-                    };
-                    url: string;
-                    label: string;
-                    appearance?: 'primary' | 'secondary';
-                  };
-                  id?: string;
-                }[];
-                id?: string;
-                blockName?: string;
-                blockType: 'comparison';
-              }
-            | {
-                numberedItems?: boolean;
-                accordions?: {
-                  title: string;
-                  richText: {
-                    [k: string]: unknown;
-                  }[];
-                  links?: {
-                    link: {
-                      type?: 'reference' | 'custom';
-                      newTab?: boolean;
-                      reference: {
-                        value: string | Page;
-                        relationTo: 'pages';
-                      };
-                      url: string;
-                      label: string;
-                      appearance?: 'primary' | 'secondary';
-                    };
-                    id?: string;
-                  }[];
-                  id?: string;
-                }[];
-                id?: string;
-                blockName?: string;
-                blockType: 'accordion';
-              }
-          )[];
-          id?: string;
-        }[];
-        columns?: {
-          size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
-          Block: (
-            | {
-                number: string;
-                title?: string;
-                richText: {
-                  [k: string]: unknown;
-                }[];
-                id?: string;
-                blockName?: string;
-                blockType: 'stats';
-              }
-            | {
-                author?: string;
-                richText: {
-                  [k: string]: unknown;
-                }[];
-                authortitle?: string;
-                alignment?: 'left' | 'center' | 'right';
-                id?: string;
-                blockName?: string;
-                blockType: 'testimonial';
-              }
-            | {
-                colorSchema?: 'blackwhite';
-                title?: string;
-                richText: {
-                  [k: string]: unknown;
-                }[];
-                image: string | Media;
-                links?: {
-                  link: {
-                    type?: 'reference' | 'custom';
-                    newTab?: boolean;
-                    reference: {
-                      value: string | Page;
-                      relationTo: 'pages';
-                    };
-                    url: string;
-                    label: string;
-                    appearance?: 'primary' | 'secondary';
-                  };
-                  id?: string;
-                }[];
-                id?: string;
-                blockName?: string;
-                blockType: 'career';
-              }
-            | {
-                title?: string;
-                richText: {
-                  [k: string]: unknown;
-                }[];
-                icon: string | Media;
-                links?: {
-                  link: {
-                    type?: 'reference' | 'custom';
-                    newTab?: boolean;
-                    reference: {
-                      value: string | Page;
-                      relationTo: 'pages';
-                    };
-                    url: string;
-                    label: string;
-                    appearance?: 'primary' | 'secondary';
-                  };
-                  id?: string;
-                }[];
-                id?: string;
-                blockName?: string;
-                blockType: 'comparison';
-              }
-            | {
-                numberedItems?: boolean;
-                accordions?: {
-                  title: string;
-                  richText: {
-                    [k: string]: unknown;
-                  }[];
-                  links?: {
-                    link: {
-                      type?: 'reference' | 'custom';
-                      newTab?: boolean;
-                      reference: {
-                        value: string | Page;
-                        relationTo: 'pages';
-                      };
-                      url: string;
-                      label: string;
-                      appearance?: 'primary' | 'secondary';
-                    };
-                    id?: string;
-                  }[];
-                  id?: string;
-                }[];
-                id?: string;
-                blockName?: string;
-                blockType: 'accordion';
-              }
-          )[];
-          id?: string;
-        }[];
-        id?: string;
-        blockName?: string;
-        blockType: 'twoColumnBlock';
-      }
-    | {
-        colorSchema?: 'blackwhite';
-        statistics?: {
-          number: string;
-          title?: string;
-          richText: {
-            [k: string]: unknown;
-          }[];
-          id?: string;
-        }[];
-        id?: string;
-        blockName?: string;
-        blockType: 'statistics';
       }
   )[];
   slug?: string;
@@ -859,14 +640,18 @@ export interface Post {
             size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
             blocks: (
               | {
-                  number: string;
-                  title?: string;
-                  richText: {
-                    [k: string]: unknown;
+                  statistics?: {
+                    number: string;
+                    title?: string;
+                    richText: {
+                      [k: string]: unknown;
+                    }[];
+                    id?: string;
                   }[];
+                  source?: string;
                   id?: string;
                   blockName?: string;
-                  blockType: 'stats';
+                  blockType: 'statistics';
                 }
               | {
                   author?: string;
@@ -999,14 +784,18 @@ export interface Post {
           size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
           blocks: (
             | {
-                number: string;
-                title?: string;
-                richText: {
-                  [k: string]: unknown;
+                statistics?: {
+                  number: string;
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  id?: string;
                 }[];
+                source?: string;
                 id?: string;
                 blockName?: string;
-                blockType: 'stats';
+                blockType: 'statistics';
               }
             | {
                 author?: string;

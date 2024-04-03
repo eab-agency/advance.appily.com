@@ -32,7 +32,6 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
       ? `/${reference.value.slug}`
       : url
-
   if (!appearance) {
     const newTabProps = newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {}
 
@@ -61,6 +60,5 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     appearance,
     label,
   }
-
   return <Button className={className} {...buttonProps} label={buttonProps.label ?? ''} />
 }

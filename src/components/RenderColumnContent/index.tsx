@@ -6,56 +6,66 @@ import { Media } from '@/components/Media'
 import React, {Fragment} from 'react'
 import { Testimonial } from '../Testimonial';
 import  AccordionSection  from '../commonComponent/AccordionGroup';
-import { ComparisonCard } from '../commonComponent/ComparisonCard';
-
-const RenderColumncontent = ({ columns }) => {
-
-
+import ComparisonCard  from '../commonComponent/ComparisonCard';
+import ButtonGroup from '../commonComponent/ButtonGroup';
+const RenderColumnContent = ({ columns }) => {
   return (
-    <Grid className={classes.grid}>
-                   {columns &&
-          columns.length > 0 &&
-          columns.map((col, index) => {
-          
-            const { blocks, size } = col
-         
-            let cols
+    <div className='group'>
+      {columns &&
+        columns.map((col, index) => {
+          const { blocks, size } = col;
+          let style;
 
-            if (size === 'oneThird') cols = 4
-            if (size === 'half') cols = 6
-            if (size === 'twoThirds') cols = 8
-            if (size === 'full') cols = 12
+          // Determine the column width based on the size
+          switch (size) {
+            case 'oneThird':
+              style = classes.oneThird;
+              break;
+            case 'half':
+              style = classes.half;
+              break;
+            case 'twoThirds':
+              style = classes.twoThirds;
+              break;
+            case 'full':
+              style = classes.full;
+              break;
+            default:
+              style = classes.half; // Default to half width
+          }
 
-            return (
-              <Cell cols={cols} colsM={4} key={index}>
-              
-               {blocks &&
+          return (
+            <div className={`column ${classes.cell} ${style}`} key={index}>
+              {blocks &&
                 blocks.map((block, blockIndex) => {
+                  console.log(block,'block**')
                   return (
                     <div key={blockIndex}>
-                       {blockRenderers[block.blockType](block)}
+                      {blockRenderers[block.blockType](block)}
                     </div>
                   );
                 })}
-              </Cell>
-              
-            )
+            </div>
+          );
         })}
-</Grid>  );
+    </div>
+  );
 };
 
 const blockRenderers = {
-    stats: (block) => <Stats stats={block} />,
-    richText: (block) => <RichText content={block.richText} />,
-    mediaBlock: (block) => {
-    return (
-      <Media
-        resource={block.media}
-        priority
-      />
-    )
-  },
-  testimonial: (block) => <Testimonial testimonialData={block}/>,
-  accordion: (block) => <AccordionSection data={block} />,
-  };
-export default RenderColumncontent;
+  statistics: (block) => <Stats data={block} />,
+  richText: (block) => <RichText content={block.richText} />,
+  mediaBlock: (block) => {
+  return (
+    <Media
+      resource={block.media}
+      priority
+    />
+  )
+},
+testimonial: (block) => <Testimonial testimonialData={block}/>,
+accordion: (block) => <AccordionSection data={block} />,
+comparison: (block) => <ComparisonCard data={block} />,
+ButtonGroup:(block) => <ButtonGroup data={block} />
+};
+export default RenderColumnContent;
