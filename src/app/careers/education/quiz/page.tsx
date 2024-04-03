@@ -74,7 +74,7 @@ export default function QuizLandingPage() {
               We’ll also connect you with schools near you that offer degrees to
               help you reach your goals.
             </p>
-            <RandomComponent ButtonOne={ButtonOne} ButtonTwo={ButtonTwo} />
+            <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
 
           </div>
           <figure className="column highlighted-img">

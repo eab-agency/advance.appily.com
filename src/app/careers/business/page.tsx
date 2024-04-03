@@ -97,7 +97,7 @@ const BusinessSeoPage = () => {
                 __html: data.quizSection.content,
               }}
             />
-            <RandomComponent ButtonOne={ButtonOne} ButtonTwo={ButtonTwo} />
+            <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
 
           </div>
         </div>

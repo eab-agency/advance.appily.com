@@ -65,7 +65,7 @@ export default function QuizLandingPage() {
 							<strong>discover which role could be a good fit for you</strong>
 							—and the steps you can take to advance your career.
 						</p>
-						<RandomComponent ButtonOne={ButtonOne} ButtonTwo={ButtonTwo} />
+						<RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
 
 					</div>
 					<figure className="column highlighted-img">
