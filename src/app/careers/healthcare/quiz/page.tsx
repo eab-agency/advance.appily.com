@@ -28,7 +28,7 @@ export default function QuizLandingPage() {
 	const ButtonOne = <ABButton
 	label="Get Started +"
 	appearance="primary"
-	href="https://my.appily.com/register/quiz/healthcarecareers1/"
+	href="https://my.appily.com/register/adult/healthcarecareers1/"
 	className="button btn-primary btn-click-quiz"
 	/>
 	
