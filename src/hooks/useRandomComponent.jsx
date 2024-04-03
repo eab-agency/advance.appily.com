@@ -1,18 +1,24 @@
 "use client";
-// Not really a hook. Needs to move.
 import React, { useState, useEffect } from "react";
 import percentageSplit from "@/lib/percentageSplit";
+import { useSearchParams } from "next/navigation";
 
-const RandomButton = ({ ButtonOne, ButtonTwo }) => {
-  const [showButtonOne, setShowButtonOne] = useState(false);
+const useRandomButton = ({ ButtonOne, ButtonTwo }) => {
+  const searchParams = useSearchParams();
+  const force = searchParams.has("force");
+  const [showButtonOne, setShowButtonOne] = useState(force);
 
   useEffect(() => {
-    const inPercentageRange = percentageSplit(20);
-    console.log("🚀:", inPercentageRange);
+    let inPercentageRange;
+    if (force) {
+      inPercentageRange = true;
+    } else {
+      inPercentageRange = percentageSplit(0.25);
+    }
     setShowButtonOne(inPercentageRange);
-  }, []);
+  }, [force]);
 
   return <>{showButtonOne ? ButtonOne : ButtonTwo}</>;
 };
 
-export default RandomButton;
+export default useRandomButton;
