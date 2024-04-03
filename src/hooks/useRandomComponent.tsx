@@ -3,14 +3,13 @@ import React, { useState, useEffect, ReactElement, Suspense } from "react";
 import percentageSplit from "@/lib/percentageSplit";
 import { useSearchParams } from "next/navigation";
 
-interface RandomComponentProps {
+interface UseRandomComponentProps {
   PercentageComponent: ReactElement;
   FallBackComponent: ReactElement;
+  force: boolean;
 }
 
-const RandomComponent = ({ PercentageComponent, FallBackComponent }: RandomComponentProps) => {
-  const searchParams = useSearchParams() || new URLSearchParams();
-  const force = searchParams.has("force");
+const RandomComponent = ({ PercentageComponent, FallBackComponent, force }: UseRandomComponentProps): ReactElement => {
   const [showPercentageComponent, setShowPercentageComponent] = useState(force);
 
   useEffect(() => {
@@ -18,17 +17,21 @@ const RandomComponent = ({ PercentageComponent, FallBackComponent }: RandomCompo
     if (force) {
       inPercentageRange = true;
     } else {
-      inPercentageRange = percentageSplit();
+      inPercentageRange = percentageSplit(0.25);
     }
     console.log("🆎:", inPercentageRange)
     setShowPercentageComponent(inPercentageRange);
   }, [force]);
 
   return (
-    <Suspense fallback={<>{FallBackComponent}</>}>
-      {showPercentageComponent ? PercentageComponent : FallBackComponent}
-    </Suspense>
+    <>{showPercentageComponent ? PercentageComponent : FallBackComponent}</>
   );
 };
 
-export default RandomComponent;
+const useRandomComponent = ({ PercentageComponent, FallBackComponent }: UseRandomComponentProps): ReactElement => {
+  const searchParams = useSearchParams() || new URLSearchParams();
+  const force = searchParams.has("force");
+  const WinningComponent = RandomComponent({ PercentageComponent, FallBackComponent, force });
+  return <Suspense fallback={<>{FallBackComponent}</>}>{WinningComponent}</Suspense>;
+};
+export default useRandomComponent;
