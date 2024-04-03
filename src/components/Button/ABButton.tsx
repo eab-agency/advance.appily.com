@@ -18,7 +18,12 @@ function Button({ label, appearance, href, className}) {
 
 export default function ABButton({label, appearance, href, className}) {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<ButtonComponent
+      label={label}
+      appearance={appearance}
+      href={href}
+      className={className}
+      />}>
       <Button
       label={label}
       appearance={appearance}

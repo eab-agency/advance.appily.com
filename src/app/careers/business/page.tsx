@@ -1,5 +1,7 @@
 import Image from "next/image";
-import React from "react";
+import React, { Suspense } from "react";
+import RandomComponent from "@/hooks/useRandomComponent";
+import ABButton from "@/components/Button/ABButton";
 
 import {
   Accordion,
@@ -47,6 +49,20 @@ const BusinessSeoPage = () => {
     </li>
   ));
 
+  const ButtonOne = <ABButton
+	label="Take the Quiz +"
+	appearance="primary"
+	href="https://my.appily.com/register/adult/businesscareers1"
+	className="button btn-primary btn-click-quiz"
+	/>
+	
+	const ButtonTwo = <ABButton
+	label="Take the Quiz"
+	appearance="primary"
+	href="/careers/business/quiz/start"
+	className="button btn-primary btn-click-quiz"
+	/>
+
 
   return (
     <>
@@ -81,12 +97,10 @@ const BusinessSeoPage = () => {
                 __html: data.quizSection.content,
               }}
             />
-            <Button
-              appearance="primary"
-              label={data.quizSection.buttonText}
-              href={data.quizSection.buttonLink}
-              className="button btn-primary btn-click-quiz"
-            />
+            <Suspense>
+              <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+            </Suspense>
+
           </div>
         </div>
       </section>

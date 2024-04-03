@@ -1,4 +1,6 @@
-import { Button, Header } from "@/components";
+import React, { Suspense } from "react";
+import RandomComponent from "@/hooks/useRandomComponent";
+import ABButton from "@/components/Button/ABButton";
 import Image from "next/image";
 // eslint-disable-next-line import/no-unresolved
 
@@ -22,6 +24,20 @@ export const metadata: Metadata = {
 };
 
 export default function QuizLandingPage() {
+
+  const ButtonOne = <ABButton
+	label="Get Started +"
+	appearance="primary"
+	href="https://my.appily.com/register/adult/businesscareers1"
+	className="button btn-primary btn-click-quiz"
+	/>
+	
+	const ButtonTwo = <ABButton
+	label="Get Started"
+	appearance="primary"
+	href="/careers/business/quiz/start"
+	className="button btn-primary btn-click-quiz"
+	/>
   return (
     <>
       <div className="quiz-wrapper">
@@ -51,12 +67,10 @@ export default function QuizLandingPage() {
               you with schools near you that offer degrees to help you reach
               your goals..
             </p>
-            <Button
-              label="Take the Quiz"
-              appearance="primary"
-              href="/careers/business/quiz/start"
-              className="button btn-primary btn-click-quiz"
-            />
+            <Suspense>
+              <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+            </Suspense>
+
           </div>
           <figure className="column highlighted-img">
             <Image
