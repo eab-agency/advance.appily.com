@@ -1,122 +1,150 @@
 {
-  "links": [
-    {
-      "label": "Degree Completion",
-      "href": "/degree-completion"
-    },
-    {
-      "label": "Health Care Careers",
-      "href": "/careers/healthcare"
-    },
-    {
-      "label": "Business Careers",
-      "href": "/careers/business"
-    },
-    {
-      "label": "Education Careers",
-      "href": "/careers/education"
-    }
-  ],
-  "pageTitle": " Which type of<strong>business career</strong> is right for you?",
-  "quizSection": {
-    "title": "Take Our Free Business Career Quiz to Find Out",
-    "content": "<p>If you want to work in business but you don’t know which job fits your skills and interests, <strong>this free quiz can help find a good fit</strong> and you plan your next steps.</p><p>The Bureau of Labor Statistics predicts about <strong>nearly one million jobs in business</strong> will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p><strong>In less than three minutes, you could discover which type of business career could be a good fit for you.</strong> We’ll also connect you with schools near you that offer degrees to help you reach your goals.</p>",
-    "buttonText": "Take the Quiz"
-  },
-  "stats": [
-    {
-      "number": "8%",
-      "title": "Growth",
-      "description": "in employment of management occupations over the next decade"
-    },
-    {
-      "number": "$76K",
-      "title": "Median Salary",
-      "description": "for business-related occupations, ranging from $50K to $96K"
-    },
-    {
-      "number": "911K",
-      "title": "Job Openings",
-      "description": "predicted annually over the next decade in business-related occupations"
-    }
-  ],
-  "statsSource": "U.S. Bureau of Labor Statistics",
-  "whyChoose": {
-    "title": "MBA vs. Specific Business Master’s Degrees:",
-    "subTitle": "What's the Difference?",
-    "description": "An MBA (Master of Business Administration) and a business master’s degree—such as an M.S. in Management—are both <strong>graduate-level programs that focus on business and management education.</strong> However, there are some differences between the two:",
-    "reasons": [
-      {
-        "title": "Curriculum",
-        "description": "MBA programs often have a more comprehensive curriculum, covering a wider range of business topics such as finance, accounting, marketing, strategy, and operations. A business master’s program has a more specialized focus, such as finance, accounting, or marketing."
-      },
-      {
-        "title": "Focus",
-        "description": "An MBA program typically focuses on developing general management skills, such as leadership, critical thinking, and problem-solving. A Master's in Business program may have a more technical or specialized focus, such as accounting or finance."
-      },
-      {
-        "title": "Work Experience",
-        "description": "MBA programs usually require applicants to have several years of work experience, while a Master's in Business program may not require any work experience or may only require a short period of experience."
-      },
-      {
-        "title": "Cost",
-        "description": "MBA programs are often more expensive than a Master's in Business program, partly due to the higher caliber of students and faculty, and partly due to the greater resources required to run a comprehensive program."
-      }
-    ]
-  },
-  "testimonial": {
-    "text": "Every day presents new challenges and opportunities to make strategic decisions that shape the direction of the company. The ability to drive innovation, lead a team, and contribute to the growth of the organization is both fulfilling and empowering. Business is all about creating value, solving problems, and making a positive impact on the world. It's a dynamic and ever-evolving field that allows me to continuously learn and grow while making meaningful contributions to the bottom line and the community.",
-    "author": "Dana Jones",
-    "authorTitle": "Director of Creative Strategy and Innovation, EAB"
-  },
-  "rightCareer": [
-    {
-      "title": " Top 5 Reasons a Career in Health Care Could Be Right for You",
-      "description": "Are you considering a career in health care but unsure if it's the right fit for you? Here are the top five reasons why it might be:",
-      "reasons": [
-        {
-          "description": "<strong>Diverse Career Paths:</strong> The health care industry offers a wide range of career paths, from direct patient care roles like nursing and therapy, to support roles like hospital administration, medical analytics, and medical research."
-        },
-        {
-          "description": "<strong>Rewarding Work:</strong> Health care professionals have the opportunity to make a positive impact on others and improve their quality of life. If you're passionate about helping others and making a difference, health care could be a great fit for you."
-        },
-        {
-          "description": "<strong>Hands-On Work:</strong> If you enjoy hands-on work and thrive under pressure, direct patient care roles may be a perfect fit for you. These roles require excellent communication, problem-solving, and critical thinking skills, as well as attention to detail."
-        },
-        {
-          "description": "<strong>Technology and Data Analysis:</strong> Health care also offers many support roles that require a strong understanding of data analysis, research methodologies, and health care systems. If you enjoy working with data and technology, roles like medical analytics and medical research could be a great fit for you."
-        },
-        {
-          "description": "<strong>Career Advancement:</strong> The health care industry is constantly evolving and offers many opportunities for career advancement. Whether you're interested in pursuing additional degrees, moving up the career ladder, or exploring new specialties, health care offers many options for growth."
-        }
-      ],
-      "endCopy": "If you're still unsure if health care is the right fit for you, <a href='/quiz'>take our free health care career quiz.</a> It will help you identify how your interests, skills, and strengths align with different medical career paths and suggest the degrees you can earn to take the next step in your career."
-    }
-  ],
-  "contactForm": {
-    "title": "Explore Your Potencial School matches",
-    "description": "Let us know the best way to contact you with helpful information and  potential college or university  matches."
-  },
-  "takeQuiz": {
-    "title": "Ready to Find Your Role?",
-    "description": "In less than three minutes, you could discover which role could be a good fit for you—and the steps you can take to advance your career.",
-    "buttonText": "Take the Quiz"
-  },
-  "statsAppily": [
-    {
-      "number": "600",
-      "title": "Institutions",
-      "description": "Trust Appily to match them with students like you"
-    },
-    {
-      "number": "Billions",
-      "title": "In Scholarships",
-      "description": "Can be applied for through Appily’s scholarship database"
-    },
-    {
-      "number": "4",
-      "title": "Trusted Tools",
-      "description": "Combine to make Appily your one-stop resource for finding a school"
-    }
-  ]
+	"metaData": {
+		"title": "Explore Business Careers",
+		"description": "Considering a career in business? Discover which career path is right for you and the degree to help you succeed with Appily Advance’s free career quiz."
+	},
+	"links": [
+		{
+			"label": "Degree Completion",
+			"href": "/degree-completion"
+		},
+		{
+			"label": "Business Careers",
+			"href": "/careers/business"
+		},
+		{
+			"label": "Education Careers",
+			"href": "/careers/education"
+		},
+		{
+			"label": "Health Care Careers",
+			"href": "/careers/healthcare"
+		}
+	],
+	"pageTitle": " Which <strong>business career</strong> is right for you?",
+	"pageHero": {
+		"image": {
+			"src": "/images/business-hero-image.jpg",
+			"alt": "Business woman working"
+		}
+	},
+	"quizSection": {
+		"title": "Take Our Free Business Career Quiz to Find Out",
+		"content": "<p>If you want to work in business but you don’t know which job fits your skills and interests, <strong>this free quiz can help find a good fit</strong> and you plan your next steps.</p><p>The Bureau of Labor Statistics predicts about <strong>nearly one million jobs in business</strong> will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p><strong>In less than three minutes, you could discover which type of business career could be a good fit for you.</strong> We’ll also connect you with schools near you that offer degrees to help you reach your goals.</p>",
+		"image": {
+			"src": "/images/take-our-free-quiz.jpg",
+			"alt": "Profesional man researching online"
+		},
+		"buttonText": "Take the Quiz",
+		"buttonLink": "/careers/business/quiz/start"
+	},
+	"stats": [
+		{
+			"number": "8%",
+			"title": "Growth",
+			"description": "in employment of management occupations over the next decade"
+		},
+		{
+			"number": "$76K",
+			"title": "Median Salary",
+			"description": "for business-related occupations, ranging from $50K to $96K"
+		},
+		{
+			"number": "911K",
+			"title": "Job Openings",
+			"description": "predicted annually over the next decade in business-related occupations"
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"whyChoose": {
+		"title": " MBA vs. Specific Business Master’s Degrees:  <strong>What's the Difference?</strong>",
+		"subTitle": "What's the Difference?",
+		"description": "An MBA (Master of Business Administration) and a business master’s degree—such as an M.S. in Management—are both <strong>graduate-level programs that focus on business and management education.</strong> However, there are some differences between the two:",
+		"image": {
+			"src": "/images/whats-the-difference-mba-specific-master.jpg",
+			"alt": "Man using a tablet device"
+		},
+		"reasons": [
+			{
+				"title": "Curriculum",
+				"description": "MBA programs often have a more comprehensive curriculum, covering a wider range of business topics such as finance, accounting, marketing, strategy, and operations. A business master’s program has a more specialized focus, such as finance, accounting, or marketing."
+			},
+			{
+				"title": "Focus",
+				"description": "An MBA program typically focuses on developing general management skills, such as leadership, critical thinking, and problem-solving. A Master's in Business program may have a more technical or specialized focus, such as accounting or finance."
+			},
+			{
+				"title": "Work Experience",
+				"description": "MBA programs usually require applicants to have several years of work experience, while a Master's in Business program may not require any work experience or may only require a short period of experience."
+			},
+			{
+				"title": "Cost",
+				"description": "MBA programs are often more expensive than a Master's in Business program, partly due to the higher caliber of students and faculty, and partly due to the greater resources required to run a comprehensive program."
+			}
+		]
+	},
+	"testimonial": {
+		"text": "Every day presents new challenges and opportunities to make strategic decisions that shape the direction of the company. The ability to drive innovation, lead a team, and contribute to the growth of the organization is both fulfilling and empowering. Business is all about creating value, solving problems, and making a positive impact on the world. It's a dynamic and ever-evolving field that allows me to continuously learn and grow while making meaningful contributions to the bottom line and the community.",
+		"author": "Dana Jones",
+		"authorTitle": "Director of Creative Strategy and Innovation, EAB"
+	},
+	"comparisonSection": {
+		"title": " MBA vs. Specific Business Master's Degrees: <strong>Maximizing Your Career Investment</strong>",
+		"description": "In the pursuit of advancing one's career in the dynamic realm of business, the choice between pursuing a Master of Business Administration (MBA) or a specialized business master's degree is pivotal. Both pathways offer distinct advantages, but understanding the nuances of their respective Return on Investment (ROI) and career prospects is essential for informed decision-making."
+	},
+	"rightCareer": [
+		{
+			"title": " Top 5 Reasons a Career in Health Care Could Be Right for You",
+			"description": "Are you considering a career in health care but unsure if it's the right fit for you? Here are the top five reasons why it might be:",
+			"reasons": [
+				{
+					"description": "<strong>Diverse Career Paths:</strong> The health care industry offers a wide range of career paths, from direct patient care roles like nursing and therapy, to support roles like hospital administration, medical analytics, and medical research."
+				},
+				{
+					"description": "<strong>Rewarding Work:</strong> Health care professionals have the opportunity to make a positive impact on others and improve their quality of life. If you're passionate about helping others and making a difference, health care could be a great fit for you."
+				},
+				{
+					"description": "<strong>Hands-On Work:</strong> If you enjoy hands-on work and thrive under pressure, direct patient care roles may be a perfect fit for you. These roles require excellent communication, problem-solving, and critical thinking skills, as well as attention to detail."
+				},
+				{
+					"description": "<strong>Technology and Data Analysis:</strong> Health care also offers many support roles that require a strong understanding of data analysis, research methodologies, and health care systems. If you enjoy working with data and technology, roles like medical analytics and medical research could be a great fit for you."
+				},
+				{
+					"description": "<strong>Career Advancement:</strong> The health care industry is constantly evolving and offers many opportunities for career advancement. Whether you're interested in pursuing additional degrees, moving up the career ladder, or exploring new specialties, health care offers many options for growth."
+				}
+			],
+			"endCopy": "If you're still unsure if health care is the right fit for you, <a href='/quiz'>take our free health care career quiz.</a> It will help you identify how your interests, skills, and strengths align with different medical career paths and suggest the degrees you can earn to take the next step in your career."
+		}
+	],
+	"contactForm": {
+		"title": "Explore Your Potencial School matches",
+		"description": "Let us know the best way to contact you with helpful information and  potential college or university  matches."
+	},
+	"takeQuiz": {
+		"title": "Ready to Find Your Role?",
+		"description": "In less than three minutes, you could discover which role could be a good fit for you—and the steps you can take to advance your career.",
+		"image": {
+			"src": "/images/ready-to-find-your-role.jpg",
+			"alt": "Take our free quiz"
+		},
+		"buttonText": "Take the Quiz",
+		"buttonLink": "/careers/business/quiz/start"
+	},
+	"statsAppily": [
+		{
+			"number": "600",
+			"title": "Institutions",
+			"description": "Trust Appily to match them with students like you"
+		},
+		{
+			"number": "Billions",
+			"title": "In Scholarships",
+			"description": "Can be applied for through Appily’s scholarship database"
+		},
+		{
+			"number": "4",
+			"title": "Trusted Tools",
+			"description": "Combine to make Appily your one-stop resource for finding a school"
+		}
+	]
 }

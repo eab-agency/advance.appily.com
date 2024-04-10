@@ -1,4 +1,8 @@
 {
+	"metaData": {
+		"title": "Explore Health Care Careers",
+		"description": "Take Appily Advance's comprehensive quiz to find which health care career path is best for you and the degree that will help you achieve your goals."
+	},
 	"links": [
 		{
 			"label": "Degree Completion",
@@ -14,10 +18,21 @@
 		}
 	],
 	"pageTitle": " Which <strong>health care career</strong> is right for you?",
+	"pageHero": {
+		"image": {
+			"src": "/images/which-health-care-career.jpg",
+			"alt": "Health care professional in a laboratory"
+		}
+	},
 	"quizSection": {
 		"title": "Take our Free Health Care Career Quiz to Find Out!",
 		"content": "<p> If you want to work in the medical field but you don’t know which job fits your skills and interests, this  free quiz can help find a good fit and you plan your next steps.</p><p>The Bureau of Labor Statistics  predicts about <strong>2 million jobs in health care will be created each year over the next decade. </strong>Many colleges and universities offer flexible, affordable degrees or certificates that can help you get a head start in transferring your skills to a new or more advanced role.</p><p> In less than three minutes, you could <strong>discover which type of health care career could be a good fit for you. </strong> We’ll also connect you with schools near you that</p>",
-		"buttonText": "Take the Quiz"
+		"image": {
+			"src": "/images/profesional-man-researching-online.jpg",
+			"alt": "Profesional man researching online"
+		},
+		"buttonText": "Take the Quiz",
+		"buttonLink": "/careers/healthcare/quiz/start"
 	},
 	"stats": [
 		{
@@ -37,6 +52,10 @@
 	"whyChoose": {
 		"title": "Why Choose a Career in Health Care?",
 		"subTitle": "",
+		"image": {
+			"src": "/images/doctor-wearing-mas-and-sthethoscope.jpg",
+			"alt": "Doctor wearing mask and a sthethoscope"
+		},
 		"reasons": [
 			{
 				"title": "Fulfilling Rewards",
@@ -61,30 +80,28 @@
 		"author": "Dr. Tiffany Osborn",
 		"authorTitle": "Professor of Surgery and Emergency Medicine, Washington University School of Medicine"
 	},
-	"rightCareer": [
-		{
-			"title": " Top 5 Reasons a Career in Health Care Could Be Right for You",
-			"description": "Are you considering a career in health care but unsure if it's the right fit for you? Here are the top five reasons why it might be:",
-			"reasons": [
-				{
-					"description": "<strong>Diverse Career Paths:</strong> The health care industry offers a wide range of career paths, from direct patient care roles like nursing and therapy, to support roles like hospital administration, medical analytics, and medical research."
-				},
-				{
-					"description": "<strong>Rewarding Work:</strong> Health care professionals have the opportunity to make a positive impact on others and improve their quality of life. If you're passionate about helping others and making a difference, health care could be a great fit for you."
-				},
-				{
-					"description": "<strong>Hands-On Work:</strong> If you enjoy hands-on work and thrive under pressure, direct patient care roles may be a perfect fit for you. These roles require excellent communication, problem-solving, and critical thinking skills, as well as attention to detail."
-				},
-				{
-					"description": "<strong>Technology and Data Analysis:</strong> Health care also offers many support roles that require a strong understanding of data analysis, research methodologies, and health care systems. If you enjoy working with data and technology, roles like medical analytics and medical research could be a great fit for you."
-				},
-				{
-					"description": "<strong>Career Advancement:</strong> The health care industry is constantly evolving and offers many opportunities for career advancement. Whether you're interested in pursuing additional degrees, moving up the career ladder, or exploring new specialties, health care offers many options for growth."
-				}
-			],
-			"endCopy": "If you're still unsure if health care is the right fit for you, <a href='/quiz'>take our free health care career quiz.</a> It will help you identify how your interests, skills, and strengths align with different medical career paths and suggest the degrees you can earn to take the next step in your career."
-		}
-	],
+	"rightCareer": {
+		"title": "<strong>Top 5 Reasons</strong> a Career in Health Care Could be Right for You",
+		"description": "Are you considering a career in health care but unsure if it's the right fit for you? Here are the top five reasons why it might be:",
+		"reasons": [
+			{
+				"description": "<strong>Diverse Career Paths:</strong> The health care industry offers a wide range of career paths, from direct patient care roles like nursing and therapy, to support roles like hospital administration, medical analytics, and medical research."
+			},
+			{
+				"description": "<strong>Rewarding Work:</strong> Health care professionals have the opportunity to make a positive impact on others and improve their quality of life. If you're passionate about helping others and making a difference, health care could be a great fit for you."
+			},
+			{
+				"description": "<strong>Hands-On Work:</strong> If you enjoy hands-on work and thrive under pressure, direct patient care roles may be a perfect fit for you. These roles require excellent communication, problem-solving, and critical thinking skills, as well as attention to detail."
+			},
+			{
+				"description": "<strong>Technology and Data Analysis:</strong> Health care also offers many support roles that require a strong understanding of data analysis, research methodologies, and health care systems. If you enjoy working with data and technology, roles like medical analytics and medical research could be a great fit for you."
+			},
+			{
+				"description": "<strong>Career Advancement:</strong> The health care industry is constantly evolving and offers many opportunities for career advancement. Whether you're interested in pursuing additional degrees, moving up the career ladder, or exploring new specialties, health care offers many options for growth."
+			}
+		],
+		"endCopy": "If you're still unsure if health care is the right fit for you, <a href='/quiz'>take our free health care career quiz.</a> It will help you identify how your interests, skills, and strengths align with different medical career paths and suggest the degrees you can earn to take the next step in your career."
+	},
 	"contactForm": {
 		"title": "Explore Your Potencial School matches",
 		"description": "Let us know the best way to contact you with helpful information and  potential college or university  matches."
@@ -92,7 +109,12 @@
 	"takeQuiz": {
 		"title": "Ready to Find Your Role?",
 		"description": "In less than three minutes, you could discover which role could be a good fit for you — and the steps you can take to advance your career.",
-		"buttonText": "Take the Quiz"
+		"image": {
+			"src": "/images/ready-to-find-your-role.jpg",
+			"alt": "Take our free quiz"
+		},
+		"buttonText": "Take the Quiz",
+		"buttonLink": "/careers/healthcare/quiz/start"
 	},
 	"statsAppily": [
 		{

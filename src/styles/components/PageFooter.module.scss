@@ -19,10 +19,10 @@
     margin: 0 auto;
     gap: tokens.$size-4;
 
-    @media (min-width: tokens.$mq-800) {
-      flex-direction: row;
-      gap: 0;
-    }
+    // @media (min-width: tokens.$mq-800) {
+    //   flex-direction: row;
+    //   gap: 0;
+    // }
   }
 
   p {
@@ -56,6 +56,15 @@
   }
 }
 
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$size-5;
+  padding-right: 2em;
+  max-width: 12rem;
+  flex-shrink: 0;
+}
+
 .logo {
   display: block;
   position: relative;
@@ -69,30 +78,60 @@
 
 .legalInfo {
   display: flex;
-  flex-direction: column;
-  gap: tokens.$size-2;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  width: 100%;
+  // gap: tokens.$size-2;
+
+  @media (min-width: tokens.$mq-800) {
+    flex-direction: row;
+  }
+}
+
+.copyright {
+  p {
+    font-size: tokens.$size-2;
+  }
+}
+
+.legalLinks {
+  display: flex;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+  margin-bottom: 2em;
+
+  @media (min-width: tokens.$mq-800) {
+    border-bottom: none;
+    margin: 0;
+    padding-left: 2em;
+    border-left: 1px dotted rgba(255, 255, 255, 0.2);
+  }
 
   ul {
     display: flex;
     flex-direction: column;
-    gap: tokens.$size-1;
+    margin-top: 0;
     margin-bottom: 3em;
+    padding: 0;
+    gap: 0;
+
+    @media (min-width: tokens.$mq-800) {
+      flex-flow: row wrap;
+      gap: tokens.$size-4;
+    }
 
     li {
       a {
         font-size: tokens.$size-3;
         color: var(--c-teal-500);
+        padding-block: 0.7em;
+        line-height: 1.2;
+        display: block;
+        // text-transform: uppercase;
 
         &:hover {
           color: var(--c-orange-500);
         }
       }
-    }
-  }
-
-  .copyright {
-    p {
-      font-size: tokens.$size-3;
     }
   }
 }
@@ -106,10 +145,11 @@
   border-radius: 0;
   color: var(--c-teal-500);
   border: none;
-  padding: 0;
+  padding: 0.7em 0;
   font-weight: tokens.$fontWeight-light;
   text-decoration: underline;
   font-family: tokens.$f-sans;
+  line-height: 1;
   cursor: pointer;
 
   &::before,

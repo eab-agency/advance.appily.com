@@ -14,54 +14,54 @@ import { Footer, Header } from "@/components";
 import Script from "next/script";
 
 export default async function RootLayout({
-	children,
+  children,
 }: { children: React.ReactNode }) {
-	return (
-		<html lang="en" suppressHydrationWarning>
-			<head>
-				<link rel="stylesheet" href="https://use.typekit.net/wba2ytz.css" />
-				{/* <!-- OneTrust Cookies Consent Notice start for appily.com --> */}
-				<Script
-					src="https://cdn.cookielaw.org/consent/f621c13f-1c94-43c9-8362-0f5d72c69f26/OtAutoBlock.js"
-					strategy="beforeInteractive"
-				/>
-				<Script
-					src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
-					data-domain-script="f621c13f-1c94-43c9-8362-0f5d72c69f26"
-				/>
-				<Script
-					id="otStubData"
-					dangerouslySetInnerHTML={{
-						__html: "function OptanonWrapper() {}",
-					}}
-				/>
-				{/* <!-- OneTrust Cookies Consent Notice end for appily.com --> */}
-			</head>
-			<body>
-				<Suspense>
-					<Analytics />
-				</Suspense>
-				<Providers>
-					<Header links={data.links} />
-					{/* <LocationInDevMode /> */}
-					<main className="layout-wrapper">{children}</main>
-					<Footer />
-				</Providers>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/wba2ytz.css" />
+        {/* <!-- OneTrust Cookies Consent Notice start for appily.com --> */}
+        <Script
+          src="https://cdn.cookielaw.org/consent/f621c13f-1c94-43c9-8362-0f5d72c69f26/OtAutoBlock.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+          data-domain-script="f621c13f-1c94-43c9-8362-0f5d72c69f26"
+        />
+        <Script
+          id="otStubData"
+          dangerouslySetInnerHTML={{
+            __html: "function OptanonWrapper() {}",
+          }}
+        />
+        {/* <!-- OneTrust Cookies Consent Notice end for appily.com --> */}
+      </head>
+      <body>
+        <Suspense>
+          <Analytics />
+        </Suspense>
+        <Providers>
+          <Header links={data.links} />
+          {/* <LocationInDevMode /> */}
+          <main className="layout-wrapper">{children}</main>
+          <Footer />
+        </Providers>
+      </body>
+    </html>
+  );
 }
 
 export const metadata: Metadata = {
-	metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || ""),
-	openGraph: mergeOpenGraph(),
-	twitter: mergeTwitter(),
-	description: "Resources for Students Returning to School",
-	verification: {
-		google: "S6f1L3wpKhuwsB28x34ztRdt-hXMYsNJ0xEsK9xHOEQ",
-	},
-	title: {
-		default: "Appily Advance",
-		template: "%s | Appily Advance",
-	},
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || ""),
+  openGraph: mergeOpenGraph(),
+  twitter: mergeTwitter(),
+  description: "Resources for Students Returning to School",
+  verification: {
+    google: "S6f1L3wpKhuwsB28x34ztRdt-hXMYsNJ0xEsK9xHOEQ",
+  },
+  title: {
+    default: "Appily Advance",
+    template: "%s | Appily Advance",
+  },
 };

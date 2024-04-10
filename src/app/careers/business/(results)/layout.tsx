@@ -5,29 +5,28 @@ import { Metadata } from "next";
 
 const title = "Your ideal role in business";
 const description =
-	"Discover your ideal role in business and find schools that offer degrees to help you reach your goals.";
+  "Discover your ideal role in business and find schools that offer degrees to help you reach your goals.";
 
 export const metadata: Metadata = {
-	openGraph: mergeOpenGraph({
-		title: title,
-		description: description,
-	}),
-	twitter: mergeTwitter({
-		title: title,
-		description: description,
-	}),
-	title: title,
-	description: description,
+  openGraph: mergeOpenGraph({
+    title: title,
+    description: description,
+  }),
+  twitter: mergeTwitter({
+    title: title,
+    description: description,
+  }),
+  title: title,
+  description: description,
 };
 
 export default async function BusinessResultsLayout({
-	children,
+  children,
 }: { children: React.ReactNode }) {
-	const links: Link[] = await getSlugs("business");
-	return (
-		<>
-			{/* <Header /> */}
-			{children}
-		</>
-	);
+  const links: Link[] = await getSlugs("business");
+  return (
+    <>
+      {children}
+    </>
+  );
 }

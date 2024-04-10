@@ -2,15 +2,7 @@ import isDevMode from "@/helpers/isDevMode";
 /* eslint-disable react/prop-types */
 import React from "react";
 
-const styles = {
-  position: "absolute",
-  top: 100,
-  right: 100,
-  padding: "10px",
-  background: "rgba(0,0,0,0.5)",
-  color: "#fff",
-  zIndex: 100,
-};
+import styles from "@/styles/components/LocationScoreDev.module.scss";
 
 const Score = ({ score, winningPersonality }) => {
   if (!isDevMode()) {
@@ -18,8 +10,8 @@ const Score = ({ score, winningPersonality }) => {
   }
 
   return (
-    <div style={styles}>
-      <h2>Scores (isDevMode: {isDevMode()})</h2>
+    <div className={styles.scoreCard}>
+      <p>Scores Card Info (isDevMode: {isDevMode()})</p>
       <ul>
         {typeof score === 'number' ? (
           <li>Score: {score}</li>
