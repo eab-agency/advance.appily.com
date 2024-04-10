@@ -1,4 +1,4 @@
-import { CALL_TO_ACTION, CONTENT, FORM_BLOCK, MEDIA_BLOCK } from './blocks'
+import { CALL_TO_ACTION, SECTION, FORM_BLOCK, MEDIA_BLOCK, STATISTICS,TESTIMONIAL, HIGHLIGHTEDCTA, CALLOUTSECTION } from './blocks'
 import { LINK_FIELDS } from './link'
 import { MEDIA , ANIMATION} from './media'
 import { META } from './meta'
@@ -36,9 +36,13 @@ export const PAGE = `
         }
         layout {
           ${CALL_TO_ACTION}
-          ${CONTENT}
+          ${SECTION}
           ${FORM_BLOCK}
           ${MEDIA_BLOCK}
+          ${STATISTICS}
+          ${TESTIMONIAL}
+          ${HIGHLIGHTEDCTA}
+          ${CALLOUTSECTION}
         }
         ${META}
         breadcrumbs {

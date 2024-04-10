@@ -78,7 +78,7 @@ export interface Page {
             };
             url: string;
             label: string;
-            appearance?: 'primary' | 'secondary';
+            appearance?: 'default' | 'primary' | 'secondary';
           };
           id?: string;
         }[];
@@ -87,7 +87,7 @@ export interface Page {
         blockType: 'cta';
       }
     | {
-        colorSchema?: 'blackwhite';
+        backgroundColor?: 'white' | 'black';
         enableHighlight?: boolean;
         type?: 'row' | 'column';
         rows?: {
@@ -95,18 +95,14 @@ export interface Page {
             size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
             blocks: (
               | {
-                  statistics?: {
-                    number: string;
-                    title?: string;
-                    richText: {
-                      [k: string]: unknown;
-                    }[];
-                    id?: string;
+                  number: string;
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
                   }[];
-                  source?: string;
                   id?: string;
                   blockName?: string;
-                  blockType: 'statistics';
+                  blockType: 'stats';
                 }
               | {
                   author?: string;
@@ -120,7 +116,7 @@ export interface Page {
                   blockType: 'testimonial';
                 }
               | {
-                  colorSchema?: 'blackwhite';
+                  careerBlockBackgroundColor?: 'white' | 'black';
                   title?: string;
                   richText: {
                     [k: string]: unknown;
@@ -222,7 +218,7 @@ export interface Page {
                       };
                       url: string;
                       label: string;
-                      appearance?: 'primary' | 'secondary';
+                      appearance?: 'default' | 'primary' | 'secondary';
                     };
                     id?: string;
                   }[];
@@ -239,18 +235,14 @@ export interface Page {
           size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
           blocks: (
             | {
-                statistics?: {
-                  number: string;
-                  title?: string;
-                  richText: {
-                    [k: string]: unknown;
-                  }[];
-                  id?: string;
+                number: string;
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
                 }[];
-                source?: string;
                 id?: string;
                 blockName?: string;
-                blockType: 'statistics';
+                blockType: 'stats';
               }
             | {
                 author?: string;
@@ -264,7 +256,7 @@ export interface Page {
                 blockType: 'testimonial';
               }
             | {
-                colorSchema?: 'blackwhite';
+                careerBlockBackgroundColor?: 'white' | 'black';
                 title?: string;
                 richText: {
                   [k: string]: unknown;
@@ -366,7 +358,7 @@ export interface Page {
                     };
                     url: string;
                     label: string;
-                    appearance?: 'primary' | 'secondary';
+                    appearance?: 'default' | 'primary' | 'secondary';
                   };
                   id?: string;
                 }[];
@@ -379,7 +371,7 @@ export interface Page {
         }[];
         id?: string;
         blockName?: string;
-        blockType: 'content';
+        blockType: 'section';
       }
     | {
         form: string | Form;
@@ -428,6 +420,110 @@ export interface Page {
         id?: string;
         blockName?: string;
         blockType: 'archive';
+      }
+    | {
+        backgroundColor?: 'white' | 'black';
+        statistics?: {
+          number: string;
+          title?: string;
+          richText: {
+            [k: string]: unknown;
+          }[];
+          id?: string;
+        }[];
+        source?: string;
+        id?: string;
+        blockName?: string;
+        blockType: 'statistics';
+      }
+    | {
+        author?: string;
+        backgroundColor?: 'white' | 'black';
+        richText: {
+          [k: string]: unknown;
+        }[];
+        authortitle?: string;
+        links?: {
+          link: {
+            type?: 'reference' | 'custom';
+            newTab?: boolean;
+            reference: {
+              value: string | Page;
+              relationTo: 'pages';
+            };
+            url: string;
+            label: string;
+            appearance?: 'default' | 'primary' | 'secondary';
+          };
+          id?: string;
+        }[];
+        alignment?: 'left' | 'center' | 'right';
+        id?: string;
+        blockName?: string;
+        blockType: 'testimonial';
+      }
+    | {
+        callOutBackgroundColor?: 'white' | 'black';
+        calloutTitle: {
+          [k: string]: unknown;
+        }[];
+        richText?: {
+          [k: string]: unknown;
+        }[];
+        calloutLinks?: {
+          link: {
+            type?: 'reference' | 'custom';
+            newTab?: boolean;
+            reference: {
+              value: string | Page;
+              relationTo: 'pages';
+            };
+            url: string;
+            label: string;
+            appearance?: 'default' | 'primary' | 'secondary';
+          };
+          id?: string;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'callout';
+      }
+    | {
+        highlightCTABackgroundColor?: 'white' | 'black';
+        title?: string;
+        richText?: {
+          [k: string]: unknown;
+        }[];
+        highlightedctaLinks?: {
+          link: {
+            type?: 'reference' | 'custom';
+            newTab?: boolean;
+            reference: {
+              value: string | Page;
+              relationTo: 'pages';
+            };
+            url: string;
+            label: string;
+            appearance?: 'default' | 'primary' | 'secondary';
+          };
+          id?: string;
+        }[];
+        imagealignment?: 'left' | 'center' | 'right';
+        image?: string | Media;
+        id?: string;
+        blockName?: string;
+        blockType: 'highlightCTA';
+      }
+    | {
+        backgroundColor?: 'white' | 'black';
+        title?: string;
+        richText: {
+          [k: string]: unknown;
+        }[];
+        carouselCards?: string[] | CarouselCard[];
+        id?: string;
+        blockName?: string;
+        blockType: 'carousel';
       }
   )[];
   slug?: string;
@@ -580,6 +676,127 @@ export interface Form {
   updatedAt: string;
   createdAt: string;
 }
+export interface CarouselCard {
+  id: string;
+  admintitle?: string;
+  partner: string | Partner;
+  leadTypes: string[] | LeadType[];
+  partnerState?: string;
+  title: string;
+  subtitle?: string;
+  description: {
+    [k: string]: unknown;
+  }[];
+  links?: {
+    link: {
+      type?: 'reference' | 'custom';
+      newTab?: boolean;
+      reference: {
+        value: string | Page;
+        relationTo: 'pages';
+      };
+      url: string;
+      label: string;
+    };
+    id?: string;
+  }[];
+  image: string | Media;
+  updatedAt: string;
+  createdAt: string;
+  _status?: 'draft' | 'published';
+}
+export interface Partner {
+  id: string;
+  title: string;
+  shortName: string;
+  acroynm?: string;
+  contact: {
+    street1: string;
+    street2?: string;
+    city: string;
+    state:
+      | 'AL'
+      | 'AK'
+      | 'AZ'
+      | 'AR'
+      | 'CA'
+      | 'CO'
+      | 'CT'
+      | 'DE'
+      | 'FL'
+      | 'GA'
+      | 'HI'
+      | 'ID'
+      | 'IL'
+      | 'IN'
+      | 'IA'
+      | 'KS'
+      | 'KY'
+      | 'LA'
+      | 'ME'
+      | 'MD'
+      | 'MA'
+      | 'MI'
+      | 'MN'
+      | 'MS'
+      | 'MO'
+      | 'MT'
+      | 'NE'
+      | 'NV'
+      | 'NH'
+      | 'NJ'
+      | 'NM'
+      | 'NY'
+      | 'NC'
+      | 'ND'
+      | 'OH'
+      | 'OK'
+      | 'OR'
+      | 'PA'
+      | 'RI'
+      | 'SC'
+      | 'SD'
+      | 'TN'
+      | 'TX'
+      | 'UT'
+      | 'VT'
+      | 'VA'
+      | 'WA'
+      | 'WV'
+      | 'WI'
+      | 'WY'
+      | 'DC';
+    zip: string;
+    country?: string;
+  };
+  logo: string | Media;
+  phone?: string;
+  email?: string;
+  links?: {
+    link: {
+      type?: 'reference' | 'custom';
+      newTab?: boolean;
+      reference: {
+        value: string | Page;
+        relationTo: 'pages';
+      };
+      url: string;
+      label: string;
+    };
+    id?: string;
+  }[];
+  publishedDate?: string;
+  slug?: string;
+  updatedAt: string;
+  createdAt: string;
+  _status?: 'draft' | 'published';
+}
+export interface LeadType {
+  id: string;
+  title: string;
+  updatedAt: string;
+  createdAt: string;
+}
 export interface Post {
   id: string;
   title: string;
@@ -623,7 +840,7 @@ export interface Post {
             };
             url: string;
             label: string;
-            appearance?: 'primary' | 'secondary';
+            appearance?: 'default' | 'primary' | 'secondary';
           };
           id?: string;
         }[];
@@ -632,7 +849,7 @@ export interface Post {
         blockType: 'cta';
       }
     | {
-        colorSchema?: 'blackwhite';
+        backgroundColor?: 'white' | 'black';
         enableHighlight?: boolean;
         type?: 'row' | 'column';
         rows?: {
@@ -640,18 +857,14 @@ export interface Post {
             size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
             blocks: (
               | {
-                  statistics?: {
-                    number: string;
-                    title?: string;
-                    richText: {
-                      [k: string]: unknown;
-                    }[];
-                    id?: string;
+                  number: string;
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
                   }[];
-                  source?: string;
                   id?: string;
                   blockName?: string;
-                  blockType: 'statistics';
+                  blockType: 'stats';
                 }
               | {
                   author?: string;
@@ -665,7 +878,7 @@ export interface Post {
                   blockType: 'testimonial';
                 }
               | {
-                  colorSchema?: 'blackwhite';
+                  careerBlockBackgroundColor?: 'white' | 'black';
                   title?: string;
                   richText: {
                     [k: string]: unknown;
@@ -767,7 +980,7 @@ export interface Post {
                       };
                       url: string;
                       label: string;
-                      appearance?: 'primary' | 'secondary';
+                      appearance?: 'default' | 'primary' | 'secondary';
                     };
                     id?: string;
                   }[];
@@ -784,18 +997,14 @@ export interface Post {
           size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
           blocks: (
             | {
-                statistics?: {
-                  number: string;
-                  title?: string;
-                  richText: {
-                    [k: string]: unknown;
-                  }[];
-                  id?: string;
+                number: string;
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
                 }[];
-                source?: string;
                 id?: string;
                 blockName?: string;
-                blockType: 'statistics';
+                blockType: 'stats';
               }
             | {
                 author?: string;
@@ -809,7 +1018,7 @@ export interface Post {
                 blockType: 'testimonial';
               }
             | {
-                colorSchema?: 'blackwhite';
+                careerBlockBackgroundColor?: 'white' | 'black';
                 title?: string;
                 richText: {
                   [k: string]: unknown;
@@ -911,7 +1120,7 @@ export interface Post {
                     };
                     url: string;
                     label: string;
-                    appearance?: 'primary' | 'secondary';
+                    appearance?: 'default' | 'primary' | 'secondary';
                   };
                   id?: string;
                 }[];
@@ -924,7 +1133,7 @@ export interface Post {
         }[];
         id?: string;
         blockName?: string;
-        blockType: 'content';
+        blockType: 'section';
       }
     | {
         form: string | Form;
@@ -979,127 +1188,6 @@ export interface Post {
   updatedAt: string;
   createdAt: string;
   _status?: 'draft' | 'published';
-}
-export interface Partner {
-  id: string;
-  title: string;
-  shortName: string;
-  acroynm?: string;
-  contact: {
-    street1: string;
-    street2?: string;
-    city: string;
-    state:
-      | 'AL'
-      | 'AK'
-      | 'AZ'
-      | 'AR'
-      | 'CA'
-      | 'CO'
-      | 'CT'
-      | 'DE'
-      | 'FL'
-      | 'GA'
-      | 'HI'
-      | 'ID'
-      | 'IL'
-      | 'IN'
-      | 'IA'
-      | 'KS'
-      | 'KY'
-      | 'LA'
-      | 'ME'
-      | 'MD'
-      | 'MA'
-      | 'MI'
-      | 'MN'
-      | 'MS'
-      | 'MO'
-      | 'MT'
-      | 'NE'
-      | 'NV'
-      | 'NH'
-      | 'NJ'
-      | 'NM'
-      | 'NY'
-      | 'NC'
-      | 'ND'
-      | 'OH'
-      | 'OK'
-      | 'OR'
-      | 'PA'
-      | 'RI'
-      | 'SC'
-      | 'SD'
-      | 'TN'
-      | 'TX'
-      | 'UT'
-      | 'VT'
-      | 'VA'
-      | 'WA'
-      | 'WV'
-      | 'WI'
-      | 'WY'
-      | 'DC';
-    zip: string;
-    country?: string;
-  };
-  logo: string | Media;
-  phone?: string;
-  email?: string;
-  links?: {
-    link: {
-      type?: 'reference' | 'custom';
-      newTab?: boolean;
-      reference: {
-        value: string | Page;
-        relationTo: 'pages';
-      };
-      url: string;
-      label: string;
-    };
-    id?: string;
-  }[];
-  publishedDate?: string;
-  slug?: string;
-  updatedAt: string;
-  createdAt: string;
-  _status?: 'draft' | 'published';
-}
-export interface CarouselCard {
-  id: string;
-  admintitle?: string;
-  partner: string | Partner;
-  leadTypes: string[] | LeadType[];
-  partnerState?: string;
-  title: string;
-  subtitle?: string;
-  description: {
-    [k: string]: unknown;
-  }[];
-  links?: {
-    link: {
-      type?: 'reference' | 'custom';
-      newTab?: boolean;
-      reference: {
-        value: string | Page;
-        relationTo: 'pages';
-      };
-      url: string;
-      label: string;
-    };
-    id?: string;
-  }[];
-  image: string | Media;
-  updatedAt: string;
-  createdAt: string;
-  _status?: 'draft' | 'published';
-}
-export interface LeadType {
-  id: string;
-  title: string;
-  updatedAt: string;
-  createdAt: string;
 }
 export interface FormSubmission {
   id: string;

@@ -38,7 +38,6 @@ const RenderColumnContent = ({ columns }) => {
             <div className={`column ${classes.cell} ${style}`} key={index}>
               {blocks &&
                 blocks.map((block, blockIndex) => {
-                  console.log(block,'block**')
                   return (
                     <div key={blockIndex}>
                       {blockRenderers[block.blockType](block)}
@@ -53,7 +52,7 @@ const RenderColumnContent = ({ columns }) => {
 };
 
 const blockRenderers = {
-  statistics: (block) => <Stats data={block} />,
+  stats: (block) => <Stats stats={block.statistics}{...block} />,
   richText: (block) => <RichText content={block.richText} />,
   mediaBlock: (block) => {
   return (

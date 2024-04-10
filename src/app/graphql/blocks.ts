@@ -101,8 +101,19 @@ export const STATISTICS = `
     title
     richText
   }
+  source
 }
 `
+
+export const STATS = `
+...on Stats {
+  blockType
+  number
+    title
+    richText
+}
+`
+
 export const TESTIMONIAL = `
 ...on Testimonial {
   blockType
@@ -128,7 +139,7 @@ export const ACCORDIONBLOCK =`
 export const CAREERBLOCK = `
 ...on Career {
   blockType
-  colorSchema
+  careerBlockBackgroundColor
   title
   image {
     ${MEDIA_FIELDS}
@@ -138,6 +149,33 @@ export const CAREERBLOCK = `
   }
 }
 `
+export const HIGHLIGHTEDCTA = `
+...on HighlightCTA {
+  blockType
+  highlightCTABackgroundColor
+  title
+  richText
+  imagealignment
+  image {
+    ${MEDIA_FIELDS}
+  }
+  highlightedctaLinks {
+    link ${LINK_FIELDS()}
+  }
+}
+`
+export const CALLOUTSECTION = `
+...on Callout {
+  blockType
+  callOutBackgroundColor
+  calloutTitle
+  richText
+  calloutLinks {
+    link ${LINK_FIELDS()}
+  }
+}
+`
+
 export const BUTTONGROUPBLOCK = `
 ...on ButtonGroup {
   blockType
@@ -165,16 +203,16 @@ export const COMPARISONBLOCK = `
   }
 }`
 
-export const CONTENT = `
-...on Content {
+export const SECTION = `
+...on Section {
   blockType
-  colorSchema
+  backgroundColor
   enableHighlight
   rows{
     columns{
       size
       blocks {
-        ${STATISTICS}
+        ${STATS}
         ${TESTIMONIAL}
         ${ACCORDIONBLOCK}
         ${CAREERBLOCK}
@@ -188,7 +226,7 @@ export const CONTENT = `
   columns{
     size
     blocks {
-      ${STATISTICS}
+      ${STATS}
       ${TESTIMONIAL}
       ${ACCORDIONBLOCK}
       ${CAREERBLOCK}

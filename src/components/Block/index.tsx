@@ -7,11 +7,19 @@ import { MediaBlock } from '../../blocks/MediaBlock'
 
 import { BackgroundColor } from '../BackgroundColor'
 import { VerticalPadding, VerticalPaddingOptions } from '../VerticalPadding'
+import Statistic from '../../blocks/StatisticBlock'
+import Testimonial from '@/blocks/TestimonialBlock'
+import HighlightedCtaSection from '@/blocks/HighlightCTASection'
+import CalloutSection from '@/blocks/CalloutSection'
 
 
 const blockComponents = {
-  content: ContentBlock,
-  mediaBlock: MediaBlock
+  section: ContentBlock,
+  mediaBlock: MediaBlock,
+  statistics: Statistic,
+  testimonial: Testimonial,
+  highlightCTA: HighlightedCtaSection,
+  callout: CalloutSection
 }
 
 export const Blocks: React.FC<{

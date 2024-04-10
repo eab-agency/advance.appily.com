@@ -10,14 +10,14 @@ import classes from './index.module.scss'
 import RenderRowcontent from '@/components/RenderRowContent'
 import RendeColumncontent from '@/components/RenderColumnContent'
 
-type Props = Extract<Page['layout'][0], { blockType: 'content' }>
+type Props = Extract<Page['layout'][0], { blockType: 'section' }>
 
 export const ContentBlock: React.FC<
   Props & {
     id?: string
   }
 > = props => {
-  const { columns, rows } = props
+  const { columns, rows } = props;
   return (
     <Gutter className={classes.content}>
       
