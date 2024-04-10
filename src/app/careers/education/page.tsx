@@ -1,28 +1,39 @@
-"use client";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 import {
   Accordion,
   Button,
-  CarouselWithForm,
-  Header,
   Stats,
   StickyCta,
   Testimonial,
-  WhatIsCappex,
 } from "@/components";
-import { IconCard } from "@/components/IconCard/IconCard";
-import { useUser } from "@/context/context";
 import data from "@/data/careers-education.json";
 import Link from "next/link";
 
+
+import PageHero from "@/components/Heros/PageHero";
+import { mergeOpenGraph, mergeTwitter } from "@/seo";
+import { Metadata } from "next";
+
+const title = "Explore Education Careers";
+const description = "How can you make a difference for today's students? Discover which education career path is right for you with Appily Advance's free career quiz.";
+
+export const metadata: Metadata = {
+  title: title,
+  description: description,
+  openGraph: mergeOpenGraph({
+    title: title,
+    description: description,
+  }),
+  twitter: mergeTwitter({
+    title: title,
+    description: description,
+  }),
+};
+
 /* eslint-disable react/no-danger */
 const BusinessSeoPage = () => {
-  const { setVertical } = useUser();
-  useEffect(() => {
-    setVertical("Education");
-  }, []);
   const reasonsArray = data.whyChoose.reasons;
   const rightCareerArray = data.rightCareer[0].reasons;
   const rightCareerList = rightCareerArray.map((reason, index) => (
@@ -36,37 +47,20 @@ const BusinessSeoPage = () => {
     </li>
   ));
 
-  const carouselRef = useRef(null);
-
-  const [themeMode, setThemeMode] = useState("light");
-
-  useEffect(() => {
-    if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
-      setThemeMode("dark");
-    } else {
-      setThemeMode("light");
-    }
-  }, []);
-
   return (
     <>
-      <section className="pageHero">
-        <div className="group center-aligned center-justified">
-          <h1
-            dangerouslySetInnerHTML={{
-              __html: data.pageTitle,
-            }}
-          />
-          <figure className="heroImage">
-            <Image
-              src="/images/education/education-career-hero.jpg"
-              width={600}
-              height={600}
-              alt="Man teaching a class"
-            />
-          </figure>
-        </div>
-      </section>
+      <PageHero
+        image={{
+          src: "/images/education/education-career-hero.jpg",
+          alt: "Man teaching a class",
+        }}
+      >
+        <h1
+          dangerouslySetInnerHTML={{
+            __html: data.pageTitle,
+          }}
+        />
+      </PageHero>
       <section className="quizSection">
         <div className="group center-aligned row cols-2">
           <div className="column">
@@ -89,7 +83,7 @@ const BusinessSeoPage = () => {
             <Button
               appearance="primary"
               label={data.quizSection.buttonText}
-              href="/careers/education/quiz"
+              href="/careers/education/quiz/start"
               className="button btn-primary btn-click-quiz"
             />
           </div>
@@ -176,11 +170,6 @@ const BusinessSeoPage = () => {
           />
         </div>
       </section>
-      {/* <div id="explore-your-school-matches" ref={carouselRef}>
-				<CarouselWithForm formId="8" />
-			</div> */}
-
-      <WhatIsCappex />
 
       <section className="takeQuiz full-content">
         <div className="group row">
@@ -200,13 +189,13 @@ const BusinessSeoPage = () => {
             <Button
               type="button"
               label={data.takeQuiz.buttonText}
-              href="/careers/education/quiz"
+              href="/careers/education/quiz/start"
               className="button btn-primary btn-click-quiz"
             />
           </div>
         </div>
       </section>
-      <StickyCta />
+      <StickyCta ctaLabel="Take the Education Career Quiz" />
     </>
   );
 };

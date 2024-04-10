@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -11,8 +10,8 @@ export default function MainLogo() {
 	useEffect(() => {
 		const matchColorMode = window.matchMedia("(prefers-color-scheme: dark)");
 
-		const logoLight = "/images/appily-advance-logo-light.svg";
-		const logoDark = "/images/appily-advance-logo-dark.svg";
+		const logoLight = "/images/appily-logo-horizontal-black.svg";
+		const logoDark = "/images/appily-logo-horizontal-white.svg";
 
 		const handleLogoChange = e => {
 			setLogo(e.matches ? logoDark : logoLight);
@@ -29,7 +28,15 @@ export default function MainLogo() {
 
 	return (
 		<figure className={styles["main-logo"]}>
-			{logo && <Image src={logo} alt="Appily Logo" width={100} height={19} />}
+			{logo && (
+				<Image
+					src={logo}
+					alt="Appily Advance Logo"
+					width={100}
+					height={19}
+					priority={true}
+				/>
+			)}
 		</figure>
 	);
 }

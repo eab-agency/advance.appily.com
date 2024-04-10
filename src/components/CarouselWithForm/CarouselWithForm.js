@@ -38,10 +38,17 @@ const CarouselWithForm = ({
 						{description ? (
 							<div dangerouslySetInnerHTML={{ __html: description }} />
 						) : (
-							<p>
-								The following schools offer programs that could help you reach
-								your goals.
-							</p>
+							<>
+								<p>
+									Appily partners with institutions across the country that are
+									known for having exceptional programs and providing strong
+									outcomes.
+								</p>
+								<p>
+									No matter which career or degree you choose, you’re likely to
+									find a path to success at these colleges and universities.
+								</p>
+							</>
 						)}
 					</div>
 

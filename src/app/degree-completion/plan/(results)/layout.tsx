@@ -3,26 +3,26 @@ import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Link } from "@/types";
 import { Metadata } from "next";
 
-const title = "Are you ready to return to school?";
+const title = "Back-to-School Plan | Business | Appily Advance";
 const description =
-	"Discover your readiness for a successful return to education and find schools that offer degrees to help you reach your goals.";
+  "Discover in-demand business careers and the bachelor's degrees that can help you succeed, plus tips for funding and finishing your undergraduate degree.";
 
 export const metadata: Metadata = {
-	openGraph: mergeOpenGraph({
-		title: title,
-		description: description,
-	}),
-	twitter: mergeTwitter({
-		title: title,
-		description: description,
-	}),
-	title: title,
-	description: description,
+  openGraph: mergeOpenGraph({
+    title: title,
+    description: description,
+  }),
+  twitter: mergeTwitter({
+    title: title,
+    description: description,
+  }),
+  title: title,
+  description: description,
 };
 
 export default async function BusinessResultsLayout({
-	children,
+  children,
 }: { children: React.ReactNode }) {
-	const links: Link[] = await getSlugs("degree-completion");
-	return <>{children}</>;
+  const links: Link[] = await getSlugs("degree-completion");
+  return <>{children}</>;
 }

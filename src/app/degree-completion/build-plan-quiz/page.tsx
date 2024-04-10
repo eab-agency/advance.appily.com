@@ -5,8 +5,8 @@ import Image from "next/image";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
-const title = "Forge Your Path in Business";
-const description = "Appily Business Quiz";
+const title = "Back-to-School Plan";
+const description = "Answer a few questions and we'll help you build a plan to go back to school, including how to pay for it and what degrees can prepare you for in-demand careers.";
 
 export const metadata: Metadata = {
   title: title,
@@ -34,21 +34,16 @@ export default function QuizLandingPage() {
             </header>
             <p>
               Stepping back into the world of education might seem daunting, but
-              remember, every great journey begins with a single step—and you're
+              remember, <strong>every great journey begins with a single step</strong>—and you're
               already on your way.
             </p>
-            <p>Here's what your plan unlocks:</p>
+            <p>Your plan will include:</p>
             <ul>
-              <li>
-                <strong>Clarity and Confidence:</strong> No more
-                second-guessing. Every piece of advice here is tailored to help
-                you navigate your educational journey with ease.
-              </li>
-              <li>
-                <strong>A Future Tailored to You:</strong> Your goals, your
-                aspirations, your pace. Embrace the exciting opportunities that
-                lie ahead.
-              </li>
+              <li>Information about the <strong>lifetime value</strong> of a bachelor's degree</li>
+              <li>Tips for <strong>reducing cost</strong> and funding your degree</li>
+              <li>In-demand <strong>career paths</strong> in your area of interest</li>
+              <li><strong>Degrees and schools</strong> that can help you reach your goals</li>
+              <li>Detailed <strong>next steps</strong> you can take</li>
             </ul>
             <Button
               label="Answer a Few Questions"

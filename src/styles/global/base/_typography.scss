@@ -26,7 +26,7 @@ h1 {
   line-height: tokens.$f-lineHeight-tight;
 
   strong {
-    font-weight: tokens.$fontWeight-black;
+    font-weight: tokens.$fontWeight-bold;
     font-size: 1.3em;
     color: var(--c-headingSecondary);
 
@@ -72,7 +72,7 @@ address {
   font-style: normal;
   font-weight: 300;
   color: var(--c-bodyPrimary);
-  font-size: clamp(tokens.$size-3, 2vw, tokens.$size-4);
+  font-size: clamp(tokens.$size-3, 2vw, 1.2rem);
 
   strong {
     font-weight: tokens.$fontWeight-bold;

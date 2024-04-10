@@ -5,6 +5,7 @@ import styles from "@/styles/components/Quiz.module.scss";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Question from "./Question";
+import QuestionsTitle from "./QuestionsTitle";
 import ResetQuizButton from "./ResetQuizButton";
 import Results from "./ResultsQuiz2";
 import Score from "./Score";
@@ -129,7 +130,22 @@ export function QuizV2({
 							winningPersonality={quizState.highestScorePersonality}
 						/>
 						<header className={styles.quizContentHead}>
-							{/* <span className="intro-title">{title || "Take the Quiz"}</span> */}
+							<QuestionsTitle
+								quizState={quizState}
+								questions={questions}
+								titles={[
+									"You've got this! 🤩",
+									"Keep going! 🔥",
+									"You're doing great! 🎉",
+									"Way to go! 🚀 Keep answering!",
+									"🌟 You're doing fantastic!",
+									"You're making great progress! 🔥",
+									"🏆 Keep pushing forward!",
+									"💪 You're crushing it!",
+									"A few more left ⌛️",
+									"You're almost there! 🏁",
+								]}
+							/>
 							<div className={styles.questionsCounter}>
 								Question {quizState.currentQuestionIdx + 1} of{" "}
 								{questions?.length}
