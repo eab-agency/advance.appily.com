@@ -9,18 +9,7 @@
   width: calc(50% - 20px); /* Default to half width */
 }
 
-.oneThird {
-  width: calc(33.333% - 20px); /* Adjust width as needed */
-}
-
-.half {
-  width: calc(50% - 20px); /* Adjust width as needed */
-}
-
-.twoThirds {
-  width: calc(66.666% - 20px); /* Adjust width as needed */
-}
-
-.full {
-  width: calc(100% - 20px); /* Adjust width as needed */
+// Use the CSS custom property for column width
+.columnWidth {
+  width: var(--box-width);
 }

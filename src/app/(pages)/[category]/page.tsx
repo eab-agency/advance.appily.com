@@ -18,20 +18,22 @@ export async function generateStaticParams() {
   });
   return a;
 }
-const CategoryPage = async ({ params, searchParams }: any) => {
-  const { category, subCategory } = params;
-  let pageData: Page | null = null
-  const slug = [category, subCategory].filter(Boolean);
-  try {
-    pageData = await fetchPage(slug);
-  } catch (error) {
-  }
 
-
-  if (!pageData) {
-    return notFound()
-  }
-  const { hero, layout } = pageData;
+  const CategoryPage = async({ params, searchParams }: any) => {
+	const { category, subCategory } = params; 
+	let pageData: Page | null = null
+    const slug = [category, subCategory].filter(Boolean);
+	try {
+		pageData  = await fetchPage(slug);
+	  } catch (error) {
+	  }
+	  
+	
+	if (!pageData) {
+		return notFound()
+	  }
+	const {hero , layout} = pageData;
+	// console.log(hero,layout,'hero***',)
   return (
     <React.Fragment>
       <Hero {...hero} />

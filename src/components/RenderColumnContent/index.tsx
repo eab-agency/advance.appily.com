@@ -8,34 +8,18 @@ import { Testimonial } from '../Testimonial';
 import  AccordionSection  from '../commonComponent/AccordionGroup';
 import ComparisonCard  from '../commonComponent/ComparisonCard';
 import ButtonGroup from '../commonComponent/ButtonGroup';
+
 const RenderColumnContent = ({ columns }) => {
   return (
-    <div className='group'>
+    <div className='group center-aligned'>
       {columns &&
         columns.map((col, index) => {
           const { blocks, size } = col;
-          let style;
+          const hasPercentage = /%/.test(size);
 
-          // Determine the column width based on the size
-          switch (size) {
-            case 'oneThird':
-              style = classes.oneThird;
-              break;
-            case 'half':
-              style = classes.half;
-              break;
-            case 'twoThirds':
-              style = classes.twoThirds;
-              break;
-            case 'full':
-              style = classes.full;
-              break;
-            default:
-              style = classes.half; // Default to half width
-          }
-
+          const stringWithoutPercentage = hasPercentage ? size.replace(/%$/, ""): size;
           return (
-            <div className={`column ${classes.cell} ${style}`} key={index}>
+            <div className={`column ${classes.columnWidth}`}  style={{ '--box-width' : `${stringWithoutPercentage}%` } as any} key={index}>
               {blocks &&
                 blocks.map((block, blockIndex) => {
                   return (
