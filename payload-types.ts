@@ -586,6 +586,42 @@ export interface Page {
         blockName?: string;
         blockType: 'Schoolcarousel';
       }
+    | {
+        tabSectionBackgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
+        tabs?: {
+          tabicon?: string | Media;
+          shortTitle?: string;
+          contentTitle?: string;
+          description?: {
+            [k: string]: unknown;
+          }[];
+          tabButtongroup?: {
+            link: {
+              type?: 'reference' | 'custom';
+              newTab?: boolean;
+              reference: {
+                value: string | Page;
+                relationTo: 'pages';
+              };
+              url: string;
+              label: string;
+              appearance?: 'default' | 'primary' | 'secondary';
+            };
+            id?: string;
+          }[];
+          useSameIcon?: boolean;
+          alternateImage?: string | Media;
+          id?: string;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'tabsection';
+      }
   )[];
   slug?: string;
   parent?: string | Page;

@@ -11,6 +11,7 @@ import Statistic from '../../blocks/StatisticBlock'
 import Testimonial from '@/blocks/TestimonialBlock'
 import HighlightedCtaSection from '@/blocks/HighlightCTASection'
 import CalloutSection from '@/blocks/CalloutSection'
+import TabSection from '@/blocks/TabSection'
 
 
 const blockComponents = {
@@ -19,7 +20,8 @@ const blockComponents = {
   statistics: Statistic,
   testimonial: Testimonial,
   highlightCTA: HighlightedCtaSection,
-  callout: CalloutSection
+  callout: CalloutSection,
+  tabsection: TabSection
 }
 
 export const Blocks: React.FC<{

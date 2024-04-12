@@ -175,6 +175,27 @@ export const CALLOUTSECTION = `
   }
 }
 `
+export const TABSECTION =`
+...on Tabsection {
+  blockType
+  tabSectionBackgroundColor
+  tabs {
+    tabicon {
+      ${MEDIA_FIELDS}
+    }
+    shortTitle
+    contentTitle
+    description
+    tabButtongroup {
+      link ${LINK_FIELDS()}
+    } 
+    useSameIcon
+    alternateImage {
+      ${MEDIA_FIELDS}
+    }
+  }
+}
+`
 
 export const BUTTONGROUPBLOCK = `
 ...on ButtonGroup {

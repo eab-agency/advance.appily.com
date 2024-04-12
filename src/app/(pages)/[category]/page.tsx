@@ -33,7 +33,6 @@ export async function generateStaticParams() {
 		return notFound()
 	  }
 	const {hero , layout} = pageData;
-	// console.log(hero,layout,'hero***',)
   return (
     <React.Fragment>
       <Hero {...hero} />

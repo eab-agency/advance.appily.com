@@ -2,7 +2,8 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import {  fetchPages, fetchPage } from '@/app/graphql';
 import { Page } from '../../../../../payload-types'
-// import  {Hero } from '../../../blocks/HeroBlock';
+import { Hero } from '../../../../blocks/HeroBlock';
+import { Blocks } from '@/components/Block';
 
 export async function generateStaticParams() {
 	const pages = await fetchPages();
@@ -35,7 +36,9 @@ export async function generateStaticParams() {
 	const layout = pageData?.layout;
   return (
 	<React.Fragment>
-	{/* <Hero {...hero} />	 */}
+	<Hero {...hero} />	
+	<Blocks blocks={layout} />
+
   </React.Fragment>
   );
 };
