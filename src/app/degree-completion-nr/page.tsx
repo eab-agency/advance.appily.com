@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     title: title,
     description: description,
   }),
+  robots: {
+    index: false,
+  },
 };
 
 /* eslint-disable react/no-danger */
