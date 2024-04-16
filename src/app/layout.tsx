@@ -65,4 +65,8 @@ export const metadata: Metadata = {
     default: "Appily Advance",
     template: "%s | Appily Advance",
   },
+  robots: {
+    index: isDev ? false : true,
+    follow: isDev ? false : true,
+  },
 };
