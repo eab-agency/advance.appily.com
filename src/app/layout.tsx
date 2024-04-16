@@ -13,17 +13,19 @@ import "@/styles/styles.scss";
 import { Footer, Header } from "@/components";
 import Script from "next/script";
 
+const isDev = process.env.NEXT_PUBLIC_ISDEV;
+
 export default async function RootLayout({
   children,
-}: { children: React.ReactNode }) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/wba2ytz.css" />
         {/* <!-- OneTrust Cookies Consent Notice start for appily.com --> */}
-        <Script
-          src="https://cdn.cookielaw.org/consent/f621c13f-1c94-43c9-8362-0f5d72c69f26/OtAutoBlock.js"
-        />
+        <Script src="https://cdn.cookielaw.org/consent/f621c13f-1c94-43c9-8362-0f5d72c69f26/OtAutoBlock.js" />
         <Script
           src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
           data-domain-script="f621c13f-1c94-43c9-8362-0f5d72c69f26"
