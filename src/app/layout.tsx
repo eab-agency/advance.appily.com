@@ -25,9 +25,7 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://use.typekit.net" />
-        <style data-href="https://use.typekit.net/plm1izr.css"></style>
-
-        {/* <link rel="stylesheet" href="https://use.typekit.net/wba2ytz.css" /> */}
+        <link rel="stylesheet" href="https://use.typekit.net/wba2ytz.css" />
         {/* <!-- OneTrust Cookies Consent Notice start for appily.com --> */}
         <Script src="https://cdn.cookielaw.org/consent/f621c13f-1c94-43c9-8362-0f5d72c69f26/OtAutoBlock.js" />
         <Script
