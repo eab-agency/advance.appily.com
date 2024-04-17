@@ -11,8 +11,8 @@ frontend:
       commands:
         - echo "Building Next.js app"
         - echo ["${AWS_BRANCH}"]
-        - echo "Current branch is ${CODEBUILD_WEBHOOK_HEAD_REF}"
-        - env | grep -e ACS_PRIVATE_KEY -e ACS_PUBLIC_KEY -e APPILY_API_KEY -e APPILY_API_URL -e PARTNER_EXTERNAL_ID -e PROGRAM_EXTERNAL_ID >> .env.production
+        - if [ "${AWS_BRANCH}" != "main" ]; then export NEXT_PUBLIC_ISDEV=true; fi
+        - env | grep -e ACS_PRIVATE_KEY -e ACS_PUBLIC_KEY -e APPILY_API_KEY -e APPILY_API_URL -e PARTNER_EXTERNAL_ID -e PROGRAM_EXTERNAL_ID -e NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID -e NEXT_PUBLIC_ISDEV >> .env.production
         - yarn run build
   artifacts:
     baseDirectory: .next
