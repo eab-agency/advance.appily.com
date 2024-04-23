@@ -8,7 +8,10 @@ interface UseRandomComponentProps {
   FallBackComponent: ReactElement;
 }
 
-const RandomComponent = ({ PercentageComponent, FallBackComponent }: UseRandomComponentProps): ReactElement => {
+const RandomComponent = ({
+  PercentageComponent,
+  FallBackComponent,
+}: UseRandomComponentProps): ReactElement => {
   const searchParams = useSearchParams() || new URLSearchParams();
   const force = searchParams.has("force");
   const [showPercentageComponent, setShowPercentageComponent] = useState(force);
@@ -18,9 +21,9 @@ const RandomComponent = ({ PercentageComponent, FallBackComponent }: UseRandomCo
     if (force) {
       inPercentageRange = true;
     } else {
-      inPercentageRange = percentageSplit(0.25);
+      inPercentageRange = percentageSplit(100);
     }
-    console.log("🆎:", inPercentageRange)
+    console.log("🆎:", inPercentageRange);
     setShowPercentageComponent(inPercentageRange);
   }, [force]);
 
@@ -29,8 +32,16 @@ const RandomComponent = ({ PercentageComponent, FallBackComponent }: UseRandomCo
   );
 };
 
-const useRandomComponent = ({ PercentageComponent, FallBackComponent }: UseRandomComponentProps): ReactElement => {
-  const WinningComponent = RandomComponent({ PercentageComponent, FallBackComponent });
-  return <Suspense fallback={<>{FallBackComponent}</>}>{WinningComponent}</Suspense>;
+const useRandomComponent = ({
+  PercentageComponent,
+  FallBackComponent,
+}: UseRandomComponentProps): ReactElement => {
+  const WinningComponent = RandomComponent({
+    PercentageComponent,
+    FallBackComponent,
+  });
+  return (
+    <Suspense fallback={<>{FallBackComponent}</>}>{WinningComponent}</Suspense>
+  );
 };
 export default useRandomComponent;

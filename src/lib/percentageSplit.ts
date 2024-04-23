@@ -1,4 +1,4 @@
-function percentageSplit(initialPercentage: number = .25): boolean {
+function percentageSplit(initialPercentage: number = 100): boolean {
    // Convert values greater than 1 into a decimal
    if (initialPercentage > 1) {
     initialPercentage /= 100;
