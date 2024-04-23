@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import React from 'react';
 import { Page } from '../../../../payload-types'
 import { Hero } from '../../../blocks/HeroBlock';
+import { PageClient } from './page.client'
 
 export async function generateStaticParams() {
   const pages = await fetchPages();
@@ -32,13 +33,14 @@ export async function generateStaticParams() {
 	if (!pageData) {
 		return notFound()
 	  }
-	const {hero , layout} = pageData;
-  return (
-    <React.Fragment>
-      <Hero {...hero} />
-      <Blocks blocks={layout} />
-    </React.Fragment>
-  );
+	// const {hero , layout} = pageData;
+  // return (
+  //   <React.Fragment>
+  //     <Hero {...hero} />
+  //     <Blocks blocks={layout} />
+  //   </React.Fragment>
+  // );
+  return <PageClient page={pageData} />
 };
 
 export default CategoryPage;

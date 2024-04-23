@@ -20,11 +20,8 @@ export default function TabsSection({ tabs }: TabsSectionProps) {
 	return (
 		<section  className={` tabsSection column bg-none`}>
 			<header className="center-aligned centered-content center-justified">
-
 			</header>
-
-			
-				<TabsComponent className="react-tabs" tabs={tabs}   />
+            <TabsComponent className="react-tabs" tabs={tabs}   />
 		</section>
 	);
 }
