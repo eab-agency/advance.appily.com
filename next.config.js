@@ -44,10 +44,30 @@ const nextConfig = {
 		ACS_PRIVATE_KEY: process.env.ACS_PRIVATE_KEY,
 	},
 	images: {
-		// add comment to test pull requests for amplify
+		formats: ["image/avif", "image/webp"],
 		minimumCacheTTL: 6000,
-		domains: ["localhost", process.env.NEXT_PUBLIC_CMS_URL],
 		remotePatterns: [
+			{
+				protocol: "http",
+				hostname: "localhost",
+				port: "3000"
+			},
+			{
+				protocol: "https",
+				hostname: "advance-cms.appily.com", // port: "3000",
+			},
+			{
+				protocol: "https",
+				hostname: "**-eab-agency.vercel.app",
+			},
+			{
+				protocol: "https",
+				hostname: "advance.appily.com",
+			},
+			{
+				protocol: "https",
+				hostname: "**.amplifyapp.com",
+			},
 			{
 				protocol: "https",
 				hostname: process.env.NEXT_PUBLIC_CMS_URL,

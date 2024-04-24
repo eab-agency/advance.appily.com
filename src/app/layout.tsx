@@ -1,6 +1,7 @@
-import Analytics from "@/lib/Analytics";
+import { GTM_ID } from "@/lib/gtm";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { Metadata } from "next";
-import React, { Suspense } from "react";
+import React from "react";
 
 import LocationInDevMode from "@/components/PageLayouts/LocationInDevMode";
 import data from "@/data/careers-business.json";
@@ -13,17 +14,20 @@ import "@/styles/styles.scss";
 import { Footer, Header } from "@/components";
 import Script from "next/script";
 
+const isDev = process.env.NEXT_PUBLIC_ISDEV;
+
 export default async function RootLayout({
   children,
-}: { children: React.ReactNode }) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://use.typekit.net" />
         <link rel="stylesheet" href="https://use.typekit.net/wba2ytz.css" />
         {/* <!-- OneTrust Cookies Consent Notice start for appily.com --> */}
-        <Script
-          src="https://cdn.cookielaw.org/consent/f621c13f-1c94-43c9-8362-0f5d72c69f26/OtAutoBlock.js"
-        />
+        <Script src="https://cdn.cookielaw.org/consent/f621c13f-1c94-43c9-8362-0f5d72c69f26/OtAutoBlock.js" />
         <Script
           src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
           data-domain-script="f621c13f-1c94-43c9-8362-0f5d72c69f26"
@@ -36,10 +40,8 @@ export default async function RootLayout({
         />
         {/* <!-- OneTrust Cookies Consent Notice end for appily.com --> */}
       </head>
+      <GoogleTagManager gtmId={GTM_ID} />
       <body>
-        <Suspense>
-          <Analytics />
-        </Suspense>
         <Providers>
           <Header links={data.links} />
           <main className="layout-wrapper">{children}</main>
@@ -62,5 +64,9 @@ export const metadata: Metadata = {
   title: {
     default: "Appily Advance",
     template: "%s | Appily Advance",
+  },
+  robots: {
+    index: isDev ? false : true,
+    follow: isDev ? false : true,
   },
 };
