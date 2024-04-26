@@ -1,112 +1,204 @@
 @use "sass:color";
-@use "@/styles/global/tokens";
 
-// .reOverlay {
-//     div[class*='modalWrapper'] {
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         position: fixed;
-//         top: 0;
-//         left: 0;
-//         width: 100vw;
-//         height: 100vh;
-//         z-index: 999;
-//         background-color: rgba(tokens.$c-blue-800, 0.7);
-//         backdrop-filter: blur(3px);
+// ==============================
+// Variables
+$modalBg: rgba(0, 0, 0, 0.8);
+$primaryColor: #0069bf; // 5.56 contrast ratio
+// $primaryColor: #bb5b00; // 4.55 contrast ratio
+$contentMaxWidth: 85rem;
+$buttonBorderRadius: 0.5em;
+$maxQuery: 85rem;
+$medQuery: 55rem;
+$minQuery: 45rem;
+// ==============================
 
-//         .modal-content {
-//             display: block;
-//             width: 90%;
-//             max-width: tokens.$mq-700;
-//             background: tokens.$c-blue-500;
-//             border: 0.5em solid tokens.$c-blue-300;
-//             position: relative;
+#onetrust-banner-sdk {
+  .ot-sdk-container {
+    @media (min-width: $maxQuery) {
+      width: 90% !important;
+      max-width: $contentMaxWidth !important;
+    }
 
-//             @media (prefers-color-scheme: light) {
-//                 background: tokens.$c-gray-100;
-//                 border: 0.5em solid tokens.$c-blue-500;
-//             }
+    .ot-sdk-row {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1rem, 2vw, 2rem);
 
-//             .help,
-//             .privacy {
-//                 display: block;
-//                 overflow-y: auto;
-//                 max-height: 90vh;
-//                 padding-block: clamp(
-//                     tokens.$baseUnit,
-//                     3vw,
-//                     tokens.$baseUnit * 3
-//                 );
-//                 padding-inline: clamp(
-//                     tokens.$baseUnit * 2,
-//                     4vw,
-//                     tokens.$baseUnit * 4
-//                 );
+      @media (min-width: $minQuery) {
+        flex-direction: row;
+      }
 
-//                 a {
-//                     color: tokens.$c-turquoise-500;
+      @media (min-width: $medQuery) {
+        padding: 0.5em 2em;
+      }
 
-//                     @media (prefers-color-scheme: light) {
-//                         color: color.adjust(
-//                             tokens.$c-malva-500,
-//                             $lightness: -30%
-//                         );
-//                     }
-//                 }
-//             }
+      .ot-sdk-columns {
+        flex: 1;
 
-//             .close-modal {
-//                 position: absolute;
-//                 right: 1rem;
-//                 top: 1rem;
-//                 background: none;
-//                 text-indent: -999rem;
-//                 padding: 0;
-//                 border: none;
-//                 width: 1.5rem;
-//                 height: 1.5rem;
-//                 font-size: 1px;
-//                 transition: all 0.2s ease-in-out;
+        // =====================================
+        // Buttons
+        #onetrust-pc-btn-handler,
+        #onetrust-pc-btn-handler.cookie-setting-link {
+          color: $primaryColor;
+          border-color: $primaryColor;
+          border-radius: $buttonBorderRadius;
+        }
 
-//                 &::before {
-//                     content: '';
-//                     display: block;
-//                     width: 1.5rem;
-//                     height: 0.25rem;
-//                     background-color: tokens.$c-orange-500;
-//                     position: absolute;
-//                     transform: rotate(45deg);
-//                 }
+        #onetrust-accept-btn-handler,
+        #onetrust-reject-all-handler {
+          background: $primaryColor;
+          border-color: $primaryColor;
+          border-radius: $buttonBorderRadius;
+        }
 
-//                 &::after {
-//                     content: '';
-//                     display: block;
-//                     width: 1.5rem;
-//                     height: 0.25rem;
-//                     background-color: tokens.$c-orange-500;
-//                     position: absolute;
-//                     transform: rotate(-45deg);
-//                 }
+        #onetrust-pc-btn-handler,
+        #onetrust-pc-btn-handler.cookie-setting-link,
+        #onetrust-accept-btn-handler,
+        #onetrust-reject-all-handler {
+          &:hover {
+            background: color.adjust($primaryColor, $lightness: -10%);
+            border-color: color.adjust($primaryColor, $lightness: 10%);
+          }
+        }
 
-//                 &:hover,
-//                 &:focus {
-//                     transform: rotate(90deg);
-//                     &::before,
-//                     &::after {
-//                         background-color: tokens.$c-turquoise-500;
+        // =====================================
 
-//                         @media (prefers-color-scheme: light) {
-//                             background-color: tokens.$c-malva-500;
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
+        &#onetrust-group-container {
+          @media (min-width: 85rem) {
+            flex-basis: 60%;
+          }
 
-#onetrust-pc-sdk.otPcCenter {
-  max-width: tokens.$mq-900 !important;
-  // overflow-x: hidden !important;
+          #onetrust-policy {
+            margin: 0;
+            padding: clamp(1rem, 2vw, 2rem);
+
+            @media (min-width: $medQuery) {
+              padding-block: 0.5rem;
+              padding-inline: 0;
+            }
+          }
+        }
+
+        &#onetrust-button-group-parent {
+          position: initial;
+          top: initial;
+          left: initial;
+          transform: initial;
+          display: flex;
+          align-items: center;
+          flex: 1;
+          width: 100%;
+          padding-inline: clamp(1rem, 3vw, 3rem);
+
+          @media (min-width: $maxQuery) {
+            padding: 0;
+            flex-basis: 40%;
+          }
+
+          #onetrust-button-group {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: clamp(0.8rem, 2vw, 2rem);
+            width: 100%;
+
+            @media (min-width: $minQuery) {
+              flex-direction: row;
+            }
+
+            button {
+              flex: 1;
+              margin: 0;
+
+              &:hover {
+                background: color.adjust($primaryColor, $lightness: -15%);
+                border-color: color.adjust($primaryColor, $lightness: 10%);
+                opacity: 1;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#onetrust-consent-sdk {
+  #onetrust-policy-text {
+    max-width: 85ch;
+  }
+
+  #onetrust-pc-sdk {
+    .ot-pc-header {
+      height: auto;
+      min-height: auto;
+      display: flex;
+
+      .ot-pc-logo {
+        display: none;
+      }
+
+      .ot-title-cntr {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-inline: 0.8em;
+        box-sizing: border-box;
+      }
+    }
+
+    #ot-pc-content {
+      & > #accept-recommended-btn-handler {
+        background: $primaryColor !important;
+        border-color: $primaryColor !important;
+        border-radius: $buttonBorderRadius;
+
+        &:hover {
+          background: color.adjust($primaryColor, $lightness: -10%) !important;
+          border-color: color.adjust($primaryColor, $lightness: 10%) !important;
+          opacity: 1;
+        }
+      }
+    }
+
+    .ot-pc-footer {
+      button:not(#clear-filters-handler):not(.ot-close-icon):not(#filter-btn-handler):not(
+          .ot-remove-objection-handler
+        ):not(.ot-obj-leg-btn-handler):not([aria-expanded]):not(.ot-link-btn),
+      .ot-leg-btn-container .ot-active-leg-btn {
+        background: $primaryColor;
+        border-color: $primaryColor;
+        border-radius: $buttonBorderRadius;
+
+        &:hover {
+          background: color.adjust($primaryColor, $lightness: -10%);
+          border-color: color.adjust($primaryColor, $lightness: 10%);
+          opacity: 1;
+        }
+      }
+    }
+
+    .ot-plus-minus span {
+      background: $primaryColor;
+    }
+
+    .ot-tab-list {
+      .ot-abt-tab .ot-active-menu,
+      .ot-cat-item .ot-active-menu {
+        border-color: $primaryColor;
+      }
+    }
+
+    .ot-pc-footer-logo {
+      a {
+        text-align: right;
+        img {
+          width: 8em;
+        }
+      }
+    }
+  }
 }
