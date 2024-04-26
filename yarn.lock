@@ -1012,6 +1012,18 @@
   resolved "https://registry.yarnpkg.com/@payloadcms/eslint-config/-/eslint-config-0.0.1.tgz#4324702ddef6c773b3f3033795a13e6b50c95a92"
   integrity sha512-Il59+0C4E/bI6uM2hont3I+oABWkJZbfbItubje5SGMrXkymUq8jT/UZRk0eCt918bB7gihxDXx8guFnR/aNIw==
 
+"@payloadcms/live-preview-react@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@payloadcms/live-preview-react/-/live-preview-react-0.2.0.tgz#daf7b1c3338f51f2aa0ea2f5d1c3b8aeab303df7"
+  integrity sha512-ao7DN2GJFPoipw2cmt2M0tfwmUa0hIn3UxB5EaMv6RduMuOMQlG5hx5ouX3g5wPMcQpyvLwxCuuiQhj1nKMGhA==
+  dependencies:
+    "@payloadcms/live-preview" "^0.x"
+
+"@payloadcms/live-preview@^0.x":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@payloadcms/live-preview/-/live-preview-0.2.2.tgz#271e4a49bf21e5e46168f054f7306ea34b9232a1"
+  integrity sha512-FOcg/HOIzzESjoT4vXgM7Pjd+bODodZTKR/pEJWsjLtyARd6NfF3MNWS+tdlfa3TOZrdT8WnHBAKsKyREyE3og==
+
 "@peculiar/asn1-schema@^2.3.6":
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/@peculiar/asn1-schema/-/asn1-schema-2.3.6.tgz#3dd3c2ade7f702a9a94dfb395c192f5fa5d6b922"
