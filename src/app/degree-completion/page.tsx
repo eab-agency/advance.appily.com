@@ -2,12 +2,7 @@
 import Image from "next/image";
 import React from "react";
 
-import {
-  Button,
-  Stats,
-  StickyCta,
-  WhatIsCappex,
-} from "@/components";
+import { Button, Stats, StickyCta, WhatIsCappex } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";
 import data from "@/data/careers-adc.json";
 
@@ -29,11 +24,13 @@ export const metadata: Metadata = {
     title: title,
     description: description,
   }),
+  robots: {
+    index: false,
+  },
 };
 
 /* eslint-disable react/no-danger */
 const BusinessSeoPage = () => {
-
   return (
     <>
       <PageHero
@@ -63,27 +60,7 @@ const BusinessSeoPage = () => {
             />
           </div>
 
-          <div className="infograph row cols-2">
-            <IconCard
-              title={data.introComparison.cards[0].card.title}
-              iconUrl={data.introComparison.cards[0].card.iconUrl}
-              iconAlt={data.introComparison.cards[0].card.iconAlt}
-              darkMode={true}
-              className="roi-card"
-            >
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: data.introComparison.cards[0].card.description,
-                }}
-              />
-              <Button
-                appearance="primary"
-                label={data.introComparison.cards[0].card.buttonText}
-                href={data.introComparison.cards[0].card.buttonLink}
-                className="button btn-primary"
-              />
-            </IconCard>
-
+          <div className="infograph row">
             <IconCard
               title={data.introComparison.cards[1].card.title}
               iconUrl={data.introComparison.cards[1].card.iconUrl}
