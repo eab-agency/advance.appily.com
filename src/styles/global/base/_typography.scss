@@ -49,6 +49,7 @@ h3 {
 }
 
 h4 {
+  // font-size: clamp(tokens.$size-3, 3vw, tokens.$size-4);
   color: var(--c-headingPrimary);
 }
 
