@@ -60,7 +60,7 @@ const BusinessSeoPage = () => {
             />
           </div>
 
-          <div className="infograph row">
+          <div className="infograph row single-item">
             <IconCard
               title={data.introComparison.cards[1].card.title}
               iconUrl={data.introComparison.cards[1].card.iconUrl}
@@ -68,7 +68,7 @@ const BusinessSeoPage = () => {
               darkMode={true}
               className="career-card"
             >
-              <div
+              <div className="card-description"
                 dangerouslySetInnerHTML={{
                   __html: data.introComparison.cards[1].card.description,
                 }}

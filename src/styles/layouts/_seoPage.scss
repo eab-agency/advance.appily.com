@@ -284,6 +284,29 @@
 
         .card-content {
           padding-top: 1.5em;
+
+          h4 {
+            font-size: clamp(tokens.$size-3, 3vw, tokens.$size-5);
+          }
+        }
+      }
+
+      &.single-item {
+        justify-content: center;
+
+        .icon-card {
+          flex: 1 1 100%;
+          max-width: 35rem;
+
+          .card-content {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .card-description {
+            text-align: center;
+          }
         }
       }
     }
