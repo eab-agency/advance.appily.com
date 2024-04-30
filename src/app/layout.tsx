@@ -12,7 +12,6 @@ import { mergeTwitter } from "../seo/mergeTwitter";
 import "@/styles/styles.scss";
 
 import { Footer, Header } from "@/components";
-import { OneTrustBannerCustom } from "@/lib/oneTrustBannerCustom";
 
 import Script from "next/script";
 
