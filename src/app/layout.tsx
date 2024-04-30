@@ -50,7 +50,6 @@ export default async function RootLayout({
           <LocationInDevMode />
         </Providers>
       </body>
-      <OneTrustBannerCustom />
     </html>
   );
 }
