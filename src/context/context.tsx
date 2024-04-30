@@ -8,172 +8,172 @@ import { on } from "events";
 import { getMatchedSchool } from "../helpers/getMatchedSchool";
 
 interface UserLocationContextProps {
-	matchedSchools: CarouselCard[];
-	setMatchedSchools: React.Dispatch<React.SetStateAction<any[]>>;
-	location: {
-		region_iso_code: string;
-		country_code: string;
-		notUS: boolean;
-	} | null;
-	formData: any;
-	setFormData: React.Dispatch<React.SetStateAction<any>>;
-	utmSource: any;
-	setUtmSource: React.Dispatch<React.SetStateAction<any>>;
-	setLocation: React.Dispatch<
-		React.SetStateAction<{
-			region_iso_code?: string;
-			country_code?: string;
-			notUS?: boolean;
-		} | null>
-	>;
-	globalPrivacyControl: boolean;
-	vertical: string;
-	setVertical: React.Dispatch<React.SetStateAction<string>>;
+  matchedSchools: CarouselCard[];
+  setMatchedSchools: React.Dispatch<React.SetStateAction<any[]>>;
+  location: {
+    region_iso_code: string;
+    country_code: string;
+    notUS: boolean;
+  } | null;
+  formData: any;
+  setFormData: React.Dispatch<React.SetStateAction<any>>;
+  utmSource: any;
+  setUtmSource: React.Dispatch<React.SetStateAction<any>>;
+  setLocation: React.Dispatch<
+    React.SetStateAction<{
+      region_iso_code?: string;
+      country_code?: string;
+      notUS?: boolean;
+    } | null>
+  >;
+  globalPrivacyControl: boolean;
+  vertical: string;
+  setVertical: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const UserLocationContext = createContext<UserLocationContextProps>(null!);
 
 function ContextProvider({ children }: { children: React.ReactNode }) {
-	const [matchedSchools, setMatchedSchools] = useState<any[]>([]);
-	const [oneTrust, setOneTrust] = useState<any>(null);
+  const [matchedSchools, setMatchedSchools] = useState<any[]>([]);
+  const [oneTrust, setOneTrust] = useState<any>(null);
 
-	const [globalPrivacyControl, setGlobalPrivacyControl] = useState(null);
+  const [globalPrivacyControl, setGlobalPrivacyControl] = useState(null);
 
-	// check if window.OneTrust is defined and if so, set a listener for the OneTrustUpdated event
-	useEffect(() => {
-		const handleOneTrustUpdated = () => {
-			// console.log(
-			// 	"🚀 ~ file: context.tsx:49 ~ handleOneTrustUpdated ~ handleOneTrustUpdated:",
-			// 	handleOneTrustUpdated,
-			// );
-			if (window.OneTrust) {
-				// console.log("Setting OneTrust");
-				setOneTrust(window.OneTrust);
-			}
-		};
+  // check if window.OneTrust is defined and if so, set a listener for the OneTrustUpdated event
+  useEffect(() => {
+    const handleOneTrustUpdated = () => {
+      // console.log(
+      // 	"🚀 ~ file: context.tsx:49 ~ handleOneTrustUpdated ~ handleOneTrustUpdated:",
+      // 	handleOneTrustUpdated,
+      // );
+      if (window.OneTrust) {
+        // console.log("Setting OneTrust");
+        setOneTrust(window.OneTrust);
+      }
+    };
 
-		if (typeof window !== "undefined") {
-			if (window.OneTrust) {
-				// console.log("window is defined... Setting OneTrust");
-				setOneTrust(window.OneTrust);
-			} else {
-				// console.log("Adding event listener for OneTrustUpdated");
-				window.addEventListener("OneTrustUpdated", handleOneTrustUpdated);
+    if (typeof window !== "undefined") {
+      if (window.OneTrust) {
+        // console.log("window is defined... Setting OneTrust");
+        setOneTrust(window.OneTrust);
+      } else {
+        // console.log("Adding event listener for OneTrustUpdated");
+        window.addEventListener("OneTrustUpdated", handleOneTrustUpdated);
 
-				const intervalId = setInterval(() => {
-					if (window.OneTrust) {
-						// console.log("OneTrust is now available... Setting OneTrust");
-						setOneTrust(window.OneTrust);
-						clearInterval(intervalId); // Clear the interval once OneTrust is available
-					}
-				}, 1000);
-			}
-		}
+        const intervalId = setInterval(() => {
+          if (window.OneTrust) {
+            // console.log("OneTrust is now available... Setting OneTrust");
+            setOneTrust(window.OneTrust);
+            clearInterval(intervalId); // Clear the interval once OneTrust is available
+          }
+        }, 1000);
+      }
+    }
 
-		return () => {
-			if (typeof window !== "undefined") {
-				console.log("Removing event listener for OneTrustUpdated");
-				window.removeEventListener("OneTrustUpdated", handleOneTrustUpdated);
-			}
-		};
-	}, []);
+    return () => {
+      if (typeof window !== "undefined") {
+        console.log("Removing event listener for OneTrustUpdated");
+        window.removeEventListener("OneTrustUpdated", handleOneTrustUpdated);
+      }
+    };
+  }, []);
 
-	useEffect(() => {
-		if (
-			typeof navigator !== "undefined" &&
-			"globalPrivacyControl" in navigator
-		) {
-			setGlobalPrivacyControl(navigator.globalPrivacyControl);
-		}
-	}, []);
+  useEffect(() => {
+    if (
+      typeof navigator !== "undefined" &&
+      "globalPrivacyControl" in navigator
+    ) {
+      setGlobalPrivacyControl(navigator.globalPrivacyControl);
+    }
+  }, []);
 
-	// const [location, setLocation] = useLocalStorage('489hLocation', null);
-	const [location, setLocation] = useState<{
-		region_iso_code: string | null;
-		country_code: string | null;
-		notUS: boolean;
-	} | null>({
-		region_iso_code: null,
-		country_code: null,
-		notUS: true,
-	});
+  // const [location, setLocation] = useLocalStorage('489hLocation', null);
+  const [location, setLocation] = useState<{
+    region_iso_code: string | null;
+    country_code: string | null;
+    notUS: boolean;
+  } | null>({
+    region_iso_code: null,
+    country_code: null,
+    notUS: true,
+  });
 
-	const [formData, setFormData] = useState<any>(null);
+  const [formData, setFormData] = useState<any>(null);
 
-	const [utmSource, setUtmSource] = useState<any>(null);
+  const [utmSource, setUtmSource] = useState<any>(null);
 
-	const [vertical, setVertical] = useState<string>("Business");
+  const [vertical, setVertical] = useState<string>("Business");
 
-	// check oneTrust.getGeolocation(), that returns an object of { country: 'US', region: 'CA' }, and set location
-	useEffect(() => {
-		if (oneTrust) {
-			const { country, state } = oneTrust.getGeolocationData();
-			setLocation({
-				region_iso_code: state,
-				country_code: country,
-				notUS: country !== "US",
-			});
-		}
-	}, [oneTrust, setLocation]);
+  // check oneTrust.getGeolocation(), that returns an object of { country: 'US', region: 'CA' }, and set location
+  useEffect(() => {
+    if (oneTrust) {
+      const { country, state } = oneTrust.getGeolocationData();
+      setLocation({
+        region_iso_code: state,
+        country_code: country,
+        notUS: country !== "US",
+      });
+    }
+  }, [oneTrust, setLocation]);
 
-	// wait for userLocation to be populated and then set matchedSchool based on userLocation.region_iso_code
-	useEffect(() => {
-		const fetchData = async () => {
-			if (location) {
-				const matchedSchoolInternal = await getMatchedSchool(
-					location?.region_iso_code || "VA",
-					vertical,
-				);
-				// grab first school from schools and set matchedSchool
-				setMatchedSchools(matchedSchoolInternal);
-			}
-		};
+  // wait for userLocation to be populated and then set matchedSchool based on userLocation.region_iso_code
+  useEffect(() => {
+    const fetchData = async () => {
+      if (location) {
+        const matchedSchoolInternal = await getMatchedSchool(
+          location?.region_iso_code || "VA",
+          vertical,
+        );
+        // grab first school from schools and set matchedSchool
+        setMatchedSchools(matchedSchoolInternal);
+      }
+    };
 
-		fetchData();
-	}, [location, vertical]);
+    fetchData();
+  }, [location, vertical]);
 
-	const valueUser = useMemo(
-		() => ({
-			matchedSchools,
-			setMatchedSchools,
-			location,
-			formData,
-			setFormData,
-			utmSource,
-			setUtmSource,
-			setLocation,
-			vertical,
-			setVertical,
-			globalPrivacyControl,
-		}),
-		[
-			matchedSchools,
-			setMatchedSchools,
-			location,
-			formData,
-			setFormData,
-			utmSource,
-			setUtmSource,
-			setLocation,
-			vertical,
-			setVertical,
-			globalPrivacyControl,
-		],
-	);
+  const valueUser = useMemo(
+    () => ({
+      matchedSchools,
+      setMatchedSchools,
+      location,
+      formData,
+      setFormData,
+      utmSource,
+      setUtmSource,
+      setLocation,
+      vertical,
+      setVertical,
+      globalPrivacyControl,
+    }),
+    [
+      matchedSchools,
+      setMatchedSchools,
+      location,
+      formData,
+      setFormData,
+      utmSource,
+      setUtmSource,
+      setLocation,
+      vertical,
+      setVertical,
+      globalPrivacyControl,
+    ],
+  );
 
-	return (
-		<UserLocationContext.Provider value={valueUser}>
-			{children}
-		</UserLocationContext.Provider>
-	);
+  return (
+    <UserLocationContext.Provider value={valueUser}>
+      {children}
+    </UserLocationContext.Provider>
+  );
 }
 
 function useUser() {
-	const context = useContext(UserLocationContext);
-	if (context === undefined) {
-		throw new Error("useUser must be used within a ContextProvider");
-	}
-	return context;
+  const context = useContext(UserLocationContext);
+  if (context === undefined) {
+    throw new Error("useUser must be used within a ContextProvider");
+  }
+  return context;
 }
 
 export { ContextProvider, useUser };

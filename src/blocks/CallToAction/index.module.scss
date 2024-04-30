@@ -1,6 +1,6 @@
-@use '../../styles/queries.scss' as *;
+// @use '../../styles/queries.scss' as *;
 
-$spacer-h: calc(var(--block-padding) / 2);
+$spacer-h: calc(vartyles(--block-padding) / 2);
 
 .callToAction {
   padding-left: $spacer-h;
@@ -25,7 +25,7 @@ $spacer-h: calc(var(--block-padding) / 2);
     }
   }
 
-  @include mid-break {
-    padding-top: 12px
+  @media (min-width: 45rem) {
+    padding-top: 12px;
   }
 }

@@ -23,6 +23,7 @@ export const CallToActionBlock: React.FC<
     <Gutter>
       <BackgroundColor color={oppositeBackgroundColor}>
         <VerticalPadding className={classes.callToAction}>
+          patapum
           <Grid>
             <Cell cols={8} colsL={7} colsM={12}>
               <div>
