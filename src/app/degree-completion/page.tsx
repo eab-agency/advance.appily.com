@@ -96,6 +96,7 @@ const DegreeCompletionSeoPage = () => {
               />
               <Suspense>
                 <RandomComponent
+                  percentage={25}
                   PercentageComponent={ButtonOne}
                   FallBackComponent={ButtonTwo}
                 />

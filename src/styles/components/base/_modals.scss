@@ -4,7 +4,6 @@
 // Variables
 $modalBg: rgba(0, 0, 0, 0.8);
 $primaryColor: #0069bf; // 5.56 contrast ratio
-// $primaryColor: #bb5b00; // 4.55 contrast ratio
 $contentMaxWidth: 85rem;
 $buttonBorderRadius: 0.5em;
 $maxQuery: 85rem;
@@ -199,6 +198,11 @@ $minQuery: 45rem;
           width: 8em;
         }
       }
+    }
+
+    &.otPcPanel.ot-animated {
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
     }
   }
 }

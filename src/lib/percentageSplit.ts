@@ -5,6 +5,7 @@ function percentageSplit(initialPercentage: number = 100): boolean {
   }
     // Generate a random number between 0 and 1
     const randomNum = Math.random();
+    console.log("🚀 ~ randomNum/initialPercentage:", randomNum, initialPercentage)
   
     // Compare with the initialPercentage to determine the result
     return randomNum < initialPercentage;
