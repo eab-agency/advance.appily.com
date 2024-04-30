@@ -1,10 +1,12 @@
 // "use client";
 import Image from "next/image";
-import React from "react";
+import React, { Suspense } from "react";
 
 import { Button, Stats, StickyCta, WhatIsCappex } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";
 import data from "@/data/careers-adc.json";
+import RandomComponent from "@/hooks/useRandomComponent";
+import ABButton from "@/components/Button/ABButton";
 
 import PageHero from "@/components/Heros/PageHero";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
@@ -30,7 +32,25 @@ export const metadata: Metadata = {
 };
 
 /* eslint-disable react/no-danger */
-const BusinessSeoPage = () => {
+const DegreeCompletionSeoPage = () => {
+  const ButtonOne = (
+    <ABButton
+      label="Build Your Plan +"
+      appearance="primary"
+      href="https://my.appily.com/register/adult/buildplanquiz1"
+      className="button btn-primary btn-click-quiz"
+    />
+  );
+
+  const ButtonTwo = (
+    <ABButton
+      label="Build Your Plan"
+      appearance="primary"
+      href="/degree-completion/build-plan-quiz/start"
+      className="button btn-primary btn-click-quiz"
+    />
+  );
+
   return (
     <>
       <PageHero
@@ -68,17 +88,24 @@ const BusinessSeoPage = () => {
               darkMode={true}
               className="career-card"
             >
-              <div className="card-description"
+              <div
+                className="card-description"
                 dangerouslySetInnerHTML={{
                   __html: data.introComparison.cards[1].card.description,
                 }}
               />
-              <Button
+              <Suspense>
+                <RandomComponent
+                  PercentageComponent={ButtonOne}
+                  FallBackComponent={ButtonTwo}
+                />
+              </Suspense>
+              {/* <Button
                 appearance="primary"
                 label={data.introComparison.cards[1].card.buttonText}
                 href={data.introComparison.cards[1].card.buttonLink}
                 className="button btn-primary"
-              />
+              /> */}
             </IconCard>
           </div>
         </div>
@@ -193,4 +220,4 @@ const BusinessSeoPage = () => {
   );
 };
 
-export default BusinessSeoPage;
+export default DegreeCompletionSeoPage;
