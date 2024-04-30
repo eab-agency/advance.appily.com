@@ -80,6 +80,7 @@ export default function QuizLandingPage() {
             </ul>
             <Suspense>
               <RandomComponent
+                percentage={25}
                 PercentageComponent={ButtonOne}
                 FallBackComponent={ButtonTwo}
               />

@@ -6,11 +6,13 @@ import { useSearchParams } from "next/navigation";
 interface UseRandomComponentProps {
   PercentageComponent: ReactElement;
   FallBackComponent: ReactElement;
+  percentage?: number;
 }
 
 const RandomComponent = ({
   PercentageComponent,
   FallBackComponent,
+  percentage = 100,
 }: UseRandomComponentProps): ReactElement => {
   const searchParams = useSearchParams() || new URLSearchParams();
   const force = searchParams.has("force");
@@ -21,11 +23,11 @@ const RandomComponent = ({
     if (force) {
       inPercentageRange = true;
     } else {
-      inPercentageRange = percentageSplit(100);
+      inPercentageRange = percentageSplit(percentage);
     }
     console.log("🆎:", inPercentageRange);
     setShowPercentageComponent(inPercentageRange);
-  }, [force]);
+  }, [force, percentage]);
 
   return (
     <>{showPercentageComponent ? PercentageComponent : FallBackComponent}</>
@@ -35,10 +37,12 @@ const RandomComponent = ({
 const useRandomComponent = ({
   PercentageComponent,
   FallBackComponent,
+  percentage,
 }: UseRandomComponentProps): ReactElement => {
   const WinningComponent = RandomComponent({
     PercentageComponent,
     FallBackComponent,
+    percentage,
   });
   return (
     <Suspense fallback={<>{FallBackComponent}</>}>{WinningComponent}</Suspense>
