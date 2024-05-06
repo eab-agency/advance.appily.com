@@ -1,3 +1,5 @@
+'use client'
+
 import NextImage, { StaticImageData } from 'next/image'
 import React from 'react'
 
@@ -39,7 +41,6 @@ export const Image: React.FC<MediaProps> = props => {
     width = fullWidth
     height = fullHeight
     alt = altFromResource
-
     const filename = fullFilename
 
     src = `${process.env.NEXT_PUBLIC_CMS_URL}/media/${filename}`
@@ -49,7 +50,7 @@ export const Image: React.FC<MediaProps> = props => {
   const sizes = Object.entries(breakpoints)
     .map(([, value]) => `(max-width: ${value}px) ${value}px`)
     .join(', ')
-
+ 
   return (
     <NextImage
       className={[isLoading && classes.placeholder, classes.image, imgClassName]
@@ -65,9 +66,9 @@ export const Image: React.FC<MediaProps> = props => {
         }
       }}
       fill={fill}
-      width={!fill ? width : undefined}
-      height={!fill ? height : undefined}
-      sizes={sizes}
+      width={width}
+      height={ height}
+      // sizes={sizes}
       priority={priority}
     />
   )

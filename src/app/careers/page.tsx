@@ -33,7 +33,11 @@ const CareersSeoPage = () => {
             <h1>
               Wondering <strong>which career</strong> is right for you?
             </h1>
-            <p>Take one of our <strong>free career quizzes</strong> to see what type of job could be right for you — and which degrees can help you reach your goals.</p>
+            <p>
+              Take one of our <strong>free career quizzes</strong> to see what
+              type of job could be right for you — and which degrees can help
+              you reach your goals.
+            </p>
           </div>
           <figure className="heroImage">
             <Image
@@ -130,9 +134,17 @@ const CareersSeoPage = () => {
             >
               <h4>Chart Your Course in Education</h4>
               <p>
-                If you’re currently a teacher and looking for other career paths in education, or you’re not in education yet but feel a calling to work with students, there are many paths you can take.</p>
+                If you’re currently a teacher and looking for other career paths
+                in education, or you’re not in education yet but feel a calling
+                to work with students, there are many paths you can take.
+              </p>
 
-              <p><Link href="/careers/education/quiz/start">Take our quick quiz</Link> and we’ll help you navigate which of those paths aligns with your strengths, previous experience, and goals.
+              <p>
+                <Link href="/careers/education/quiz/start">
+                  Take our quick quiz
+                </Link>{" "}
+                and we’ll help you navigate which of those paths aligns with
+                your strengths, previous experience, and goals.
               </p>
               <Button
                 type="button"
@@ -169,9 +181,9 @@ const CareersSeoPage = () => {
                 fits your goals and skills!
               </p>
               <p>
-                In today&apos;s dynamic job market, finding the right career path can
-                be a daunting task. Appily understands the importance of a
-                fulfilling and purpose-driven career.{" "}
+                In today&apos;s dynamic job market, finding the right career
+                path can be a daunting task. Appily understands the importance
+                of a fulfilling and purpose-driven career.{" "}
                 <strong>
                   Our comprehensive career tests are tailored to provide you
                   with insights into your strengths, interests, and aspirations.
@@ -197,7 +209,6 @@ const CareersSeoPage = () => {
                   className="button btn-tertiary btn-click-quiz"
                 />
               </div>
-
             </div>
           </div>
         </div>

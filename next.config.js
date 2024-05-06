@@ -80,6 +80,10 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
+				hostname: "qa-appily-cms.payloadcms.app", 
+			},
+			{
+				protocol: "https",
 				hostname: "**-eab-agency.vercel.app",
 			},
 			{

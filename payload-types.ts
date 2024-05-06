@@ -40,8 +40,8 @@ export interface Page {
   title: string;
   publishedDate?: string;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
-    richText: {
+    type: 'none' | 'landingPage' | 'resultPage';
+    richText?: {
       [k: string]: unknown;
     }[];
     links?: {
@@ -58,41 +58,23 @@ export interface Page {
       };
       id?: string;
     }[];
+    title?: string;
     media: string | Media;
+    animation: string | Media;
   };
   layout: (
     | {
-        ctaBackgroundColor?: 'white' | 'black';
+        ctaBackgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
         richText: {
           [k: string]: unknown;
         }[];
         links?: {
           link: {
-            type?: 'reference' | 'custom';
-            newTab?: boolean;
-            reference: {
-              value: string | Page;
-              relationTo: 'pages';
-            };
-            url: string;
-            label: string;
-            appearance?: 'primary' | 'secondary';
-          };
-          id?: string;
-        }[];
-        id?: string;
-        blockName?: string;
-        blockType: 'cta';
-      }
-    | {
-        backgroundColor?: 'white' | 'black';
-        columns?: {
-          size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
-          richText: {
-            [k: string]: unknown;
-          }[];
-          enableLink?: boolean;
-          link?: {
             type?: 'reference' | 'custom';
             newTab?: boolean;
             reference: {
@@ -107,7 +89,321 @@ export interface Page {
         }[];
         id?: string;
         blockName?: string;
-        blockType: 'content';
+        blockType: 'cta';
+      }
+    | {
+        backgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
+        enableHighlight?: boolean;
+        type?: 'row' | 'column';
+        rows?: {
+          columns?: {
+            size?: string;
+            alignment?: 'left' | 'center' | 'right';
+            blocks: (
+              | {
+                  number: string;
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'stats';
+                }
+              | {
+                  author?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  authortitle?: string;
+                  alignment?: 'left' | 'center' | 'right';
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'testimonial';
+                }
+              | {
+                  careerBlockBackgroundColor?:
+                    | 'dark_blue_light_gray'
+                    | 'orange_peach'
+                    | 'turquoise_yellow'
+                    | 'turquoise_light_turquoise'
+                    | 'slate_gray_white';
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  image: string | Media;
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'career';
+                }
+              | {
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  icon: string | Media;
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'comparison';
+                }
+              | {
+                  numberedItems?: boolean;
+                  accordions?: {
+                    title: string;
+                    richText: {
+                      [k: string]: unknown;
+                    }[];
+                    links?: {
+                      link: {
+                        type?: 'reference' | 'custom';
+                        newTab?: boolean;
+                        reference: {
+                          value: string | Page;
+                          relationTo: 'pages';
+                        };
+                        url: string;
+                        label: string;
+                        appearance?: 'primary' | 'secondary';
+                      };
+                      id?: string;
+                    }[];
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'accordion';
+                }
+              | {
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'richText';
+                }
+              | {
+                  mediaBlockBackgroundColor?:
+                    | 'dark_blue_light_gray'
+                    | 'orange_peach'
+                    | 'turquoise_yellow'
+                    | 'turquoise_light_turquoise'
+                    | 'slate_gray_white';
+                  position?: 'default' | 'fullscreen';
+                  media: string | Media;
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'mediaBlock';
+                }
+              | {
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'default' | 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'ButtonGroup';
+                }
+            )[];
+            id?: string;
+          }[];
+          id?: string;
+        }[];
+        columns?: {
+          size?: string;
+          alignment?: 'left' | 'center' | 'right';
+          blocks: (
+            | {
+                number: string;
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'stats';
+              }
+            | {
+                author?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                authortitle?: string;
+                alignment?: 'left' | 'center' | 'right';
+                id?: string;
+                blockName?: string;
+                blockType: 'testimonial';
+              }
+            | {
+                careerBlockBackgroundColor?:
+                  | 'dark_blue_light_gray'
+                  | 'orange_peach'
+                  | 'turquoise_yellow'
+                  | 'turquoise_light_turquoise'
+                  | 'slate_gray_white';
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                image: string | Media;
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'career';
+              }
+            | {
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                icon: string | Media;
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'comparison';
+              }
+            | {
+                numberedItems?: boolean;
+                accordions?: {
+                  title: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'accordion';
+              }
+            | {
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'richText';
+              }
+            | {
+                mediaBlockBackgroundColor?:
+                  | 'dark_blue_light_gray'
+                  | 'orange_peach'
+                  | 'turquoise_yellow'
+                  | 'turquoise_light_turquoise'
+                  | 'slate_gray_white';
+                position?: 'default' | 'fullscreen';
+                media: string | Media;
+                id?: string;
+                blockName?: string;
+                blockType: 'mediaBlock';
+              }
+            | {
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'default' | 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'ButtonGroup';
+              }
+          )[];
+          id?: string;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'section';
       }
     | {
         form: string | Form;
@@ -120,7 +416,12 @@ export interface Page {
         blockType: 'formBlock';
       }
     | {
-        mediaBlockBackgroundColor?: 'white' | 'black';
+        mediaBlockBackgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
         position?: 'default' | 'fullscreen';
         media: string | Media;
         id?: string;
@@ -156,6 +457,170 @@ export interface Page {
         id?: string;
         blockName?: string;
         blockType: 'archive';
+      }
+    | {
+        backgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
+        statistics?: {
+          number: string;
+          title?: string;
+          richText: {
+            [k: string]: unknown;
+          }[];
+          id?: string;
+        }[];
+        source?: string;
+        id?: string;
+        blockName?: string;
+        blockType: 'statistics';
+      }
+    | {
+        author?: string;
+        backgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
+        richText: {
+          [k: string]: unknown;
+        }[];
+        authortitle?: string;
+        links?: {
+          link: {
+            type?: 'reference' | 'custom';
+            newTab?: boolean;
+            reference: {
+              value: string | Page;
+              relationTo: 'pages';
+            };
+            url: string;
+            label: string;
+            appearance?: 'default' | 'primary' | 'secondary';
+          };
+          id?: string;
+        }[];
+        alignment?: 'left' | 'center' | 'right';
+        id?: string;
+        blockName?: string;
+        blockType: 'testimonial';
+      }
+    | {
+        callOutBackgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
+        calloutTitle: {
+          [k: string]: unknown;
+        }[];
+        richText?: {
+          [k: string]: unknown;
+        }[];
+        calloutLinks?: {
+          link: {
+            type?: 'reference' | 'custom';
+            newTab?: boolean;
+            reference: {
+              value: string | Page;
+              relationTo: 'pages';
+            };
+            url: string;
+            label: string;
+            appearance?: 'default' | 'primary' | 'secondary';
+          };
+          id?: string;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'callout';
+      }
+    | {
+        highlightCTABackgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
+        title?: string;
+        richText?: {
+          [k: string]: unknown;
+        }[];
+        highlightedctaLinks?: {
+          link: {
+            type?: 'reference' | 'custom';
+            newTab?: boolean;
+            reference: {
+              value: string | Page;
+              relationTo: 'pages';
+            };
+            url: string;
+            label: string;
+            appearance?: 'default' | 'primary' | 'secondary';
+          };
+          id?: string;
+        }[];
+        imagealignment?: 'left' | 'center' | 'right';
+        image?: string | Media;
+        id?: string;
+        blockName?: string;
+        blockType: 'highlightCTA';
+      }
+    | {
+        backgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
+        title?: string;
+        richText?: {
+          [k: string]: unknown;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'Schoolcarousel';
+      }
+    | {
+        tabSectionBackgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
+        tabs?: {
+          tabicon?: string | Media;
+          shortTitle?: string;
+          contentTitle?: string;
+          description?: {
+            [k: string]: unknown;
+          }[];
+          tabButtongroup?: {
+            link: {
+              type?: 'reference' | 'custom';
+              newTab?: boolean;
+              reference: {
+                value: string | Page;
+                relationTo: 'pages';
+              };
+              url: string;
+              label: string;
+              appearance?: 'default' | 'primary' | 'secondary';
+            };
+            id?: string;
+          }[];
+          useSameIcon?: boolean;
+          alternateImage?: string | Media;
+          id?: string;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'tabsection';
       }
   )[];
   slug?: string;
@@ -313,8 +778,8 @@ export interface Post {
   title: string;
   publishedDate?: string;
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact';
-    richText: {
+    type: 'none' | 'landingPage' | 'resultPage';
+    richText?: {
       [k: string]: unknown;
     }[];
     links?: {
@@ -331,41 +796,23 @@ export interface Post {
       };
       id?: string;
     }[];
+    title?: string;
     media: string | Media;
+    animation: string | Media;
   };
   layout: (
     | {
-        ctaBackgroundColor?: 'white' | 'black';
+        ctaBackgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
         richText: {
           [k: string]: unknown;
         }[];
         links?: {
           link: {
-            type?: 'reference' | 'custom';
-            newTab?: boolean;
-            reference: {
-              value: string | Page;
-              relationTo: 'pages';
-            };
-            url: string;
-            label: string;
-            appearance?: 'primary' | 'secondary';
-          };
-          id?: string;
-        }[];
-        id?: string;
-        blockName?: string;
-        blockType: 'cta';
-      }
-    | {
-        backgroundColor?: 'white' | 'black';
-        columns?: {
-          size?: 'oneThird' | 'half' | 'twoThirds' | 'full';
-          richText: {
-            [k: string]: unknown;
-          }[];
-          enableLink?: boolean;
-          link?: {
             type?: 'reference' | 'custom';
             newTab?: boolean;
             reference: {
@@ -380,7 +827,321 @@ export interface Post {
         }[];
         id?: string;
         blockName?: string;
-        blockType: 'content';
+        blockType: 'cta';
+      }
+    | {
+        backgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
+        enableHighlight?: boolean;
+        type?: 'row' | 'column';
+        rows?: {
+          columns?: {
+            size?: string;
+            alignment?: 'left' | 'center' | 'right';
+            blocks: (
+              | {
+                  number: string;
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'stats';
+                }
+              | {
+                  author?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  authortitle?: string;
+                  alignment?: 'left' | 'center' | 'right';
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'testimonial';
+                }
+              | {
+                  careerBlockBackgroundColor?:
+                    | 'dark_blue_light_gray'
+                    | 'orange_peach'
+                    | 'turquoise_yellow'
+                    | 'turquoise_light_turquoise'
+                    | 'slate_gray_white';
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  image: string | Media;
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'career';
+                }
+              | {
+                  title?: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  icon: string | Media;
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'comparison';
+                }
+              | {
+                  numberedItems?: boolean;
+                  accordions?: {
+                    title: string;
+                    richText: {
+                      [k: string]: unknown;
+                    }[];
+                    links?: {
+                      link: {
+                        type?: 'reference' | 'custom';
+                        newTab?: boolean;
+                        reference: {
+                          value: string | Page;
+                          relationTo: 'pages';
+                        };
+                        url: string;
+                        label: string;
+                        appearance?: 'primary' | 'secondary';
+                      };
+                      id?: string;
+                    }[];
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'accordion';
+                }
+              | {
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'richText';
+                }
+              | {
+                  mediaBlockBackgroundColor?:
+                    | 'dark_blue_light_gray'
+                    | 'orange_peach'
+                    | 'turquoise_yellow'
+                    | 'turquoise_light_turquoise'
+                    | 'slate_gray_white';
+                  position?: 'default' | 'fullscreen';
+                  media: string | Media;
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'mediaBlock';
+                }
+              | {
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'default' | 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                  blockName?: string;
+                  blockType: 'ButtonGroup';
+                }
+            )[];
+            id?: string;
+          }[];
+          id?: string;
+        }[];
+        columns?: {
+          size?: string;
+          alignment?: 'left' | 'center' | 'right';
+          blocks: (
+            | {
+                number: string;
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'stats';
+              }
+            | {
+                author?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                authortitle?: string;
+                alignment?: 'left' | 'center' | 'right';
+                id?: string;
+                blockName?: string;
+                blockType: 'testimonial';
+              }
+            | {
+                careerBlockBackgroundColor?:
+                  | 'dark_blue_light_gray'
+                  | 'orange_peach'
+                  | 'turquoise_yellow'
+                  | 'turquoise_light_turquoise'
+                  | 'slate_gray_white';
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                image: string | Media;
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'career';
+              }
+            | {
+                title?: string;
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                icon: string | Media;
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'comparison';
+              }
+            | {
+                numberedItems?: boolean;
+                accordions?: {
+                  title: string;
+                  richText: {
+                    [k: string]: unknown;
+                  }[];
+                  links?: {
+                    link: {
+                      type?: 'reference' | 'custom';
+                      newTab?: boolean;
+                      reference: {
+                        value: string | Page;
+                        relationTo: 'pages';
+                      };
+                      url: string;
+                      label: string;
+                      appearance?: 'primary' | 'secondary';
+                    };
+                    id?: string;
+                  }[];
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'accordion';
+              }
+            | {
+                richText: {
+                  [k: string]: unknown;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'richText';
+              }
+            | {
+                mediaBlockBackgroundColor?:
+                  | 'dark_blue_light_gray'
+                  | 'orange_peach'
+                  | 'turquoise_yellow'
+                  | 'turquoise_light_turquoise'
+                  | 'slate_gray_white';
+                position?: 'default' | 'fullscreen';
+                media: string | Media;
+                id?: string;
+                blockName?: string;
+                blockType: 'mediaBlock';
+              }
+            | {
+                links?: {
+                  link: {
+                    type?: 'reference' | 'custom';
+                    newTab?: boolean;
+                    reference: {
+                      value: string | Page;
+                      relationTo: 'pages';
+                    };
+                    url: string;
+                    label: string;
+                    appearance?: 'default' | 'primary' | 'secondary';
+                  };
+                  id?: string;
+                }[];
+                id?: string;
+                blockName?: string;
+                blockType: 'ButtonGroup';
+              }
+          )[];
+          id?: string;
+        }[];
+        id?: string;
+        blockName?: string;
+        blockType: 'section';
       }
     | {
         form: string | Form;
@@ -393,7 +1154,12 @@ export interface Post {
         blockType: 'formBlock';
       }
     | {
-        mediaBlockBackgroundColor?: 'white' | 'black';
+        mediaBlockBackgroundColor?:
+          | 'dark_blue_light_gray'
+          | 'orange_peach'
+          | 'turquoise_yellow'
+          | 'turquoise_light_turquoise'
+          | 'slate_gray_white';
         position?: 'default' | 'fullscreen';
         media: string | Media;
         id?: string;

@@ -95,20 +95,20 @@
           color: var(--c-bodySecondary);
         }
 
-        &::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 110%;
-          height: 100%;
-          background: var(--c-bg-body);
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   left: 0;
+        //   top: 0;
+        //   width: 110%;
+        //   height: 100%;
+        //   background: var(--c-bg-body);
 
-          @media (min-width: tokens.$mq-800) {
-            width: 100%;
-            height: 110%;
-          }
-        }
+        //   @media (min-width: tokens.$mq-800) {
+        //     width: 100%;
+        //     height: 110%;
+        //   }
+        // }
       }
 
       &:first-child {

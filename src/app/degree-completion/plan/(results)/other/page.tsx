@@ -37,7 +37,7 @@ export default function Page() {
 
         <AccordionSection id="value-of-a-degree" data={data.reasons} />
 
-        <Stats stats={data.stats} source={data.statsSource} />
+        {/* <Stats stats={data.stats} source={data.statsSource} /> */}
 
         <Testimonial testimonialData={data.testimonial} />
 

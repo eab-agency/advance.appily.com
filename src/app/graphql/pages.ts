@@ -1,6 +1,6 @@
-import { CALL_TO_ACTION, CONTENT, FORM_BLOCK, MEDIA_BLOCK } from './blocks'
+import { CALL_TO_ACTION, SECTION, FORM_BLOCK, MEDIA_BLOCK, STATISTICS,TESTIMONIAL, HIGHLIGHTEDCTA, CALLOUTSECTION, TABSECTION } from './blocks'
 import { LINK_FIELDS } from './link'
-import { MEDIA } from './media'
+import { MEDIA , ANIMATION} from './media'
 import { META } from './meta'
 
 export const PAGES = `
@@ -30,13 +30,20 @@ export const PAGE = `
           links {
             link ${LINK_FIELDS()}
           }
+          title
           ${MEDIA}
+          ${ANIMATION}
         }
         layout {
           ${CALL_TO_ACTION}
-          ${CONTENT}
+          ${SECTION}
           ${FORM_BLOCK}
           ${MEDIA_BLOCK}
+          ${STATISTICS}
+          ${TESTIMONIAL}
+          ${HIGHLIGHTEDCTA}
+          ${CALLOUTSECTION}
+          ${TABSECTION}
         }
         ${META}
         breadcrumbs {

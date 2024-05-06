@@ -27,7 +27,7 @@ export default function AccordionSection({
 }: AccordionSectionProps) {
 	return (
 		<section id={id} className="whyChoose">
-			<div className="group center-aligned cols-2">
+			 <div className="group center-aligned cols-2">
 				<div className="column">
 					<div className="intro">
 						<h2
@@ -49,7 +49,7 @@ export default function AccordionSection({
 								newTab={newTab}
 							/>
 						)}
-					</div>
+					</div> 
 					<div className="accordion-group">
 						{data.accordionList.map((reason, index) => (
 							// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
@@ -77,3 +77,5 @@ export default function AccordionSection({
 		</section>
 	);
 }
+
+

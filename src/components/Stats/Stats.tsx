@@ -1,41 +1,25 @@
 import styles from "@/styles/components/Stats.module.scss";
-
-interface StatsProps {
-  stats: Stat[];
-  source?: string;
-  className?: string;
-}
+import RichText from "../RichText";
 
 interface Stat {
   number: string;
   title?: string;
-  description: string;
+  richText: {
+    [k: string]: unknown;
+  }[];
 }
 
 /* eslint-disable react/no-danger */
-function Stats({ stats, source, className = "" }: StatsProps) {
+function Stats({ number, title, richText }: Stat) {
   return (
-    <section className={`${styles.stats} ${className}`}>
-      <div className="group center-aligned">
-        <ul className="group center-aligned">
-          {stats.map((stat, _index) => (
-            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-            <li key={_index}>
-              <h3>
-                <strong>{stat.number}</strong>
-                {stat.title}
+    <div>
+          <h3>
+                <strong>{number}</strong>
+               
               </h3>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: stat.description,
-                }}
-              />
-            </li>
-          ))}
-        </ul>
-        <p className={styles.source}>{source}</p>
+              <span>{title}</span>
+        <RichText content={richText} />
       </div>
-    </section>
   );
 }
 

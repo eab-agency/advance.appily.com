@@ -1,6 +1,6 @@
 import { FORM_FIELDS } from './form'
 import { LINK_FIELDS } from './link'
-import { MEDIA } from './media'
+import { MEDIA, MEDIA_FIELDS } from './media'
 import { META } from './meta'
 
 export const CALL_TO_ACTION = `
@@ -27,18 +27,7 @@ export const PARTNER = `
 }
 `
 
-export const CONTENT = `
-...on Content {
-  blockType
-  backgroundColor
-  columns {
-    size
-    richText
-    enableLink
-    link ${LINK_FIELDS()}
-  }
-}
-`
+
 
 export const MEDIA_BLOCK = `
 ...on MediaBlock {
@@ -101,5 +90,172 @@ export const FORM_BLOCK = `
   blockType
   enableIntro
   form ${FORM_FIELDS}
+}
+`
+
+export const STATISTICS = `
+...on Statistics {
+  blockType
+  statistics {
+    number
+    title
+    richText
+  }
+  source
+}
+`
+
+export const STATS = `
+...on Stats {
+  blockType
+  number
+    title
+    richText
+}
+`
+
+export const TESTIMONIAL = `
+...on Testimonial {
+  blockType
+  author
+  authortitle
+  richText
+  alignment
+}
+`
+export const ACCORDIONBLOCK =`
+...on Accordion {
+  blockType
+  numberedItems
+  accordions {
+    title
+    richText
+    links {
+      link ${LINK_FIELDS()}
+    }
+  }
+}
+`
+export const CAREERBLOCK = `
+...on Career {
+  blockType
+  careerBlockBackgroundColor
+  title
+  image {
+    ${MEDIA_FIELDS}
+  }
+  links {
+    link ${LINK_FIELDS()}
+  }
+}
+`
+export const HIGHLIGHTEDCTA = `
+...on HighlightCTA {
+  blockType
+  highlightCTABackgroundColor
+  title
+  richText
+  imagealignment
+  image {
+    ${MEDIA_FIELDS}
+  }
+  highlightedctaLinks {
+    link ${LINK_FIELDS()}
+  }
+}
+`
+export const CALLOUTSECTION = `
+...on Callout {
+  blockType
+  callOutBackgroundColor
+  calloutTitle
+  richText
+  calloutLinks {
+    link ${LINK_FIELDS()}
+  }
+}
+`
+export const TABSECTION =`
+...on Tabsection {
+  blockType
+  tabSectionBackgroundColor
+  tabs {
+    tabicon {
+      ${MEDIA_FIELDS}
+    }
+    shortTitle
+    contentTitle
+    description
+    tabButtongroup {
+      link ${LINK_FIELDS()}
+    } 
+    useSameIcon
+    alternateImage {
+      ${MEDIA_FIELDS}
+    }
+  }
+}
+`
+
+export const BUTTONGROUPBLOCK = `
+...on ButtonGroup {
+  blockType
+  buttongroupLinks: links {
+    link ${LINK_FIELDS()}
+  }
+}
+`
+export const RICHTEXTBLOCK = `
+...on RichText {
+  blockType
+  richText
+}
+`
+export const COMPARISONBLOCK = `
+...on Comparison {
+  blockType
+  title
+  richText
+  icon {
+    ${MEDIA_FIELDS}
+  }
+  comparisonLinks: links {
+    link ${LINK_FIELDS()}
+  }
+}`
+
+export const SECTION = `
+...on Section {
+  blockType
+  backgroundColor
+  enableHighlight
+  rows{
+    columns{
+      size
+      blocks {
+        ${STATS}
+        ${TESTIMONIAL}
+        ${ACCORDIONBLOCK}
+        ${CAREERBLOCK}
+        ${BUTTONGROUPBLOCK}
+        ${RICHTEXTBLOCK}
+        ${COMPARISONBLOCK}
+        ${MEDIA_BLOCK}
+      }
+    }
+  }
+  columns{
+    size
+    blocks {
+      ${STATS}
+      ${TESTIMONIAL}
+      ${ACCORDIONBLOCK}
+      ${CAREERBLOCK}
+      ${BUTTONGROUPBLOCK}
+      ${RICHTEXTBLOCK}
+      ${COMPARISONBLOCK}
+      ${MEDIA_BLOCK}
+    }
+  }
 }
 `
