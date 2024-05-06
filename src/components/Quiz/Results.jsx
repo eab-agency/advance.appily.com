@@ -73,22 +73,22 @@ const Results = ({ children, vertical, answers, formId, redirectUrl }) => {
                 Stepping back into the world of education might seem daunting,
                 but remember,{" "}
                 <strong>every great journey begins with a single step</strong>
-                —and you're already on your way. This plan isn't just a guide;
-                it's a reflection of your ambition, your dreams, and your
-                future.
+                —and you&apos;re already on your way. This plan isn&apos;t just
+                a guide; it&apos;s a reflection of your ambition, your dreams,
+                and your future.
               </p>
               <p>
                 Furthermore, understanding the average salaries and job outlook
                 associated with this position can offer valuable insights into
-                the financial aspects of your career. It's essential to have a
-                clear understanding of the earning potential and growth
+                the financial aspects of your career. It&apos;s essential to
+                have a clear understanding of the earning potential and growth
                 opportunities that come with this role. This knowledge will
                 empower you to make informed decisions about your career
-                trajectory, ensuring that you're on a path that aligns with both
-                your professional and financial goals. Additionally, it provides
-                a benchmark for negotiating compensation packages, ensuring that
-                you receive fair and competitive remuneration for your
-                contributions.
+                trajectory, ensuring that you&apos;re on a path that aligns with
+                both your professional and financial goals. Additionally, it
+                provides a benchmark for negotiating compensation packages,
+                ensuring that you receive fair and competitive remuneration for
+                your contributions.
               </p>
 
               <p>
