@@ -27,26 +27,6 @@ export const metadata: Metadata = {
   }),
 };
 
-import PageHero from "@/components/Heros/PageHero";
-import { mergeOpenGraph, mergeTwitter } from "@/seo";
-import { Metadata } from "next";
-
-const title = data.metaData.title;
-const description = data.metaData.description;
-
-export const metadata: Metadata = {
-  title: title,
-  description: description,
-  openGraph: mergeOpenGraph({
-    title: title,
-    description: description,
-  }),
-  twitter: mergeTwitter({
-    title: title,
-    description: description,
-  }),
-};
-
 /* eslint-disable react/no-danger */
 const BusinessSeoPage = () => {
   const reasonsArray = data.whyChoose.reasons;
@@ -112,10 +92,8 @@ const BusinessSeoPage = () => {
             <figure className="highlighted-img">
               <Image
                 src={data.quizSection.image.src}
-                src={data.quizSection.image.src}
                 width={480}
                 height={480}
-                alt={data.quizSection.image.alt}
                 alt={data.quizSection.image.alt}
               />
             </figure>
@@ -137,17 +115,16 @@ const BusinessSeoPage = () => {
         </div>
       </section>
 
-      <Stats
+      {/* <Stats
         stats={data.stats}
         source={data.statsSource}
         className="stats-section"
-      />
+      /> */}
 
       <section className="whyChoose">
         <div className="group center-aligned cols-2">
           <div className="column">
             <div className="intro">
-              <h2 dangerouslySetInnerHTML={{ __html: data.whyChoose.title }} />
               <h2 dangerouslySetInnerHTML={{ __html: data.whyChoose.title }} />
               <p
                 dangerouslySetInnerHTML={{

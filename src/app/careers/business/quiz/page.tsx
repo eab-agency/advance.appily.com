@@ -10,21 +10,8 @@ import { Metadata } from "next";
 const title = "Business Career Quiz";
 const description =
   "Take our free quiz, Forge Your Path in Business, to see which career and degree paths might be right for you.";
-const title = "Business Career Quiz";
-const description =
-  "Take our free quiz, Forge Your Path in Business, to see which career and degree paths might be right for you.";
 
 export const metadata: Metadata = {
-  title: title,
-  description: description,
-  openGraph: mergeOpenGraph({
-    title: title,
-    description: description,
-  }),
-  twitter: mergeTwitter({
-    title: title,
-    description: description,
-  }),
   title: title,
   description: description,
   openGraph: mergeOpenGraph({
