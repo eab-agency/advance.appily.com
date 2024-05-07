@@ -24,7 +24,7 @@ export default function ButtonGroup({ data }: ButtonGroupProps) {
   return (
     <ul>
 
-      {data?.buttongroupLinks.length > 0 &&
+      {data?.buttongroupLinks?.length > 0 &&
         (data?.buttongroupLinks || []).map(({ link }, index) => {
           return (
 
