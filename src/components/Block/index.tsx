@@ -12,6 +12,7 @@ import Testimonial from '@/blocks/TestimonialBlock'
 import HighlightedCtaSection from '@/blocks/HighlightCTASection'
 import CalloutSection from '@/blocks/CalloutSection'
 import TabSection from '@/blocks/TabSection'
+import CarouselWithForm from '../CarouselWithForm/CarouselWithForm'
 
 
 const blockComponents = {
@@ -21,7 +22,8 @@ const blockComponents = {
   testimonial: Testimonial,
   highlightCTA: HighlightedCtaSection,
   callout: CalloutSection,
-  tabsection: TabSection
+  tabsection: TabSection,
+  Schoolcarousel: CarouselWithForm
 }
 
 export const Blocks: React.FC<{
@@ -29,7 +31,8 @@ export const Blocks: React.FC<{
   disableTopPadding?: boolean
 }> = props => {
   const { disableTopPadding, blocks } = props
-  const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0
+  const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0;
+  
   if (hasBlocks) {
     return (
       <Fragment>
@@ -37,6 +40,7 @@ export const Blocks: React.FC<{
           const { blockType } = block
           if (blockType && blockType in blockComponents) {
             const Block = blockComponents[blockType]
+            console.log(block,'val**')
             if (Block) {
               return (
                 <>

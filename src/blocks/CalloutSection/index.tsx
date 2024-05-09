@@ -42,7 +42,7 @@ export default function CalloutSection({ calloutTitle, richText, calloutLinks }:
       <div className="content column">
       <RichText content={calloutTitle} />
              <RichText content={richText} />
-       {calloutLinks && calloutLinks.length> 0 &&
+       {calloutLinks && calloutLinks?.length> 0 &&
             (calloutLinks || []).map(({ link }, index)=>{
               return(
                 <CMSLink key={index} {...link} className="button btn-primary btn-click-quiz"/>   

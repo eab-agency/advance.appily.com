@@ -1,4 +1,4 @@
-import { CALL_TO_ACTION, SECTION, FORM_BLOCK, MEDIA_BLOCK, STATISTICS,TESTIMONIAL, HIGHLIGHTEDCTA, CALLOUTSECTION, TABSECTION } from './blocks'
+import { CALL_TO_ACTION, SECTION, FORM_BLOCK, MEDIA_BLOCK, STATISTICS,TESTIMONIAL, HIGHLIGHTEDCTA, CALLOUTSECTION, TABSECTION, CAROUSELCARD } from './blocks'
 import { LINK_FIELDS } from './link'
 import { MEDIA , ANIMATION} from './media'
 import { META } from './meta'
@@ -44,6 +44,7 @@ export const PAGE = `
           ${HIGHLIGHTEDCTA}
           ${CALLOUTSECTION}
           ${TABSECTION}
+          ${CAROUSELCARD}
         }
         ${META}
         breadcrumbs {

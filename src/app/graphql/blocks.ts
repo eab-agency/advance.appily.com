@@ -222,6 +222,13 @@ export const COMPARISONBLOCK = `
   }
 }`;
 
+export const CAROUSELCARD = `
+...on Schoolcarousel {
+  blockType
+  title
+  richText
+  carouselBackgroundColor
+}`
 export const SECTION = `
 ...on Section {
   blockType

@@ -25,7 +25,7 @@ const nextConfig = {
 	images: {
 		// add comment to test pull requests for amplify
 		minimumCacheTTL: 6000,
-		domains: ["localhost", process.env.NEXT_PUBLIC_CMS_URL],
+		domains: ["localhost", process.env.NEXT_PUBLIC_CMS_URL, "https://qa-appily-cms.payloadcms.app"],
 		remotePatterns: [
 			{
 				protocol: "https",
