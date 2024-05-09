@@ -1,5 +1,4 @@
 import { Media } from '@/components/Media'
-import { Cell, Grid } from '@faceless-ui/css-grid'
 import React, { Fragment } from 'react'
 import RichText from '../RichText';
 import { Stats } from '../Stats';
@@ -7,7 +6,6 @@ import { Testimonial } from '../Testimonial';
 import AccordionSection from '../commonComponent/AccordionGroup';
 import ButtonGroup from '../commonComponent/ButtonGroup';
 import ComparisonCard from '../commonComponent/ComparisonCard';
-import classes from './index.module.scss';
 
 const RenderColumnContent = ({ columns }) => {
   return (
