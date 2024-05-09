@@ -9,7 +9,7 @@ import ComparisonCard from '../commonComponent/ComparisonCard';
 
 const RenderColumnContent = ({ columns }) => {
   return (
-    <div className='group'>
+    <div className="group">
       {columns?.map((col, index) => {
         const { blocks, size } = col;
         const hasPercentage = /%/.test(size);
