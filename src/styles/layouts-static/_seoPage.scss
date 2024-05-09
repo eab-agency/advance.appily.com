@@ -129,6 +129,20 @@
   }
 }
 
+.highlight {
+  position: relative;
+  @include decoElement(var(--c-teal-500));
+
+  figure {
+    @media (max-width: tokens.$mq-900) {
+      max-width: 70%;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+
+
 // .stats-section {
 // }
 

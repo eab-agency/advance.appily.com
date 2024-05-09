@@ -1,15 +1,15 @@
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-}
+// .grid {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
 
-.cell {
-  box-sizing: border-box;
-  padding: 10px; /* Adjust padding as needed */
-  width: calc(50% - 20px); /* Default to half width */
-}
+// .cell {
+//   box-sizing: border-box;
+//   padding: 10px; /* Adjust padding as needed */
+//   width: calc(50% - 20px); /* Default to half width */
+// }
 
-// Use the CSS custom property for column width
-.columnWidth {
-  width: var(--box-width);
-}
+// // Use the CSS custom property for column width
+// .columnWidth {
+//   width: var(--box-width);
+// }

@@ -19,26 +19,20 @@ export const ContentBlock: React.FC<
     backgroundColor,
   } = props;
 
-  console.log("the props:", props)
-
-  // crate a function to set classNames based on the props
-
   function sectionClassNames() {
-    const classNames = [classes.content]
+    const classNames = ['content']
 
     if (enableHighlight) {
-      classNames.push(classes.highlight)
+      classNames.push('highlight')
     }
     if (layoutWidth) {
-      classNames.push(classes[layoutWidth])
+      classNames.push(layoutWidth)
     }
-    if (backgroundColor) {
-      classNames.push(classes[backgroundColor])
+    if (backgroundColor && backgroundColor !== 'default') {
+      classNames.push(backgroundColor)
     }
     return classNames.join(' ')
   }
-
-  // const sectionStyles = {
 
 
   return (
