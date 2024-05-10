@@ -1,8 +1,8 @@
 import RendeColumncontent from '@/components/RenderColumnContent'
 import RenderRowcontent from '@/components/RenderRowContent'
+import '@/styles/layouts/Section.scss'
 import React from 'react'
 import { Page } from '../../../payload-types'
-import classes from './index.module.scss'
 
 type Props = Extract<Page['layout'][0], { blockType: 'section' }>
 
@@ -20,16 +20,16 @@ export const ContentBlock: React.FC<
   } = props;
 
   function sectionClassNames() {
-    const classNames = ['content']
+    const classNames = ['section-content']
 
     if (enableHighlight) {
-      classNames.push('highlight')
+      classNames.push('section__highlight')
     }
     if (layoutWidth) {
-      classNames.push(layoutWidth)
+      classNames.push(`section__layoutwidth-${layoutWidth}`)
     }
     if (backgroundColor && backgroundColor !== 'default') {
-      classNames.push(backgroundColor)
+      classNames.push(`section--bg-${backgroundColor}`)
     }
     return classNames.join(' ')
   }

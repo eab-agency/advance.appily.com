@@ -228,7 +228,7 @@ export const CAROUSELCARD = `
   title
   richText
   carouselBackgroundColor
-}`
+}`;
 export const SECTION = `
 ...on Section {
   blockType

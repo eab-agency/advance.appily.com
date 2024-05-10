@@ -20,14 +20,11 @@ interface ButtonGroupProps {
   };
 }
 export default function ButtonGroup({ data }: ButtonGroupProps) {
-  console.log(data, 'button**')
   return (
-    <ul>
-
+    <ul className="buttonGroup">
       {data?.buttongroupLinks?.length > 0 &&
         (data?.buttongroupLinks || []).map(({ link }, index) => {
           return (
-
             <CMSLink key={index} {...link} className="button btn-primary" />
 
           )

@@ -97,11 +97,6 @@
     }
   }
 
-  .contained .group {
-    width: 100%;
-    max-width: tokens.$mq-1200;
-  }
-
   .row {
     display: flex;
     flex-wrap: wrap;
@@ -241,6 +236,7 @@ div[class*="CarouselWithForm_carouselForm_"] {
   }
 }
 
+// Note AO: This is a temporary fix for the tabs section. Remove this once the tabs component is updated.
 .tabsSection {
   background: var(--c-bg5);
   &.bg-none {

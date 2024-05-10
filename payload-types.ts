@@ -918,6 +918,7 @@ export interface Page {
 							| "slate_gray_white"
 					  )
 					| null;
+				layoutWidth?: ("full" | "contained" | "narrow") | null;
 				calloutTitle?: {
 					root: {
 						type: string;
