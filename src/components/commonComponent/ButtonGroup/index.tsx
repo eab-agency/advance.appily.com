@@ -1,5 +1,6 @@
 import { Button } from "@/components/Button"
 import { CMSLink } from "@/components/Link"
+import "@/styles/blocks/ButtonGroup.scss"
 
 interface ButtonGroupProps {
   data: {
@@ -25,8 +26,9 @@ export default function ButtonGroup({ data }: ButtonGroupProps) {
       {data?.buttongroupLinks?.length > 0 &&
         (data?.buttongroupLinks || []).map(({ link }, index) => {
           return (
-            <CMSLink key={index} {...link} className="button btn-primary" />
-
+            <li className="buttonGroup__item">
+              <CMSLink key={index} {...link} />
+            </li>
           )
         })
       }
