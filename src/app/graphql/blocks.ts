@@ -30,8 +30,8 @@ export const PARTNER = `
 export const MEDIA_BLOCK = `
 ...on MediaBlock {
   blockType
-  mediaBlockBackgroundColor
-  position
+  cornerStyle
+  enableHighlight
   ${MEDIA}
 }
 `;

@@ -35,9 +35,12 @@ const blockRenderers = {
   stats: (block) => <Stats stats={block.statistics}{...block} />,
   richText: (block) => <RichText content={block.richText} />,
   mediaBlock: (block) => {
+    const { media, cornerStyle, enableHighlight } = block;
     return (
       <Media
-        resource={block.media}
+        resource={media}
+        cornerStyle={cornerStyle}
+        enableHighlight={enableHighlight}
         priority
       />
     )

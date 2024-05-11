@@ -4,17 +4,12 @@
   &.section__highlight {
     position: relative;
     @include tokens.decoElement(var(--c-teal-500));
-
-    // figure {
-    //   @media (max-width: tokens.$mq-900) {
-    //     max-width: 70%;
-    //     margin-bottom: 2rem;
-    //   }
-    // }
   }
 
   &.section__layoutwidth {
     &-full {
+      padding: 0;
+
       .group {
         @include tokens.layoutWidthFull;
       }

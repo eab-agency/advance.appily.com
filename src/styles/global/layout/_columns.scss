@@ -1,0 +1,17 @@
+@use "@/styles/global/tokens";
+
+[class*="__columns"] {
+  flex-direction: column;
+
+  .column {
+    width: 100%;
+  }
+
+  @media (min-width: tokens.$mq-800) {
+    flex-direction: row;
+
+    .column {
+      width: var(--column-width);
+    }
+  }
+}

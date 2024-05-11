@@ -1,4 +1,4 @@
-import RendeColumncontent from '@/components/RenderColumnContent'
+import RenderColumncontent from '@/components/RenderColumnContent'
 import RenderRowcontent from '@/components/RenderRowContent'
 import '@/styles/layouts/Section.scss'
 import React from 'react'
@@ -46,7 +46,7 @@ export const ContentBlock: React.FC<
         columns?.length > 0 &&
         (
 
-          <RendeColumncontent columns={columns} />
+          <RenderColumncontent columns={columns} />
         )}
     </section>
   )

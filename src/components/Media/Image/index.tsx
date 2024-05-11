@@ -22,6 +22,8 @@ export const Image: React.FC<MediaProps> = props => {
     alt: altFromProps,
   } = props
 
+  // console.log("mediapropds:", cornerStyle);
+
   const [isLoading, setIsLoading] = React.useState(true)
 
   let width: number | undefined
@@ -50,26 +52,28 @@ export const Image: React.FC<MediaProps> = props => {
   const sizes = Object.entries(breakpoints)
     .map(([, value]) => `(max-width: ${value}px) ${value}px`)
     .join(', ')
- 
+
   return (
-    <NextImage
-      className={[isLoading && classes.placeholder, classes.image, imgClassName]
-        .filter(Boolean)
-        .join(' ')}
-      src={src}
-      alt={alt || ''}
-      onClick={onClick}
-      onLoad={() => {
-        setIsLoading(false)
-        if (typeof onLoadFromProps === 'function') {
-          onLoadFromProps()
-        }
-      }}
-      fill={fill}
-      width={width}
-      height={ height}
-      // sizes={sizes}
-      priority={priority}
-    />
+    <>
+      <NextImage
+        className={[isLoading && classes.placeholder, classes.image, imgClassName]
+          .filter(Boolean)
+          .join(' ')}
+        src={src}
+        alt={alt || ''}
+        onClick={onClick}
+        onLoad={() => {
+          setIsLoading(false)
+          if (typeof onLoadFromProps === 'function') {
+            onLoadFromProps()
+          }
+        }}
+        fill={fill}
+        width={width}
+        height={height}
+        // sizes={sizes}
+        priority={priority}
+      />
+    </>
   )
 }

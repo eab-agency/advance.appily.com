@@ -14,7 +14,7 @@ interface ButtonGroupProps {
         };
         url: string;
         label: string;
-        appearance?: 'default' | 'primary' | 'secondary';
+        appearance?: 'default' | 'primary' | 'secondary' | 'tertiary';
       };
       id?: string;
     }[];
