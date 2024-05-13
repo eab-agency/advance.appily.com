@@ -11,12 +11,15 @@ const RenderColumnContent = ({ columns }) => {
   return (
     <div className="group group__columns">
       {columns?.map((col, index) => {
-        const { blocks, size } = col;
+        const { blocks, size, alignment, extendToBorders } = col;
         const hasPercentage = /%/.test(size);
 
         const stringWithoutPercentage = hasPercentage ? size.replace(/%$/, "") : size;
+
+        const columnClass = `column column__contentAligned-${alignment} ${extendToBorders ? 'column__extend-to-borders' : ''}`;
+
         return (
-          <div className="column" style={{ '--column-width': `${stringWithoutPercentage}%` } as any} key={index}>
+          <div className={columnClass} style={{ '--column-width': `${stringWithoutPercentage}%` } as any} key={index}>
             {blocks?.map((block, blockIndex) => {
               return (
                 <div key={blockIndex} className='block__wrap'>

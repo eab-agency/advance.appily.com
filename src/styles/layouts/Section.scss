@@ -8,10 +8,9 @@
 
   &.section__layoutwidth {
     &-full {
-      padding: 0;
-
       .group {
         @include tokens.layoutWidthFull;
+        gap: clamp(2.5rem, 6vw, 6rem);
       }
     }
 

@@ -252,6 +252,8 @@ export const SECTION = `
   }
   columns{
     size
+    alignment
+    extendToBorders
     blocks {
       ${STATS}
       ${TESTIMONIAL}

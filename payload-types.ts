@@ -163,6 +163,7 @@ export interface Page {
 								| {
 										size: string;
 										alignment?: ("left" | "center" | "right") | null;
+										extendToBorders?: boolean | null;
 										blocks: (
 											| {
 													number: string;
@@ -464,6 +465,7 @@ export interface Page {
 					| {
 							size: string;
 							alignment?: ("left" | "center" | "right") | null;
+							extendToBorders?: boolean | null;
 							blocks: (
 								| {
 										number: string;
@@ -1548,6 +1550,7 @@ export interface Post {
 								| {
 										size: string;
 										alignment?: ("left" | "center" | "right") | null;
+										extendToBorders?: boolean | null;
 										blocks: (
 											| {
 													number: string;
@@ -1849,6 +1852,7 @@ export interface Post {
 					| {
 							size: string;
 							alignment?: ("left" | "center" | "right") | null;
+							extendToBorders?: boolean | null;
 							blocks: (
 								| {
 										number: string;
@@ -2416,13 +2420,13 @@ export interface PayloadMigration {
 	batch?: number | null;
 	updatedAt: string;
 	createdAt: string;
-  }
-  /**
-   * This interface was referenced by `Config`'s JSON-Schema
-   * via the `definition` "header".
-   */
-  export interface Header {
-	id?: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "header".
+ */
+export interface Header {
+	id: string;
 	navItems?:
 		| {
 				link: {
