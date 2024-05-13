@@ -18,6 +18,12 @@
       .group {
         @include tokens.layoutWidthContained;
       }
+
+      &:has(.column__extend-to-borders) {
+        .group {
+          gap: clamp(2.5rem, 6vw, 6rem);
+        }
+      }
     }
 
     &-narrow {

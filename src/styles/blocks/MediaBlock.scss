@@ -28,3 +28,14 @@
     border-radius: 50%;
   }
 }
+
+section:has(.column__extend-to-borders) {
+  .mediaElement__highlight {
+    max-width: 100%;
+    width: 100%;
+
+    @media (max-width: tokens.$mq-800) {
+      margin-top: clamp(1.5rem, 4vw, 4rem);
+    }
+  }
+}
