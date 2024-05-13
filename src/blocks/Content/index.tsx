@@ -29,7 +29,7 @@ export const ContentBlock: React.FC<
       classNames.push(`section__layoutwidth-${layoutWidth}`)
     }
     if (backgroundColor && backgroundColor !== 'default') {
-      classNames.push(`section--bg-${backgroundColor}`)
+      classNames.push(`section__bg-${backgroundColor}`)
     }
     return classNames.join(' ')
   }
