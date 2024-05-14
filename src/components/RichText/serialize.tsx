@@ -132,21 +132,25 @@ export default function serializeLexicalRichText({
 
   parentNode = {},
 }) {
+
+  // Note Komal: Do we need all these tailwind classes?
+  // we have this in the global styles
+
   return children
     ?.map((node, i) => {
       const classNames = {
-        h1: "mt-6 text-5xl font-bold",
-        h2: "mt-5 text-4xl font-bold",
-        h3: "mt-4 text-3xl font-bold",
-        h4: "mt-3 text-2xl font-bold",
-        h5: "mt-2 text-xl font-bold",
-        h6: "mt-1 text-lg font-bold",
+        h1: "mt-6 text-5xl",
+        h2: "mt-5 text-4xl",
+        h3: "mt-4 text-3xl",
+        h4: "mt-3 text-2xl",
+        h5: "mt-2 text-xl",
+        h6: "mt-1 text-lg",
         p: "text-base",
         ul: "list-disc",
         ol: "list-decimal",
         li: "list-item",
-        blockquote: "font-bold text-lg text-gray-600",
-        a: "text-blue-500 underline",
+        blockquote: "text-lg text-gray-600",
+        a: "underline",
       };
 
       if (node.type === "text") {

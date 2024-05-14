@@ -34,6 +34,7 @@ export const ContentBlock: React.FC<
     return classNames.join(' ')
   }
 
+  console.log(props)
 
   return (
     <section className={sectionClassNames()}>

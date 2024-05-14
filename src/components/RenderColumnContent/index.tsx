@@ -7,7 +7,7 @@ import AccordionSection from '../commonComponent/AccordionGroup';
 import ButtonGroup from '../commonComponent/ButtonGroup';
 import ComparisonCard from '../commonComponent/ComparisonCard';
 
-const RenderColumnContent = ({ columns }) => {
+const RenderColumnContent = ({ columns, layoutType }) => {
   return (
     <div className="group group__columns">
       {columns?.map((col, index) => {
@@ -18,8 +18,14 @@ const RenderColumnContent = ({ columns }) => {
 
         const columnClass = `column column__contentAligned-${alignment} ${extendToBorders ? 'column__extend-to-borders' : ''}`;
 
+        const rowClass = `row row__contentAligned-${alignment} ${extendToBorders ? 'row__extend-to-borders' : ''}`
+
+        const className = layoutType === 'rows' ? rowClass : columnClass;
+
+        console.log("the layout type:", layoutType);
+
         return (
-          <div className={columnClass} style={{ '--column-width': `${stringWithoutPercentage}%` } as any} key={index}>
+          <div className={className} style={{ '--column-width': `${stringWithoutPercentage}%` } as any} key={index}>
             {blocks?.map((block, blockIndex) => {
               return (
                 <div key={blockIndex} className='block__wrap'>

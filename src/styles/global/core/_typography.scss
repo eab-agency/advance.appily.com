@@ -114,3 +114,14 @@ small,
 .val-header {
   color: var(--c-error);
 }
+
+// ===========================
+// Payload Utility Classes
+
+:where(.text-center) {
+  // text-align: left;
+}
+
+:where(.text-center) {
+  text-align: center;
+}
