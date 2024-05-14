@@ -2,6 +2,7 @@ import { Button } from "@/components/Button";
 import { CMSLink } from "@/components/Link";
 import { Media } from "@/components/Media";
 import RichText from "@/components/RichText";
+import "@/styles/blocks/ComparisonCard.scss";
 import Image from "next/image";
 import React from "react";
 import ButtonGroup from "../ButtonGroup";
@@ -40,9 +41,9 @@ export default function ComparisonCard({
 }: ComparisonCardProps) {
 
   return (
-    <section className="comparison">
+    <article className="comparison-card">
       <div className="group column center-aligned center-justified">
-        <div className="infograph">
+        <div className="icon-card__wrapper">
           <div className="roi-card icon-card">
             <header className="icon-card-head">
               <Media
@@ -67,6 +68,6 @@ export default function ComparisonCard({
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 };

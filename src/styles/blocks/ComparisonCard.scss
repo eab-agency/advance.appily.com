@@ -1,0 +1,53 @@
+@use "@/styles/global/tokens";
+
+.comparison-card {
+  .group {
+    .intro-text {
+      text-align: center;
+      color: var(--c-bodyPrimary);
+      max-width: tokens.$mq-800;
+    }
+
+    .icon-card__wrapper {
+      width: 90%;
+
+      .icon-card {
+        display: flex;
+        flex-direction: column;
+        background: var(--c-bg5);
+        border-radius: tokens.$borderRadius-xl;
+        box-shadow: -0.5rem 0.5rem 0 var(--c-shadow2);
+        color: var(--c-bodyPrimary);
+        padding: clamp(tokens.$padding-m, 3vw, tokens.$padding-xxl);
+        flex: 1 1 calc(50% - clamp(1rem, 6vw, 4rem));
+
+        .icon-card-head {
+          display: flex;
+          align-items: center;
+          gap: tokens.$size-4;
+
+          figure {
+            display: block;
+            width: clamp(tokens.$size-5, 10vw, tokens.$size-8 * 3);
+            height: clamp(tokens.$size-5, 10vw, tokens.$size-8 * 3);
+            flex-shrink: 0;
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+
+          .icon-card-title {
+            font-size: clamp(tokens.$size-4, 3vw, tokens.$size-7);
+            margin: 0;
+          }
+        }
+
+        .card-content {
+          padding-top: 1.5em;
+        }
+      }
+    }
+  }
+}
