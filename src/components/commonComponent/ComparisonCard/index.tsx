@@ -46,7 +46,7 @@ export default function ComparisonCard({
           <div className="roi-card icon-card">
             <header className="icon-card-head">
               <Media
-                resource={data.icon}
+                resource={data?.icon}
                 priority
                 width={480}
                 height={480}
@@ -54,8 +54,8 @@ export default function ComparisonCard({
               />
               <h3 className="icon-card-title">{data?.title} </h3>
             </header>
-            <RichText content={data.richText} />
-            {data.comparisonLinks?.length > 0 &&
+            <RichText content={data?.richText} />
+            {data?.comparisonLinks?.length > 0 &&
               (data?.comparisonLinks || []).map(({ link }, index) => {
                 return (
 

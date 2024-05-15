@@ -10,8 +10,9 @@ import { mergeTwitter } from "../seo/mergeTwitter";
 
 import "@/styles/styles.scss";
 
-import { Footer, Header } from "@/components";
 import Script from "next/script";
+import  HeaderComponent   from "../components/Header";
+import  FooterComponent from "../components/Footer";
 
 export default async function RootLayout({
   children,
@@ -42,10 +43,12 @@ export default async function RootLayout({
           <Analytics />
         </Suspense>
         <Providers>
-          <Header links={data.links} />
+           {/* @ts-expect-error */}
+          <HeaderComponent />
           {/* <LocationInDevMode /> */}
           <main className="layout-wrapper">{children}</main>
-          <Footer />
+           {/* @ts-expect-error */}
+           <FooterComponent  /> 
         </Providers>
       </body>
     </html>

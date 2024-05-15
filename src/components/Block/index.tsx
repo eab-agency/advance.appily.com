@@ -35,23 +35,20 @@ export const Blocks: React.FC<{
   
   if (hasBlocks) {
     return (
-      <Fragment>
+      <div>
         {blocks.map((block, index) => {
           const { blockType } = block
           if (blockType && blockType in blockComponents) {
             const Block = blockComponents[blockType]
-            console.log(block,'val**')
             if (Block) {
               return (
-                <>
-                  <Block {...block} />
-                </>
+                  <Block {...block} key={index}/>
               )
             }
           }
           return null
         })}
-      </Fragment>
+      </div>
     )
   }
 

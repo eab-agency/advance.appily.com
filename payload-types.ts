@@ -2416,13 +2416,13 @@ export interface PayloadMigration {
 	batch?: number | null;
 	updatedAt: string;
 	createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "header".
- */
-export interface Header {
-	id: string;
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "header".
+   */
+  export interface Header {
+	id?: string;
 	navItems?:
 		| {
 				link: {

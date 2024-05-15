@@ -17,7 +17,7 @@ export const PageClient: React.FC<{
   return (
     <React.Fragment>
       <Hero {...data?.hero} />
-      <Blocks blocks={data?.layout} /> {/* Make sure 'Blocks' component receives the correct props */}
+      <Blocks blocks={data?.layout} />
     </React.Fragment>
   );
 };

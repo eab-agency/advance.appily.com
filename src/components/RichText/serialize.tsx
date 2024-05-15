@@ -128,7 +128,8 @@ function generateTextAlign(node) {
 
 export default function serializeLexicalRichText({
   children,
-  // customClassNames,
+  customClassNames,
+
   parentNode = {},
 }) {
   return children

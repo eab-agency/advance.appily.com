@@ -1,10 +1,10 @@
-import type { CarouselCard, Page, Post } from "../../../payload-types";
+import type { CarouselCard, Page, Post, Header, Footer } from "../../../payload-types";
 import {
 	ALLCAROUSELCARDS,
 	CAROUSELCARDS,
 	CAROUSELCARDSNOTIN,
 } from "./carouselCards";
-import { GLOBALS } from "./globals";
+import { FOOTER_QUERY, GLOBALS, HEADER_QUERY } from "./globals";
 import { PAGE, PAGES } from "./pages";
 import { POST, POSTS } from "./posts";
 
@@ -116,26 +116,78 @@ export const fetchReaminingCarouselCards = async (
 	return data?.CarouselCards?.docs;
 };
 
-// export const fetchGlobals = async (): Promise<{
-//   header: Header
-//   footer: Footer
-// }> => {
-//   const { data } = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?globals`, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     next,
-//     body: JSON.stringify({
-//       query: GLOBALS,
-//     }),
-//   }).then(res => res.json())
+export async function fetchHeader(): Promise<Header> {
+	const header = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql`, {
+	  method: 'POST',
+	  headers: {
+		'Content-Type': 'application/json',
+	  },
+	  cache: 'no-store',
+	  body: JSON.stringify({
+		query: HEADER_QUERY,
+	  }),
+	})
+	  ?.then(res => {
+		if (!res.ok) throw new Error('Error fetching doc')
+		return res.json()
+	  })
+	  ?.then(res => {
+		if (res?.errors) throw new Error(res?.errors[0]?.message || 'Error fetching header')
+		return res.data?.Header
+	  })
+  
+	return header
+  }
+  
+  export async function fetchFooter(): Promise<Footer> {
+  
+	const footer = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql`, {
+	  method: 'POST',
+	  headers: {
+		'Content-Type': 'application/json',
+	  },
+	  body: JSON.stringify({
+		query: FOOTER_QUERY,
+	  }),
+	})
+	  .then(res => {
+		if (!res.ok) throw new Error('Error fetching doc')
+		return res.json()
+	  })
+	  ?.then(res => {
+		if (res?.errors) throw new Error(res?.errors[0]?.message || 'Error fetching footer')
+		return res.data?.Footer
+	  })
+  
+	return footer
+  }
 
-//   return {
-//     header: data.Header,
-//     footer: data.Footer,
-//   }
-// }
+export const fetchGlobals = async (): Promise<{
+	header: Header;
+	footer: Footer;
+  }> => {
+	const response = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?globals`, {
+	  method: 'POST',
+	  headers: {
+		'Content-Type': 'application/json',
+	  },
+	  body: JSON.stringify({
+		query: GLOBALS,
+	  }),
+	});
+  
+	if (!response.ok) {
+	  throw new Error('Failed to fetch global data');
+	}
+  
+	const { data } = await response.json();
+  
+	return {
+	  header: data?.Header,
+	  footer: data?.Footer,
+	};
+  };
+  
 
 export const fetchPages = async (): Promise<
 	Array<{ breadcrumbs: Page["breadcrumbs"]; slug: string }>
@@ -203,6 +255,7 @@ export const fetchPage = async (
 
 	return null;
 };
+
 
 // export const fetchPosts = async (): Promise<Post[]> => {
 // 	const currentDate = new Date();

@@ -7,7 +7,7 @@ import { Button } from '../Button'
 // import '@/styles/blocks/CMSLinkType.scss'
 
 type CMSLinkType = {
-  type?: 'custom' | 'reference'
+  type?: 'custom' | 'reference' 
   url?: string
   newTab?: boolean
   reference?: {
@@ -36,7 +36,6 @@ export const CMSLink: React.FC<CMSLinkType> = ({
       : url
 
   const isCustomType = type === 'custom';
-
   const linkProps = {
     ...(newTab && { target: '_blank', rel: 'noopener noreferrer' }),
     className: `${appearance === 'default' ? `btn-${appearance}` : `button btn-${appearance || 'default'}`} ${className || ''}`,
