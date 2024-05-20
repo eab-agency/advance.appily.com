@@ -24,7 +24,7 @@ const {statistics, source} = block;
     <section className={`${styles.stats}`}>
       <div className="group center-aligned">
         <ul className="group center-aligned">
-          {statistics.map((stat, _index) => (
+          {statistics?.map((stat, _index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
             <li key={_index}>
               <h3>

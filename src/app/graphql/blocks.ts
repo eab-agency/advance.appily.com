@@ -1,7 +1,7 @@
-import { FORM_FIELDS } from './form'
-import { LINK_FIELDS } from './link'
-import { MEDIA, MEDIA_FIELDS } from './media'
-import { META } from './meta'
+import { FORM_FIELDS } from "./form";
+import { LINK_FIELDS } from "./link";
+import { MEDIA, MEDIA_FIELDS } from "./media";
+import { META } from "./meta";
 
 export const CALL_TO_ACTION = `
 ...on Cta {
@@ -12,7 +12,7 @@ export const CALL_TO_ACTION = `
     link ${LINK_FIELDS()}
   }
 }
-`
+`;
 
 export const PARTNER = `
 ...on Partner {
@@ -25,18 +25,16 @@ export const PARTNER = `
     }
   }
 }
-`
-
-
+`;
 
 export const MEDIA_BLOCK = `
 ...on MediaBlock {
   blockType
-  mediaBlockBackgroundColor
-  position
+  cornerStyle
+  enableHighlight
   ${MEDIA}
 }
-`
+`;
 
 export const ARCHIVE_BLOCK = `
 ...on Archive {
@@ -83,7 +81,7 @@ export const ARCHIVE_BLOCK = `
   }
   populatedDocsTotal
 }
-`
+`;
 
 export const FORM_BLOCK = `
 ...on FormBlock {
@@ -91,7 +89,7 @@ export const FORM_BLOCK = `
   enableIntro
   form ${FORM_FIELDS}
 }
-`
+`;
 
 export const STATISTICS = `
 ...on Statistics {
@@ -103,7 +101,7 @@ export const STATISTICS = `
   }
   source
 }
-`
+`;
 
 export const STATS = `
 ...on Stats {
@@ -112,7 +110,7 @@ export const STATS = `
     title
     richText
 }
-`
+`;
 
 export const TESTIMONIAL = `
 ...on Testimonial {
@@ -122,8 +120,8 @@ export const TESTIMONIAL = `
   richText
   alignment
 }
-`
-export const ACCORDIONBLOCK =`
+`;
+export const ACCORDIONBLOCK = `
 ...on Accordion {
   blockType
   numberedItems
@@ -135,7 +133,7 @@ export const ACCORDIONBLOCK =`
     }
   }
 }
-`
+`;
 export const CAREERBLOCK = `
 ...on Career {
   blockType
@@ -148,7 +146,7 @@ export const CAREERBLOCK = `
     link ${LINK_FIELDS()}
   }
 }
-`
+`;
 export const HIGHLIGHTEDCTA = `
 ...on HighlightCTA {
   blockType
@@ -163,7 +161,7 @@ export const HIGHLIGHTEDCTA = `
     link ${LINK_FIELDS()}
   }
 }
-`
+`;
 export const CALLOUTSECTION = `
 ...on Callout {
   blockType
@@ -174,8 +172,8 @@ export const CALLOUTSECTION = `
     link ${LINK_FIELDS()}
   }
 }
-`
-export const TABSECTION =`
+`;
+export const TABSECTION = `
 ...on Tabsection {
   blockType
   tabSectionBackgroundColor
@@ -188,14 +186,14 @@ export const TABSECTION =`
     description
     tabButtongroup {
       link ${LINK_FIELDS()}
-    } 
+    }
     useSameIcon
     alternateImage {
       ${MEDIA_FIELDS}
     }
   }
 }
-`
+`;
 
 export const BUTTONGROUPBLOCK = `
 ...on ButtonGroup {
@@ -204,13 +202,13 @@ export const BUTTONGROUPBLOCK = `
     link ${LINK_FIELDS()}
   }
 }
-`
+`;
 export const RICHTEXTBLOCK = `
 ...on RichText {
   blockType
   richText
 }
-`
+`;
 export const COMPARISONBLOCK = `
 ...on Comparison {
   blockType
@@ -222,13 +220,21 @@ export const COMPARISONBLOCK = `
   comparisonLinks: links {
     link ${LINK_FIELDS()}
   }
-}`
+}`;
 
+export const CAROUSELCARD = `
+...on Schoolcarousel {
+  blockType
+  title
+  richText
+  carouselBackgroundColor
+}`;
 export const SECTION = `
 ...on Section {
   blockType
   backgroundColor
   enableHighlight
+  layoutWidth
   rows{
     columns{
       size
@@ -246,6 +252,8 @@ export const SECTION = `
   }
   columns{
     size
+    alignment
+    extendToBorders
     blocks {
       ${STATS}
       ${TESTIMONIAL}
@@ -258,4 +266,4 @@ export const SECTION = `
     }
   }
 }
-`
+`;

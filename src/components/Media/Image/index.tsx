@@ -22,7 +22,9 @@ export const Image: React.FC<MediaProps> = (props) => {
     alt: altFromProps,
   } = props;
 
-  const [isLoading, setIsLoading] = React.useState(true);
+  // console.log("mediapropds:", cornerStyle);
+
+  const [isLoading, setIsLoading] = React.useState(true)
 
   let width: number | undefined;
   let height: number | undefined;
@@ -48,27 +50,29 @@ export const Image: React.FC<MediaProps> = (props) => {
   // NOTE: this is used by the browser to determine which image to download at different screen sizes
   const sizes = Object.entries(breakpoints)
     .map(([, value]) => `(max-width: ${value}px) ${value}px`)
-    .join(", ");
+    .join(', ')
 
   return (
-    <NextImage
-      className={[isLoading && classes.placeholder, classes.image, imgClassName]
-        .filter(Boolean)
-        .join(" ")}
-      src={src}
-      alt={alt || ""}
-      onClick={onClick}
-      onLoad={() => {
-        setIsLoading(false);
-        if (typeof onLoadFromProps === "function") {
-          onLoadFromProps();
-        }
-      }}
-      fill={fill}
-      width={width}
-      height={height}
-      // sizes={sizes}
-      priority={priority}
-    />
-  );
-};
+    <>
+      <NextImage
+        className={[isLoading && classes.placeholder, classes.image, imgClassName]
+          .filter(Boolean)
+          .join(' ')}
+        src={src}
+        alt={alt || ''}
+        onClick={onClick}
+        onLoad={() => {
+          setIsLoading(false)
+          if (typeof onLoadFromProps === 'function') {
+            onLoadFromProps()
+          }
+        }}
+        fill={fill}
+        width={width}
+        height={height}
+        // sizes={sizes}
+        priority={priority}
+      />
+    </>
+  )
+}

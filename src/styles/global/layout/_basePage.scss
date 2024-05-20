@@ -61,6 +61,10 @@
         // color: var(--c-bg-body);
       }
     }
+
+    &.full {
+      padding: 0;
+    }
   }
 
   .group {
@@ -68,6 +72,7 @@
     justify-content: center;
     position: relative;
     z-index: tokens.$layer-1;
+    gap: clamp(tokens.$size-6, 4vw, tokens.$size-9);
 
     &.center-aligned {
       width: 100%;
@@ -112,6 +117,7 @@
     display: flex;
     flex-direction: column;
     gap: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+    width: var(--column-width);
   }
 
   .cols {
@@ -230,6 +236,7 @@ div[class*="CarouselWithForm_carouselForm_"] {
   }
 }
 
+// Note AO: This is a temporary fix for the tabs section. Remove this once the tabs component is updated.
 .tabsSection {
   background: var(--c-bg5);
   &.bg-none {

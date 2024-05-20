@@ -4,8 +4,10 @@ import React from 'react'
 import { Page } from '../../../payload-types'
 import { Button } from '../Button'
 
+// import '@/styles/blocks/CMSLinkType.scss'
+
 type CMSLinkType = {
-  type?: 'custom' | 'reference'
+  type?: 'custom' | 'reference' 
   url?: string
   newTab?: boolean
   reference?: {
@@ -32,26 +34,38 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
       ? `/${reference.value.slug}`
       : url
-  if (!appearance) {
-    const newTabProps = newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {}
+console.log(type,'type***');
+  const isCustomType = type === 'custom';
+  const linkProps = {
+    ...(newTab && { target: '_blank', rel: 'noopener noreferrer' }),
+    className: `${appearance === 'default' ? `btn-${appearance}` : `button btn-${appearance || 'default'}`} ${className || ''}`,
+  };
 
-    if (type === 'custom') {
-      return (
-        <a href={url} {...newTabProps} className={className}>
-          {label && label}
-          {children && children}
-        </a>
-      )
-    }
 
-    if (href) {
-      return (
-        <Link {...newTabProps} href={href} className={className}>
-          {label && label}
-          {children && children}
-        </Link>
-      )
-    }
+  if (isCustomType) {
+    return (
+      <a href={href} {...linkProps}>
+        <div className='btn-content'>
+          <span className='btn-label'>
+            {label && label}
+            {children && children}
+          </span>
+        </div>
+      </a>
+    );
+  }
+
+  if (href) {
+    return (
+      <Link href={href} {...linkProps}>
+        <div className='btn-content'>
+          <span className='btn-label'>
+            {label && label}
+            {children && children}
+          </span>
+        </div>
+      </Link>
+    );
   }
 
   const buttonProps = {
@@ -60,5 +74,5 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     appearance,
     label,
   }
-  return <Button className={className} {...buttonProps} label={buttonProps.label ?? ''} />
+  return <Button  {...buttonProps} label={buttonProps.label ?? ''} />
 }

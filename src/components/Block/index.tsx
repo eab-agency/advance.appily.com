@@ -4,14 +4,13 @@ import { Page } from "../../../payload-types.js";
 // import { CallToActionBlock } from '../../blocks/CallToAction'
 import { ContentBlock } from "../../blocks/Content";
 import { MediaBlock } from "../../blocks/MediaBlock";
+import Statistic from '../../blocks/StatisticBlock'
+import Testimonial from '@/blocks/TestimonialBlock'
+import HighlightedCtaSection from '@/blocks/HighlightCTASection'
+import CalloutSection from '@/blocks/CalloutSection'
+import TabSection from '@/blocks/TabSection'
+import CarouselWithForm from '../CarouselWithForm/CarouselWithForm'
 
-import { BackgroundColor } from "../BackgroundColor";
-import { VerticalPadding, VerticalPaddingOptions } from "../VerticalPadding";
-import Statistic from "../../blocks/StatisticBlock";
-import Testimonial from "@/blocks/TestimonialBlock";
-import HighlightedCtaSection from "@/blocks/HighlightCTASection";
-import CalloutSection from "@/blocks/CalloutSection";
-import TabSection from "@/blocks/TabSection";
 
 const blockComponents = {
   section: ContentBlock,
@@ -21,29 +20,33 @@ const blockComponents = {
   highlightCTA: HighlightedCtaSection,
   callout: CalloutSection,
   tabsection: TabSection,
-};
+  Schoolcarousel: CarouselWithForm
+}
 
 export const Blocks: React.FC<{
-  blocks: Page["layout"][0][];
-  disableTopPadding?: boolean;
-}> = (props) => {
-  const { disableTopPadding, blocks } = props;
+  blocks: (Page['layout'][0])[]
+  disableTopPadding?: boolean
+}> = props => {
+  const { disableTopPadding, blocks } = props
   const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0;
+  
   if (hasBlocks) {
     return (
-      <Fragment>
+      <div>
         {blocks.map((block, index) => {
           const { blockType } = block;
           if (blockType && blockType in blockComponents) {
             const Block = blockComponents[blockType];
             if (Block) {
-              return <Block key={index} {...block} />;
+              return (
+                  <Block {...block} key={index}/>
+              )
             }
           }
           return null;
         })}
-      </Fragment>
-    );
+      </div>
+    )
   }
 
   return null;

@@ -1,5 +1,6 @@
 import { Button } from "@/components/Button"
 import { CMSLink } from "@/components/Link"
+import "@/styles/blocks/ButtonGroup.scss"
 
 interface ButtonGroupProps {
   data: {
@@ -13,23 +14,21 @@ interface ButtonGroupProps {
         };
         url: string;
         label: string;
-        appearance?: 'default' | 'primary' | 'secondary';
+        appearance?: 'default' | 'primary' | 'secondary' | 'tertiary';
       };
       id?: string;
     }[];
   };
 }
 export default function ButtonGroup({ data }: ButtonGroupProps) {
-  console.log(data, 'button**')
   return (
-    <ul>
-
-      {data?.buttongroupLinks.length > 0 &&
+    <ul className="buttonGroup">
+      {
         (data?.buttongroupLinks || []).map(({ link }, index) => {
           return (
-
-            <CMSLink key={index} {...link} className="button btn-primary" />
-
+            <li className="buttonGroup__item" key={index}>
+              <CMSLink  {...link}/>
+            </li>
           )
         })
       }

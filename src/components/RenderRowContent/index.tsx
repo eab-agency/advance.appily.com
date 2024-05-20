@@ -2,14 +2,12 @@ import RenderColumncontent from '../RenderColumnContent';
 
 const RenderRowcontent = ({ rows }) => {
   return (
-    <div>
+    <div className='group group__rows'>
       {rows &&
         rows.length > 0 &&
         rows.map((row, rowIndex) => {
           return (
-            <div key={rowIndex}>
-                <RenderColumncontent columns={row.columns} />
-            </div>
+            <RenderColumncontent columns={row.columns} key={rowIndex} layoutType={"rows"} />
           );
         })}
     </div>

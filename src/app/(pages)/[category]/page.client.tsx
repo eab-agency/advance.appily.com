@@ -2,7 +2,7 @@
 import React from 'react';
 import { Page } from '../../../../payload-types';
 import { Hero } from '../../../blocks/HeroBlock';
-import { Blocks } from '@/components/Block'; // Check if this import is correct
+import { Blocks } from '@/components/Block'; 
 import { useLivePreview } from '@payloadcms/live-preview-react';
 
 export const PageClient: React.FC<{
@@ -17,7 +17,7 @@ export const PageClient: React.FC<{
   return (
     <React.Fragment>
       <Hero {...data?.hero} />
-      <Blocks blocks={data?.layout} /> {/* Make sure 'Blocks' component receives the correct props */}
+      <Blocks blocks={data?.layout} />
     </React.Fragment>
   );
 };
