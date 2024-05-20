@@ -36,7 +36,7 @@ export function NavBar({ links }) {
 				{isMenuOpen ? <MdClose /> : <MdMenu />}
 			</button>
 			<ul className={isMenuOpen ? styles.menuOpen : styles.menuClosed}>
-				{links.map(({ link },index) => {
+				{links?.map(({ link },index) => {
 					// const isActive = pathname === href;
 					return (
 						<li key={index}>

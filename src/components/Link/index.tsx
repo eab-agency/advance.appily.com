@@ -34,7 +34,7 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
       ? `/${reference.value.slug}`
       : url
-
+console.log(type,'type***');
   const isCustomType = type === 'custom';
   const linkProps = {
     ...(newTab && { target: '_blank', rel: 'noopener noreferrer' }),

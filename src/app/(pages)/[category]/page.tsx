@@ -9,7 +9,7 @@ import { PageClient } from './page.client'
 export async function generateStaticParams() {
   const pages = await fetchPages();
 
-  const a = pages.map(({ breadcrumbs }) => {
+  const paramsVal = pages.map(({ breadcrumbs }) => {
     const slug = breadcrumbs?.[breadcrumbs.length - 1]?.url?.replace(/^\/|\/$/g, '').split('/');
     return {
       params: {
@@ -17,11 +17,12 @@ export async function generateStaticParams() {
       }
     };
   });
-  return a;
+  return paramsVal;
 }
 
   const CategoryPage = async({ params, searchParams }: any) => {
 	const { category, subCategory } = params; 
+  console.log(category,'category')
 	let pageData: Page | null = null
     const slug = [category, subCategory].filter(Boolean);
 	try {

@@ -1,8 +1,8 @@
 'use client'
 import React from 'react';
-import { Page } from '../../../../payload-types';
-import { Hero } from '../../../blocks/HeroBlock';
-import { Blocks } from '@/components/Block'; 
+import { Page } from '../../../../../payload-types';
+import { Hero } from '../../../../blocks/HeroBlock';
+import { Blocks } from '@/components/Block';
 import { useLivePreview } from '@payloadcms/live-preview-react';
 
 export const PageClient: React.FC<{
@@ -14,6 +14,7 @@ export const PageClient: React.FC<{
     serverURL: serverURL, // Ensure this URL is correct
     depth: 2,
   });
+  console.log(initialPage,'initalpage**')
   return (
     <React.Fragment>
       <Hero {...data?.hero} />
