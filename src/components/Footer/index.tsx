@@ -1,11 +1,11 @@
-'use client'
-import { useState, useEffect } from "react";
-import { Button } from "@/components";
+"use client";
 import styles from "@/styles/components/PageFooter.module.scss";
 import Image from "next/image";
 import { CMSLink } from "../Link";
 import { Footer } from "../../../payload-types";
 import { fetchFooter } from "@/app/graphql";
+import PrivacyLink from "./PrivacyLink";
+import { useEffect, useState } from "react";
 
 const FooterComponent = () => {
   const [footer, setFooter] = useState<Footer | null>(null);
@@ -16,25 +16,15 @@ const FooterComponent = () => {
         const footerData = await fetchFooter();
         setFooter(footerData);
       } catch (error) {
-        console.error('Failed to fetch footer:', error);
+        console.error("Failed to fetch footer:", error);
       }
     };
 
     getFooter();
   }, []);
 
-  const privacyClick = () => {
-    if (
-      typeof window.OneTrust === "undefined" ||
-      typeof window.OneTrust.ToggleInfoDisplay !== "function"
-    ) {
-      return;
-    }
-    window.OneTrust.ToggleInfoDisplay();
-  };
-
   const navItems = footer?.navItems || [];
-  
+
   return (
     <footer className={styles.pageFooter}>
       <div className={styles.wrapper}>
@@ -52,21 +42,20 @@ const FooterComponent = () => {
           </div>
           <nav className={styles.legalLinks}>
             <ul className="footer-col-1">
-              {navItems.map(({ link }, index) => (
-                <li key={index}>
-                  <CMSLink
-                    {...link}
-                    appearance={'default'}
-                  />
-                </li>
-              ))}
+              {navItems?.map(({ link }, index) => {
+                return (
+                  <li key={index}>
+                    <CMSLink
+                      key={index}
+                      {...link}
+                      appearance={"default"}
+                      // className={isActive ? styles.active : styles.nonActive}
+                    />
+                  </li>
+                );
+              })}
               <li>
-                <Button
-                  type="button"
-                  className={styles.privacyButton}
-                  onClick={privacyClick}
-                  label="Privacy Preferences"
-                />
+                <PrivacyLink />
               </li>
             </ul>
           </nav>
