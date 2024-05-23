@@ -3,9 +3,10 @@ import { CMSLink } from "@/components/Link";
 import { Media } from "@/components/Media";
 import RichText from "@/components/RichText";
 import "@/styles/blocks/ComparisonCard.scss";
-import Image from "next/image";
+// import Image from "next/image";
 import React from "react";
 import ButtonGroup from "../ButtonGroup";
+import { Icon } from "./Icon";
 
 interface ComparisonCardProps {
   data: {
@@ -14,6 +15,13 @@ interface ComparisonCardProps {
       [k: string]: unknown;
     }[];
     icon: {
+      mimeType: string;
+      filename: string,
+      width: number;
+      height: number;
+      alt: string;
+    }
+    darkicon: {
       mimeType: string;
       filename: string,
       width: number;
@@ -39,20 +47,14 @@ interface ComparisonCardProps {
 export default function ComparisonCard({
   data
 }: ComparisonCardProps) {
-  console.log(data,'data**')
+  console.log('Comparison Card data:', data)
   return (
     <article className="comparison-card">
       <div className="group column center-aligned center-justified">
         <div className="icon-card__wrapper">
           <div className="roi-card icon-card">
             <header className="icon-card-head">
-              <Media
-                resource={data?.icon}
-                priority
-                width={480}
-                height={480}
-                alt={data.icon?.alt ?? ""}
-              />
+              <Icon icon={data?.icon} darkicon={data?.darkicon} />
               <h3 className="icon-card-title">{data?.title} </h3>
             </header>
             <RichText content={data?.richText} />

@@ -6,16 +6,28 @@
   .column {
     width: 100%;
 
-    &__contentAligned-left {
+    &__horAligned-left {
       align-items: flex-start;
     }
 
-    &__contentAligned-center {
+    &__horAligned-center {
       align-items: center;
     }
 
-    &__contentAligned-right {
+    &__horAligned-right {
       align-items: flex-end;
+    }
+
+    &__verAligned-top {
+      justify-content: flex-start;
+    }
+
+    &__verAligned-center {
+      justify-content: center;
+    }
+
+    &__verAligned-bottom {
+      justify-content: flex-end;
     }
 
     &__extend-to-borders {

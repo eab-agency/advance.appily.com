@@ -11,18 +11,16 @@ const RenderColumnContent = ({ columns, layoutType }) => {
   return (
     <div className="group group__columns">
       {columns?.map((col, index) => {
-        const { blocks, size, alignment, extendToBorders } = col;
+        const { blocks, size, halignment, valignment, extendToBorders } = col;
         const hasPercentage = /%/.test(size);
 
         const stringWithoutPercentage = hasPercentage ? size.replace(/%$/, "") : size;
 
-        const columnClass = `column column__contentAligned-${alignment} ${extendToBorders ? 'column__extend-to-borders' : ''}`;
+        const columnClass = `column column__horAligned-${halignment} column__verAligned-${valignment} ${extendToBorders ? 'column__extend-to-borders' : ''}`;
 
-        const rowClass = `row row__contentAligned-${alignment} ${extendToBorders ? 'row__extend-to-borders' : ''}`
+        const rowClass = `row row__horAligned-${halignment} row__verAligned-${valignment} ${extendToBorders ? 'row__extend-to-borders' : ''}`
 
         const className = layoutType === 'rows' ? rowClass : columnClass;
-
-        console.log("the layout type:", layoutType);
 
         return (
           <div className={className} style={{ '--column-width': `${stringWithoutPercentage}%` } as any} key={index}>
