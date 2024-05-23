@@ -1,7 +1,18 @@
-import { CALL_TO_ACTION, SECTION, FORM_BLOCK, MEDIA_BLOCK, STATISTICS,TESTIMONIAL, HIGHLIGHTEDCTA, CALLOUTSECTION, TABSECTION, CAROUSELCARD } from './blocks'
-import { LINK_FIELDS } from './link'
-import { MEDIA , ANIMATION} from './media'
-import { META } from './meta'
+import {
+	CALLOUTSECTION,
+	CALL_TO_ACTION,
+	CAROUSELCARD,
+	FORM_BLOCK,
+	HIGHLIGHTEDCTA,
+	MEDIA_BLOCK,
+	SECTION,
+	STATISTICS,
+	TABSECTION,
+	TESTIMONIAL,
+} from "./blocks";
+import { LINK_FIELDS } from "./link";
+import { ANIMATION, MEDIA } from "./media";
+import { META } from "./meta";
 
 export const PAGES = `
   query Pages {
@@ -15,7 +26,7 @@ export const PAGES = `
       }
     }
   }
-`
+`;
 
 export const PAGE = `
   query Page($slug: String ) {
@@ -55,4 +66,4 @@ export const PAGE = `
       }
     }
   }
-`
+`;

@@ -20,20 +20,22 @@ export async function generateStaticParams() {
   return paramsVal;
 }
 
-  const CategoryPage = async({ params, searchParams }: any) => {
-	const { category, subCategory } = params; 
-	let pageData: Page | null = null
-    const slug = [category, subCategory].filter(Boolean);
-	try {
-		pageData  = await fetchPage(slug);
-	  } catch (error) {
-	  }
-	  
-	
-	if (!pageData) {
-		return notFound()
-	  }
-	// const {hero , layout} = pageData;
+const CategoryPage = async ({ params, searchParams }: any) => {
+  const { category, subCategory } = params;
+  console.log(category, 'category')
+  let pageData: Page | null = null
+
+  const slug = [category, subCategory].filter(Boolean);
+  try {
+    pageData = await fetchPage(slug);
+  } catch (error) {
+  }
+
+
+  if (!pageData) {
+    return notFound()
+  }
+  // const {hero , layout} = pageData;
   // return (
   //   <React.Fragment>
   //     <Hero {...hero} />
