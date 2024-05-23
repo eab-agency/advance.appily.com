@@ -9,7 +9,12 @@ interface RichTextProps {
   content: any;
   customClassNames?: string;
 }
-export default function ({ className, content,customClassNames }: RichTextProps) {
+
+const RichText = function ({
+  className,
+  content,
+  customClassNames,
+}: RichTextProps) {
   if (!content?.root?.children) return "";
 
   return (
@@ -18,8 +23,10 @@ export default function ({ className, content,customClassNames }: RichTextProps)
     >
       {serializeLexicalRichText({
         children: content.root.children,
-        customClassNames,  
+        customClassNames,
       })}
     </div>
   );
-}
+};
+
+export default RichText;
