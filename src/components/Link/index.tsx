@@ -1,24 +1,24 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from 'next/link';
+import React from 'react';
 
-import { Page } from '../../../payload-types'
-import { Button } from '../Button'
+import { Page } from '../../../payload-types';
+import { Button } from '../Button';
 
-// import '@/styles/blocks/CMSLinkType.scss'
+// import '@/styles/blocks/CMSLinkType.scss';
 
 type CMSLinkType = {
-  type?: 'custom' | 'reference' 
-  url?: string
-  newTab?: boolean
+  type?: 'custom' | 'reference';
+  url?: string;
+  newTab?: boolean;
   reference?: {
-    value: string | Page
-    relationTo: 'pages'
-  }
-  label?: string
-  appearance?: 'default' | 'primary' | 'secondary'
-  children?: React.ReactNode
-  className?: string
-}
+    value: string | Page;
+    relationTo: 'pages';
+  };
+  label?: string;
+  appearance?: 'default' | 'primary' | 'secondary';
+  children?: React.ReactNode;
+  className?: string;
+};
 
 export const CMSLink: React.FC<CMSLinkType> = ({
   type,
@@ -31,24 +31,23 @@ export const CMSLink: React.FC<CMSLinkType> = ({
   className,
 }) => {
   const href =
-    type === 'reference' && typeof reference?.value === 'object' && reference.value.slug
+    type === 'reference' && reference && typeof reference.value === 'object' && 'slug' in reference.value
       ? `/${reference.value.slug}`
-      : url
-console.log(type,'type***');
+      : url || '';
+
   const isCustomType = type === 'custom';
   const linkProps = {
     ...(newTab && { target: '_blank', rel: 'noopener noreferrer' }),
     className: `${appearance === 'default' ? `btn-${appearance}` : `button btn-${appearance || 'default'}`} ${className || ''}`,
   };
 
-
   if (isCustomType) {
     return (
       <a href={href} {...linkProps}>
         <div className='btn-content'>
           <span className='btn-label'>
-            {label && label}
-            {children && children}
+            {label}
+            {children}
           </span>
         </div>
       </a>
@@ -60,8 +59,8 @@ console.log(type,'type***');
       <Link href={href} {...linkProps}>
         <div className='btn-content'>
           <span className='btn-label'>
-            {label && label}
-            {children && children}
+            {label}
+            {children}
           </span>
         </div>
       </Link>
@@ -73,6 +72,7 @@ console.log(type,'type***');
     href,
     appearance,
     label,
-  }
-  return <Button  {...buttonProps} label={buttonProps.label ?? ''} />
-}
+  };
+
+  return <Button {...buttonProps} label={buttonProps.label ?? ''} />;
+};
