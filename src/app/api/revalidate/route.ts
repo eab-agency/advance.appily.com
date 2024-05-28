@@ -8,7 +8,7 @@ export async function GET(request: NextRequest): Promise<Response> {
   const secret = request.nextUrl.searchParams.get('secret')
   if (
     !secret ||
-    secret !== process.env.NEXT_PRIVATE_REVALIDATION_KEY 
+    secret !== process.env.REVALIDATION_KEY 
   ) {
     // Do not indicate that the revalidation key is incorrect in the response
     // This will protect this API route from being exploited
