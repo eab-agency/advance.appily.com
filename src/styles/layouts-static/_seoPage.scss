@@ -2,6 +2,7 @@
 @use "@/styles/global/tokens";
 // ==========================
 // Sections
+// Note Andrei: This file is meant to be deprecated in favor of the new CMS approach.
 
 .pageHero {
   border-bottom: tokens.$borderWidth-s solid var(--c-border-5);
@@ -22,7 +23,6 @@
     }
 
     h1 {
-      // padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
       padding-block: clamp(tokens.$padding-m, 6vw, tokens.$padding-xxxxl);
 
       @media (min-width: tokens.$mq-900) {
@@ -36,9 +36,10 @@
 
       @media (min-width: tokens.$mq-900) {
         max-height: initial;
-      }
+        // width: 50%;
+        // flex-shrink: 0;
+        flex: 1 0 50%;
 
-      @media (min-width: tokens.$mq-900) {
         &::before {
           content: "";
           display: block;

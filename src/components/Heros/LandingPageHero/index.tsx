@@ -1,54 +1,40 @@
-'use client'
+// 'use client'
+// import { Button } from "@/components";
+import { CMSLink } from "@/components/Link"
 import React, { Fragment } from 'react'
 import { Page, } from '../../../../payload-types'
 import { Media } from '../../Media'
 import RichText from '../../RichText'
-import { Button } from "@/components";
 
-export const LandingPageHero: React.FC<Page['hero']> = ({ richText, media, links, title }) => {
+import "@/styles/components/modules/PageHero.scss"
 
-    const renderButton = (link, i) => {
-        const href =
-            typeof link.reference?.value === 'object' && link.reference.value.slug
-                ? `/${link.reference.value.slug}`
-                : link.url;
-        return (
-            <Button
-                appearance={link.appearance}
-                className="button btn-primary"
-                href={href}
-                label={link.label}
-                newTab={link.newTab}
-                key={i} />
-        )
-    }
-    return (
-        <section className="pageHero">
-            <div className="group center-aligned center-justified">
-                <div className="intro-title">
-                    <span>{title}</span>
-                </div>
-                <div>
+export const LandingPageHero: React.FC<Page['hero']> = ({ richText, media, links }) => {
 
-                    <RichText content={richText} />
-                    {(links || []).map(({ link }, i) =>
-                        renderButton(link, i)
-                    )}
-                </div>
-                {media !== null && (
-                    <figure className="heroImage">
-                        {typeof media === 'object' && (
-                            <Fragment>
-                                <Media
-                                    resource={media}
-                                    priority
-                                />
-                                {media?.caption && <RichText content={media?.caption} />}
-                            </Fragment>
-                        )}
-                    </figure>
-                )}
-            </div>
-        </section>
-    )
+  return (
+    <section className="pageHero">
+      <div className="group">
+        <div className="hero-content">
+          <RichText content={richText} />
+          {(links || []).map(({ link }, i) =>
+            <CMSLink
+              key={i}
+              {...link} />
+          )}
+        </div>
+        {media !== null && (
+          <div className="heroImage">
+            {typeof media === 'object' && (
+              <Fragment>
+                <Media
+                  resource={media}
+                  priority
+                />
+                {media?.caption && <RichText content={media?.caption} />}
+              </Fragment>
+            )}
+          </div>
+        )}
+      </div>
+    </section>
+  )
 }

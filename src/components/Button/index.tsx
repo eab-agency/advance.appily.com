@@ -10,7 +10,7 @@ import classes from './index.module.scss'
 export type Props = {
   label: string
   children?: JSX.Element | string
-  appearance?: 'default' | 'primary' | 'secondary'
+  appearance?: 'default' | 'primary' | 'secondary' | 'tertiary'
   el?: 'button' | 'link' | 'a'
   onClick?: () => void
   href?: string

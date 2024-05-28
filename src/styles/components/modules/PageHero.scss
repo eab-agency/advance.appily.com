@@ -1,0 +1,102 @@
+@use "sass:color";
+@use "@/styles/global/tokens";
+
+.pageHero {
+  border-bottom: tokens.$borderWidth-s solid var(--c-border-5);
+  padding: 0;
+
+  @media (min-width: tokens.$mq-900) {
+    min-height: 70vh;
+    padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+    padding-block: clamp(tokens.$padding-xxl, 10vw, tokens.$padding-xxxxl);
+  }
+
+  .group {
+    flex-direction: column;
+    align-items: center;
+
+    max-width: tokens.$mq-1200;
+    margin: 0 auto;
+
+    @media (min-width: tokens.$mq-900) {
+      gap: clamp(tokens.$size-4, 4vw, tokens.$size-8);
+      flex-direction: row;
+    }
+
+    h1 {
+      padding-block: clamp(tokens.$padding-m, 6vw, tokens.$padding-xxxxl);
+      margin: 0;
+
+      @media (min-width: tokens.$mq-900) {
+        padding: 0;
+      }
+    }
+
+    .hero-content {
+      padding-inline: clamp(2rem, 4vw, 4rem);
+    }
+
+    .heroImage {
+      position: relative;
+      border-bottom: 1em solid var(--c-teal-600);
+      max-height: fit-content;
+      width: 100%;
+
+      figure {
+        max-height: clamp(18rem, 50vw, 25rem);
+      }
+
+      @media (min-width: tokens.$mq-900) {
+        max-height: initial;
+        flex: 1 0 50%;
+        border: none;
+
+        figure {
+          max-height: initial;
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          width: 15rem;
+          height: 15rem;
+          background: var(--c-teal-600);
+          position: absolute;
+          border-top-right-radius: 100%;
+          top: -20%;
+          right: -20%;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 20rem;
+          height: 20rem;
+          background: var(--c-yellow-400);
+          position: absolute;
+          border-top-left-radius: 100%;
+          bottom: -5%;
+          left: -5%;
+        }
+      }
+
+      img {
+        position: relative;
+        z-index: tokens.$layer-2;
+        @media (min-width: tokens.$mq-900) {
+          border-bottom-left-radius: 100%;
+        }
+      }
+    }
+  }
+
+  .content-container {
+    padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+    flex: 1 0 40%;
+
+    p {
+      font-size: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+      color: var(--c-bodyPrimary);
+    }
+  }
+}

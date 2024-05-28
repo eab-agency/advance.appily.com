@@ -217,6 +217,9 @@ export const COMPARISONBLOCK = `
   icon {
     ${MEDIA_FIELDS}
   }
+  darkicon{
+    ${MEDIA_FIELDS}
+  }
   comparisonLinks: links {
     link ${LINK_FIELDS()}
   }
@@ -232,12 +235,16 @@ export const CAROUSELCARD = `
 export const SECTION = `
 ...on Section {
   blockType
+  type
   backgroundColor
   enableHighlight
   layoutWidth
   rows{
     columns{
       size
+      halignment
+      valignment
+      extendToBorders
       blocks {
         ${STATS}
         ${TESTIMONIAL}
@@ -252,7 +259,8 @@ export const SECTION = `
   }
   columns{
     size
-    alignment
+    halignment
+    valignment
     extendToBorders
     blocks {
       ${STATS}

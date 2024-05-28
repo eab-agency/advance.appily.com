@@ -4,8 +4,6 @@ import React from 'react';
 import { Page } from '../../../payload-types';
 import { Button } from '../Button';
 
-// import '@/styles/blocks/CMSLinkType.scss';
-
 type CMSLinkType = {
   type?: 'custom' | 'reference';
   url?: string;
@@ -15,7 +13,7 @@ type CMSLinkType = {
     relationTo: 'pages';
   };
   label?: string;
-  appearance?: 'default' | 'primary' | 'secondary';
+  appearance?: 'default' | 'primary' | 'secondary' | 'tertiary';
   children?: React.ReactNode;
   className?: string;
 };

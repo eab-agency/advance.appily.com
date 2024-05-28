@@ -17,6 +17,7 @@ export const ContentBlock: React.FC<
     enableHighlight,
     layoutWidth,
     backgroundColor,
+    type
   } = props;
 
   function sectionClassNames() {
@@ -34,21 +35,21 @@ export const ContentBlock: React.FC<
     return classNames.join(' ')
   }
 
-  console.log(props)
-
   return (
     <section className={sectionClassNames()}>
-      {rows &&
-        rows?.length > 0 &&
-        (
-          <RenderRowcontent rows={rows} />
-        )}
-      {columns &&
-        columns?.length > 0 &&
-        (
-
-          <RenderColumncontent columns={columns} />
-        )}
+      {type === 'row' ? (
+        <>
+          {rows && rows.length > 0 && (
+            <RenderRowcontent rows={rows} />
+          )}
+        </>
+      ) : (
+        <>
+          {columns && columns.length > 0 && (
+            <RenderColumncontent columns={columns} layoutType={type} />
+          )}
+        </>
+      )}
     </section>
   )
 }

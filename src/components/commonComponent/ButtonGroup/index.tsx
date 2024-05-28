@@ -22,16 +22,17 @@ interface ButtonGroupProps {
 }
 export default function ButtonGroup({ data }: ButtonGroupProps) {
   return (
-    <ul className="buttonGroup">
+    <div className="buttonGroup">
       {
         (data?.buttongroupLinks || []).map(({ link }, index) => {
           return (
-            <li className="buttonGroup__item" key={index}>
-              <CMSLink  {...link}/>
-            </li>
+            <CMSLink
+              className="buttonGroup__item"
+              key={index}
+              {...link} />
           )
         })
       }
-    </ul>
+    </div>
   )
 }
