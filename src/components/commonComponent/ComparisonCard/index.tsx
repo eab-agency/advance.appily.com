@@ -47,7 +47,6 @@ interface ComparisonCardProps {
 export default function ComparisonCard({
   data
 }: ComparisonCardProps) {
-  console.log('Comparison Card data:', data)
   return (
     <article className="comparison-card">
       <div className="group column center-aligned center-justified">
