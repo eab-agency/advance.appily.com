@@ -123,7 +123,7 @@ export async function fetchHeader(): Promise<Header> {
 	  headers: {
 		'Content-Type': 'application/json',
 	  },
-	  cache: 'no-store',
+	  next,
 	  body: JSON.stringify({
 		query: HEADER_QUERY,
 	  }),
