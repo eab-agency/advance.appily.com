@@ -8,7 +8,7 @@ interface ButtonGroupProps {
       link: {
         type?: 'reference' | 'custom';
         newTab?: boolean;
-        reference?: {
+        reference: {
           value: string;
           relationTo: 'pages';
         };
