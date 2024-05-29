@@ -8,7 +8,7 @@ export { TabsSection } from "./TabsSection";
 export { Accordion } from "./Accordion";
 export { AccordionSection } from "./AccordionSection";
 export { CarouselWithForm } from "./CarouselWithForm";
-export { Stats } from "./StatCard";
+export { StatCard } from "./StatCard";
 // export {  HeaderComponent } from "./Header";
 export { Card } from "./Card";
 export { CareerPaths } from "./CareerPaths";

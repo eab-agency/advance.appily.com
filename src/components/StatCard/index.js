@@ -1,1 +1,1 @@
-export { default as Stats } from "./StatCard";
+export { default as StatCard } from "./StatCard";
