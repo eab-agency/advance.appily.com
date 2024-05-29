@@ -1,4 +1,5 @@
 import RichText from "@/components/RichText";
+import StatCard from "@/components/StatCard/StatCard";
 import styles from "@/styles/components/Stats.module.scss";
 import { sectionClassNames } from '@/utilities/sectionClassNames'
 
@@ -29,8 +30,6 @@ function StatisticsSection(block: StatsProps) {
     source
   } = block;
 
-
-
   return (
     <section className={`${sectionClassNames({ backgroundColor: statsBackgroundColor, layoutWidth: statsLayoutWidth })} ${styles.stats}`}>
       <div className="group">
@@ -38,11 +37,7 @@ function StatisticsSection(block: StatsProps) {
           {statistics?.map((stat, _index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
             <li className="stats-list__item" key={_index}>
-              <h3>
-                <strong>{stat.number}</strong>
-                {stat.title}
-              </h3>
-              <RichText content={stat.richText} />
+              <StatCard {...stat} />
             </li>
           ))}
         </ul>

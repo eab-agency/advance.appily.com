@@ -1,7 +1,7 @@
 import { Media } from '@/components/Media'
 import React, { Fragment } from 'react'
 import RichText from '../RichText';
-import { Stats } from '../Stats';
+import { Stats } from '../StatCard';
 import { Testimonial } from '../Testimonial';
 import AccordionSection from '../commonComponent/AccordionGroup';
 import ButtonGroup from '../commonComponent/ButtonGroup';

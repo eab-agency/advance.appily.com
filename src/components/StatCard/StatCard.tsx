@@ -1,7 +1,7 @@
 import styles from "@/styles/components/Stats.module.scss";
 import RichText from "../RichText";
 
-interface Stat {
+interface StatCard {
   number: string;
   title?: string;
   richText: {
@@ -10,17 +10,16 @@ interface Stat {
 }
 
 /* eslint-disable react/no-danger */
-function Stats({ number, title, richText }: Stat) {
+function StatCard({ number, title, richText }: StatCard) {
   return (
-    <div>
+    <div className="stat-card">
       <h3>
-        <strong>{number}asdf</strong>
-
+        <strong>{number}</strong>
+        <span>{title}</span>
       </h3>
-      <span>{title}</span>
       <RichText content={richText} />
     </div>
   );
 }
 
-export default Stats;
+export default StatCard;
