@@ -2,11 +2,11 @@
 import Image from "next/image";
 import React, { Suspense } from "react";
 
-import { Button, Stats, StickyCta, WhatIsCappex } from "@/components";
+import { Button, StatCard, StickyCta, WhatIsCappex } from "@/components";
+import ABButton from "@/components/Button/ABButton";
 import { IconCard } from "@/components/IconCard/IconCard";
 import data from "@/data/careers-adc.json";
 import RandomComponent from "@/hooks/useRandomComponent";
-import ABButton from "@/components/Button/ABButton";
 
 import PageHero from "@/components/Heros/PageHero";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
@@ -213,7 +213,7 @@ const DegreeCompletionSeoPage = () => {
       </section>
 
       <WhatIsCappex>
-        <Stats stats={data.statsAppily} className="stats-section" />
+        <StatCard stats={data.statsAppily} className="stats-section" />
       </WhatIsCappex>
 
       <StickyCta ctaLabel="Get Your Back-to-School Plan" />

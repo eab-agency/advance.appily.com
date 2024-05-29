@@ -1,4 +1,4 @@
-import styles from "@/styles/components/Stats.module.scss";
+import '@/styles/components/modules/StatCard.scss'
 import RichText from "../RichText";
 
 interface StatCard {

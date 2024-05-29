@@ -1,7 +1,7 @@
 import { Media } from '@/components/Media'
+import { StatCard } from '@/components/StatCard';
 import React, { Fragment } from 'react'
 import RichText from '../RichText';
-import { Stats } from '../StatCard';
 import { Testimonial } from '../Testimonial';
 import AccordionSection from '../commonComponent/AccordionGroup';
 import ButtonGroup from '../commonComponent/ButtonGroup';
@@ -39,7 +39,7 @@ const RenderColumnContent = ({ columns, layoutType }) => {
 };
 
 const blockRenderers = {
-  stats: (block) => <Stats stats={block.statistics}{...block} />,
+  stats: (block) => <StatCard stats={block.statistics}{...block} />,
   richText: (block) => <RichText content={block.richText} />,
   mediaBlock: (block) => {
     const { media, cornerStyle, enableHighlight } = block;
