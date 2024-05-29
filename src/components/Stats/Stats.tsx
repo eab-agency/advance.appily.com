@@ -13,13 +13,13 @@ interface Stat {
 function Stats({ number, title, richText }: Stat) {
   return (
     <div>
-          <h3>
-                <strong>{number}</strong>
-               
-              </h3>
-              <span>{title}</span>
-        <RichText content={richText} />
-      </div>
+      <h3>
+        <strong>{number}asdf</strong>
+
+      </h3>
+      <span>{title}</span>
+      <RichText content={richText} />
+    </div>
   );
 }
 

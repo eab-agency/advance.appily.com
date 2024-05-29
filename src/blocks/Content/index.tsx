@@ -1,6 +1,7 @@
 import RenderColumncontent from '@/components/RenderColumnContent'
 import RenderRowcontent from '@/components/RenderRowContent'
 import '@/styles/layouts/Section.scss'
+import { sectionClassNames } from '@/utilities/sectionClassNames'
 import React from 'react'
 import { Page } from '../../../payload-types'
 
@@ -20,23 +21,8 @@ export const ContentBlock: React.FC<
     type
   } = props;
 
-  function sectionClassNames() {
-    const classNames = ['section-content']
-
-    if (enableHighlight) {
-      classNames.push('section__highlight')
-    }
-    if (layoutWidth) {
-      classNames.push(`section__layoutwidth-${layoutWidth}`)
-    }
-    if (backgroundColor && backgroundColor !== 'default') {
-      classNames.push(`section__bg-${backgroundColor}`)
-    }
-    return classNames.join(' ')
-  }
-
   return (
-    <section className={sectionClassNames()}>
+    <section className={sectionClassNames({ backgroundColor, enableHighlight, layoutWidth })}>
       {type === 'row' ? (
         <>
           {rows && rows.length > 0 && (

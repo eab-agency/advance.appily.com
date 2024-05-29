@@ -1,12 +1,15 @@
 import RichText from "@/components/RichText";
 import styles from "@/styles/components/Stats.module.scss";
+import { sectionClassNames } from '@/utilities/sectionClassNames'
 
 interface StatsProps {
-  blockType? : string;
+  blockType?: string;
   statistics: Stat[];
   stats: Stat[];
   source?: string;
   className?: string;
+  statsBackgroundColor?: string;
+  statsLayoutWidth?: string;
 }
 
 interface Stat {
@@ -18,22 +21,30 @@ interface Stat {
 }
 
 /* eslint-disable react/no-danger */
-function Statistic(block: StatsProps) {
-const {statistics, source} = block;
+function StatisticsSection(block: StatsProps) {
+  const {
+    statsBackgroundColor,
+    statsLayoutWidth,
+    statistics,
+    source
+  } = block;
+
+
+
   return (
-    <section className={`${styles.stats}`}>
-      <div className="group center-aligned">
-        <ul className="group center-aligned">
+    <section className={`${sectionClassNames({ backgroundColor: statsBackgroundColor, layoutWidth: statsLayoutWidth })} ${styles.stats}`}>
+      <div className="group">
+        <ul className="stats-list">
           {statistics?.map((stat, _index) => (
             // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-            <li key={_index}>
+            <li className="stats-list__item" key={_index}>
               <h3>
                 <strong>{stat.number}</strong>
                 {stat.title}
               </h3>
               <RichText content={stat.richText} />
             </li>
-          ))} 
+          ))}
         </ul>
         <p className={styles.source}>{source}</p>
       </div>
@@ -41,4 +52,4 @@ const {statistics, source} = block;
   );
 }
 
-export default Statistic;
+export default StatisticsSection;

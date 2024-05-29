@@ -94,6 +94,8 @@ export const FORM_BLOCK = `
 export const STATISTICS = `
 ...on Statistics {
   blockType
+  statsBackgroundColor: backgroundColor
+  statsLayoutWidth: layoutWidth
   statistics {
     number
     title
