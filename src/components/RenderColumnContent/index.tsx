@@ -18,12 +18,8 @@ const RenderColumnContent = ({ columns, layoutType }) => {
 
         const columnClass = `column column__horAligned-${halignment} column__verAligned-${valignment} ${extendToBorders ? 'column__extend-to-borders' : ''}`;
 
-        const rowClass = `row row__horAligned-${halignment} row__verAligned-${valignment} ${extendToBorders ? 'row__extend-to-borders' : ''}`
-
-        const className = layoutType === 'rows' ? rowClass : columnClass;
-
         return (
-          <div className={className} style={{ '--column-width': `${stringWithoutPercentage}%` } as any} key={index}>
+          <div className={columnClass} style={{ '--column-width': `${stringWithoutPercentage}%` } as any} key={index}>
             {blocks?.map((block, blockIndex) => {
               return (
                 <div key={blockIndex} className='block__wrap'>
