@@ -8,6 +8,7 @@ import { IconCard } from "@/components/IconCard/IconCard";
 import data from "@/data/careers-adc.json";
 import RandomComponent from "@/hooks/useRandomComponent";
 
+import StatisticsSection from "@/blocks/StatisticsSection";
 import PageHero from "@/components/Heros/PageHero";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
@@ -213,7 +214,8 @@ const DegreeCompletionSeoPage = () => {
       </section>
 
       <WhatIsCappex>
-        <StatCard stats={data.statsAppily} className="stats-section" />
+        {/* <StatCard stats={data.statsAppily} className="stats-section" /> */}
+        <StatisticsSection statistics={data.statsAppily} statsLayoutWidth="full" statsBackgroundColor="slate_gray_white" />
       </WhatIsCappex>
 
       <StickyCta ctaLabel="Get Your Back-to-School Plan" />

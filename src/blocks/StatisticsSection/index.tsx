@@ -32,7 +32,7 @@ function StatisticsSection(block: StatsProps) {
   } = block;
 
   return (
-    <section className={`${sectionClassNames({ backgroundColor: statsBackgroundColor, layoutWidth: statsLayoutWidth })} ${styles.stats} stats`}>
+    <section className={`${sectionClassNames({ backgroundColor: statsBackgroundColor, layoutWidth: statsLayoutWidth })} stats`}>
       <div className="group">
         <ul className="stats-list">
           {statistics?.map((stat, _index) => (

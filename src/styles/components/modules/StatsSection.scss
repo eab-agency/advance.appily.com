@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "@/styles/global/tokens";
+@use "@/styles/layouts/Section"; // Note Andrei: this import is in place while the static components are still being used. It should be removed once all components are dynamic.
 
 .stats {
   background: var(--c-bg5);
