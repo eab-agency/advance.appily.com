@@ -1,6 +1,7 @@
 import RichText from "@/components/RichText";
 import StatCard from "@/components/StatCard/StatCard";
 import styles from "@/styles/components/Stats.module.scss";
+import '@/styles/components/modules/StatsSection.scss'
 import { sectionClassNames } from '@/utilities/sectionClassNames'
 
 interface StatsProps {
@@ -31,7 +32,7 @@ function StatisticsSection(block: StatsProps) {
   } = block;
 
   return (
-    <section className={`${sectionClassNames({ backgroundColor: statsBackgroundColor, layoutWidth: statsLayoutWidth })} ${styles.stats}`}>
+    <section className={`${sectionClassNames({ backgroundColor: statsBackgroundColor, layoutWidth: statsLayoutWidth })} ${styles.stats} stats`}>
       <div className="group">
         <ul className="stats-list">
           {statistics?.map((stat, _index) => (
@@ -41,7 +42,7 @@ function StatisticsSection(block: StatsProps) {
             </li>
           ))}
         </ul>
-        <p className={styles.source}>{source}</p>
+        <p className="source">{source}</p>
       </div>
     </section>
   );
