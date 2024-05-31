@@ -234,6 +234,7 @@ export const CAROUSELCARD = `
   richText
   carouselBackgroundColor
 }`;
+
 export const SECTION = `
 ...on Section {
   blockType
@@ -274,6 +275,19 @@ export const SECTION = `
       ${COMPARISONBLOCK}
       ${MEDIA_BLOCK}
     }
+  }
+}
+`;
+
+export const SUBNAVIGATION = `
+...on SubNavigation {
+  blockName
+  blockType
+  subNavBackgroundColor
+  navigationItem{
+    title
+    url
+    id
   }
 }
 `;
