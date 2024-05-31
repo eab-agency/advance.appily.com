@@ -7,7 +7,6 @@ import { sectionClassNames } from '@/utilities/sectionClassNames'
 interface StatsProps {
   blockType?: string;
   statistics: Stat[];
-  stats: Stat[];
   source?: string;
   className?: string;
   statsBackgroundColor?: string;
@@ -17,7 +16,7 @@ interface StatsProps {
 interface Stat {
   number: string;
   title?: string;
-  richText: {
+  richText?: {
     [k: string]: unknown;
   }[];
 }
@@ -30,6 +29,7 @@ function StatisticsSection(block: StatsProps) {
     statistics,
     source
   } = block;
+  console.log('block', block)
   return (
     <section className={`${sectionClassNames({ backgroundColor: statsBackgroundColor, layoutWidth: statsLayoutWidth })} stats`}>
       <div className="group">
