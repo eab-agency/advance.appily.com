@@ -1,4 +1,8 @@
-import { sectionClassNames } from '@/utilities/sectionClassNames'
+"use client";
+import "@/styles/components/modules/SubNavigation.scss";
+import Link from "next/link";
+import { useState } from "react";
+// import { sectionClassNames } from '@/utilities/sectionClassNames'
 
 interface SubNavProps {
   blockName?: string;
@@ -16,19 +20,35 @@ interface SubNavItem {
 function SubNavigation(block: SubNavProps) {
   const {
     blockName,
-    subNavBackgroundColor,
+    // subNavBackgroundColor,
     navigationItem,
   } = block;
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    } else {
+      setIsMenuOpen(true);
+    }
+  };
   return (
-    // <section className={`${sectionClassNames({ backgroundColor: subNavBackgroundColor })} sub-navigation`}>
+    // Note Andrei: if background is not needed for the sub-nav clean up this: <section className={`${sectionClassNames({ backgroundColor: subNavBackgroundColor })} sub-navigation`}>
     <nav className="sub-navigation">
       <div className="group">
-        <h2>{blockName}</h2>
-        <ul className="subnav-list">
+        <button
+          type="button"
+          className={isMenuOpen ? 'resultsBtnOpen' : 'resultsBtnClose'}
+          onClick={toggleMenu}
+        >
+          <h2>{blockName}</h2>
+        </button>
+        <ul className={`subnav-list ${isMenuOpen && 'resultsOpen'}`}>
           {navigationItem?.map((item) => {
             return (
               <li key={item.id} className='subnav-list__item'>
-                <a href={item.url}>{item.title}</a>
+                <Link href={item.url}>{item.title}</Link>
               </li>
             );
           })}
