@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { MdClose, MdMenu } from "react-icons/md";
-import { CMSLink } from "@/components/Link";
 
 import styles from "@/styles/components/NavBar.module.scss";
+import { CMSHeaderLink } from "./HeaderLink";
 
 export function NavBar({ links }) {
 	const pathname = usePathname();
@@ -40,7 +40,7 @@ export function NavBar({ links }) {
 					// const isActive = pathname === href;
 					return (
 						<li key={index}>
-							<CMSLink key={index} {...link} 
+							<CMSHeaderLink key={index} {...link} 
 							onClick={toggleMenu}
 							appearance={'default'}
 							// className={isActive ? styles.active : styles.nonActive} 
