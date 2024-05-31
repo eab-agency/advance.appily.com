@@ -9,7 +9,6 @@ export { Accordion } from "./Accordion";
 export { AccordionSection } from "./AccordionSection";
 export { CarouselWithForm } from "./CarouselWithForm";
 export { StatCard } from "./StatCard";
-// export {StatisticsSection} from "../blocks/StatisticsSection";
 // export {  HeaderComponent } from "./Header";
 export { Card } from "./Card";
 export { CareerPaths } from "./CareerPaths";

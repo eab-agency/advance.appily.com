@@ -3,7 +3,6 @@ import RandomComponent from "@/hooks/useRandomComponent";
 import Image from "next/image";
 import React, { Suspense } from "react";
 
-import StatisticsSection from "@/blocks/StatisticsSection";
 import { Accordion, Button, StickyCta, Testimonial } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";
 import data from "@/data/careers-business.json";
@@ -11,6 +10,8 @@ import data from "@/data/careers-business.json";
 import PageHero from "@/components/Heros/PageHero";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
+
+import StatisticsSection from "@/blocks/StatisticsSection";
 
 const title = data.metaData.title;
 const description = data.metaData.description;
@@ -103,12 +104,6 @@ const BusinessSeoPage = () => {
           </div>
         </div>
       </section>
-
-      {/* <Stats
-        stats={data.stats}
-        source={data.statsSource}
-        className="stats-section"
-      /> */}
 
       <StatisticsSection statistics={data.stats} source={data.statsSource} statsLayoutWidth="contained" />
 

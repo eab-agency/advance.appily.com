@@ -214,7 +214,6 @@ const DegreeCompletionSeoPage = () => {
       </section>
 
       <WhatIsCappex>
-        {/* <StatCard stats={data.statsAppily} className="stats-section" /> */}
         <StatisticsSection statistics={data.statsAppily} statsLayoutWidth="full" statsBackgroundColor="slate_gray_white" />
       </WhatIsCappex>
 

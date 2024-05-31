@@ -1,6 +1,6 @@
 import RichText from "@/components/RichText";
 import StatCard from "@/components/StatCard/StatCard";
-import styles from "@/styles/components/Stats.module.scss";
+// import styles from "@/styles/components/Stats.module.scss";
 import '@/styles/components/modules/StatsSection.scss'
 import { sectionClassNames } from '@/utilities/sectionClassNames'
 
@@ -30,7 +30,6 @@ function StatisticsSection(block: StatsProps) {
     statistics,
     source
   } = block;
-
   return (
     <section className={`${sectionClassNames({ backgroundColor: statsBackgroundColor, layoutWidth: statsLayoutWidth })} stats`}>
       <div className="group">
