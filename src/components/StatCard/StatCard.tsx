@@ -4,7 +4,7 @@ import RichText from "../RichText";
 interface StatCard {
   number: string;
   title?: string;
-  richText: {
+  richText?: {
     [k: string]: unknown;
   }[];
   description?: string; //Note Andrei: this prop was added to solve the issue for static pages. Once all pages are dynamic, this prop can be removed.

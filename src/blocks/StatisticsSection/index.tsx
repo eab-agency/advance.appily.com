@@ -29,7 +29,6 @@ function StatisticsSection(block: StatsProps) {
     statistics,
     source
   } = block;
-  console.log('block', block)
   return (
     <section className={`${sectionClassNames({ backgroundColor: statsBackgroundColor, layoutWidth: statsLayoutWidth })} stats`}>
       <div className="group">
