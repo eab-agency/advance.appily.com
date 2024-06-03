@@ -1,3 +1,4 @@
+import ImageCard from '@/blocks/ImageCard';
 import { Media } from '@/components/Media'
 import { StatCard } from '@/components/StatCard';
 import React, { Fragment } from 'react'
@@ -51,6 +52,7 @@ const blockRenderers = {
   testimonial: (block) => <Testimonial testimonialData={block} />,
   accordion: (block) => <AccordionSection data={block} />,
   comparison: (block) => <ComparisonCard data={block} />,
-  ButtonGroup: (block) => <ButtonGroup data={block} />
+  ButtonGroup: (block) => <ButtonGroup data={block} />,
+  imageCard: (block) => <ImageCard imageCardData={block} />,
 };
 export default RenderColumnContent;

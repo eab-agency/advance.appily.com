@@ -136,11 +136,13 @@ export const ACCORDIONBLOCK = `
   }
 }
 `;
-export const CAREERBLOCK = `
-...on Career {
+
+export const IMAGECARDBLOCK = `
+...on ImageCard {
   blockType
-  careerBlockBackgroundColor
+  imageCardBlockBackgroundColor
   title
+  richText
   image {
     ${MEDIA_FIELDS}
   }
@@ -149,6 +151,7 @@ export const CAREERBLOCK = `
   }
 }
 `;
+
 export const HIGHLIGHTEDCTA = `
 ...on HighlightCTA {
   blockType
@@ -252,7 +255,7 @@ export const SECTION = `
         ${STATS}
         ${TESTIMONIAL}
         ${ACCORDIONBLOCK}
-        ${CAREERBLOCK}
+        ${IMAGECARDBLOCK}
         ${BUTTONGROUPBLOCK}
         ${RICHTEXTBLOCK}
         ${COMPARISONBLOCK}
@@ -269,7 +272,7 @@ export const SECTION = `
       ${STATS}
       ${TESTIMONIAL}
       ${ACCORDIONBLOCK}
-      ${CAREERBLOCK}
+      ${IMAGECARDBLOCK}
       ${BUTTONGROUPBLOCK}
       ${RICHTEXTBLOCK}
       ${COMPARISONBLOCK}

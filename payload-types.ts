@@ -227,7 +227,7 @@ export interface Page {
 													blockType: "testimonial";
 											  }
 											| {
-													careerBlockBackgroundColor?:
+													imageCardBlockBackgroundColor?:
 														| (
 																| "default"
 																| "dark_blue_light_gray"
@@ -279,7 +279,7 @@ export interface Page {
 														| null;
 													id?: string | null;
 													blockName?: string | null;
-													blockType: "career";
+													blockType: "imageCard";
 											  }
 											| {
 													title?: string | null;
@@ -531,7 +531,7 @@ export interface Page {
 										blockType: "testimonial";
 								  }
 								| {
-										careerBlockBackgroundColor?:
+										imageCardBlockBackgroundColor?:
 											| (
 													| "default"
 													| "dark_blue_light_gray"
@@ -583,7 +583,7 @@ export interface Page {
 											| null;
 										id?: string | null;
 										blockName?: string | null;
-										blockType: "career";
+										blockType: "imageCard";
 								  }
 								| {
 										title?: string | null;
@@ -1620,7 +1620,7 @@ export interface Post {
 													blockType: "testimonial";
 											  }
 											| {
-													careerBlockBackgroundColor?:
+													imageCardBlockBackgroundColor?:
 														| (
 																| "default"
 																| "dark_blue_light_gray"
@@ -1672,7 +1672,7 @@ export interface Post {
 														| null;
 													id?: string | null;
 													blockName?: string | null;
-													blockType: "career";
+													blockType: "imageCard";
 											  }
 											| {
 													title?: string | null;
@@ -1924,7 +1924,7 @@ export interface Post {
 										blockType: "testimonial";
 								  }
 								| {
-										careerBlockBackgroundColor?:
+										imageCardBlockBackgroundColor?:
 											| (
 													| "default"
 													| "dark_blue_light_gray"
@@ -1976,7 +1976,7 @@ export interface Post {
 											| null;
 										id?: string | null;
 										blockName?: string | null;
-										blockType: "career";
+										blockType: "imageCard";
 								  }
 								| {
 										title?: string | null;
