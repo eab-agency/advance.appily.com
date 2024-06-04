@@ -272,7 +272,14 @@ export interface Page {
 																	} | null;
 																	url?: string | null;
 																	label: string;
-																	appearance?: ("primary" | "secondary") | null;
+																	appearance?:
+																		| (
+																				| "primary"
+																				| "secondary"
+																				| "tertiary"
+																				| "default"
+																		  )
+																		| null;
 																};
 																id?: string | null;
 														  }[]
@@ -576,7 +583,14 @@ export interface Page {
 														} | null;
 														url?: string | null;
 														label: string;
-														appearance?: ("primary" | "secondary") | null;
+														appearance?:
+															| (
+																	| "primary"
+																	| "secondary"
+																	| "tertiary"
+																	| "default"
+															  )
+															| null;
 													};
 													id?: string | null;
 											  }[]
@@ -1665,7 +1679,14 @@ export interface Post {
 																	} | null;
 																	url?: string | null;
 																	label: string;
-																	appearance?: ("primary" | "secondary") | null;
+																	appearance?:
+																		| (
+																				| "primary"
+																				| "secondary"
+																				| "tertiary"
+																				| "default"
+																		  )
+																		| null;
 																};
 																id?: string | null;
 														  }[]
@@ -1969,7 +1990,14 @@ export interface Post {
 														} | null;
 														url?: string | null;
 														label: string;
-														appearance?: ("primary" | "secondary") | null;
+														appearance?:
+															| (
+																	| "primary"
+																	| "secondary"
+																	| "tertiary"
+																	| "default"
+															  )
+															| null;
 													};
 													id?: string | null;
 											  }[]

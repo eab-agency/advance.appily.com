@@ -1,6 +1,8 @@
-import RichText from "@/components/RichText";
-import React from "react";
+import { CMSLink } from '@/components/Link';
 import { Media } from '@/components/Media'
+import RichText from "@/components/RichText";
+import "@/styles/components/modules/ImageCard.scss";
+import React from "react";
 
 interface ImageCardProps {
   imageCardData: ImageCardData;
@@ -19,34 +21,49 @@ interface ImageCardData {
     updatedAt: string;
     createdAt: string;
   };
+  links?: {
+    link: {
+      type?: 'reference' | 'custom';
+      newTab?: boolean;
+      reference: {
+        value: string;
+        relationTo: 'pages';
+      };
+      url: string;
+      label: string;
+      appearance?: 'default' | 'primary' | 'secondary' | 'tertiary';
+    };
+    id?: string;
+  }[];
 }
 
 function ImageCard({ imageCardData }: ImageCardProps) {
 
-  const { image, richText, title } = imageCardData;
+  const { image, richText, title, links } = imageCardData;
 
-  console.log(imageCardData, 'imageCardData**')
   return (
     <article className="image-card">
-      <div className="group">
-        <figure>
-          {image !== null && (
-            <div className="heroImage">
-              {typeof image === 'object' && (
-
-                <Media
-                  resource={image}
-                  priority
-                />
-
-              )}
-            </div>
+      {image !== null && (
+        <>
+          {typeof image === 'object' && (
+            <Media
+              resource={image}
+              className="image-card__image"
+            />
           )}
-          <figcaption>
-            <h3>{title}</h3>
-            <RichText content={richText} />
-          </figcaption>
-        </figure>
+        </>
+      )}
+
+      <div className='image-card__content'>
+        <h3>{title}</h3>
+        <RichText content={richText} />
+        {links?.map(({ link }, index) => {
+          return (
+            <CMSLink key={index}
+              {...link}
+            />
+          )
+        })}
       </div>
     </article>
   );
