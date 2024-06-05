@@ -1,23 +1,32 @@
-import { ARCHIVE_BLOCK, CALL_TO_ACTION, SECTION, MEDIA_BLOCK } from './blocks'
-import { LINK_FIELDS } from './link'
-import { MEDIA } from './media'
-import { META } from './meta'
+import {
+	CALLOUTSECTION,
+	CALL_TO_ACTION,
+	CAROUSELCARD,
+	FORM_BLOCK,
+	HIGHLIGHTEDCTA,
+	MEDIA_BLOCK,
+	SECTION,
+	STATISTICS,
+	TABSECTION,
+	TESTIMONIAL,
+} from "./blocks";
+import { LINK_FIELDS } from "./link";
+import { ANIMATION, MEDIA } from "./media";
+import { META } from "./meta";
 
 export const POSTS = `
-  query Posts($publishedOn: DateTime) {
-    Posts(where: { publishedOn: { less_than_equal: $publishedOn} }, limit: 300 sort: "-publishedOn") {
+  query {
+    Posts (limit: 300){
       docs {
-        id
+        slug
         title
-        image ${MEDIA}
-        meta ${META}
+        id
         createdAt
         publishedDate
-        slug
       }
     }
   }
-`
+`;
 
 export const POST_SLUGS = `
   query Posts {
@@ -30,8 +39,8 @@ export const POST_SLUGS = `
 `
 
 export const POST = `
-  query Post($slug: String ) {
-    Posts(where: { AND: [{ slug: { equals: $slug }}] }) {
+  query Post($slug: String!) {
+    Posts(where: { slug: { equals: $slug } }) {
       docs {
         id
         title
@@ -41,17 +50,23 @@ export const POST = `
           links {
             link ${LINK_FIELDS()}
           }
+          title
           ${MEDIA}
+          ${ANIMATION}
         }
         layout {
-          ${SECTION}
           ${CALL_TO_ACTION}
           ${SECTION}
+          ${FORM_BLOCK}
           ${MEDIA_BLOCK}
-          ${ARCHIVE_BLOCK}
+          ${STATISTICS}
+          ${TESTIMONIAL}
+          ${HIGHLIGHTEDCTA}
+          ${CALLOUTSECTION}
+          ${TABSECTION}
+          ${CAROUSELCARD}
         }
-        ${META}
       }
     }
   }
-`
+`;

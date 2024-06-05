@@ -8,31 +8,31 @@
 
 export interface Config {
 	collections: {
-		users: User;
-		pages: Page;
-		posts: Post;
-		media: Media;
-		partners: Partner;
-		"carousel-cards": CarouselCard;
-		"lead-types": LeadType;
-		forms: Form;
-		"form-submissions": FormSubmission;
-		"payload-preferences": PayloadPreference;
-		"payload-migrations": PayloadMigration;
+	  users: User;
+	  pages: Page;
+	  posts: Post;
+	  media: Media;
+	  partners: Partner;
+	  'carousel-cards': CarouselCard;
+	  'lead-types': LeadType;
+	  forms: Form;
+	  'form-submissions': FormSubmission;
+	  'payload-preferences': PayloadPreference;
+	  'payload-migrations': PayloadMigration;
 	};
 	globals: {
-		header: Header;
-		footer: Footer;
+	  header: Header;
+	  footer: Footer;
 	};
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users".
- */
-export interface User {
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "users".
+   */
+  export interface User {
 	id: string;
 	name?: string | null;
-	roles?: ("admin" | "user")[] | null;
+	roles?: ('admin' | 'user')[] | null;
 	updatedAt: string;
 	createdAt: string;
 	email: string;
@@ -43,1193 +43,996 @@ export interface User {
 	loginAttempts?: number | null;
 	lockUntil?: string | null;
 	password: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "pages".
- */
-export interface Page {
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "pages".
+   */
+  export interface Page {
 	id: string;
 	fullPath?: string | null;
 	title: string;
 	publishedDate?: string | null;
 	hero: {
-		type: "none" | "landingPage" | "resultPage";
-		title?: string | null;
-		richText?: {
-			root: {
-				type: string;
-				children: {
-					type: string;
-					version: number;
-					[k: string]: unknown;
-				}[];
-				direction: ("ltr" | "rtl") | null;
-				format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
-				indent: number;
-				version: number;
-			};
+	  type: 'none' | 'landingPage' | 'resultPage';
+	  title?: string | null;
+	  richText?: {
+		root: {
+		  type: string;
+		  children: {
+			type: string;
+			version: number;
 			[k: string]: unknown;
-		} | null;
-		links?:
-			| {
-					link: {
-						type?: ("reference" | "custom") | null;
-						newTab?: boolean | null;
-						reference?: {
-							relationTo: "pages";
-							value: string | Page;
-						} | null;
-						url?: string | null;
-						label: string;
-						appearance?: ("default" | "primary" | "secondary") | null;
-					};
-					id?: string | null;
-			  }[]
-			| null;
-		media?: string | Media | null;
-		animation?: string | Media | null;
+		  }[];
+		  direction: ('ltr' | 'rtl') | null;
+		  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+		  indent: number;
+		  version: number;
+		};
+		[k: string]: unknown;
+	  } | null;
+	  links?:
+		| {
+			link: {
+			  type?: ('reference' | 'custom') | null;
+			  newTab?: boolean | null;
+			  reference?: {
+				relationTo: 'pages';
+				value: string | Page;
+			  } | null;
+			  url?: string | null;
+			  label: string;
+			  appearance?: ('default' | 'primary' | 'secondary') | null;
+			};
+			id?: string | null;
+		  }[]
+		| null;
+	  media?: string | Media | null;
+	  animation?: string | Media | null;
 	};
 	layout: (
-		| {
-				ctaBackgroundColor?:
-					| (
-							| "default"
-							| "dark_blue_light_gray"
-							| "orange_peach"
-							| "turquoise_yellow"
-							| "turquoise_light_turquoise"
-							| "slate_gray_white"
-					  )
-					| null;
-				richText?: {
-					root: {
-						type: string;
-						children: {
-							type: string;
-							version: number;
-							[k: string]: unknown;
-						}[];
-						direction: ("ltr" | "rtl") | null;
-						format:
-							| "left"
-							| "start"
-							| "center"
-							| "right"
-							| "end"
-							| "justify"
-							| "";
-						indent: number;
-						version: number;
-					};
-					[k: string]: unknown;
-				} | null;
-				links?:
-					| {
-							link: {
-								type?: ("reference" | "custom") | null;
-								newTab?: boolean | null;
-								reference?: {
-									relationTo: "pages";
-									value: string | Page;
-								} | null;
-								url?: string | null;
-								label: string;
-								appearance?: ("default" | "primary" | "secondary") | null;
-							};
-							id?: string | null;
-					  }[]
-					| null;
+	  | {
+		  ctaBackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  richText?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  links?:
+			| {
+				link: {
+				  type?: ('reference' | 'custom') | null;
+				  newTab?: boolean | null;
+				  reference?: {
+					relationTo: 'pages';
+					value: string | Page;
+				  } | null;
+				  url?: string | null;
+				  label: string;
+				  appearance?: ('default' | 'primary' | 'secondary') | null;
+				};
 				id?: string | null;
-				blockName?: string | null;
-				blockType: "cta";
-		  }
-		| {
-				type?: ("row" | "column") | null;
-				layoutWidth?: ("full" | "contained" | "narrow") | null;
-				backgroundColor?:
-					| (
-							| "default"
-							| "dark_blue_light_gray"
-							| "orange_peach"
-							| "turquoise_yellow"
-							| "turquoise_light_turquoise"
-							| "slate_gray_white"
-					  )
-					| null;
-				enableHighlight?: boolean | null;
-				rows?:
-					| {
-							columns?:
-								| {
-										size: string;
-										halignment?: ("left" | "center" | "right") | null;
-										valignment?: ("top" | "center" | "bottom") | null;
-										extendToBorders?: boolean | null;
-										blocks: (
-											| {
-													number: string;
-													title?: string | null;
-													richText?: {
-														root: {
-															type: string;
-															children: {
-																type: string;
-																version: number;
-																[k: string]: unknown;
-															}[];
-															direction: ("ltr" | "rtl") | null;
-															format:
-																| "left"
-																| "start"
-																| "center"
-																| "right"
-																| "end"
-																| "justify"
-																| "";
-															indent: number;
-															version: number;
-														};
-														[k: string]: unknown;
-													} | null;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "stats";
-											  }
-											| {
-													author?: string | null;
-													richText?: {
-														root: {
-															type: string;
-															children: {
-																type: string;
-																version: number;
-																[k: string]: unknown;
-															}[];
-															direction: ("ltr" | "rtl") | null;
-															format:
-																| "left"
-																| "start"
-																| "center"
-																| "right"
-																| "end"
-																| "justify"
-																| "";
-															indent: number;
-															version: number;
-														};
-														[k: string]: unknown;
-													} | null;
-													authortitle?: string | null;
-													alignment?: ("left" | "center" | "right") | null;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "testimonial";
-											  }
-											| {
-													imageCardBlockBackgroundColor?:
-														| (
-																| "default"
-																| "dark_blue_light_gray"
-																| "orange_peach"
-																| "turquoise_yellow"
-																| "turquoise_light_turquoise"
-																| "slate_gray_white"
-														  )
-														| null;
-													title?: string | null;
-													richText?: {
-														root: {
-															type: string;
-															children: {
-																type: string;
-																version: number;
-																[k: string]: unknown;
-															}[];
-															direction: ("ltr" | "rtl") | null;
-															format:
-																| "left"
-																| "start"
-																| "center"
-																| "right"
-																| "end"
-																| "justify"
-																| "";
-															indent: number;
-															version: number;
-														};
-														[k: string]: unknown;
-													} | null;
-													image: string | Media;
-													links?:
-														| {
-																link: {
-																	type?: ("reference" | "custom") | null;
-																	newTab?: boolean | null;
-																	reference?: {
-																		relationTo: "pages";
-																		value: string | Page;
-																	} | null;
-																	url?: string | null;
-																	label: string;
-																	appearance?: ("primary" | "secondary") | null;
-																};
-																id?: string | null;
-														  }[]
-														| null;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "imageCard";
-											  }
-											| {
-													title?: string | null;
-													icon: string | Media;
-													darkicon?: string | Media | null;
-													richText?: {
-														root: {
-															type: string;
-															children: {
-																type: string;
-																version: number;
-																[k: string]: unknown;
-															}[];
-															direction: ("ltr" | "rtl") | null;
-															format:
-																| "left"
-																| "start"
-																| "center"
-																| "right"
-																| "end"
-																| "justify"
-																| "";
-															indent: number;
-															version: number;
-														};
-														[k: string]: unknown;
-													} | null;
-													links?:
-														| {
-																link: {
-																	type?: ("reference" | "custom") | null;
-																	newTab?: boolean | null;
-																	reference?: {
-																		relationTo: "pages";
-																		value: string | Page;
-																	} | null;
-																	url?: string | null;
-																	label: string;
-																	appearance?:
-																		| (
-																				| "primary"
-																				| "secondary"
-																				| "tertiary"
-																				| "default"
-																		  )
-																		| null;
-																};
-																id?: string | null;
-														  }[]
-														| null;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "comparison";
-											  }
-											| {
-													numberedItems?: boolean | null;
-													accordions?:
-														| {
-																title: string;
-																richText?: {
-																	root: {
-																		type: string;
-																		children: {
-																			type: string;
-																			version: number;
-																			[k: string]: unknown;
-																		}[];
-																		direction: ("ltr" | "rtl") | null;
-																		format:
-																			| "left"
-																			| "start"
-																			| "center"
-																			| "right"
-																			| "end"
-																			| "justify"
-																			| "";
-																		indent: number;
-																		version: number;
-																	};
-																	[k: string]: unknown;
-																} | null;
-																links?:
-																	| {
-																			link: {
-																				type?: ("reference" | "custom") | null;
-																				newTab?: boolean | null;
-																				reference?: {
-																					relationTo: "pages";
-																					value: string | Page;
-																				} | null;
-																				url?: string | null;
-																				label: string;
-																				appearance?:
-																					| ("primary" | "secondary")
-																					| null;
-																			};
-																			id?: string | null;
-																	  }[]
-																	| null;
-																id?: string | null;
-														  }[]
-														| null;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "accordion";
-											  }
-											| {
-													richText: {
-														root: {
-															type: string;
-															children: {
-																type: string;
-																version: number;
-																[k: string]: unknown;
-															}[];
-															direction: ("ltr" | "rtl") | null;
-															format:
-																| "left"
-																| "start"
-																| "center"
-																| "right"
-																| "end"
-																| "justify"
-																| "";
-															indent: number;
-															version: number;
-														};
-														[k: string]: unknown;
-													};
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "richText";
-											  }
-											| {
-													cornerStyle?:
-														| (
-																| "square"
-																| "slightly-rounded"
-																| "moderately-rounded"
-																| "very-rounded"
-																| "circular"
-														  )
-														| null;
-													enableHighlight?: boolean | null;
-													media: string | Media;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "mediaBlock";
-											  }
-											| {
-													links?:
-														| {
-																link: {
-																	type?: ("reference" | "custom") | null;
-																	newTab?: boolean | null;
-																	reference?: {
-																		relationTo: "pages";
-																		value: string | Page;
-																	} | null;
-																	url?: string | null;
-																	label: string;
-																	appearance?:
-																		| (
-																				| "default"
-																				| "primary"
-																				| "secondary"
-																				| "tertiary"
-																		  )
-																		| null;
-																};
-																id?: string | null;
-														  }[]
-														| null;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "ButtonGroup";
-											  }
-										)[];
-										id?: string | null;
-								  }[]
-								| null;
-							id?: string | null;
-					  }[]
-					| null;
+			  }[]
+			| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'cta';
+		}
+	  | {
+		  type?: ('row' | 'column') | null;
+		  layoutWidth?: ('full' | 'contained' | 'narrow') | null;
+		  backgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  enableHighlight?: boolean | null;
+		  rows?:
+			| {
 				columns?:
-					| {
-							size: string;
-							halignment?: ("left" | "center" | "right") | null;
-							valignment?: ("top" | "center" | "bottom") | null;
-							extendToBorders?: boolean | null;
-							blocks: (
-								| {
-										number: string;
-										title?: string | null;
-										richText?: {
-											root: {
-												type: string;
-												children: {
-													type: string;
-													version: number;
-													[k: string]: unknown;
-												}[];
-												direction: ("ltr" | "rtl") | null;
-												format:
-													| "left"
-													| "start"
-													| "center"
-													| "right"
-													| "end"
-													| "justify"
-													| "";
-												indent: number;
-												version: number;
-											};
-											[k: string]: unknown;
-										} | null;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "stats";
-								  }
-								| {
-										author?: string | null;
-										richText?: {
-											root: {
-												type: string;
-												children: {
-													type: string;
-													version: number;
-													[k: string]: unknown;
-												}[];
-												direction: ("ltr" | "rtl") | null;
-												format:
-													| "left"
-													| "start"
-													| "center"
-													| "right"
-													| "end"
-													| "justify"
-													| "";
-												indent: number;
-												version: number;
-											};
-											[k: string]: unknown;
-										} | null;
-										authortitle?: string | null;
-										alignment?: ("left" | "center" | "right") | null;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "testimonial";
-								  }
-								| {
-										imageCardBlockBackgroundColor?:
-											| (
-													| "default"
-													| "dark_blue_light_gray"
-													| "orange_peach"
-													| "turquoise_yellow"
-													| "turquoise_light_turquoise"
-													| "slate_gray_white"
-											  )
-											| null;
-										title?: string | null;
-										richText?: {
-											root: {
-												type: string;
-												children: {
-													type: string;
-													version: number;
-													[k: string]: unknown;
-												}[];
-												direction: ("ltr" | "rtl") | null;
-												format:
-													| "left"
-													| "start"
-													| "center"
-													| "right"
-													| "end"
-													| "justify"
-													| "";
-												indent: number;
-												version: number;
-											};
-											[k: string]: unknown;
-										} | null;
-										image: string | Media;
-										links?:
-											| {
-													link: {
-														type?: ("reference" | "custom") | null;
-														newTab?: boolean | null;
-														reference?: {
-															relationTo: "pages";
-															value: string | Page;
-														} | null;
-														url?: string | null;
-														label: string;
-														appearance?: ("primary" | "secondary") | null;
-													};
-													id?: string | null;
-											  }[]
-											| null;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "imageCard";
-								  }
-								| {
-										title?: string | null;
-										icon: string | Media;
-										darkicon?: string | Media | null;
-										richText?: {
-											root: {
-												type: string;
-												children: {
-													type: string;
-													version: number;
-													[k: string]: unknown;
-												}[];
-												direction: ("ltr" | "rtl") | null;
-												format:
-													| "left"
-													| "start"
-													| "center"
-													| "right"
-													| "end"
-													| "justify"
-													| "";
-												indent: number;
-												version: number;
-											};
-											[k: string]: unknown;
-										} | null;
-										links?:
-											| {
-													link: {
-														type?: ("reference" | "custom") | null;
-														newTab?: boolean | null;
-														reference?: {
-															relationTo: "pages";
-															value: string | Page;
-														} | null;
-														url?: string | null;
-														label: string;
-														appearance?:
-															| (
-																	| "primary"
-																	| "secondary"
-																	| "tertiary"
-																	| "default"
-															  )
-															| null;
-													};
-													id?: string | null;
-											  }[]
-											| null;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "comparison";
-								  }
-								| {
-										numberedItems?: boolean | null;
-										accordions?:
-											| {
-													title: string;
-													richText?: {
-														root: {
-															type: string;
-															children: {
-																type: string;
-																version: number;
-																[k: string]: unknown;
-															}[];
-															direction: ("ltr" | "rtl") | null;
-															format:
-																| "left"
-																| "start"
-																| "center"
-																| "right"
-																| "end"
-																| "justify"
-																| "";
-															indent: number;
-															version: number;
-														};
-														[k: string]: unknown;
-													} | null;
-													links?:
-														| {
-																link: {
-																	type?: ("reference" | "custom") | null;
-																	newTab?: boolean | null;
-																	reference?: {
-																		relationTo: "pages";
-																		value: string | Page;
-																	} | null;
-																	url?: string | null;
-																	label: string;
-																	appearance?: ("primary" | "secondary") | null;
-																};
-																id?: string | null;
-														  }[]
-														| null;
-													id?: string | null;
-											  }[]
-											| null;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "accordion";
-								  }
-								| {
-										richText: {
-											root: {
-												type: string;
-												children: {
-													type: string;
-													version: number;
-													[k: string]: unknown;
-												}[];
-												direction: ("ltr" | "rtl") | null;
-												format:
-													| "left"
-													| "start"
-													| "center"
-													| "right"
-													| "end"
-													| "justify"
-													| "";
-												indent: number;
-												version: number;
-											};
-											[k: string]: unknown;
-										};
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "richText";
-								  }
-								| {
-										cornerStyle?:
-											| (
-													| "square"
-													| "slightly-rounded"
-													| "moderately-rounded"
-													| "very-rounded"
-													| "circular"
-											  )
-											| null;
-										enableHighlight?: boolean | null;
-										media: string | Media;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "mediaBlock";
-								  }
-								| {
-										links?:
-											| {
-													link: {
-														type?: ("reference" | "custom") | null;
-														newTab?: boolean | null;
-														reference?: {
-															relationTo: "pages";
-															value: string | Page;
-														} | null;
-														url?: string | null;
-														label: string;
-														appearance?:
-															| (
-																	| "default"
-																	| "primary"
-																	| "secondary"
-																	| "tertiary"
-															  )
-															| null;
-													};
-													id?: string | null;
-											  }[]
-											| null;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "ButtonGroup";
-								  }
-							)[];
-							id?: string | null;
-					  }[]
-					| null;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "section";
-		  }
-		| {
-				form: string | Form;
-				enableIntro?: boolean | null;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "formBlock";
-		  }
-		| {
-				cornerStyle?:
-					| (
-							| "square"
-							| "slightly-rounded"
-							| "moderately-rounded"
-							| "very-rounded"
-							| "circular"
-					  )
-					| null;
-				enableHighlight?: boolean | null;
-				media: string | Media;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "mediaBlock";
-		  }
-		| {
-				introContent?: {
-					root: {
-						type: string;
-						children: {
-							type: string;
-							version: number;
-							[k: string]: unknown;
-						}[];
-						direction: ("ltr" | "rtl") | null;
-						format:
-							| "left"
-							| "start"
-							| "center"
-							| "right"
-							| "end"
-							| "justify"
-							| "";
-						indent: number;
-						version: number;
-					};
-					[k: string]: unknown;
-				} | null;
-				populateBy?: ("collection" | "selection") | null;
-				relationTo?: "pages" | null;
-				limit?: number | null;
-				selectedDocs?:
-					| {
-							relationTo: "pages";
-							value: string | Page;
-					  }[]
-					| null;
-				populatedDocs?:
-					| {
-							relationTo: "pages";
-							value: string | Page;
-					  }[]
-					| null;
-				populatedDocsTotal?: number | null;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "archive";
-		  }
-		| {
-				backgroundColor?:
-					| (
-							| "default"
-							| "dark_blue_light_gray"
-							| "orange_peach"
-							| "turquoise_yellow"
-							| "turquoise_light_turquoise"
-							| "slate_gray_white"
-					  )
-					| null;
-				layoutWidth?: ("full" | "contained" | "narrow") | null;
-				statistics?:
-					| {
+				  | {
+					  size: string;
+					  halignment?: ('left' | 'center' | 'right') | null;
+					  valignment?: ('top' | 'center' | 'bottom') | null;
+					  extendToBorders?: boolean | null;
+					  blocks: (
+						| {
 							number: string;
 							title?: string | null;
 							richText?: {
-								root: {
-									type: string;
-									children: {
+							  root: {
+								type: string;
+								children: {
+								  type: string;
+								  version: number;
+								  [k: string]: unknown;
+								}[];
+								direction: ('ltr' | 'rtl') | null;
+								format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+								indent: number;
+								version: number;
+							  };
+							  [k: string]: unknown;
+							} | null;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'stats';
+						  }
+						| {
+							author?: string | null;
+							richText?: {
+							  root: {
+								type: string;
+								children: {
+								  type: string;
+								  version: number;
+								  [k: string]: unknown;
+								}[];
+								direction: ('ltr' | 'rtl') | null;
+								format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+								indent: number;
+								version: number;
+							  };
+							  [k: string]: unknown;
+							} | null;
+							authortitle?: string | null;
+							alignment?: ('left' | 'center' | 'right') | null;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'testimonial';
+						  }
+						| {
+							imageCardBlockBackgroundColor?:
+							  | (
+								  | 'default'
+								  | 'dark_blue_light_gray'
+								  | 'orange_peach'
+								  | 'turquoise_yellow'
+								  | 'turquoise_light_turquoise'
+								  | 'slate_gray_white'
+								)
+							  | null;
+							title?: string | null;
+							richText?: {
+							  root: {
+								type: string;
+								children: {
+								  type: string;
+								  version: number;
+								  [k: string]: unknown;
+								}[];
+								direction: ('ltr' | 'rtl') | null;
+								format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+								indent: number;
+								version: number;
+							  };
+							  [k: string]: unknown;
+							} | null;
+							image: string | Media;
+							links?:
+							  | {
+								  link: {
+									type?: ('reference' | 'custom') | null;
+									newTab?: boolean | null;
+									reference?: {
+									  relationTo: 'pages';
+									  value: string | Page;
+									} | null;
+									url?: string | null;
+									label: string;
+									appearance?: ('primary' | 'secondary') | null;
+								  };
+								  id?: string | null;
+								}[]
+							  | null;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'imageCard';
+						  }
+						| {
+							title?: string | null;
+							icon: string | Media;
+							darkicon?: string | Media | null;
+							richText?: {
+							  root: {
+								type: string;
+								children: {
+								  type: string;
+								  version: number;
+								  [k: string]: unknown;
+								}[];
+								direction: ('ltr' | 'rtl') | null;
+								format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+								indent: number;
+								version: number;
+							  };
+							  [k: string]: unknown;
+							} | null;
+							links?:
+							  | {
+								  link: {
+									type?: ('reference' | 'custom') | null;
+									newTab?: boolean | null;
+									reference?: {
+									  relationTo: 'pages';
+									  value: string | Page;
+									} | null;
+									url?: string | null;
+									label: string;
+									appearance?: ('primary' | 'secondary' | 'tertiary' | 'default') | null;
+								  };
+								  id?: string | null;
+								}[]
+							  | null;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'comparison';
+						  }
+						| {
+							numberedItems?: boolean | null;
+							accordions?:
+							  | {
+								  title: string;
+								  richText?: {
+									root: {
+									  type: string;
+									  children: {
 										type: string;
 										version: number;
 										[k: string]: unknown;
-									}[];
-									direction: ("ltr" | "rtl") | null;
-									format:
-										| "left"
-										| "start"
-										| "center"
-										| "right"
-										| "end"
-										| "justify"
-										| "";
-									indent: number;
-									version: number;
-								};
-								[k: string]: unknown;
-							} | null;
-							id?: string | null;
-					  }[]
-					| null;
-				source?: string | null;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "statistics";
-		  }
-		| {
-				backgroundColor?:
-					| (
-							| "default"
-							| "dark_blue_light_gray"
-							| "orange_peach"
-							| "turquoise_yellow"
-							| "turquoise_light_turquoise"
-							| "slate_gray_white"
-					  )
-					| null;
-				alignment?: ("left" | "center" | "right") | null;
-				richText?: {
-					root: {
-						type: string;
-						children: {
-							type: string;
-							version: number;
-							[k: string]: unknown;
-						}[];
-						direction: ("ltr" | "rtl") | null;
-						format:
-							| "left"
-							| "start"
-							| "center"
-							| "right"
-							| "end"
-							| "justify"
-							| "";
-						indent: number;
-						version: number;
-					};
-					[k: string]: unknown;
-				} | null;
-				author?: string | null;
-				authortitle?: string | null;
-				links?:
-					| {
-							link: {
-								type?: ("reference" | "custom") | null;
-								newTab?: boolean | null;
-								reference?: {
-									relationTo: "pages";
-									value: string | Page;
-								} | null;
-								url?: string | null;
-								label: string;
-								appearance?: ("default" | "primary" | "secondary") | null;
-							};
-							id?: string | null;
-					  }[]
-					| null;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "testimonial";
-		  }
-		| {
-				callOutBackgroundColor?:
-					| (
-							| "default"
-							| "dark_blue_light_gray"
-							| "orange_peach"
-							| "turquoise_yellow"
-							| "turquoise_light_turquoise"
-							| "slate_gray_white"
-					  )
-					| null;
-				calloutTitle?: {
-					root: {
-						type: string;
-						children: {
-							type: string;
-							version: number;
-							[k: string]: unknown;
-						}[];
-						direction: ("ltr" | "rtl") | null;
-						format:
-							| "left"
-							| "start"
-							| "center"
-							| "right"
-							| "end"
-							| "justify"
-							| "";
-						indent: number;
-						version: number;
-					};
-					[k: string]: unknown;
-				} | null;
-				richText?: {
-					root: {
-						type: string;
-						children: {
-							type: string;
-							version: number;
-							[k: string]: unknown;
-						}[];
-						direction: ("ltr" | "rtl") | null;
-						format:
-							| "left"
-							| "start"
-							| "center"
-							| "right"
-							| "end"
-							| "justify"
-							| "";
-						indent: number;
-						version: number;
-					};
-					[k: string]: unknown;
-				} | null;
-				calloutLinks?:
-					| {
-							link: {
-								type?: ("reference" | "custom") | null;
-								newTab?: boolean | null;
-								reference?: {
-									relationTo: "pages";
-									value: string | Page;
-								} | null;
-								url?: string | null;
-								label: string;
-								appearance?: ("default" | "primary" | "secondary") | null;
-							};
-							id?: string | null;
-					  }[]
-					| null;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "callout";
-		  }
-		| {
-				highlightCTABackgroundColor?:
-					| (
-							| "default"
-							| "dark_blue_light_gray"
-							| "orange_peach"
-							| "turquoise_yellow"
-							| "turquoise_light_turquoise"
-							| "slate_gray_white"
-					  )
-					| null;
-				title?: string | null;
-				richText?: {
-					root: {
-						type: string;
-						children: {
-							type: string;
-							version: number;
-							[k: string]: unknown;
-						}[];
-						direction: ("ltr" | "rtl") | null;
-						format:
-							| "left"
-							| "start"
-							| "center"
-							| "right"
-							| "end"
-							| "justify"
-							| "";
-						indent: number;
-						version: number;
-					};
-					[k: string]: unknown;
-				} | null;
-				highlightedctaLinks?:
-					| {
-							link: {
-								type?: ("reference" | "custom") | null;
-								newTab?: boolean | null;
-								reference?: {
-									relationTo: "pages";
-									value: string | Page;
-								} | null;
-								url?: string | null;
-								label: string;
-								appearance?: ("default" | "primary" | "secondary") | null;
-							};
-							id?: string | null;
-					  }[]
-					| null;
-				imagealignment?: ("left" | "center" | "right") | null;
-				image?: string | Media | null;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "highlightCTA";
-		  }
-		| {
-				carouselBackgroundColor?:
-					| (
-							| "default"
-							| "dark_blue_light_gray"
-							| "orange_peach"
-							| "turquoise_yellow"
-							| "turquoise_light_turquoise"
-							| "slate_gray_white"
-					  )
-					| null;
-				title?: string | null;
-				richText?: {
-					root: {
-						type: string;
-						children: {
-							type: string;
-							version: number;
-							[k: string]: unknown;
-						}[];
-						direction: ("ltr" | "rtl") | null;
-						format:
-							| "left"
-							| "start"
-							| "center"
-							| "right"
-							| "end"
-							| "justify"
-							| "";
-						indent: number;
-						version: number;
-					};
-					[k: string]: unknown;
-				} | null;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "Schoolcarousel";
-		  }
-		| {
-				tabSectionBackgroundColor?:
-					| (
-							| "default"
-							| "dark_blue_light_gray"
-							| "orange_peach"
-							| "turquoise_yellow"
-							| "turquoise_light_turquoise"
-							| "slate_gray_white"
-					  )
-					| null;
-				tabs?:
-					| {
-							tabicon?: string | Media | null;
-							shortTitle?: string | null;
-							contentTitle?: string | null;
-							description?: {
-								root: {
-									type: string;
-									children: {
-										type: string;
-										version: number;
-										[k: string]: unknown;
-									}[];
-									direction: ("ltr" | "rtl") | null;
-									format:
-										| "left"
-										| "start"
-										| "center"
-										| "right"
-										| "end"
-										| "justify"
-										| "";
-									indent: number;
-									version: number;
-								};
-								[k: string]: unknown;
-							} | null;
-							tabButtongroup?:
-								| {
+									  }[];
+									  direction: ('ltr' | 'rtl') | null;
+									  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+									  indent: number;
+									  version: number;
+									};
+									[k: string]: unknown;
+								  } | null;
+								  links?:
+									| {
 										link: {
-											type?: ("reference" | "custom") | null;
-											newTab?: boolean | null;
-											reference?: {
-												relationTo: "pages";
-												value: string | Page;
-											} | null;
-											url?: string | null;
-											label: string;
-											appearance?: ("default" | "primary" | "secondary") | null;
+										  type?: ('reference' | 'custom') | null;
+										  newTab?: boolean | null;
+										  reference?: {
+											relationTo: 'pages';
+											value: string | Page;
+										  } | null;
+										  url?: string | null;
+										  label: string;
+										  appearance?: ('primary' | 'secondary') | null;
 										};
 										id?: string | null;
-								  }[]
-								| null;
-							useSameIcon?: boolean | null;
-							alternateImage?: string | Media | null;
+									  }[]
+									| null;
+								  id?: string | null;
+								}[]
+							  | null;
 							id?: string | null;
-					  }[]
-					| null;
+							blockName?: string | null;
+							blockType: 'accordion';
+						  }
+						| {
+							richText: {
+							  root: {
+								type: string;
+								children: {
+								  type: string;
+								  version: number;
+								  [k: string]: unknown;
+								}[];
+								direction: ('ltr' | 'rtl') | null;
+								format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+								indent: number;
+								version: number;
+							  };
+							  [k: string]: unknown;
+							};
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'richText';
+						  }
+						| {
+							cornerStyle?:
+							  | ('square' | 'slightly-rounded' | 'moderately-rounded' | 'very-rounded' | 'circular')
+							  | null;
+							enableHighlight?: boolean | null;
+							media: string | Media;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'mediaBlock';
+						  }
+						| {
+							links?:
+							  | {
+								  link: {
+									type?: ('reference' | 'custom') | null;
+									newTab?: boolean | null;
+									reference?: {
+									  relationTo: 'pages';
+									  value: string | Page;
+									} | null;
+									url?: string | null;
+									label: string;
+									appearance?: ('default' | 'primary' | 'secondary' | 'tertiary') | null;
+								  };
+								  id?: string | null;
+								}[]
+							  | null;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'ButtonGroup';
+						  }
+					  )[];
+					  id?: string | null;
+					}[]
+				  | null;
 				id?: string | null;
-				blockName?: string | null;
-				blockType: "tabsection";
-		  }
-		| {
-				subNavBackgroundColor?:
-					| (
-							| "default"
-							| "dark_blue_light_gray"
-							| "orange_peach"
-							| "turquoise_yellow"
-							| "turquoise_light_turquoise"
-							| "slate_gray_white"
-					  )
-					| null;
-				navigationItem?:
-					| {
+			  }[]
+			| null;
+		  columns?:
+			| {
+				size: string;
+				halignment?: ('left' | 'center' | 'right') | null;
+				valignment?: ('top' | 'center' | 'bottom') | null;
+				extendToBorders?: boolean | null;
+				blocks: (
+				  | {
+					  number: string;
+					  title?: string | null;
+					  richText?: {
+						root: {
+						  type: string;
+						  children: {
+							type: string;
+							version: number;
+							[k: string]: unknown;
+						  }[];
+						  direction: ('ltr' | 'rtl') | null;
+						  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+						  indent: number;
+						  version: number;
+						};
+						[k: string]: unknown;
+					  } | null;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'stats';
+					}
+				  | {
+					  author?: string | null;
+					  richText?: {
+						root: {
+						  type: string;
+						  children: {
+							type: string;
+							version: number;
+							[k: string]: unknown;
+						  }[];
+						  direction: ('ltr' | 'rtl') | null;
+						  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+						  indent: number;
+						  version: number;
+						};
+						[k: string]: unknown;
+					  } | null;
+					  authortitle?: string | null;
+					  alignment?: ('left' | 'center' | 'right') | null;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'testimonial';
+					}
+				  | {
+					  imageCardBlockBackgroundColor?:
+						| (
+							| 'default'
+							| 'dark_blue_light_gray'
+							| 'orange_peach'
+							| 'turquoise_yellow'
+							| 'turquoise_light_turquoise'
+							| 'slate_gray_white'
+						  )
+						| null;
+					  title?: string | null;
+					  richText?: {
+						root: {
+						  type: string;
+						  children: {
+							type: string;
+							version: number;
+							[k: string]: unknown;
+						  }[];
+						  direction: ('ltr' | 'rtl') | null;
+						  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+						  indent: number;
+						  version: number;
+						};
+						[k: string]: unknown;
+					  } | null;
+					  image: string | Media;
+					  links?:
+						| {
+							link: {
+							  type?: ('reference' | 'custom') | null;
+							  newTab?: boolean | null;
+							  reference?: {
+								relationTo: 'pages';
+								value: string | Page;
+							  } | null;
+							  url?: string | null;
+							  label: string;
+							  appearance?: ('primary' | 'secondary') | null;
+							};
+							id?: string | null;
+						  }[]
+						| null;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'imageCard';
+					}
+				  | {
+					  title?: string | null;
+					  icon: string | Media;
+					  darkicon?: string | Media | null;
+					  richText?: {
+						root: {
+						  type: string;
+						  children: {
+							type: string;
+							version: number;
+							[k: string]: unknown;
+						  }[];
+						  direction: ('ltr' | 'rtl') | null;
+						  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+						  indent: number;
+						  version: number;
+						};
+						[k: string]: unknown;
+					  } | null;
+					  links?:
+						| {
+							link: {
+							  type?: ('reference' | 'custom') | null;
+							  newTab?: boolean | null;
+							  reference?: {
+								relationTo: 'pages';
+								value: string | Page;
+							  } | null;
+							  url?: string | null;
+							  label: string;
+							  appearance?: ('primary' | 'secondary' | 'tertiary' | 'default') | null;
+							};
+							id?: string | null;
+						  }[]
+						| null;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'comparison';
+					}
+				  | {
+					  numberedItems?: boolean | null;
+					  accordions?:
+						| {
 							title: string;
-							url?: string | null;
+							richText?: {
+							  root: {
+								type: string;
+								children: {
+								  type: string;
+								  version: number;
+								  [k: string]: unknown;
+								}[];
+								direction: ('ltr' | 'rtl') | null;
+								format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+								indent: number;
+								version: number;
+							  };
+							  [k: string]: unknown;
+							} | null;
+							links?:
+							  | {
+								  link: {
+									type?: ('reference' | 'custom') | null;
+									newTab?: boolean | null;
+									reference?: {
+									  relationTo: 'pages';
+									  value: string | Page;
+									} | null;
+									url?: string | null;
+									label: string;
+									appearance?: ('primary' | 'secondary') | null;
+								  };
+								  id?: string | null;
+								}[]
+							  | null;
 							id?: string | null;
-					  }[]
-					| null;
+						  }[]
+						| null;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'accordion';
+					}
+				  | {
+					  richText: {
+						root: {
+						  type: string;
+						  children: {
+							type: string;
+							version: number;
+							[k: string]: unknown;
+						  }[];
+						  direction: ('ltr' | 'rtl') | null;
+						  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+						  indent: number;
+						  version: number;
+						};
+						[k: string]: unknown;
+					  };
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'richText';
+					}
+				  | {
+					  cornerStyle?:
+						| ('square' | 'slightly-rounded' | 'moderately-rounded' | 'very-rounded' | 'circular')
+						| null;
+					  enableHighlight?: boolean | null;
+					  media: string | Media;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'mediaBlock';
+					}
+				  | {
+					  links?:
+						| {
+							link: {
+							  type?: ('reference' | 'custom') | null;
+							  newTab?: boolean | null;
+							  reference?: {
+								relationTo: 'pages';
+								value: string | Page;
+							  } | null;
+							  url?: string | null;
+							  label: string;
+							  appearance?: ('default' | 'primary' | 'secondary' | 'tertiary') | null;
+							};
+							id?: string | null;
+						  }[]
+						| null;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'ButtonGroup';
+					}
+				)[];
 				id?: string | null;
-				blockName?: string | null;
-				blockType: "subNavigation";
-		  }
+			  }[]
+			| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'section';
+		}
+	  | {
+		  form: string | Form;
+		  enableIntro?: boolean | null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'formBlock';
+		}
+	  | {
+		  cornerStyle?: ('square' | 'slightly-rounded' | 'moderately-rounded' | 'very-rounded' | 'circular') | null;
+		  enableHighlight?: boolean | null;
+		  media: string | Media;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'mediaBlock';
+		}
+	  | {
+		  introContent?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  populateBy?: ('collection' | 'selection') | null;
+		  relationTo?: 'pages' | null;
+		  limit?: number | null;
+		  selectedDocs?:
+			| {
+				relationTo: 'pages';
+				value: string | Page;
+			  }[]
+			| null;
+		  populatedDocs?:
+			| {
+				relationTo: 'pages';
+				value: string | Page;
+			  }[]
+			| null;
+		  populatedDocsTotal?: number | null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'archive';
+		}
+	  | {
+		  backgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  layoutWidth?: ('full' | 'contained' | 'narrow') | null;
+		  statistics?:
+			| {
+				number: string;
+				title?: string | null;
+				richText?: {
+				  root: {
+					type: string;
+					children: {
+					  type: string;
+					  version: number;
+					  [k: string]: unknown;
+					}[];
+					direction: ('ltr' | 'rtl') | null;
+					format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+					indent: number;
+					version: number;
+				  };
+				  [k: string]: unknown;
+				} | null;
+				id?: string | null;
+			  }[]
+			| null;
+		  source?: string | null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'statistics';
+		}
+	  | {
+		  backgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  alignment?: ('left' | 'center' | 'right') | null;
+		  richText?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  author?: string | null;
+		  authortitle?: string | null;
+		  links?:
+			| {
+				link: {
+				  type?: ('reference' | 'custom') | null;
+				  newTab?: boolean | null;
+				  reference?: {
+					relationTo: 'pages';
+					value: string | Page;
+				  } | null;
+				  url?: string | null;
+				  label: string;
+				  appearance?: ('default' | 'primary' | 'secondary') | null;
+				};
+				id?: string | null;
+			  }[]
+			| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'testimonial';
+		}
+	  | {
+		  callOutBackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  calloutTitle?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  richText?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  calloutLinks?:
+			| {
+				link: {
+				  type?: ('reference' | 'custom') | null;
+				  newTab?: boolean | null;
+				  reference?: {
+					relationTo: 'pages';
+					value: string | Page;
+				  } | null;
+				  url?: string | null;
+				  label: string;
+				  appearance?: ('default' | 'primary' | 'secondary') | null;
+				};
+				id?: string | null;
+			  }[]
+			| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'callout';
+		}
+	  | {
+		  highlightCTABackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  title?: string | null;
+		  richText?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  highlightedctaLinks?:
+			| {
+				link: {
+				  type?: ('reference' | 'custom') | null;
+				  newTab?: boolean | null;
+				  reference?: {
+					relationTo: 'pages';
+					value: string | Page;
+				  } | null;
+				  url?: string | null;
+				  label: string;
+				  appearance?: ('default' | 'primary' | 'secondary') | null;
+				};
+				id?: string | null;
+			  }[]
+			| null;
+		  imagealignment?: ('left' | 'center' | 'right') | null;
+		  image?: string | Media | null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'highlightCTA';
+		}
+	  | {
+		  carouselBackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  title?: string | null;
+		  richText?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'Schoolcarousel';
+		}
+	  | {
+		  tabSectionBackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  tabs?:
+			| {
+				tabicon?: string | Media | null;
+				shortTitle?: string | null;
+				contentTitle?: string | null;
+				description?: {
+				  root: {
+					type: string;
+					children: {
+					  type: string;
+					  version: number;
+					  [k: string]: unknown;
+					}[];
+					direction: ('ltr' | 'rtl') | null;
+					format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+					indent: number;
+					version: number;
+				  };
+				  [k: string]: unknown;
+				} | null;
+				tabButtongroup?:
+				  | {
+					  link: {
+						type?: ('reference' | 'custom') | null;
+						newTab?: boolean | null;
+						reference?: {
+						  relationTo: 'pages';
+						  value: string | Page;
+						} | null;
+						url?: string | null;
+						label: string;
+						appearance?: ('default' | 'primary' | 'secondary') | null;
+					  };
+					  id?: string | null;
+					}[]
+				  | null;
+				useSameIcon?: boolean | null;
+				alternateImage?: string | Media | null;
+				id?: string | null;
+			  }[]
+			| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'tabsection';
+		}
+	  | {
+		  subNavBackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  navigationItem?:
+			| {
+				title: string;
+				url?: string | null;
+				id?: string | null;
+			  }[]
+			| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'subNavigation';
+		}
 	)[];
 	slug?: string | null;
 	parent?: (string | null) | Page;
 	breadcrumbs?:
-		| {
-				doc?: (string | null) | Page;
-				url?: string | null;
-				label?: string | null;
-				id?: string | null;
-		  }[]
-		| null;
+	  | {
+		  doc?: (string | null) | Page;
+		  url?: string | null;
+		  label?: string | null;
+		  id?: string | null;
+		}[]
+	  | null;
 	meta?: {
-		title?: string | null;
-		description?: string | null;
-		image?: string | Media | null;
+	  title?: string | null;
+	  description?: string | null;
+	  image?: string | Media | null;
 	};
 	updatedAt: string;
 	createdAt: string;
-	_status?: ("draft" | "published") | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "media".
- */
-export interface Media {
+	_status?: ('draft' | 'published') | null;
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "media".
+   */
+  export interface Media {
 	id: string;
 	alt: string;
 	caption?: {
-		root: {
-			type: string;
-			children: {
-				type: string;
-				version: number;
-				[k: string]: unknown;
-			}[];
-			direction: ("ltr" | "rtl") | null;
-			format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
-			indent: number;
-			version: number;
-		};
-		[k: string]: unknown;
+	  root: {
+		type: string;
+		children: {
+		  type: string;
+		  version: number;
+		  [k: string]: unknown;
+		}[];
+		direction: ('ltr' | 'rtl') | null;
+		format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+		indent: number;
+		version: number;
+	  };
+	  [k: string]: unknown;
 	} | null;
 	updatedAt: string;
 	createdAt: string;
@@ -1242,1093 +1045,1238 @@ export interface Media {
 	focalX?: number | null;
 	focalY?: number | null;
 	sizes?: {
-		squareSmall?: {
-			url?: string | null;
-			width?: number | null;
-			height?: number | null;
-			mimeType?: string | null;
-			filesize?: number | null;
-			filename?: string | null;
-		};
-		squareMedium?: {
-			url?: string | null;
-			width?: number | null;
-			height?: number | null;
-			mimeType?: string | null;
-			filesize?: number | null;
-			filename?: string | null;
-		};
+	  squareSmall?: {
+		url?: string | null;
+		width?: number | null;
+		height?: number | null;
+		mimeType?: string | null;
+		filesize?: number | null;
+		filename?: string | null;
+	  };
+	  squareMedium?: {
+		url?: string | null;
+		width?: number | null;
+		height?: number | null;
+		mimeType?: string | null;
+		filesize?: number | null;
+		filename?: string | null;
+	  };
 	};
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "forms".
- */
-export interface Form {
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "forms".
+   */
+  export interface Form {
 	id: string;
 	title: string;
 	fields?:
-		| (
+	  | (
+		  | {
+			  name: string;
+			  label?: string | null;
+			  width?: number | null;
+			  required?: boolean | null;
+			  defaultValue?: boolean | null;
+			  id?: string | null;
+			  blockName?: string | null;
+			  blockType: 'checkbox';
+			}
+		  | {
+			  name: string;
+			  label?: string | null;
+			  width?: number | null;
+			  required?: boolean | null;
+			  id?: string | null;
+			  blockName?: string | null;
+			  blockType: 'country';
+			}
+		  | {
+			  name: string;
+			  label?: string | null;
+			  width?: number | null;
+			  required?: boolean | null;
+			  id?: string | null;
+			  blockName?: string | null;
+			  blockType: 'email';
+			}
+		  | {
+			  message?: {
+				root: {
+				  type: string;
+				  children: {
+					type: string;
+					version: number;
+					[k: string]: unknown;
+				  }[];
+				  direction: ('ltr' | 'rtl') | null;
+				  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+				  indent: number;
+				  version: number;
+				};
+				[k: string]: unknown;
+			  } | null;
+			  id?: string | null;
+			  blockName?: string | null;
+			  blockType: 'message';
+			}
+		  | {
+			  name: string;
+			  label?: string | null;
+			  width?: number | null;
+			  defaultValue?: number | null;
+			  required?: boolean | null;
+			  id?: string | null;
+			  blockName?: string | null;
+			  blockType: 'number';
+			}
+		  | {
+			  name: string;
+			  label?: string | null;
+			  width?: number | null;
+			  defaultValue?: string | null;
+			  options?:
 				| {
-						name: string;
-						label?: string | null;
-						width?: number | null;
-						required?: boolean | null;
-						defaultValue?: boolean | null;
-						id?: string | null;
-						blockName?: string | null;
-						blockType: "checkbox";
-				  }
-				| {
-						name: string;
-						label?: string | null;
-						width?: number | null;
-						required?: boolean | null;
-						id?: string | null;
-						blockName?: string | null;
-						blockType: "country";
-				  }
-				| {
-						name: string;
-						label?: string | null;
-						width?: number | null;
-						required?: boolean | null;
-						id?: string | null;
-						blockName?: string | null;
-						blockType: "email";
-				  }
-				| {
-						message?: {
-							root: {
-								type: string;
-								children: {
-									type: string;
-									version: number;
-									[k: string]: unknown;
-								}[];
-								direction: ("ltr" | "rtl") | null;
-								format:
-									| "left"
-									| "start"
-									| "center"
-									| "right"
-									| "end"
-									| "justify"
-									| "";
-								indent: number;
-								version: number;
-							};
-							[k: string]: unknown;
-						} | null;
-						id?: string | null;
-						blockName?: string | null;
-						blockType: "message";
-				  }
-				| {
-						name: string;
-						label?: string | null;
-						width?: number | null;
-						defaultValue?: number | null;
-						required?: boolean | null;
-						id?: string | null;
-						blockName?: string | null;
-						blockType: "number";
-				  }
-				| {
-						name: string;
-						label?: string | null;
-						width?: number | null;
-						defaultValue?: string | null;
-						options?:
-							| {
-									label: string;
-									value: string;
-									id?: string | null;
-							  }[]
-							| null;
-						required?: boolean | null;
-						id?: string | null;
-						blockName?: string | null;
-						blockType: "select";
-				  }
-				| {
-						name: string;
-						label?: string | null;
-						width?: number | null;
-						required?: boolean | null;
-						id?: string | null;
-						blockName?: string | null;
-						blockType: "state";
-				  }
-				| {
-						name: string;
-						label?: string | null;
-						width?: number | null;
-						defaultValue?: string | null;
-						required?: boolean | null;
-						id?: string | null;
-						blockName?: string | null;
-						blockType: "text";
-				  }
-				| {
-						name: string;
-						label?: string | null;
-						width?: number | null;
-						defaultValue?: string | null;
-						required?: boolean | null;
-						id?: string | null;
-						blockName?: string | null;
-						blockType: "textarea";
-				  }
-		  )[]
-		| null;
+					label: string;
+					value: string;
+					id?: string | null;
+				  }[]
+				| null;
+			  required?: boolean | null;
+			  id?: string | null;
+			  blockName?: string | null;
+			  blockType: 'select';
+			}
+		  | {
+			  name: string;
+			  label?: string | null;
+			  width?: number | null;
+			  required?: boolean | null;
+			  id?: string | null;
+			  blockName?: string | null;
+			  blockType: 'state';
+			}
+		  | {
+			  name: string;
+			  label?: string | null;
+			  width?: number | null;
+			  defaultValue?: string | null;
+			  required?: boolean | null;
+			  id?: string | null;
+			  blockName?: string | null;
+			  blockType: 'text';
+			}
+		  | {
+			  name: string;
+			  label?: string | null;
+			  width?: number | null;
+			  defaultValue?: string | null;
+			  required?: boolean | null;
+			  id?: string | null;
+			  blockName?: string | null;
+			  blockType: 'textarea';
+			}
+		)[]
+	  | null;
 	submitButtonLabel?: string | null;
-	confirmationType?: ("message" | "redirect") | null;
+	confirmationType?: ('message' | 'redirect') | null;
 	confirmationMessage?: {
-		root: {
-			type: string;
-			children: {
+	  root: {
+		type: string;
+		children: {
+		  type: string;
+		  version: number;
+		  [k: string]: unknown;
+		}[];
+		direction: ('ltr' | 'rtl') | null;
+		format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+		indent: number;
+		version: number;
+	  };
+	  [k: string]: unknown;
+	} | null;
+	redirect?: {
+	  url: string;
+	};
+	emails?:
+	  | {
+		  emailTo?: string | null;
+		  cc?: string | null;
+		  bcc?: string | null;
+		  replyTo?: string | null;
+		  emailFrom?: string | null;
+		  subject: string;
+		  message?: {
+			root: {
+			  type: string;
+			  children: {
 				type: string;
 				version: number;
 				[k: string]: unknown;
-			}[];
-			direction: ("ltr" | "rtl") | null;
-			format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
-			indent: number;
-			version: number;
-		};
-		[k: string]: unknown;
-	} | null;
-	redirect?: {
-		url: string;
-	};
-	emails?:
-		| {
-				emailTo?: string | null;
-				cc?: string | null;
-				bcc?: string | null;
-				replyTo?: string | null;
-				emailFrom?: string | null;
-				subject: string;
-				message?: {
-					root: {
-						type: string;
-						children: {
-							type: string;
-							version: number;
-							[k: string]: unknown;
-						}[];
-						direction: ("ltr" | "rtl") | null;
-						format:
-							| "left"
-							| "start"
-							| "center"
-							| "right"
-							| "end"
-							| "justify"
-							| "";
-						indent: number;
-						version: number;
-					};
-					[k: string]: unknown;
-				} | null;
-				id?: string | null;
-		  }[]
-		| null;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  id?: string | null;
+		}[]
+	  | null;
 	updatedAt: string;
 	createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "posts".
- */
-export interface Post {
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "posts".
+   */
+  export interface Post {
 	id: string;
 	title: string;
 	publishedDate?: string | null;
 	hero: {
-		type: "none" | "landingPage" | "resultPage";
-		title?: string | null;
-		richText?: {
+	  type: 'none' | 'landingPage' | 'resultPage';
+	  title?: string | null;
+	  richText?: {
+		root: {
+		  type: string;
+		  children: {
+			type: string;
+			version: number;
+			[k: string]: unknown;
+		  }[];
+		  direction: ('ltr' | 'rtl') | null;
+		  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+		  indent: number;
+		  version: number;
+		};
+		[k: string]: unknown;
+	  } | null;
+	  links?:
+		| {
+			link: {
+			  type?: ('reference' | 'custom') | null;
+			  newTab?: boolean | null;
+			  reference?: {
+				relationTo: 'pages';
+				value: string | Page;
+			  } | null;
+			  url?: string | null;
+			  label: string;
+			  appearance?: ('default' | 'primary' | 'secondary') | null;
+			};
+			id?: string | null;
+		  }[]
+		| null;
+	  media?: string | Media | null;
+	  animation?: string | Media | null;
+	};
+	layout: (
+	  | {
+		  ctaBackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  richText?: {
 			root: {
+			  type: string;
+			  children: {
 				type: string;
-				children: {
-					type: string;
-					version: number;
-					[k: string]: unknown;
-				}[];
-				direction: ("ltr" | "rtl") | null;
-				format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
-				indent: number;
 				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
 			};
 			[k: string]: unknown;
-		} | null;
-		links?:
+		  } | null;
+		  links?:
 			| {
-					link: {
-						type?: ("reference" | "custom") | null;
+				link: {
+				  type?: ('reference' | 'custom') | null;
+				  newTab?: boolean | null;
+				  reference?: {
+					relationTo: 'pages';
+					value: string | Page;
+				  } | null;
+				  url?: string | null;
+				  label: string;
+				  appearance?: ('default' | 'primary' | 'secondary') | null;
+				};
+				id?: string | null;
+			  }[]
+			| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'cta';
+		}
+	  | {
+		  type?: ('row' | 'column') | null;
+		  layoutWidth?: ('full' | 'contained' | 'narrow') | null;
+		  backgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  enableHighlight?: boolean | null;
+		  rows?:
+			| {
+				columns?:
+				  | {
+					  size: string;
+					  halignment?: ('left' | 'center' | 'right') | null;
+					  valignment?: ('top' | 'center' | 'bottom') | null;
+					  extendToBorders?: boolean | null;
+					  blocks: (
+						| {
+							number: string;
+							title?: string | null;
+							richText?: {
+							  root: {
+								type: string;
+								children: {
+								  type: string;
+								  version: number;
+								  [k: string]: unknown;
+								}[];
+								direction: ('ltr' | 'rtl') | null;
+								format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+								indent: number;
+								version: number;
+							  };
+							  [k: string]: unknown;
+							} | null;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'stats';
+						  }
+						| {
+							author?: string | null;
+							richText?: {
+							  root: {
+								type: string;
+								children: {
+								  type: string;
+								  version: number;
+								  [k: string]: unknown;
+								}[];
+								direction: ('ltr' | 'rtl') | null;
+								format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+								indent: number;
+								version: number;
+							  };
+							  [k: string]: unknown;
+							} | null;
+							authortitle?: string | null;
+							alignment?: ('left' | 'center' | 'right') | null;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'testimonial';
+						  }
+						| {
+							imageCardBlockBackgroundColor?:
+							  | (
+								  | 'default'
+								  | 'dark_blue_light_gray'
+								  | 'orange_peach'
+								  | 'turquoise_yellow'
+								  | 'turquoise_light_turquoise'
+								  | 'slate_gray_white'
+								)
+							  | null;
+							title?: string | null;
+							richText?: {
+							  root: {
+								type: string;
+								children: {
+								  type: string;
+								  version: number;
+								  [k: string]: unknown;
+								}[];
+								direction: ('ltr' | 'rtl') | null;
+								format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+								indent: number;
+								version: number;
+							  };
+							  [k: string]: unknown;
+							} | null;
+							image: string | Media;
+							links?:
+							  | {
+								  link: {
+									type?: ('reference' | 'custom') | null;
+									newTab?: boolean | null;
+									reference?: {
+									  relationTo: 'pages';
+									  value: string | Page;
+									} | null;
+									url?: string | null;
+									label: string;
+									appearance?: ('primary' | 'secondary') | null;
+								  };
+								  id?: string | null;
+								}[]
+							  | null;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'imageCard';
+						  }
+						| {
+							title?: string | null;
+							icon: string | Media;
+							darkicon?: string | Media | null;
+							richText?: {
+							  root: {
+								type: string;
+								children: {
+								  type: string;
+								  version: number;
+								  [k: string]: unknown;
+								}[];
+								direction: ('ltr' | 'rtl') | null;
+								format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+								indent: number;
+								version: number;
+							  };
+							  [k: string]: unknown;
+							} | null;
+							links?:
+							  | {
+								  link: {
+									type?: ('reference' | 'custom') | null;
+									newTab?: boolean | null;
+									reference?: {
+									  relationTo: 'pages';
+									  value: string | Page;
+									} | null;
+									url?: string | null;
+									label: string;
+									appearance?: ('primary' | 'secondary' | 'tertiary' | 'default') | null;
+								  };
+								  id?: string | null;
+								}[]
+							  | null;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'comparison';
+						  }
+						| {
+							numberedItems?: boolean | null;
+							accordions?:
+							  | {
+								  title: string;
+								  richText?: {
+									root: {
+									  type: string;
+									  children: {
+										type: string;
+										version: number;
+										[k: string]: unknown;
+									  }[];
+									  direction: ('ltr' | 'rtl') | null;
+									  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+									  indent: number;
+									  version: number;
+									};
+									[k: string]: unknown;
+								  } | null;
+								  links?:
+									| {
+										link: {
+										  type?: ('reference' | 'custom') | null;
+										  newTab?: boolean | null;
+										  reference?: {
+											relationTo: 'pages';
+											value: string | Page;
+										  } | null;
+										  url?: string | null;
+										  label: string;
+										  appearance?: ('primary' | 'secondary') | null;
+										};
+										id?: string | null;
+									  }[]
+									| null;
+								  id?: string | null;
+								}[]
+							  | null;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'accordion';
+						  }
+						| {
+							richText: {
+							  root: {
+								type: string;
+								children: {
+								  type: string;
+								  version: number;
+								  [k: string]: unknown;
+								}[];
+								direction: ('ltr' | 'rtl') | null;
+								format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+								indent: number;
+								version: number;
+							  };
+							  [k: string]: unknown;
+							};
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'richText';
+						  }
+						| {
+							cornerStyle?:
+							  | ('square' | 'slightly-rounded' | 'moderately-rounded' | 'very-rounded' | 'circular')
+							  | null;
+							enableHighlight?: boolean | null;
+							media: string | Media;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'mediaBlock';
+						  }
+						| {
+							links?:
+							  | {
+								  link: {
+									type?: ('reference' | 'custom') | null;
+									newTab?: boolean | null;
+									reference?: {
+									  relationTo: 'pages';
+									  value: string | Page;
+									} | null;
+									url?: string | null;
+									label: string;
+									appearance?: ('default' | 'primary' | 'secondary' | 'tertiary') | null;
+								  };
+								  id?: string | null;
+								}[]
+							  | null;
+							id?: string | null;
+							blockName?: string | null;
+							blockType: 'ButtonGroup';
+						  }
+					  )[];
+					  id?: string | null;
+					}[]
+				  | null;
+				id?: string | null;
+			  }[]
+			| null;
+		  columns?:
+			| {
+				size: string;
+				halignment?: ('left' | 'center' | 'right') | null;
+				valignment?: ('top' | 'center' | 'bottom') | null;
+				extendToBorders?: boolean | null;
+				blocks: (
+				  | {
+					  number: string;
+					  title?: string | null;
+					  richText?: {
+						root: {
+						  type: string;
+						  children: {
+							type: string;
+							version: number;
+							[k: string]: unknown;
+						  }[];
+						  direction: ('ltr' | 'rtl') | null;
+						  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+						  indent: number;
+						  version: number;
+						};
+						[k: string]: unknown;
+					  } | null;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'stats';
+					}
+				  | {
+					  author?: string | null;
+					  richText?: {
+						root: {
+						  type: string;
+						  children: {
+							type: string;
+							version: number;
+							[k: string]: unknown;
+						  }[];
+						  direction: ('ltr' | 'rtl') | null;
+						  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+						  indent: number;
+						  version: number;
+						};
+						[k: string]: unknown;
+					  } | null;
+					  authortitle?: string | null;
+					  alignment?: ('left' | 'center' | 'right') | null;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'testimonial';
+					}
+				  | {
+					  imageCardBlockBackgroundColor?:
+						| (
+							| 'default'
+							| 'dark_blue_light_gray'
+							| 'orange_peach'
+							| 'turquoise_yellow'
+							| 'turquoise_light_turquoise'
+							| 'slate_gray_white'
+						  )
+						| null;
+					  title?: string | null;
+					  richText?: {
+						root: {
+						  type: string;
+						  children: {
+							type: string;
+							version: number;
+							[k: string]: unknown;
+						  }[];
+						  direction: ('ltr' | 'rtl') | null;
+						  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+						  indent: number;
+						  version: number;
+						};
+						[k: string]: unknown;
+					  } | null;
+					  image: string | Media;
+					  links?:
+						| {
+							link: {
+							  type?: ('reference' | 'custom') | null;
+							  newTab?: boolean | null;
+							  reference?: {
+								relationTo: 'pages';
+								value: string | Page;
+							  } | null;
+							  url?: string | null;
+							  label: string;
+							  appearance?: ('primary' | 'secondary') | null;
+							};
+							id?: string | null;
+						  }[]
+						| null;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'imageCard';
+					}
+				  | {
+					  title?: string | null;
+					  icon: string | Media;
+					  darkicon?: string | Media | null;
+					  richText?: {
+						root: {
+						  type: string;
+						  children: {
+							type: string;
+							version: number;
+							[k: string]: unknown;
+						  }[];
+						  direction: ('ltr' | 'rtl') | null;
+						  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+						  indent: number;
+						  version: number;
+						};
+						[k: string]: unknown;
+					  } | null;
+					  links?:
+						| {
+							link: {
+							  type?: ('reference' | 'custom') | null;
+							  newTab?: boolean | null;
+							  reference?: {
+								relationTo: 'pages';
+								value: string | Page;
+							  } | null;
+							  url?: string | null;
+							  label: string;
+							  appearance?: ('primary' | 'secondary' | 'tertiary' | 'default') | null;
+							};
+							id?: string | null;
+						  }[]
+						| null;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'comparison';
+					}
+				  | {
+					  numberedItems?: boolean | null;
+					  accordions?:
+						| {
+							title: string;
+							richText?: {
+							  root: {
+								type: string;
+								children: {
+								  type: string;
+								  version: number;
+								  [k: string]: unknown;
+								}[];
+								direction: ('ltr' | 'rtl') | null;
+								format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+								indent: number;
+								version: number;
+							  };
+							  [k: string]: unknown;
+							} | null;
+							links?:
+							  | {
+								  link: {
+									type?: ('reference' | 'custom') | null;
+									newTab?: boolean | null;
+									reference?: {
+									  relationTo: 'pages';
+									  value: string | Page;
+									} | null;
+									url?: string | null;
+									label: string;
+									appearance?: ('primary' | 'secondary') | null;
+								  };
+								  id?: string | null;
+								}[]
+							  | null;
+							id?: string | null;
+						  }[]
+						| null;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'accordion';
+					}
+				  | {
+					  richText: {
+						root: {
+						  type: string;
+						  children: {
+							type: string;
+							version: number;
+							[k: string]: unknown;
+						  }[];
+						  direction: ('ltr' | 'rtl') | null;
+						  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+						  indent: number;
+						  version: number;
+						};
+						[k: string]: unknown;
+					  };
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'richText';
+					}
+				  | {
+					  cornerStyle?:
+						| ('square' | 'slightly-rounded' | 'moderately-rounded' | 'very-rounded' | 'circular')
+						| null;
+					  enableHighlight?: boolean | null;
+					  media: string | Media;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'mediaBlock';
+					}
+				  | {
+					  links?:
+						| {
+							link: {
+							  type?: ('reference' | 'custom') | null;
+							  newTab?: boolean | null;
+							  reference?: {
+								relationTo: 'pages';
+								value: string | Page;
+							  } | null;
+							  url?: string | null;
+							  label: string;
+							  appearance?: ('default' | 'primary' | 'secondary' | 'tertiary') | null;
+							};
+							id?: string | null;
+						  }[]
+						| null;
+					  id?: string | null;
+					  blockName?: string | null;
+					  blockType: 'ButtonGroup';
+					}
+				)[];
+				id?: string | null;
+			  }[]
+			| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'section';
+		}
+	  | {
+		  form: string | Form;
+		  enableIntro?: boolean | null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'formBlock';
+		}
+	  | {
+		  cornerStyle?: ('square' | 'slightly-rounded' | 'moderately-rounded' | 'very-rounded' | 'circular') | null;
+		  enableHighlight?: boolean | null;
+		  media: string | Media;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'mediaBlock';
+		}
+	  | {
+		  introContent?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  populateBy?: ('collection' | 'selection') | null;
+		  relationTo?: 'pages' | null;
+		  limit?: number | null;
+		  selectedDocs?:
+			| {
+				relationTo: 'pages';
+				value: string | Page;
+			  }[]
+			| null;
+		  populatedDocs?:
+			| {
+				relationTo: 'pages';
+				value: string | Page;
+			  }[]
+			| null;
+		  populatedDocsTotal?: number | null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'archive';
+		}
+	  | {
+		  backgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  layoutWidth?: ('full' | 'contained' | 'narrow') | null;
+		  statistics?:
+			| {
+				number: string;
+				title?: string | null;
+				richText?: {
+				  root: {
+					type: string;
+					children: {
+					  type: string;
+					  version: number;
+					  [k: string]: unknown;
+					}[];
+					direction: ('ltr' | 'rtl') | null;
+					format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+					indent: number;
+					version: number;
+				  };
+				  [k: string]: unknown;
+				} | null;
+				id?: string | null;
+			  }[]
+			| null;
+		  source?: string | null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'statistics';
+		}
+	  | {
+		  backgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  alignment?: ('left' | 'center' | 'right') | null;
+		  richText?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  author?: string | null;
+		  authortitle?: string | null;
+		  links?:
+			| {
+				link: {
+				  type?: ('reference' | 'custom') | null;
+				  newTab?: boolean | null;
+				  reference?: {
+					relationTo: 'pages';
+					value: string | Page;
+				  } | null;
+				  url?: string | null;
+				  label: string;
+				  appearance?: ('default' | 'primary' | 'secondary') | null;
+				};
+				id?: string | null;
+			  }[]
+			| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'testimonial';
+		}
+	  | {
+		  callOutBackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  calloutTitle?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  richText?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  calloutLinks?:
+			| {
+				link: {
+				  type?: ('reference' | 'custom') | null;
+				  newTab?: boolean | null;
+				  reference?: {
+					relationTo: 'pages';
+					value: string | Page;
+				  } | null;
+				  url?: string | null;
+				  label: string;
+				  appearance?: ('default' | 'primary' | 'secondary') | null;
+				};
+				id?: string | null;
+			  }[]
+			| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'callout';
+		}
+	  | {
+		  highlightCTABackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  title?: string | null;
+		  richText?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  highlightedctaLinks?:
+			| {
+				link: {
+				  type?: ('reference' | 'custom') | null;
+				  newTab?: boolean | null;
+				  reference?: {
+					relationTo: 'pages';
+					value: string | Page;
+				  } | null;
+				  url?: string | null;
+				  label: string;
+				  appearance?: ('default' | 'primary' | 'secondary') | null;
+				};
+				id?: string | null;
+			  }[]
+			| null;
+		  imagealignment?: ('left' | 'center' | 'right') | null;
+		  image?: string | Media | null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'highlightCTA';
+		}
+	  | {
+		  carouselBackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  title?: string | null;
+		  richText?: {
+			root: {
+			  type: string;
+			  children: {
+				type: string;
+				version: number;
+				[k: string]: unknown;
+			  }[];
+			  direction: ('ltr' | 'rtl') | null;
+			  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+			  indent: number;
+			  version: number;
+			};
+			[k: string]: unknown;
+		  } | null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'Schoolcarousel';
+		}
+	  | {
+		  tabSectionBackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  tabs?:
+			| {
+				tabicon?: string | Media | null;
+				shortTitle?: string | null;
+				contentTitle?: string | null;
+				description?: {
+				  root: {
+					type: string;
+					children: {
+					  type: string;
+					  version: number;
+					  [k: string]: unknown;
+					}[];
+					direction: ('ltr' | 'rtl') | null;
+					format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+					indent: number;
+					version: number;
+				  };
+				  [k: string]: unknown;
+				} | null;
+				tabButtongroup?:
+				  | {
+					  link: {
+						type?: ('reference' | 'custom') | null;
 						newTab?: boolean | null;
 						reference?: {
-							relationTo: "pages";
-							value: string | Page;
+						  relationTo: 'pages';
+						  value: string | Page;
 						} | null;
 						url?: string | null;
 						label: string;
-						appearance?: ("default" | "primary" | "secondary") | null;
-					};
-					id?: string | null;
+						appearance?: ('default' | 'primary' | 'secondary') | null;
+					  };
+					  id?: string | null;
+					}[]
+				  | null;
+				useSameIcon?: boolean | null;
+				alternateImage?: string | Media | null;
+				id?: string | null;
 			  }[]
 			| null;
-		media?: string | Media | null;
-		animation?: string | Media | null;
-	};
-	layout: (
-		| {
-				ctaBackgroundColor?:
-					| (
-							| "default"
-							| "dark_blue_light_gray"
-							| "orange_peach"
-							| "turquoise_yellow"
-							| "turquoise_light_turquoise"
-							| "slate_gray_white"
-					  )
-					| null;
-				richText?: {
-					root: {
-						type: string;
-						children: {
-							type: string;
-							version: number;
-							[k: string]: unknown;
-						}[];
-						direction: ("ltr" | "rtl") | null;
-						format:
-							| "left"
-							| "start"
-							| "center"
-							| "right"
-							| "end"
-							| "justify"
-							| "";
-						indent: number;
-						version: number;
-					};
-					[k: string]: unknown;
-				} | null;
-				links?:
-					| {
-							link: {
-								type?: ("reference" | "custom") | null;
-								newTab?: boolean | null;
-								reference?: {
-									relationTo: "pages";
-									value: string | Page;
-								} | null;
-								url?: string | null;
-								label: string;
-								appearance?: ("default" | "primary" | "secondary") | null;
-							};
-							id?: string | null;
-					  }[]
-					| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'tabsection';
+		}
+	  | {
+		  subNavBackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		  navigationItem?:
+			| {
+				title: string;
+				url?: string | null;
 				id?: string | null;
-				blockName?: string | null;
-				blockType: "cta";
-		  }
-		| {
-				type?: ("row" | "column") | null;
-				layoutWidth?: ("full" | "contained" | "narrow") | null;
-				backgroundColor?:
-					| (
-							| "default"
-							| "dark_blue_light_gray"
-							| "orange_peach"
-							| "turquoise_yellow"
-							| "turquoise_light_turquoise"
-							| "slate_gray_white"
-					  )
-					| null;
-				enableHighlight?: boolean | null;
-				rows?:
-					| {
-							columns?:
-								| {
-										size: string;
-										halignment?: ("left" | "center" | "right") | null;
-										valignment?: ("top" | "center" | "bottom") | null;
-										extendToBorders?: boolean | null;
-										blocks: (
-											| {
-													number: string;
-													title?: string | null;
-													richText?: {
-														root: {
-															type: string;
-															children: {
-																type: string;
-																version: number;
-																[k: string]: unknown;
-															}[];
-															direction: ("ltr" | "rtl") | null;
-															format:
-																| "left"
-																| "start"
-																| "center"
-																| "right"
-																| "end"
-																| "justify"
-																| "";
-															indent: number;
-															version: number;
-														};
-														[k: string]: unknown;
-													} | null;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "stats";
-											  }
-											| {
-													author?: string | null;
-													richText?: {
-														root: {
-															type: string;
-															children: {
-																type: string;
-																version: number;
-																[k: string]: unknown;
-															}[];
-															direction: ("ltr" | "rtl") | null;
-															format:
-																| "left"
-																| "start"
-																| "center"
-																| "right"
-																| "end"
-																| "justify"
-																| "";
-															indent: number;
-															version: number;
-														};
-														[k: string]: unknown;
-													} | null;
-													authortitle?: string | null;
-													alignment?: ("left" | "center" | "right") | null;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "testimonial";
-											  }
-											| {
-													imageCardBlockBackgroundColor?:
-														| (
-																| "default"
-																| "dark_blue_light_gray"
-																| "orange_peach"
-																| "turquoise_yellow"
-																| "turquoise_light_turquoise"
-																| "slate_gray_white"
-														  )
-														| null;
-													title?: string | null;
-													richText?: {
-														root: {
-															type: string;
-															children: {
-																type: string;
-																version: number;
-																[k: string]: unknown;
-															}[];
-															direction: ("ltr" | "rtl") | null;
-															format:
-																| "left"
-																| "start"
-																| "center"
-																| "right"
-																| "end"
-																| "justify"
-																| "";
-															indent: number;
-															version: number;
-														};
-														[k: string]: unknown;
-													} | null;
-													image: string | Media;
-													links?:
-														| {
-																link: {
-																	type?: ("reference" | "custom") | null;
-																	newTab?: boolean | null;
-																	reference?: {
-																		relationTo: "pages";
-																		value: string | Page;
-																	} | null;
-																	url?: string | null;
-																	label: string;
-																	appearance?: ("primary" | "secondary") | null;
-																};
-																id?: string | null;
-														  }[]
-														| null;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "imageCard";
-											  }
-											| {
-													title?: string | null;
-													icon: string | Media;
-													darkicon?: string | Media | null;
-													richText?: {
-														root: {
-															type: string;
-															children: {
-																type: string;
-																version: number;
-																[k: string]: unknown;
-															}[];
-															direction: ("ltr" | "rtl") | null;
-															format:
-																| "left"
-																| "start"
-																| "center"
-																| "right"
-																| "end"
-																| "justify"
-																| "";
-															indent: number;
-															version: number;
-														};
-														[k: string]: unknown;
-													} | null;
-													links?:
-														| {
-																link: {
-																	type?: ("reference" | "custom") | null;
-																	newTab?: boolean | null;
-																	reference?: {
-																		relationTo: "pages";
-																		value: string | Page;
-																	} | null;
-																	url?: string | null;
-																	label: string;
-																	appearance?:
-																		| (
-																				| "primary"
-																				| "secondary"
-																				| "tertiary"
-																				| "default"
-																		  )
-																		| null;
-																};
-																id?: string | null;
-														  }[]
-														| null;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "comparison";
-											  }
-											| {
-													numberedItems?: boolean | null;
-													accordions?:
-														| {
-																title: string;
-																richText?: {
-																	root: {
-																		type: string;
-																		children: {
-																			type: string;
-																			version: number;
-																			[k: string]: unknown;
-																		}[];
-																		direction: ("ltr" | "rtl") | null;
-																		format:
-																			| "left"
-																			| "start"
-																			| "center"
-																			| "right"
-																			| "end"
-																			| "justify"
-																			| "";
-																		indent: number;
-																		version: number;
-																	};
-																	[k: string]: unknown;
-																} | null;
-																links?:
-																	| {
-																			link: {
-																				type?: ("reference" | "custom") | null;
-																				newTab?: boolean | null;
-																				reference?: {
-																					relationTo: "pages";
-																					value: string | Page;
-																				} | null;
-																				url?: string | null;
-																				label: string;
-																				appearance?:
-																					| ("primary" | "secondary")
-																					| null;
-																			};
-																			id?: string | null;
-																	  }[]
-																	| null;
-																id?: string | null;
-														  }[]
-														| null;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "accordion";
-											  }
-											| {
-													richText: {
-														root: {
-															type: string;
-															children: {
-																type: string;
-																version: number;
-																[k: string]: unknown;
-															}[];
-															direction: ("ltr" | "rtl") | null;
-															format:
-																| "left"
-																| "start"
-																| "center"
-																| "right"
-																| "end"
-																| "justify"
-																| "";
-															indent: number;
-															version: number;
-														};
-														[k: string]: unknown;
-													};
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "richText";
-											  }
-											| {
-													cornerStyle?:
-														| (
-																| "square"
-																| "slightly-rounded"
-																| "moderately-rounded"
-																| "very-rounded"
-																| "circular"
-														  )
-														| null;
-													enableHighlight?: boolean | null;
-													media: string | Media;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "mediaBlock";
-											  }
-											| {
-													links?:
-														| {
-																link: {
-																	type?: ("reference" | "custom") | null;
-																	newTab?: boolean | null;
-																	reference?: {
-																		relationTo: "pages";
-																		value: string | Page;
-																	} | null;
-																	url?: string | null;
-																	label: string;
-																	appearance?:
-																		| (
-																				| "default"
-																				| "primary"
-																				| "secondary"
-																				| "tertiary"
-																		  )
-																		| null;
-																};
-																id?: string | null;
-														  }[]
-														| null;
-													id?: string | null;
-													blockName?: string | null;
-													blockType: "ButtonGroup";
-											  }
-										)[];
-										id?: string | null;
-								  }[]
-								| null;
-							id?: string | null;
-					  }[]
-					| null;
-				columns?:
-					| {
-							size: string;
-							halignment?: ("left" | "center" | "right") | null;
-							valignment?: ("top" | "center" | "bottom") | null;
-							extendToBorders?: boolean | null;
-							blocks: (
-								| {
-										number: string;
-										title?: string | null;
-										richText?: {
-											root: {
-												type: string;
-												children: {
-													type: string;
-													version: number;
-													[k: string]: unknown;
-												}[];
-												direction: ("ltr" | "rtl") | null;
-												format:
-													| "left"
-													| "start"
-													| "center"
-													| "right"
-													| "end"
-													| "justify"
-													| "";
-												indent: number;
-												version: number;
-											};
-											[k: string]: unknown;
-										} | null;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "stats";
-								  }
-								| {
-										author?: string | null;
-										richText?: {
-											root: {
-												type: string;
-												children: {
-													type: string;
-													version: number;
-													[k: string]: unknown;
-												}[];
-												direction: ("ltr" | "rtl") | null;
-												format:
-													| "left"
-													| "start"
-													| "center"
-													| "right"
-													| "end"
-													| "justify"
-													| "";
-												indent: number;
-												version: number;
-											};
-											[k: string]: unknown;
-										} | null;
-										authortitle?: string | null;
-										alignment?: ("left" | "center" | "right") | null;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "testimonial";
-								  }
-								| {
-										imageCardBlockBackgroundColor?:
-											| (
-													| "default"
-													| "dark_blue_light_gray"
-													| "orange_peach"
-													| "turquoise_yellow"
-													| "turquoise_light_turquoise"
-													| "slate_gray_white"
-											  )
-											| null;
-										title?: string | null;
-										richText?: {
-											root: {
-												type: string;
-												children: {
-													type: string;
-													version: number;
-													[k: string]: unknown;
-												}[];
-												direction: ("ltr" | "rtl") | null;
-												format:
-													| "left"
-													| "start"
-													| "center"
-													| "right"
-													| "end"
-													| "justify"
-													| "";
-												indent: number;
-												version: number;
-											};
-											[k: string]: unknown;
-										} | null;
-										image: string | Media;
-										links?:
-											| {
-													link: {
-														type?: ("reference" | "custom") | null;
-														newTab?: boolean | null;
-														reference?: {
-															relationTo: "pages";
-															value: string | Page;
-														} | null;
-														url?: string | null;
-														label: string;
-														appearance?: ("primary" | "secondary") | null;
-													};
-													id?: string | null;
-											  }[]
-											| null;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "imageCard";
-								  }
-								| {
-										title?: string | null;
-										icon: string | Media;
-										darkicon?: string | Media | null;
-										richText?: {
-											root: {
-												type: string;
-												children: {
-													type: string;
-													version: number;
-													[k: string]: unknown;
-												}[];
-												direction: ("ltr" | "rtl") | null;
-												format:
-													| "left"
-													| "start"
-													| "center"
-													| "right"
-													| "end"
-													| "justify"
-													| "";
-												indent: number;
-												version: number;
-											};
-											[k: string]: unknown;
-										} | null;
-										links?:
-											| {
-													link: {
-														type?: ("reference" | "custom") | null;
-														newTab?: boolean | null;
-														reference?: {
-															relationTo: "pages";
-															value: string | Page;
-														} | null;
-														url?: string | null;
-														label: string;
-														appearance?:
-															| (
-																	| "primary"
-																	| "secondary"
-																	| "tertiary"
-																	| "default"
-															  )
-															| null;
-													};
-													id?: string | null;
-											  }[]
-											| null;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "comparison";
-								  }
-								| {
-										numberedItems?: boolean | null;
-										accordions?:
-											| {
-													title: string;
-													richText?: {
-														root: {
-															type: string;
-															children: {
-																type: string;
-																version: number;
-																[k: string]: unknown;
-															}[];
-															direction: ("ltr" | "rtl") | null;
-															format:
-																| "left"
-																| "start"
-																| "center"
-																| "right"
-																| "end"
-																| "justify"
-																| "";
-															indent: number;
-															version: number;
-														};
-														[k: string]: unknown;
-													} | null;
-													links?:
-														| {
-																link: {
-																	type?: ("reference" | "custom") | null;
-																	newTab?: boolean | null;
-																	reference?: {
-																		relationTo: "pages";
-																		value: string | Page;
-																	} | null;
-																	url?: string | null;
-																	label: string;
-																	appearance?: ("primary" | "secondary") | null;
-																};
-																id?: string | null;
-														  }[]
-														| null;
-													id?: string | null;
-											  }[]
-											| null;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "accordion";
-								  }
-								| {
-										richText: {
-											root: {
-												type: string;
-												children: {
-													type: string;
-													version: number;
-													[k: string]: unknown;
-												}[];
-												direction: ("ltr" | "rtl") | null;
-												format:
-													| "left"
-													| "start"
-													| "center"
-													| "right"
-													| "end"
-													| "justify"
-													| "";
-												indent: number;
-												version: number;
-											};
-											[k: string]: unknown;
-										};
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "richText";
-								  }
-								| {
-										cornerStyle?:
-											| (
-													| "square"
-													| "slightly-rounded"
-													| "moderately-rounded"
-													| "very-rounded"
-													| "circular"
-											  )
-											| null;
-										enableHighlight?: boolean | null;
-										media: string | Media;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "mediaBlock";
-								  }
-								| {
-										links?:
-											| {
-													link: {
-														type?: ("reference" | "custom") | null;
-														newTab?: boolean | null;
-														reference?: {
-															relationTo: "pages";
-															value: string | Page;
-														} | null;
-														url?: string | null;
-														label: string;
-														appearance?:
-															| (
-																	| "default"
-																	| "primary"
-																	| "secondary"
-																	| "tertiary"
-															  )
-															| null;
-													};
-													id?: string | null;
-											  }[]
-											| null;
-										id?: string | null;
-										blockName?: string | null;
-										blockType: "ButtonGroup";
-								  }
-							)[];
-							id?: string | null;
-					  }[]
-					| null;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "section";
-		  }
-		| {
-				form: string | Form;
-				enableIntro?: boolean | null;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "formBlock";
-		  }
-		| {
-				cornerStyle?:
-					| (
-							| "square"
-							| "slightly-rounded"
-							| "moderately-rounded"
-							| "very-rounded"
-							| "circular"
-					  )
-					| null;
-				enableHighlight?: boolean | null;
-				media: string | Media;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "mediaBlock";
-		  }
-		| {
-				introContent?: {
-					root: {
-						type: string;
-						children: {
-							type: string;
-							version: number;
-							[k: string]: unknown;
-						}[];
-						direction: ("ltr" | "rtl") | null;
-						format:
-							| "left"
-							| "start"
-							| "center"
-							| "right"
-							| "end"
-							| "justify"
-							| "";
-						indent: number;
-						version: number;
-					};
-					[k: string]: unknown;
-				} | null;
-				populateBy?: ("collection" | "selection") | null;
-				relationTo?: "pages" | null;
-				limit?: number | null;
-				selectedDocs?:
-					| {
-							relationTo: "pages";
-							value: string | Page;
-					  }[]
-					| null;
-				populatedDocs?:
-					| {
-							relationTo: "pages";
-							value: string | Page;
-					  }[]
-					| null;
-				populatedDocsTotal?: number | null;
-				id?: string | null;
-				blockName?: string | null;
-				blockType: "archive";
-		  }
+			  }[]
+			| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'subNavigation';
+		}
 	)[];
 	slug?: string | null;
 	updatedAt: string;
 	createdAt: string;
-	_status?: ("draft" | "published") | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "partners".
- */
-export interface Partner {
+	_status?: ('draft' | 'published') | null;
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "partners".
+   */
+  export interface Partner {
 	id: string;
 	title: string;
 	shortName: string;
 	acroynm?: string | null;
 	contact: {
-		street1: string;
-		street2?: string | null;
-		city: string;
-		state:
-			| "AL"
-			| "AK"
-			| "AZ"
-			| "AR"
-			| "CA"
-			| "CO"
-			| "CT"
-			| "DE"
-			| "FL"
-			| "GA"
-			| "HI"
-			| "ID"
-			| "IL"
-			| "IN"
-			| "IA"
-			| "KS"
-			| "KY"
-			| "LA"
-			| "ME"
-			| "MD"
-			| "MA"
-			| "MI"
-			| "MN"
-			| "MS"
-			| "MO"
-			| "MT"
-			| "NE"
-			| "NV"
-			| "NH"
-			| "NJ"
-			| "NM"
-			| "NY"
-			| "NC"
-			| "ND"
-			| "OH"
-			| "OK"
-			| "OR"
-			| "PA"
-			| "RI"
-			| "SC"
-			| "SD"
-			| "TN"
-			| "TX"
-			| "UT"
-			| "VT"
-			| "VA"
-			| "WA"
-			| "WV"
-			| "WI"
-			| "WY"
-			| "DC";
-		zip: string;
-		country?: string | null;
+	  street1: string;
+	  street2?: string | null;
+	  city: string;
+	  state:
+		| 'AL'
+		| 'AK'
+		| 'AZ'
+		| 'AR'
+		| 'CA'
+		| 'CO'
+		| 'CT'
+		| 'DE'
+		| 'FL'
+		| 'GA'
+		| 'HI'
+		| 'ID'
+		| 'IL'
+		| 'IN'
+		| 'IA'
+		| 'KS'
+		| 'KY'
+		| 'LA'
+		| 'ME'
+		| 'MD'
+		| 'MA'
+		| 'MI'
+		| 'MN'
+		| 'MS'
+		| 'MO'
+		| 'MT'
+		| 'NE'
+		| 'NV'
+		| 'NH'
+		| 'NJ'
+		| 'NM'
+		| 'NY'
+		| 'NC'
+		| 'ND'
+		| 'OH'
+		| 'OK'
+		| 'OR'
+		| 'PA'
+		| 'RI'
+		| 'SC'
+		| 'SD'
+		| 'TN'
+		| 'TX'
+		| 'UT'
+		| 'VT'
+		| 'VA'
+		| 'WA'
+		| 'WV'
+		| 'WI'
+		| 'WY'
+		| 'DC';
+	  zip: string;
+	  country?: string | null;
 	};
 	logo: string | Media;
 	phone?: string | null;
 	email?: string | null;
 	links?:
-		| {
-				link: {
-					type?: ("reference" | "custom") | null;
-					newTab?: boolean | null;
-					reference?: {
-						relationTo: "pages";
-						value: string | Page;
-					} | null;
-					url?: string | null;
-					label: string;
-				};
-				id?: string | null;
-		  }[]
-		| null;
+	  | {
+		  link: {
+			type?: ('reference' | 'custom') | null;
+			newTab?: boolean | null;
+			reference?: {
+			  relationTo: 'pages';
+			  value: string | Page;
+			} | null;
+			url?: string | null;
+			label: string;
+		  };
+		  id?: string | null;
+		}[]
+	  | null;
 	publishedDate?: string | null;
 	slug?: string | null;
 	updatedAt: string;
 	createdAt: string;
-	_status?: ("draft" | "published") | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "carousel-cards".
- */
-export interface CarouselCard {
+	_status?: ('draft' | 'published') | null;
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "carousel-cards".
+   */
+  export interface CarouselCard {
 	id: string;
 	admintitle?: string | null;
 	partner: string | Partner;
@@ -2337,146 +2285,151 @@ export interface CarouselCard {
 	title: string;
 	subtitle?: string | null;
 	description?: {
-		root: {
-			type: string;
-			children: {
-				type: string;
-				version: number;
-				[k: string]: unknown;
-			}[];
-			direction: ("ltr" | "rtl") | null;
-			format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
-			indent: number;
-			version: number;
-		};
-		[k: string]: unknown;
+	  root: {
+		type: string;
+		children: {
+		  type: string;
+		  version: number;
+		  [k: string]: unknown;
+		}[];
+		direction: ('ltr' | 'rtl') | null;
+		format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+		indent: number;
+		version: number;
+	  };
+	  [k: string]: unknown;
 	} | null;
 	links?:
-		| {
-				link: {
-					type?: ("reference" | "custom") | null;
-					newTab?: boolean | null;
-					reference?: {
-						relationTo: "pages";
-						value: string | Page;
-					} | null;
-					url?: string | null;
-					label: string;
-				};
-				id?: string | null;
-		  }[]
-		| null;
+	  | {
+		  link: {
+			type?: ('reference' | 'custom') | null;
+			newTab?: boolean | null;
+			reference?: {
+			  relationTo: 'pages';
+			  value: string | Page;
+			} | null;
+			url?: string | null;
+			label: string;
+		  };
+		  id?: string | null;
+		}[]
+	  | null;
 	image: string | Media;
 	updatedAt: string;
 	createdAt: string;
-	_status?: ("draft" | "published") | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "lead-types".
- */
-export interface LeadType {
+	_status?: ('draft' | 'published') | null;
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "lead-types".
+   */
+  export interface LeadType {
 	id: string;
 	title: string;
 	updatedAt: string;
 	createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "form-submissions".
- */
-export interface FormSubmission {
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "form-submissions".
+   */
+  export interface FormSubmission {
 	id: string;
 	form: string | Form;
 	submissionData?:
-		| {
-				field: string;
-				value: string;
-				id?: string | null;
-		  }[]
-		| null;
+	  | {
+		  field: string;
+		  value: string;
+		  id?: string | null;
+		}[]
+	  | null;
 	updatedAt: string;
 	createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-preferences".
- */
-export interface PayloadPreference {
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "payload-preferences".
+   */
+  export interface PayloadPreference {
 	id: string;
 	user: {
-		relationTo: "users";
-		value: string | User;
+	  relationTo: 'users';
+	  value: string | User;
 	};
 	key?: string | null;
 	value?:
-		| {
-				[k: string]: unknown;
-		  }
-		| unknown[]
-		| string
-		| number
-		| boolean
-		| null;
+	  | {
+		  [k: string]: unknown;
+		}
+	  | unknown[]
+	  | string
+	  | number
+	  | boolean
+	  | null;
 	updatedAt: string;
 	createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-migrations".
- */
-export interface PayloadMigration {
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "payload-migrations".
+   */
+  export interface PayloadMigration {
 	id: string;
 	name?: string | null;
 	batch?: number | null;
 	updatedAt: string;
 	createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "header".
- */
-export interface Header {
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "header".
+   */
+  export interface Header {
 	id: string;
 	navItems?:
-		| {
-				link: {
-					type?: ("reference" | "custom") | null;
-					newTab?: boolean | null;
-					reference?: {
-						relationTo: "pages";
-						value: string | Page;
-					} | null;
-					url?: string | null;
-					label: string;
-				};
-				id?: string | null;
-		  }[]
-		| null;
+	  | {
+		  link: {
+			type?: ('reference' | 'custom') | null;
+			newTab?: boolean | null;
+			reference?: {
+			  relationTo: 'pages';
+			  value: string | Page;
+			} | null;
+			url?: string | null;
+			label: string;
+		  };
+		  id?: string | null;
+		}[]
+	  | null;
 	updatedAt?: string | null;
 	createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "footer".
- */
-export interface Footer {
+  }
+  /**
+   * This interface was referenced by `Config`'s JSON-Schema
+   * via the `definition` "footer".
+   */
+  export interface Footer {
 	id: string;
 	navItems?:
-		| {
-				link: {
-					type?: ("reference" | "custom") | null;
-					newTab?: boolean | null;
-					reference?: {
-						relationTo: "pages";
-						value: string | Page;
-					} | null;
-					url?: string | null;
-					label: string;
-				};
-				id?: string | null;
-		  }[]
-		| null;
+	  | {
+		  link: {
+			type?: ('reference' | 'custom') | null;
+			newTab?: boolean | null;
+			reference?: {
+			  relationTo: 'pages';
+			  value: string | Page;
+			} | null;
+			url?: string | null;
+			label: string;
+		  };
+		  id?: string | null;
+		}[]
+	  | null;
 	updatedAt?: string | null;
 	createdAt?: string | null;
-}
+  }
+  
+  
+  declare module 'payload' {
+	export interface GeneratedTypes extends Config {}
+  }

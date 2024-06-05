@@ -259,45 +259,44 @@ export const fetchPage = async (
 };
 
 
-// export const fetchPosts = async (): Promise<Post[]> => {
-// 	const currentDate = new Date();
-// 	const { data } = await fetch(
-// 		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
-// 		{
-// 			method: "POST",
-// 			headers: {
-// 				"Content-Type": "application/json",
-// 			},
-// 			next,
-// 			body: JSON.stringify({
-// 				query: POSTS,
-// 				variables: {
-// 					publishedOn: currentDate,
-// 				},
-// 			}),
-// 		},
-// 	).then(res => res.json());
+export const fetchPosts = async (): Promise<Post[]> => {
+	const currentDate = new Date();
+   const { data } = await fetch(
+	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
+	   {
+		   method: "POST",
+		   headers: {
+			   "Content-Type": "application/json",
+		   },
+		   cache: "no-store",
+		   body: JSON.stringify({
+			   query: POSTS,
+			   variables: {
+				   publishedOn: currentDate,
+			   },
+		   }),
+	   },
+   ).then(res => res.json());
+   return data?.Posts?.docs;
+};
 
-// 	return data?.Posts?.docs;
-// };
-
-// export const fetchPost = async (slug: string): Promise<Post> => {
-// 	const { data } = await fetch(
-// 		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?post=${slug}`,
-// 		{
-// 			method: "POST",
-// 			headers: {
-// 				"Content-Type": "application/json",
-// 			},
-// 			next,
-// 			body: JSON.stringify({
-// 				query: POST,
-// 				variables: {
-// 					slug,
-// 				},
-// 			}),
-// 		},
-// 	).then(res => res.json());
-
-// 	return data?.Posts?.docs[0];
-// };
+export const fetchPost = async (slug: string): Promise<Post> => {
+   console.log(slug,'fetchflug**')
+   const { data } = await fetch(
+	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?post=${slug}`,
+	   {
+		   method: "POST",
+		   headers: {
+			   "Content-Type": "application/json",
+		   },
+		   cache: "no-store",
+		   body: JSON.stringify({
+			   query: POST,
+			   variables: {
+				   slug,
+			   },
+		   }),
+	   },
+   ).then(res => res.json());
+   return data?.Posts?.docs[0];
+};
