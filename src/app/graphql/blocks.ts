@@ -189,7 +189,7 @@ export const TABSECTION = `
     shortTitle
     contentTitle
     description
-    tabButtongroup {
+    links {
       link ${LINK_FIELDS()}
     }
     useSameIcon
