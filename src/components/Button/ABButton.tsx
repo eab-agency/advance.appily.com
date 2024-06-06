@@ -6,7 +6,7 @@ import { useCookies } from "react-cookie";
 import { UTM_PARAMS } from "@/middleware";
 import OnetrustActiveGroups from "@/hooks/useOneturstActiveGroups";
 
-var trackingCookieCategory = "C0004,";
+var trackingCookieCategory = "C0004";
 
 function Button({ label, appearance, href, className }) {
   const [cookies, _, removeCookie] = useCookies([UTM_PARAMS]);
