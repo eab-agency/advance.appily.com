@@ -21,6 +21,11 @@ const strictTransportHeader = {
     ],
   };
 
+	// function to trip https:// from the front of the url
+function stripHttps(url) {
+	return url.replace(/^https?:\/\//, "");
+}
+
 const nextConfig = {
 	typescript: {
 		// !! WARN !!
@@ -54,6 +59,10 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
+				hostname: "qa-appily-cms.payloadcms.app",
+			},
+			{
+				protocol: "https",
 				hostname: "advance-cms.appily.com", // port: "3000",
 			},
 			{
@@ -70,7 +79,7 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: process.env.NEXT_PUBLIC_CMS_URL,
+				hostname: stripHttps(process.env.NEXT_PUBLIC_CMS_URL),
 				// port: "3000",
 				pathname: "/media/**",
 			},

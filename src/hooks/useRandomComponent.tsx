@@ -25,7 +25,7 @@ const RandomComponent = ({
     } else {
       inPercentageRange = percentageSplit(percentage);
     }
-    console.log("🆎:", inPercentageRange);
+    // console.log("🆎:", inPercentageRange);
     setShowPercentageComponent(inPercentageRange);
   }, [force, percentage]);
 
