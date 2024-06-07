@@ -12,6 +12,7 @@ function Button({ label, appearance, href, className }) {
   const [cookies, _, removeCookie] = useCookies([UTM_PARAMS]);
   const [finalHref, setFinalHref] = useState(href);
   const activeGroups = OnetrustActiveGroups();
+  console.log("🚀 ~ Button ~ activeGroups:", activeGroups);
 
   // detect if activeGroups changes and if it does not include trackingCookieCategory, remove the UTM_PARAMS cookie
   useEffect(() => {
