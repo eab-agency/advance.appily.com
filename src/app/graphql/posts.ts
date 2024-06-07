@@ -36,7 +36,7 @@ export const POST_SLUGS = `
       }
     }
   }
-`
+`;
 
 export const POST = `
   query Post($slug: String!) {
@@ -44,15 +44,10 @@ export const POST = `
       docs {
         id
         title
-        hero {
-          type
-          richText
-          links {
-            link ${LINK_FIELDS()}
-          }
-          title
+        updatedAt
+        publishedDate
+        postFeaturedImage {
           ${MEDIA}
-          ${ANIMATION}
         }
         layout {
           ${CALL_TO_ACTION}

@@ -34,7 +34,7 @@ export const Blocks: React.FC<{
   const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0;
   if (hasBlocks) {
     return (
-      <div>
+      <div className="layout-blocks">
         {blocks.map((block, index) => {
           const { blockType } = block;
           if (blockType && blockType in blockComponents) {

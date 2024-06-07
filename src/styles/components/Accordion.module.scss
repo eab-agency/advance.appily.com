@@ -1,10 +1,9 @@
-// @use 'sass:color';
-// @use '../config/tokens';
 @use "@/styles/global/tokens";
 
 .accordion {
   position: relative;
   z-index: tokens.$layer-1;
+  max-width: tokens.$mq-900;
 
   .accordion-header {
     cursor: pointer;
@@ -61,7 +60,7 @@
     flex-direction: column;
     gap: tokens.$size-5;
     width: 100%;
-    max-width: tokens.$mq-900;
+    // max-width: tokens.$mq-900;
     padding: clamp(tokens.$padding-l, 2vw, tokens.$padding-l * 2);
     background: var(--c-bg5);
     border-bottom-left-radius: tokens.$borderRadius-l;

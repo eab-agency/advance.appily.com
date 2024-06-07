@@ -1,9 +1,10 @@
-import { fetchPosts, fetchPost } from "@/app/graphql";
+import { fetchPost, fetchPosts } from "@/app/graphql";
+import { Blocks } from '@/components/Block';
+import "@/styles/layouts/templates/PostPage.scss"
 import { notFound } from "next/navigation";
 import React from "react";
 import { Post } from "../../../../../payload-types";
 import { Hero } from '../../../../blocks/HeroBlock';
-import { Blocks } from '@/components/Block';
 
 export async function generateStaticParams() {
   try {
@@ -19,6 +20,12 @@ interface PostComponentProps {
   params: { slug: string };
 }
 
+const formatDate = (dateString: string) => {
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat('en-US', options).format(date);
+}
+
 const PostComponent = async ({ params: { slug = '' } }: PostComponentProps) => {
   let post: Post | null = null;
 
@@ -32,13 +39,29 @@ const PostComponent = async ({ params: { slug = '' } }: PostComponentProps) => {
     notFound();
   }
 
-  
+  const {
+    postFeaturedImage,
+    layout,
+    title,
+    publishedDate,
+    updatedAt
+  } = post;
 
   return (
-    <React.Fragment>
-      {post.hero && <Hero {...post.hero} />}
-      <Blocks blocks={post.layout} />
-    </React.Fragment>
+    <>
+      <header className="post-header">
+        <h1>{title}</h1>
+        <p className="post-dates">
+          {publishedDate && `Published: ${formatDate(publishedDate)}`}
+          {publishedDate && updatedAt && ' | '}
+          {updatedAt && `Updated: ${formatDate(updatedAt)}`}
+        </p>
+      </header>
+      {postFeaturedImage &&
+        <Hero {...postFeaturedImage} />
+      }
+      <Blocks blocks={layout} />
+    </>
   );
 };
 

@@ -1,3 +1,14 @@
+@use "@/styles/global/tokens";
+
 .accordion-group {
   margin-block: clamp(1.5rem, 4vw, 4rem);
+  width: 100%;
+  max-width: tokens.$mq-1200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > div {
+    width: 100%;
+  }
 }
