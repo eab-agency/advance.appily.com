@@ -4,11 +4,13 @@ import { statesToMatchAgainst } from "@/helpers/getMatchedSchool";
 import isDevMode from "@/helpers/isDevMode";
 
 import styles from "@/styles/components/LocationScoreDev.module.scss";
+import { useRef } from "react";
 
 const LocationInDevMode = () => {
   const { location, setLocation, globalPrivacyControl } = useUser();
+  const devInfoBoxRef = useRef<HTMLDivElement>(null);
 
-  const setInputLocation = selectedLocation => {
+  const setInputLocation = (selectedLocation) => {
     setLocation({ region_iso_code: selectedLocation });
   };
   // only return if isDevMode
@@ -19,32 +21,54 @@ const LocationInDevMode = () => {
   // open the dev info box
 
   const openDevInfoBox = () => {
-    const devInfoBox = document.querySelector("#devInfoBox");
-    if (devInfoBox) {
-      devInfoBox.classList.toggle(styles.open);
+    if (devInfoBoxRef.current) {
+      devInfoBoxRef.current.classList.toggle(styles.open);
     }
   };
 
-
   return (
-    <div id="devInfoBox" className={styles.containerStyles}>
-      <button type="button" className={styles.devBoxOpener} onClick={() => openDevInfoBox()}>Dev Info Box</button>
+    <div id="devInfoBox" className={styles.containerStyles} ref={devInfoBoxRef}>
+      <button
+        type="button"
+        className={styles.devBoxOpener}
+        onClick={() => openDevInfoBox()}
+      >
+        Dev Info Box
+      </button>
       <div className={styles.devInfoContainer}>
-
         {location ? (
           <>
-            <p>Region: <span className={styles.locationValue}>{location.region_iso_code}</span></p>
-
-            <p>Country: <span className={styles.locationValue}>{location.country_code}</span></p>
-
-            <p>Not US: <span className={styles.locationValue}>{location.notUS ? "true" : "false"}</span></p>
-
             <p>
-              Global privacy set on browser: <span className={styles.locationValue}>{globalPrivacyControl ? "yes" : "no"}</span>
+              Region:{" "}
+              <span className={styles.locationValue}>
+                {location.region_iso_code}
+              </span>
             </p>
 
             <p>
-              Will skip forms: <span className={styles.locationValue}>
+              Country:{" "}
+              <span className={styles.locationValue}>
+                {location.country_code}
+              </span>
+            </p>
+
+            <p>
+              Not US:{" "}
+              <span className={styles.locationValue}>
+                {location.notUS ? "true" : "false"}
+              </span>
+            </p>
+
+            <p>
+              Global privacy set on browser:{" "}
+              <span className={styles.locationValue}>
+                {globalPrivacyControl ? "yes" : "no"}
+              </span>
+            </p>
+
+            <p>
+              Will skip forms:{" "}
+              <span className={styles.locationValue}>
                 {globalPrivacyControl || location.notUS ? "yes" : "no"}
               </span>
             </p>
@@ -54,10 +78,13 @@ const LocationInDevMode = () => {
         )}
         <div className={styles.selectState}>
           <label htmlFor="location">Change Location:</label>
-          <select id="location" onChange={e => setInputLocation(e.target.value)}>
+          <select
+            id="location"
+            onChange={(e) => setInputLocation(e.target.value)}
+          >
             <option value="">Select a state</option>
             {/* iterated through the statesToMatchAgainst object for each option */}
-            {Object.keys(statesToMatchAgainst).map(state => (
+            {Object.keys(statesToMatchAgainst).map((state) => (
               <option key={state} value={state}>
                 {state}
               </option>
@@ -65,7 +92,6 @@ const LocationInDevMode = () => {
           </select>
         </div>
       </div>
-
     </div>
   );
 };
