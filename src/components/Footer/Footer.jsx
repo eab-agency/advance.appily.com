@@ -6,7 +6,7 @@ import styles from "@/styles/components/PageFooter.module.scss";
 import Image from "next/image";
 
 const Footer = () => {
-  const { location } = useUser()
+  const { location, oneTrust } = useUser();
   const privacyClick = () => {
     if (
       typeof window.OneTrust === "undefined" ||
@@ -17,21 +17,20 @@ const Footer = () => {
     window.OneTrust.ToggleInfoDisplay();
   };
 
-
   return (
     <footer className={styles.pageFooter}>
       <div className={styles.wrapper}>
         <div className={styles.legalInfo}>
           <div className={styles.logoContainer}>
-          <figure className={styles.logo}>
-            <Image src="/images/appily-logo.svg" alt="Appily Logo" fill />
-          </figure>
-          <div className={styles.copyright}>
-            <p>
-              © {new Date().getFullYear()} All rights reserved.{" "}
-              <a href="https://www.appily.com">www.Appily.com</a>
-            </p>
-          </div>
+            <figure className={styles.logo}>
+              <Image src="/images/appily-logo.svg" alt="Appily Logo" fill />
+            </figure>
+            <div className={styles.copyright}>
+              <p>
+                © {new Date().getFullYear()} All rights reserved.{" "}
+                <a href="https://www.appily.com">www.Appily.com</a>
+              </p>
+            </div>
           </div>
           <nav className={styles.legalLinks}>
             <ul className="footer-col-1">
@@ -105,10 +104,8 @@ const Footer = () => {
                 />
               </li>
             </ul>
-
           </nav>
         </div>
-
       </div>
     </footer>
   );

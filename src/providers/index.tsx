@@ -6,41 +6,42 @@ import { SWRConfig } from "swr";
 
 import cssVariables from "../../cssVariables";
 import { ContextProvider } from "../context/context";
+import { CookiesProvider } from "react-cookie";
 
 // import { AuthProvider } from './Auth'
 const fetcher = (...args: [RequestInfo, RequestInit?]) =>
-	fetch(...args).then(res => res.json());
+  fetch(...args).then((res) => res.json());
 
 export const Providers: React.FC<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }> = ({ children }) => {
-	return (
-		// <AuthProvider>
-		<SWRConfig value={{ fetcher }}>
-			<ContextProvider>
-				<GridProvider
-					breakpoints={{
-						s: cssVariables.breakpoints.s,
-						m: cssVariables.breakpoints.m,
-						l: cssVariables.breakpoints.l,
-					}}
-					colGap={{
-						s: "24px",
-						m: "48px",
-						l: "48px",
-						xl: "72px",
-					}}
-					cols={{
-						s: 4,
-						m: 4,
-						l: 12,
-						xl: 12,
-					}}
-				>
-					{children}
-				</GridProvider>
-			</ContextProvider>
-		</SWRConfig>
-		// </AuthProvider>
-	);
+  return (
+    <SWRConfig value={{ fetcher }}>
+      <ContextProvider>
+        <CookiesProvider>
+          <GridProvider
+            breakpoints={{
+              s: cssVariables.breakpoints.s,
+              m: cssVariables.breakpoints.m,
+              l: cssVariables.breakpoints.l,
+            }}
+            colGap={{
+              s: "24px",
+              m: "48px",
+              l: "48px",
+              xl: "72px",
+            }}
+            cols={{
+              s: 4,
+              m: 4,
+              l: 12,
+              xl: 12,
+            }}
+          >
+            {children}
+          </GridProvider>
+        </CookiesProvider>
+      </ContextProvider>
+    </SWRConfig>
+  );
 };

@@ -29,6 +29,7 @@ interface UserLocationContextProps {
   globalPrivacyControl: boolean;
   vertical: string;
   setVertical: React.Dispatch<React.SetStateAction<string>>;
+  oneTrust: any;
 }
 
 const UserLocationContext = createContext<UserLocationContextProps>(null!);
@@ -36,19 +37,29 @@ const UserLocationContext = createContext<UserLocationContextProps>(null!);
 function ContextProvider({ children }: { children: React.ReactNode }) {
   const [matchedSchools, setMatchedSchools] = useState<any[]>([]);
   const [oneTrust, setOneTrust] = useState<any>(null);
+  const [oneTrustActiveGroups, setOneTrustActiveGroups] = useState<any>(null);
 
   const [globalPrivacyControl, setGlobalPrivacyControl] = useState(null);
+
+  // useEffect(() => {
+  //   console.log("OneTrust", oneTrust);
+  // }, [oneTrust]);
 
   // check if window.OneTrust is defined and if so, set a listener for the OneTrustUpdated event
   useEffect(() => {
     const handleOneTrustUpdated = () => {
       // console.log(
-      // 	"🚀 ~ file: context.tsx:49 ~ handleOneTrustUpdated ~ handleOneTrustUpdated:",
-      // 	handleOneTrustUpdated,
+      //   "🚀 ~ file: context.tsx:49 ~ handleOneTrustUpdated ~ handleOneTrustUpdated:",
+      //   handleOneTrustUpdated,
       // );
       if (window.OneTrust) {
         // console.log("Setting OneTrust");
+        // console.log(
+        //   "🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 ~ handleOneTrustUpdated ~ window.OneTrustActiveGroups:",
+        //   window.OnetrustActiveGroups,
+        // );
         setOneTrust(window.OneTrust);
+        setOneTrustActiveGroups(window.OnetrustActiveGroups);
       }
     };
 
@@ -56,6 +67,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
       if (window.OneTrust) {
         // console.log("window is defined... Setting OneTrust");
         setOneTrust(window.OneTrust);
+        setOneTrustActiveGroups(window.OnetrustActiveGroups);
       } else {
         // console.log("Adding event listener for OneTrustUpdated");
         window.addEventListener("OneTrustUpdated", handleOneTrustUpdated);
@@ -64,6 +76,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
           if (window.OneTrust) {
             // console.log("OneTrust is now available... Setting OneTrust");
             setOneTrust(window.OneTrust);
+            setOneTrustActiveGroups(window.OnetrustActiveGroups);
             clearInterval(intervalId); // Clear the interval once OneTrust is available
           }
         }, 1000);
@@ -72,7 +85,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
 
     return () => {
       if (typeof window !== "undefined") {
-        console.log("Removing event listener for OneTrustUpdated");
+        // console.log("Removing event listener for OneTrustUpdated");
         window.removeEventListener("OneTrustUpdated", handleOneTrustUpdated);
       }
     };
@@ -145,6 +158,8 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
       vertical,
       setVertical,
       globalPrivacyControl,
+      oneTrust,
+      oneTrustActiveGroups,
     }),
     [
       matchedSchools,
@@ -158,6 +173,8 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
       vertical,
       setVertical,
       globalPrivacyControl,
+      oneTrust,
+      oneTrustActiveGroups,
     ],
   );
 
