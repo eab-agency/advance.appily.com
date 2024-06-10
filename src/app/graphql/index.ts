@@ -123,7 +123,7 @@ export async function fetchHeader(): Promise<Header> {
 	  headers: {
 		'Content-Type': 'application/json',
 	  },
-	  cache: "no-store",
+	  // cache: "no-store",
 	  body: JSON.stringify({
 		query: HEADER_QUERY,
 	  }),
@@ -147,7 +147,7 @@ export async function fetchHeader(): Promise<Header> {
 	  headers: {
 		'Content-Type': 'application/json',
 	  },
-	  cache: "no-store",
+	  // cache: "no-store",
 	  body: JSON.stringify({
 		query: FOOTER_QUERY,
 	  }),
@@ -228,7 +228,7 @@ export const fetchPage = async (
 			headers: {
 				"Content-Type": "application/json",
 			},
-			cache: "no-store",
+			// cache: "no-store",
 			body: JSON.stringify({
 				query: PAGE,
 				variables: {
