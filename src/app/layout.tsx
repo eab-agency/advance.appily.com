@@ -11,9 +11,9 @@ import { mergeTwitter } from "../seo/mergeTwitter";
 
 import "@/styles/styles.scss";
 
-import { Footer, Header } from "@/components";
-
 import Script from "next/script";
+import HeaderComponent from "../components/Header";
+import FooterComponent from "../components/Footer";
 
 const isDev = process.env.NEXT_PUBLIC_ISDEV;
 
@@ -44,10 +44,11 @@ export default async function RootLayout({
       <GoogleTagManager gtmId={GTM_ID} />
       <body>
         <Providers>
-          <Header links={data.links} />
+          {/* @ts-expect-error */}
+          <HeaderComponent />
+          {/* <LocationInDevMode /> */}
           <main className="layout-wrapper">{children}</main>
-          <Footer />
-          <LocationInDevMode />
+          <FooterComponent />
         </Providers>
       </body>
     </html>

@@ -38,7 +38,10 @@ const RootPage = () => {
         <h1>
           Thinking of <strong>Returning to College?</strong>
         </h1>
-        <p>Find tools and tips to help you <strong>advance</strong> your studies — and your career.</p>
+        <p>
+          Find tools and tips to help you <strong>advance</strong> your studies
+          — and your career.
+        </p>
       </PageHero>
       <section className="quizSection">
         <div className="group center-aligned row cols-2">
@@ -54,9 +57,17 @@ const RootPage = () => {
             <h2>Explore Your Path to Advanced Education</h2>
             <div>
               <p>
-                If you&apos;re eager to <strong>pursue graduate studies</strong> or <strong>complete your undergraduate degree</strong> (and you aren’t currently in high school) Appily Advance is the resource for you.</p>
+                If you&apos;re eager to <strong>pursue graduate studies</strong>{" "}
+                or <strong>complete your undergraduate degree</strong> (and you
+                aren’t currently in high school) Appily Advance is the resource
+                for you.
+              </p>
 
-              <p>With <Link href="/careers">career quizzes</Link> and <Link href="/degree-completion">degree planning tools</Link>, we can help you find your path forward and understand the best way to get where you want to go.
+              <p>
+                With <Link href="/careers">career quizzes</Link> and{" "}
+                <Link href="/degree-completion">degree planning tools</Link>, we
+                can help you find your path forward and understand the best way
+                to get where you want to go.
               </p>
               <p>
                 <strong>Still in high school?</strong>

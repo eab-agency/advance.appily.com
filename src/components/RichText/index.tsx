@@ -1,21 +1,32 @@
-'use client'
+"use client";
 
-import React from 'react'
+import serializeLexicalRichText from "./serialize";
+import classes from "./index.module.scss";
+import React from "react";
 
-import serialize from './serialize'
-
-import classes from './index.module.scss'
-
-const RichText: React.FC<{ className?: string; content: any }> = ({ className, content }) => {
-  if (!content) {
-    return null
-  }
-
-  return (
-    <div className={[classes.richText, className].filter(Boolean).join(' ')}>
-      {serialize(content)}
-    </div>
-  )
+interface RichTextProps {
+  className?: string;
+  content: any;
+  customClassNames?: string;
 }
 
-export default RichText
+const RichText = function ({
+  className,
+  content,
+  customClassNames,
+}: RichTextProps) {
+  if (!content?.root?.children) return "";
+
+  return (
+    <div
+      className={`${[classes.richText, className].filter(Boolean).join(" ")} `}
+    >
+      {serializeLexicalRichText({
+        children: content.root.children,
+        customClassNames,
+      })}
+    </div>
+  );
+};
+
+export default RichText;

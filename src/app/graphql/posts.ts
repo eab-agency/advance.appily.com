@@ -1,4 +1,4 @@
-import { ARCHIVE_BLOCK, CALL_TO_ACTION, CONTENT, MEDIA_BLOCK } from './blocks'
+import { ARCHIVE_BLOCK, CALL_TO_ACTION, SECTION, MEDIA_BLOCK } from './blocks'
 import { LINK_FIELDS } from './link'
 import { MEDIA } from './media'
 import { META } from './meta'
@@ -44,9 +44,9 @@ export const POST = `
           ${MEDIA}
         }
         layout {
-          ${CONTENT}
+          ${SECTION}
           ${CALL_TO_ACTION}
-          ${CONTENT}
+          ${SECTION}
           ${MEDIA_BLOCK}
           ${ARCHIVE_BLOCK}
         }

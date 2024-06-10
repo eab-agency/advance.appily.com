@@ -1,0 +1,60 @@
+@use "@/styles/global/tokens";
+
+[class*="__columns"] {
+  flex-direction: column;
+
+  .column {
+    width: 100%;
+
+    &__horAligned-left {
+      align-items: flex-start;
+    }
+
+    &__horAligned-center {
+      align-items: center;
+    }
+
+    &__horAligned-right {
+      align-items: flex-end;
+    }
+
+    &__verAligned-top {
+      justify-content: flex-start;
+    }
+
+    &__verAligned-center {
+      justify-content: center;
+    }
+
+    &__verAligned-bottom {
+      justify-content: flex-end;
+    }
+
+    &__extend-to-borders {
+      margin-inline: calc(-1 * clamp(tokens.$padding-s, 6vw, tokens.$padding-xl));
+      margin-block: calc(-1 * clamp(tokens.$padding-xxl, 10vw, tokens.$padding-xxxxl));
+
+      @media (max-width: tokens.$mq-800) {
+        width: 100vw;
+        margin-bottom: 0;
+      }
+
+      .block__wrap {
+        display: flex;
+        flex: 1;
+      }
+    }
+
+    .block__wrap {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: tokens.$mq-800) {
+    flex-direction: row;
+
+    .column {
+      width: var(--column-width);
+    }
+  }
+}

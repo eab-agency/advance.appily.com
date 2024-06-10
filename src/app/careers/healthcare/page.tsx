@@ -1,16 +1,8 @@
 import Image from "next/image";
-import React from "react";
 
-import {
-  Accordion,
-  Button,
-  Stats,
-  StickyCta,
-  Testimonial,
-} from "@/components";
+import { Accordion, Button, Stats, StickyCta, Testimonial } from "@/components";
 import data from "@/data/careers-healthcare.json";
 import percentageSplit from "@/lib/percentageSplit";
-
 
 import PageHero from "@/components/Heros/PageHero";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
@@ -32,26 +24,28 @@ export const metadata: Metadata = {
   }),
 };
 
-
 /* eslint-disable react/no-danger */
 export default function HealthCareSeoPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: { [key: string]: string | string[] | undefined };
 }) {
   // convert searchParams back to a url parameter string
   const searchParamsString = new URLSearchParams(
-    Object.entries(searchParams).reduce((params, [key, value]) => {
-      if (typeof value === 'string') {
-        params[key] = value;
-      } else if (Array.isArray(value)) {
-        params[key] = value.join(',');
-      }
-      return params;
-    }, {} as Record<string, string>)
+    Object.entries(searchParams).reduce(
+      (params, [key, value]) => {
+        if (typeof value === "string") {
+          params[key] = value;
+        } else if (Array.isArray(value)) {
+          params[key] = value.join(",");
+        }
+        return params;
+      },
+      {} as Record<string, string>,
+    ),
   ).toString();
-	
-    const inPercentageRange = percentageSplit(); 
+
+  const inPercentageRange = percentageSplit();
 
   const reasonsArray = data.whyChoose.reasons;
   const rightCareerArray = data.rightCareer.reasons;
@@ -66,9 +60,9 @@ export default function HealthCareSeoPage({
     </li>
   ));
 
-	return (
-		<>
-			<PageHero
+  return (
+    <>
+      <PageHero
         image={{
           src: data.pageHero.image.src,
           alt: data.pageHero.image.alt,
@@ -100,31 +94,30 @@ export default function HealthCareSeoPage({
               }}
             />
 
-{inPercentageRange ? (
-							<Button
-							label="Get Started +"
-              href={`https://my.appily.com/register/adult/healthcarecareers1/?${searchParamsString}`}
-							// href=`https://my.appily.com/register/adult/healthcarecareers1/`
-							className="button btn-primary btn-click-quiz"
-							/>
-									) : (
-										<Button
-              type="button"
-              label={data.quizSection.buttonText}
-              href={data.quizSection.buttonLink}
-              className="button btn-primary btn-click-quiz"
-            />
-											)
-											}
+            {inPercentageRange ? (
+              <Button
+                label="Get Started +"
+                href={`https://my.appily.com/register/adult/healthcarecareers1/?${searchParamsString}`}
+                // href=`https://my.appily.com/register/adult/healthcarecareers1/`
+                className="button btn-primary btn-click-quiz"
+              />
+            ) : (
+              <Button
+                type="button"
+                label={data.quizSection.buttonText}
+                href={data.quizSection.buttonLink}
+                className="button btn-primary btn-click-quiz"
+              />
+            )}
           </div>
         </div>
       </section>
-      
-      <Stats
+
+      {/* <Stats
         stats={data.stats}
         source={data.statsSource}
         className="stats-section"
-      />
+      /> */}
 
       <section className="whyChoose">
         <div className="group center-aligned cols-2">
@@ -186,26 +179,24 @@ export default function HealthCareSeoPage({
             <h2>{data.takeQuiz.title}</h2>
             <p>{data.takeQuiz.description}</p>
 
-{inPercentageRange ? (
-							<Button
-							label="Get Started +"
-							href="https://my.appily.com/register/adult/healthcarecareers1/"
-							className="button btn-primary btn-click-quiz"
-							/>
-									) : (
-										<Button
-              type="button"
-              label={data.takeQuiz.buttonText}
-              href={data.takeQuiz.buttonLink}
-              className="button btn-primary btn-click-quiz"
-            />
-											)
-											}
-
+            {inPercentageRange ? (
+              <Button
+                label="Get Started +"
+                href="https://my.appily.com/register/adult/healthcarecareers1/"
+                className="button btn-primary btn-click-quiz"
+              />
+            ) : (
+              <Button
+                type="button"
+                label={data.takeQuiz.buttonText}
+                href={data.takeQuiz.buttonLink}
+                className="button btn-primary btn-click-quiz"
+              />
+            )}
           </div>
         </div>
       </section>
       <StickyCta ctaLabel="Take the Health Care Career Quiz" />
     </>
   );
-};
+}

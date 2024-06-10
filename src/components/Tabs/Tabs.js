@@ -50,3 +50,4 @@ const TabComponent = ({ tabs, className, id = "0" }) => {
 };
 
 export default TabComponent;
+

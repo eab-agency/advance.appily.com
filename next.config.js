@@ -55,7 +55,11 @@ const nextConfig = {
 			{
 				protocol: "http",
 				hostname: "localhost",
-				port: "3000"
+				port: "8000"
+			},
+			{
+				protocol: "https",
+				hostname: "qa-appily-cms.payloadcms.app",
 			},
 			{
 				protocol: "https",
@@ -86,6 +90,10 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "advance-cms.appily.com", // port: "3000",
+			},
+			{
+				protocol: "https",
+				hostname: "qa-appily-cms.payloadcms.app", 
 			},
 			{
 				protocol: "https",
