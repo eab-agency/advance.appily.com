@@ -1,10 +1,11 @@
 import { fetchPage, fetchPages } from "@/app/graphql";
-import { Blocks } from "@/components/Block";
 import { notFound } from "next/navigation";
 import React from "react";
 import { Page } from "../../../../payload-types";
-import { Hero } from "../../../blocks/HeroBlock";
 import { PageClient } from "./page.client";
+import { Metadata } from "next";
+import { draftMode } from 'next/headers'
+import { generateMeta } from "@/seo/generateMeta";
 
 export async function generateStaticParams() {
   const pages = await fetchPages();
@@ -20,9 +21,32 @@ export async function generateStaticParams() {
   return paramsVal;
 }
 
+
+export async function generateMetadata({ params }: { params: { category: string; subCategory: string } }): Promise<Metadata> {
+  const { isEnabled: isDraftMode } = draftMode();
+  const { category, subCategory } = params;
+
+  const slug = [category, subCategory].filter(Boolean);
+
+  let page: Page | null = null;
+
+  try {
+    page = await fetchPage(slug);
+  } catch (error) {
+    console.error('Error fetching page data:', error);
+  }
+  if (page) {
+    return generateMeta({doc:page});
+  } else {
+    return {
+      title: 'Default Title',
+      description: 'Default Description',
+    };
+  }
+}
+
 const CategoryPage = async ({ params, searchParams }: any) => {
   const { category, subCategory } = params;
-  console.log(category, 'category')
   let pageData: Page | null = null
 
   const slug = [category, subCategory].filter(Boolean);

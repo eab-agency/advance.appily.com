@@ -1,95 +1,94 @@
-// @use 'sass:color';
-// @use '../config/tokens';
-@use "@/styles/global/tokens";
+// @use "sass:color";
+// @use "@/styles/global/tokens";
 
-.stats {
-  background: var(--c-bg5);
-  position: relative;
-  border-top: tokens.$borderWidth-s solid var(--c-border-5);
+// .stats {
+//   background: var(--c-bg5);
+//   position: relative;
+//   border-top: tokens.$borderWidth-s solid var(--c-border-5);
 
-  & > div {
-    flex-direction: column;
-  }
+//   & > div {
+//     flex-direction: column;
+//   }
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    position: relative;
-    gap: tokens.$size-5;
+//   ul {
+//     display: flex;
+//     flex-direction: column;
+//     list-style: none;
+//     position: relative;
+//     gap: tokens.$size-5;
 
-    @media (min-width: tokens.$mq-1000) {
-      flex-direction: row;
-      gap: 0;
-    }
+//     @media (min-width: tokens.$mq-1000) {
+//       flex-direction: row;
+//       gap: 0;
+//     }
 
-    li {
-      display: flex;
-      flex-flow: row wrap;
-      align-items: center;
-      gap: clamp(1rem, 3vw, 3rem);
-      padding-block: clamp(tokens.$padding-m, 2vw, tokens.$padding-xl);
-      padding-left: 1em;
-      border-left: 0.3em solid var(--c-border-5);
-      flex: 1;
-      width: 100%;
+//     li {
+//       display: flex;
+//       flex-flow: row wrap;
+//       align-items: center;
+//       gap: clamp(1rem, 3vw, 3rem);
+//       padding-block: clamp(tokens.$padding-m, 2vw, tokens.$padding-xl);
+//       padding-left: 1em;
+//       border-left: 0.3em solid var(--c-border-5);
+//       flex: 1;
+//       width: 100%;
 
-      @media (min-width: tokens.$mq-1000) {
-        flex-direction: column;
-        align-items: flex-start;
-        border-left: 0;
-        border-right: 0.3em solid var(--c-border-5);
-        padding-inline: clamp(tokens.$padding-m, 2vw, tokens.$padding-xl);
-        padding-block: 0;
-      }
+//       @media (min-width: tokens.$mq-1000) {
+//         flex-direction: column;
+//         align-items: flex-start;
+//         border-left: 0;
+//         border-right: 0.3em solid var(--c-border-5);
+//         padding-inline: clamp(tokens.$padding-m, 2vw, tokens.$padding-xl);
+//         padding-block: 0;
+//       }
 
-      &:last-child {
-        border-right: 0;
-      }
+//       &:last-child {
+//         border-right: 0;
+//       }
 
-      h3 {
-        display: flex;
-        flex-direction: column;
-        font-family: tokens.$f-serif;
-        font-weight: tokens.$fontWeight-black;
-        font-size: clamp(tokens.$size-3, 7vw, tokens.$size-7);
-        color: var(--c-bodyPrimary);
-        width: 100%;
-        max-width: 15rem;
-        margin-bottom: clamp(0rem, 2vw, var(--m-l));
+//       h3 {
+//         display: flex;
+//         flex-direction: column;
+//         font-family: tokens.$f-serif;
+//         font-weight: tokens.$fontWeight-black;
+//         font-size: clamp(tokens.$size-3, 7vw, tokens.$size-7);
+//         color: var(--c-bodyPrimary);
+//         width: 100%;
+//         max-width: 15rem;
+//         margin-bottom: clamp(0rem, 2vw, var(--m-l));
 
-        @media (min-width: tokens.$mq-1000) {
-          max-width: 100%;
-        }
+//         @media (min-width: tokens.$mq-1000) {
+//           max-width: 100%;
+//         }
 
-        strong {
-          color: var(--c-bodySecondary);
-          font-size: 2em;
-          font-weight: var(--fw-semiBold);
-        }
-      }
-      p {
-        font-size: var(--fs-m);
+//         strong {
+//           color: var(--c-bodySecondary);
+//           font-size: 2em;
+//           font-weight: var(--fw-semiBold);
+//         }
+//       }
+//       p {
+//         font-size: var(--fs-m);
 
-        &:last-child {
-          margin-bottom: 0;
-        }
+//         &:last-child {
+//           margin-bottom: 0;
+//         }
 
-        @media (max-width: tokens.$mq-1000) {
-          flex: 1 0 15rem;
-        }
-      }
-    }
-  }
+//         @media (max-width: tokens.$mq-1000) {
+//           flex: 1 0 15rem;
+//         }
+//       }
+//     }
+//   }
 
-  .source {
-    display: block;
-    padding-top: 0.5em;
-    margin-top: 2em;
-    width: 100%;
-    border-top: 1px solid var(--c-border-5);
-    position: relative;
-    font-style: italic;
-    font-size: var(--fs-s);
-  }
-}
+//   .source {
+//     display: block;
+//     padding-top: 0.5em;
+//     margin-top: 2em;
+//     width: 100%;
+//     border-top: 1px solid var(--c-border-5);
+//     position: relative;
+//     font-style: italic;
+//     font-size: var(--fs-s);
+//   }
+// }

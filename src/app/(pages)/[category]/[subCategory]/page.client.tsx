@@ -14,7 +14,6 @@ export const PageClient: React.FC<{
     serverURL: serverURL, // Ensure this URL is correct
     depth: 2,
   });
-  console.log(initialPage,'initalpage**')
   return (
     <React.Fragment>
       <Hero {...data?.hero} />

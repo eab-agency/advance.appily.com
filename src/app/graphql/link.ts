@@ -13,7 +13,12 @@ export const LINK_FIELDS = ({ disableAppearance, disableLabel }: Args = {}): str
     relationTo
     value {
       ...on Page {
-        slug
+        slug,
+        breadcrumbs{
+          id
+          label
+          url
+        }
       }
     }
   }

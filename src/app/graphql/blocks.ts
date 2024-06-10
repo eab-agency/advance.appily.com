@@ -94,6 +94,8 @@ export const FORM_BLOCK = `
 export const STATISTICS = `
 ...on Statistics {
   blockType
+  statsBackgroundColor: backgroundColor
+  statsLayoutWidth: layoutWidth
   statistics {
     number
     title
@@ -134,11 +136,13 @@ export const ACCORDIONBLOCK = `
   }
 }
 `;
-export const CAREERBLOCK = `
-...on Career {
+
+export const IMAGECARDBLOCK = `
+...on ImageCard {
   blockType
-  careerBlockBackgroundColor
+  imageCardBlockBackgroundColor
   title
+  richText
   image {
     ${MEDIA_FIELDS}
   }
@@ -147,6 +151,7 @@ export const CAREERBLOCK = `
   }
 }
 `;
+
 export const HIGHLIGHTEDCTA = `
 ...on HighlightCTA {
   blockType
@@ -232,6 +237,7 @@ export const CAROUSELCARD = `
   richText
   carouselBackgroundColor
 }`;
+
 export const SECTION = `
 ...on Section {
   blockType
@@ -249,7 +255,7 @@ export const SECTION = `
         ${STATS}
         ${TESTIMONIAL}
         ${ACCORDIONBLOCK}
-        ${CAREERBLOCK}
+        ${IMAGECARDBLOCK}
         ${BUTTONGROUPBLOCK}
         ${RICHTEXTBLOCK}
         ${COMPARISONBLOCK}
@@ -266,12 +272,25 @@ export const SECTION = `
       ${STATS}
       ${TESTIMONIAL}
       ${ACCORDIONBLOCK}
-      ${CAREERBLOCK}
+      ${IMAGECARDBLOCK}
       ${BUTTONGROUPBLOCK}
       ${RICHTEXTBLOCK}
       ${COMPARISONBLOCK}
       ${MEDIA_BLOCK}
     }
+  }
+}
+`;
+
+export const SUBNAVIGATION = `
+...on SubNavigation {
+  blockName
+  blockType
+  subNavBackgroundColor
+  navigationItem{
+    title
+    url
+    id
   }
 }
 `;

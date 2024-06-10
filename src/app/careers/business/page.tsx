@@ -1,15 +1,17 @@
+import ABButton from "@/components/Button/ABButton";
+import RandomComponent from "@/hooks/useRandomComponent";
 import Image from "next/image";
 import React, { Suspense } from "react";
-import RandomComponent from "@/hooks/useRandomComponent";
-import ABButton from "@/components/Button/ABButton";
 
-import { Accordion, Button, Stats, StickyCta, Testimonial } from "@/components";
+import { Accordion, Button, StickyCta, Testimonial } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";
 import data from "@/data/careers-business.json";
 
 import PageHero from "@/components/Heros/PageHero";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
+
+import StatisticsSection from "@/blocks/StatisticsSection";
 
 const title = data.metaData.title;
 const description = data.metaData.description;
@@ -74,18 +76,6 @@ const BusinessSeoPage = () => {
           }}
         />
       </PageHero>
-      <PageHero
-        image={{
-          src: data.pageHero.image.src,
-          alt: data.pageHero.image.alt,
-        }}
-      >
-        <h1
-          dangerouslySetInnerHTML={{
-            __html: data.pageTitle,
-          }}
-        />
-      </PageHero>
       <section className="quizSection">
         <div className="group center-aligned row cols-2">
           <div className="column">
@@ -115,11 +105,7 @@ const BusinessSeoPage = () => {
         </div>
       </section>
 
-      {/* <Stats
-        stats={data.stats}
-        source={data.statsSource}
-        className="stats-section"
-      /> */}
+      <StatisticsSection statistics={data.stats} source={data.statsSource} statsLayoutWidth="contained" />
 
       <section className="whyChoose">
         <div className="group center-aligned cols-2">

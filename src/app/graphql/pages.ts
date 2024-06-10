@@ -7,6 +7,7 @@ import {
 	MEDIA_BLOCK,
 	SECTION,
 	STATISTICS,
+	SUBNAVIGATION,
 	TABSECTION,
 	TESTIMONIAL,
 } from "./blocks";
@@ -56,6 +57,7 @@ export const PAGE = `
           ${CALLOUTSECTION}
           ${TABSECTION}
           ${CAROUSELCARD}
+          ${SUBNAVIGATION}
         }
         ${META}
         breadcrumbs {

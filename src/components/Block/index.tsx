@@ -1,26 +1,29 @@
 import React, { Fragment } from "react";
 
+import CalloutSection from '@/blocks/CalloutSection'
+import HighlightedCtaSection from '@/blocks/HighlightCTASection'
+import StatisticsSection from '@/blocks/StatisticsSection/'
+import SubNavigation from "@/blocks/SubNavigation";
+import TabSection from '@/blocks/TabSection'
+import Testimonial from '@/blocks/TestimonialBlock'
 import { Page } from "../../../payload-types.js";
 // import { CallToActionBlock } from '../../blocks/CallToAction'
 import { ContentBlock } from "../../blocks/Content";
 import { MediaBlock } from "../../blocks/MediaBlock";
-import Statistic from '../../blocks/StatisticBlock'
-import Testimonial from '@/blocks/TestimonialBlock'
-import HighlightedCtaSection from '@/blocks/HighlightCTASection'
-import CalloutSection from '@/blocks/CalloutSection'
-import TabSection from '@/blocks/TabSection'
 import CarouselWithForm from '../CarouselWithForm/CarouselWithForm'
+
 
 
 const blockComponents = {
   section: ContentBlock,
   mediaBlock: MediaBlock,
-  statistics: Statistic,
+  statistics: StatisticsSection,
   testimonial: Testimonial,
   highlightCTA: HighlightedCtaSection,
   callout: CalloutSection,
   tabsection: TabSection,
-  Schoolcarousel: CarouselWithForm
+  Schoolcarousel: CarouselWithForm,
+  subNavigation: SubNavigation
 }
 
 export const Blocks: React.FC<{
@@ -29,7 +32,6 @@ export const Blocks: React.FC<{
 }> = props => {
   const { disableTopPadding, blocks } = props
   const hasBlocks = blocks && Array.isArray(blocks) && blocks.length > 0;
-  
   if (hasBlocks) {
     return (
       <div>
@@ -39,7 +41,7 @@ export const Blocks: React.FC<{
             const Block = blockComponents[blockType];
             if (Block) {
               return (
-                  <Block {...block} key={index}/>
+                <Block {...block} key={index} />
               )
             }
           }

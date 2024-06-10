@@ -1,7 +1,8 @@
+import ImageCard from '@/blocks/ImageCard';
 import { Media } from '@/components/Media'
+import { StatCard } from '@/components/StatCard';
 import React, { Fragment } from 'react'
 import RichText from '../RichText';
-import { Stats } from '../Stats';
 import { Testimonial } from '../Testimonial';
 import AccordionSection from '../commonComponent/AccordionGroup';
 import ButtonGroup from '../commonComponent/ButtonGroup';
@@ -18,12 +19,8 @@ const RenderColumnContent = ({ columns, layoutType }) => {
 
         const columnClass = `column column__horAligned-${halignment} column__verAligned-${valignment} ${extendToBorders ? 'column__extend-to-borders' : ''}`;
 
-        const rowClass = `row row__horAligned-${halignment} row__verAligned-${valignment} ${extendToBorders ? 'row__extend-to-borders' : ''}`
-
-        const className = layoutType === 'rows' ? rowClass : columnClass;
-
         return (
-          <div className={className} style={{ '--column-width': `${stringWithoutPercentage}%` } as any} key={index}>
+          <div className={columnClass} style={{ '--column-width': `${stringWithoutPercentage}%` } as any} key={index}>
             {blocks?.map((block, blockIndex) => {
               return (
                 <div key={blockIndex} className='block__wrap'>
@@ -39,7 +36,7 @@ const RenderColumnContent = ({ columns, layoutType }) => {
 };
 
 const blockRenderers = {
-  stats: (block) => <Stats stats={block.statistics}{...block} />,
+  stats: (block) => <StatCard stats={block.statistics}{...block} />,
   richText: (block) => <RichText content={block.richText} />,
   mediaBlock: (block) => {
     const { media, cornerStyle, enableHighlight } = block;
@@ -55,6 +52,7 @@ const blockRenderers = {
   testimonial: (block) => <Testimonial testimonialData={block} />,
   accordion: (block) => <AccordionSection data={block} />,
   comparison: (block) => <ComparisonCard data={block} />,
-  ButtonGroup: (block) => <ButtonGroup data={block} />
+  ButtonGroup: (block) => <ButtonGroup data={block} />,
+  imageCard: (block) => <ImageCard imageCardData={block} />,
 };
 export default RenderColumnContent;

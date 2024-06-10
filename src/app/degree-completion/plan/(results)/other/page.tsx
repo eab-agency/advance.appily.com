@@ -11,7 +11,6 @@ import {
   CareerPaths,
   CarouselWithForm,
   LinkedCardsSection,
-  Stats,
   StickyCta,
   SubNavPlan,
   TabsSection,
@@ -21,6 +20,8 @@ import {
 import BuildPlanHero from "@/components/Heros/BuildPlanHero";
 import { useUser } from "@/context/context";
 import data from "@/data/AdcResults/results-other-plan.json";
+
+import StatisticsSection from "@/blocks/StatisticsSection";
 
 export default function Page() {
   const carouselRef = useRef(null);
@@ -37,7 +38,7 @@ export default function Page() {
 
         <AccordionSection id="value-of-a-degree" data={data.reasons} />
 
-        {/* <Stats stats={data.stats} source={data.statsSource} /> */}
+        <StatisticsSection statistics={data.stats} source={data.statsSource} statsLayoutWidth="contained" />
 
         <Testimonial testimonialData={data.testimonial} />
 
@@ -49,10 +50,7 @@ export default function Page() {
 
         <AccordionSection data={data.fileFafsa} newTab={true} />
 
-        <Stats
-          stats={data.fileFafsa.stats}
-          source={data.fileFafsa.statsSource}
-        />
+        <StatisticsSection statistics={data.fileFafsa.stats} source={data.fileFafsa.statsSource} statsLayoutWidth="contained" />
 
         <AccordionSection data={data.fileFafsa.moreWays} />
 

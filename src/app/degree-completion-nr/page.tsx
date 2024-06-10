@@ -2,10 +2,11 @@
 import Image from "next/image";
 import React from "react";
 
-import { Button, Stats, StickyCta, WhatIsCappex } from "@/components";
+import { Button, StickyCta, WhatIsCappex } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";
 import data from "@/data/careers-adc.json";
 
+import StatisticsSection from "@/blocks/StatisticsSection";
 import PageHero from "@/components/Heros/PageHero";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
@@ -185,7 +186,7 @@ const BusinessSeoPage = () => {
       </section>
 
       <WhatIsCappex>
-        <Stats stats={data.statsAppily} className="stats-section" />
+        <StatisticsSection statistics={data.statsAppily} statsLayoutWidth="contained" statsBackgroundColor="slate_gray_white" />
       </WhatIsCappex>
 
       <StickyCta ctaLabel="Get Your Back-to-School Plan" />

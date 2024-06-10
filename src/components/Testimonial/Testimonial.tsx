@@ -12,6 +12,7 @@ interface TestimonialData {
   alignment?: string;
   author?: string;
   authortitle?: string;
+  text?: string; //Note Andrei: this prop was added to solve the issue for static pages. Once all pages are dynamic, this prop can be removed.
 }
 
 function Testimonial({ testimonialData }: TestimonialProps) {
@@ -19,7 +20,13 @@ function Testimonial({ testimonialData }: TestimonialProps) {
     <section className="testimonial">
       <div className="quotation">
         <blockquote>
-          <RichText content={testimonialData.richText} />
+          {testimonialData.text ? <div dangerouslySetInnerHTML={{ __html: testimonialData.text }} /> :
+            <RichText content={testimonialData.richText} />
+            //Note Andrei: this prop was added to solve the issue for static pages. Once all pages are dynamic, this prop can be removed.
+          }
+
+          {/* //Note Andrei this should be render when all pages are dynamic <RichText content={testimonialData.richText} /> */}
+
           <div className="testimonialAuthor">
             <p>{testimonialData.author}</p>
             <small>{testimonialData.authortitle}</small>
