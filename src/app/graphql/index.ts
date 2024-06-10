@@ -124,7 +124,7 @@ export async function fetchHeader(): Promise<Header> {
 		'Content-Type': 'application/json',
 	  },
 		// use next revalidate every 10 seconds. later change to 5 minutes(300 seconds)
-		next: { revalidate: 10 },
+		// next: { revalidate: 10 },
 	  body: JSON.stringify({
 		query: HEADER_QUERY,
 	  }),
@@ -148,7 +148,7 @@ export async function fetchHeader(): Promise<Header> {
 	  headers: {
 		'Content-Type': 'application/json',
 	  },
-		next: { revalidate: 10 },
+		// next: { revalidate: 10 },
 	  body: JSON.stringify({
 		query: FOOTER_QUERY,
 	  }),
