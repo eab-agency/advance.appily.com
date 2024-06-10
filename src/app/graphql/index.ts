@@ -123,7 +123,8 @@ export async function fetchHeader(): Promise<Header> {
 	  headers: {
 		'Content-Type': 'application/json',
 	  },
-	  // cache: "no-store",
+		// use next revalidate every 5 minutes
+		next: { revalidate: 300 },
 	  body: JSON.stringify({
 		query: HEADER_QUERY,
 	  }),
@@ -147,7 +148,7 @@ export async function fetchHeader(): Promise<Header> {
 	  headers: {
 		'Content-Type': 'application/json',
 	  },
-	  // cache: "no-store",
+		next: { revalidate: 300 },
 	  body: JSON.stringify({
 		query: FOOTER_QUERY,
 	  }),

@@ -1,29 +1,13 @@
-"use client";
 import styles from "@/styles/components/PageFooter.module.scss";
 import Image from "next/image";
 import { CMSLink } from "../Link";
 import { Footer } from "../../../payload-types";
 import { fetchFooter } from "@/app/graphql";
 import PrivacyLink from "./PrivacyLink";
-import { useEffect, useState } from "react";
 
-const FooterComponent = () => {
-  const [footer, setFooter] = useState<Footer | null>(null);
-
-  useEffect(() => {
-    const getFooter = async () => {
-      try {
-        const footerData = await fetchFooter();
-        setFooter(footerData);
-      } catch (error) {
-        console.error("Failed to fetch footer:", error);
-      }
-    };
-
-    getFooter();
-  }, []);
-
-  const navItems = footer?.navItems || [];
+export default async function FooterComponent() {
+  const footerData: Footer = await fetchFooter();
+  const navItems = footerData?.navItems || [];
 
   return (
     <footer className={styles.pageFooter}>
@@ -63,6 +47,4 @@ const FooterComponent = () => {
       </div>
     </footer>
   );
-};
-
-export default FooterComponent;
+}
