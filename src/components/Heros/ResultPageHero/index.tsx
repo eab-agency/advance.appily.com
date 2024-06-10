@@ -1,10 +1,11 @@
 "use client";
+import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 import { Page } from "../../../../payload-types";
-import { Media } from "../../Media";
 import RichText from "../../RichText";
-import Lottie from "lottie-react";
 import { Button } from "@/components";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export const ResultPageHero: React.FC<Page["hero"]> = ({
   animation,
