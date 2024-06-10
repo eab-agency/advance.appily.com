@@ -50,6 +50,7 @@ export interface User {
  */
 export interface Page {
 	id: string;
+	fullPath?: string | null;
 	title: string;
 	publishedDate?: string | null;
 	hero: {
@@ -226,7 +227,7 @@ export interface Page {
 													blockType: "testimonial";
 											  }
 											| {
-													careerBlockBackgroundColor?:
+													imageCardBlockBackgroundColor?:
 														| (
 																| "default"
 																| "dark_blue_light_gray"
@@ -271,19 +272,26 @@ export interface Page {
 																	} | null;
 																	url?: string | null;
 																	label: string;
-																	appearance?: ("primary" | "secondary") | null;
+																	appearance?:
+																		| (
+																				| "primary"
+																				| "secondary"
+																				| "tertiary"
+																				| "default"
+																		  )
+																		| null;
 																};
 																id?: string | null;
 														  }[]
 														| null;
 													id?: string | null;
 													blockName?: string | null;
-													blockType: "career";
+													blockType: "imageCard";
 											  }
 											| {
+													title?: string | null;
 													icon: string | Media;
 													darkicon?: string | Media | null;
-													title?: string | null;
 													richText?: {
 														root: {
 															type: string;
@@ -530,7 +538,7 @@ export interface Page {
 										blockType: "testimonial";
 								  }
 								| {
-										careerBlockBackgroundColor?:
+										imageCardBlockBackgroundColor?:
 											| (
 													| "default"
 													| "dark_blue_light_gray"
@@ -575,19 +583,26 @@ export interface Page {
 														} | null;
 														url?: string | null;
 														label: string;
-														appearance?: ("primary" | "secondary") | null;
+														appearance?:
+															| (
+																	| "primary"
+																	| "secondary"
+																	| "tertiary"
+																	| "default"
+															  )
+															| null;
 													};
 													id?: string | null;
 											  }[]
 											| null;
 										id?: string | null;
 										blockName?: string | null;
-										blockType: "career";
+										blockType: "imageCard";
 								  }
 								| {
+										title?: string | null;
 										icon: string | Media;
 										darkicon?: string | Media | null;
-										title?: string | null;
 										richText?: {
 											root: {
 												type: string;
@@ -1167,7 +1182,7 @@ export interface Page {
 				blockType: "tabsection";
 		  }
 		| {
-				innerpageNavBackgroundColor?:
+				subNavBackgroundColor?:
 					| (
 							| "default"
 							| "dark_blue_light_gray"
@@ -1177,7 +1192,7 @@ export interface Page {
 							| "slate_gray_white"
 					  )
 					| null;
-				innerPageNavigation?:
+				navigationItem?:
 					| {
 							title: string;
 							url?: string | null;
@@ -1186,7 +1201,7 @@ export interface Page {
 					| null;
 				id?: string | null;
 				blockName?: string | null;
-				blockType: "innerPageNavigation";
+				blockType: "subNavigation";
 		  }
 	)[];
 	slug?: string | null;
@@ -1619,7 +1634,7 @@ export interface Post {
 													blockType: "testimonial";
 											  }
 											| {
-													careerBlockBackgroundColor?:
+													imageCardBlockBackgroundColor?:
 														| (
 																| "default"
 																| "dark_blue_light_gray"
@@ -1664,19 +1679,26 @@ export interface Post {
 																	} | null;
 																	url?: string | null;
 																	label: string;
-																	appearance?: ("primary" | "secondary") | null;
+																	appearance?:
+																		| (
+																				| "primary"
+																				| "secondary"
+																				| "tertiary"
+																				| "default"
+																		  )
+																		| null;
 																};
 																id?: string | null;
 														  }[]
 														| null;
 													id?: string | null;
 													blockName?: string | null;
-													blockType: "career";
+													blockType: "imageCard";
 											  }
 											| {
+													title?: string | null;
 													icon: string | Media;
 													darkicon?: string | Media | null;
-													title?: string | null;
 													richText?: {
 														root: {
 															type: string;
@@ -1923,7 +1945,7 @@ export interface Post {
 										blockType: "testimonial";
 								  }
 								| {
-										careerBlockBackgroundColor?:
+										imageCardBlockBackgroundColor?:
 											| (
 													| "default"
 													| "dark_blue_light_gray"
@@ -1968,19 +1990,26 @@ export interface Post {
 														} | null;
 														url?: string | null;
 														label: string;
-														appearance?: ("primary" | "secondary") | null;
+														appearance?:
+															| (
+																	| "primary"
+																	| "secondary"
+																	| "tertiary"
+																	| "default"
+															  )
+															| null;
 													};
 													id?: string | null;
 											  }[]
 											| null;
 										id?: string | null;
 										blockName?: string | null;
-										blockType: "career";
+										blockType: "imageCard";
 								  }
 								| {
+										title?: string | null;
 										icon: string | Media;
 										darkicon?: string | Media | null;
-										title?: string | null;
 										richText?: {
 											root: {
 												type: string;

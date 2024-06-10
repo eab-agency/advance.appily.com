@@ -22,7 +22,6 @@ export const Image: React.FC<MediaProps> = (props) => {
     alt: altFromProps,
   } = props;
 
-  // console.log("mediapropds:", cornerStyle);
 
   const [isLoading, setIsLoading] = React.useState(true)
 

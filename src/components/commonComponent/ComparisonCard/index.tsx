@@ -57,15 +57,15 @@ export default function ComparisonCard({
               <h3 className="icon-card-title">{data?.title} </h3>
             </header>
             <RichText content={data?.richText} />
-            {data?.comparisonLinks?.length > 0 &&
-              (data?.comparisonLinks || []).map(({ link }, index) => {
+           
+              {(data?.comparisonLinks || []).map(({ link }, index) => {
                 return (
 
                   <CMSLink key={index} {...link} className="button btn-primary btn-click-quiz" />
 
                 )
-              })
-            }
+              })}
+            
           </div>
         </div>
       </div>

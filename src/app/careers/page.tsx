@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Button, CarouselWithForm, Header } from "@/components";
+import { Button, CarouselWithForm } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";
 import Link from "next/link";
 

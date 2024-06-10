@@ -4,7 +4,7 @@ import React from 'react';
 import { Page } from '../../../payload-types';
 import { Button } from '../Button';
 
-type CMSLinkType = {
+type CMSHeaderLinkType = {
   type?: 'custom' | 'reference';
   url?: string;
   newTab?: boolean;
@@ -18,7 +18,7 @@ type CMSLinkType = {
   className?: string;
 };
 
-export const CMSLink: React.FC<CMSLinkType> = ({
+export const CMSHeaderLink: React.FC<CMSHeaderLinkType> = ({
   type,
   url,
   newTab,
@@ -29,18 +29,19 @@ export const CMSLink: React.FC<CMSLinkType> = ({
   className,
 }) => {
   const href = type === 'reference' && reference && typeof reference.value === 'object'
-    ? `/${reference.value.breadcrumbs?.[reference.value.breadcrumbs.length - 1]?.url?.replace(/^\/|\/$/g, '')}`
-    : type === 'custom' && url
-      ? url.startsWith('http://') || url.startsWith('https://')
-        ? url
-        : `/${url.replace(/^\/|\/$/g, '')}`
-      : '';
+  ? '/' + reference.value.breadcrumbs?.[reference.value.breadcrumbs.length - 1]?.url?.replace(/^\/|\/$/g, '')
+  : type === 'custom' && url
+    ? url.startsWith('http://') || url.startsWith('https://') 
+      ? url 
+      : '/' + url.replace(/^\/|\/$/g, '')
+    : '';
 
   const isCustomType = type === 'custom';
   const linkProps = {
     ...(newTab && { target: '_blank', rel: 'noopener noreferrer' }),
     className: `${appearance === 'default' ? `btn-${appearance}` : `button btn-${appearance || 'default'}`} ${className || ''}`,
   };
+
   if (isCustomType) {
     return (
       <a href={href} {...linkProps}>
