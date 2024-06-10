@@ -11,11 +11,9 @@ import { mergeTwitter } from "../seo/mergeTwitter";
 
 import "@/styles/styles.scss";
 
-import { OneTrustBannerCustom } from "@/lib/oneTrustBannerCustom";
-
 import Script from "next/script";
-import  HeaderComponent   from "../components/Header";
-import  FooterComponent from "../components/Footer";
+import HeaderComponent from "../components/Header";
+import FooterComponent from "../components/Footer";
 
 const isDev = process.env.NEXT_PUBLIC_ISDEV;
 
@@ -46,15 +44,13 @@ export default async function RootLayout({
       <GoogleTagManager gtmId={GTM_ID} />
       <body>
         <Providers>
-           {/* @ts-expect-error */}
+          {/* @ts-expect-error */}
           <HeaderComponent />
           {/* <LocationInDevMode /> */}
           <main className="layout-wrapper">{children}</main>
-           {/* @ts-expect-error */}
-           <FooterComponent  /> 
+          <FooterComponent />
         </Providers>
       </body>
-      <OneTrustBannerCustom />
     </html>
   );
 }
