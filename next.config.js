@@ -63,6 +63,10 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
+				hostname: "qa-appily-cms.payloadcms.app",
+			},
+			{
+				protocol: "https",
 				hostname: "advance-cms.appily.com", // port: "3000",
 			},
 			{

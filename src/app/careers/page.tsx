@@ -139,6 +139,10 @@ const CareersSeoPage = () => {
                 in education, or you’re not in education yet but feel a calling
                 to work with students, there are many paths you can take.
               </p>
+                If you’re currently a teacher and looking for other career paths
+                in education, or you’re not in education yet but feel a calling
+                to work with students, there are many paths you can take.
+              </p>
 
               <p>
                 <Link href="/careers/education/quiz/start">
