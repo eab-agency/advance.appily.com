@@ -201,7 +201,7 @@ export const fetchPages = async (): Promise<
 			headers: {
 				"Content-Type": "application/json",
 			},
-			cache: "no-store",
+			// cache: "no-store",
 			body: JSON.stringify({
 				query: PAGES,
 			}),
