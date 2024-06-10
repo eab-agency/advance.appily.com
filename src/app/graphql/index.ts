@@ -8,8 +8,8 @@ import { FOOTER_QUERY, GLOBALS, HEADER_QUERY } from "./globals";
 import { PAGE, PAGES } from "./pages";
 import { POST, POSTS } from "./posts";
 
-const next: { revalidate: false } = {
-	revalidate: false,
+const next: { revalidate: number | false | undefined } = {
+	revalidate: 5,
 };
 
 // fetch all the lead types and their ids
@@ -123,7 +123,7 @@ export async function fetchHeader(): Promise<Header> {
 	  headers: {
 		'Content-Type': 'application/json',
 	  },
-		// use next revalidate every 5 minutes
+		// use next revalidate every 10 seconds. later change to 5 minutes(300 seconds)
 		next: { revalidate: 10 },
 	  body: JSON.stringify({
 		query: HEADER_QUERY,
