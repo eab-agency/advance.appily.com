@@ -1,0 +1,260 @@
+@use "@/styles/global/tokens";
+
+:where(body) {
+  background: var(--c-bg-body);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+
+  &::before {
+    content: "";
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(/images/bg-pattern-dark.svg) center center;
+    background-size: contain;
+    z-index: tokens.$layer-0;
+
+    @media (prefers-color-scheme: light) {
+      background: url(/images/bg-pattern-light.svg) center center;
+    }
+  }
+
+  .layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  figure {
+    position: relative;
+    display: flex;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: clamp(tokens.$padding-s, 6vw, tokens.$padding-xl);
+    padding-block: clamp(tokens.$padding-xxl, 10vw, tokens.$padding-xxxxl);
+    overflow: hidden;
+
+    header {
+      max-width: tokens.$mq-1200;
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+
+      p {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        // color: var(--c-bg-body);
+      }
+    }
+
+    &.full {
+      padding: 0;
+    }
+  }
+
+  .group {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: tokens.$layer-1;
+    gap: clamp(tokens.$size-6, 4vw, tokens.$size-9);
+
+    &.center-aligned {
+      width: 100%;
+      max-width: tokens.$mq-1200;
+
+      &.narrow {
+        max-width: tokens.$mq-800;
+      }
+
+      &.center-justified {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    h2 {
+      strong {
+        font-size: 1.5em;
+        font-weight: tokens.$fontWeight-bold;
+        display: block;
+      }
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    & > div {
+      flex: 1;
+    }
+
+    @media (max-width: tokens.$mq-900) {
+      flex-direction: column;
+      gap: clamp(2rem, 4vw, 4rem);
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(tokens.$size-4, 2vw, tokens.$size-6);
+    width: var(--column-width);
+  }
+
+  .cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: tokens.$mq-900;
+    margin: 0 auto;
+    padding: clamp(tokens.$padding-m, 4vw, tokens.$padding-xl);
+  }
+
+  .cols-2 {
+    gap: clamp(tokens.$size-4, 6vw, tokens.$size-9);
+
+    & > div {
+      flex: 1;
+    }
+  }
+
+  .full-content {
+    padding: 0;
+  }
+
+  .highlighted-img {
+    border-radius: tokens.$borderRadius-xl;
+    overflow: hidden;
+    box-shadow: -1rem 1rem 0 var(--c-shadow1);
+
+    &.column {
+      max-width: 30rem;
+    }
+  }
+}
+
+div[class*="CarouselWithForm_carouselForm_"] {
+  p {
+    color: var(--c-black);
+  }
+}
+
+.centered-content {
+  text-align: center;
+}
+
+// .bgfilled {
+//   background-color: var(--c-bg5);
+// }
+
+.imgTextSection {
+  @media (max-width: tokens.$mq-900) {
+    .group {
+      align-items: flex-start;
+
+      figure.column {
+        order: 0;
+        max-width: 20rem;
+        width: 70%;
+        margin-bottom: 2rem;
+      }
+      .intro-text {
+        order: 1;
+      }
+    }
+  }
+}
+
+.featuredCard {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(tokens.$padding-m, 4vw, tokens.$padding-xxxl);
+  background: var(--c-bg5);
+  border-radius: tokens.$borderRadius-xl;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.rowOfCards {
+  background: var(--c-bg8);
+
+  h2 {
+    text-align: center;
+    font-size: clamp(tokens.$size-6, 4vw, tokens.$size-8);
+  }
+
+  .row {
+    gap: clamp(tokens.$size-6, 10vw, tokens.$size-10);
+    align-items: flex-start;
+
+    .cardContent {
+      .cardLink {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1em;
+        border-bottom: 1px solid var(--c-border-1);
+        text-decoration: none;
+
+        h3 {
+          margin: 0;
+        }
+
+        svg {
+          height: 1.5em;
+          width: 1.5em;
+          flex-shrink: 0;
+        }
+
+        &:hover {
+          h3 {
+            color: var(--c-link-hover);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Note AO: This is a temporary fix for the tabs section. Remove this once the tabs component is updated.
+.tabsSection {
+  background: var(--c-bg5);
+  &.bg-none {
+    background: none;
+
+    .react-tabs {
+      background: none;
+
+      &::before {
+        background: none;
+      }
+    }
+  }
+
+  &.no-content-media {
+    div[class*="__tab-panel"][class*="-selected"]::before {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use "sass:color";
+@use "@/styles/global/tokens";
+
+.stat-card {
+  h3 {
+    display: flex;
+    flex-direction: column;
+    font-family: tokens.$f-serif;
+    font-weight: tokens.$fontWeight-black;
+    font-size: clamp(tokens.$size-3, 7vw, tokens.$size-7);
+    color: var(--c-bodyPrimary);
+    width: 100%;
+    max-width: 15rem;
+    margin-bottom: clamp(0rem, 2vw, 2rem);
+
+    @media (min-width: tokens.$mq-1000) {
+      max-width: 100%;
+    }
+
+    strong {
+      color: var(--c-bodySecondary);
+      font-size: 2em;
+      font-weight: var(--fw-semiBold);
+    }
+  }
+  p {
+    font-size: var(--fs-m);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: tokens.$mq-1000) {
+      flex: 1 0 15rem;
+    }
+  }
+}

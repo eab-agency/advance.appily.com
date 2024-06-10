@@ -6,10 +6,11 @@ import Form from "@/components/Form";
 import SchoolCarousel from "@/components/SchoolCarousel";
 import { useUser } from "@/context/context";
 import styles from "@/styles/components/CarouselWithForm.module.scss";
+import RichText from "../RichText";
 
-const CarouselWithForm = ({
+const CarouselWithForm = ({blockType,title, richText,carouselBackgroundColor,
+
 	formId = "4",
-	data = { title: "", description: "" },
 	collectData = true,
 }) => {
 	const [visibleForm, setVisibleForm] = useState(false);
@@ -27,15 +28,14 @@ const CarouselWithForm = ({
 	};
 
 	// destructure data if provided
-	const { title, description } = data || {};
-
 	return (
 		<>
 			<section className={styles.matchedSchools}>
 				<div className={styles.wrapper}>
 					<div className={styles.intro}>
 						<h2>{title ? title : "Explore Your School Matches"}</h2>
-						{description ? (
+						<RichText content={richText}/>
+						{/* {description ? (
 							<div dangerouslySetInnerHTML={{ __html: description }} />
 						) : (
 							<>
@@ -49,7 +49,7 @@ const CarouselWithForm = ({
 									find a path to success at these colleges and universities.
 								</p>
 							</>
-						)}
+						)} */}
 					</div>
 
 					<div className={styles.container}>

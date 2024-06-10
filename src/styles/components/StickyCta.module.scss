@@ -8,8 +8,8 @@
   padding: clamp(tokens.$padding-xs, 2vw, tokens.$padding-s);
   background: var(--c-bg6);
   border-top: 1px solid var(--c-border-5);
-  // position: sticky;
-  position: fixed;
+  position: sticky;
+  // position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;

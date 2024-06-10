@@ -6,10 +6,7 @@ const QuestionsTitle = ({ quizState, questions, titles }) => {
 
   useEffect(() => {
     // Initialize the title indices when the component mounts
-    // setTitleIndices(Array.from({ length: titles.length }, (_, i) => i));
-    const newTitleIndex = titleIndices[0];
-    const newTitleIndices = titleIndices.filter((_, index) => index !== 0);
-    setTitleIndices(newTitleIndices.concat(newTitleIndex));
+    setTitleIndices(Array.from({ length: titles.length }, (_, i) => i));
 
     const shuffleTitles = () => {
       if (titleIndices.length === 0) {
@@ -28,8 +25,7 @@ const QuestionsTitle = ({ quizState, questions, titles }) => {
     };
 
     shuffleTitles();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [titles]);
+  }, [titleIndices, titles]);
 
   // Calculate the current title index based on the quiz state
   let currentTitleIndex = -1;
