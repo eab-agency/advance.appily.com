@@ -50,7 +50,7 @@ const nextConfig = {
 	},
 	images: {
 		formats: ["image/webp"],
-		minimumCacheTTL: 6000,
+		minimumCacheTTL: 31536000,
 		remotePatterns: [
 			{
 				protocol: "http",
