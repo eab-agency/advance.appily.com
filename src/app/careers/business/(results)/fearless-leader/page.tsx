@@ -1,7 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import fearlessLeader from "@/assets/lotties/fearlessLeader.json";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import { useEffect, useRef } from "react";
 import { Suspense } from "react";
 
@@ -22,7 +24,6 @@ import dataLinks from "@/data/links-business.json";
 import data from "@/data/results-fearless-leader.json";
 
 import StatisticsSection from "@/blocks/StatisticsSection";
-
 
 function TabsFallback() {
   return <>Tabs loading...</>;
@@ -62,7 +63,11 @@ export default function Page() {
 
         <CareerPaths careerPaths={data.careerPaths} />
 
-        <StatisticsSection statistics={data.stats} source={data.statsSource} statsLayoutWidth="contained" />
+        <StatisticsSection
+          statistics={data.stats}
+          source={data.statsSource}
+          statsLayoutWidth="contained"
+        />
 
         <TextWithImage
           content={data.textWithImage.content}

@@ -1,7 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import creativeMarketer from "@/assets/lotties/creativeMarketer.json";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
 import { Suspense } from "react";
 import { useEffect, useRef } from "react";
 
@@ -62,7 +65,11 @@ export default function Page() {
 
         <CareerPaths careerPaths={data.careerPaths} />
 
-        <StatisticsSection statistics={data.stats} source={data.statsSource} statsLayoutWidth="contained" />
+        <StatisticsSection
+          statistics={data.stats}
+          source={data.statsSource}
+          statsLayoutWidth="contained"
+        />
 
         <TextWithImage
           content={data.textWithImage.content}
