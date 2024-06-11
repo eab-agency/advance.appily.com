@@ -3,8 +3,6 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { Metadata } from "next";
 import React from "react";
 
-import LocationInDevMode from "@/components/PageLayouts/LocationInDevMode";
-import data from "@/data/careers-business.json";
 import { Providers } from "../providers";
 import { mergeOpenGraph } from "../seo/mergeOpenGraph";
 import { mergeTwitter } from "../seo/mergeTwitter";
@@ -44,10 +42,11 @@ export default async function RootLayout({
       <GoogleTagManager gtmId={GTM_ID} />
       <body>
         <Providers>
-          {/* @ts-expect-error */}
+          {/* @ts-expect-error Server Component */}
           <HeaderComponent />
           {/* <LocationInDevMode /> */}
           <main className="layout-wrapper">{children}</main>
+          {/* @ts-expect-error Server Component */}
           <FooterComponent />
         </Providers>
       </body>
