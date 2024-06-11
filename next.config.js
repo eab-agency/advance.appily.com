@@ -49,7 +49,7 @@ const nextConfig = {
 		ACS_PRIVATE_KEY: process.env.ACS_PRIVATE_KEY,
 	},
 	images: {
-		formats: ["image/avif", "image/webp"],
+		formats: ["image/webp"],
 		minimumCacheTTL: 6000,
 		remotePatterns: [
 			{
