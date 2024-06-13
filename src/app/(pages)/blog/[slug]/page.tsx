@@ -9,6 +9,7 @@ import { Hero } from '../../../../blocks/HeroBlock';
 export async function generateStaticParams() {
   try {
     const posts = await fetchPosts();
+    console.log(posts,'posts**')
     return posts.map(({ slug }) => ({ params: { slug } }));
   } catch (error) {
     console.error('Error fetching posts:', error);

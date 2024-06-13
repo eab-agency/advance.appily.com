@@ -1,0 +1,49 @@
+@use "@/styles/global/tokens";
+
+.blog-header {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: tokens.$mq-1200;
+  padding-inline: clamp(1rem, 5%, 2rem);
+  padding-block: clamp(2rem, 5vw, 6rem) 2rem;
+  margin-bottom: 2rem;
+
+  h1 {
+    margin: 0 0 0.2em;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .row {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .first-row .item {
+    flex: 1; /* Take the full width of the row */
+  }
+  
+  .second-row .item {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .second-row .item:last-child {
+    margin-right: 0; /* Remove the margin on the last item */
+  }
+  
+  .item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    text-align: center;
+  }

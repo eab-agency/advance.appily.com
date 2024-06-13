@@ -1,9 +1,10 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import {  fetchPages, fetchPage } from '@/app/graphql';
-import { Page } from '../../../../../../payload-types'
-import { Hero } from '../../../../../blocks/HeroBlock';
+import { Page } from '../../../../../payload-types'
+import { Hero } from '../../../../blocks/HeroBlock';
 import { Blocks } from '@/components/Block';
+import { PageClient } from './page.client'
 
 export async function generateStaticParams() {
 	const pages = await fetchPages();
@@ -20,9 +21,9 @@ export async function generateStaticParams() {
   }
   
   const SubCategoryPage = async({ params, searchParams }: any) => {
-	const { category, subCategory , result} = params; 
+	const { child, subChild } = params; 
 	let pageData: Page | null = null
-    const slug = [category, subCategory,result].filter(Boolean);
+    const slug = [child, subChild].filter(Boolean);
 	try {
 		pageData  = await fetchPage(slug);
 	  } catch (error) {
@@ -35,11 +36,12 @@ export async function generateStaticParams() {
 	const hero = pageData?.hero;
 	const layout = pageData?.layout;
   return (
-	<React.Fragment>
-	<Hero {...hero} />	
-	<Blocks blocks={layout} />
+// 	<React.Fragment>
+// 	<Hero {...hero} />	
+// 	<Blocks blocks={layout} />
 
-  </React.Fragment>
+//   </React.Fragment>
+ <PageClient page={pageData} />
 
   );
 };

@@ -14,6 +14,33 @@ import { LINK_FIELDS } from "./link";
 import { ANIMATION, MEDIA } from "./media";
 import { META } from "./meta";
 
+export const POST_DATA = `
+        slug
+        id
+        title
+        updatedAt
+        publishedDate
+        postFeaturedImage {
+          ${MEDIA}
+        }
+        category{
+          id 
+          title
+        }
+        layout {
+          ${CALL_TO_ACTION}
+          ${SECTION}
+          ${FORM_BLOCK}
+          ${MEDIA_BLOCK}
+          ${STATISTICS}
+          ${TESTIMONIAL}
+          ${HIGHLIGHTEDCTA}
+          ${CALLOUTSECTION}
+          ${TABSECTION}
+          ${CAROUSELCARD}
+        }
+`
+
 export const POSTS = `
   query {
     Posts (limit: 300){
@@ -23,6 +50,10 @@ export const POSTS = `
         id
         createdAt
         publishedDate
+        category {
+          title
+          id
+        }
       }
     }
   }
@@ -49,6 +80,10 @@ export const POST = `
         postFeaturedImage {
           ${MEDIA}
         }
+        category{
+          id 
+          title
+        }
         layout {
           ${CALL_TO_ACTION}
           ${SECTION}
@@ -64,4 +99,27 @@ export const POST = `
       }
     }
   }
+`;
+
+
+export const FIRSTFIVEPOSTS = `
+ query  {
+  Posts (limit: 5){
+    docs {
+      ${POST_DATA}
+    }
+  }
+}
+`;
+
+
+
+export const POSTS_BY_CATEGORY = `
+query Posts ($category : JSON) {
+  Posts(where: {category: {equals : $category}}) {
+    docs {
+      ${POST_DATA}
+    }
+  }
+}
 `;

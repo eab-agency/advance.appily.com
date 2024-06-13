@@ -41,7 +41,7 @@ docs {
   `;
 
 export const CAROUSELCARDSNOTIN = `
-query CarouselCardsNotIn($state: [String] $lead: [String]) {
+query CarouselCardsNotIn($state: [JOSN] $lead: [JSON]) {
   CarouselCards(limit: 4, where: {partnerState: { not_in: $state }, leadTypes: {in: $lead} } ) {
     ${CAROUSELQUERY}
 }
