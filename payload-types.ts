@@ -1385,6 +1385,8 @@ export interface Config {
   export interface Post {
 	id: string;
 	title: string;
+	category: (string | Category)[];
+	tag: (string | Tag)[];
 	publishedDate?: string | null;
 	postFeaturedImage: {
 	  media: string | Media;

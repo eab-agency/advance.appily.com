@@ -23,6 +23,7 @@ const BlogTabs = ({ tabs }) => {
   };
 
   const fetchPostsForCategory = async (tab) => {
+    
     try {
       const posts = await fetchPostsByCategory(tab.id);
       setFetchedPosts(posts);

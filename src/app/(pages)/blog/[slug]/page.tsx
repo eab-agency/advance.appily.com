@@ -1,15 +1,15 @@
-import { fetchPost, fetchPosts } from "@/app/graphql";
+import { fetchPost, fetchPosts, fetchPostsByCategory } from "@/app/graphql";
 import { Blocks } from '@/components/Block';
 import "@/styles/layouts/templates/PostPage.scss"
 import { notFound } from "next/navigation";
 import React from "react";
-import { Post } from "../../../../../payload-types";
+import { Category, Post } from "../../../../../payload-types";
 import { Hero } from '../../../../blocks/HeroBlock';
+import Link from 'next/link';
 
 export async function generateStaticParams() {
   try {
     const posts = await fetchPosts();
-    console.log(posts,'posts**')
     return posts.map(({ slug }) => ({ params: { slug } }));
   } catch (error) {
     console.error('Error fetching posts:', error);
@@ -29,9 +29,15 @@ const formatDate = (dateString: string) => {
 
 const PostComponent = async ({ params: { slug = '' } }: PostComponentProps) => {
   let post: Post | null = null;
-
+  let relatesPosts: Post[] | null = [];
   try {
     post = await fetchPost(slug);
+    if(post){
+    const catID: Category['id'] = post?.category ? (post?.category[0] as Category)?.id : '';
+    if(catID) {
+      relatesPosts = await fetchPostsByCategory(catID);
+      }
+    }
   } catch (error) {
     console.error('Error fetching post:', error);
   }
@@ -40,12 +46,14 @@ const PostComponent = async ({ params: { slug = '' } }: PostComponentProps) => {
     notFound();
   }
 
+
   const {
     postFeaturedImage,
     layout,
     title,
     publishedDate,
-    updatedAt
+    updatedAt,
+    id
   } = post;
 
   return (
@@ -62,6 +70,25 @@ const PostComponent = async ({ params: { slug = '' } }: PostComponentProps) => {
         <Hero {...postFeaturedImage} />
       }
       <Blocks blocks={layout} />
+      <div className="content">
+      <p>{'Related Posts'}</p>
+      <div className="card-container">
+      {relatesPosts?.length > 0 && relatesPosts.map((data,index)=>{
+        if(data.id !== id) {
+        return(
+          <div className="card" key={index}>
+         <div className="card-content">
+        <h3 className="card-title">
+          <Link href={`/blog/${data.slug}`}>
+            {data.title}
+          </Link>
+        </h3>
+      </div>
+      </div>
+        )}
+      })}
+      </div>
+      </div>
     </>
   );
 };

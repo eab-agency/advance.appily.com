@@ -47,3 +47,28 @@
     background-color: #f9f9f9;
     text-align: center;
   }
+
+  .category-button {
+    background: none;
+  color: black;
+  border: none;
+  padding: 0;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  }
+
+  
+  .category-container {
+    display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin: 20px 0;
+  }
+
+  .category-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  

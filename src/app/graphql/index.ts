@@ -1,4 +1,4 @@
-import type { CarouselCard, Page, Post, Header, Footer, Category } from "../../../payload-types";
+import type { CarouselCard, Page, Post, Header, Footer, Category, Tag } from "../../../payload-types";
 import {
 	ALLCAROUSELCARDS,
 	CAROUSELCARDS,
@@ -7,7 +7,8 @@ import {
 import { ALLCATEGORIES } from "./categories";
 import { FOOTER_QUERY, GLOBALS, HEADER_QUERY } from "./globals";
 import { PAGE, PAGES } from "./pages";
-import { FIRSTFIVEPOSTS, POST, POSTS, POSTS_BY_CATEGORY } from "./posts";
+import { FIRSTFIVEPOSTS, POST, POSTS, POSTS_BY_CATEGORY, POST_BY_TAG } from "./posts";
+import { ALLTAGS } from "./tags";
 
 const next: { revalidate: false } = {
 	revalidate: false,
@@ -282,7 +283,6 @@ export const fetchPosts = async (): Promise<Post[]> => {
 };
 
 export const fetchPost = async (slug: string): Promise<Post> => {
-   console.log(slug,'fetchflug**')
    const { data } = await fetch(
 	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?post=${slug}`,
 	   {
@@ -365,5 +365,44 @@ export const fetchPostsByCategory = async (
 	return data?.Posts?.docs;
 };
 
+export const fetchAllTags = async (): Promise<Tag[]> => {
+	const { data } = await fetch(
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?tags`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			cache: "no-store",
+			body: JSON.stringify({
+				query: ALLTAGS,
+				
+			}),
+		},
+	).then(res => res.json());
+	return data?.Tags?.docs;
+ };
 
 
+ export const fetchPostsByTag = async (
+	tag?: Tag['id'],
+): Promise<Post[]> => {
+	const { data } = await fetch(
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			// next,
+			body: JSON.stringify({
+				query: POST_BY_TAG,
+				variables: {
+					tag,
+				},
+			}),
+		},
+	
+	).then(res => res.json());
+	return data?.Posts?.docs;
+};

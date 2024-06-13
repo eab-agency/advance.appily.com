@@ -123,3 +123,13 @@ query Posts ($category : JSON) {
   }
 }
 `;
+
+export const POST_BY_TAG =  `
+query Posts ($tag : JSON) {
+  Posts(where: {tag: {equals : $tag}}) {
+    docs {
+      ${POST_DATA}
+    }
+  }
+}
+`;

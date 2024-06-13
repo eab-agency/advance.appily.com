@@ -45,3 +45,42 @@
     margin-inline: auto;
   }
 }
+.content {
+  margin: 10px auto;
+    width: 90%;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #333;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem; 
+}
