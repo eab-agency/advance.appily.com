@@ -272,14 +272,7 @@ export interface Page {
 																	} | null;
 																	url?: string | null;
 																	label: string;
-																	appearance?:
-																		| (
-																				| "primary"
-																				| "secondary"
-																				| "tertiary"
-																				| "default"
-																		  )
-																		| null;
+																	appearance?: ("primary" | "secondary") | null;
 																};
 																id?: string | null;
 														  }[]
@@ -583,14 +576,7 @@ export interface Page {
 														} | null;
 														url?: string | null;
 														label: string;
-														appearance?:
-															| (
-																	| "primary"
-																	| "secondary"
-																	| "tertiary"
-																	| "default"
-															  )
-															| null;
+														appearance?: ("primary" | "secondary") | null;
 													};
 													id?: string | null;
 											  }[]
@@ -1025,7 +1011,7 @@ export interface Page {
 				blockType: "callout";
 		  }
 		| {
-				highlightCTABackgroundColor?:
+				highlightCtaBackgroundColor?:
 					| (
 							| "default"
 							| "dark_blue_light_gray"
@@ -1035,7 +1021,8 @@ export interface Page {
 							| "slate_gray_white"
 					  )
 					| null;
-				title?: string | null;
+				imageAlignment?: ("left" | "right") | null;
+				image?: string | Media | null;
 				richText?: {
 					root: {
 						type: string;
@@ -1058,7 +1045,7 @@ export interface Page {
 					};
 					[k: string]: unknown;
 				} | null;
-				highlightedctaLinks?:
+				links?:
 					| {
 							link: {
 								type?: ("reference" | "custom") | null;
@@ -1069,13 +1056,13 @@ export interface Page {
 								} | null;
 								url?: string | null;
 								label: string;
-								appearance?: ("default" | "primary" | "secondary") | null;
+								appearance?:
+									| ("default" | "primary" | "secondary" | "tertiary")
+									| null;
 							};
 							id?: string | null;
 					  }[]
 					| null;
-				imagealignment?: ("left" | "center" | "right") | null;
-				image?: string | Media | null;
 				id?: string | null;
 				blockName?: string | null;
 				blockType: "highlightCTA";
@@ -1679,14 +1666,7 @@ export interface Post {
 																	} | null;
 																	url?: string | null;
 																	label: string;
-																	appearance?:
-																		| (
-																				| "primary"
-																				| "secondary"
-																				| "tertiary"
-																				| "default"
-																		  )
-																		| null;
+																	appearance?: ("primary" | "secondary") | null;
 																};
 																id?: string | null;
 														  }[]
@@ -1990,14 +1970,7 @@ export interface Post {
 														} | null;
 														url?: string | null;
 														label: string;
-														appearance?:
-															| (
-																	| "primary"
-																	| "secondary"
-																	| "tertiary"
-																	| "default"
-															  )
-															| null;
+														appearance?: ("primary" | "secondary") | null;
 													};
 													id?: string | null;
 											  }[]
@@ -2507,4 +2480,8 @@ export interface Footer {
 		| null;
 	updatedAt?: string | null;
 	createdAt?: string | null;
+}
+
+declare module "payload" {
+	export type GeneratedTypes = Config;
 }

@@ -3,18 +3,19 @@ import { Button } from "@/components";
 import { CMSLink } from "@/components/Link";
 import { Media as Image } from "@/components/Media";
 import RichText from "@/components/RichText";
+import "@/styles/layouts/HighlightedSection.scss";
 import Link from "next/link";
 import React from "react";
 import { Media } from "../../../payload-types";
 
 interface highlightedCtaSectionData {
-  title?: string;
   richText?: {
     [k: string]: unknown;
   }[];
   image: Media | string;
+  imageAlignment: "left" | "right";
   highlightCTABackgroundColor: string;
-  highlightedctaLinks?: {
+  highlightedSectionCTALinks?: {
     link: {
       type?: "reference" | "custom";
       newTab?: boolean;
@@ -31,30 +32,37 @@ interface highlightedCtaSectionData {
 }
 
 export default function HighlightedCtaSection({
-  title,
   image,
+  imageAlignment,
   richText,
-  highlightedctaLinks,
+  highlightedSectionCTALinks,
 }: highlightedCtaSectionData) {
+
+  const renderImage = () => {
+    return (
+      <div className="column">
+        <figure>
+          <Image resource={image} width={480} height={480} />
+        </figure>
+      </div>
+    );
+  }
+
   return (
-    <section className="takeQuiz full-content">
+    <section className="highlightedCtasSection">
       <div className="group row">
-        <div className="column">
-          <figure>
-            <Image resource={image} priority width={480} height={480} />
-          </figure>
-        </div>
+        {imageAlignment === "left" && renderImage()}
         <div className="content column">
-          <h2>{title}</h2>
           <RichText content={richText} />
-          {highlightedctaLinks &&
-            highlightedctaLinks.length > 0 &&
-            (highlightedctaLinks || []).map(({ link }, index) => {
+          {highlightedSectionCTALinks &&
+            highlightedSectionCTALinks.length > 0 &&
+            (highlightedSectionCTALinks || []).map(({ link }, index) => {
               return (
                 <CMSLink key={index} {...link} className="button btn-primary" />
               );
             })}
         </div>
+        {imageAlignment === "right" && renderImage()}
       </div>
     </section>
   );
