@@ -4,6 +4,7 @@ import { CMSLink } from "@/components/Link";
 import { Media as Image } from "@/components/Media";
 import RichText from "@/components/RichText";
 import "@/styles/layouts/HighlightedSection.scss";
+import { sectionClassNames } from "@/utilities/sectionClassNames";
 import Link from "next/link";
 import React from "react";
 import { Media } from "../../../payload-types";
@@ -14,7 +15,7 @@ interface highlightedCtaSectionData {
   }[];
   image: Media | string;
   imageAlignment: "left" | "right";
-  highlightCTABackgroundColor: string;
+  highlightCtaBackgroundColor: string;
   highlightedSectionCTALinks?: {
     link: {
       type?: "reference" | "custom";
@@ -36,20 +37,19 @@ export default function HighlightedCtaSection({
   imageAlignment,
   richText,
   highlightedSectionCTALinks,
+  highlightCtaBackgroundColor: backgroundColor,
 }: highlightedCtaSectionData) {
 
   const renderImage = () => {
     return (
-      <div className="column">
-        <figure>
-          <Image resource={image} width={480} height={480} />
-        </figure>
+      <div className={"column"}>
+        <Image resource={image} width={480} height={480} className={`position-${imageAlignment}`} />
       </div>
     );
   }
 
   return (
-    <section className="highlightedCtasSection">
+    <section className={`${sectionClassNames({ backgroundColor })}  highlightedCtasSection`}>
       <div className="group row">
         {imageAlignment === "left" && renderImage()}
         <div className="content column">
@@ -58,7 +58,7 @@ export default function HighlightedCtaSection({
             highlightedSectionCTALinks.length > 0 &&
             (highlightedSectionCTALinks || []).map(({ link }, index) => {
               return (
-                <CMSLink key={index} {...link} className="button btn-primary" />
+                <CMSLink key={index} {...link} />
               );
             })}
         </div>

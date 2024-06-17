@@ -1045,7 +1045,7 @@ export interface Page {
 					};
 					[k: string]: unknown;
 				} | null;
-				links?:
+				highlightedSectionCTALinks?:
 					| {
 							link: {
 								type?: ("reference" | "custom") | null;
