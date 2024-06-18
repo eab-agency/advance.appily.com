@@ -65,11 +65,7 @@ export default function Page() {
 
         <CareerPaths careerPaths={data.careerPaths} />
 
-        <StatisticsSection
-          statistics={data.stats}
-          source={data.statsSource}
-          statsLayoutWidth="contained"
-        />
+        <StatisticsSection statistics={data.stats} source={data.statsSource} statsLayoutWidth="contained" />
 
         <TextWithImage
           content={data.textWithImage.content}

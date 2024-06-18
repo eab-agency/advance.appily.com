@@ -25,6 +25,7 @@ import data from "@/data/results-fearless-leader.json";
 
 import StatisticsSection from "@/blocks/StatisticsSection";
 
+
 function TabsFallback() {
   return <>Tabs loading...</>;
 }
@@ -63,11 +64,7 @@ export default function Page() {
 
         <CareerPaths careerPaths={data.careerPaths} />
 
-        <StatisticsSection
-          statistics={data.stats}
-          source={data.statsSource}
-          statsLayoutWidth="contained"
-        />
+        <StatisticsSection statistics={data.stats} source={data.statsSource} statsLayoutWidth="contained" />
 
         <TextWithImage
           content={data.textWithImage.content}

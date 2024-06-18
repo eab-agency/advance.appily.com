@@ -3,18 +3,20 @@ import { Button } from "@/components";
 import { CMSLink } from "@/components/Link";
 import { Media as Image } from "@/components/Media";
 import RichText from "@/components/RichText";
+import "@/styles/layouts/HighlightedSection.scss";
+import { sectionClassNames } from "@/utilities/sectionClassNames";
 import Link from "next/link";
 import React from "react";
 import { Media } from "../../../payload-types";
 
 interface highlightedCtaSectionData {
-  title?: string;
   richText?: {
     [k: string]: unknown;
   }[];
   image: Media | string;
-  highlightCTABackgroundColor: string;
-  highlightedctaLinks?: {
+  imageAlignment: "left" | "right";
+  highlightCtaBackgroundColor: string;
+  highlightedSectionCTALinks?: {
     link: {
       type?: "reference" | "custom";
       newTab?: boolean;
@@ -31,30 +33,36 @@ interface highlightedCtaSectionData {
 }
 
 export default function HighlightedCtaSection({
-  title,
   image,
+  imageAlignment,
   richText,
-  highlightedctaLinks,
+  highlightedSectionCTALinks,
+  highlightCtaBackgroundColor: backgroundColor,
 }: highlightedCtaSectionData) {
+
+  const renderImage = () => {
+    return (
+      <div className={"column"}>
+        <Image resource={image} width={480} height={480} className={`position-${imageAlignment}`} />
+      </div>
+    );
+  }
+
   return (
-    <section className="takeQuiz full-content">
+    <section className={`${sectionClassNames({ backgroundColor })}  highlightedCtasSection`}>
       <div className="group row">
-        <div className="column">
-          <figure>
-            <Image resource={image} priority width={480} height={480} />
-          </figure>
-        </div>
+        {imageAlignment === "left" && renderImage()}
         <div className="content column">
-          <h2>{title}</h2>
           <RichText content={richText} />
-          {highlightedctaLinks &&
-            highlightedctaLinks.length > 0 &&
-            (highlightedctaLinks || []).map(({ link }, index) => {
+          {highlightedSectionCTALinks &&
+            highlightedSectionCTALinks.length > 0 &&
+            (highlightedSectionCTALinks || []).map(({ link }, index) => {
               return (
-                <CMSLink key={index} {...link} className="button btn-primary" />
+                <CMSLink key={index} {...link} />
               );
             })}
         </div>
+        {imageAlignment === "right" && renderImage()}
       </div>
     </section>
   );

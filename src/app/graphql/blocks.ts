@@ -155,18 +155,18 @@ export const IMAGECARDBLOCK = `
 export const HIGHLIGHTEDCTA = `
 ...on HighlightCTA {
   blockType
-  highlightCTABackgroundColor
-  title
+  highlightCtaBackgroundColor
   richText
-  imagealignment
+  imageAlignment
   image {
     ${MEDIA_FIELDS}
   }
-  highlightedctaLinks {
+  highlightedSectionCTALinks {
     link ${LINK_FIELDS()}
   }
 }
 `;
+
 export const CALLOUTSECTION = `
 ...on Callout {
   blockType
