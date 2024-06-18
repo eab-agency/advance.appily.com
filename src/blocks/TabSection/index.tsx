@@ -1,6 +1,4 @@
-import { Tabs } from "@/components/Tabs";
 import { Suspense } from "react";
-import Tabscomponent from ".";
 import TabsComponent from "./TabsComponent";
 
 interface TabsSectionProps {
@@ -21,7 +19,11 @@ export default function TabsSection({ tabs }: TabsSectionProps) {
     <section className={'tabsSection column bg-none'}>
       <header className="center-aligned centered-content center-justified">
       </header>
+      <Suspense fallback={<TabsFallback />}>
+
       <TabsComponent className="react-tabs" tabs={tabs} />
+			</Suspense>
+
     </section>
   );
 }
