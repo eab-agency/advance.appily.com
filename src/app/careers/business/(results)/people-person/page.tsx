@@ -1,7 +1,9 @@
 "use client";
 import peoplePerson from "@/assets/lotties/peoplePerson.json";
 import data from "@/data/results-people-person.json";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import { useEffect, useRef } from "react";
 import { Suspense } from "react";
 
