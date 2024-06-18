@@ -9,6 +9,8 @@ import { mergeTwitter } from "../seo/mergeTwitter";
 
 import "@/styles/styles.scss";
 
+import { OneTrustBannerCustom } from "@/lib/oneTrustBannerCustom";
+
 import Script from "next/script";
 import HeaderComponent from "../components/Header";
 import FooterComponent from "../components/Footer";
@@ -44,11 +46,11 @@ export default async function RootLayout({
       {!isDev && <GoogleTagManager gtmId={GTM_ID} />}
       <body>
         <Providers>
-          {/* @ts-expect-error Server Component */}
+          {/* @ts-expect-error */}
           <HeaderComponent />
           {/* <LocationInDevMode /> */}
           <main className="layout-wrapper">{children}</main>
-          {/* @ts-expect-error Server Component */}
+          {/* @ts-expect-error */}
           <FooterComponent />
         </Providers>
       </body>

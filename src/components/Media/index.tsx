@@ -20,17 +20,16 @@ export const Media: React.FC<Props> = (props) => {
   const Tag = (htmlElement as ElementType) || Fragment;
 
   const mediaClasses = {
-    className: `mediaElement ${
-      enableHighlight ? "mediaElement__highlight" : ""
-    } ${cornerStyle ? `mediaElement__${cornerStyle}` : ""}`,
+    className: `mediaElement ${className} ${enableHighlight ? "mediaElement__highlight" : ""
+      } ${cornerStyle ? `mediaElement__${cornerStyle}` : ""}`,
   };
 
   return (
     <Tag
       {...(htmlElement !== null
         ? {
-            ...mediaClasses,
-          }
+          ...mediaClasses,
+        }
         : {})}
     >
       {isVideo ? (
