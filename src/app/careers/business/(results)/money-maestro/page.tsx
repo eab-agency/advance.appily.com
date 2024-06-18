@@ -1,7 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import moneyMaestro from "@/assets/lotties/moneyMaestro.json";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import { Suspense } from "react";
 
 import data from "@/data/results-money-maestro.json";

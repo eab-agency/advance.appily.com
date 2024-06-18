@@ -81,15 +81,13 @@ const CareersSeoPage = () => {
               </p>
               <p>
                 Once you{" "}
-                <Link href="/careers/business/quiz/start">
-                  complete the quiz
-                </Link>
-                , we’ll share which path can fit your strengths and provide some
+                <Link href="/careers/business/quiz">complete the quiz</Link>,
+                we’ll share which path can fit your strengths and provide some
                 insights into career outcomes you might expect.
               </p>
               <Button
                 type="button"
-                href="/careers/business/quiz/start"
+                href="/careers/business/quiz"
                 label="Business Career Quiz"
                 className="button btn-primary btn-click-quiz"
               />
@@ -111,15 +109,13 @@ const CareersSeoPage = () => {
               <p>
                 If you want to help people, there’s a place in health-care for
                 you.{" "}
-                <Link href="/careers/healthcare/quiz/start">
-                  Take the quiz today
-                </Link>{" "}
+                <Link href="/careers/healthcare/quiz">Take the quiz today</Link>{" "}
                 and we’ll help you find the perfect role that matches your
                 skills and interests.
               </p>
               <Button
                 type="button"
-                href="/careers/healthcare/quiz/start"
+                href="/careers/healthcare/quiz"
                 label="Healthcare Career Quiz"
                 className="button btn-primary btn-click-quiz"
               />
@@ -148,7 +144,7 @@ const CareersSeoPage = () => {
               </p>
               <Button
                 type="button"
-                href="/careers/education/quiz/start"
+                href="/careers/education/quiz"
                 label="Education Career Quiz"
                 className="button btn-primary btn-click-quiz"
               />

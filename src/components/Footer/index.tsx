@@ -34,7 +34,7 @@ const FooterComponent = () => {
   };
 
   const navItems = footer?.navItems || [];
-  
+
   return (
     <footer className={styles.pageFooter}>
       <div className={styles.wrapper}>
