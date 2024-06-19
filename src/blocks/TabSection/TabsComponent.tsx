@@ -11,7 +11,6 @@ import { Media as Image } from "@/components/Media";
 // import styles from '@/styles/global/components/Tabs.module.scss';
 
 const TabsComponent = ({ tabs, className, id = "0" }) => {
-  console.log(tabs, "**");
   const searchParams = useSearchParams();
   const selectedTabKey = `tab-${id}`;
   const selectedTab = Number(searchParams?.get(selectedTabKey)) || 0;

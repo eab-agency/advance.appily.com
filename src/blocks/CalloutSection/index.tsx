@@ -15,7 +15,7 @@ interface callOutSection {
     [k: string]: unknown;
   }[];
   image: Media | string;
-  highlightCTABackgroundColor: string;
+  highlightCtaBackgroundColor: string;
   calloutLinks?: {
     link: {
       type?: 'reference' | 'custom';
