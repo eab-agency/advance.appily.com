@@ -171,7 +171,8 @@ export const CALLOUTSECTION = `
 ...on Callout {
   blockType
   callOutBackgroundColor
-  calloutTitle
+  title
+  kicker
   richText
   calloutLinks {
     link ${LINK_FIELDS()}
