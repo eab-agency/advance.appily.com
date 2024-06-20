@@ -1,0 +1,91 @@
+@use "sass:color";
+@use "@/styles/global/tokens";
+
+@mixin titleBackground($color) {
+  background-color: $color;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 100vw;
+    height: 100%;
+    background-color: $color;
+    mix-blend-mode: multiply;
+  }
+}
+
+.callout-section {
+  &.section__bg-dark_blue_light_gray .group {
+    .title {
+      @include titleBackground(var(--c-bg3));
+    }
+  }
+
+  &.section__bg-orange_peach .group {
+    .title {
+      @include titleBackground(var(--c-bg8));
+    }
+  }
+
+  &.section__bg-turquoise_yellow .group {
+    .title {
+      @include titleBackground(var(--c-bg1));
+    }
+  }
+
+  &.section__bg-turquoise_light_turquoise .group {
+    .title {
+      @include titleBackground(var(--c-bg6));
+    }
+  }
+
+  &.section__bg-slate_gray_white .group {
+    .title {
+      @include titleBackground(var(--c-bg2));
+    }
+  }
+
+  &.section__bg-light_blue_light_turquoise .group {
+    .title {
+      @include titleBackground(var(--c-bg3));
+    }
+  }
+
+  .group {
+    margin: 0 auto;
+    max-width: tokens.$mq-1200;
+    align-items: flex-start;
+
+    @media (min-width: tokens.$mq-900) {
+      align-items: flex-end;
+    }
+
+    .column {
+      &:first-child {
+        flex: 1;
+
+        .kicker {
+          display: block;
+        }
+
+        .title {
+          display: block;
+          position: relative;
+          width: max-content;
+          padding-right: 0.5em;
+          border-top-right-radius: 2em;
+          border-bottom-right-radius: 2em;
+          font-size: 1.5em;
+        }
+      }
+      &:last-child {
+        flex: 0;
+
+        .button {
+          width: max-content;
+        }
+      }
+    }
+  }
+}

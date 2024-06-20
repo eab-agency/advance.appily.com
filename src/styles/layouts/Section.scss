@@ -33,9 +33,6 @@
     }
   }
 
-  // &[class*="section__bg-"] {
-  // }
-
   &.section__bg-dark_blue_light_gray {
     background-color: var(--c-bg1);
   }
@@ -54,5 +51,9 @@
 
   &.section__bg-slate_gray_white {
     background-color: var(--c-bg8);
+  }
+
+  &.section__bg-light_blue_light_turquoise {
+    background-color: var(--c-bg5);
   }
 }
