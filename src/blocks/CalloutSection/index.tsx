@@ -48,15 +48,17 @@ export default function CalloutSection({
           </h2>
           <RichText content={richText} />
         </div>
-        {calloutLinks && calloutLinks?.length > 0 &&
-          (calloutLinks || []).map(({ link }, index) => {
-            return (
-              <div className="column">
-                <CMSLink key={index} {...link} />
-              </div>
-            )
-          })
-        }
+        {calloutLinks?.length && (
+          <div className="column">
+            {calloutLinks && calloutLinks?.length > 0 &&
+              (calloutLinks || []).map(({ link }, index) => {
+                return (
+                  <CMSLink key={index} {...link} />
+                )
+              })
+            }
+          </div>
+        )}
       </div>
     </section>
   )
