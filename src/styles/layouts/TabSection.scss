@@ -1,5 +1,18 @@
 .tabsSection {
-  background: var(--c-bg5);
+  // background: var(--c-bg5);
+
+  .react-tabs {
+    background: none;
+
+    &::before {
+      background: none;
+    }
+
+    &__tab--selected {
+      background: var(--c-bg-body);
+    }
+  }
+
   &.bg-none {
     background: none;
 

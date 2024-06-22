@@ -179,27 +179,6 @@ export const CALLOUTSECTION = `
   }
 }
 `;
-export const TABSECTION = `
-...on Tabsection {
-  blockType
-  tabSectionBackgroundColor
-  tabs {
-    tabicon {
-      ${MEDIA_FIELDS}
-    }
-    shortTitle
-    contentTitle
-    description
-    tabButtongroup {
-      link ${LINK_FIELDS()}
-    }
-    useSameIcon
-    alternateImage {
-      ${MEDIA_FIELDS}
-    }
-  }
-}
-`;
 
 export const BUTTONGROUPBLOCK = `
 ...on ButtonGroup {
@@ -238,6 +217,31 @@ export const CAROUSELCARD = `
   richText
   carouselBackgroundColor
 }`;
+
+export const TABSECTION = `
+...on Tabsection {
+  blockType
+  tabSectionBackgroundColor
+  sectionHead
+  sectionIntro
+  tabs {
+    tabicon {
+      ${MEDIA_FIELDS}
+    }
+    useSameIcon
+    shortTitle
+    alternateImage {
+      ${MEDIA_FIELDS}
+    }
+    blocks {
+        ${ACCORDIONBLOCK}
+        ${BUTTONGROUPBLOCK}
+        ${RICHTEXTBLOCK}
+        ${MEDIA_BLOCK}
+      }
+  }
+}
+`;
 
 export const SECTION = `
 ...on Section {
