@@ -44,7 +44,7 @@ export default function AccordionSection({
   newTab = false,
 }: AccordionSectionProps) {
   return (
-    <div className="accordion-group">
+    <div className={`accordion-group ${data.numberedItems && 'numbered-accordion'}`}>
       {data.accordions.map((val, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
         <Accordion key={index} title={val.title} richText={val.richText} links={val} />
