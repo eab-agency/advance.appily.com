@@ -2,7 +2,7 @@
 /* eslint-disable react/no-danger */
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
-import React from "react";
+import React, { Fragment } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import { Media as Image } from "@/components/Media";
 
@@ -71,9 +71,9 @@ const TabsComponent = ({ tabs, className, id = "0" }) => {
             <div className="tab-copy">
               {blocks?.map((block, blockIndex) => {
                 return (
-                  <div key={blockIndex} className='block__wrap'>
+                  <Fragment key={blockIndex}>
                     {blockRenderers[block.blockType](block)}
-                  </div>
+                  </Fragment>
                 );
               })}
             </div>

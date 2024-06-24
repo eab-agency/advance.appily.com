@@ -23,9 +23,9 @@ const RenderColumnContent = ({ columns, layoutType }) => {
           <div className={columnClass} style={{ '--column-width': `${stringWithoutPercentage}%` } as any} key={index}>
             {blocks?.map((block, blockIndex) => {
               return (
-                <div key={blockIndex} className='block__wrap'>
+                <Fragment key={blockIndex}>
                   {blockRenderers[block.blockType](block)}
-                </div>
+                </Fragment>
               );
             })}
           </div>
