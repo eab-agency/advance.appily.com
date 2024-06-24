@@ -294,3 +294,15 @@ export const SUBNAVIGATION = `
   }
 }
 `;
+
+export const STICKYCTASECTION = `
+...on StickyCTA {
+  blockName
+  blockType
+  resultPage
+  stickyCTABackgroundColor
+  stickyctaLinks
+  {
+    link ${LINK_FIELDS()}
+  }
+}`

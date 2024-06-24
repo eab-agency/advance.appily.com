@@ -10,9 +10,10 @@ import { PAGE, PAGES } from "./pages";
 import { FIRSTFIVEPOSTS, POST, POSTS, POSTS_BY_CATEGORY, POST_BY_TAG } from "./posts";
 import { ALLTAGS } from "./tags";
 
-const next: { revalidate: false } = {
-	revalidate: false,
+const next: { revalidate: number | false | undefined } = {
+	revalidate: 5,
 };
+
 
 // fetch all the lead types and their ids
 export const fetchLeadTypes = async (): Promise<
@@ -203,7 +204,7 @@ export const fetchPages = async (): Promise<
 			headers: {
 				"Content-Type": "application/json",
 			},
-			cache: "no-store",
+			next,
 			body: JSON.stringify({
 				query: PAGES,
 			}),
@@ -230,7 +231,7 @@ export const fetchPage = async (
 			headers: {
 				"Content-Type": "application/json",
 			},
-			cache: "no-store",
+			next,
 			body: JSON.stringify({
 				query: PAGE,
 				variables: {

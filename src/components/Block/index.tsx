@@ -11,6 +11,7 @@ import { Page } from "../../../payload-types.js";
 import { ContentBlock } from "../../blocks/Content";
 import { MediaBlock } from "../../blocks/MediaBlock";
 import CarouselWithForm from '../CarouselWithForm/CarouselWithForm'
+import StickyCta from "@/blocks/StickyCTASection";
 
 
 
@@ -23,7 +24,8 @@ const blockComponents = {
   callout: CalloutSection,
   tabsection: TabSection,
   Schoolcarousel: CarouselWithForm,
-  subNavigation: SubNavigation
+  subNavigation: SubNavigation,
+  stickyCTA: StickyCta
 }
 
 export const Blocks: React.FC<{

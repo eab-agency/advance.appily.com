@@ -994,6 +994,38 @@ export interface Config {
 		  blockName?: string | null;
 		  blockType: 'subNavigation';
 		}
+	  | {
+		  stickyCTABackgroundColor?:
+			| (
+				| 'default'
+				| 'dark_blue_light_gray'
+				| 'orange_peach'
+				| 'turquoise_yellow'
+				| 'turquoise_light_turquoise'
+				| 'slate_gray_white'
+			  )
+			| null;
+		resultPage?: boolean | null;
+		  stickyctaLinks?:
+			| {
+				link: {
+				  type?: ('reference' | 'custom') | null;
+				  newTab?: boolean | null;
+				  reference?: {
+					relationTo: 'pages';
+					value: string | Page;
+				  } | null;
+				  url?: string | null;
+				  label: string;
+				  appearance?: ('default' | 'primary' | 'secondary') | null;
+				};
+				id?: string | null;
+			  }[]
+			| null;
+		  id?: string | null;
+		  blockName?: string | null;
+		  blockType: 'stickyCTA';
+		}
 	)[];
 	slug?: string | null;
 	parent?: (string | null) | Page;
