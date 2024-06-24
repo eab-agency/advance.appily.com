@@ -39,7 +39,7 @@
         margin-bottom: 0;
       }
 
-      .block__wrap {
+      & > div {
         display: flex;
         flex: 1;
       }

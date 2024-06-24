@@ -33,11 +33,12 @@
     }
   }
 
-  // &[class*="section__bg-"] {
-  // }
-
   &.section__bg-dark_blue_light_gray {
     background-color: var(--c-bg1);
+  }
+
+  &.section__bg-blue_light_blue {
+    background-color: var(--c-bg5);
   }
 
   &.section__bg-orange_peach {

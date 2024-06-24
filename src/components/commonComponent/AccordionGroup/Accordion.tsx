@@ -1,12 +1,32 @@
 "use client";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { BiSolidMinusCircle, BiSolidPlusCircle } from "react-icons/bi";
 
-import styles from "@/styles/components/Accordion.module.scss";
+// import styles from "@/styles/components/Accordion.module.scss";
 import RichText from "../../RichText";
 import ButtonGroup from "../ButtonGroup";
+import { Media } from '@/components/Media'
 
-export const Accordion = ({ title, richText, links }) => {
+const blockRenderers = {
+  richText: (block) => <RichText content={block.richText} />,
+  mediaBlock: (block) => {
+    const { media, cornerStyle, enableHighlight } = block;
+    return (
+      <Media
+        resource={media}
+        cornerStyle={cornerStyle}
+        enableHighlight={enableHighlight}
+        priority
+      />
+    )
+  },
+  ButtonGroup: (block) => <ButtonGroup data={block} />,
+};
+
+export const Accordion = ({
+  title,
+  blocks
+}) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const togglePanel = () => {
@@ -14,15 +34,15 @@ export const Accordion = ({ title, richText, links }) => {
   };
 
   return (
-    <div className={styles.accordion}>
+    <div className="accordion">
       <div
-        className={styles["accordion-header"]}
+        className="accordion-header"
         onClick={togglePanel}
         onKeyDown={togglePanel}
         role="button"
         tabIndex={0}
       >
-        <h3 className={isExpanded ? styles.expanded : undefined}>
+        <h3 className={isExpanded ? "expanded" : ""}>
           <span>{title}</span>{" "}
           {isExpanded ? (
             <i>
@@ -36,8 +56,18 @@ export const Accordion = ({ title, richText, links }) => {
         </h3>
       </div>
 
-      {isExpanded && <div className={styles["accordion-body"]}>
-        <RichText content={richText} />
+      {isExpanded && <div className="accordion-body">
+        {/* <RichText content={richText} /> */}
+        <div className="column">
+          {blocks?.map((block, blockIndex) => {
+            return (
+              <Fragment key={blockIndex}>
+                {blockRenderers[block.blockType](block)}
+              </Fragment>
+            );
+          })}
+
+        </div>
       </div>}
 
       {/* <ButtonGroup data={links} /> */}

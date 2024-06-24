@@ -119,10 +119,14 @@ small,
 // ===========================
 // Payload Utility Classes
 
-:where(.text-center) {
-  // text-align: left;
+:where(.text-left) {
+  text-align: left;
 }
 
 :where(.text-center) {
   text-align: center;
+}
+
+:where(.text-right) {
+  text-align: right;
 }
