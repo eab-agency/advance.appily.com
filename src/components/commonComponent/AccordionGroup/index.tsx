@@ -9,32 +9,20 @@ interface AccordionSectionProps {
     title: string;
     description: string;
     numberedItems: boolean;
-    buttonText?: string;
-    buttonLink?: string;
     accordions: {
       title: string;
-      richText?: {
-        [k: string]: unknown;
-      }[];
-      links?: {
-        link: {
-          type?: 'reference' | 'custom';
-          newTab?: boolean;
-          reference: {
-            value: string;
-            relationTo: 'pages';
-          };
-          url: string;
-          label: string;
-          appearance?: 'default' | 'primary' | 'secondary' | 'tertiary';
-        };
-        id?: string;
+      blocks: {
+        type: string;
+        richText?: string;
+        buttonGroup?: {
+          buttons: {
+            text: string;
+            link: string;
+            type: string;
+          }[];
+        }
       }[];
     }[];
-    image?: {
-      path: string;
-      altText: string;
-    };
   };
 }
 
@@ -47,7 +35,7 @@ export default function AccordionSection({
     <div className={`accordion-group ${data.numberedItems && 'numbered-accordion'}`}>
       {data.accordions.map((val, index) => (
         // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-        <Accordion key={index} title={val.title} richText={val.richText} links={val} />
+        <Accordion key={index} title={val.title} blocks={val.blocks} />
 
       ))}
     </div>

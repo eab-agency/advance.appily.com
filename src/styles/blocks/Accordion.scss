@@ -2,7 +2,8 @@
 @use "@/styles/global/tokens";
 
 .accordion-group {
-  margin-block: clamp(1.5rem, 4vw, 4rem);
+  width: 100%;
+  margin-block: clamp(1.5rem, 2.5vw, 2.5rem);
 
   &.numbered-accordion {
     counter-reset: accordion;
@@ -14,7 +15,6 @@
             content: counter(accordion) ". ";
             font-weight: tokens.$fontWeight-bold;
             color: var(--c-orange-500);
-            margin-right: tokens.$size-2;
           }
         }
       }
@@ -96,24 +96,28 @@
         align-items: center;
       }
 
-      figure {
-        width: 50%;
-        max-width: 15rem;
-
-        @media (min-width: tokens.$mq-900) {
-          width: 100%;
-          max-width: 25rem;
-        }
-
-        img {
-          width: 100%;
-          object-fit: cover;
-        }
+      & > div {
+        flex: 1;
       }
 
-      div {
-        flex: 1 0 25rem;
-      }
+      // figure {
+      //   width: 50%;
+      //   max-width: 15rem;
+
+      //   @media (min-width: tokens.$mq-900) {
+      //     width: 100%;
+      //     max-width: 25rem;
+      //   }
+
+      //   img {
+      //     width: 100%;
+      //     object-fit: cover;
+      //   }
+      // }
+
+      // div {
+      //   // flex: 1 0 25rem;
+      // }
     }
   }
 }

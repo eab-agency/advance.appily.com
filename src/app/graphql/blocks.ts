@@ -123,19 +123,6 @@ export const TESTIMONIAL = `
   alignment
 }
 `;
-export const ACCORDIONBLOCK = `
-...on Accordion {
-  blockType
-  numberedItems
-  accordions {
-    title
-    richText
-    links {
-      link ${LINK_FIELDS()}
-    }
-  }
-}
-`;
 
 export const IMAGECARDBLOCK = `
 ...on ImageCard {
@@ -194,6 +181,22 @@ export const RICHTEXTBLOCK = `
   richText
 }
 `;
+
+export const ACCORDIONBLOCK = `
+...on Accordion {
+  blockType
+  numberedItems
+  accordions {
+    title
+     blocks {
+        ${BUTTONGROUPBLOCK}
+        ${RICHTEXTBLOCK}
+        ${MEDIA_BLOCK}
+      }
+  }
+}
+`;
+
 export const COMPARISONBLOCK = `
 ...on Comparison {
   blockType
