@@ -1,14 +1,35 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/no-danger */
 "use client";
-import RichText from "@/components/RichText";
 import { useRouter, useSearchParams } from "next/navigation";
-import React from "react";
+import React, { Fragment } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import { Media as Image } from "@/components/Media";
 
+import { Media } from '@/components/Media'
+import RichText from '@/components/RichText';
+import AccordionSection from '@/components/commonComponent/AccordionGroup';
+import ButtonGroup from '@/components/commonComponent/ButtonGroup';
+
 // import 'react-tabs/style/react-tabs.css'
 // import styles from '@/styles/global/components/Tabs.module.scss';
+
+const blockRenderers = {
+  richText: (block) => <RichText content={block.richText} />,
+  mediaBlock: (block) => {
+    const { media, cornerStyle, enableHighlight } = block;
+    return (
+      <Media
+        resource={media}
+        cornerStyle={cornerStyle}
+        enableHighlight={enableHighlight}
+        priority
+      />
+    )
+  },
+  accordion: (block) => <AccordionSection data={block} />,
+  ButtonGroup: (block) => <ButtonGroup data={block} />,
+};
 
 const TabsComponent = ({ tabs, className, id = "0" }) => {
   const searchParams = useSearchParams();
@@ -38,18 +59,27 @@ const TabsComponent = ({ tabs, className, id = "0" }) => {
         ))}
       </TabList>
 
-      {tabs.map((tab, index) => (
-        <TabPanel key={index}>
-          <Image
-            resource={tab.useSameIcon ? tab.tabicon : tab.alternateImage}
-            priority
-          />
-          <div className="tab-copy">
-            <h2>{tab.contentTitle}</h2>
-            <RichText content={tab.description} />
-          </div>
-        </TabPanel>
-      ))}
+      {tabs.map((tab, index) => {
+        const { blocks, alternateImage, tabicon, useSameIcon } = tab;
+        return (
+          <TabPanel key={index}>
+            {useSameIcon ?
+              <Image resource={tabicon} /> :
+              (alternateImage &&
+                <Image resource={alternateImage} />)
+            }
+            <div className="tab-copy">
+              {blocks?.map((block, blockIndex) => {
+                return (
+                  <Fragment key={blockIndex}>
+                    {blockRenderers[block.blockType](block)}
+                  </Fragment>
+                );
+              })}
+            </div>
+          </TabPanel>
+        )
+      })}
     </Tabs>
   );
 };

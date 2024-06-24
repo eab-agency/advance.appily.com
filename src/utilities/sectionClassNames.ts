@@ -1,5 +1,5 @@
-interface SectionClassNamesProps {
-	backgroundColor?: string | null;
+export interface SectionClassNamesProps {
+	backgroundColor?: string | null | undefined;
 	enableHighlight?: boolean | null;
 	layoutWidth?: string | null;
 }

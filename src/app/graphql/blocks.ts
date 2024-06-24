@@ -123,19 +123,6 @@ export const TESTIMONIAL = `
   alignment
 }
 `;
-export const ACCORDIONBLOCK = `
-...on Accordion {
-  blockType
-  numberedItems
-  accordions {
-    title
-    richText
-    links {
-      link ${LINK_FIELDS()}
-    }
-  }
-}
-`;
 
 export const IMAGECARDBLOCK = `
 ...on ImageCard {
@@ -171,31 +158,11 @@ export const CALLOUTSECTION = `
 ...on Callout {
   blockType
   callOutBackgroundColor
-  calloutTitle
+  title
+  kicker
   richText
   calloutLinks {
     link ${LINK_FIELDS()}
-  }
-}
-`;
-export const TABSECTION = `
-...on Tabsection {
-  blockType
-  tabSectionBackgroundColor
-  tabs {
-    tabicon {
-      ${MEDIA_FIELDS}
-    }
-    shortTitle
-    contentTitle
-    description
-    tabButtongroup {
-      link ${LINK_FIELDS()}
-    }
-    useSameIcon
-    alternateImage {
-      ${MEDIA_FIELDS}
-    }
   }
 }
 `;
@@ -214,6 +181,22 @@ export const RICHTEXTBLOCK = `
   richText
 }
 `;
+
+export const ACCORDIONBLOCK = `
+...on Accordion {
+  blockType
+  numberedItems
+  accordions {
+    title
+     blocks {
+        ${BUTTONGROUPBLOCK}
+        ${RICHTEXTBLOCK}
+        ${MEDIA_BLOCK}
+      }
+  }
+}
+`;
+
 export const COMPARISONBLOCK = `
 ...on Comparison {
   blockType
@@ -237,6 +220,31 @@ export const CAROUSELCARD = `
   richText
   carouselBackgroundColor
 }`;
+
+export const TABSECTION = `
+...on Tabsection {
+  blockType
+  tabSectionBackgroundColor
+  sectionHead
+  sectionIntro
+  tabs {
+    tabicon {
+      ${MEDIA_FIELDS}
+    }
+    useSameIcon
+    shortTitle
+    alternateImage {
+      ${MEDIA_FIELDS}
+    }
+    blocks {
+        ${ACCORDIONBLOCK}
+        ${BUTTONGROUPBLOCK}
+        ${RICHTEXTBLOCK}
+        ${MEDIA_BLOCK}
+      }
+  }
+}
+`;
 
 export const SECTION = `
 ...on Section {
