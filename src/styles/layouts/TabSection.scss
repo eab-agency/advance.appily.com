@@ -8,8 +8,26 @@
       background: none;
     }
 
+    &__tab {
+      &::before {
+        display: none;
+      }
+
+      figure {
+        width: clamp(2rem, 3vw, 3rem);
+        height: auto;
+      }
+    }
+
     &__tab--selected {
       background: var(--c-bg-body);
+    }
+
+    &__tab-panel {
+      figure {
+        width: 100%;
+        max-width: 20em;
+      }
     }
   }
 

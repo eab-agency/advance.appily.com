@@ -216,6 +216,7 @@ export const COMPARISONBLOCK = `
 export const CAROUSELCARD = `
 ...on Schoolcarousel {
   blockType
+  blockName
   title
   richText
   carouselBackgroundColor

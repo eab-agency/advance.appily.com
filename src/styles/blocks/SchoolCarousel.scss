@@ -81,9 +81,10 @@
 }
 
 .react-multi-carousel-dot-list {
+  display: none;
   position: absolute;
   bottom: 0;
-  display: flex;
+  // display: flex;
   left: 0;
   right: 0;
   justify-content: center;
