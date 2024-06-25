@@ -90,6 +90,7 @@
     min-height: 35rem;
     padding-inline: 2em;
     overflow: hidden;
+    display: flex;
     // flex-shrink: 0;
 
     @media (min-width: tokens.$mq-1300) {

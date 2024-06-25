@@ -17,6 +17,7 @@
     align-items: center;
     width: 100%;
     max-width: tokens.$mq-1400;
+    gap: clamp(0.5rem, 1vw, 1rem);
 
     @media (min-width: tokens.$mq-1100) {
       flex-direction: row;
