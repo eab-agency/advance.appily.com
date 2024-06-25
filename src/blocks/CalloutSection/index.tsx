@@ -38,28 +38,35 @@ export default function CalloutSection({
   calloutLinks,
   callOutBackgroundColor: backgroundColor
 }: callOutSection) {
-  return (
-    <section className={`${sectionClassNames({ backgroundColor })}  callout-section`}>
-      <div className="group row">
-        <div className="column">
-          <h2>
-            {kicker && <span className="kicker">{kicker}&nbsp;</span>}
-            <span className="title">{title}</span>
-          </h2>
-          <RichText content={richText} />
-        </div>
-        {calloutLinks?.length && (
+  export default function CalloutSection({
+    title,
+    kicker,
+    richText,
+    calloutLinks,
+    callOutBackgroundColor: backgroundColor
+  }: callOutSection) {
+    return (
+      <section className={`${sectionClassNames({ backgroundColor })}  callout-section`}>
+        <div className="group row">
           <div className="column">
-            {calloutLinks && calloutLinks?.length > 0 &&
-              (calloutLinks || []).map(({ link }, index) => {
-                return (
-                  <CMSLink key={index} {...link} />
-                )
-              })
-            }
+            <h2>
+              {kicker && <span className="kicker">{kicker}&nbsp;</span>}
+              <span className="title">{title}</span>
+            </h2>
+            <RichText content={richText} />
           </div>
-        )}
-      </div>
-    </section>
-  )
-}
+          {calloutLinks?.length && (
+            <div className="column">
+              {calloutLinks && calloutLinks?.length > 0 &&
+                (calloutLinks || []).map(({ link }, index) => {
+                  return (
+                    <CMSLink key={index} {...link} />
+                  )
+                })
+              }
+            </div>
+          )}
+        </div>
+      </section>
+    )
+  }
