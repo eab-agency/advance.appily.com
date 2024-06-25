@@ -16,6 +16,9 @@
 }
 
 .callout-section {
+  border-top: 0.5em solid var(--c-bg1);
+  border-bottom: 0.5em solid var(--c-bg1);
+
   &.section__bg-dark_blue_light_gray .group {
     .title {
       @include titleBackground(var(--c-bg3));
@@ -46,7 +49,7 @@
     }
   }
 
-  &.section__bg-light_blue_light_turquoise .group {
+  &.section__bg-blue_light_blue .group {
     .title {
       @include titleBackground(var(--c-bg3));
     }
