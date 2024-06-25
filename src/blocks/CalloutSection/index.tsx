@@ -43,7 +43,7 @@ export default function CalloutSection({
       <div className="group row">
         <div className="column">
           <h2>
-            <span className="kicker">{kicker}&nbsp;</span>
+            {kicker && <span className="kicker">{kicker}&nbsp;</span>}
             <span className="title">{title}</span>
           </h2>
           <RichText content={richText} />
