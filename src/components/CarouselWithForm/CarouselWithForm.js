@@ -32,6 +32,10 @@ const CarouselWithForm = ({
   };
 
   const sectionId = () => {
+    // prevent errors if blockName is not defined
+    if (!blockName) {
+      return "";
+    }
     let theBlockName = blockName.replace(/\s+/g, "-").toLowerCase();
     return theBlockName;
   };
