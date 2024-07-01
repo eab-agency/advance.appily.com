@@ -289,8 +289,11 @@ export const SUBNAVIGATION = `
   subNavBackgroundColor
   navigationItem{
     title
-    url
     id
+    pageReference {
+    id
+    slug
+    }
   }
 }
 `;

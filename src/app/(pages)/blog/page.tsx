@@ -31,7 +31,6 @@ const BlogComponent =  () => {
   
     fetchData();
   }, []);
-  console.log(tags,'tags**')
   return (
     <>
       <header className="blog-header">

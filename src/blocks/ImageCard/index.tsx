@@ -25,7 +25,6 @@ function ImageCard({ imageCardData }: ImageCardProps) {
 
   const { image, richText, title } = imageCardData;
 
-  console.log(imageCardData, 'imageCardData**')
   return (
     <article className="image-card">
       <div className="group">

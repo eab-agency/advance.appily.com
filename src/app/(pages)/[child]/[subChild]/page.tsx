@@ -35,7 +35,6 @@ export async function generateStaticParams() {
 	  }
 	const hero = pageData?.hero;
 	const layout = pageData?.layout;
-	console.log(pageData,'pageData**')
   return (
 // 	<React.Fragment>
 // 	<Hero {...hero} />	
