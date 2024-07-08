@@ -7,6 +7,7 @@ import {
 	MEDIA_BLOCK,
 	SECTION,
 	STATISTICS,
+	STICKYCTASECTION,
 	SUBNAVIGATION,
 	TABSECTION,
 	TESTIMONIAL,
@@ -58,6 +59,7 @@ export const PAGE = `
           ${TABSECTION}
           ${CAROUSELCARD}
           ${SUBNAVIGATION}
+          ${STICKYCTASECTION}
         }
         ${META}
         breadcrumbs {

@@ -8,15 +8,15 @@
 
 export interface Config {
   collections: {
-    users: User;
     pages: Page;
-    posts: Post;
     media: Media;
     partners: Partner;
     'carousel-cards': CarouselCard;
     'lead-types': LeadType;
-    forms: Form;
-    'form-submissions': FormSubmission;
+    users: User;
+    posts: Post;
+    categories: Category;
+    tags: Tag;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -24,25 +24,6 @@ export interface Config {
     header: Header;
     footer: Footer;
   };
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users".
- */
-export interface User {
-  id: string;
-  name?: string | null;
-  roles?: ('admin' | 'user')[] | null;
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  password: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -689,7 +670,6 @@ export interface Page {
         blockType: 'section';
       }
     | {
-        form: string | Form;
         enableIntro?: boolean | null;
         id?: string | null;
         blockName?: string | null;
@@ -1133,13 +1113,46 @@ export interface Page {
         navigationItem?:
           | {
               title: string;
-              url?: string | null;
+              pageReference: string | Page;
               id?: string | null;
             }[]
           | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'subNavigation';
+      }
+    | {
+        stickyCTABackgroundColor?:
+          | (
+              | 'default'
+              | 'dark_blue_light_gray'
+              | 'blue_light_blue'
+              | 'orange_peach'
+              | 'turquoise_yellow'
+              | 'turquoise_light_turquoise'
+              | 'slate_gray_white'
+            )
+          | null;
+        resultPage?: boolean | null;
+        stickyctaLinks?:
+          | {
+              link: {
+                type?: ('reference' | 'custom') | null;
+                newTab?: boolean | null;
+                reference?: {
+                  relationTo: 'pages';
+                  value: string | Page;
+                } | null;
+                url?: string | null;
+                label: string;
+                appearance?: ('default' | 'primary' | 'secondary') | null;
+              };
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'stickyCTA';
       }
   )[];
   slug?: string | null;
@@ -1214,122 +1227,109 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "forms".
+ * via the `definition` "partners".
  */
-export interface Form {
+export interface Partner {
   id: string;
   title: string;
-  fields?:
-    | (
-        | {
-            name: string;
-            label?: string | null;
-            width?: number | null;
-            required?: boolean | null;
-            defaultValue?: boolean | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'checkbox';
-          }
-        | {
-            name: string;
-            label?: string | null;
-            width?: number | null;
-            required?: boolean | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'country';
-          }
-        | {
-            name: string;
-            label?: string | null;
-            width?: number | null;
-            required?: boolean | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'email';
-          }
-        | {
-            message?: {
-              root: {
-                type: string;
-                children: {
-                  type: string;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            } | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'message';
-          }
-        | {
-            name: string;
-            label?: string | null;
-            width?: number | null;
-            defaultValue?: number | null;
-            required?: boolean | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'number';
-          }
-        | {
-            name: string;
-            label?: string | null;
-            width?: number | null;
-            defaultValue?: string | null;
-            options?:
-              | {
-                  label: string;
-                  value: string;
-                  id?: string | null;
-                }[]
-              | null;
-            required?: boolean | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'select';
-          }
-        | {
-            name: string;
-            label?: string | null;
-            width?: number | null;
-            required?: boolean | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'state';
-          }
-        | {
-            name: string;
-            label?: string | null;
-            width?: number | null;
-            defaultValue?: string | null;
-            required?: boolean | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'text';
-          }
-        | {
-            name: string;
-            label?: string | null;
-            width?: number | null;
-            defaultValue?: string | null;
-            required?: boolean | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'textarea';
-          }
-      )[]
+  shortName: string;
+  acroynm?: string | null;
+  contact: {
+    street1: string;
+    street2?: string | null;
+    city: string;
+    state:
+      | 'AL'
+      | 'AK'
+      | 'AZ'
+      | 'AR'
+      | 'CA'
+      | 'CO'
+      | 'CT'
+      | 'DE'
+      | 'FL'
+      | 'GA'
+      | 'HI'
+      | 'ID'
+      | 'IL'
+      | 'IN'
+      | 'IA'
+      | 'KS'
+      | 'KY'
+      | 'LA'
+      | 'ME'
+      | 'MD'
+      | 'MA'
+      | 'MI'
+      | 'MN'
+      | 'MS'
+      | 'MO'
+      | 'MT'
+      | 'NE'
+      | 'NV'
+      | 'NH'
+      | 'NJ'
+      | 'NM'
+      | 'NY'
+      | 'NC'
+      | 'ND'
+      | 'OH'
+      | 'OK'
+      | 'OR'
+      | 'PA'
+      | 'RI'
+      | 'SC'
+      | 'SD'
+      | 'TN'
+      | 'TX'
+      | 'UT'
+      | 'VT'
+      | 'VA'
+      | 'WA'
+      | 'WV'
+      | 'WI'
+      | 'WY'
+      | 'DC';
+    zip: string;
+    country?: string | null;
+  };
+  logo: string | Media;
+  phone?: string | null;
+  email?: string | null;
+  links?:
+    | {
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?: {
+            relationTo: 'pages';
+            value: string | Page;
+          } | null;
+          url?: string | null;
+          label: string;
+        };
+        id?: string | null;
+      }[]
     | null;
-  submitButtonLabel?: string | null;
-  confirmationType?: ('message' | 'redirect') | null;
-  confirmationMessage?: {
+  publishedDate?: string | null;
+  slug?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "carousel-cards".
+ */
+export interface CarouselCard {
+  id: string;
+  admintitle?: string | null;
+  partner: string | Partner;
+  leadTypes: (string | LeadType)[];
+  partnerState?: string | null;
+  title: string;
+  subtitle?: string | null;
+  description?: {
     root: {
       type: string;
       children: {
@@ -1344,37 +1344,54 @@ export interface Form {
     };
     [k: string]: unknown;
   } | null;
-  redirect?: {
-    url: string;
-  };
-  emails?:
+  links?:
     | {
-        emailTo?: string | null;
-        cc?: string | null;
-        bcc?: string | null;
-        replyTo?: string | null;
-        emailFrom?: string | null;
-        subject: string;
-        message?: {
-          root: {
-            type: string;
-            children: {
-              type: string;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        } | null;
+        link: {
+          type?: ('reference' | 'custom') | null;
+          newTab?: boolean | null;
+          reference?: {
+            relationTo: 'pages';
+            value: string | Page;
+          } | null;
+          url?: string | null;
+          label: string;
+        };
         id?: string | null;
       }[]
     | null;
+  image: string | Media;
   updatedAt: string;
   createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lead-types".
+ */
+export interface LeadType {
+  id: string;
+  title: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users".
+ */
+export interface User {
+  id: string;
+  name?: string | null;
+  roles?: ('admin' | 'user' | 'blogEditor')[] | null;
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  password: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1383,43 +1400,11 @@ export interface Form {
 export interface Post {
   id: string;
   title: string;
+  category: (string | Category)[];
+  tag: (string | Tag)[];
   publishedDate?: string | null;
-  hero: {
-    type: 'none' | 'landingPage' | 'resultPage';
-    title?: string | null;
-    richText?: {
-      root: {
-        type: string;
-        children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ('ltr' | 'rtl') | null;
-        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-        indent: number;
-        version: number;
-      };
-      [k: string]: unknown;
-    } | null;
-    links?:
-      | {
-          link: {
-            type?: ('reference' | 'custom') | null;
-            newTab?: boolean | null;
-            reference?: {
-              relationTo: 'pages';
-              value: string | Page;
-            } | null;
-            url?: string | null;
-            label: string;
-            appearance?: ('default' | 'primary' | 'secondary') | null;
-          };
-          id?: string | null;
-        }[]
-      | null;
-    media?: string | Media | null;
-    animation?: string | Media | null;
+  postFeaturedImage: {
+    media: string | Media;
   };
   layout: (
     | {
@@ -2020,7 +2005,6 @@ export interface Post {
         blockType: 'section';
       }
     | {
-        form: string | Form;
         enableIntro?: boolean | null;
         id?: string | null;
         blockName?: string | null;
@@ -2070,6 +2054,408 @@ export interface Post {
         blockName?: string | null;
         blockType: 'archive';
       }
+    | {
+        backgroundColor?:
+          | (
+              | 'default'
+              | 'dark_blue_light_gray'
+              | 'blue_light_blue'
+              | 'orange_peach'
+              | 'turquoise_yellow'
+              | 'turquoise_light_turquoise'
+              | 'slate_gray_white'
+            )
+          | null;
+        layoutWidth?: ('full' | 'contained' | 'narrow') | null;
+        statistics?:
+          | {
+              number: string;
+              title?: string | null;
+              richText?: {
+                root: {
+                  type: string;
+                  children: {
+                    type: string;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              } | null;
+              id?: string | null;
+            }[]
+          | null;
+        source?: string | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'statistics';
+      }
+    | {
+        backgroundColor?:
+          | (
+              | 'default'
+              | 'dark_blue_light_gray'
+              | 'blue_light_blue'
+              | 'orange_peach'
+              | 'turquoise_yellow'
+              | 'turquoise_light_turquoise'
+              | 'slate_gray_white'
+            )
+          | null;
+        alignment?: ('left' | 'center' | 'right') | null;
+        richText?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        author?: string | null;
+        authortitle?: string | null;
+        links?:
+          | {
+              link: {
+                type?: ('reference' | 'custom') | null;
+                newTab?: boolean | null;
+                reference?: {
+                  relationTo: 'pages';
+                  value: string | Page;
+                } | null;
+                url?: string | null;
+                label: string;
+                appearance?: ('default' | 'primary' | 'secondary') | null;
+              };
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'testimonial';
+      }
+    | {
+        callOutBackgroundColor?:
+          | (
+              | 'default'
+              | 'dark_blue_light_gray'
+              | 'blue_light_blue'
+              | 'orange_peach'
+              | 'turquoise_yellow'
+              | 'turquoise_light_turquoise'
+              | 'slate_gray_white'
+            )
+          | null;
+        kicker?: string | null;
+        title: string;
+        richText?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        calloutLinks?:
+          | {
+              link: {
+                type?: ('reference' | 'custom') | null;
+                newTab?: boolean | null;
+                reference?: {
+                  relationTo: 'pages';
+                  value: string | Page;
+                } | null;
+                url?: string | null;
+                label: string;
+                appearance?: ('default' | 'primary' | 'secondary' | 'tertiary') | null;
+              };
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'callout';
+      }
+    | {
+        highlightCtaBackgroundColor?:
+          | (
+              | 'default'
+              | 'dark_blue_light_gray'
+              | 'blue_light_blue'
+              | 'orange_peach'
+              | 'turquoise_yellow'
+              | 'turquoise_light_turquoise'
+              | 'slate_gray_white'
+            )
+          | null;
+        imageAlignment?: ('left' | 'right') | null;
+        image?: string | Media | null;
+        richText?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        highlightedSectionCTALinks?:
+          | {
+              link: {
+                type?: ('reference' | 'custom') | null;
+                newTab?: boolean | null;
+                reference?: {
+                  relationTo: 'pages';
+                  value: string | Page;
+                } | null;
+                url?: string | null;
+                label: string;
+                appearance?: ('default' | 'primary' | 'secondary' | 'tertiary') | null;
+              };
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'highlightCTA';
+      }
+    | {
+        carouselBackgroundColor?:
+          | (
+              | 'default'
+              | 'dark_blue_light_gray'
+              | 'blue_light_blue'
+              | 'orange_peach'
+              | 'turquoise_yellow'
+              | 'turquoise_light_turquoise'
+              | 'slate_gray_white'
+            )
+          | null;
+        title?: string | null;
+        richText?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'Schoolcarousel';
+      }
+    | {
+        tabSectionBackgroundColor?:
+          | (
+              | 'default'
+              | 'dark_blue_light_gray'
+              | 'blue_light_blue'
+              | 'orange_peach'
+              | 'turquoise_yellow'
+              | 'turquoise_light_turquoise'
+              | 'slate_gray_white'
+            )
+          | null;
+        sectionHead?: boolean | null;
+        sectionIntro?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        tabs?:
+          | {
+              tabicon?: string | Media | null;
+              useSameIcon?: boolean | null;
+              alternateImage?: string | Media | null;
+              shortTitle?: string | null;
+              blocks: (
+                | {
+                    numberedItems?: boolean | null;
+                    accordions?:
+                      | {
+                          title: string;
+                          blocks: (
+                            | {
+                                richText: {
+                                  root: {
+                                    type: string;
+                                    children: {
+                                      type: string;
+                                      version: number;
+                                      [k: string]: unknown;
+                                    }[];
+                                    direction: ('ltr' | 'rtl') | null;
+                                    format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                                    indent: number;
+                                    version: number;
+                                  };
+                                  [k: string]: unknown;
+                                };
+                                id?: string | null;
+                                blockName?: string | null;
+                                blockType: 'richText';
+                              }
+                            | {
+                                cornerStyle?:
+                                  | ('square' | 'slightly-rounded' | 'moderately-rounded' | 'very-rounded' | 'circular')
+                                  | null;
+                                enableHighlight?: boolean | null;
+                                media: string | Media;
+                                id?: string | null;
+                                blockName?: string | null;
+                                blockType: 'mediaBlock';
+                              }
+                            | {
+                                links?:
+                                  | {
+                                      link: {
+                                        type?: ('reference' | 'custom') | null;
+                                        newTab?: boolean | null;
+                                        reference?: {
+                                          relationTo: 'pages';
+                                          value: string | Page;
+                                        } | null;
+                                        url?: string | null;
+                                        label: string;
+                                        appearance?: ('default' | 'primary' | 'secondary' | 'tertiary') | null;
+                                      };
+                                      id?: string | null;
+                                    }[]
+                                  | null;
+                                id?: string | null;
+                                blockName?: string | null;
+                                blockType: 'ButtonGroup';
+                              }
+                          )[];
+                          id?: string | null;
+                        }[]
+                      | null;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'accordion';
+                  }
+                | {
+                    richText: {
+                      root: {
+                        type: string;
+                        children: {
+                          type: string;
+                          version: number;
+                          [k: string]: unknown;
+                        }[];
+                        direction: ('ltr' | 'rtl') | null;
+                        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                        indent: number;
+                        version: number;
+                      };
+                      [k: string]: unknown;
+                    };
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'richText';
+                  }
+                | {
+                    cornerStyle?:
+                      | ('square' | 'slightly-rounded' | 'moderately-rounded' | 'very-rounded' | 'circular')
+                      | null;
+                    enableHighlight?: boolean | null;
+                    media: string | Media;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'mediaBlock';
+                  }
+                | {
+                    links?:
+                      | {
+                          link: {
+                            type?: ('reference' | 'custom') | null;
+                            newTab?: boolean | null;
+                            reference?: {
+                              relationTo: 'pages';
+                              value: string | Page;
+                            } | null;
+                            url?: string | null;
+                            label: string;
+                            appearance?: ('default' | 'primary' | 'secondary' | 'tertiary') | null;
+                          };
+                          id?: string | null;
+                        }[]
+                      | null;
+                    id?: string | null;
+                    blockName?: string | null;
+                    blockType: 'ButtonGroup';
+                  }
+              )[];
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'tabsection';
+      }
+    | {
+        subNavBackgroundColor?:
+          | (
+              | 'default'
+              | 'dark_blue_light_gray'
+              | 'blue_light_blue'
+              | 'orange_peach'
+              | 'turquoise_yellow'
+              | 'turquoise_light_turquoise'
+              | 'slate_gray_white'
+            )
+          | null;
+        navigationItem?:
+          | {
+              title: string;
+              pageReference: string | Page;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'subNavigation';
+      }
   )[];
   slug?: string | null;
   updatedAt: string;
@@ -2078,167 +2464,21 @@ export interface Post {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "partners".
+ * via the `definition` "categories".
  */
-export interface Partner {
+export interface Category {
   id: string;
-  title: string;
-  shortName: string;
-  acroynm?: string | null;
-  contact: {
-    street1: string;
-    street2?: string | null;
-    city: string;
-    state:
-      | 'AL'
-      | 'AK'
-      | 'AZ'
-      | 'AR'
-      | 'CA'
-      | 'CO'
-      | 'CT'
-      | 'DE'
-      | 'FL'
-      | 'GA'
-      | 'HI'
-      | 'ID'
-      | 'IL'
-      | 'IN'
-      | 'IA'
-      | 'KS'
-      | 'KY'
-      | 'LA'
-      | 'ME'
-      | 'MD'
-      | 'MA'
-      | 'MI'
-      | 'MN'
-      | 'MS'
-      | 'MO'
-      | 'MT'
-      | 'NE'
-      | 'NV'
-      | 'NH'
-      | 'NJ'
-      | 'NM'
-      | 'NY'
-      | 'NC'
-      | 'ND'
-      | 'OH'
-      | 'OK'
-      | 'OR'
-      | 'PA'
-      | 'RI'
-      | 'SC'
-      | 'SD'
-      | 'TN'
-      | 'TX'
-      | 'UT'
-      | 'VT'
-      | 'VA'
-      | 'WA'
-      | 'WV'
-      | 'WI'
-      | 'WY'
-      | 'DC';
-    zip: string;
-    country?: string | null;
-  };
-  logo: string | Media;
-  phone?: string | null;
-  email?: string | null;
-  links?:
-    | {
-        link: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
-          reference?: {
-            relationTo: 'pages';
-            value: string | Page;
-          } | null;
-          url?: string | null;
-          label: string;
-        };
-        id?: string | null;
-      }[]
-    | null;
-  publishedDate?: string | null;
-  slug?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "carousel-cards".
- */
-export interface CarouselCard {
-  id: string;
-  admintitle?: string | null;
-  partner: string | Partner;
-  leadTypes: (string | LeadType)[];
-  partnerState?: string | null;
-  title: string;
-  subtitle?: string | null;
-  description?: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  links?:
-    | {
-        link: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
-          reference?: {
-            relationTo: 'pages';
-            value: string | Page;
-          } | null;
-          url?: string | null;
-          label: string;
-        };
-        id?: string | null;
-      }[]
-    | null;
-  image: string | Media;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "lead-types".
- */
-export interface LeadType {
-  id: string;
-  title: string;
+  title?: string | null;
   updatedAt: string;
   createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "form-submissions".
+ * via the `definition` "tags".
  */
-export interface FormSubmission {
+export interface Tag {
   id: string;
-  form: string | Form;
-  submissionData?:
-    | {
-        field: string;
-        value: string;
-        id?: string | null;
-      }[]
-    | null;
+  title?: string | null;
   updatedAt: string;
   createdAt: string;
 }

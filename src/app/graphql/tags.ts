@@ -1,6 +1,6 @@
-export const ALLCATEGORIES = 
+export const ALLTAGS = 
 `query {
-    Categories (limit: 300){
+    Tags (limit: 300){
       docs {
         title
         id
