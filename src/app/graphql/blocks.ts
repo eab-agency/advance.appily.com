@@ -298,8 +298,23 @@ export const SUBNAVIGATION = `
   subNavBackgroundColor
   navigationItem{
     title
-    url
     id
+    pageReference {
+    id
+    slug
+    }
   }
 }
 `;
+
+export const STICKYCTASECTION = `
+...on StickyCTA {
+  blockName
+  blockType
+  resultPage
+  stickyCTABackgroundColor
+  stickyctaLinks
+  {
+    link ${LINK_FIELDS()}
+  }
+}`

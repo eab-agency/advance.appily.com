@@ -25,8 +25,8 @@ export const Image: React.FC<MediaProps> = (props) => {
 
   const [isLoading, setIsLoading] = React.useState(true)
 
-  let width: number | undefined;
-  let height: number | undefined;
+  let width: number | undefined | null;
+  let height: number | undefined | null;
   let alt = altFromProps || "";
   let src: StaticImageData | string = srcFromProps || "";
 
@@ -69,7 +69,7 @@ export const Image: React.FC<MediaProps> = (props) => {
         fill={fill}
         width={width}
         height={height}
-        // sizes={sizes}
+        sizes={sizes}
         priority={priority}
       />
     </>

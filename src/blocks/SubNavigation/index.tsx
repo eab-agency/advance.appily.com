@@ -13,8 +13,11 @@ interface SubNavProps {
 
 interface SubNavItem {
   title?: string;
-  url?: string;
   id: string;
+  pageReference: {
+    id: string;
+    slug: string;
+  };
 }
 
 function SubNavigation(block: SubNavProps) {
@@ -48,7 +51,7 @@ function SubNavigation(block: SubNavProps) {
           {navigationItem?.map((item) => {
             return (
               <li key={item.id} className='subnav-list__item'>
-                <Link href={item.url}>{item.title}</Link>
+                <Link href={item?.pageReference?.slug}>{item?.title}</Link>
               </li>
             );
           })}

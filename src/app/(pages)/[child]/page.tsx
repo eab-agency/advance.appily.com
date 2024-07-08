@@ -46,10 +46,10 @@ export async function generateMetadata({ params }: { params: { category: string;
 }
 
 const CategoryPage = async ({ params, searchParams }: any) => {
-  const { category, subCategory } = params;
+  const { child, subChild } = params;
   let pageData: Page | null = null
 
-  const slug = [category, subCategory].filter(Boolean);
+  const slug = [child, subChild].filter(Boolean);
   try {
     pageData = await fetchPage(slug);
   } catch (error) {

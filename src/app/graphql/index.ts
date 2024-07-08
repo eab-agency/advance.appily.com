@@ -1,16 +1,19 @@
-import type { CarouselCard, Page, Post, Header, Footer } from "../../../payload-types";
+import type { CarouselCard, Page, Post, Header, Footer, Category, Tag } from "../../../payload-types";
 import {
 	ALLCAROUSELCARDS,
 	CAROUSELCARDS,
 	CAROUSELCARDSNOTIN,
 } from "./carouselCards";
+import { ALLCATEGORIES } from "./categories";
 import { FOOTER_QUERY, GLOBALS, HEADER_QUERY } from "./globals";
 import { PAGE, PAGES } from "./pages";
-import { POST, POSTS } from "./posts";
+import { FIRSTFIVEPOSTS, POST, POSTS, POSTS_BY_CATEGORY, POST_BY_TAG } from "./posts";
+import { ALLTAGS } from "./tags";
 
 const next: { revalidate: number | false | undefined } = {
 	revalidate: 5,
 };
+
 
 // fetch all the lead types and their ids
 export const fetchLeadTypes = async (): Promise<
@@ -260,45 +263,148 @@ export const fetchPage = async (
 };
 
 
-// export const fetchPosts = async (): Promise<Post[]> => {
-// 	const currentDate = new Date();
-// 	const { data } = await fetch(
-// 		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
-// 		{
-// 			method: "POST",
-// 			headers: {
-// 				"Content-Type": "application/json",
-// 			},
-// 			next,
-// 			body: JSON.stringify({
-// 				query: POSTS,
-// 				variables: {
-// 					publishedOn: currentDate,
-// 				},
-// 			}),
-// 		},
-// 	).then(res => res.json());
+export const fetchPosts = async (): Promise<Post[]> => {
+	const currentDate = new Date();
+   const { data } = await fetch(
+	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
+	   {
+		   method: "POST",
+		   headers: {
+			   "Content-Type": "application/json",
+		   },
+		   cache: "no-store",
+		   body: JSON.stringify({
+			   query: POSTS,
+			   variables: {
+				   publishedOn: currentDate,
+			   },
+		   }),
+	   },
+   ).then(res => res.json());
+   return data?.Posts?.docs;
+};
 
-// 	return data?.Posts?.docs;
-// };
+export const fetchPost = async (slug: string): Promise<Post> => {
+   const { data } = await fetch(
+	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?post=${slug}`,
+	   {
+		   method: "POST",
+		   headers: {
+			   "Content-Type": "application/json",
+		   },
+		   cache: "no-store",
+		   body: JSON.stringify({
+			   query: POST,
+			   variables: {
+				   slug,
+			   },
+		   }),
+	   },
+   ).then(res => res.json());
+   return data?.Posts?.docs[0];
+};
 
-// export const fetchPost = async (slug: string): Promise<Post> => {
-// 	const { data } = await fetch(
-// 		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?post=${slug}`,
-// 		{
-// 			method: "POST",
-// 			headers: {
-// 				"Content-Type": "application/json",
-// 			},
-// 			next,
-// 			body: JSON.stringify({
-// 				query: POST,
-// 				variables: {
-// 					slug,
-// 				},
-// 			}),
-// 		},
-// 	).then(res => res.json());
+export const fetchFirstFivePosts = async (): Promise<Post[]> => {
+	const currentDate = new Date();
+   const { data } = await fetch(
+	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
+	   {
+		   method: "POST",
+		   headers: {
+			   "Content-Type": "application/json",
+		   },
+		   cache: "no-store",
+		   body: JSON.stringify({
+			   query: FIRSTFIVEPOSTS,
+			   variables: {
+				   publishedOn: currentDate,
+			   },
+		   }),
+	   },
+   ).then(res => res.json());
+   return data?.Posts?.docs;
+};
 
-// 	return data?.Posts?.docs[0];
-// };
+export const fetchAllCategories = async (): Promise<Category[]> => {
+   const { data } = await fetch(
+	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?categories`,
+	   {
+		   method: "POST",
+		   headers: {
+			   "Content-Type": "application/json",
+		   },
+		   cache: "no-store",
+		   body: JSON.stringify({
+			   query: ALLCATEGORIES,
+			   
+		   }),
+	   },
+   ).then(res => res.json());
+   return data?.Categories?.docs;
+};
+
+
+export const fetchPostsByCategory = async (
+	category?: Category['id'],
+): Promise<Post[]> => {
+	const { data } = await fetch(
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			// next,
+			body: JSON.stringify({
+				query: POSTS_BY_CATEGORY,
+				variables: {
+					category,
+				},
+			}),
+		},
+	
+	).then(res => res.json());
+	return data?.Posts?.docs;
+};
+
+export const fetchAllTags = async (): Promise<Tag[]> => {
+	const { data } = await fetch(
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?tags`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			cache: "no-store",
+			body: JSON.stringify({
+				query: ALLTAGS,
+				
+			}),
+		},
+	).then(res => res.json());
+	return data?.Tags?.docs;
+ };
+
+
+ export const fetchPostsByTag = async (
+	tag?: Tag['id'],
+): Promise<Post[]> => {
+	const { data } = await fetch(
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			// next,
+			body: JSON.stringify({
+				query: POST_BY_TAG,
+				variables: {
+					tag,
+				},
+			}),
+		},
+	
+	).then(res => res.json());
+	return data?.Posts?.docs;
+};

@@ -1,0 +1,86 @@
+@use "@/styles/global/tokens";
+
+.post-header {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: tokens.$mq-1200;
+  padding-inline: clamp(1rem, 5%, 2rem);
+  padding-block: clamp(2rem, 5vw, 6rem) 2rem;
+  border-bottom: 1px solid var(--c-border-1);
+  margin-bottom: 2rem;
+
+  h1 {
+    margin: 0 0 0.2em;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .post-dates {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+
+.post-hero {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: tokens.$mq-1200;
+  padding-inline: clamp(0rem, 5%, 2rem);
+}
+
+.layout-blocks {
+  display: block;
+  width: 100%;
+  max-width: tokens.$mq-1200;
+  margin: 0 auto;
+  // background: var(--c-bg1);
+
+  p {
+    width: 100%;
+    max-width: 70ch;
+    margin-inline: auto;
+  }
+}
+.content {
+  margin: 10px auto;
+    width: 90%;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin: 0;
+  color: #333;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem; 
+}
