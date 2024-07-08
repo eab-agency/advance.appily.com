@@ -126,7 +126,8 @@ export async function fetchHeader(): Promise<Header> {
 	  headers: {
 		'Content-Type': 'application/json',
 	  },
-	  cache: "no-store",
+		// use next revalidate every 10 seconds. later change to 5 minutes(300 seconds)
+		// next: { revalidate: 10 },
 	  body: JSON.stringify({
 		query: HEADER_QUERY,
 	  }),
@@ -139,18 +140,18 @@ export async function fetchHeader(): Promise<Header> {
 		if (res?.errors) throw new Error(res?.errors[0]?.message || 'Error fetching header')
 		return res.data?.Header
 	  })
-  
+
 	return header
   }
-  
+
   export async function fetchFooter(): Promise<Footer> {
-  
+
 	const footer = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql`, {
 	  method: 'POST',
 	  headers: {
 		'Content-Type': 'application/json',
 	  },
-	  cache: "no-store",
+		// next: { revalidate: 10 },
 	  body: JSON.stringify({
 		query: FOOTER_QUERY,
 	  }),
@@ -163,7 +164,7 @@ export async function fetchHeader(): Promise<Header> {
 		if (res?.errors) throw new Error(res?.errors[0]?.message || 'Error fetching footer')
 		return res.data?.Footer
 	  })
-  
+
 	return footer
   }
 
@@ -180,19 +181,19 @@ export const fetchGlobals = async (): Promise<{
 		query: GLOBALS,
 	  }),
 	});
-  
+
 	if (!response.ok) {
 	  throw new Error('Failed to fetch global data');
 	}
-  
+
 	const { data } = await response.json();
-  
+
 	return {
 	  header: data?.Header,
 	  footer: data?.Footer,
 	};
   };
-  
+
 
 export const fetchPages = async (): Promise<
 	Array<{ breadcrumbs: Page["breadcrumbs"]; slug: string }>
@@ -204,7 +205,7 @@ export const fetchPages = async (): Promise<
 			headers: {
 				"Content-Type": "application/json",
 			},
-			next,
+			// cache: "no-store",
 			body: JSON.stringify({
 				query: PAGES,
 			}),
@@ -231,7 +232,7 @@ export const fetchPage = async (
 			headers: {
 				"Content-Type": "application/json",
 			},
-			next,
+			// cache: "no-store",
 			body: JSON.stringify({
 				query: PAGE,
 				variables: {

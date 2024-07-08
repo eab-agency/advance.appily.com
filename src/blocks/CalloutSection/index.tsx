@@ -1,21 +1,19 @@
-import { Button } from "@/components";
 import { CMSLink } from "@/components/Link";
-import { Media as Image } from "@/components/Media";
 import RichText from "@/components/RichText";
-import Link from "next/link";
 import React from 'react';
 import { Media } from "../../../payload-types";
+import { sectionClassNames } from "@/utilities/sectionClassNames";
+import "@/styles/layouts/CallOutSection.scss";
 
 
 interface callOutSection {
-  calloutTitle?: {
-    [k: string]: unknown;
-  }[];
+  title?: string;
+  kicker?: string;
   richText?: {
     [k: string]: unknown;
   }[];
   image: Media | string;
-  highlightCTABackgroundColor: string;
+  callOutBackgroundColor: string;
   calloutLinks?: {
     link: {
       type?: 'reference' | 'custom';
@@ -26,31 +24,41 @@ interface callOutSection {
       };
       url: string;
       label: string;
-      appearance?: 'default' | 'primary' | 'secondary';
+      appearance?: 'default' | 'primary' | 'secondary' | 'tertiary';
     };
     id?: string;
   }[];
 
 }
 
-export default function CalloutSection({ calloutTitle, richText, calloutLinks }: callOutSection) {
-
-
+export default function CalloutSection({
+  title,
+  kicker,
+  richText,
+  calloutLinks,
+  callOutBackgroundColor: backgroundColor
+}: callOutSection) {
   return (
-    <section className="takeQuiz full-content">
+    <section className={`${sectionClassNames({ backgroundColor })}  callout-section`}>
       <div className="group row">
-        <div className="content column">
-          <RichText content={calloutTitle} />
+        <div className="column">
+          <h2>
+            {kicker && <span className="kicker">{kicker}&nbsp;</span>}
+            <span className="title">{title}</span>
+          </h2>
           <RichText content={richText} />
-          {calloutLinks && calloutLinks?.length > 0 &&
-            (calloutLinks || []).map(({ link }, index) => {
-              return (
-                <CMSLink key={index} {...link} className="button btn-primary btn-click-quiz" />
-              )
-            })
-          }
-
         </div>
+        {calloutLinks?.length && (
+          <div className="column">
+            {calloutLinks && calloutLinks?.length > 0 &&
+              (calloutLinks || []).map(({ link }, index) => {
+                return (
+                  <CMSLink key={index} {...link} />
+                )
+              })
+            }
+          </div>
+        )}
       </div>
     </section>
   )

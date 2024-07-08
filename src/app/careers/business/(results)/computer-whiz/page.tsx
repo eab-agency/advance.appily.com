@@ -1,7 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import computerWhiz from "@/assets/lotties/computerWhiz.json";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
 import { useEffect, useRef } from "react";
 import { Suspense } from "react";
 

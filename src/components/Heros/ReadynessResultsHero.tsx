@@ -1,8 +1,12 @@
 import { Button } from "@/components";
-import styles from '@/styles/components/AdcResultsHero.module.scss';
-import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import { useEffect, useRef, useState } from 'react';
+import styles from "@/styles/components/AdcResultsHero.module.scss";
+import { LottieRefCurrentProps } from "lottie-react";
+import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
+// Use Lottie in your component
 interface Props {
   data: {
     title: string;
@@ -16,15 +20,25 @@ interface Props {
   animationState?: (animationState: boolean) => void;
 }
 
-export default function ReadynessResultsHero({ data, animationData, animationState }: Props) {
+export default function ReadynessResultsHero({
+  data,
+  animationData,
+  animationState,
+}: Props) {
   const lottieRef = useRef<LottieType | null>(null);
   const adcResultDescription = useRef(null);
   const adcResult = useRef(null);
   const [animationStateValue, setAnimationStateValue] = useState(false);
 
-
   // destructure data
-  const { title, result, detailedDescription, needHelpTitle, needHelpCtaLabel, needHelpCtaLink } = data;
+  const {
+    title,
+    result,
+    detailedDescription,
+    needHelpTitle,
+    needHelpCtaLabel,
+    needHelpCtaLink,
+  } = data;
 
   const handleLoaded = () => {
     // timer to show the result once the animation is loaded
@@ -39,8 +53,7 @@ export default function ReadynessResultsHero({ data, animationData, animationSta
 
       handleComplete();
     }, 4000);
-
-  }
+  };
 
   useEffect(() => {
     animationState?.(animationStateValue);
@@ -48,14 +61,15 @@ export default function ReadynessResultsHero({ data, animationData, animationSta
 
   const handleComplete = () => {
     setAnimationStateValue(true);
-  }
-
+  };
 
   return (
     <section className={`${styles.adcResultsHero} column`}>
       <h1 className={styles.adcResultsTitle}>
         {title}
-        <strong className={`${styles.theResult}`} ref={adcResult}>{result}</strong>
+        <strong className={`${styles.theResult}`} ref={adcResult}>
+          {result}
+        </strong>
       </h1>
 
       <figure className={`${styles.animation} `}>
@@ -67,10 +81,12 @@ export default function ReadynessResultsHero({ data, animationData, animationSta
           onDOMLoaded={handleLoaded}
         />
       </figure>
-      <div id="adcResult" ref={adcResultDescription} className={`${styles.theResultDescription}`}>
-        <div
-          className="resultsDescription"
-        >
+      <div
+        id="adcResult"
+        ref={adcResultDescription}
+        className={`${styles.theResultDescription}`}
+      >
+        <div className="resultsDescription">
           <div
             className={`${styles.detailedDescription}`}
             dangerouslySetInnerHTML={{ __html: detailedDescription }}
@@ -84,14 +100,12 @@ export default function ReadynessResultsHero({ data, animationData, animationSta
               className="button btn-primary"
             />
           </div>
-
         </div>
-
       </div>
     </section>
-  )
+  );
 }
 
 type LottieType = LottieRefCurrentProps & {
   getDuration: () => number;
-}
+};
