@@ -203,7 +203,7 @@ const BusinessSeoPage = () => {
             <Button
               type="button"
               label={data.takeQuiz.buttonText}
-              href="/careers/education/quiz/start"
+              href="https://my.appily.com/register/adult/educationcareers1"
               className="button btn-primary btn-click-quiz"
             />
           </div>
