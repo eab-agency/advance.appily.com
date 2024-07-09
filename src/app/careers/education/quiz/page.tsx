@@ -8,7 +8,8 @@ import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
 const title = "Education Career Quiz";
-const description = "Take our free quiz, Chart Your Course in Education, to see which career and degree paths might be right for you.";
+const description =
+  "Take our free quiz, Chart Your Course in Education, to see which career and degree paths might be right for you.";
 
 export const metadata: Metadata = {
   title: title,
@@ -24,19 +25,23 @@ export const metadata: Metadata = {
 };
 
 export default function QuizLandingPage() {
-  const ButtonOne = <ABButton
-	label="Get Started +"
-	appearance="primary"
-	href="https://my.appily.com/register/adult/educationcareers1"
-	className="button btn-primary btn-click-quiz"
-	/>
-	
-	const ButtonTwo = <ABButton
-	label="Get Started"
-	appearance="primary"
-	href="/careers/education/quiz/start"
-	className="button btn-primary btn-click-quiz"
-	/>
+  const ButtonOne = (
+    <ABButton
+      label="Get Started"
+      appearance="primary"
+      href="https://my.appily.com/register/adult/educationcareers1"
+      className="button btn-primary btn-click-quiz"
+    />
+  );
+
+  const ButtonTwo = (
+    <ABButton
+      label="Get Started"
+      appearance="primary"
+      href="/careers/education/quiz/start"
+      className="button btn-primary btn-click-quiz"
+    />
+  );
   return (
     <>
       <div className="quiz-wrapper">
@@ -76,9 +81,11 @@ export default function QuizLandingPage() {
               help you reach your goals.
             </p>
             <Suspense>
-              <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+              <RandomComponent
+                PercentageComponent={ButtonOne}
+                FallBackComponent={ButtonTwo}
+              />
             </Suspense>
-
           </div>
           <figure className="column highlighted-img">
             <Image

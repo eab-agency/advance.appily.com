@@ -3,23 +3,17 @@ import RandomComponent from "@/hooks/useRandomComponent";
 import ABButton from "@/components/Button/ABButton";
 import Image from "next/image";
 
-import {
-  Accordion,
-  Button,
-  Stats,
-  StickyCta,
-  Testimonial,
-} from "@/components";
+import { Accordion, Button, Stats, StickyCta, Testimonial } from "@/components";
 import data from "@/data/careers-education.json";
 import Link from "next/link";
-
 
 import PageHero from "@/components/Heros/PageHero";
 import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
 const title = "Explore Education Careers";
-const description = "How can you make a difference for today's students? Discover which education career path is right for you with Appily Advance's free career quiz.";
+const description =
+  "How can you make a difference for today's students? Discover which education career path is right for you with Appily Advance's free career quiz.";
 
 export const metadata: Metadata = {
   title: title,
@@ -36,20 +30,23 @@ export const metadata: Metadata = {
 
 /* eslint-disable react/no-danger */
 const BusinessSeoPage = () => {
+  const ButtonOne = (
+    <ABButton
+      label="Take the Quiz"
+      appearance="primary"
+      href="https://my.appily.com/register/adult/educationcareers1"
+      className="button btn-primary btn-click-quiz"
+    />
+  );
 
-  const ButtonOne = <ABButton
-	label="Take the Quiz +"
-	appearance="primary"
-	href="https://my.appily.com/register/adult/educationcareers1"
-	className="button btn-primary btn-click-quiz"
-	/>
-	
-	const ButtonTwo = <ABButton
-	label="Take the Quiz"
-	appearance="primary"
-	href="/careers/education/quiz/start"
-	className="button btn-primary btn-click-quiz"
-	/>
+  const ButtonTwo = (
+    <ABButton
+      label="Take the Quiz"
+      appearance="primary"
+      href="/careers/education/quiz/start"
+      className="button btn-primary btn-click-quiz"
+    />
+  );
 
   const reasonsArray = data.whyChoose.reasons;
   const rightCareerArray = data.rightCareer[0].reasons;
@@ -98,7 +95,10 @@ const BusinessSeoPage = () => {
               }}
             />
             <Suspense>
-              <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+              <RandomComponent
+                PercentageComponent={ButtonOne}
+                FallBackComponent={ButtonTwo}
+              />
             </Suspense>
           </div>
         </div>

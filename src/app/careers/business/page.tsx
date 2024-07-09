@@ -3,13 +3,7 @@ import React, { Suspense } from "react";
 import RandomComponent from "@/hooks/useRandomComponent";
 import ABButton from "@/components/Button/ABButton";
 
-import {
-  Accordion,
-  Button,
-  Stats,
-  StickyCta,
-  Testimonial,
-} from "@/components";
+import { Accordion, Button, Stats, StickyCta, Testimonial } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";
 import data from "@/data/careers-business.json";
 
@@ -33,7 +27,6 @@ export const metadata: Metadata = {
   }),
 };
 
-
 /* eslint-disable react/no-danger */
 const BusinessSeoPage = () => {
   const reasonsArray = data.whyChoose.reasons;
@@ -49,20 +42,23 @@ const BusinessSeoPage = () => {
     </li>
   ));
 
-  const ButtonOne = <ABButton
-	label="Take the Quiz +"
-	appearance="primary"
-	href="https://my.appily.com/register/adult/businesscareers1"
-	className="button btn-primary btn-click-quiz"
-	/>
-	
-	const ButtonTwo = <ABButton
-	label="Take the Quiz"
-	appearance="primary"
-	href="/careers/business/quiz/start"
-	className="button btn-primary btn-click-quiz"
-	/>
+  const ButtonOne = (
+    <ABButton
+      label="Take the Quiz"
+      appearance="primary"
+      href="https://my.appily.com/register/adult/businesscareers1"
+      className="button btn-primary btn-click-quiz"
+    />
+  );
 
+  const ButtonTwo = (
+    <ABButton
+      label="Take the Quiz"
+      appearance="primary"
+      href="/careers/business/quiz/start"
+      className="button btn-primary btn-click-quiz"
+    />
+  );
 
   return (
     <>
@@ -98,9 +94,11 @@ const BusinessSeoPage = () => {
               }}
             />
             <Suspense>
-              <RandomComponent PercentageComponent={ButtonOne} FallBackComponent={ButtonTwo} />
+              <RandomComponent
+                PercentageComponent={ButtonOne}
+                FallBackComponent={ButtonTwo}
+              />
             </Suspense>
-
           </div>
         </div>
       </section>
@@ -153,8 +151,14 @@ const BusinessSeoPage = () => {
       <section className="comparison">
         <div className="group column center-aligned center-justified">
           <div className="intro-text">
-            <h2 dangerouslySetInnerHTML={{ __html: data.comparisonSection.title }} />
-            <p dangerouslySetInnerHTML={{ __html: data.comparisonSection.description }} />
+            <h2
+              dangerouslySetInnerHTML={{ __html: data.comparisonSection.title }}
+            />
+            <p
+              dangerouslySetInnerHTML={{
+                __html: data.comparisonSection.description,
+              }}
+            />
           </div>
 
           <div className="infograph row cols-2">

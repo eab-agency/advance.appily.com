@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const DegreeCompletionSeoPage = () => {
   const ButtonOne = (
     <ABButton
-      label="Build Your Plan +"
+      label="Build Your Plan"
       appearance="primary"
       href="https://my.appily.com/register/adult/buildplanquiz1"
       className="button btn-primary btn-click-quiz"
@@ -96,7 +96,6 @@ const DegreeCompletionSeoPage = () => {
               />
               <Suspense>
                 <RandomComponent
-                  percentage={25}
                   PercentageComponent={ButtonOne}
                   FallBackComponent={ButtonTwo}
                 />

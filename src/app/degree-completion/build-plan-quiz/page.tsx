@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function QuizLandingPage() {
   const ButtonOne = (
     <ABButton
-      label="Answer a Few Questions +"
+      label="Answer a Few Questions"
       appearance="primary"
       href="https://my.appily.com/register/adult/buildplanquiz1"
       className="button btn-primary"
@@ -80,7 +80,6 @@ export default function QuizLandingPage() {
             </ul>
             <Suspense>
               <RandomComponent
-                percentage={25}
                 PercentageComponent={ButtonOne}
                 FallBackComponent={ButtonTwo}
               />
