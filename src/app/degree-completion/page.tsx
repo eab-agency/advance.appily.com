@@ -114,11 +114,6 @@ const DegreeCompletionSeoPage = () => {
       <section className="answersQuestionsSection column bgfilled imgTextSection">
         <header className="group column intro-group">
           <h2>{data.answersQuestionsSection.sectionTitle}</h2>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: data.answersQuestionsSection.sectionDescription,
-            }}
-          />
         </header>
         <div className="group center-aligned row cols-2">
           <div className="column intro-text">

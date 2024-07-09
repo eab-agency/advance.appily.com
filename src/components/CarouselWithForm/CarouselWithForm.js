@@ -10,7 +10,7 @@ import styles from "@/styles/components/CarouselWithForm.module.scss";
 const CarouselWithForm = ({
 	formId = "4",
 	data = { title: "", description: "" },
-	collectData = true,
+	collectData = false,
 }) => {
 	const [visibleForm, setVisibleForm] = useState(false);
 	const { user, location, vertical, globalPrivacyControl } = useUser();
