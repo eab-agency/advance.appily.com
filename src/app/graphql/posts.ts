@@ -85,6 +85,7 @@ export const POST = `
         layout {
           ${CALL_TO_ACTION}
           ${SECTION}
+          ${FORM_BLOCK}
           ${MEDIA_BLOCK}
           ${STATISTICS}
           ${TESTIMONIAL}
