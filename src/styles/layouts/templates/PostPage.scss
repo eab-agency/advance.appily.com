@@ -33,10 +33,10 @@
 }
 
 .layout-blocks {
-  display: block;
-  width: 100%;
-  max-width: tokens.$mq-1200;
-  margin: 0 auto;
+  // display: block;
+  // width: 100%;
+  // max-width: tokens.$mq-1200;
+  // margin: 0 auto;
   // background: var(--c-bg1);
 
   p {
@@ -47,7 +47,7 @@
 }
 .content {
   margin: 10px auto;
-    width: 90%;
+  width: 90%;
 }
 
 .card {
@@ -82,5 +82,5 @@
 .card-container {
   display: flex;
   flex-direction: row;
-  gap: 1rem; 
+  gap: 1rem;
 }
