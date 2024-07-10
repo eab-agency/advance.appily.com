@@ -4,6 +4,9 @@ import {  fetchPages, fetchPage } from '@/app/graphql';
 import { Page } from '../../../../../../payload-types'
 import { Hero } from '../../../../../blocks/HeroBlock';
 import { Blocks } from '@/components/Block';
+import { Metadata } from "next";
+import { draftMode } from 'next/headers'
+import { generateMeta } from "@/seo/generateMeta";
 
 export async function generateStaticParams() {
 	const pages = await fetchPages();
@@ -19,10 +22,33 @@ export async function generateStaticParams() {
 	return paramsVal;
   }
   
+  export async function generateMetadata({ params }: { params: { child: string; subChild: string, result: string } }): Promise<Metadata> {
+	const { isEnabled: isDraftMode } = draftMode();
+	const { child, subChild , result} = params; 
+  
+	const slug = [child, subChild, result].filter(Boolean);  
+	let page: Page | null = null;
+  
+	try {
+	  page = await fetchPage(slug);
+	} catch (error) {
+	  console.error('Error fetching page data:', error);
+	}
+	if (page) {
+	  return generateMeta({doc:page});
+	} else {
+	  return {
+		title: 'Default Title',
+		description: 'Default Description',
+	  };
+	}
+  }
+
+
   const SubCategoryPage = async({ params, searchParams }: any) => {
-	const { category, subCategory , result} = params; 
+	const { child, subChild , result} = params; 
 	let pageData: Page | null = null
-    const slug = [category, subCategory,result].filter(Boolean);
+    const slug = [child, subChild, result].filter(Boolean);
 	try {
 		pageData  = await fetchPage(slug);
 	  } catch (error) {

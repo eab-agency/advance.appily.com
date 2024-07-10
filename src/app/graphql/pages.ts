@@ -2,11 +2,11 @@ import {
 	CALLOUTSECTION,
 	CALL_TO_ACTION,
 	CAROUSELCARD,
-	FORM_BLOCK,
 	HIGHLIGHTEDCTA,
 	MEDIA_BLOCK,
 	SECTION,
 	STATISTICS,
+	STICKYCTASECTION,
 	SUBNAVIGATION,
 	TABSECTION,
 	TESTIMONIAL,
@@ -49,7 +49,6 @@ export const PAGE = `
         layout {
           ${CALL_TO_ACTION}
           ${SECTION}
-          ${FORM_BLOCK}
           ${MEDIA_BLOCK}
           ${STATISTICS}
           ${TESTIMONIAL}
@@ -58,6 +57,7 @@ export const PAGE = `
           ${TABSECTION}
           ${CAROUSELCARD}
           ${SUBNAVIGATION}
+          ${STICKYCTASECTION}
         }
         ${META}
         breadcrumbs {
