@@ -22,11 +22,11 @@ export async function generateStaticParams() {
 }
 
 
-export async function generateMetadata({ params }: { params: { category: string; subCategory: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { child: string; subChild: string } }): Promise<Metadata> {
   const { isEnabled: isDraftMode } = draftMode();
-  const { category, subCategory } = params;
+  const { child, subChild } = params;
 
-  const slug = [category, subCategory].filter(Boolean);
+  const slug = [child, subChild].filter(Boolean);
 
   let page: Page | null = null;
 

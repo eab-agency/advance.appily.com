@@ -234,6 +234,7 @@ export const fetchPage = async (
 				"Content-Type": "application/json",
 			},
 			// cache: "no-store",
+			next,
 			body: JSON.stringify({
 				query: PAGE,
 				variables: {
@@ -273,7 +274,7 @@ export const fetchPosts = async (): Promise<Post[]> => {
 		   headers: {
 			   "Content-Type": "application/json",
 		   },
-		   cache: "no-store",
+		   next,		   
 		   body: JSON.stringify({
 			   query: POSTS,
 			   variables: {
@@ -293,7 +294,7 @@ export const fetchPost = async (slug: string): Promise<Post> => {
 		   headers: {
 			   "Content-Type": "application/json",
 		   },
-		   cache: "no-store",
+		   next,
 		   body: JSON.stringify({
 			   query: POST,
 			   variables: {
@@ -314,7 +315,7 @@ export const fetchFirstFivePosts = async (): Promise<Post[]> => {
 		   headers: {
 			   "Content-Type": "application/json",
 		   },
-		   cache: "no-store",
+		   next,
 		   body: JSON.stringify({
 			   query: FIRSTFIVEPOSTS,
 			   variables: {
@@ -334,7 +335,7 @@ export const fetchAllCategories = async (): Promise<Category[]> => {
 		   headers: {
 			   "Content-Type": "application/json",
 		   },
-		   cache: "no-store",
+		   next,
 		   body: JSON.stringify({
 			   query: ALLCATEGORIES,
 			   
