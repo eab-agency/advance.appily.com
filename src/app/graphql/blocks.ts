@@ -83,13 +83,13 @@ export const ARCHIVE_BLOCK = `
 }
 `;
 
-export const FORM_BLOCK = `
-...on FormBlock {
-  blockType
-  enableIntro
-  form ${FORM_FIELDS}
-}
-`;
+// export const FORM_BLOCK = `
+// ...on FormBlock {
+//   blockType
+//   enableIntro
+//   form ${FORM_FIELDS}
+// }
+// `;
 
 export const STATISTICS = `
 ...on Statistics {

@@ -55,26 +55,26 @@ const SchoolCarousel = ({ handleClick, className }) => {
                 src={card.image?.url}
                 width="400"
                 height="300"
-                alt={card.image.alt}
+                alt={card.image?.alt}
                 className="school-thumbnail"
               />
               <figure className="school-logo">
                 <Image
-                  src={card.partner.logo.url}
+                  src={card?.partner?.logo?.url}
                   width="100"
                   height="100"
-                  alt={card.partner.logo.alt}
+                  alt={card?.partner?.logo?.alt || ''}
                 />
               </figure>
             </div>
             <div className="item-text">
               <div className="item-head">
-                <h3 key={card.partner.title}>{card.partner.title}</h3>
+                <h3 key={card?.partner?.title}>{card?.partner?.title}</h3>
                 <p>
-                  {card.partner.contact.city}, {card.partner.contact.state}
+                  {card?.partner?.contact?.city}, {card?.partner?.contact?.state}
                 </p>
               </div>
-              <RichText content={card.description} />
+              <RichText content={card?.description} />
             </div>
             <div className="item-foot">
               <button

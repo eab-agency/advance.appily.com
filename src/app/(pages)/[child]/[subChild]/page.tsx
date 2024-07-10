@@ -8,7 +8,6 @@ import { PageClient } from './page.client'
 
 export async function generateStaticParams() {
 	const pages = await fetchPages();
-  
 	const paramsVal = pages.map(({ breadcrumbs }) => {
 	  const slug = breadcrumbs?.[breadcrumbs.length - 1]?.url?.replace(/^\/|\/$/g, '').split('/');
 	  return {

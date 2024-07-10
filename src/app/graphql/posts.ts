@@ -2,7 +2,6 @@ import {
 	CALLOUTSECTION,
 	CALL_TO_ACTION,
 	CAROUSELCARD,
-	FORM_BLOCK,
 	HIGHLIGHTEDCTA,
 	MEDIA_BLOCK,
 	SECTION,
@@ -30,7 +29,6 @@ export const POST_DATA = `
         layout {
           ${CALL_TO_ACTION}
           ${SECTION}
-          ${FORM_BLOCK}
           ${MEDIA_BLOCK}
           ${STATISTICS}
           ${TESTIMONIAL}
@@ -87,7 +85,6 @@ export const POST = `
         layout {
           ${CALL_TO_ACTION}
           ${SECTION}
-          ${FORM_BLOCK}
           ${MEDIA_BLOCK}
           ${STATISTICS}
           ${TESTIMONIAL}

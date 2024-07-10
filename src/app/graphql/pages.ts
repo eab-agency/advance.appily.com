@@ -2,7 +2,6 @@ import {
 	CALLOUTSECTION,
 	CALL_TO_ACTION,
 	CAROUSELCARD,
-	FORM_BLOCK,
 	HIGHLIGHTEDCTA,
 	MEDIA_BLOCK,
 	SECTION,
@@ -50,7 +49,6 @@ export const PAGE = `
         layout {
           ${CALL_TO_ACTION}
           ${SECTION}
-          ${FORM_BLOCK}
           ${MEDIA_BLOCK}
           ${STATISTICS}
           ${TESTIMONIAL}
