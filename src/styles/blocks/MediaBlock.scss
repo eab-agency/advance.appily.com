@@ -2,6 +2,7 @@
 
 .mediaElement {
   overflow: hidden;
+  width: 100%;
 
   &__highlight {
     box-shadow: -1rem 1rem 0 var(--c-shadow1);
