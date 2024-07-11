@@ -3,19 +3,19 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { Metadata } from "next";
 import React from "react";
 
-import LocationInDevMode from "@/components/PageLayouts/LocationInDevMode";
-import data from "@/data/careers-business.json";
 import { Providers } from "../providers";
 import { mergeOpenGraph } from "../seo/mergeOpenGraph";
 import { mergeTwitter } from "../seo/mergeTwitter";
 
 import "@/styles/styles.scss";
 
-import { Footer, Header } from "@/components";
+import { OneTrustBannerCustom } from "@/lib/oneTrustBannerCustom";
 
 import Script from "next/script";
+import HeaderComponent from "../components/Header";
+import FooterComponent from "../components/Footer";
 
-const isDev = process.env.NEXT_PUBLIC_ISDEV;
+import isDev from "@/helpers/isDevMode";
 
 export default async function RootLayout({
   children,
@@ -33,6 +33,7 @@ export default async function RootLayout({
           src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
           data-domain-script="f621c13f-1c94-43c9-8362-0f5d72c69f26"
         />
+
         <Script
           id="otStubData"
           dangerouslySetInnerHTML={{
@@ -41,13 +42,16 @@ export default async function RootLayout({
         />
         {/* <!-- OneTrust Cookies Consent Notice end for appily.com --> */}
       </head>
-      <GoogleTagManager gtmId={GTM_ID} />
+      {/* if isDev is false then load GoogleTagManager */}
+      {!isDev && <GoogleTagManager gtmId={GTM_ID} />}
       <body>
         <Providers>
-          <Header links={data.links} />
+          {/* @ts-expect-error */}
+          <HeaderComponent />
+          {/* <LocationInDevMode /> */}
           <main className="layout-wrapper">{children}</main>
-          <Footer />
-          <LocationInDevMode />
+          {/* @ts-expect-error */}
+          <FooterComponent />
         </Providers>
       </body>
     </html>

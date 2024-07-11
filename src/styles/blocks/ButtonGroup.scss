@@ -1,0 +1,18 @@
+@use "@/styles/global/tokens";
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1vw, 1rem);
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: tokens.$mq-600) {
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: 1;
+    display: flex;
+  }
+}

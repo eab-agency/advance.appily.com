@@ -11,7 +11,6 @@ import {
   CarouselWithForm,
   IconCard,
   KeepExploring,
-  Stats,
   StickyCta,
   SubNav,
   Tabs,
@@ -22,6 +21,8 @@ import {
 import { useUser } from "@/context/context";
 import dataLinks from "@/data/links-education.json";
 import data from "@/data/results/education/educator.json";
+
+import StatisticsSection from "@/blocks/StatisticsSection";
 
 function TabsFallback() {
   return <>Tabs loading...</>;
@@ -80,7 +81,7 @@ export default function Page() {
 
         <CareerPaths careerPaths={data.careerPaths} />
 
-        <Stats stats={data.stats} source={data.statsSource} />
+        <StatisticsSection statistics={data.stats} source={data.statsSource} statsLayoutWidth="contained" />
 
         <WhatDegrees whatDegreesData={data.degreeTabs} />
 

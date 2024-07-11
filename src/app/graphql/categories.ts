@@ -1,8 +1,11 @@
-export const CATEGORIES = `categories {
-  title
-  id
-  breadcrumbs {
-    id
-    label
+export const ALLCATEGORIES = 
+`query {
+    Categories (limit: 300){
+      docs {
+        title
+        id
+      }
+    }
   }
-}`
+`;
+

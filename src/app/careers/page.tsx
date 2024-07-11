@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Button, CarouselWithForm, Header } from "@/components";
+import { Button, CarouselWithForm } from "@/components";
 import { IconCard } from "@/components/IconCard/IconCard";
 import Link from "next/link";
 
@@ -134,9 +134,10 @@ const CareersSeoPage = () => {
                 in education, or you’re not in education yet but feel a calling
                 to work with students, there are many paths you can take.
               </p>
-
               <p>
-                <Link href="/careers/education/quiz">Take our quick quiz</Link>{" "}
+                <Link href="/careers/education/quiz/start">
+                  Take our quick quiz
+                </Link>{" "}
                 and we’ll help you navigate which of those paths aligns with
                 your strengths, previous experience, and goals.
               </p>

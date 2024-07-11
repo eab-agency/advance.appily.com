@@ -7,92 +7,89 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 import {
-	AccordionSection,
-	CareerPaths,
-	CarouselWithForm,
-	LinkedCardsSection,
-	Stats,
-	StickyCta,
-	SubNavPlan,
-	TabsSection,
-	Testimonial,
-	TextWithImage,
+  AccordionSection,
+  CareerPaths,
+  CarouselWithForm,
+  LinkedCardsSection,
+  StickyCta,
+  SubNavPlan,
+  TabsSection,
+  Testimonial,
+  TextWithImage,
 } from "@/components";
 import BuildPlanHero from "@/components/Heros/BuildPlanHero";
 import { useUser } from "@/context/context";
 import data from "@/data/AdcResults/results-business-plan.json";
 
+import StatisticsSection from "@/blocks/StatisticsSection";
+
 export default function Page() {
-	const carouselRef = useRef(null);
-	const { setVertical, vertical } = useUser();
-	useEffect(() => {
-		setVertical("ADC");
-	}, [setVertical]);
-	return data ? (
-		<>
-			<div className="resultContent">
-				<BuildPlanHero data={data.heroSection} />
+  const carouselRef = useRef(null);
+  const { setVertical, vertical } = useUser();
+  useEffect(() => {
+    setVertical("ADC");
+  }, [setVertical]);
+  return data ? (
+    <>
+      <div className="resultContent">
+        <BuildPlanHero data={data.heroSection} />
 
-				<SubNavPlan />
+        <SubNavPlan />
 
-				<AccordionSection id="value-of-a-degree" data={data.reasons} />
+        <AccordionSection id="value-of-a-degree" data={data.reasons} />
 
-				<Stats stats={data.stats} source={data.statsSource} />
+        <StatisticsSection statistics={data.stats} source={data.statsSource} statsLayoutWidth="contained" />
 
-				<Testimonial testimonialData={data.testimonial} />
+        <Testimonial testimonialData={data.testimonial} />
 
-				<TabsSection
-					id="funding-your-degree"
-					data={data.fundingYourDegree}
-					className="no-content-media"
-				/>
+        <TabsSection
+          id="funding-your-degree"
+          data={data.fundingYourDegree}
+          className="no-content-media"
+        />
 
-				<AccordionSection data={data.fileFafsa} newTab={true} />
+        <AccordionSection data={data.fileFafsa} newTab={true} />
 
-				<Stats
-					stats={data.fileFafsa.stats}
-					source={data.fileFafsa.statsSource}
-				/>
 
-				<AccordionSection data={data.fileFafsa.moreWays} />
+        <StatisticsSection statistics={data.fileFafsa.stats} source={data.fileFafsa.statsSource} statsLayoutWidth="contained" />
 
-				<LinkedCardsSection data={data.tools} />
+        <AccordionSection data={data.fileFafsa.moreWays} />
 
-				<TabsSection id="career-paths" data={data.careersPaths} />
+        <LinkedCardsSection data={data.tools} />
 
-				<CareerPaths careerPaths={data.topCareers} />
+        <TabsSection id="career-paths" data={data.careersPaths} />
 
-				<Stats
-					stats={data.topCareers.stats}
-					source={data.topCareers.statsSource}
-				/>
+        <CareerPaths careerPaths={data.topCareers} />
 
-				<TabsSection id="degrees-and-schools" data={data.degreeGoals} />
 
-				<CareerPaths careerPaths={data.bachelorDegrees} />
+        <StatisticsSection statistics={data.topCareers.stats} source={data.topCareers.statsSource} statsLayoutWidth="contained" />
 
-				<div
-					id="explore-your-school-matches"
-					className="carouselWithForm"
-					ref={carouselRef}
-				>
-					<CarouselWithForm formId="15" collectData={false} />
-				</div>
+        <TabsSection id="degrees-and-schools" data={data.degreeGoals} />
 
-				<AccordionSection id="your-next-steps" data={data.yourNextSteps} />
+        <CareerPaths careerPaths={data.bachelorDegrees} />
 
-				<TabsSection data={data.topBarriers} />
+        <div
+          id="explore-your-school-matches"
+          className="carouselWithForm"
+          ref={carouselRef}
+        >
+          <CarouselWithForm formId="15" collectData={false} />
+        </div>
 
-				<AccordionSection data={data.stepsGuide} />
+        <AccordionSection id="your-next-steps" data={data.yourNextSteps} />
 
-				<TextWithImage
-					content={data.textWithImage.content}
-					imagePath={data.textWithImage.imagePath}
-					className="whatever-you-need"
-					altText={data.textWithImage.altText}
-				/>
-			</div>
-			<StickyCta trackedElement={carouselRef} />
-		</>
-	) : null;
+        <TabsSection data={data.topBarriers} />
+
+        <AccordionSection data={data.stepsGuide} />
+
+        <TextWithImage
+          content={data.textWithImage.content}
+          imagePath={data.textWithImage.imagePath}
+          className="whatever-you-need"
+          altText={data.textWithImage.altText}
+        />
+      </div>
+      <StickyCta trackedElement={carouselRef} />
+    </>
+  ) : null;
 }

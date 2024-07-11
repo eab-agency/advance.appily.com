@@ -1,0 +1,123 @@
+@use "sass:color";
+@use "@/styles/global/tokens";
+
+.accordion-group {
+  width: 100%;
+  margin-block: clamp(1.5rem, 2.5vw, 2.5rem);
+
+  &.numbered-accordion {
+    counter-reset: accordion;
+    .accordion {
+      .accordion-header {
+        h3 {
+          counter-increment: accordion;
+          &:before {
+            content: counter(accordion) ". ";
+            font-weight: tokens.$fontWeight-bold;
+            color: var(--c-orange-500);
+          }
+        }
+      }
+    }
+  }
+
+  .accordion {
+    position: relative;
+    z-index: tokens.$layer-1;
+
+    .accordion-header {
+      cursor: pointer;
+
+      h3 {
+        display: flex;
+        align-items: center;
+        gap: tokens.$size-2;
+        margin: 0;
+        font-weight: tokens.$fontWeight-light;
+        color: var(--c-accordionLink);
+        border-bottom: 1px solid var(--c-border-5);
+        padding: tokens.$padding-xs;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        background: var(--c-bg-body);
+
+        span {
+          width: 100%;
+        }
+
+        i {
+          line-height: 1;
+          font-size: 1em;
+          transition: all 0.2s ease-in-out;
+          color: var(--c-orange-500);
+        }
+
+        &.expanded {
+          background: var(--c-bg5);
+          border: none;
+          border-top: 1px solid var(--c-border-3);
+          border-left: 1px solid var(--c-border-3);
+          border-right: 1px solid var(--c-border-3);
+        }
+      }
+
+      &:hover {
+        h3 {
+          color: var(--c-accordionLinkHover);
+          text-decoration: underline dashed;
+
+          i {
+            transform: translateX(-30%);
+          }
+        }
+      }
+    }
+
+    .accordion-body {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      gap: tokens.$size-5;
+      width: 100%;
+      padding: clamp(tokens.$padding-l, 2vw, tokens.$padding-l * 2);
+      background: var(--c-bg5);
+      border-bottom-left-radius: tokens.$borderRadius-l;
+      border-bottom-right-radius: tokens.$borderRadius-l;
+      border-left: 1px solid var(--c-border-3);
+      border-right: 1px solid var(--c-border-3);
+      border-bottom: 1px solid var(--c-border-3);
+      margin-bottom: tokens.$size-5;
+
+      @media (min-width: tokens.$mq-600) {
+        flex-direction: row;
+      }
+
+      @media (min-width: tokens.$mq-900) {
+        align-items: center;
+      }
+
+      & > div {
+        flex: 1;
+      }
+
+      // figure {
+      //   width: 50%;
+      //   max-width: 15rem;
+
+      //   @media (min-width: tokens.$mq-900) {
+      //     width: 100%;
+      //     max-width: 25rem;
+      //   }
+
+      //   img {
+      //     width: 100%;
+      //     object-fit: cover;
+      //   }
+      // }
+
+      // div {
+      //   // flex: 1 0 25rem;
+      // }
+    }
+  }
+}

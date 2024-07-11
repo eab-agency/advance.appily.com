@@ -1,0 +1,42 @@
+@use "@/styles/global/tokens";
+
+.mediaElement {
+  overflow: hidden;
+  width: 100%;
+
+  &__highlight {
+    box-shadow: -1rem 1rem 0 var(--c-shadow1);
+
+    @media (max-width: tokens.$mq-900) {
+      max-width: 70%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__slightly_rounded {
+    border-radius: 2rem;
+  }
+
+  &__moderately_rounded {
+    border-radius: 4rem;
+  }
+
+  &__very_rounded {
+    border-radius: 6rem;
+  }
+
+  &__circular {
+    border-radius: 50%;
+  }
+}
+
+section:has(.column__extend-to-borders) {
+  .mediaElement__highlight {
+    max-width: 100%;
+    width: 100%;
+
+    @media (max-width: tokens.$mq-800) {
+      margin-top: clamp(1.5rem, 4vw, 4rem);
+    }
+  }
+}

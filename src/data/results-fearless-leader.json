@@ -1,125 +1,125 @@
 {
-  "slug": "fearless-leader",
-  "title": "The Fearless Leader",
-  "description": "You're a dynamic and strategic thinker with a passion for guiding teams toward success. Leadership comes naturally to you, and you thrive in fast-paced corporate environments. Planning, decision-making, and motivating others are second nature, and you're prepared to take on the responsibilities of management. Whether you have a background in business or aspire to lead in the world of commerce, the executive and leadership path beckons you.",
-  "detailedDescription": "<p>You're a dynamic and strategic thinker, with a passion for guiding teams towards success. Leadership comes naturally to you, and you thrive in fast-paced corporate environments. Planning, decision-making, and motivating others are second nature, and you're prepared to take on the responsibilities of management. Whether you have a background in business or aspire to lead in the world of commerce, the executive and leadership path beckons you.</p>",
-  "tabs": [
-    {
-      "title": "Motivation",
-      "icon": "motivation-icon",
-      "content": "You may enjoy inspiring and leading others to achieve common goals and success."
-    },
-    {
-      "title": "Skills",
-      "icon": "skills-icon",
-      "content": "You have exceptional leadership and strategic decision-making skills."
-    },
-    {
-      "title": "Works With",
-      "icon": "work-icon",
-      "content": "You enjoy working collaboratively and leading teams to achieve objectives."
-    },
-    {
-      "title": "Courses",
-      "icon": "education-icon",
-      "content": "You have likely taken classes in business administration, management, or leadership."
-    },
-    {
-      "title": "Setting",
-      "icon": "setting-icon",
-      "content": "You would probably enjoy working in a dynamic and fast-paced corporate environment."
-    },
-    {
-      "title": "Experience",
-      "icon": "work-icon",
-      "content": "You may have experience in leadership roles, managing teams, and making critical decisions."
-    }
-  ],
-  "statsSource": "U.S. Bureau of Labor Statistics",
-  "stats": [
-    {
-      "number": "8%",
-      "title": "Growth",
-      "description": "in employment of management occupations over the next decade"
-    },
-    {
-      "number": "$102K",
-      "title": "Median Salary",
-      "description": "for management occupations, ranging from $75K to $160K averages"
-    },
-    {
-      "number": "884K",
-      "title": "Job Openings",
-      "description": "predicted annually over the next decade in business and management"
-    }
-  ],
-  "degreeTabs": {
-    "title": "What degree do I need for a <strong>management career path?</strong>",
-    "description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas—but we recommend making a plan to continue your education if you’re interested in furthering your career.",
-    "degrees": [
-      {
-        "title": "Executive Business Administration",
-        "content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
-      },
-      {
-        "title": "Business Administration",
-        "content": "<p>A degree in Business Administration provides a broad foundation in various business disciplines, preparing graduates for leadership roles in diverse industries.</p><p>Example degree: MBA, Master’s in Management (MIM)</p>"
-      },
-      {
-        "title": "Organizational Leadership",
-        "content": "<p>A degree in Organizational Leadership focuses on developing leadership skills, managing teams, and driving organizational change and effectiveness.</p><p>Example degrees: MBA with a concentration in Leadership, Master’s in Organizational Leadership, Doctorate in Organizational Leadership (Ed.D. or Ph.D)</p>"
-      },
-      {
-        "title": "International Business/Trade/Commerce",
-        "content": "<p>A degree in International Business, Trade, or Commerce provides knowledge and skills to navigate global markets and international trade regulations.</p><p>Example degrees: MBA with a concentration in International Business, Masters in International Business (MIB), Master’s in Global Commerce</p>"
-      },
-      {
-        "title": "Risk Management",
-        "content": "<p>A degree in Risk Management emphasizes identifying and managing potential risks in business operations and decision-making processes.</p><p>Example degrees: MBA with a concentration in Risk Management, Master’s in Risk Management, specialized Master’s in Financial, Enterprise, Cybersecurity, or Environmental Risk Management</p>"
-      },
-      {
-        "title": "Office Management and Supervision",
-        "content": "<p>A degree in Office Management and Supervision prepares individuals for supervisory and management roles in office environments.</p><p>Example degree: MBA with a concentration in Office Management; Master’s in Office Management, Master’s in Administrative Leadership, Master’s in Business Operations</p>"
-      },
-      {
-        "title": "Nonprofit/Public Organizational Management",
-        "content": "<p>A degree in Non-Profit/Public Organizational Management focuses on managing and leading non-profit and public sector organizations.</p><p>Example degrees: Master’s in Nonprofit Management, Master of Public Administration (MPA) with a concentration in Nonprofit Management, Master’s in Public Policy</p>"
-      },
-      {
-        "title": "Management",
-        "content": "<p>A degree in Management prepares individuals with essential skills in leadership, communication, and problem-solving. This degree emphasizes practical knowledge to drive operational excellence and create a positive work environment.</p><p>Example degrees: Master’s in Management (MIM), MBA. Master’s in Leadership and Management, specialized Master’s in Healthcare or Sports Management</p>"
-      }
-    ]
-  },
-  "careerPaths": {
-    "title": "What kind of career is a good fit for me?",
-    "description": "Occupations that align with The Fearless Leader's career path involve planning, directing, and coordinating business activities and teams.",
-    "paths": [
-      {
-        "title": "Chief Executive Officer (CEO)",
-        "description": "Oversee and lead the entire organization, making critical decisions and setting strategic goals.",
-        "imagePath": "/images/chief-executive-officer.jpg"
-      },
-      {
-        "title": "Chief Financial Officer (CFO)",
-        "description": "Manage financial operations, budgets, and investments to ensure the organization's financial success.",
-        "imagePath": "/images/cfo.jpg"
-      },
-      {
-        "title": "General Manager",
-        "description": "Oversee the day-to-day operations of a business unit or division.",
-        "imagePath": "/images/general-manager.jpg"
-      },
-      {
-        "title": "Director or Associate Director",
-        "description": "Lead specific departments or functional areas within an organization.",
-        "imagePath": "/images/director-or-associate-director.jpg"
-      }
-    ]
-  },
-  "textWithImage": {
-    "content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
-    "imagePath": "/images/ceo.jpg",
-    "altText": "CEO at a restaurant"
-  }
+	"slug": "fearless-leader",
+	"title": "The Fearless Leader",
+	"description": "You're a dynamic and strategic thinker with a passion for guiding teams toward success. Leadership comes naturally to you, and you thrive in fast-paced corporate environments. Planning, decision-making, and motivating others are second nature, and you're prepared to take on the responsibilities of management. Whether you have a background in business or aspire to lead in the world of commerce, the executive and leadership path beckons you.",
+	"detailedDescription": "<p>You're a dynamic and strategic thinker, with a passion for guiding teams towards success. Leadership comes naturally to you, and you thrive in fast-paced corporate environments. Planning, decision-making, and motivating others are second nature, and you're prepared to take on the responsibilities of management. Whether you have a background in business or aspire to lead in the world of commerce, the executive and leadership path beckons you.</p>",
+	"tabs": [
+		{
+			"title": "Motivation",
+			"icon": "motivation-icon",
+			"content": "You may enjoy inspiring and leading others to achieve common goals and success."
+		},
+		{
+			"title": "Skills",
+			"icon": "skills-icon",
+			"content": "You have exceptional leadership and strategic decision-making skills."
+		},
+		{
+			"title": "Works With",
+			"icon": "work-icon",
+			"content": "You enjoy working collaboratively and leading teams to achieve objectives."
+		},
+		{
+			"title": "Courses",
+			"icon": "education-icon",
+			"content": "You have likely taken classes in business administration, management, or leadership."
+		},
+		{
+			"title": "Setting",
+			"icon": "setting-icon",
+			"content": "You would probably enjoy working in a dynamic and fast-paced corporate environment."
+		},
+		{
+			"title": "Experience",
+			"icon": "work-icon",
+			"content": "You may have experience in leadership roles, managing teams, and making critical decisions."
+		}
+	],
+	"statsSource": "U.S. Bureau of Labor Statistics",
+	"stats": [
+		{
+			"number": "8%",
+			"title": "Growth",
+			"description": "in employment of management occupations over the next decade"
+		},
+		{
+			"number": "$102K",
+			"title": "Median Salary",
+			"description": "for management occupations, ranging from $75K to $160K averages"
+		},
+		{
+			"number": "884K",
+			"title": "Job Openings",
+			"description": "predicted annually over the next decade in business and management"
+		}
+	],
+	"degreeTabs": {
+		"title": "What degree do I need for a <strong>management career path?</strong>",
+		"description": "Many management roles prefer that you have a master’s degree. You can begin with an undergraduate degree in the following areas—but we recommend making a plan to continue your education if you’re interested in furthering your career.",
+		"degrees": [
+			{
+				"title": "Executive Business Administration",
+				"content": "<p>A degree in Executive Business Administration equips individuals with advanced leadership skills, strategic decision-making abilities, and a comprehensive understanding of organizational management.</p><p>Example degree: Executive MBA</p>"
+			},
+			{
+				"title": "Business Administration",
+				"content": "<p>A degree in Business Administration provides a broad foundation in various business disciplines, preparing graduates for leadership roles in diverse industries.</p><p>Example degree: MBA, Master’s in Management (MIM)</p>"
+			},
+			{
+				"title": "Organizational Leadership",
+				"content": "<p>A degree in Organizational Leadership focuses on developing leadership skills, managing teams, and driving organizational change and effectiveness.</p><p>Example degrees: MBA with a concentration in Leadership, Master’s in Organizational Leadership, Doctorate in Organizational Leadership (Ed.D. or Ph.D)</p>"
+			},
+			{
+				"title": "International Business/Trade/Commerce",
+				"content": "<p>A degree in International Business, Trade, or Commerce provides knowledge and skills to navigate global markets and international trade regulations.</p><p>Example degrees: MBA with a concentration in International Business, Masters in International Business (MIB), Master’s in Global Commerce</p>"
+			},
+			{
+				"title": "Risk Management",
+				"content": "<p>A degree in Risk Management emphasizes identifying and managing potential risks in business operations and decision-making processes.</p><p>Example degrees: MBA with a concentration in Risk Management, Master’s in Risk Management, specialized Master’s in Financial, Enterprise, Cybersecurity, or Environmental Risk Management</p>"
+			},
+			{
+				"title": "Office Management and Supervision",
+				"content": "<p>A degree in Office Management and Supervision prepares individuals for supervisory and management roles in office environments.</p><p>Example degree: MBA with a concentration in Office Management; Master’s in Office Management, Master’s in Administrative Leadership, Master’s in Business Operations</p>"
+			},
+			{
+				"title": "Nonprofit/Public Organizational Management",
+				"content": "<p>A degree in Non-Profit/Public Organizational Management focuses on managing and leading non-profit and public sector organizations.</p><p>Example degrees: Master’s in Nonprofit Management, Master of Public Administration (MPA) with a concentration in Nonprofit Management, Master’s in Public Policy</p>"
+			},
+			{
+				"title": "Management",
+				"content": "<p>A degree in Management prepares individuals with essential skills in leadership, communication, and problem-solving. This degree emphasizes practical knowledge to drive operational excellence and create a positive work environment.</p><p>Example degrees: Master’s in Management (MIM), MBA. Master’s in Leadership and Management, specialized Master’s in Healthcare or Sports Management</p>"
+			}
+		]
+	},
+	"careerPaths": {
+		"title": "What kind of career is a good fit for me?",
+		"description": "Occupations that align with The Fearless Leader's career path involve planning, directing, and coordinating business activities and teams.",
+		"paths": [
+			{
+				"title": "Chief Executive Officer (CEO)",
+				"description": "Oversee and lead the entire organization, making critical decisions and setting strategic goals.",
+				"imagePath": "/images/chief-executive-officer.jpg"
+			},
+			{
+				"title": "Chief Financial Officer (CFO)",
+				"description": "Manage financial operations, budgets, and investments to ensure the organization's financial success.",
+				"imagePath": "/images/cfo.jpg"
+			},
+			{
+				"title": "General Manager",
+				"description": "Oversee the day-to-day operations of a business unit or division.",
+				"imagePath": "/images/general-manager.jpg"
+			},
+			{
+				"title": "Director or Associate Director",
+				"description": "Lead specific departments or functional areas within an organization.",
+				"imagePath": "/images/director-or-associate-director.jpg"
+			}
+		]
+	},
+	"textWithImage": {
+		"content": "<h2>Do I need a Master’s or an MBA?</h2><p class='featuredParagraph'>You can elevate your leadership game with an MBA that equips you to steer organizations towards success. Gain strategic insights, hone your decision-making prowess, and build a strong network.</p><p>Alternatively, a Master's in Organizational Leadership can fine-tune your skills in guiding teams and initiating change, complementing your natural leadership tendencies.</p><p>While both paths empower you to excel, the MBA offers a comprehensive toolkit for executive roles, making it an excellent choice for The Fearless Leader aiming for impactful leadership on a grand scale.</p><p>Additionally, if you're an experienced professional seeking advanced leadership skills, an Executive MBA (EMBA) offers a similar curriculum to an MBA but is tailored for seasoned executives, focusing on real-world applications and high-level strategic decision-making.</p>",
+		"imagePath": "/images/ceo.jpg",
+		"altText": "CEO at a restaurant"
+	}
 }

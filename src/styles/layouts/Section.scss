@@ -1,0 +1,59 @@
+@use "@/styles/global/tokens";
+
+.section-content {
+  &.section__highlight {
+    position: relative;
+    @include tokens.decoElement(var(--c-teal-500));
+  }
+
+  &.section__layoutwidth {
+    &-full {
+      .group {
+        @include tokens.layoutWidthFull;
+        gap: clamp(2.5rem, 6vw, 6rem);
+      }
+    }
+
+    &-contained {
+      .group {
+        @include tokens.layoutWidthContained;
+      }
+
+      &:has(.column__extend-to-borders) {
+        .group {
+          gap: clamp(2.5rem, 6vw, 6rem);
+        }
+      }
+    }
+
+    &-narrow {
+      .group {
+        @include tokens.layoutWidthNarrow;
+      }
+    }
+  }
+
+  &.section__bg-dark_blue_light_gray {
+    background-color: var(--c-bg1);
+  }
+
+  &.section__bg-blue_light_blue {
+    background-color: var(--c-bg5);
+  }
+
+  &.section__bg-orange_peach {
+    background-color: var(--c-bg2);
+  }
+
+  &.section__bg-turquoise_yellow {
+    background-color: var(--c-bg3);
+  }
+
+  &.section__bg-turquoise_light_turquoise {
+    background-color: var(--c-bg4);
+  }
+
+  &.section__bg-slate_gray_white {
+    background-color: var(--c-bg8);
+  }
+}
