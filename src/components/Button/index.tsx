@@ -8,18 +8,18 @@ import { useBackgroundColor } from "../BackgroundColor";
 import classes from "./index.module.scss";
 
 export type Props = {
-  label: string
-  children?: JSX.Element | string
-  appearance?: 'default' | 'primary' | 'secondary' | 'tertiary'
-  el?: 'button' | 'link' | 'a'
-  onClick?: () => void
-  href?: string
-  newTab?: boolean
-  className?: string
-  type?: 'submit' | 'button'
-  disabled?: boolean
-  form?: string
-}
+  label: string;
+  children?: JSX.Element | string;
+  appearance?: "default" | "primary" | "secondary" | "tertiary";
+  el?: "button" | "link" | "a";
+  onClick?: () => void;
+  href?: string;
+  newTab?: boolean;
+  className?: string;
+  type?: "submit" | "button";
+  disabled?: boolean;
+  form?: string;
+};
 
 export const Button: React.FC<Props> = ({
   el: elFromProps = "link",

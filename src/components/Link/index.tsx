@@ -1,19 +1,19 @@
-import Link from 'next/link';
-import React from 'react';
+import Link from "next/link";
+import React from "react";
 
-import { Page } from '../../../payload-types';
-import { Button } from '../Button';
+import { Page } from "../../../payload-types";
+import { Button } from "../Button";
 
 type CMSLinkType = {
-  type?: 'custom' | 'reference';
+  type?: "custom" | "reference";
   url?: string;
   newTab?: boolean;
   reference?: {
     value: string | Page;
-    relationTo: 'pages';
+    relationTo: "pages";
   };
   label?: string;
-  appearance?: 'default' | 'primary' | 'secondary' | 'tertiary';
+  appearance?: "default" | "primary" | "secondary" | "tertiary";
   children?: React.ReactNode;
   className?: string;
 };
@@ -28,24 +28,33 @@ export const CMSLink: React.FC<CMSLinkType> = ({
   children,
   className,
 }) => {
-  const href = type === 'reference' && reference && typeof reference.value === 'object'
-    ? `/${reference.value.breadcrumbs?.[reference.value.breadcrumbs.length - 1]?.url?.replace(/^\/|\/$/g, '')}`
-    : type === 'custom' && url
-      ? url.startsWith('http://') || url.startsWith('https://')
+  const href =
+    type === "reference" && reference && typeof reference.value === "object"
+      ? `/${reference.value.breadcrumbs?.[
+          reference.value.breadcrumbs.length - 1
+        ]?.url?.replace(/^\/|\/$/g, "")}`
+      : type === "custom" && url
+      ? url.startsWith("http://") ||
+        url.startsWith("https://") ||
+        url.startsWith("#")
         ? url
-        : `/${url.replace(/^\/|\/$/g, '')}`
-      : '';
+        : `/${url.replace(/^\/|\/$/g, "")}`
+      : "";
 
-  const isCustomType = type === 'custom';
+  const isCustomType = type === "custom";
   const linkProps = {
-    ...(newTab && { target: '_blank', rel: 'noopener noreferrer' }),
-    className: `${appearance === 'default' ? `btn-${appearance}` : `button btn-${appearance || 'default'}`} ${className || ''}`,
+    ...(newTab && { target: "_blank", rel: "noopener noreferrer" }),
+    className: `${
+      appearance === "default"
+        ? `btn-${appearance}`
+        : `button btn-${appearance || "default"}`
+    } ${className || ""}`,
   };
   if (isCustomType) {
     return (
       <a href={href} {...linkProps}>
-        <div className='btn-content'>
-          <span className='btn-label'>
+        <div className="btn-content">
+          <span className="btn-label">
             {label}
             {children}
           </span>
@@ -57,8 +66,8 @@ export const CMSLink: React.FC<CMSLinkType> = ({
   if (href) {
     return (
       <Link href={href} {...linkProps}>
-        <div className='btn-content'>
-          <span className='btn-label'>
+        <div className="btn-content">
+          <span className="btn-label">
             {label}
             {children}
           </span>
@@ -74,5 +83,5 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     label,
   };
 
-  return <Button {...buttonProps} label={buttonProps.label ?? ''} />;
+  return <Button {...buttonProps} label={buttonProps.label ?? ""} />;
 };
