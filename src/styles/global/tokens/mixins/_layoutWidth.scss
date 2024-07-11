@@ -1,0 +1,19 @@
+@use "@/styles/global/tokens/breakpoints";
+
+@mixin layoutWidth($width: 100%, $maxWidth: 1200px, $margin: 0 auto) {
+  width: $width;
+  max-width: $maxWidth;
+  margin: $margin;
+}
+
+@mixin layoutWidthFull() {
+  @include layoutWidth(100%, 100%);
+}
+
+@mixin layoutWidthContained() {
+  @include layoutWidth(100%, breakpoints.$mq-1200);
+}
+
+@mixin layoutWidthNarrow() {
+  @include layoutWidth(100%, breakpoints.$mq-800);
+}

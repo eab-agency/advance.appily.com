@@ -1,7 +1,6 @@
 import Image from "next/image";
-import React from "react";
 
-import { Accordion, Button, Stats, StickyCta, Testimonial } from "@/components";
+import { Accordion, Button, StickyCta, Testimonial } from "@/components";
 import data from "@/data/careers-healthcare.json";
 import percentageSplit from "@/lib/percentageSplit";
 
@@ -114,11 +113,11 @@ export default function HealthCareSeoPage({
         </div>
       </section>
 
-      <Stats
+      {/* <Stats
         stats={data.stats}
         source={data.statsSource}
         className="stats-section"
-      />
+      /> */}
 
       <section className="whyChoose">
         <div className="group center-aligned cols-2">

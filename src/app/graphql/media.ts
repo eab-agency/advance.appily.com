@@ -5,8 +5,21 @@ width
 height
 alt
 caption
-`
+`;
 
 export const MEDIA = `media {
   ${MEDIA_FIELDS}
-}`
+}`;
+
+export const ANIMATION_FIELDS = `
+mimeType
+filename
+width
+height
+alt
+url
+`;
+
+export const ANIMATION = `animation {
+  ${ANIMATION_FIELDS}
+}`;

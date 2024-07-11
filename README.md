@@ -39,3 +39,11 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying the documents within your CMS.
+
+### Deployment
+
+QA CMS: [https://qa-appily-cms.payloadcms.app/admin/](https://qa-appily-cms.payloadcms.app/admin/)
+
+Branch that biulds to QA CMS: `UAT-dev-url-to-qa-cms`
+
+Public facing URL that accesses above CMS: [https://dev.advance.appily.com/](https://dev.advance.appily.com/)

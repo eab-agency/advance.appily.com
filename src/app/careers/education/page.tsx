@@ -3,7 +3,7 @@ import RandomComponent from "@/hooks/useRandomComponent";
 import ABButton from "@/components/Button/ABButton";
 import Image from "next/image";
 
-import { Accordion, Button, Stats, StickyCta, Testimonial } from "@/components";
+import { Accordion, Button, StickyCta, Testimonial } from "@/components";
 import data from "@/data/careers-education.json";
 import Link from "next/link";
 
@@ -104,11 +104,11 @@ const BusinessSeoPage = () => {
         </div>
       </section>
 
-      <Stats
+      {/* <Stats
         stats={data.stats}
         source={data.statsSource}
         className="stats-section"
-      />
+      /> */}
 
       <section className="whyChoose">
         <div className="group center-aligned cols-2">
