@@ -38,11 +38,6 @@ const CareersSeoPage = () => {
               type of job could be right for you — and which degrees can help
               you reach your goals.
             </p>
-            <p>
-              Take one of our <strong>free career quizzes</strong> to see what
-              type of job could be right for you — and which degrees can help
-              you reach your goals.
-            </p>
           </div>
           <figure className="heroImage">
             <Image
