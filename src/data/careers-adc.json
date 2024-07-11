@@ -38,7 +38,7 @@
 					"iconAlt": "Get Your Back-to-School Plan",
 					"description": "<h4>Let’s Build Your Personalized Plan</h4> <p>Answer a few questions and we’ll provide a step-by-step guide to everything from funding your education to tips for choosing the right degree and school for your career goals.</p>",
 					"buttonText": "Build Your Plan",
-					"buttonLink": "/degree-completion/build-plan-quiz/start"
+					"buttonLink": "https://my.appily.com/register/adult/buildplanquiz1"
 				}
 			}
 		]
@@ -50,7 +50,6 @@
 	"pageTitle": "Are you asking yourself: <strong>Should I finish my degree?</strong>",
 	"answersQuestionsSection": {
 		"sectionTitle": "Get Answers to Your Questions",
-		"sectionDescription": "Whether you <a href='/degree-completion/readiness-quiz'>take the readiness quiz</a> or <a href='/degree-completion/build-plan-quiz'>build your personalized plan</a>, you’ll get valuable information that helps you answer these frequently asked questions:",
 		"questions": {
 			"question1": {
 				"image": "/images/financial-aid-options-for-adults.jpg",
@@ -58,7 +57,7 @@
 				"title": "Are there financial aid options for adults returning to college?",
 				"content": "<p>Yes, there are many financial aid options for adults going back to school. You can get grants and scholarships, which are great because you don't have to pay them back. Check for special scholarships just for adult students. Don't forget about federal aid like Pell Grants, and some states have their own help too. </p><p>If your job offers tuition help, that's another way to pay for school. Student loans are also an option, but remember, you'll have to pay these back later. And, you might even get tax credits for going to school, which can save you money. </p><p>For more detailed information, answer a few questions and we’ll build you a back-to-school plan that includes in-depth answers about how to afford your undergraduate degree.</p>",
 				"buttonText": "Make Your Back-to-School Plan",
-				"buttonLink": "/degree-completion/build-plan-quiz/start"
+				"buttonLink": "https://my.appily.com/register/adult/buildplanquiz1"
 			},
 			"question2": {
 				"image": "/images/choose-the-right-degree.jpg",
@@ -66,7 +65,7 @@
 				"title": "How can I choose the right degree for career advancement?",
 				"content": "<p>Choosing the right degree for your career is an important first step. Think about what you love doing and the jobs you want in the future. Look for degrees that match these jobs. Also, consider how the degree will fit into your life right now. Some fields, like technology or healthcare, are really growing and might offer good job chances.</p><p>If you share what field interests you, your back-to-school plan will give you advice on top careers and degrees that may be a good fit.</p>",
 				"buttonText": "Start Planning Now",
-				"buttonLink": "/degree-completion/build-plan-quiz/start"
+				"buttonLink": "https://my.appily.com/register/adult/buildplanquiz1"
 			},
 			"question3": {
 				"image": "/images/balance-work-or-family-and-school.jpg",
@@ -74,7 +73,7 @@
 				"title": "How can I balance work or family and school?",
 				"content": "<p>Balancing school with work or family is tough but doable. Plan your time well. Use a calendar to keep track of schoolwork and family or job things. Online classes can be more flexible if you're busy. Don't forget to ask for help when you need it, whether it's childcare, study groups, or talking to your boss about a flexible schedule. </p><p>Your back-to-school plan will include more specific advice including free tools that can help you become a time management pro!</p>",
 				"buttonText": "Begin Building Your Plan",
-				"buttonLink": "/degree-completion/build-plan-quiz/start"
+				"buttonLink": "https://my.appily.com/register/adult/buildplanquiz1"
 			}
 		}
 	},

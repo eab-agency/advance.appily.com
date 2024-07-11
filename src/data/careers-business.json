@@ -36,7 +36,7 @@
 			"alt": "Profesional man researching online"
 		},
 		"buttonText": "Take the Quiz",
-		"buttonLink": "/careers/business/quiz/start"
+		"buttonLink": "https://my.appily.com/register/adult/businesscareers1"
 	},
 	"stats": [
 		{
@@ -128,7 +128,7 @@
 			"alt": "Take our free quiz"
 		},
 		"buttonText": "Take the Quiz",
-		"buttonLink": "/careers/business/quiz/start"
+		"buttonLink": "https://my.appily.com/register/adult/businesscareers1"
 	},
 	"statsAppily": [
 		{

@@ -46,7 +46,7 @@ const BusinessSeoPage = () => {
 
   const ButtonOne = (
     <ABButton
-      label="Take the Quiz +"
+      label="Take the Quiz"
       appearance="primary"
       href="https://my.appily.com/register/adult/businesscareers1"
       className="button btn-primary btn-click-quiz"

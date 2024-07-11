@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Accordion, Button, Stats, StickyCta, Testimonial } from "@/components";
+import { Accordion, Button, StickyCta, Testimonial } from "@/components";
 import data from "@/data/careers-healthcare.json";
 import percentageSplit from "@/lib/percentageSplit";
 
@@ -96,7 +96,7 @@ export default function HealthCareSeoPage({
 
             {inPercentageRange ? (
               <Button
-                label="Get Started +"
+                label="Get Started"
                 href={`https://my.appily.com/register/adult/healthcarecareers1/?${searchParamsString}`}
                 // href=`https://my.appily.com/register/adult/healthcarecareers1/`
                 className="button btn-primary btn-click-quiz"
@@ -181,7 +181,7 @@ export default function HealthCareSeoPage({
 
             {inPercentageRange ? (
               <Button
-                label="Get Started +"
+                label="Get Started"
                 href="https://my.appily.com/register/adult/healthcarecareers1/"
                 className="button btn-primary btn-click-quiz"
               />

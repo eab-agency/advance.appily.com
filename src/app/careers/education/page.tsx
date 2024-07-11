@@ -3,7 +3,7 @@ import RandomComponent from "@/hooks/useRandomComponent";
 import ABButton from "@/components/Button/ABButton";
 import Image from "next/image";
 
-import { Accordion, Button, Stats, StickyCta, Testimonial } from "@/components";
+import { Accordion, Button, StickyCta, Testimonial } from "@/components";
 import data from "@/data/careers-education.json";
 import Link from "next/link";
 
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const BusinessSeoPage = () => {
   const ButtonOne = (
     <ABButton
-      label="Take the Quiz +"
+      label="Take the Quiz"
       appearance="primary"
       href="https://my.appily.com/register/adult/educationcareers1"
       className="button btn-primary btn-click-quiz"
@@ -203,7 +203,7 @@ const BusinessSeoPage = () => {
             <Button
               type="button"
               label={data.takeQuiz.buttonText}
-              href="/careers/education/quiz/start"
+              href="https://my.appily.com/register/adult/educationcareers1"
               className="button btn-primary btn-click-quiz"
             />
           </div>

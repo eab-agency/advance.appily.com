@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 const DegreeCompletionSeoPage = () => {
   const ButtonOne = (
     <ABButton
-      label="Build Your Plan +"
+      label="Build Your Plan"
       appearance="primary"
       href="https://my.appily.com/register/adult/buildplanquiz1"
       className="button btn-primary btn-click-quiz"
@@ -97,7 +97,6 @@ const DegreeCompletionSeoPage = () => {
               />
               <Suspense>
                 <RandomComponent
-                  percentage={25}
                   PercentageComponent={ButtonOne}
                   FallBackComponent={ButtonTwo}
                 />
@@ -116,11 +115,6 @@ const DegreeCompletionSeoPage = () => {
       <section className="answersQuestionsSection column bgfilled imgTextSection">
         <header className="group column intro-group">
           <h2>{data.answersQuestionsSection.sectionTitle}</h2>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: data.answersQuestionsSection.sectionDescription,
-            }}
-          />
         </header>
         <div className="group center-aligned row cols-2">
           <div className="column intro-text">

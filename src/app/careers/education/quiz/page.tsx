@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function QuizLandingPage() {
   const ButtonOne = (
     <ABButton
-      label="Get Started +"
+      label="Get Started"
       appearance="primary"
       href="https://my.appily.com/register/adult/educationcareers1"
       className="button btn-primary btn-click-quiz"
