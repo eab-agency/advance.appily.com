@@ -36,7 +36,7 @@ export default function TabsSection({
       )}
 
       <Suspense fallback={<TabsFallback />}>
-        <TabsComponent className="react-tabs" tabs={tabs} />
+      <TabsComponent className="react-tabs" tabs={tabs} id={!sectionHead ? "1" : "2"} />
       </Suspense>
     </section>
   );
