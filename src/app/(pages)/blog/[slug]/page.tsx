@@ -6,6 +6,9 @@ import React from "react";
 import { Category, Post } from "../../../../../payload-types";
 import { Hero } from '../../../../blocks/HeroBlock';
 import Link from 'next/link';
+import { Metadata } from "next";
+import { draftMode } from 'next/headers'
+import { generateMeta } from "@/seo/generateMeta";
 
 export async function generateStaticParams() {
   try {
@@ -14,6 +17,26 @@ export async function generateStaticParams() {
   } catch (error) {
     console.error('Error fetching posts:', error);
     return [];
+  }
+}
+
+export async function generateMetadata({ params }: { params: { slug: string;} }): Promise<Metadata> {
+  const { isEnabled: isDraftMode } = draftMode();
+  const { slug } =  params;
+  let post: Post | null = null;
+
+  try {
+    post = await fetchPost(slug);
+  } catch (error) {
+    console.error('Error fetching post data:', error);
+  }
+  if (post) {
+    return generateMeta({doc:post});
+  } else {
+    return {
+      title: 'Default Title',
+      description: 'Default Description',
+    };
   }
 }
 

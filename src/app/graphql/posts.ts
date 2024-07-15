@@ -37,6 +37,8 @@ export const POST_DATA = `
           ${TABSECTION}
           ${CAROUSELCARD}
         }
+        ${META}
+
 `
 
 export const POSTS = `
@@ -93,6 +95,7 @@ export const POST = `
           ${TABSECTION}
           ${CAROUSELCARD}
         }
+        ${META}
       }
     }
   }
