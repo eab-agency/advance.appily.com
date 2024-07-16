@@ -9,13 +9,11 @@ import { mergeTwitter } from "../seo/mergeTwitter";
 
 import "@/styles/styles.scss";
 
-import { OneTrustBannerCustom } from "@/lib/oneTrustBannerCustom";
-
 import Script from "next/script";
-import HeaderComponent from "../components/Header";
 import FooterComponent from "../components/Footer";
+import HeaderComponent from "../components/Header";
 
-import isDev from "@/helpers/isDevMode";
+import isDevMode from "@/helpers/isDevMode";
 
 export default async function RootLayout({
   children,
@@ -42,8 +40,8 @@ export default async function RootLayout({
         />
         {/* <!-- OneTrust Cookies Consent Notice end for appily.com --> */}
       </head>
-      {/* if isDev is false then load GoogleTagManager */}
-      {!isDev && <GoogleTagManager gtmId={GTM_ID} />}
+      {/* if isDevMode is false then load GoogleTagManager */}
+      {!isDevMode() && <GoogleTagManager gtmId={GTM_ID} />}
       <body>
         <Providers>
           {/* @ts-expect-error */}
@@ -71,7 +69,7 @@ export const metadata: Metadata = {
     template: "%s | Appily Advance",
   },
   robots: {
-    index: isDev ? false : true,
-    follow: isDev ? false : true,
+    index: isDevMode() ? false : true,
+    follow: isDevMode() ? false : true,
   },
 };
