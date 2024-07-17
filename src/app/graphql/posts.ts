@@ -1,16 +1,15 @@
 import {
-	CALLOUTSECTION,
-	CALL_TO_ACTION,
-	CAROUSELCARD,
-	HIGHLIGHTEDCTA,
-	MEDIA_BLOCK,
-	SECTION,
-	STATISTICS,
-	TABSECTION,
-	TESTIMONIAL,
+  CALLOUTSECTION,
+  CALL_TO_ACTION,
+  CAROUSELCARD,
+  HIGHLIGHTEDCTA,
+  MEDIA_BLOCK,
+  SECTION,
+  STATISTICS,
+  TABSECTION,
+  TESTIMONIAL,
 } from "./blocks";
-import { LINK_FIELDS } from "./link";
-import { ANIMATION, MEDIA } from "./media";
+import { MEDIA } from "./media";
 import { META } from "./meta";
 
 export const POST_DATA = `
@@ -37,6 +36,8 @@ export const POST_DATA = `
           ${TABSECTION}
           ${CAROUSELCARD}
         }
+        ${META}
+
 `
 
 export const POSTS = `
@@ -93,6 +94,7 @@ export const POST = `
           ${TABSECTION}
           ${CAROUSELCARD}
         }
+        ${META}
       }
     }
   }
