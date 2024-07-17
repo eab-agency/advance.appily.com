@@ -48,4 +48,16 @@
       display: none;
     }
   }
+
+  &__head {
+    display: block;
+    width: 100%;
+    max-width: 65rem;
+  }
+
+  &__footer {
+    display: block;
+    width: 100%;
+    max-width: 65rem;
+  }
 }

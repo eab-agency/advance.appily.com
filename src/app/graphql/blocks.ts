@@ -1,4 +1,3 @@
-import { FORM_FIELDS } from "./form";
 import { LINK_FIELDS } from "./link";
 import { MEDIA, MEDIA_FIELDS } from "./media";
 import { META } from "./meta";
@@ -226,8 +225,17 @@ export const TABSECTION = `
 ...on Tabsection {
   blockType
   tabSectionBackgroundColor
-  sectionHead
-  sectionIntro
+  sectionHead{
+    showSectionHead
+    headContent{
+      blocks {
+        ${ACCORDIONBLOCK}
+        ${BUTTONGROUPBLOCK}
+        ${RICHTEXTBLOCK}
+        ${MEDIA_BLOCK}
+      }
+    }
+  }
   tabs {
     tabicon {
       ${MEDIA_FIELDS}
@@ -243,6 +251,17 @@ export const TABSECTION = `
         ${RICHTEXTBLOCK}
         ${MEDIA_BLOCK}
       }
+  }
+  sectionFooter{
+    showSectionFooter
+    footerContent{
+      blocks {
+        ${ACCORDIONBLOCK}
+        ${BUTTONGROUPBLOCK}
+        ${RICHTEXTBLOCK}
+        ${MEDIA_BLOCK}
+      }
+    }
   }
 }
 `;
