@@ -1,15 +1,5 @@
-import {
-  CALLOUTSECTION,
-  CALL_TO_ACTION,
-  CAROUSELCARD,
-  HIGHLIGHTEDCTA,
-  MEDIA_BLOCK,
-  SECTION,
-  STATISTICS,
-  TABSECTION,
-  TESTIMONIAL,
-} from "./blocks";
-import { MEDIA } from "./media";
+
+import { MEDIA_FIELDS } from "./media";
 import { META } from "./meta";
 
 export const POST_DATA = `
@@ -19,22 +9,12 @@ export const POST_DATA = `
         updatedAt
         publishedDate
         postFeaturedImage {
-          ${MEDIA}
+          ${MEDIA_FIELDS}
         }
+        richText
         category{
           id 
           title
-        }
-        layout {
-          ${CALL_TO_ACTION}
-          ${SECTION}
-          ${MEDIA_BLOCK}
-          ${STATISTICS}
-          ${TESTIMONIAL}
-          ${HIGHLIGHTEDCTA}
-          ${CALLOUTSECTION}
-          ${TABSECTION}
-          ${CAROUSELCARD}
         }
         ${META}
 
@@ -77,22 +57,12 @@ export const POST = `
         updatedAt
         publishedDate
         postFeaturedImage {
-          ${MEDIA}
+          ${MEDIA_FIELDS}
         }
+        richText
         category{
           id 
           title
-        }
-        layout {
-          ${CALL_TO_ACTION}
-          ${SECTION}
-          ${MEDIA_BLOCK}
-          ${STATISTICS}
-          ${TESTIMONIAL}
-          ${HIGHLIGHTEDCTA}
-          ${CALLOUTSECTION}
-          ${TABSECTION}
-          ${CAROUSELCARD}
         }
         ${META}
       }
