@@ -1,13 +1,21 @@
 import { fetchPost, fetchPosts, fetchPostsByCategory } from "@/app/graphql";
-import { Blocks } from "@/components/Block";
+import RichText from "@/components/RichText";
+import AccordionSection from '@/components/commonComponent/AccordionGroup';
+import ButtonGroup from '@/components/commonComponent/ButtonGroup';
 import { generateMeta } from "@/seo/generateMeta";
 import "@/styles/layouts/templates/PostPage.scss";
 import { Metadata } from "next";
-import { draftMode } from "next/headers";
-import Link from "next/link";
+import { draftMode } from 'next/headers';
+import Link from 'next/link';
 import { notFound } from "next/navigation";
+import { Fragment } from "react";
 import { Category, Post } from "../../../../../payload-types";
-import { Hero } from "../../../../blocks/HeroBlock";
+import { Hero } from '../../../../blocks/HeroBlock';
+
+const blockRenderers = {
+  accordion: (block) => <AccordionSection data={block} />,
+  ButtonGroup: (block) => <ButtonGroup data={block} />,
+};
 
 export async function generateStaticParams() {
   try {
@@ -78,9 +86,22 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     notFound();
   }
 
-  const { postFeaturedImage, layout, title, publishedDate, updatedAt, id } =
-    post;
 
+  const {
+    postFeaturedImage,
+    title,
+    publishedDate,
+    updatedAt,
+    id,
+    richText
+  } = post;
+  const layout = [];
+
+  richText?.root?.children.forEach(obj => {
+    if (obj.type === 'block') {
+      layout.push(obj?.fields);
+    }
+  });
   return (
     <>
       <header className="post-header">
@@ -91,25 +112,34 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
           {updatedAt && `Updated: ${formatDate(updatedAt)}`}
         </p>
       </header>
-      {postFeaturedImage && <Hero {...postFeaturedImage} />}
-      <Blocks blocks={layout} />
-      <div className="content">
-        <p>{"Related Posts"}</p>
+      {postFeaturedImage &&
+        <Hero {...postFeaturedImage} />
+      }
+      <RichText content={richText} />
+      {layout?.map((block, blockIndex) => {
+        return (
+          <Fragment key={blockIndex}>
+            {blockRenderers[block?.blockType](block)}
+          </Fragment>
+        );
+      })}      <div className="content">
+        <p>{'Related Posts'}</p>
         <div className="card-container">
-          {relatesPosts?.length > 0 &&
-            relatesPosts.map((data, index) => {
-              if (data.id !== id) {
-                return (
-                  <div className="card" key={index}>
-                    <div className="card-content">
-                      <h3 className="card-title">
-                        <Link href={`/blog/${data.slug}`}>{data.title}</Link>
-                      </h3>
-                    </div>
+          {relatesPosts?.length > 0 && relatesPosts.map((data, index) => {
+            if (data.id !== id) {
+              return (
+                <div className="card" key={index}>
+                  <div className="card-content">
+                    <h3 className="card-title">
+                      <Link href={`/blog/${data.slug}`}>
+                        {data.title}
+                      </Link>
+                    </h3>
                   </div>
-                );
-              }
-            })}
+                </div>
+              )
+            }
+          })}
         </div>
       </div>
     </>
