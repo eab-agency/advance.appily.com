@@ -1,12 +1,15 @@
 import "@/styles/layouts/TabSection.scss";
-import { sectionClassNames, SectionClassNamesProps } from "@/utilities/sectionClassNames";
+import {
+  sectionClassNames,
+  SectionClassNamesProps,
+} from "@/utilities/sectionClassNames";
 import { Fragment, Suspense } from "react";
 import TabsComponent from "./TabsComponent";
 
-import { Media } from '@/components/Media';
-import RichText from '@/components/RichText';
-import AccordionSection from '@/components/commonComponent/AccordionGroup';
-import ButtonGroup from '@/components/commonComponent/ButtonGroup';
+import { Media } from "@/components/Media";
+import RichText from "@/components/RichText";
+import AccordionSection from "@/components/commonComponent/AccordionGroup";
+import ButtonGroup from "@/components/commonComponent/ButtonGroup";
 
 interface TabsSectionProps {
   tabs: {
@@ -26,9 +29,9 @@ interface TabsSectionProps {
             link: string;
             type: string;
           }[];
-        }
+        };
       }[];
-    }
+    };
   };
   sectionFooter: {
     showSectionFooter: boolean;
@@ -42,9 +45,9 @@ interface TabsSectionProps {
             link: string;
             type: string;
           }[];
-        }
+        };
       }[];
-    }
+    };
   };
 }
 
@@ -63,12 +66,11 @@ const blockRenderers = {
         enableHighlight={enableHighlight}
         priority
       />
-    )
+    );
   },
   accordion: (block) => <AccordionSection data={block} />,
   ButtonGroup: (block) => <ButtonGroup data={block} />,
 };
-
 
 export default function TabsSection({
   tabs,
@@ -76,13 +78,17 @@ export default function TabsSection({
   sectionHead,
   sectionFooter,
 }: TabsSectionProps) {
-  const sectionClassProps: SectionClassNamesProps = { backgroundColor: tabSectionBackgroundColor };
+  const sectionClassProps: SectionClassNamesProps = {
+    backgroundColor: tabSectionBackgroundColor,
+  };
 
   const { headContent, showSectionHead } = sectionHead;
   const { footerContent, showSectionFooter } = sectionFooter;
 
   return (
-    <section className={`tabsSection column ${sectionClassNames(sectionClassProps)}`}>
+    <section
+      className={`tabsSection column ${sectionClassNames(sectionClassProps)}`}
+    >
       {showSectionHead && (
         <header className="tabsSection__head">
           {headContent.blocks?.map((block, blockIndex) => {
@@ -96,7 +102,11 @@ export default function TabsSection({
       )}
 
       <Suspense fallback={<TabsFallback />}>
-        <TabsComponent className="react-tabs" tabs={tabs} id={!sectionHead ? "1" : "2"} />
+        <TabsComponent
+          className="react-tabs"
+          tabs={tabs}
+          id={!sectionHead ? "1" : "2"}
+        />
       </Suspense>
 
       {showSectionFooter && (
