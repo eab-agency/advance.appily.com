@@ -1,4 +1,4 @@
-import type { CarouselCard, Page, Post, Header, Footer, Category, Tag } from "../../../payload-types";
+import type { CarouselCard, Category, Footer, Header, Page, Post, Tag } from "../../../payload-types";
 import {
 	ALLCAROUSELCARDS,
 	CAROUSELCARDS,
