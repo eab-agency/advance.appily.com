@@ -12,6 +12,12 @@ export const POST_DATA = `
           ${MEDIA_FIELDS}
         }
         richText
+        createdBy {
+          id
+          name
+          roles
+          email
+        }
         category{
           id 
           title
@@ -29,6 +35,12 @@ export const POSTS = `
         id
         createdAt
         publishedDate
+        createdBy {
+          id
+          name
+          roles
+          email
+        }
         category {
           title
           id
@@ -60,6 +72,12 @@ export const POST = `
           ${MEDIA_FIELDS}
         }
         richText
+        createdBy {
+          id
+          name
+          roles
+          email
+        }
         category{
           id 
           title
