@@ -9,7 +9,6 @@ import { mergeTwitter } from "../seo/mergeTwitter";
 
 import "@/styles/styles.scss";
 
-import Script from "next/script";
 import FooterComponent from "../components/Footer";
 import HeaderComponent from "../components/Header";
 
@@ -26,7 +25,7 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://use.typekit.net" />
         <link rel="stylesheet" href="https://use.typekit.net/wba2ytz.css" />
         {/* <!-- OneTrust Cookies Consent Notice start for appily.com --> */}
-        <Script src="https://cdn.cookielaw.org/consent/f621c13f-1c94-43c9-8362-0f5d72c69f26/OtAutoBlock.js" />
+        {/* <Script src="https://cdn.cookielaw.org/consent/f621c13f-1c94-43c9-8362-0f5d72c69f26/OtAutoBlock.js" />
         <Script
           src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
           data-domain-script="f621c13f-1c94-43c9-8362-0f5d72c69f26"
@@ -37,18 +36,16 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{
             __html: "function OptanonWrapper() {}",
           }}
-        />
+        /> */}
         {/* <!-- OneTrust Cookies Consent Notice end for appily.com --> */}
       </head>
       {/* if isDevMode is false then load GoogleTagManager */}
       {!isDevMode() && <GoogleTagManager gtmId={GTM_ID} />}
       <body>
         <Providers>
-          {/* @ts-expect-error */}
           <HeaderComponent />
           {/* <LocationInDevMode /> */}
           <main className="layout-wrapper">{children}</main>
-          {/* @ts-expect-error */}
           <FooterComponent />
         </Providers>
       </body>
