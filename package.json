@@ -18,6 +18,7 @@
 		"apollo-link-http": "^1.5.17",
 		"aws-amplify": "^6.0.12",
 		"cors": "^2.8.5",
+		"date-fns": "^3.6.0",
 		"escape-html": "^1.0.3",
 		"formik": "^2.4.3",
 		"graphql": "^16.6.0",

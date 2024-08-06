@@ -1,4 +1,7 @@
 import { fetchPost, fetchPosts, fetchPostsByCategory } from "@/app/graphql";
+import { PostAuthorDisplay } from "@/components/Blog/PostAuthorDisplay";
+import PostDateDisplay from "@/components/Blog/PostDateDisplay";
+import { PostHeader } from "@/components/Blog/PostHeader";
 import RichText from "@/components/RichText";
 import AccordionSection from '@/components/commonComponent/AccordionGroup';
 import ButtonGroup from '@/components/commonComponent/ButtonGroup';
@@ -8,9 +11,7 @@ import { Metadata } from "next";
 import { draftMode } from 'next/headers';
 import Link from 'next/link';
 import { notFound } from "next/navigation";
-import { Fragment } from "react";
 import { Category, Post } from "../../../../../payload-types";
-import { Hero } from '../../../../blocks/HeroBlock';
 
 const blockRenderers = {
   accordion: (block) => <AccordionSection data={block} />,
@@ -92,6 +93,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     title,
     publishedDate,
     updatedAt,
+    createdBy,
     id,
     richText
   } = post;
@@ -103,46 +105,51 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     }
   });
   return (
-    <>
+    <div className="post-content__wrapper">
       <header className="post-header">
+        <PostDateDisplay publishedDate={publishedDate} updatedAt={updatedAt} />
         <h1>{title}</h1>
-        <p className="post-dates">
-          {publishedDate && `Published: ${formatDate(publishedDate)}`}
-          {publishedDate && updatedAt && " | "}
-          {updatedAt && `Updated: ${formatDate(updatedAt)}`}
-        </p>
+        <PostAuthorDisplay createdBy={createdBy} />
       </header>
-      {postFeaturedImage &&
-        <Hero {...postFeaturedImage} />
-      }
-      <RichText content={richText} />
-      {layout?.map((block, blockIndex) => {
-        return (
-          <Fragment key={blockIndex}>
-            {blockRenderers[block?.blockType](block)}
-          </Fragment>
-        );
-      })}      <div className="content">
-        <p>{'Related Posts'}</p>
-        <div className="card-container">
+      {postFeaturedImage && (
+        <figure className="post__featured-image">
+          {postFeaturedImage?.url && (
+            <img src={postFeaturedImage.url} alt={postFeaturedImage.alt} />
+          )}
+        </figure>)}
+      <div className="post-content">
+        <RichText content={richText} />
+      </div>
+      <aside className="related-posts">
+        <h2>Related Posts</h2>
+        <div className="cards-container">
           {relatesPosts?.length > 0 && relatesPosts.map((data, index) => {
+            const {
+              slug,
+              title,
+              publishedDate,
+              updatedAt,
+              createdBy
+            } = data;
+
             if (data.id !== id) {
               return (
-                <div className="card" key={index}>
-                  <div className="card-content">
-                    <h3 className="card-title">
-                      <Link href={`/blog/${data.slug}`}>
-                        {data.title}
-                      </Link>
-                    </h3>
-                  </div>
-                </div>
+                <article key={index} className="post post__latest">
+                  <Link href={`blog/${slug}`}>
+                    <PostHeader
+                      title={title}
+                      createdBy={createdBy}
+                      publishedDate={publishedDate}
+                      updatedAt={updatedAt}
+                    />
+                  </Link>
+                </article>
               )
             }
           })}
         </div>
-      </div>
-    </>
+      </aside>
+    </div>
   );
 };
 

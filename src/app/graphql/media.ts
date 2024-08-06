@@ -5,6 +5,19 @@ width
 height
 alt
 caption
+url
+sizes{
+  squareSmall{
+    width
+    height
+    url
+  }
+  squareMedium{
+    width
+    height
+    url
+  }
+}
 `;
 
 export const MEDIA = `media {
