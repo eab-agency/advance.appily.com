@@ -104,6 +104,9 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
       layout.push(obj?.fields);
     }
   });
+
+  console.log("Author Info", createdBy);
+
   return (
     <div className="post-content__wrapper">
       <header className="post-header">
@@ -120,7 +123,24 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
       <div className="post-content">
         <RichText content={richText} />
       </div>
-      <aside className="related-posts">
+
+      <aside className="post__author-bio">
+        <h2>About the Author</h2>
+        <div className="author-content-wrapper" itemScope itemType="https://schema.org/Person">
+          <figure className="author-image">
+            <img src="https://placehold.co/600x400/png" alt={createdBy?.name} itemProp="image" />
+          </figure>
+          <div className="author-content">
+            <header>
+              <h3 itemProp="name">{createdBy?.name}</h3>
+              <p itemProp="jobTitle">{createdBy?.roles}</p>
+            </header>
+            <p itemProp="description">In enim exercitation qui sint occaecat fugiat laborum cillum aliquip pariatur non. Officia non ea sint tempor amet veniam ut aliqua laboris aliqua. Fugiat commodo officia est aliquip nulla est officia. Pariatur excepteur minim ipsum qui voluptate quis ut duis eu. Velit magna ea sint nostrud irure laboris esse ullamco officia laborum. {createdBy?.bio}</p>
+          </div>
+        </div>
+      </aside>
+
+      <div className="related-posts">
         <h2>Related Posts</h2>
         <div className="cards-container">
           {relatesPosts?.length > 0 && relatesPosts.map((data, index) => {
@@ -148,7 +168,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
             }
           })}
         </div>
-      </aside>
+      </div>
     </div>
   );
 };

@@ -43,6 +43,7 @@ export const POSTS = `
           name
           roles
           email
+          bio
         }
         category {
           title

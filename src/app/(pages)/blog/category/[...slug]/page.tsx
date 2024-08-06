@@ -1,52 +1,75 @@
 'use client'
+import { fetchPostsByCategory } from "@/app/graphql";
+import { PostHeader } from "@/components/Blog/PostHeader";
+import RichText from '@/components/RichText';
 import "@/styles/layouts/templates/BlogPage.scss";
-import {  fetchPostsByCategory } from "@/app/graphql";
-import React, { useEffect, useState } from "react";
-import dynamic from 'next/dynamic';
-import { Post, Category } from "../../../../../../payload-types";
+import Link from "next/link";
 import { usePathname, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from "react";
+import { Post } from "../../../../../../payload-types";
 
 
 
-export function CategoryComponent (){
+export function CategoryComponent() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const id = searchParams?.get('id');
-  
+
   const [posts, setPosts] = useState<Post[]>([]);
-  const slug = pathname?.split('/').pop(); 
-  const slugTitle = slug ? slug?.charAt(0).toUpperCase() + slug?.slice(1): '';
+  const slug = pathname?.split('/').pop();
+  const decodedSlug = slug ? decodeURIComponent(slug) : '';
+  const slugTitle = decodedSlug ? decodedSlug.charAt(0).toUpperCase() + decodedSlug.slice(1) : '';
 
   useEffect(() => {
     const fetchData = async () => {
-        try {
-          if(id) {
+      try {
+        if (id) {
           const posts = await fetchPostsByCategory(id);
           setPosts(posts);
-          }
-          }
-         catch (error) {
-          console.error('Error fetching posts:', error);
         }
+      }
+      catch (error) {
+        console.error('Error fetching posts:', error);
+      }
     };
-  
+
     fetchData();
   }, []);
-  
+
   return (
-    <>
-      <header className="blog-header">
-        <h1>{`Blog ${slugTitle} Category`}</h1>
+    <div className="blog__landing blog-category__landing">
+      <header className="blog__archive-header">
+        <h1>{slugTitle}</h1>
       </header>
-      <div className="container">
-      {posts?.map(post => (
-          <div key={post.id}>
-            <h3>{post.title}</h3>
-            <span>{post.publishedDate}</span>
-          </div>
-        ))}
+      <div className="blog__archive">
+        {posts?.map(post => {
+          const {
+            slug,
+            title,
+            publishedDate,
+            updatedAt,
+            createdBy,
+            richText,
+            id
+          } = post;
+
+          return (
+            <article key={id} className="post post__latest">
+              <Link href={`blog/${slug}`}>
+                <PostHeader
+                  title={title}
+                  createdBy={createdBy}
+                  publishedDate={publishedDate}
+                  updatedAt={updatedAt}
+                />
+
+                <RichText content={richText} extractFirstParagraph={true} />
+              </Link>
+            </article>
+          )
+        })}
       </div>
-    </>
+    </div>
   );
 };
 
