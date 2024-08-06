@@ -17,9 +17,10 @@ export const POST_DATA = `
           name
           roles
           email
+          bio
         }
         category{
-          id 
+          id
           title
         }
         ${META}
@@ -33,8 +34,10 @@ export const POSTS = `
         slug
         title
         id
+        richText
         createdAt
         publishedDate
+        updatedAt
         createdBy {
           id
           name
@@ -79,7 +82,7 @@ export const POST = `
           email
         }
         category{
-          id 
+          id
           title
         }
         ${META}
