@@ -105,7 +105,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     }
   });
 
-  console.log("Author Info", createdBy);
+  const { sizes } = createdBy?.userImage;
 
   return (
     <div className="post-content__wrapper">
@@ -119,7 +119,8 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
           {postFeaturedImage?.url && (
             <img src={postFeaturedImage?.url} alt={postFeaturedImage.alt} />
           )}
-        </figure>)}
+        </figure>)
+      }
       <div className="post-content">
         <RichText content={richText} />
       </div>
@@ -128,14 +129,14 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
         <h2>About the Author</h2>
         <div className="author-content-wrapper" itemScope itemType="https://schema.org/Person">
           <figure className="author-image">
-            <img src={createdBy?.userImage?.url} alt={createdBy?.name} itemProp="image" />
+            <img src={sizes.squareSmall.url} alt={createdBy?.name} itemProp="image" />
           </figure>
           <div className="author-content">
             <header>
               <h3 itemProp="name">{createdBy?.name}</h3>
               <p itemProp="jobTitle">{createdBy?.roles}</p>
             </header>
-            <p itemProp="description">In enim exercitation qui sint occaecat fugiat laborum cillum aliquip pariatur non. Officia non ea sint tempor amet veniam ut aliqua laboris aliqua. Fugiat commodo officia est aliquip nulla est officia. Pariatur excepteur minim ipsum qui voluptate quis ut duis eu. Velit magna ea sint nostrud irure laboris esse ullamco officia laborum. {createdBy?.bio}</p>
+            <p itemProp="description">{createdBy?.bio}</p>
           </div>
         </div>
       </aside>
