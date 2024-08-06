@@ -41,6 +41,40 @@
       }
     }
   }
+
+  &-category__landing {
+    .blog__archive-header {
+      margin: 0;
+    }
+    h1 {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      gap: 0.5em;
+
+      &::before {
+        content: "Blog Category";
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--c-linkPrimary);
+        padding: 0.5em;
+        border-bottom: 1px solid var(--c-linkPrimary);
+      }
+    }
+  }
+
+  &__archive {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-block: 2rem clamp(2rem, 4vw, 4rem);
+
+    @media (min-width: tokens.$mq-700) {
+      grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    }
+  }
 }
 
 .post {
