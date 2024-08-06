@@ -9,7 +9,7 @@ export const generateMeta = async (args: { doc: Page | Post}): Promise<Metadata>
     typeof doc?.meta?.image === 'object' &&
     doc?.meta?.image !== null &&
     'url' in doc?.meta?.image &&
-    `${process.env.NEXT_PUBLIC_SERVER_URL}${doc.meta.image.url}`
+    `${doc.meta.image.url}`
 
   return {
     title: doc?.meta?.title || '',
