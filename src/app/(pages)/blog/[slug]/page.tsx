@@ -156,7 +156,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
             if (data.id !== id) {
               return (
                 <article key={index} className="post post__latest">
-                  <Link href={`blog/${slug}`}>
+                  <Link href={slug}>
                     <PostHeader
                       title={title}
                       createdBy={createdBy}
