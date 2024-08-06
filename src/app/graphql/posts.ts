@@ -18,6 +18,24 @@ export const POST_DATA = `
           roles
           email
           bio
+          userImage {
+            mimeType
+            url
+            filename
+            filesize
+            sizes{
+              squareSmall{
+                width
+                height
+                url
+              }
+              squareMedium{
+                width
+                height
+                url
+              }
+            }
+          }
         }
         category{
           id
@@ -44,6 +62,24 @@ export const POSTS = `
           roles
           email
           bio
+          userImage {
+            mimeType
+            url
+            filename
+            filesize
+            sizes{
+              squareSmall{
+                width
+                height
+                url
+              }
+              squareMedium{
+                width
+                height
+                url
+              }
+            }
+          }
         }
         category {
           title
@@ -81,6 +117,26 @@ export const POST = `
           name
           roles
           email
+          bio
+          createdAt
+          userImage {
+            mimeType
+            url
+            filename
+            filesize
+            sizes{
+              squareSmall{
+                width
+                height
+                url
+              }
+              squareMedium{
+                width
+                height
+                url
+              }
+            }
+          }
         }
         category{
           id

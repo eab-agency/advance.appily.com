@@ -141,7 +141,7 @@ export interface Media {
 export interface User {
   id: string;
   name?: string | null;
-  userImage?: string | UserMedia | null;
+  userImage?: UserMedia | null;
   bio?: string | null;
   roles?: ('admin' | 'blogAuthor' | 'blogEditor')[] | null;
   updatedAt: string;

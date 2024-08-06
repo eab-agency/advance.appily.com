@@ -303,6 +303,7 @@ export const fetchPost = async (slug: string): Promise<Post> => {
 		   }),
 	   },
    ).then(res => res.json());
+	 console.log(data.Posts.docs[0].createdBy,'post**')
    return data?.Posts?.docs[0];
 };
 
