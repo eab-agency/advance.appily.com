@@ -105,7 +105,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     }
   });
 
-  const { sizes } = createdBy?.userImage;
+  const sizes = createdBy?.userImage?.sizes;
 
   return (
     <div className="post-content__wrapper">
@@ -129,7 +129,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
         <h2>About the Author</h2>
         <div className="author-content-wrapper" itemScope itemType="https://schema.org/Person">
           <figure className="author-image">
-            <img src={sizes.squareSmall.url} alt={createdBy?.name} itemProp="image" />
+            <img src={sizes?.squareSmall.url} alt={createdBy?.name} itemProp="image" />
           </figure>
           <div className="author-content">
             <header>
