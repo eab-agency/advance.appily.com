@@ -195,5 +195,5 @@ export default function serializeLexicalRichText({
     }
   }
 
-  return children.map((node, i) => processNode(node, i)).filter(node => node !== null);
+  return children?.map((node, i) => processNode(node, i)).filter(node => node !== null);
 }
