@@ -55,7 +55,7 @@ export function TagComponent() {
 
           return (
             <article key={id} className="post post__latest">
-              <Link href={`blog/${slug}`}>
+              <Link href={`../${slug}`}>
                 <PostHeader
                   title={title}
                   createdBy={createdBy}
