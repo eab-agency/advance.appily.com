@@ -61,7 +61,7 @@ export function CategoryComponent() {
 
           return (
             <article key={id} className="post post__latest">
-              <Link href={`blog/${slug}`}>
+              <Link href={`../${slug}`}>
                 <PostHeader
                   title={title}
                   createdBy={createdBy}
