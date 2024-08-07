@@ -118,7 +118,7 @@ const BlogComponent = () => {
             <div className="category-heading">{"Categories"}</div>
             {categories.length > 0 &&
               categories.map((cat, index) => (
-                <Link href="/blog/category/[category]?id=123" as={`/blog/category/${cat.title}?id=${cat.id}`} key={index}>
+                <Link href="/blog/category/[category]" as={`/blog/category/${cat?.title}`} key={index}>
                   {cat.title}
                 </Link>
               ))}
