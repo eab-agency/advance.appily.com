@@ -1,21 +1,21 @@
 'use client'
-import { fetchPostsByCategory } from "@/app/graphql";
+import { fetchCategoryIDByTitle, fetchPostsByCategory } from "@/app/graphql";
 import { PostHeader } from "@/components/Blog/PostHeader";
 import RichText from '@/components/RichText';
 import "@/styles/layouts/templates/BlogPage.scss";
 import Link from "next/link";
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from "react";
-import { Post } from "../../../../../../payload-types";
-
+import { Category, Post } from "../../../../../../payload-types";
 
 
 export function CategoryComponent() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const id = searchParams?.get('id');
+  const router = useRouter();
 
   const [posts, setPosts] = useState<Post[]>([]);
+  const [category, setCategoryData] = useState<Category[]>([]);
+
   const slug = pathname?.split('/').pop();
   const decodedSlug = slug ? decodeURIComponent(slug) : '';
   const slugTitle = decodedSlug ? decodedSlug.charAt(0).toUpperCase() + decodedSlug.slice(1) : '';
@@ -23,9 +23,15 @@ export function CategoryComponent() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if (id) {
-          const posts = await fetchPostsByCategory(id);
-          setPosts(posts);
+        if (decodedSlug) {
+          const categoryData = await fetchCategoryIDByTitle(decodedSlug);
+          setCategoryData(categoryData);
+          if (categoryData) {
+            const posts = await fetchPostsByCategory(categoryData[0]?.id);
+            setPosts(posts);
+          } else {
+            router.push('/blog')
+          }
         }
       }
       catch (error) {
@@ -34,7 +40,7 @@ export function CategoryComponent() {
     };
 
     fetchData();
-  }, []);
+  }, [decodedSlug]);
 
   return (
     <div className="blog__landing blog-category__landing">

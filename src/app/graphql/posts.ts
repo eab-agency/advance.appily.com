@@ -159,7 +159,16 @@ export const FIRSTFIVEPOSTS = `
 }
 `;
 
-
+export const GET_CATEGORY_ID = `
+query Categories ($categoryTitle: [String]) {
+  Categories (where: {title: {in: $categoryTitle}}) {
+    docs {
+      id
+      title
+    }
+  }
+}
+`;
 
 export const POSTS_BY_CATEGORY = `
 query Posts ($category : JSON) {
