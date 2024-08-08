@@ -140,7 +140,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
             <div className="author-content">
               <header>
                 <h3 itemProp="name">{createdBy?.name}</h3>
-                <p itemProp="jobTitle">{createdBy?.roles}</p>
+                {/* <p itemProp="jobTitle">{createdBy?.roles}</p> */}
               </header>
               <p itemProp="description">{createdBy?.bio}</p>
             </div>
