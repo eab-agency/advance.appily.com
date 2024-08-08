@@ -9,6 +9,7 @@ import { generateMeta } from "@/seo/generateMeta";
 import "@/styles/layouts/templates/PostPage.scss";
 import { Metadata } from "next";
 import { draftMode } from 'next/headers';
+import Image from "next/image";
 import Link from 'next/link';
 import { notFound } from "next/navigation";
 import { FaChevronLeft } from "react-icons/fa";
@@ -122,7 +123,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
       {postFeaturedImage && (
         <figure className="post__featured-image">
           {postFeaturedImage?.url && (
-            <img src={postFeaturedImage?.url} alt={postFeaturedImage.alt} />
+            <Image src={postFeaturedImage?.url} alt={postFeaturedImage.alt} />
           )}
         </figure>)
       }
@@ -135,7 +136,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
           <h2>About the Author</h2>
           <div className="author-content-wrapper" itemScope itemType="https://schema.org/Person">
             <figure className="author-image">
-              <img src={sizes?.squareSmall.url} alt={createdBy?.name} itemProp="image" />
+              <Image src={sizes?.squareSmall.url} alt={createdBy?.name} itemProp="image" />
             </figure>
             <div className="author-content">
               <header>
