@@ -4,6 +4,7 @@ import { PostHeader } from "@/components/Blog/PostHeader";
 import RichText from '@/components/RichText';
 import "@/styles/layouts/templates/BlogPage.scss";
 import dynamic from 'next/dynamic';
+import Image from "next/image";
 import Link from 'next/link';
 import { useEffect, useState } from "react";
 import { Category, Post, Tag } from "../../../../payload-types";
@@ -40,7 +41,7 @@ const BlogComponent = () => {
     <div className="blog__landing">
       <header className="blog__archive-header">
         <h1>Blog</h1>
-        <p>Dive into our comprehensive collection of articles designed to guide you through career changes at any age. Whether you&apos;re considering a shift into nursing, tech, or another field, we provide insights, practical steps, and personal stories to help you navigate your journey. Discover top master's degrees for career changers, learn how to start a healthcare career after 40, and explore the best jobs for midlife career transitions.</p> <p>Our resources are tailored to support you in making informed decisions and achieving your professional goals. <strong>Ready for a fresh start? Let Appily Advance be your guide.</strong></p>
+        <p>Dive into our comprehensive collection of articles designed to guide you through career changes at any age. Whether you&apos;re considering a shift into nursing, tech, or another field, we provide insights, practical steps, and personal stories to help you navigate your journey. Discover top master&apos;s degrees for career changers, learn how to start a healthcare career after 40, and explore the best jobs for midlife career transitions.</p> <p>Our resources are tailored to support you in making informed decisions and achieving your professional goals. <strong>Ready for a fresh start? Let Appily Advance be your guide.</strong></p>
       </header>
       <div className="blog__featured-posts">
 
@@ -71,7 +72,7 @@ const BlogComponent = () => {
                 {postFeaturedImage && (
                   <figure className="post__featured-image">
                     {postFeaturedImage?.url && (
-                      <img src={postFeaturedImage.url} alt={postFeaturedImage.alt} />
+                      <Image src={postFeaturedImage.url} alt={postFeaturedImage.alt} />
                     )}
                   </figure>)}
               </Link>
