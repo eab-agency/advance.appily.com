@@ -40,7 +40,7 @@ const BlogComponent = () => {
     <div className="blog__landing">
       <header className="blog__archive-header">
         <h1>Blog</h1>
-        <p>Pariatur incididunt sit esse magna. Magna ut et in elit voluptate elit sint mollit eiusmod ipsum cupidatat. Magna esse quis excepteur reprehenderit elit esse quis sit velit cupidatat incididunt aliqua irure. Minim culpa commodo cillum excepteur consectetur ipsum cillum reprehenderit duis occaecat ex dolor deserunt. Ex velit deserunt ullamco cillum nostrud. Consectetur nostrud in tempor aliquip laborum magna ad velit minim magna irure voluptate occaecat excepteur laboris. Quis eiusmod proident proident exercitation ad amet laborum non duis labore non quis.</p>
+        <p>Dive into our comprehensive collection of articles designed to guide you through career changes at any age. Whether you're considering a shift into nursing, tech, or another field, we provide insights, practical steps, and personal stories to help you navigate your journey. Discover top master's degrees for career changers, learn how to start a healthcare career after 40, and explore the best jobs for midlife career transitions.</p> <p>Our resources are tailored to support you in making informed decisions and achieving your professional goals. <strong>Ready for a fresh start? Let Appily Advance be your guide.</strong></p>
       </header>
       <div className="blog__featured-posts">
 
