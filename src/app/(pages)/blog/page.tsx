@@ -40,7 +40,7 @@ const BlogComponent = () => {
     <div className="blog__landing">
       <header className="blog__archive-header">
         <h1>Blog</h1>
-        <p>Dive into our comprehensive collection of articles designed to guide you through career changes at any age. Whether you're considering a shift into nursing, tech, or another field, we provide insights, practical steps, and personal stories to help you navigate your journey. Discover top master's degrees for career changers, learn how to start a healthcare career after 40, and explore the best jobs for midlife career transitions. Our resources are tailored to support you in making informed decisions and achieving your professional goals. Ready for a fresh start? Let Appily Advance be your guide.</p>
+        <p>Dive into our comprehensive collection of articles designed to guide you through career changes at any age. Whether you&apos;re considering a shift into nursing, tech, or another field, we provide insights, practical steps, and personal stories to help you navigate your journey. Discover top master's degrees for career changers, learn how to start a healthcare career after 40, and explore the best jobs for midlife career transitions.</p> <p>Our resources are tailored to support you in making informed decisions and achieving your professional goals. <strong>Ready for a fresh start? Let Appily Advance be your guide.</strong></p>
       </header>
       <div className="blog__featured-posts">
 
