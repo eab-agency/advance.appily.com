@@ -124,7 +124,8 @@ const BlogComponent = () => {
               ))}
           </div>
 
-          <div className="category-container">
+          {/* Note: Remove this section if tags are not needed */}
+          {/*<div className="category-container">
             <div className="category-heading">{"Tags"}</div>
             {tags.length > 0 &&
               tags.map((tag, index) => (
@@ -133,7 +134,7 @@ const BlogComponent = () => {
                   {tag.title}
                 </Link>
               ))}
-          </div>
+          </div> */}
         </div>
 
       </div>

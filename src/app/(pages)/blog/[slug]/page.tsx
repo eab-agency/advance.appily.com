@@ -11,6 +11,7 @@ import { Metadata } from "next";
 import { draftMode } from 'next/headers';
 import Link from 'next/link';
 import { notFound } from "next/navigation";
+import { FaChevronLeft } from "react-icons/fa";
 import { Category, Post } from "../../../../../payload-types";
 
 const blockRenderers = {
@@ -109,6 +110,10 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
 
   return (
     <div className="post-content__wrapper">
+      <Link href="/blog" className="back-btn">
+        <FaChevronLeft />
+        Back to Blog
+      </Link>
       <header className="post-header">
         <PostDateDisplay publishedDate={publishedDate} updatedAt={updatedAt} />
         <h1>{title}</h1>
@@ -125,21 +130,23 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
         <RichText content={richText} />
       </div>
 
-      <aside className="post__author-bio">
-        <h2>About the Author</h2>
-        <div className="author-content-wrapper" itemScope itemType="https://schema.org/Person">
-          <figure className="author-image">
-            <img src={sizes?.squareSmall.url} alt={createdBy?.name} itemProp="image" />
-          </figure>
-          <div className="author-content">
-            <header>
-              <h3 itemProp="name">{createdBy?.name}</h3>
-              <p itemProp="jobTitle">{createdBy?.roles}</p>
-            </header>
-            <p itemProp="description">{createdBy?.bio}</p>
+      {createdBy && (
+        <aside className="post__author-bio">
+          <h2>About the Author</h2>
+          <div className="author-content-wrapper" itemScope itemType="https://schema.org/Person">
+            <figure className="author-image">
+              <img src={sizes?.squareSmall.url} alt={createdBy?.name} itemProp="image" />
+            </figure>
+            <div className="author-content">
+              <header>
+                <h3 itemProp="name">{createdBy?.name}</h3>
+                <p itemProp="jobTitle">{createdBy?.roles}</p>
+              </header>
+              <p itemProp="description">{createdBy?.bio}</p>
+            </div>
           </div>
-        </div>
-      </aside>
+        </aside>
+      )}
 
       <div className="related-posts">
         <h2>Related Posts</h2>
