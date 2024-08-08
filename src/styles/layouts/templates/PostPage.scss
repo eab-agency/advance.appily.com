@@ -210,3 +210,21 @@
     }
   }
 }
+
+.back-btn {
+  padding-block: 1em;
+  padding-inline: 1em;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-inline: auto 0;
+  background: var(--c-bg-posts);
+  overflow: hidden;
+  position: sticky;
+  top: 6rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  z-index: 10;
+}

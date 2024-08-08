@@ -59,9 +59,11 @@ export function CategoryComponent() {
             id
           } = post;
 
+          const href = `${window.location.origin}/blog/${slug}`;
+
           return (
             <article key={id} className="post post__latest">
-              <Link href={`../${slug}`}>
+              <Link href={href}>
                 <PostHeader
                   title={title}
                   createdBy={createdBy}
