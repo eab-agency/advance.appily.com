@@ -107,6 +107,8 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
   });
 
   const sizes = createdBy?.userImage?.sizes;
+  const userImageURL = sizes?.squareSmall?.url !== null ? sizes?.squareSmall?.url : createdBy?.userImage?.url;
+
 
   return (
     <div className="post-content__wrapper">
@@ -145,7 +147,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
           >
             <figure className="author-image">
               <Image
-                src={sizes?.squareSmall.url}
+                src={userImageURL}
                 alt={createdBy?.userImage?.alt}
                 itemProp="image"
                 fill
@@ -163,28 +165,32 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
       )}
 
       <div className="related-posts">
-        <h2>Related Posts</h2>
-        <div className="cards-container">
-          {relatesPosts?.length > 0 &&
-            relatesPosts.map((data, index) => {
-              const { slug, title, publishedDate, updatedAt, createdBy } = data;
+        {relatesPosts?.filter(data => data.id !== id).length > 0 && (
+          <>
+            <h2>Related Posts</h2>
+            <div className="cards-container">
+              {relatesPosts?.length > 0 &&
+                relatesPosts.map((data, index) => {
+                  const { slug, title, publishedDate, updatedAt, createdBy } = data;
 
-              if (data.id !== id) {
-                return (
-                  <article key={index} className="post post__latest">
-                    <Link href={slug}>
-                      <PostHeader
-                        title={title}
-                        createdBy={createdBy}
-                        publishedDate={publishedDate}
-                        updatedAt={updatedAt}
-                      />
-                    </Link>
-                  </article>
-                );
-              }
-            })}
-        </div>
+                  if (data.id !== id) {
+                    return (
+                      <article key={index} className="post post__latest">
+                        <Link href={slug}>
+                          <PostHeader
+                            title={title}
+                            createdBy={createdBy}
+                            publishedDate={publishedDate}
+                            updatedAt={updatedAt}
+                          />
+                        </Link>
+                      </article>
+                    );
+                  }
+                })}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
