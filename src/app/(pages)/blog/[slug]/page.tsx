@@ -123,7 +123,8 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
       {postFeaturedImage && (
         <figure className="post__featured-image">
           {postFeaturedImage?.url && (
-            <Image src={postFeaturedImage?.url} alt={postFeaturedImage.alt} />
+            <Image src={postFeaturedImage?.url} alt={postFeaturedImage.alt} width={800}
+              height={500} />
           )}
         </figure>)
       }
@@ -136,7 +137,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
           <h2>About the Author</h2>
           <div className="author-content-wrapper" itemScope itemType="https://schema.org/Person">
             <figure className="author-image">
-              <Image src={sizes?.squareSmall.url} alt={createdBy?.name} itemProp="image" />
+              <Image src={sizes?.squareSmall.url} alt={createdBy?.name} itemProp="image" fill />
             </figure>
             <div className="author-content">
               <header>

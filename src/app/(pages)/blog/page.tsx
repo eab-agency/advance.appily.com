@@ -72,7 +72,7 @@ const BlogComponent = () => {
                 {postFeaturedImage && (
                   <figure className="post__featured-image">
                     {postFeaturedImage?.url && (
-                      <Image src={postFeaturedImage.url} alt={postFeaturedImage.alt} />
+                      <Image src={postFeaturedImage.url} alt={postFeaturedImage.alt} fill />
                     )}
                   </figure>)}
               </Link>
