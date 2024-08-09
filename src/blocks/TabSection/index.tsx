@@ -6,12 +6,13 @@ import {
 import { Fragment, Suspense } from "react";
 import TabsComponent from "./TabsComponent";
 
-import { Media } from "@/components/Media";
-import RichText from "@/components/RichText";
 import AccordionSection from "@/components/commonComponent/AccordionGroup";
 import ButtonGroup from "@/components/commonComponent/ButtonGroup";
+import { Media } from "@/components/Media";
+import RichText from "@/components/RichText";
 
 interface TabsSectionProps {
+  id?: string;
   tabs: {
     shortTitle: string;
   }[];
@@ -73,18 +74,18 @@ const blockRenderers = {
 };
 
 export default function TabsSection({
+  id,
   tabs,
   tabSectionBackgroundColor,
   sectionHead,
   sectionFooter,
+
 }: TabsSectionProps) {
   const sectionClassProps: SectionClassNamesProps = {
     backgroundColor: tabSectionBackgroundColor,
   };
-
   const { headContent, showSectionHead } = sectionHead;
   const { footerContent, showSectionFooter } = sectionFooter;
-
   return (
     <section
       className={`tabsSection column ${sectionClassNames(sectionClassProps)}`}
@@ -105,7 +106,7 @@ export default function TabsSection({
         <TabsComponent
           className="react-tabs"
           tabs={tabs}
-          id={!sectionHead ? "1" : "2"}
+          id={id}
         />
       </Suspense>
 
