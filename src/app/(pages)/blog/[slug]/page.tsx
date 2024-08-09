@@ -3,14 +3,14 @@ import { PostAuthorDisplay } from "@/components/Blog/PostAuthorDisplay";
 import PostDateDisplay from "@/components/Blog/PostDateDisplay";
 import { PostHeader } from "@/components/Blog/PostHeader";
 import RichText from "@/components/RichText";
-import AccordionSection from '@/components/commonComponent/AccordionGroup';
-import ButtonGroup from '@/components/commonComponent/ButtonGroup';
+import AccordionSection from "@/components/commonComponent/AccordionGroup";
+import ButtonGroup from "@/components/commonComponent/ButtonGroup";
 import { generateMeta } from "@/seo/generateMeta";
 import "@/styles/layouts/templates/PostPage.scss";
 import { Metadata } from "next";
-import { draftMode } from 'next/headers';
+import { draftMode } from "next/headers";
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaChevronLeft } from "react-icons/fa";
 import { Category, Post } from "../../../../../payload-types";
@@ -89,7 +89,6 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     notFound();
   }
 
-
   const {
     postFeaturedImage,
     title,
@@ -97,12 +96,12 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     updatedAt,
     createdBy,
     id,
-    richText
+    richText,
   } = post;
   const layout = [];
 
-  richText?.root?.children.forEach(obj => {
-    if (obj.type === 'block') {
+  richText?.root?.children.forEach((obj) => {
+    if (obj.type === "block") {
       layout.push(obj?.fields);
     }
   });
@@ -123,11 +122,15 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
       {postFeaturedImage && (
         <figure className="post__featured-image">
           {postFeaturedImage?.url && (
-            <Image src={postFeaturedImage?.url} alt={postFeaturedImage.alt} width={800}
-              height={500} />
+            <Image
+              src={postFeaturedImage?.url}
+              alt={postFeaturedImage.alt}
+              width={800}
+              height={500}
+            />
           )}
-        </figure>)
-      }
+        </figure>
+      )}
       <div className="post-content">
         <RichText content={richText} />
       </div>
@@ -135,9 +138,18 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
       {createdBy && (
         <aside className="post__author-bio">
           <h2>About the Author</h2>
-          <div className="author-content-wrapper" itemScope itemType="https://schema.org/Person">
+          <div
+            className="author-content-wrapper"
+            itemScope
+            itemType="https://schema.org/Person"
+          >
             <figure className="author-image">
-              <Image src={sizes?.squareSmall.url} alt={createdBy?.name} itemProp="image" fill />
+              <Image
+                src={sizes?.squareSmall.url}
+                alt={createdBy?.userImage?.alt}
+                itemProp="image"
+                fill
+              />
             </figure>
             <div className="author-content">
               <header>
@@ -153,30 +165,25 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
       <div className="related-posts">
         <h2>Related Posts</h2>
         <div className="cards-container">
-          {relatesPosts?.length > 0 && relatesPosts.map((data, index) => {
-            const {
-              slug,
-              title,
-              publishedDate,
-              updatedAt,
-              createdBy
-            } = data;
+          {relatesPosts?.length > 0 &&
+            relatesPosts.map((data, index) => {
+              const { slug, title, publishedDate, updatedAt, createdBy } = data;
 
-            if (data.id !== id) {
-              return (
-                <article key={index} className="post post__latest">
-                  <Link href={slug}>
-                    <PostHeader
-                      title={title}
-                      createdBy={createdBy}
-                      publishedDate={publishedDate}
-                      updatedAt={updatedAt}
-                    />
-                  </Link>
-                </article>
-              )
-            }
-          })}
+              if (data.id !== id) {
+                return (
+                  <article key={index} className="post post__latest">
+                    <Link href={slug}>
+                      <PostHeader
+                        title={title}
+                        createdBy={createdBy}
+                        publishedDate={publishedDate}
+                        updatedAt={updatedAt}
+                      />
+                    </Link>
+                  </article>
+                );
+              }
+            })}
         </div>
       </div>
     </div>

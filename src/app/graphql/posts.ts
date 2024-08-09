@@ -23,6 +23,7 @@ export const POST_DATA = `
             url
             filename
             filesize
+            alt
             sizes{
               squareSmall{
                 width
@@ -67,6 +68,7 @@ export const POSTS = `
             url
             filename
             filesize
+            alt
             sizes{
               squareSmall{
                 width
@@ -124,6 +126,7 @@ export const POST = `
             url
             filename
             filesize
+            alt
             sizes{
               squareSmall{
                 width
