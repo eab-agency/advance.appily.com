@@ -10,6 +10,8 @@ import AccordionSection from "@/components/commonComponent/AccordionGroup";
 import ButtonGroup from "@/components/commonComponent/ButtonGroup";
 import { Media } from "@/components/Media";
 import RichText from "@/components/RichText";
+import AccordionSection from "@/components/commonComponent/AccordionGroup";
+import ButtonGroup from "@/components/commonComponent/ButtonGroup";
 
 interface TabsSectionProps {
   id?: string;
