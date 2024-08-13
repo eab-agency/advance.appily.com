@@ -56,6 +56,7 @@ const CategoryPage = async ({ params, searchParams }: any) => {
   if (slug.length === 0) {
     slug.push('index');
   }
+
   try {
     pageData = await fetchPage(slug);
   } catch (error) {
