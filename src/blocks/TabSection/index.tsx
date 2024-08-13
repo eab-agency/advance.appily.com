@@ -6,8 +6,6 @@ import {
 import { Fragment, Suspense } from "react";
 import TabsComponent from "./TabsComponent";
 
-import AccordionSection from "@/components/commonComponent/AccordionGroup";
-import ButtonGroup from "@/components/commonComponent/ButtonGroup";
 import { Media } from "@/components/Media";
 import RichText from "@/components/RichText";
 import AccordionSection from "@/components/commonComponent/AccordionGroup";
@@ -81,7 +79,6 @@ export default function TabsSection({
   tabSectionBackgroundColor,
   sectionHead,
   sectionFooter,
-
 }: TabsSectionProps) {
   const sectionClassProps: SectionClassNamesProps = {
     backgroundColor: tabSectionBackgroundColor,
@@ -105,11 +102,7 @@ export default function TabsSection({
       )}
 
       <Suspense fallback={<TabsFallback />}>
-        <TabsComponent
-          className="react-tabs"
-          tabs={tabs}
-          id={id}
-        />
+        <TabsComponent className="react-tabs" tabs={tabs} id={id} />
       </Suspense>
 
       {showSectionFooter && (
