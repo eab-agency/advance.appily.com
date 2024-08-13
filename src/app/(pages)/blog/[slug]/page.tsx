@@ -1,13 +1,24 @@
 import { fetchPost, fetchPosts, fetchPostsByCategory } from "@/app/graphql";
-import { Blocks } from "@/components/Block";
+import { PostAuthorDisplay } from "@/components/Blog/PostAuthorDisplay";
+import PostDateDisplay from "@/components/Blog/PostDateDisplay";
+import { PostHeader } from "@/components/Blog/PostHeader";
+import RichText from "@/components/RichText";
+import AccordionSection from "@/components/commonComponent/AccordionGroup";
+import ButtonGroup from "@/components/commonComponent/ButtonGroup";
 import { generateMeta } from "@/seo/generateMeta";
 import "@/styles/layouts/templates/PostPage.scss";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FaChevronLeft } from "react-icons/fa";
 import { Category, Post } from "../../../../../payload-types";
-import { Hero } from "../../../../blocks/HeroBlock";
+
+const blockRenderers = {
+  accordion: (block) => <AccordionSection data={block} />,
+  ButtonGroup: (block) => <ButtonGroup data={block} />,
+};
 
 export async function generateStaticParams() {
   try {
@@ -78,41 +89,110 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     notFound();
   }
 
-  const { postFeaturedImage, layout, title, publishedDate, updatedAt, id } =
-    post;
+  const {
+    postFeaturedImage,
+    title,
+    publishedDate,
+    updatedAt,
+    createdBy,
+    id,
+    richText,
+  } = post;
+  const layout = [];
+
+  richText?.root?.children.forEach((obj) => {
+    if (obj.type === "block") {
+      layout.push(obj?.fields);
+    }
+  });
+
+  const sizes = createdBy?.userImage?.sizes;
+  const userImageURL = sizes?.squareSmall?.url !== null ? sizes?.squareSmall?.url : createdBy?.userImage?.url;
+
 
   return (
-    <>
+    <div className="post-content__wrapper">
+      <Link href="/blog" className="back-btn">
+        <FaChevronLeft />
+        Back to Blog
+      </Link>
       <header className="post-header">
+        <PostDateDisplay publishedDate={publishedDate} updatedAt={updatedAt} />
         <h1>{title}</h1>
-        <p className="post-dates">
-          {publishedDate && `Published: ${formatDate(publishedDate)}`}
-          {publishedDate && updatedAt && " | "}
-          {updatedAt && `Updated: ${formatDate(updatedAt)}`}
-        </p>
+        <PostAuthorDisplay createdBy={createdBy} />
       </header>
-      {postFeaturedImage && <Hero {...postFeaturedImage} />}
-      <Blocks blocks={layout} />
-      <div className="content">
-        <p>{"Related Posts"}</p>
-        <div className="card-container">
-          {relatesPosts?.length > 0 &&
-            relatesPosts.map((data, index) => {
-              if (data.id !== id) {
-                return (
-                  <div className="card" key={index}>
-                    <div className="card-content">
-                      <h3 className="card-title">
-                        <Link href={`/blog/${data.slug}`}>{data.title}</Link>
-                      </h3>
-                    </div>
-                  </div>
-                );
-              }
-            })}
-        </div>
+      {postFeaturedImage && (
+        <figure className="post__featured-image">
+          {postFeaturedImage?.url && (
+            <Image
+              src={postFeaturedImage?.url}
+              alt={postFeaturedImage.alt}
+              width={800}
+              height={500}
+            />
+          )}
+        </figure>
+      )}
+      <div className="post-content">
+        <RichText content={richText} />
       </div>
-    </>
+
+      {createdBy && (
+        <aside className="post__author-bio">
+          <h2>About the Author</h2>
+          <div
+            className="author-content-wrapper"
+            itemScope
+            itemType="https://schema.org/Person"
+          >
+            <figure className="author-image">
+              <Image
+                src={userImageURL}
+                alt={createdBy?.userImage?.alt}
+                itemProp="image"
+                fill
+              />
+            </figure>
+            <div className="author-content">
+              <header>
+                <h3 itemProp="name">{createdBy?.name}</h3>
+                {/* <p itemProp="jobTitle">{createdBy?.roles}</p> */}
+              </header>
+              <p itemProp="description">{createdBy?.bio}</p>
+            </div>
+          </div>
+        </aside>
+      )}
+
+      <div className="related-posts">
+        {relatesPosts?.filter(data => data.id !== id).length > 0 && (
+          <>
+            <h2>Related Posts</h2>
+            <div className="cards-container">
+              {relatesPosts?.length > 0 &&
+                relatesPosts.map((data, index) => {
+                  const { slug, title, publishedDate, updatedAt, createdBy } = data;
+
+                  if (data.id !== id) {
+                    return (
+                      <article key={index} className="post post__latest">
+                        <Link href={slug}>
+                          <PostHeader
+                            title={title}
+                            createdBy={createdBy}
+                            publishedDate={publishedDate}
+                            updatedAt={updatedAt}
+                          />
+                        </Link>
+                      </article>
+                    );
+                  }
+                })}
+            </div>
+          </>
+        )}
+      </div>
+    </div>
   );
 };
 

@@ -1,74 +1,364 @@
 @use "@/styles/global/tokens";
 
-.blog-header {
-  display: block;
-  margin: 0 auto;
-  width: 90%;
-  max-width: tokens.$mq-1200;
-  padding-inline: clamp(1rem, 5%, 2rem);
-  padding-block: clamp(2rem, 5vw, 6rem) 2rem;
-  margin-bottom: 2rem;
+.blog {
+  &__landing {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    max-width: tokens.$mq-1200;
+  }
 
-  h1 {
-    margin: 0 0 0.2em;
-    font-size: clamp(2.5rem, 5vw, 4rem);
+  &__archive-header {
+    padding-block: clamp(2rem, 5vw, 6rem) 2rem;
+    margin-bottom: 2rem;
+
+    h1 {
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      max-width: 80ch;
+    }
+  }
+
+  &__featured-posts {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 5vw, 2rem);
+    margin-bottom: clamp(2rem, 4vw, 4rem);
+
+    .posts__secondary {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media (min-width: tokens.$mq-1000) {
+        flex-direction: row;
+      }
+
+      .post {
+        flex: 1;
+      }
+    }
+  }
+
+  &-category__landing {
+    .blog__archive-header {
+      margin: 0;
+    }
+    h1 {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      gap: 0.5em;
+
+      &::before {
+        content: "Blog Category";
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--c-linkPrimary);
+        padding: 0.5em;
+        border-bottom: 1px solid var(--c-linkPrimary);
+      }
+    }
+  }
+
+  &__archive {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-block: 2rem clamp(2rem, 4vw, 4rem);
+
+    @media (min-width: tokens.$mq-700) {
+      grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    }
   }
 }
 
+.post {
+  a {
+    border-radius: clamp(1rem, 2vw, 2rem);
+    text-decoration: none;
+    border: 1px solid var(--c-posts-border);
+    background-color: var(--c-bg-posts);
+    color: var(--c-bodyPrimary);
+    overflow: hidden;
 
-.container {
+    &:hover {
+      text-decoration: none;
+      background: var(--c-bg1);
+
+      h2 {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .post__content-head {
+    margin-bottom: 2rem;
+
+    h2 {
+      margin-bottom: 0.3em;
+    }
+  }
+
+  &__featured {
+    display: flex;
+
+    & > a {
+      display: flex;
+      flex-direction: column-reverse;
+
+      @media (min-width: tokens.$mq-800) {
+        flex-direction: row;
+      }
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+    }
+
+    .post__content {
+      padding: clamp(1.5rem, 5vw, 3rem);
+    }
+
+    .post__featured-image {
+      border-radius: clamp(1rem, 2vw, 2rem);
+      width: 100%;
+      height: clamp(20rem, 40vw, 35rem);
+      overflow: hidden;
+      flex-shrink: 0;
+
+      @media (min-width: tokens.$mq-800) {
+        width: clamp(20rem, 40vw, 35rem);
+        height: 100%;
+      }
+    }
+  }
+
+  &__latest {
+    display: flex;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      padding: clamp(1rem, 2vw, 2rem);
+      flex: 1;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 2vw, 2rem);
+    }
+
+    p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 5;
+      line-clamp: 5;
+      line-height: 1.5;
+      max-height: calc(1.5em * 5);
+    }
+  }
+
+  &__published-date {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    width: 80%;
+    gap: 0.2em;
+    margin-bottom: 3em;
+    padding-bottom: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: var(--c-bodyPrimary);
+
+    span {
+      line-height: 1;
+
+      &.date-label {
+        font-weight: 300;
+        font-size: 0.65rem;
+      }
+
+      &.date-value {
+        font-weight: 600;
+        color: var(--c-bodySecondary);
+      }
+    }
   }
-  
-  .row {
+
+  &__date-author {
+    color: var(--c-bodyPrimary);
+    font-weight: 300;
+    font-size: 0.9rem;
+    border-left: 2px solid var(--c-linkPrimary);
+    padding-left: 0.5em;
+    line-height: 1;
+  }
+}
+
+// ===================
+
+.blog-filter {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 3rem);
+
+  @media (min-width: tokens.$mq-1000) {
+    flex-direction: row;
+  }
+
+  &__content {
+    width: 100%;
+
+    .blog-categories {
+      display: flex;
+      gap: 0.5em;
+      padding-block: 0.5em;
+      border-bottom: 1px solid var(--c-posts-border);
+      padding-inline: 0;
+
+      @media (max-width: tokens.$mq-600) {
+        position: sticky;
+        top: 5rem;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 100vw;
+          height: 100%;
+          position: absolute;
+          background: var(--c-bg-posts);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+        }
+      }
+
+      .button-tab {
+        padding: clamp(0.8rem, 1vw, 1rem) clamp(0.8rem, 1.2vw, 1.2rem);
+        text-transform: uppercase;
+        background: var(--c-bg-posts);
+        border: none;
+        color: var(--c-linkPrimary);
+        font-weight: 600;
+        cursor: pointer;
+        font-size: clamp(0.75rem, 1vw, 1rem);
+        border-radius: 0.5em;
+        border: 1px solid var(--c-posts-border);
+        z-index: 2;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          background: var(--c-linkPrimary);
+          color: var(--c-bg1);
+        }
+
+        &__active {
+          background: var(--c-bg-blog-tabs);
+          color: var(--c-bg1);
+
+          &:hover {
+            background: var(--c-bg-blog-tabs);
+            color: var(--c-bg1);
+            cursor: initial;
+          }
+        }
+      }
+    }
+  }
+
+  .all-posts-container {
     display: flex;
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 1em;
+    padding-block: clamp(2rem, 4vw, 4rem);
+
+    .post {
+      &__content-head {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+        padding: clamp(0.8rem, 1.5vw, 1.5rem);
+
+        @media (min-width: tokens.$mq-800) {
+          align-items: center;
+          justify-content: space-between;
+          flex-direction: row;
+          gap: 1em;
+          padding: 0;
+        }
+
+        h2 {
+          width: 80%;
+          font-size: clamp(1rem, 1.5vw, 1.5rem);
+          margin-bottom: 1em;
+
+          @media (min-width: tokens.$mq-800) {
+            margin-inline: 0 auto;
+            margin-bottom: 0;
+          }
+        }
+
+        .post__date-author {
+          min-width: 10rem;
+          display: flex;
+          align-items: center;
+        }
+      }
+      &__published-date {
+        margin: 0;
+        flex-direction: row;
+        @media (min-width: tokens.$mq-800) {
+          text-align: center;
+          width: 5rem;
+          flex-direction: column;
+        }
+      }
+
+      a {
+        display: flex;
+        padding: clamp(0.8rem, 1vw, 1.3rem) clamp(0.5rem, 1vw, 1rem);
+        border-radius: clamp(0.8rem, 1.3vw, 1.3rem);
+
+        &:hover {
+          background-color: var(--c-bg1);
+        }
+      }
+    }
   }
-  
-  .first-row .item {
-    flex: 1; /* Take the full width of the row */
-  }
-  
-  .second-row .item {
-    flex: 1;
-    margin-right: 10px;
-  }
-  
-  .second-row .item:last-child {
-    margin-right: 0; /* Remove the margin on the last item */
-  }
-  
-  .item {
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    text-align: center;
+}
+
+.categories-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: 100%;
+  max-width: 15rem;
+  border-left: 1px solid var(--c-bg11);
+
+  @media (min-width: tokens.$mq-1000) {
+    padding-top: 5em;
   }
 
-  .category-button {
-    background: none;
-  color: black;
-  border: none;
-  padding: 0;
-  font: inherit;
-  text-decoration: underline;
-  cursor: pointer;
-  }
-
-  
   .category-container {
     display: flex;
-  flex-direction: column;
-  align-items: center; 
-  margin: 20px 0;
-  }
+    flex-direction: column;
+    margin: 20px 0;
+    width: 100%;
+    padding-inline: clamp(1rem, 2vw, 2rem);
 
-  .category-heading {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+    .category-heading {
+      display: block;
+      width: 100%;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: var(--c-bodyPrimary);
+      border-bottom: 1px solid var(--c-bg11);
+    }
   }
-  
+}

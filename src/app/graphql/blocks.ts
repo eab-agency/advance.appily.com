@@ -223,6 +223,7 @@ export const CAROUSELCARD = `
 
 export const TABSECTION = `
 ...on Tabsection {
+  id
   blockType
   tabSectionBackgroundColor
   sectionHead{
