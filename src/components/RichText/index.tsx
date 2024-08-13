@@ -1,19 +1,20 @@
 "use client";
 
-import serializeLexicalRichText from "./serialize";
 import classes from "./index.module.scss";
-import React from "react";
+import serializeLexicalRichText from "./serialize";
 
 interface RichTextProps {
   className?: string;
   content: any;
   customClassNames?: string;
+  extractFirstParagraph?: boolean;
 }
 
 const RichText = function ({
   className,
   content,
   customClassNames,
+  extractFirstParagraph = false,
 }: RichTextProps) {
   if (!content?.root?.children) return "";
 
@@ -24,6 +25,7 @@ const RichText = function ({
       {serializeLexicalRichText({
         children: content.root.children,
         customClassNames,
+        extractFirstParagraph,
       })}
     </div>
   );

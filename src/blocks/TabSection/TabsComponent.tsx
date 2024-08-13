@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/no-danger */
 "use client";
-import { useRouter, useSearchParams } from "next/navigation";
-import React, { Fragment } from "react";
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import { Media as Image } from "@/components/Media";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Fragment } from "react";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
-import { Media } from '@/components/Media'
+import { Media } from '@/components/Media';
 import RichText from '@/components/RichText';
 import AccordionSection from '@/components/commonComponent/AccordionGroup';
 import ButtonGroup from '@/components/commonComponent/ButtonGroup';
@@ -36,7 +36,6 @@ const TabsComponent = ({ tabs, className, id = "0" }) => {
   const selectedTabKey = `tab-${id}`;
   const selectedTab = Number(searchParams?.get(selectedTabKey)) || 0;
   const router = useRouter();
-
   const handleSelect = (index) => {
     const currentParams = new URLSearchParams(searchParams?.toString());
     currentParams.set(selectedTabKey, index);

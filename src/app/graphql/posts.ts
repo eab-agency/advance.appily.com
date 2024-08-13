@@ -1,15 +1,5 @@
-import {
-  CALLOUTSECTION,
-  CALL_TO_ACTION,
-  CAROUSELCARD,
-  HIGHLIGHTEDCTA,
-  MEDIA_BLOCK,
-  SECTION,
-  STATISTICS,
-  TABSECTION,
-  TESTIMONIAL,
-} from "./blocks";
-import { MEDIA } from "./media";
+
+import { MEDIA_FIELDS } from "./media";
 import { META } from "./meta";
 
 export const POST_DATA = `
@@ -19,22 +9,38 @@ export const POST_DATA = `
         updatedAt
         publishedDate
         postFeaturedImage {
-          ${MEDIA}
+          ${MEDIA_FIELDS}
+        }
+        richText
+        createdBy {
+          id
+          name
+          roles
+          email
+          bio
+          userImage {
+            mimeType
+            url
+            filename
+            filesize
+            alt
+            sizes{
+              squareSmall{
+                width
+                height
+                url
+              }
+              squareMedium{
+                width
+                height
+                url
+              }
+            }
+          }
         }
         category{
-          id 
+          id
           title
-        }
-        layout {
-          ${CALL_TO_ACTION}
-          ${SECTION}
-          ${MEDIA_BLOCK}
-          ${STATISTICS}
-          ${TESTIMONIAL}
-          ${HIGHLIGHTEDCTA}
-          ${CALLOUTSECTION}
-          ${TABSECTION}
-          ${CAROUSELCARD}
         }
         ${META}
 
@@ -47,8 +53,36 @@ export const POSTS = `
         slug
         title
         id
+        richText
         createdAt
         publishedDate
+        updatedAt
+        createdBy {
+          id
+          name
+          roles
+          email
+          bio
+          userImage {
+            mimeType
+            url
+            filename
+            filesize
+            alt
+            sizes{
+              squareSmall{
+                width
+                height
+                url
+              }
+              squareMedium{
+                width
+                height
+                url
+              }
+            }
+          }
+        }
         category {
           title
           id
@@ -77,22 +111,39 @@ export const POST = `
         updatedAt
         publishedDate
         postFeaturedImage {
-          ${MEDIA}
+          ${MEDIA_FIELDS}
+        }
+        richText
+        createdBy {
+          id
+          name
+          roles
+          email
+          bio
+          createdAt
+          userImage {
+            mimeType
+            url
+            filename
+            filesize
+            alt
+            sizes{
+              squareSmall{
+                width
+                height
+                url
+              }
+              squareMedium{
+                width
+                height
+                url
+              }
+            }
+          }
         }
         category{
-          id 
+          id
           title
-        }
-        layout {
-          ${CALL_TO_ACTION}
-          ${SECTION}
-          ${MEDIA_BLOCK}
-          ${STATISTICS}
-          ${TESTIMONIAL}
-          ${HIGHLIGHTEDCTA}
-          ${CALLOUTSECTION}
-          ${TABSECTION}
-          ${CAROUSELCARD}
         }
         ${META}
       }
@@ -111,7 +162,16 @@ export const FIRSTFIVEPOSTS = `
 }
 `;
 
-
+export const GET_CATEGORY_ID = `
+query Categories ($categoryTitle: [String]) {
+  Categories (where: {title: {in: $categoryTitle}}) {
+    docs {
+      id
+      title
+    }
+  }
+}
+`;
 
 export const POSTS_BY_CATEGORY = `
 query Posts ($category : JSON) {

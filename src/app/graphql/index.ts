@@ -1,4 +1,4 @@
-import type { CarouselCard, Page, Post, Header, Footer, Category, Tag } from "../../../payload-types";
+import type { CarouselCard, Category, Footer, Header, Page, Post, Tag } from "../../../payload-types";
 import {
 	ALLCAROUSELCARDS,
 	CAROUSELCARDS,
@@ -7,7 +7,7 @@ import {
 import { ALLCATEGORIES } from "./categories";
 import { FOOTER_QUERY, GLOBALS, HEADER_QUERY } from "./globals";
 import { PAGE, PAGES } from "./pages";
-import { FIRSTFIVEPOSTS, POST, POSTS, POSTS_BY_CATEGORY, POST_BY_TAG } from "./posts";
+import { FIRSTFIVEPOSTS, GET_CATEGORY_ID, POST, POSTS, POSTS_BY_CATEGORY, POST_BY_TAG } from "./posts";
 import { ALLTAGS } from "./tags";
 
 const next: { revalidate: number | false | undefined } = {
@@ -345,6 +345,29 @@ export const fetchAllCategories = async (): Promise<Category[]> => {
    return data?.Categories?.docs;
 };
 
+export const fetchCategoryIDByTitle = async (
+	categoryTitle?: Category['title'],
+): Promise<Post[]> => {
+	const { data } = await fetch(
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?categories`,
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			// next,
+			body: JSON.stringify({
+				query: GET_CATEGORY_ID,
+				variables: {
+					categoryTitle,
+				},
+			}),
+		},
+	
+	).then(res => res.json());
+	console.log(data,'data**')
+	return data?.Categories?.docs;
+};
 
 export const fetchPostsByCategory = async (
 	category?: Category['id'],
@@ -360,7 +383,7 @@ export const fetchPostsByCategory = async (
 			body: JSON.stringify({
 				query: POSTS_BY_CATEGORY,
 				variables: {
-					category,
+					category
 				},
 			}),
 		},
