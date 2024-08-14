@@ -42,7 +42,7 @@ export default function serializeLexicalRichText({
 
     if (node.type === "text") {
       let text = node.text ? (
-        <span className="">{node.text}</span>
+        <Fragment>{node.text}</Fragment>
       ) : (
         <span className="opacity-0">&nbsp;</span>
       );
@@ -128,9 +128,9 @@ export default function serializeLexicalRichText({
     // Handling paragraphs and avoiding <p> nesting
     if (node.type === "paragraph") {
       return (
-        <div className={`${classNames.p} ${generateTextAlign(node)}`} key={i}>
+        <p className={`${classNames.p} ${generateTextAlign(node)}`} key={i}>
           {serializeLexicalRichText({ children: node.children })}
-        </div>
+        </p>
       );
     }
 
@@ -158,9 +158,9 @@ export default function serializeLexicalRichText({
 
       default:
         return (
-          <div className={`${classNames.p} ${generateTextAlign(node)}`} key={i}>
+          <span className={`${classNames.p} ${generateTextAlign(node)}`} key={i}>
             {serializeLexicalRichText({ children: node.children })}
-          </div>
+          </span>
         );
     }
   };
