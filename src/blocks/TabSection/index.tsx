@@ -6,10 +6,10 @@ import {
 import { Fragment, Suspense } from "react";
 import TabsComponent from "./TabsComponent";
 
-import { Media } from "@/components/Media";
-import RichText from "@/components/RichText";
 import AccordionSection from "@/components/commonComponent/AccordionGroup";
 import ButtonGroup from "@/components/commonComponent/ButtonGroup";
+import { Media } from "@/components/Media";
+import RichText from "@/components/RichText";
 
 interface TabsSectionProps {
   id?: string;
@@ -79,6 +79,7 @@ export default function TabsSection({
   tabSectionBackgroundColor,
   sectionHead,
   sectionFooter,
+
 }: TabsSectionProps) {
   const sectionClassProps: SectionClassNamesProps = {
     backgroundColor: tabSectionBackgroundColor,
