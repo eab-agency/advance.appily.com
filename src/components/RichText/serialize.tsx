@@ -1,6 +1,6 @@
 import escapeHTML from "escape-html";
 import { Fragment } from "react";
-import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
+import { MdCheckBoxOutlineBlank } from "react-icons/md";
 
 export const IS_BOLD = 1;
 export const IS_ITALIC = 1 << 1;
@@ -24,7 +24,6 @@ export default function serializeLexicalRichText({
   parentNode = {},
 }) {
 
-  // Function to process each node and generate the corresponding JSX element
   const processNode = (node, i) => {
     const classNames = {
       h1: "mt-6 text-5xl",
@@ -95,63 +94,43 @@ export default function serializeLexicalRichText({
     }
 
     if (node.type === "list") {
-      if (node.listType === "bullet") {
-        return (
-          <ul className={`${classNames.ul}`} key={i}>
-            {serializeLexicalRichText({
-              children: node.children,
-              parentNode: node,
-            })}
-          </ul>
-        );
-      } else if (node.listType === "check") {
-        return (
-          <ul className={`${classNames.ul} list-none`} key={i}>
-            {serializeLexicalRichText({
-              children: node.children,
-              parentNode: node,
-            })}
-          </ul>
-        );
-      } else if (node.listType === "number") {
-        return (
-          <ol className={`${classNames.ol}`} key={i}>
-            {serializeLexicalRichText({
-              children: node.children,
-              parentNode: node,
-            })}
-          </ol>
-        );
-      }
+      const ListTag = node.listType === "number" ? "ol" : "ul";
+      return (
+        <ListTag className={classNames[ListTag === "ol" ? "ol" : "ul"]} key={i}>
+          {serializeLexicalRichText({
+            children: node.children,
+            parentNode: node,
+          })}
+        </ListTag>
+      );
     }
 
-    if (node.type === "listitem" && node.checked) {
-      return (
-        <li className={`${classNames.li} flex gap-1`} key={i}>
-          <div>
-            <MdCheckBox className="w-4 h-4 text-green-500" />
-          </div>
-          <div className="line-through">
-            {serializeLexicalRichText({ children: node.children })}
-          </div>
-        </li>
-      );
-    } else if (node.type === "listitem" && parentNode?.listType === "check") {
-      return (
-        <li className={`${classNames.li} flex gap-1`} key={i}>
-          <div>
+    if (node.type === "listitem") {
+      const isCheckList = parentNode?.listType === "check";
+      const ListItemContent = (
+        <>
+          {isCheckList ? (
             <MdCheckBoxOutlineBlank className="w-4 h-4 text-green-500" />
-          </div>
-          <div className="">
+          ) : null}
+          <div>
             {serializeLexicalRichText({ children: node.children })}
           </div>
+        </>
+      );
+
+      return (
+        <li className={`${classNames.li} ${isCheckList ? "flex gap-1" : ""}`} key={i}>
+          {ListItemContent}
         </li>
       );
-    } else if (node.type === "listitem") {
+    }
+
+    // Handling paragraphs and avoiding <p> nesting
+    if (node.type === "paragraph") {
       return (
-        <li className={`${classNames.li}`} key={i}>
+        <div className={`${classNames.p} ${generateTextAlign(node)}`} key={i}>
           {serializeLexicalRichText({ children: node.children })}
-        </li>
+        </div>
       );
     }
 
@@ -179,9 +158,9 @@ export default function serializeLexicalRichText({
 
       default:
         return (
-          <p className={`${classNames.p} ${generateTextAlign(node)}`} key={i}>
+          <div className={`${classNames.p} ${generateTextAlign(node)}`} key={i}>
             {serializeLexicalRichText({ children: node.children })}
-          </p>
+          </div>
         );
     }
   };
