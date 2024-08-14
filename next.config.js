@@ -28,7 +28,7 @@ function stripHttps(url) {
 
 const nextConfig = {
   // https://github.com/aws-amplify/amplify-hosting/issues/3707
-  cacheHandler: require.resolve('./cache-handler.mjs'),
+  // cacheHandler: require.resolve('./cache-handler.mjs'),
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
