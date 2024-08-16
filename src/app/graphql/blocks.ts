@@ -338,3 +338,23 @@ export const STICKYCTASECTION = `
     link ${LINK_FIELDS()}
   }
 }`
+
+export const GLOBAL_TOKEN= `
+...on GlobalBlock {
+  blockName
+  blockType
+  id
+  globalBlocks {
+    id
+    title
+    Block {
+      ${STATS}
+      ${TESTIMONIAL}
+      ${ACCORDIONBLOCK}
+      ${IMAGECARDBLOCK}
+      ${BUTTONGROUPBLOCK}
+      ${RICHTEXTBLOCK}
+      ${COMPARISONBLOCK}
+      }
+  }
+}`

@@ -8,11 +8,11 @@ import TabSection from '@/blocks/TabSection';
 import Testimonial from '@/blocks/TestimonialBlock';
 import { Page } from "../../../payload-types.js";
 // import { CallToActionBlock } from '../../blocks/CallToAction'
+import { GlobalBlock } from "@/blocks/GlobalBlock";
 import StickyCta from "@/blocks/StickyCTASection";
 import { ContentBlock } from "../../blocks/Content";
 import { MediaBlock } from "../../blocks/MediaBlock";
 import CarouselWithForm from '../CarouselWithForm/CarouselWithForm';
-
 
 
 const blockComponents = {
@@ -25,7 +25,8 @@ const blockComponents = {
   tabsection: TabSection,
   Schoolcarousel: CarouselWithForm,
   subNavigation: SubNavigation,
-  stickyCTA: StickyCta
+  stickyCTA: StickyCta,
+  globalBlock: GlobalBlock
 }
 
 export const Blocks: React.FC<{

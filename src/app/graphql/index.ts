@@ -224,7 +224,7 @@ export const fetchPages = async (): Promise<
 export const fetchPage = async (
 	incomingSlugSegments?: string[],
 ): Promise<Page | null> => {
-	const slugSegments = incomingSlugSegments || ["home"];
+	const slugSegments = incomingSlugSegments || ["index"];
 	const slug = slugSegments.at(-1);
 	const { data, errors } = await fetch(
 		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?page=${slug}`,
