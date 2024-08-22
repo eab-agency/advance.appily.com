@@ -73,7 +73,7 @@ export const ResultPageHero: React.FC<Page["hero"]> = ({
         <figure className="column">
           {!isJSON ? (
             <div>
-              {typeof animation === "object" && (
+              {typeof animation === "object" && animation !== null && (
                 <Media resource={animation} priority />
               )}
             </div>

@@ -98,7 +98,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     id,
     richText,
   } = post;
-  const layout = [];
+  const layout: any[] = [];
 
   richText?.root?.children.forEach((obj) => {
     if (obj.type === "block") {
@@ -107,8 +107,10 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
   });
 
   const sizes = createdBy?.userImage?.sizes;
-  const userImageURL = sizes?.squareSmall?.url !== null ? sizes?.squareSmall?.url : createdBy?.userImage?.url;
-
+  const userImageURL =
+    sizes?.squareSmall?.url !== null
+      ? sizes?.squareSmall?.url
+      : createdBy?.userImage?.url;
 
   return (
     <div className="post-content__wrapper">
@@ -121,7 +123,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
         <h1>{title}</h1>
         <PostAuthorDisplay createdBy={createdBy} />
       </header>
-      {postFeaturedImage && (
+      {typeof postFeaturedImage !== "string" && postFeaturedImage?.url && (
         <figure className="post__featured-image">
           {postFeaturedImage?.url && (
             <Image
@@ -165,13 +167,14 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
       )}
 
       <div className="related-posts">
-        {relatesPosts?.filter(data => data.id !== id).length > 0 && (
+        {relatesPosts?.filter((data) => data.id !== id).length > 0 && (
           <>
             <h2>Related Posts</h2>
             <div className="cards-container">
               {relatesPosts?.length > 0 &&
                 relatesPosts.map((data, index) => {
-                  const { slug, title, publishedDate, updatedAt, createdBy } = data;
+                  const { slug, title, publishedDate, updatedAt, createdBy } =
+                    data;
 
                   if (data.id !== id) {
                     return (
