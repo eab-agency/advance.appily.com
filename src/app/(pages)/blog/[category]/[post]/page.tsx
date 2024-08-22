@@ -33,7 +33,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string, post: string };
+  params: { slug: string; post: string };
 }): Promise<Metadata> {
   const { isEnabled: isDraftMode } = draftMode();
   const { slug, post } = params;
@@ -55,7 +55,7 @@ export async function generateMetadata({
 }
 
 interface PostComponentProps {
-  params: { slug: string, post: string };
+  params: { slug: string; post: string };
 }
 
 const formatDate = (dateString: string) => {
@@ -108,8 +108,10 @@ const PostComponent = async ({ params }: PostComponentProps) => {
   });
 
   const sizes = createdBy?.userImage?.sizes;
-  const userImageURL = sizes?.squareSmall?.url !== null ? sizes?.squareSmall?.url : createdBy?.userImage?.url;
-
+  const userImageURL =
+    sizes?.squareSmall?.url !== null
+      ? sizes?.squareSmall?.url
+      : createdBy?.userImage?.url;
 
   return (
     <div className="post-content__wrapper">
@@ -122,19 +124,21 @@ const PostComponent = async ({ params }: PostComponentProps) => {
         <h1>{title}</h1>
         <PostAuthorDisplay createdBy={createdBy} />
       </header>
-      {postFeaturedImage && typeof postFeaturedImage === 'object' && 'url' in postFeaturedImage && (
-        <figure className="post__featured-image">
-          {postFeaturedImage?.url && (
-            <Image
-              src={postFeaturedImage?.url}
-              alt={postFeaturedImage.alt}
-              width={800}
-              height={500}
-              priority
-            />
-          )}
-        </figure>
-      )}
+      {postFeaturedImage &&
+        typeof postFeaturedImage === "object" &&
+        "url" in postFeaturedImage && (
+          <figure className="post__featured-image">
+            {postFeaturedImage?.url && (
+              <Image
+                src={postFeaturedImage?.url}
+                alt={postFeaturedImage.alt}
+                width={800}
+                height={500}
+                priority
+              />
+            )}
+          </figure>
+        )}
       <div className="post-content">
         <RichText content={richText} />
       </div>
@@ -168,13 +172,14 @@ const PostComponent = async ({ params }: PostComponentProps) => {
       )}
 
       <div className="related-posts">
-        {relatesPosts?.filter(data => data.id !== id).length > 0 && (
+        {relatesPosts?.filter((data) => data.id !== id).length > 0 && (
           <>
             <h2>Related Posts</h2>
             <div className="cards-container">
               {relatesPosts?.length > 0 &&
                 relatesPosts.map((data, index) => {
-                  const { slug, title, publishedDate, updatedAt, createdBy } = data;
+                  const { slug, title, publishedDate, updatedAt, createdBy } =
+                    data;
 
                   if (data.id !== id) {
                     return (

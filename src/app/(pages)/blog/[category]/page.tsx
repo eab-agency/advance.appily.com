@@ -16,7 +16,7 @@ export function CategoryComponent() {
   const [category, setCategoryData] = useState<Category[]>([]);
 
   const slug = pathname?.split("/").pop();
-  const removeHyphen = slug?.replace(/-/g, " ")
+  const removeHyphen = slug?.replace(/-/g, " ");
   const slugTitle = removeHyphen
     ? removeHyphen.charAt(0).toUpperCase() + removeHyphen.slice(1)
     : "";
