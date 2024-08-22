@@ -1,7 +1,7 @@
-import React, { Suspense } from "react";
-import RandomComponent from "@/hooks/useRandomComponent";
 import ABButton from "@/components/Button/ABButton";
+import RandomComponent from "@/hooks/useRandomComponent";
 import Image from "next/image";
+import { Suspense } from "react";
 
 import { Accordion, Button, StickyCta, Testimonial } from "@/components";
 import data from "@/data/careers-education.json";
@@ -137,7 +137,7 @@ const BusinessSeoPage = () => {
               ))}
             </div>
             <p>
-              <Link href="/careers/education/quia">
+              <Link href="/careers/education/quiz">
                 Take the Education Career Quiz
               </Link>{" "}
               to see if your skills and interests make you a great fit for a
