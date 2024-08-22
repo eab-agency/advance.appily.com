@@ -9,6 +9,7 @@ const ALL_POST = 'All Posts';
 const BlogTabs = ({ tabs }) => {
   const [activeTab, setActiveTab] = useState(ALL_POST);
   const [fetchedPosts, setFetchedPosts] = useState<Post[]>([]);
+  const [categoriesOpen, setCategoriesOpen] = useState(false);
 
 
   useEffect(() => {
@@ -44,24 +45,33 @@ const BlogTabs = ({ tabs }) => {
   };
 
 
+
+  const toggleCategories = () => {
+    setCategoriesOpen(!categoriesOpen);
+  };
+
+
   return (
     <div className="blog-filter__content">
-      <div className="blog-categories">
-        <button
-          className={`button-tab ${activeTab === ALL_POST ? 'button-tab__active' : ''}`}
-          onClick={() => handleClick(ALL_POST)}
-        >
-          {ALL_POST}
-        </button>
-        {tabs.map(tab => (
+      <div className="blog-filter__tabs">
+        <button onClick={toggleCategories} className={`mobile-categories-btn ${categoriesOpen ? 'toggled' : ''}`}>Categories</button>
+        <div className={`blog-categories ${categoriesOpen ? 'open' : ''}`}>
           <button
-            key={tab.id}
-            className={`button-tab ${activeTab === tab.title ? 'button-tab__active' : ''}`}
-            onClick={() => handleClick(tab)}
+            className={`button-tab ${activeTab === ALL_POST ? 'button-tab__active' : ''}`}
+            onClick={() => handleClick(ALL_POST)}
           >
-            {tab.title}
+            {ALL_POST}
           </button>
-        ))}
+          {tabs.map(tab => (
+            <button
+              key={tab.id}
+              className={`button-tab ${activeTab === tab.title ? 'button-tab__active' : ''}`}
+              onClick={() => handleClick(tab)}
+            >
+              {tab.title}
+            </button>
+          ))}
+        </div>
       </div>
       <div className="all-posts-container">
         {fetchedPosts?.map(post => {
