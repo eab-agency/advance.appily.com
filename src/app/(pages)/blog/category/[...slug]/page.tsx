@@ -1,13 +1,12 @@
-'use client'
+"use client";
 import { fetchCategoryIDByTitle, fetchPostsByCategory } from "@/app/graphql";
 import { PostHeader } from "@/components/Blog/PostHeader";
-import RichText from '@/components/RichText';
+import RichText from "@/components/RichText";
 import "@/styles/layouts/templates/BlogPage.scss";
 import Link from "next/link";
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Category, Post } from "../../../../../../payload-types";
-
 
 export function CategoryComponent() {
   const pathname = usePathname();
@@ -16,9 +15,11 @@ export function CategoryComponent() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [category, setCategoryData] = useState<Category[]>([]);
 
-  const slug = pathname?.split('/').pop();
-  const decodedSlug = slug ? decodeURIComponent(slug) : '';
-  const slugTitle = decodedSlug ? decodedSlug.charAt(0).toUpperCase() + decodedSlug.slice(1) : '';
+  const slug = pathname?.split("/").pop();
+  const decodedSlug = slug ? decodeURIComponent(slug) : "";
+  const slugTitle = decodedSlug
+    ? decodedSlug.charAt(0).toUpperCase() + decodedSlug.slice(1)
+    : "";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,17 +31,16 @@ export function CategoryComponent() {
             const posts = await fetchPostsByCategory(categoryData[0]?.id);
             setPosts(posts);
           } else {
-            router.push('/blog')
+            router.push("/blog");
           }
         }
-      }
-      catch (error) {
-        console.error('Error fetching posts:', error);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
       }
     };
 
     fetchData();
-  }, [decodedSlug]);
+  }, [decodedSlug, router]);
 
   return (
     <div className="blog__landing blog-category__landing">
@@ -48,7 +48,7 @@ export function CategoryComponent() {
         <h1>{slugTitle}</h1>
       </header>
       <div className="blog__archive">
-        {posts?.map(post => {
+        {posts?.map((post) => {
           const {
             slug,
             title,
@@ -56,7 +56,7 @@ export function CategoryComponent() {
             updatedAt,
             createdBy,
             richText,
-            id
+            id,
           } = post;
 
           const href = `${window.location.origin}/blog/${slug}`;
@@ -74,11 +74,11 @@ export function CategoryComponent() {
                 <RichText content={richText} extractFirstParagraph={true} />
               </Link>
             </article>
-          )
+          );
         })}
       </div>
     </div>
   );
-};
+}
 
 export default CategoryComponent;

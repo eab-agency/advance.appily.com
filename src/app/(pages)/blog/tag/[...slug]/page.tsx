@@ -1,24 +1,24 @@
-'use client'
+"use client";
 import { fetchPostsByTag } from "@/app/graphql";
 import { PostHeader } from "@/components/Blog/PostHeader";
-import RichText from '@/components/RichText';
+import RichText from "@/components/RichText";
 import "@/styles/layouts/templates/BlogPage.scss";
 import Link from "next/link";
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Post } from "../../../../../../payload-types";
-
-
 
 export function TagComponent() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const id = searchParams?.get('id');
+  const id = searchParams?.get("id");
 
   const [posts, setPosts] = useState<Post[]>([]);
-  const slug = pathname?.split('/').pop();
-  const decodedSlug = slug ? decodeURIComponent(slug) : '';
-  const slugTitle = decodedSlug ? decodedSlug.charAt(0).toUpperCase() + decodedSlug.slice(1) : '';
+  const slug = pathname?.split("/").pop();
+  const decodedSlug = slug ? decodeURIComponent(slug) : "";
+  const slugTitle = decodedSlug
+    ? decodedSlug.charAt(0).toUpperCase() + decodedSlug.slice(1)
+    : "";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,14 +27,13 @@ export function TagComponent() {
           const posts = await fetchPostsByTag(id);
           setPosts(posts);
         }
-      }
-      catch (error) {
-        console.error('Error fetching posts:', error);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
       }
     };
 
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <div className="blog__landing blog-category__landing">
@@ -42,7 +41,7 @@ export function TagComponent() {
         <h1>{slugTitle}</h1>
       </header>
       <div className="blog__archive">
-        {posts?.map(post => {
+        {posts?.map((post) => {
           const {
             slug,
             title,
@@ -50,7 +49,7 @@ export function TagComponent() {
             updatedAt,
             createdBy,
             richText,
-            id
+            id,
           } = post;
 
           const href = `${window.location.origin}/blog/${slug}`;
@@ -68,11 +67,11 @@ export function TagComponent() {
                 <RichText content={richText} extractFirstParagraph={true} />
               </Link>
             </article>
-          )
+          );
         })}
       </div>
     </div>
   );
-};
+}
 
 export default TagComponent;
