@@ -13,7 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaChevronLeft } from "react-icons/fa";
-import { Category, Post } from "../../../../../payload-types";
+import { Category, Post } from "../../../../../../payload-types";
 
 const blockRenderers = {
   accordion: (block) => <AccordionSection data={block} />,
@@ -33,19 +33,19 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string, post: string };
 }): Promise<Metadata> {
   const { isEnabled: isDraftMode } = draftMode();
-  const { slug } = params;
-  let post: Post | null = null;
+  const { slug, post } = params;
+  let postData: Post | null = null;
 
   try {
-    post = await fetchPost(slug);
+    postData = await fetchPost(post);
   } catch (error) {
     console.error("Error fetching post data:", error);
   }
-  if (post) {
-    return generateMeta({ doc: post });
+  if (postData) {
+    return generateMeta({ doc: postData });
   } else {
     return {
       title: "Default Title",
@@ -55,7 +55,7 @@ export async function generateMetadata({
 }
 
 interface PostComponentProps {
-  params: { slug: string };
+  params: { slug: string, post: string };
 }
 
 const formatDate = (dateString: string) => {
@@ -68,14 +68,15 @@ const formatDate = (dateString: string) => {
   return new Intl.DateTimeFormat("en-US", options).format(date);
 };
 
-const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
-  let post: Post | null = null;
+const PostComponent = async ({ params }: PostComponentProps) => {
+  const { post } = params;
+  let postData: Post | null = null;
   let relatesPosts: Post[] | null = [];
   try {
-    post = await fetchPost(slug);
-    if (post) {
-      const catID: Category["id"] = post?.category
-        ? (post?.category[0] as Category)?.id
+    postData = await fetchPost(post);
+    if (postData) {
+      const catID: Category["id"] = postData?.category
+        ? (postData?.category[0] as Category)?.id
         : "";
       if (catID) {
         relatesPosts = await fetchPostsByCategory(catID);
@@ -85,7 +86,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     console.error("Error fetching post:", error);
   }
 
-  if (!post) {
+  if (!postData) {
     notFound();
   }
 
@@ -97,8 +98,8 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     createdBy,
     id,
     richText,
-  } = post;
-  const layout: any[] = [];
+  } = postData;
+  const layout = [];
 
   richText?.root?.children.forEach((obj) => {
     if (obj.type === "block") {
@@ -107,10 +108,8 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
   });
 
   const sizes = createdBy?.userImage?.sizes;
-  const userImageURL =
-    sizes?.squareSmall?.url !== null
-      ? sizes?.squareSmall?.url
-      : createdBy?.userImage?.url;
+  const userImageURL = sizes?.squareSmall?.url !== null ? sizes?.squareSmall?.url : createdBy?.userImage?.url;
+
 
   return (
     <div className="post-content__wrapper">
@@ -123,7 +122,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
         <h1>{title}</h1>
         <PostAuthorDisplay createdBy={createdBy} />
       </header>
-      {typeof postFeaturedImage !== "string" && postFeaturedImage?.url && (
+      {postFeaturedImage && typeof postFeaturedImage === 'object' && 'url' in postFeaturedImage && (
         <figure className="post__featured-image">
           {postFeaturedImage?.url && (
             <Image
@@ -167,14 +166,13 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
       )}
 
       <div className="related-posts">
-        {relatesPosts?.filter((data) => data.id !== id).length > 0 && (
+        {relatesPosts?.filter(data => data.id !== id).length > 0 && (
           <>
             <h2>Related Posts</h2>
             <div className="cards-container">
               {relatesPosts?.length > 0 &&
                 relatesPosts.map((data, index) => {
-                  const { slug, title, publishedDate, updatedAt, createdBy } =
-                    data;
+                  const { slug, title, publishedDate, updatedAt, createdBy } = data;
 
                   if (data.id !== id) {
                     return (

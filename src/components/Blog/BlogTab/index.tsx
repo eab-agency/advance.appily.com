@@ -75,11 +75,13 @@ const BlogTabs = ({ tabs }) => {
       </div>
       <div className="all-posts-container">
         {fetchedPosts?.map(post => {
-          const { id, title, richText, createdBy, publishedDate, updatedAt, slug } = post;
-
+          const { id, title, richText, createdBy, publishedDate, updatedAt, slug, category } = post;
+          const catTitle = Array.isArray(category) && typeof category[0] === 'object' && 'title' in category[0]
+            ? category[0]?.title ?? ''
+            : '';
           return (
             <article key={id} className="post">
-              <Link href={`blog/${slug}`}>
+              <Link href={`blog/${catTitle}/${slug}`}>
                 <PostHeader
                   title={title}
                   createdBy={createdBy}

@@ -35,7 +35,6 @@ const BlogComponent = () => {
     fetchData();
   }, []);
 
-  console.log(posts);
 
   return (
     <div className="blog__landing">
@@ -53,12 +52,15 @@ const BlogComponent = () => {
             publishedDate,
             updatedAt,
             richText,
-            createdBy
+            createdBy,
+            category
           } = post;
-
+          const catTitle = Array.isArray(category) && typeof category[0] === 'object' && 'title' in category[0]
+            ? category[0]?.title ?? ''
+            : '';
           return (
             <article key={index} className="post post__featured">
-              <Link href={`blog/${slug}`}>
+              <Link href={`blog/${catTitle}/${slug}`}>
                 <div className="post__content">
                   <PostHeader
                     title={title}
@@ -69,7 +71,7 @@ const BlogComponent = () => {
 
                   <RichText content={richText} extractFirstParagraph={true} />
                 </div>
-                {postFeaturedImage && (
+                {postFeaturedImage && typeof postFeaturedImage === 'object' && 'url' in postFeaturedImage && (
                   <figure className="post__featured-image">
                     {postFeaturedImage?.url && (
                       <Image src={postFeaturedImage.url} alt={postFeaturedImage.alt} fill />
@@ -88,12 +90,15 @@ const BlogComponent = () => {
               publishedDate,
               updatedAt,
               createdBy,
-              richText
+              richText,
+              category
             } = post;
-
+            const catTitle = Array.isArray(category) && typeof category[0] === 'object' && 'title' in category[0]
+              ? category[0]?.title ?? ''
+              : '';
             return (
               <article key={index} className="post post__latest">
-                <Link href={`blog/${slug}`}>
+                <Link href={`blog/${catTitle}/${slug}`}>
                   <PostHeader
                     title={title}
                     createdBy={createdBy}
@@ -119,7 +124,7 @@ const BlogComponent = () => {
             <div className="category-heading desktop-only">Categories</div>
             {categories.length > 0 &&
               categories.map((cat, index) => (
-                <Link href="/blog/category/[category]" as={`/blog/category/${cat?.title}`} key={index}>
+                <Link href="/blog/[category]" as={`/blog/${cat?.title}`} key={index}>
                   {cat.title}
                 </Link>
               ))}

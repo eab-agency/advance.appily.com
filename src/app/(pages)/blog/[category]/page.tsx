@@ -6,7 +6,7 @@ import "@/styles/layouts/templates/BlogPage.scss";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Category, Post } from "../../../../../../payload-types";
+import { Category, Post } from "../../../../../payload-types";
 
 export function CategoryComponent() {
   const pathname = usePathname();
@@ -59,8 +59,7 @@ export function CategoryComponent() {
             id,
           } = post;
 
-          const href = `${window.location.origin}/blog/${slug}`;
-
+          const href = `${window.location.origin}/blog/${slugTitle}/${slug}`;
           return (
             <article key={id} className="post post__latest">
               <Link href={href}>
