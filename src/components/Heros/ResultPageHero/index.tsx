@@ -1,10 +1,10 @@
 "use client";
+import { Button } from "@/components";
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 import { Page } from "../../../../payload-types";
+import { Media } from "../../Media";
 import RichText from "../../RichText";
-import { Button } from "@/components";
-import { Media } from '../../Media'
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -31,16 +31,16 @@ export const ResultPageHero: React.FC<Page["hero"]> = ({
       />
     );
   };
-  const animationUrl = typeof animation === "object" && animation?.url ? animation.url : "";
+  const animationUrl =
+    typeof animation === "object" && animation?.url ? animation.url : "";
   const isJSON = animationUrl.endsWith(".json");
 
   // Fetch JSON data from the URL
   useEffect(() => {
-
     if (animationUrl !== "" && isJSON) {
       fetchJsonData(animationUrl);
     }
-  }, [animation]);
+  }, [animation, animationUrl, isJSON]);
 
   const fetchJsonData = (animationUrl) => {
     fetch(animationUrl)
@@ -71,19 +71,15 @@ export const ResultPageHero: React.FC<Page["hero"]> = ({
           </div>
         </div>
         <figure className="column">
-        {!isJSON ? (
-          <div >
-            {typeof animation === 'object' && (
-                <Media
-                  resource={animation}
-                  priority
-                />
-              
-            )}
+          {!isJSON ? (
+            <div>
+              {typeof animation === "object" && animation !== null && (
+                <Media resource={animation} priority />
+              )}
             </div>
-        )
-         : <Lottie animationData={jsonData} loop={true} />
-        }
+          ) : (
+            <Lottie animationData={jsonData} loop={true} />
+          )}
         </figure>
       </div>
     </section>
