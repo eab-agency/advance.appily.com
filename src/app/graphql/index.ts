@@ -346,7 +346,7 @@ export const fetchAllCategories = async (): Promise<Category[]> => {
 };
 
 export const fetchCategoryIDByTitle = async (
-	categoryTitle?: Category['title'],
+	categorySlug?: Category['slug'],
 ): Promise<Post[]> => {
 	const { data } = await fetch(
 		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?categories`,
@@ -359,13 +359,12 @@ export const fetchCategoryIDByTitle = async (
 			body: JSON.stringify({
 				query: GET_CATEGORY_ID,
 				variables: {
-					categoryTitle,
+					categorySlug,
 				},
 			}),
 		},
 	
 	).then(res => res.json());
-	console.log(data,'data**')
 	return data?.Categories?.docs;
 };
 

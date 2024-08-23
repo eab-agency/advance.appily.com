@@ -163,11 +163,12 @@ export const FIRSTFIVEPOSTS = `
 `;
 
 export const GET_CATEGORY_ID = `
-query Categories ($categoryTitle: [String]) {
-  Categories (where: {title: {in: $categoryTitle}}) {
+query Categories ($categorySlug: [String]) {
+  Categories (where: {slug: {in: $categorySlug}}) {
     docs {
       id
       title
+      slug
     }
   }
 }

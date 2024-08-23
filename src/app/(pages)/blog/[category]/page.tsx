@@ -16,16 +16,16 @@ export function CategoryComponent() {
   const [category, setCategoryData] = useState<Category[]>([]);
 
   const slug = pathname?.split("/").pop();
-  const decodedSlug = slug ? decodeURIComponent(slug) : "";
-  const slugTitle = decodedSlug
-    ? decodedSlug.charAt(0).toUpperCase() + decodedSlug.slice(1)
+  const removeHyphen = slug?.replace(/-/g, " ")
+  const slugTitle = removeHyphen
+    ? removeHyphen.charAt(0).toUpperCase() + removeHyphen.slice(1)
     : "";
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        if (decodedSlug) {
-          const categoryData = await fetchCategoryIDByTitle(decodedSlug);
+        if (slug) {
+          const categoryData = await fetchCategoryIDByTitle(slug);
           setCategoryData(categoryData);
           if (categoryData) {
             const posts = await fetchPostsByCategory(categoryData[0]?.id);
@@ -40,7 +40,7 @@ export function CategoryComponent() {
     };
 
     fetchData();
-  }, [decodedSlug, router]);
+  }, [slug, router]);
 
   return (
     <div className="blog__landing blog-category__landing">

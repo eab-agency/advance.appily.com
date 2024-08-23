@@ -123,7 +123,7 @@ const BlogComponent = () => {
             <div className="category-heading desktop-only">Categories</div>
             {categories.length > 0 &&
               categories.map((cat, index) => (
-                <Link href="/blog/[category]" as={`/blog/${cat?.title}`} key={index}>
+                <Link href="/blog/[category]" as={`/blog/${cat?.slug}`} key={index}>
                   {cat.title}
                 </Link>
               ))}
