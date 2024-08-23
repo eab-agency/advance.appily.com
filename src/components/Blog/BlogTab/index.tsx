@@ -111,8 +111,8 @@ const BlogTabs = ({ tabs }) => {
       <div className="all-posts-container">
         {fetchedPosts?.map(post => {
           const { id, title, richText, createdBy, publishedDate, updatedAt, slug, category } = post;
-          const catTitle = Array.isArray(category) && typeof category[0] === 'object' && 'title' in category[0]
-            ? category[0]?.title ?? ''
+          const catTitle = Array.isArray(category) && typeof category[0] === 'object' && 'slug' in category[0]
+            ? category[0]?.slug ?? ''
             : '';
           return (
             <article key={id} className="post">

@@ -41,6 +41,7 @@ export const POST_DATA = `
         category{
           id
           title
+          slug
         }
         ${META}
 
@@ -86,6 +87,7 @@ export const POSTS = `
         category {
           title
           id
+          slug
         }
       }
     }
@@ -144,6 +146,7 @@ export const POST = `
         category{
           id
           title
+          slug
         }
         ${META}
       }

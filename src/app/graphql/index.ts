@@ -342,6 +342,7 @@ export const fetchAllCategories = async (): Promise<Category[]> => {
 		   }),
 	   },
    ).then(res => res.json());
+	 console.log(data.Categories.docs,'data**')
    return data?.Categories?.docs;
 };
 

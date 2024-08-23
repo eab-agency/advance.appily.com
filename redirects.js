@@ -8,7 +8,7 @@ module.exports = async () => {
       {
         type: 'header',
         key: 'user-agent',
-        value: '(.*Trident.*)', // all ie browsers
+        value: '(.*Trident.*)', // all IE browsers
       },
     ],
     permanent: false,
@@ -16,7 +16,7 @@ module.exports = async () => {
   }
 
   const redirectsRes = await fetch(
-    `${process.env.NEXT_PUBLIC_CMS_URL}/api/redirects?limit=1000&depth=1`,
+    `${process.env.NEXT_PUBLIC_CMS_URL}/api/redirects?limit=1000&depth=1`
   )
 
   const redirectsData = await redirectsRes.json()
@@ -26,7 +26,7 @@ module.exports = async () => {
   let dynamicRedirects = []
 
   if (docs) {
-    docs.forEach(doc => {
+    for (const doc of docs) {
       const { from, to: { type, url, reference } = {} } = doc
 
       let source = from.replace(process.env.NEXT_PUBLIC_APP_URL, '').split('?')[0].toLowerCase()
@@ -44,8 +44,15 @@ module.exports = async () => {
         typeof reference.value === 'object' &&
         reference?.value?._status === 'published'
       ) {
-        // TODO: @Komal, fullPath is only available for pages, not for posts. Can you add the condition to check if the reference is a page or a post and if post then get the correct url?
-        destination = reference.value.fullPath
+        destination = `${process.env.NEXT_PUBLIC_SERVER_URL}`
+
+        if (reference.relationTo === 'pages') {
+          destination = `${reference.value.fullPath}`
+        } else if (reference.relationTo === 'posts') {
+          const categoryData = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/categories/${reference.value.category[0]}?limit=1000&depth=1`)
+          const categoryRes = await categoryData.json();
+          destination = `blog/${categoryRes.slug}/${reference.value.slug}`
+        }
       }
 
       const redirect = {
@@ -53,13 +60,13 @@ module.exports = async () => {
         destination,
         permanent: true,
       }
+      
+      console.log(redirect, 'source**')
 
       if (source.startsWith('/') && destination && source !== destination) {
-        return dynamicRedirects.push(redirect)
+        dynamicRedirects.push(redirect)
       }
-
-      return
-    })
+    }
   }
 
   const redirects = [internetExplorerRedirect, ...dynamicRedirects]

@@ -55,8 +55,8 @@ const BlogComponent = () => {
             createdBy,
             category
           } = post;
-          const catTitle = Array.isArray(category) && typeof category[0] === 'object' && 'title' in category[0]
-            ? category[0]?.title ?? ''
+          const catTitle = Array.isArray(category) && typeof category[0] === 'object' && 'slug' in category[0]
+            ? category[0]?.slug ?? ''
             : '';
           return (
             <article key={index} className="post post__featured">
@@ -93,8 +93,8 @@ const BlogComponent = () => {
               richText,
               category
             } = post;
-            const catTitle = Array.isArray(category) && typeof category[0] === 'object' && 'title' in category[0]
-              ? category[0]?.title ?? ''
+            const catTitle = Array.isArray(category) && typeof category[0] === 'object' && 'slug' in category[0]
+              ? category[0]?.slug ?? ''
               : '';
             return (
               <article key={index} className="post post__latest">
@@ -117,12 +117,12 @@ const BlogComponent = () => {
 
       <div className="blog-filter">
 
-        {categories.length > 0 && (<BlogTab tabs={categories} />)}
+        {categories?.length > 0 && (<BlogTab tabs={categories} />)}
         <div className="categories-tags">
           <div className="category-container">
             <div className="category-heading desktop-only">Categories</div>
-            {categories.length > 0 &&
-              categories.map((cat, index) => (
+            {categories?.length > 0 &&
+              categories?.map((cat, index) => (
                 <Link href="/blog/[category]" as={`/blog/${cat?.slug}`} key={index}>
                   {cat.title}
                 </Link>
