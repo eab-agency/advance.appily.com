@@ -1,5 +1,10 @@
 @use "@/styles/global/tokens";
 
+main {
+  position: relative;
+  z-index: 100;
+}
+
 .blog {
   &__landing {
     display: block;
@@ -25,7 +30,7 @@
     display: flex;
     flex-direction: column;
     gap: clamp(1rem, 5vw, 2rem);
-    margin-bottom: clamp(2rem, 4vw, 4rem);
+    margin-bottom: clamp(3.5rem, 7vw, 7rem);
 
     .posts__secondary {
       display: flex;
@@ -89,6 +94,7 @@
     &:hover {
       text-decoration: none;
       background: var(--c-bg1);
+      color: var(--c-bodyPrimary);
 
       h2 {
         text-decoration: underline;
@@ -120,6 +126,10 @@
       font-size: clamp(2rem, 3vw, 3rem);
     }
 
+    p {
+      font-size: clamp(1rem, 1.2vw, 1.2rem);
+    }
+
     .post__content {
       padding: clamp(1.5rem, 5vw, 3rem);
     }
@@ -149,7 +159,7 @@
     }
 
     h2 {
-      font-size: clamp(1.8rem, 2vw, 2rem);
+      font-size: clamp(1.5rem, 1.8vw, 1.8rem);
     }
 
     p {
@@ -160,6 +170,7 @@
       line-clamp: 5;
       line-height: 1.5;
       max-height: calc(1.5em * 5);
+      font-size: clamp(1rem, 1.2vw, 1.2rem);
     }
   }
 
@@ -244,34 +255,49 @@
     width: 100%;
 
     .blog-filter__tabs {
-      @media (max-width: tokens.$mq-700) {
-        display: block;
-        position: sticky;
-        top: 4.8rem;
-        padding-block: 0.4em;
-        max-height: calc(100vh - 4.8rem);
+      display: block;
+      position: sticky;
+      top: 4.8rem;
+      max-height: calc(100vh - 4.8rem);
 
-        &::before {
-          content: "";
-          display: block;
-          width: 100vw;
-          height: 100%;
-          position: absolute;
-          background: var(--c-bg-posts);
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          z-index: 1;
-        }
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 99vw;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--c-bg1);
       }
+
+      // @media (max-width: tokens.$mq-700) {
+      //   position: relative;
+      //   top: 0;
+      // }
     }
 
     .blog-categories {
       display: flex;
       gap: 0.5em;
-      padding-block: 0.5em;
-      border-bottom: 1px solid var(--c-posts-border);
-      padding-inline: 0;
+      padding-block: 1em 2em;
+      padding-inline: 3em 2em;
+      border-bottom-right-radius: 2em;
+      background: var(--c-bg-posts);
+      box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.2);
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -2px;
+        left: 5px;
+        width: 100%;
+        height: 2px;
+        background: var(--c-formLinkHover);
+      }
 
       .button-tab {
         @extend %buttonTabs;
@@ -279,13 +305,17 @@
     }
 
     .mobile-categories-btn {
-      display: none;
+      display: block;
       @extend %buttonTabs;
       width: 100%;
       position: relative;
       z-index: 10;
       background: var(--c-linkPrimary);
       color: var(--c-invertedText);
+
+      @media (min-width: tokens.$mq-700) {
+        padding-right: 3em;
+      }
 
       &::after {
         content: "▼";
@@ -303,19 +333,20 @@
         }
       }
 
-      @media (max-width: tokens.$mq-700) {
-        display: block;
-        & + .blog-categories {
-          display: none;
+      & + .blog-categories {
+        display: none;
 
-          &.open {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            background: var(--c-bg1);
-            width: 100%;
-          }
+        &.open {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          background: var(--c-bg1);
+          width: 100%;
         }
+      }
+
+      @media (min-width: tokens.$mq-700) {
+        width: auto;
       }
     }
   }
@@ -324,7 +355,7 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
-    padding-block: clamp(2rem, 4vw, 4rem);
+    padding-block: 2rem clamp(2rem, 4vw, 4rem);
 
     .post {
       &__content-head {
@@ -345,7 +376,7 @@
         h2 {
           width: 80%;
           font-size: clamp(1rem, 1.5vw, 1.5rem);
-          margin-bottom: 1em;
+          margin-block: 0 1em;
 
           @media (min-width: tokens.$mq-800) {
             margin-inline: 0 auto;

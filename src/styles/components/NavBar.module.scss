@@ -76,13 +76,15 @@
     flex: 1;
 
     li {
+      margin-bottom: 0;
+
       a {
         display: block;
         padding-inline: clamp(tokens.$padding-m, 2vw, tokens.$padding-l);
         padding-block: clamp(tokens.$padding-s, 3vw, tokens.$padding-m);
         text-decoration: none;
         color: var(--c-bodyPrimary);
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 1vw, 1rem);
         font-weight: 500;
         position: relative;
         text-align: center;

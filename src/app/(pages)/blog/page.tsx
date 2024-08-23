@@ -74,7 +74,7 @@ const BlogComponent = () => {
                 {postFeaturedImage && typeof postFeaturedImage === 'object' && 'url' in postFeaturedImage && (
                   <figure className="post__featured-image">
                     {postFeaturedImage?.url && (
-                      <Image src={postFeaturedImage.url} alt={postFeaturedImage.alt} fill />
+                      <Image src={postFeaturedImage.url} alt={postFeaturedImage.alt} priority fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     )}
                   </figure>)}
               </Link>
@@ -118,7 +118,6 @@ const BlogComponent = () => {
       <div className="blog-filter">
 
         {categories.length > 0 && (<BlogTab tabs={categories} />)}
-
         <div className="categories-tags">
           <div className="category-container">
             <div className="category-heading desktop-only">Categories</div>

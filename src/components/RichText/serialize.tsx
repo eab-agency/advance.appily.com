@@ -17,6 +17,21 @@ function generateTextAlign(node) {
   else return "";
 }
 
+function stripAnchorTags(node) {
+  if (node.type === "link") {
+    return node.children.map(stripAnchorTags).join(""); // Remove the link tag but keep its text content
+  }
+  if (node.type === "text") {
+    return node.text || "";
+  }
+
+  if (node.children && node.children.length > 0) {
+    return node.children.map(stripAnchorTags).join("");
+  }
+
+  return "";
+}
+
 export default function serializeLexicalRichText({
   children,
   customClassNames,
@@ -169,7 +184,9 @@ export default function serializeLexicalRichText({
     for (let i = 0; i < children.length; i++) {
       const node = children[i];
       if (node.type === "paragraph" && node.children && node.children.length > 0) {
-        return [processNode(node, i)];
+
+        const strippedParagraph = stripAnchorTags(node);
+        return strippedParagraph;
       }
     }
   }
