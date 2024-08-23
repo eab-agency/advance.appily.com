@@ -260,17 +260,19 @@ main {
       top: 4.8rem;
       max-height: calc(100vh - 4.8rem);
 
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 99vw;
-        height: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--c-bg1);
+      @media (max-width: tokens.$mq-700) {
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 99vw;
+          height: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          background: var(--c-bg1);
+        }
       }
 
       // @media (max-width: tokens.$mq-700) {
