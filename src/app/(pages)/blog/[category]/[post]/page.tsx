@@ -130,6 +130,7 @@ const PostComponent = async ({ params }: PostComponentProps) => {
               alt={postFeaturedImage.alt}
               width={800}
               height={500}
+              priority
             />
           )}
         </figure>
@@ -152,6 +153,7 @@ const PostComponent = async ({ params }: PostComponentProps) => {
                 alt={createdBy?.userImage?.alt}
                 itemProp="image"
                 fill
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 30vw, 20vw"
               />
             </figure>
             <div className="author-content">
