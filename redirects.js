@@ -44,6 +44,7 @@ module.exports = async () => {
         typeof reference.value === 'object' &&
         reference?.value?._status === 'published'
       ) {
+        // TODO: @Komal, fullPath is only available for pages, not for posts. Can you add the condition to check if the reference is a page or a post and if post then get the correct url?
         destination = reference.value.fullPath
       }
 
