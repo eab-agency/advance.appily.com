@@ -1,6 +1,5 @@
-> **NOTICE!** This repo is currently under active development. Please check back periodically for updates.
-
 ## Getting Started
+
 Edit
 
 ### Payload
