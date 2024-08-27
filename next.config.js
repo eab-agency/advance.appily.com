@@ -50,10 +50,10 @@ const nextConfig = {
   //     },
   //   ];
   // },
-  env: {
-    ACS_PUBLIC_KEY: process.env.ACS_PUBLIC_KEY,
-    ACS_PRIVATE_KEY: process.env.ACS_PRIVATE_KEY,
-  },
+  // env: {
+  //   ACS_PUBLIC_KEY: process.env.ACS_PUBLIC_KEY,
+  //   ACS_PRIVATE_KEY: process.env.ACS_PRIVATE_KEY,
+  // },
   images: {
     formats: ["image/webp"],
     minimumCacheTTL: 31536000,
