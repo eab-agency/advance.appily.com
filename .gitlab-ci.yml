@@ -8,9 +8,6 @@ stages:
   - build
   - deploy
 
-variables:
-  NODE_ENV: $NODE_ENV
-
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
