@@ -162,7 +162,11 @@ export default function serializeLexicalRichText({
           <a
             className={`${classNames.a}`}
             href={escapeHTML(
-              node.fields?.linkType === "custom" ? node?.fields?.url : ""
+              node.fields?.linkType === "custom"
+                ? node?.fields?.url
+                : node.fields?.linkType === "internal" && node?.fields?.doc?.value?.fullPath
+                  ? node?.fields?.doc?.value?.fullPath
+                  : "#"  // Fallback to a default if fullPath is not available
             )}
             target={node.fields?.newTab ? "_blank" : "_self"}
             key={i}
