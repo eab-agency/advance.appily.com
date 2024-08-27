@@ -1,3 +1,8 @@
+image: node
+
+before_script:
+  - yarn install
+
 stages:
   - lint
   - build
@@ -14,15 +19,13 @@ cache:
 
 lint project:
   stage: lint
-  image: node:22.2.0-alpine
   script:
     - echo "Linting Next.js app"
-    - npm install
-    - npm run lint
+    # - yarn install
+    - yarn lint
 
 build project:
   stage: build
-  image: node:22.2.0-alpine
   script:
     - echo "Building Next.js app"
     - echo ["${CI_COMMIT_REF_NAME}"]
@@ -30,8 +33,8 @@ build project:
     # - if [ "${CI_COMMIT_REF_NAME}" != "main" ]; then export NEXT_PUBLIC_ISDEV=true; fi
     # - env | grep -e ACS_PRIVATE_KEY -e ACS_PUBLIC_KEY -e APPILY_API_KEY -e APPILY_API_URL -e PARTNER_EXTERNAL_ID -e PROGRAM_EXTERNAL_ID -e NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID -e NEXT_PUBLIC_ISDEV >> .env.production
     - echo "NEXT_PUBLIC_ISDEV is ${NEXT_PUBLIC_ISDEV}"
-    - npm install --legacy-peer-deps
-    - npm run build
+    # - yarn install
+    - yarn build
   artifacts:
     paths:
       - .next/
