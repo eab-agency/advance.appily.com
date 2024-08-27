@@ -24,6 +24,9 @@ const strictTransportHeader = {
 
 // function to trip https:// from the front of the url
 function stripHttps(url) {
+  if (typeof url !== 'string') {
+    throw new TypeError('Expected a string');
+  }
   return url.replace(/^https?:\/\//, "");
 }
 
