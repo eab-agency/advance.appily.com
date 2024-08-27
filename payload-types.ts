@@ -70,6 +70,7 @@ export interface Post {
  */
 export interface Category {
   id: string;
+  [x: string]: any;
   title?: string | null;
   slug?: string | null;
   updatedAt: string;
