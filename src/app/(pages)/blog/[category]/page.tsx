@@ -27,7 +27,7 @@ export function CategoryComponent() {
         if (slug) {
           const categoryData = await fetchCategoryIDByTitle(slug);
           setCategoryData(categoryData);
-          if (categoryData) {
+          if (categoryData.length > 0) {
             const posts = await fetchPostsByCategory(categoryData[0]?.id);
             setPosts(posts);
           } else {
