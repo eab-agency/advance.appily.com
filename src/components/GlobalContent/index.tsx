@@ -14,7 +14,6 @@ const GlobalContent = ({ blocks }) => {
         return (
           <div key={blockIndex}>
             {block.Block?.map((data, index) => {
-              console.log(data, 'data**')
               return (
                 <Fragment key={index}>
                   {blockRenderers[data.blockType](data)}

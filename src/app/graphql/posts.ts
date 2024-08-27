@@ -166,8 +166,8 @@ export const FIRSTFIVEPOSTS = `
 `;
 
 export const GET_CATEGORY_ID = `
-query Categories ($categorySlug: [String]) {
-  Categories (where: {slug: {in: $categorySlug}}) {
+query Categories ($categorySlug: String) {
+  Categories (where: {slug: {equals: $categorySlug}}) {
     docs {
       id
       title

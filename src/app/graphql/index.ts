@@ -342,7 +342,6 @@ export const fetchAllCategories = async (): Promise<Category[]> => {
 		   }),
 	   },
    ).then(res => res.json());
-	 console.log(data.Categories.docs,'data**')
    return data?.Categories?.docs;
 };
 
@@ -350,7 +349,7 @@ export const fetchCategoryIDByTitle = async (
 	categorySlug?: Category['slug'],
 ): Promise<Post[]> => {
 	const { data } = await fetch(
-		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?categories`,
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?category=${categorySlug}`,
 		{
 			method: "POST",
 			headers: {

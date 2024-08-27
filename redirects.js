@@ -35,36 +35,39 @@ module.exports = async () => {
 
       let destination = '/'
 
+      // Handle custom URLs
       if (type === 'custom' && url) {
         destination = url.replace(process.env.NEXT_PUBLIC_APP_URL, '')
       }
 
+      // Handle references to pages or posts
       if (
         type === 'reference' &&
         typeof reference.value === 'object' &&
         reference?.value?._status === 'published'
       ) {
-        destination = `${process.env.NEXT_PUBLIC_SERVER_URL}`
+        destination = `${process.env.NEXT_PUBLIC_APP_URL}`
 
         if (reference.relationTo === 'pages') {
           destination = `${reference.value.fullPath}`
         } else if (reference.relationTo === 'posts') {
-          const categoryData = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/categories/${reference.value.category[0]}?limit=1000&depth=1`)
-          const categoryRes = await categoryData.json();
-          destination = `blog/${categoryRes.slug}/${reference.value.slug}`
+          // Fetch category slug for the post
+          try {
+            const categoryData = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/categories/${reference.value.category[0]}?depth=1`)
+            const categoryRes = await categoryData.json()
+            destination = `/blog/${categoryRes.slug}/${reference.value.slug}`
+          } catch (error) {
+            console.error('Error fetching category data:', error)
+          }
         }
       }
 
-      const redirect = {
-        source,
-        destination,
-        permanent: true,
-      }
-      
-      console.log(redirect, 'source**')
-
       if (source.startsWith('/') && destination && source !== destination) {
-        dynamicRedirects.push(redirect)
+        dynamicRedirects.push({
+          source,
+          destination,
+          permanent: true,
+        })
       }
     }
   }
