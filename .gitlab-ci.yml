@@ -1,24 +1,28 @@
-image: node:22.2.0-alpine
-
 stages:
+  - lint
   - build
   - deploy
 
 variables:
   NODE_ENV: $NODE_ENV
 
-# variables:
-#   SSH_PRIVATE_KEY: $SSH_PRIVATE_KEY
-#   SERVER: $SERVER
-#   USER: $USER
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - .next/cache/
 
-# before_script:
-#   - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
-#   - eval $(ssh-agent -s)
-#   - echo "$SSH_PRIVATE_KEY" | ssh-add -
+lint project:
+  stage: lint
+  image: node:22.2.0-alpine
+  script:
+    - echo "Linting Next.js app"
+    - npm install
+    - npm run lint
 
-build:
+build project:
   stage: build
+  image: node:22.2.0-alpine
   script:
     - echo "Building Next.js app"
     - echo ["${CI_COMMIT_REF_NAME}"]
