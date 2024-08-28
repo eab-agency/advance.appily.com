@@ -17,6 +17,21 @@ function generateTextAlign(node) {
   else return "";
 }
 
+function stripAnchorTags(node) {
+  if (node.type === "link") {
+    return node.children.map(stripAnchorTags).join(""); // Remove the link tag but keep its text content
+  }
+  if (node.type === "text") {
+    return node.text || "";
+  }
+
+  if (node.children && node.children.length > 0) {
+    return node.children.map(stripAnchorTags).join("");
+  }
+
+  return "";
+}
+
 export default function serializeLexicalRichText({
   children,
   customClassNames,
@@ -147,7 +162,11 @@ export default function serializeLexicalRichText({
           <a
             className={`${classNames.a}`}
             href={escapeHTML(
-              node.fields?.linkType === "custom" ? node?.fields?.url : ""
+              node.fields?.linkType === "custom"
+                ? node?.fields?.url
+                : node.fields?.linkType === "internal" && node?.fields?.doc?.value?.fullPath
+                  ? node?.fields?.doc?.value?.fullPath
+                  : "#"  // Fallback to a default if fullPath is not available
             )}
             target={node.fields?.newTab ? "_blank" : "_self"}
             key={i}
@@ -169,7 +188,9 @@ export default function serializeLexicalRichText({
     for (let i = 0; i < children.length; i++) {
       const node = children[i];
       if (node.type === "paragraph" && node.children && node.children.length > 0) {
-        return [processNode(node, i)];
+
+        const strippedParagraph = stripAnchorTags(node);
+        return strippedParagraph;
       }
     }
   }

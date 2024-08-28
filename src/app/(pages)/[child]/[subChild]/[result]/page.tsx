@@ -59,7 +59,6 @@ const SubCategoryPage = async ({ params, searchParams }: any) => {
 	const layout = pageData?.layout;
 
 	const addIdToTabSections = (blocks) => {
-		console.log(blocks, 'blocks**')
 		let idCounter = 1;
 		return blocks?.map(block => {
 			if (block.blockType === 'tabsection') {

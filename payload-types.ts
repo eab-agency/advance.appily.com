@@ -71,7 +71,9 @@ export interface Post {
  */
 export interface Category {
   id: string;
+  [x: string]: any;
   title?: string | null;
+  slug?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -82,6 +84,7 @@ export interface Category {
 export interface Tag {
   id: string;
   title?: string | null;
+  slug?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -1553,7 +1556,7 @@ export interface Page {
         blockType: 'stickyCTA';
       }
     | {
-        globalBlocks?: (string | Block)[] | null;
+        globalBlocks?: (string | null) | Block;
         id?: string | null;
         blockName?: string | null;
         blockType: 'globalBlock';

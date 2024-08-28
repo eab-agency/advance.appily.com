@@ -13,7 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaChevronLeft } from "react-icons/fa";
-import { Category, Post } from "../../../../../payload-types";
+import { Category, Post } from "../../../../../../payload-types";
 
 const blockRenderers = {
   accordion: (block) => <AccordionSection data={block} />,
@@ -33,19 +33,19 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string; post: string };
 }): Promise<Metadata> {
   const { isEnabled: isDraftMode } = draftMode();
-  const { slug } = params;
-  let post: Post | null = null;
+  const { slug, post } = params;
+  let postData: Post | null = null;
 
   try {
-    post = await fetchPost(slug);
+    postData = await fetchPost(post);
   } catch (error) {
     console.error("Error fetching post data:", error);
   }
-  if (post) {
-    return generateMeta({ doc: post });
+  if (postData) {
+    return generateMeta({ doc: postData });
   } else {
     return {
       title: "Default Title",
@@ -55,7 +55,7 @@ export async function generateMetadata({
 }
 
 interface PostComponentProps {
-  params: { slug: string };
+  params: { slug: string; post: string };
 }
 
 const formatDate = (dateString: string) => {
@@ -68,14 +68,15 @@ const formatDate = (dateString: string) => {
   return new Intl.DateTimeFormat("en-US", options).format(date);
 };
 
-const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
-  let post: Post | null = null;
+const PostComponent = async ({ params }: PostComponentProps) => {
+  const { post } = params;
+  let postData: Post | null = null;
   let relatesPosts: Post[] | null = [];
   try {
-    post = await fetchPost(slug);
-    if (post) {
-      const catID: Category["id"] = post?.category
-        ? (post?.category[0] as Category)?.id
+    postData = await fetchPost(post);
+    if (postData) {
+      const catID: Category["id"] = postData?.category
+        ? (postData?.category[0] as Category)?.id
         : "";
       if (catID) {
         relatesPosts = await fetchPostsByCategory(catID);
@@ -85,7 +86,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     console.error("Error fetching post:", error);
   }
 
-  if (!post) {
+  if (!postData) {
     notFound();
   }
 
@@ -97,8 +98,8 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
     createdBy,
     id,
     richText,
-  } = post;
-  const layout: any[] = [];
+  } = postData;
+  const layout = [];
 
   richText?.root?.children.forEach((obj) => {
     if (obj.type === "block") {
@@ -123,18 +124,21 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
         <h1>{title}</h1>
         <PostAuthorDisplay createdBy={createdBy} />
       </header>
-      {typeof postFeaturedImage !== "string" && postFeaturedImage?.url && (
-        <figure className="post__featured-image">
-          {postFeaturedImage?.url && (
-            <Image
-              src={postFeaturedImage?.url}
-              alt={postFeaturedImage.alt}
-              width={800}
-              height={500}
-            />
-          )}
-        </figure>
-      )}
+      {postFeaturedImage &&
+        typeof postFeaturedImage === "object" &&
+        "url" in postFeaturedImage && (
+          <figure className="post__featured-image">
+            {postFeaturedImage?.url && (
+              <Image
+                src={postFeaturedImage?.url}
+                alt={postFeaturedImage.alt}
+                width={800}
+                height={500}
+                priority
+              />
+            )}
+          </figure>
+        )}
       <div className="post-content">
         <RichText content={richText} />
       </div>
@@ -153,6 +157,7 @@ const PostComponent = async ({ params: { slug = "" } }: PostComponentProps) => {
                 alt={createdBy?.userImage?.alt}
                 itemProp="image"
                 fill
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 30vw, 20vw"
               />
             </figure>
             <div className="author-content">

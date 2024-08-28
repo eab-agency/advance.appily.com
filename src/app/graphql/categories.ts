@@ -4,6 +4,7 @@ export const ALLCATEGORIES =
       docs {
         title
         id
+        slug
       }
     }
   }

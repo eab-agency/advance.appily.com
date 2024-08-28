@@ -35,7 +35,6 @@ const BlogComponent = () => {
     fetchData();
   }, []);
 
-  console.log(posts);
 
   return (
     <div className="blog__landing">
@@ -53,12 +52,15 @@ const BlogComponent = () => {
             publishedDate,
             updatedAt,
             richText,
-            createdBy
+            createdBy,
+            category
           } = post;
-
+          const catTitle = Array.isArray(category) && typeof category[0] === 'object' && 'slug' in category[0]
+            ? category[0]?.slug ?? ''
+            : '';
           return (
             <article key={index} className="post post__featured">
-              <Link href={`blog/${slug}`}>
+              <Link href={`blog/${catTitle}/${slug}`}>
                 <div className="post__content">
                   <PostHeader
                     title={title}
@@ -69,10 +71,10 @@ const BlogComponent = () => {
 
                   <RichText content={richText} extractFirstParagraph={true} />
                 </div>
-                {postFeaturedImage && (
+                {postFeaturedImage && typeof postFeaturedImage === 'object' && 'url' in postFeaturedImage && (
                   <figure className="post__featured-image">
                     {postFeaturedImage?.url && (
-                      <Image src={postFeaturedImage.url} alt={postFeaturedImage.alt} fill />
+                      <Image src={postFeaturedImage.url} alt={postFeaturedImage.alt} priority fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                     )}
                   </figure>)}
               </Link>
@@ -88,12 +90,15 @@ const BlogComponent = () => {
               publishedDate,
               updatedAt,
               createdBy,
-              richText
+              richText,
+              category
             } = post;
-
+            const catTitle = Array.isArray(category) && typeof category[0] === 'object' && 'slug' in category[0]
+              ? category[0]?.slug ?? ''
+              : '';
             return (
               <article key={index} className="post post__latest">
-                <Link href={`blog/${slug}`}>
+                <Link href={`blog/${catTitle}/${slug}`}>
                   <PostHeader
                     title={title}
                     createdBy={createdBy}
@@ -112,14 +117,13 @@ const BlogComponent = () => {
 
       <div className="blog-filter">
 
-        {categories.length > 0 && (<BlogTab tabs={categories} />)}
-
+        {categories?.length > 0 && (<BlogTab tabs={categories} />)}
         <div className="categories-tags">
           <div className="category-container">
-            <div className="category-heading">{"Categories"}</div>
-            {categories.length > 0 &&
-              categories.map((cat, index) => (
-                <Link href="/blog/category/[category]" as={`/blog/category/${cat?.title}`} key={index}>
+            <div className="category-heading desktop-only">Categories</div>
+            {categories?.length > 0 &&
+              categories?.map((cat, index) => (
+                <Link href="/blog/[category]" as={`/blog/${cat?.slug}`} key={index}>
                   {cat.title}
                 </Link>
               ))}

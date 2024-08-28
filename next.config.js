@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const path = require("path");
+const redirects = require("./redirects");
 
 const robotHeader = {
   headers: [
@@ -23,6 +24,9 @@ const strictTransportHeader = {
 
 // function to trip https:// from the front of the url
 function stripHttps(url) {
+  if (typeof url !== 'string') {
+    throw new TypeError('Expected a string');
+  }
   return url.replace(/^https?:\/\//, "");
 }
 
@@ -36,20 +40,20 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-
-  async redirects() {
-    return [
-      {
-        source: "/adult-degree-completion/:slug*",
-        destination: "/degree-completion/:slug*",
-        permanent: true,
-      },
-    ];
-  },
-  env: {
-    ACS_PUBLIC_KEY: process.env.ACS_PUBLIC_KEY,
-    ACS_PRIVATE_KEY: process.env.ACS_PRIVATE_KEY,
-  },
+  redirects,
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/adult-degree-completion/:slug*",
+  //       destination: "/degree-completion/:slug*",
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
+  // env: {
+  //   ACS_PUBLIC_KEY: process.env.ACS_PUBLIC_KEY,
+  //   ACS_PRIVATE_KEY: process.env.ACS_PRIVATE_KEY,
+  // },
   images: {
     formats: ["image/webp"],
     minimumCacheTTL: 31536000,
