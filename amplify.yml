@@ -25,4 +25,8 @@ frontend:
       - node_modules/**/*
   patterns:
     - branch: "main"
-    - tag: "/release.*/"
+    - branch: "qa"
+    - tag: "/release-*/"
+    - tag: "/hotfix-*/"
+    - tag: "/feature-*/"
+    - tag: "/release-qa-*/"
