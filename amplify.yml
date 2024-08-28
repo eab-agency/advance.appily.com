@@ -19,7 +19,10 @@ frontend:
   artifacts:
     baseDirectory: .next
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
       - node_modules/**/*
+  patterns:
+    - branch: "main"
+    - tag: "/release.*/"
