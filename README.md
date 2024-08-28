@@ -6,7 +6,7 @@ Edit
 
 First you'll need an instance of our [Payload CMS](https://github.com/eab-agency/appily-cms). Take note of your server URL, you'll need this in the next step.
 
-### Next.js App Setup
+### Next.js App Setups
 
 First, get your environment setup:
 
