@@ -279,6 +279,7 @@ export const fetchPosts = async (): Promise<Post[]> => {
 			   query: POSTS,
 			   variables: {
 				   publishedOn: currentDate,
+					 status: "published"
 			   },
 		   }),
 	   },
@@ -320,6 +321,7 @@ export const fetchFirstFivePosts = async (): Promise<Post[]> => {
 			   query: FIRSTFIVEPOSTS,
 			   variables: {
 				   publishedOn: currentDate,
+					 status: "published"
 			   },
 		   }),
 	   },
@@ -382,7 +384,8 @@ export const fetchPostsByCategory = async (
 			body: JSON.stringify({
 				query: POSTS_BY_CATEGORY,
 				variables: {
-					category
+					category, 
+					status: 'published'
 				},
 			}),
 		},

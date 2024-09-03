@@ -48,8 +48,8 @@ export const POST_DATA = `
 `
 
 export const POSTS = `
-  query {
-    Posts (limit: 300){
+  query Posts ($status: Post__status_Input) {
+    Posts (limit: 300, where: {_status: {equals: $status}}){
       docs {
         slug
         title
@@ -154,10 +154,9 @@ export const POST = `
   }
 `;
 
-
 export const FIRSTFIVEPOSTS = `
- query  {
-  Posts (limit: 5){
+ query Posts($status: Post__status_Input) {
+  Posts (limit: 5, where: {_status: {equals: $status}}) {
     docs {
       ${POST_DATA}
     }
@@ -178,8 +177,8 @@ query Categories ($categorySlug: String) {
 `;
 
 export const POSTS_BY_CATEGORY = `
-query Posts ($category : JSON) {
-  Posts(where: {category: {equals : $category}}) {
+query Posts ($category : JSON, $status: Post__status_Input) {
+  Posts(where: {category: {equals : $category}, _status: {equals: $status}}) {
     docs {
       ${POST_DATA}
     }
