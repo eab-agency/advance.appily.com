@@ -4,9 +4,9 @@ import { GridProvider } from "@faceless-ui/css-grid";
 import React from "react";
 import { SWRConfig } from "swr";
 
+import { CookiesProvider } from "react-cookie";
 import cssVariables from "../../cssVariables";
 import { ContextProvider } from "../context/context";
-import { CookiesProvider } from "react-cookie";
 
 // import { AuthProvider } from './Auth'
 const fetcher = (...args: [RequestInfo, RequestInit?]) =>
@@ -18,6 +18,7 @@ export const Providers: React.FC<{
   return (
     <SWRConfig value={{ fetcher }}>
       <ContextProvider>
+        {/*@ts-ignore */}
         <CookiesProvider>
           <GridProvider
             breakpoints={{

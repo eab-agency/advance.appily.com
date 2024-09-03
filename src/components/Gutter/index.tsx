@@ -9,7 +9,7 @@ type Props = {
   children: React.ReactNode
   ref?: Ref<HTMLDivElement>
 }
-
+//@ts-ignore
 export const Gutter: React.FC<Props> = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { left = true, right = true, className, children } = props
 

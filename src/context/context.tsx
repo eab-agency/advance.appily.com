@@ -4,7 +4,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import type { CarouselCard } from "../../payload-types";
 
-import { on } from "events";
 import { getMatchedSchool } from "../helpers/getMatchedSchool";
 
 interface UserLocationContextProps {
@@ -96,6 +95,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
       typeof navigator !== "undefined" &&
       "globalPrivacyControl" in navigator
     ) {
+      //@ts-ignore
       setGlobalPrivacyControl(navigator.globalPrivacyControl);
     }
   }, []);
@@ -179,6 +179,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
   );
 
   return (
+    //@ts-ignore
     <UserLocationContext.Provider value={valueUser}>
       {children}
     </UserLocationContext.Provider>
@@ -194,3 +195,4 @@ function useUser() {
 }
 
 export { ContextProvider, useUser };
+

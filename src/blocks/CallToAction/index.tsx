@@ -17,7 +17,7 @@ export const CallToActionBlock: React.FC<
     id?: string
   }
 > = ({ ctaBackgroundColor, links, richText }) => {
-  const oppositeBackgroundColor = ctaBackgroundColor === 'white' ? 'black' : 'white'
+  const oppositeBackgroundColor = ctaBackgroundColor === 'slate_gray_white' ? 'black' : 'white'
 
   return (
     <Gutter>
@@ -32,9 +32,10 @@ export const CallToActionBlock: React.FC<
             </Cell>
             <Cell start={10} cols={3} startL={9} colsL={4} startM={1} colsM={12}>
               <div className={classes.linkGroup}>
-                {(links || []).map(({ link }, i) => {
-                  return <CMSLink key={i} {...link} />
-                })}
+                {links && links.length > 0 && links.map(({ link }, i) => (
+                  // @ts-ignore
+                  <CMSLink key={i} {...link} />
+                ))}
               </div>
             </Cell>
           </Grid>

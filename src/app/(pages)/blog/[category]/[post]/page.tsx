@@ -99,18 +99,20 @@ const PostComponent = async ({ params }: PostComponentProps) => {
     id,
     richText,
   } = postData;
-  const layout = [];
+  // const layout = [];
 
-  richText?.root?.children.forEach((obj) => {
-    if (obj.type === "block") {
-      layout.push(obj?.fields);
-    }
-  });
+  // richText?.root?.children.forEach((obj) => {
+  //   if (obj.type === "block") {
+  //     layout.push(obj?.fields);
+  //   }
+  // });
 
+  // @ts-ignore
   const sizes = createdBy?.userImage?.sizes;
   const userImageURL =
     sizes?.squareSmall?.url !== null
       ? sizes?.squareSmall?.url
+      // @ts-ignore
       : createdBy?.userImage?.url;
 
   return (
@@ -154,6 +156,7 @@ const PostComponent = async ({ params }: PostComponentProps) => {
             <figure className="author-image">
               <Image
                 src={userImageURL}
+                // @ts-ignore
                 alt={createdBy?.userImage?.alt}
                 itemProp="image"
                 fill
@@ -162,10 +165,14 @@ const PostComponent = async ({ params }: PostComponentProps) => {
             </figure>
             <div className="author-content">
               <header>
-                <h3 itemProp="name">{createdBy?.name}</h3>
+                <h3 itemProp="name"
+                // @ts-ignore
+                > {createdBy?.name}</h3>
                 {/* <p itemProp="jobTitle">{createdBy?.roles}</p> */}
               </header>
-              <p itemProp="description">{createdBy?.bio}</p>
+              <p itemProp="description"
+              // @ts-ignore
+              >{createdBy?.bio}</p>
             </div>
           </div>
         </aside>
@@ -184,7 +191,9 @@ const PostComponent = async ({ params }: PostComponentProps) => {
                   if (data.id !== id) {
                     return (
                       <article key={index} className="post post__latest">
-                        <Link href={slug}>
+                        <Link
+                          // @ts-ignore
+                          href={slug}>
                           <PostHeader
                             title={title}
                             createdBy={createdBy}

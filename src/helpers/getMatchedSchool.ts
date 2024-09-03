@@ -6,7 +6,7 @@ import {
 } from "../app/graphql";
 
 // import CarouselCard type from payload-types.ts
-import type { CarouselCard, Media, Partner } from "../../payload-types";
+import type { CarouselCard } from "../../payload-types";
 
 type statesToMatchAgainst = {
 	[key: string]: string[];
@@ -85,6 +85,7 @@ export const getMatchedSchool = async (
 	const leadTypeId = leadTypes?.find(item => item.title === vertical)?.id;
 
 	// fetch cards from CMS
+	//@ts-ignore
 	const cards: CarouselCard[] = await fetchCarouselCardsByStateAndLeadType(
 		arrayOfStates || ["VA", "KY", "MD", "NC", "TN", "WV"],
 		leadTypeId,

@@ -16,6 +16,7 @@ export const LandingPageHero: React.FC<Page['hero']> = ({ richText, media, links
         <div className="hero-content">
           <RichText content={richText} />
           {(links || []).map(({ link }, i) =>
+            //@ts-ignore
             <CMSLink
               key={i}
               {...link} />

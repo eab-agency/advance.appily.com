@@ -2,7 +2,6 @@ import React from 'react'
 
 import { Page } from '../../../payload-types'
 import { Gutter } from '../../components/Gutter'
-import { Media } from '../../components/Media'
 import RichText from '../../components/RichText'
 
 import classes from './index.module.scss'
@@ -14,14 +13,14 @@ export const MediaBlock: React.FC<
     id?: string
   }
 > = props => {
-  const { media, position = 'default' } = props
+  const { media } = props
 
   let caption
   if (media && typeof media === 'object') caption = media.caption
 
   return (
     <div className={classes.mediaBlock}>
-      {position === 'fullscreen' && (
+      {/* {position === 'fullscreen' && (
         <div>
           <Media resource={media} />
         </div>
@@ -32,7 +31,7 @@ export const MediaBlock: React.FC<
             <Media resource={media} />
           </div>
         </Gutter>
-      )}
+      )} */}
       {caption && (
         <Gutter className={classes.caption}>
           <RichText content={caption} />
