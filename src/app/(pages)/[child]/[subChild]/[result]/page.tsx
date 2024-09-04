@@ -1,5 +1,8 @@
 import { fetchPage, fetchPages } from '@/app/graphql';
 import { Blocks } from '@/components/Block';
+import { generateMeta } from "@/seo/generateMeta";
+import { Metadata } from "next";
+import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
 import React from 'react';
 import { Page } from '../../../../../../payload-types';
@@ -19,27 +22,27 @@ export async function generateStaticParams() {
 	return paramsVal;
 }
 
-// export async function generateMetadata({ params }: { params: { child: string; subChild: string, result: string } }): Promise<Metadata> {
-// 	const { isEnabled: isDraftMode } = draftMode();
-// 	const { child, subChild, result } = params;
+export async function generateMetadata({ params }: { params: { child: string; subChild: string, result: string } }): Promise<Metadata> {
+	const { isEnabled: isDraftMode } = draftMode();
+	const { child, subChild, result } = params;
 
-// 	const slug = [child, subChild, result].filter(Boolean);
-// 	let page: Page | null = null;
+	const slug = [child, subChild, result].filter(Boolean);
+	let page: Page | null = null;
 
-// 	try {
-// 		page = await fetchPage(slug);
-// 	} catch (error) {
-// 		console.error('Error fetching page data:', error);
-// 	}
-// 	if (page) {
-// 		return generateMeta({ doc: page });
-// 	} else {
-// 		return {
-// 			title: 'Default Title',
-// 			description: 'Default Description',
-// 		};
-// 	}
-// }
+	try {
+		page = await fetchPage(slug);
+	} catch (error) {
+		console.error('Error fetching page data:', error);
+	}
+	if (page) {
+		return generateMeta({ doc: page });
+	} else {
+		return {
+			title: 'Default Title',
+			description: 'Default Description',
+		};
+	}
+}
 
 
 const SubCategoryPage = async ({ params, searchParams }: any) => {
