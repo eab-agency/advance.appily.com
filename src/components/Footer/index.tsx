@@ -1,11 +1,11 @@
 'use client'
-import { useState, useEffect } from "react";
+import { fetchFooter } from "@/app/graphql";
 import { Button } from "@/components";
 import styles from "@/styles/components/PageFooter.module.scss";
 import Image from "next/image";
-import { CMSLink } from "../Link";
+import { useEffect, useState } from "react";
 import { Footer } from "../../../payload-types";
-import { fetchFooter } from "@/app/graphql";
+import { CMSLink } from "../Link";
 
 const FooterComponent = () => {
   const [footer, setFooter] = useState<Footer | null>(null);
@@ -52,14 +52,15 @@ const FooterComponent = () => {
           </div>
           <nav className={styles.legalLinks}>
             <ul className="footer-col-1">
-              {navItems.map(({ link }, index) => (
+              {navItems && navItems?.length > 0 && (navItems.map(({ link }, index) => (
                 <li key={index}>
+                  {/* @ts-ignore */}
                   <CMSLink
                     {...link}
                     appearance={'default'}
                   />
                 </li>
-              ))}
+              )))}
               <li>
                 <Button
                   type="button"

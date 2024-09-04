@@ -67,7 +67,9 @@ export function formatFormDataForAppilyPartnerAPI(
 			if (!formData[key]) {
 				continue;
 			}
+			//@ts-ignore
 			const answer = formData[key].split(" | ")[1];
+			//@ts-ignore
 			let question = formData[key].split(" | ")[0];
 			if (question.length > 85) {
 				question = question.substring(0, 85);

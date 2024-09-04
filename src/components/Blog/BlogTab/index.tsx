@@ -32,6 +32,7 @@ const BlogTabs = ({ tabs }) => {
       setCurrentViewportWidth(window.innerWidth);
 
       if (filterTabsRef.current) {
+        //@ts-ignore
         const filterTabsRect = filterTabsRef.current.getBoundingClientRect();
         const filterAbsoluteTop = filterTabsRect.top + window.scrollY;
         const remInPixels = parseFloat(
@@ -97,9 +98,8 @@ const BlogTabs = ({ tabs }) => {
         </button>
         <div className={`blog-categories ${categoriesOpen ? "open" : ""}`}>
           <button
-            className={`button-tab ${
-              activeTab === ALL_POST ? "button-tab__active" : ""
-            }`}
+            className={`button-tab ${activeTab === ALL_POST ? "button-tab__active" : ""
+              }`}
             onClick={() => handleClick(ALL_POST)}
           >
             {ALL_POST}
@@ -107,9 +107,8 @@ const BlogTabs = ({ tabs }) => {
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              className={`button-tab ${
-                activeTab === tab.title ? "button-tab__active" : ""
-              }`}
+              className={`button-tab ${activeTab === tab.title ? "button-tab__active" : ""
+                }`}
               onClick={() => handleClick(tab)}
             >
               {tab.title}
@@ -131,8 +130,8 @@ const BlogTabs = ({ tabs }) => {
           } = post;
           const catTitle =
             Array.isArray(category) &&
-            typeof category[0] === "object" &&
-            "slug" in category[0]
+              typeof category[0] === "object" &&
+              "slug" in category[0]
               ? category[0]?.slug ?? ""
               : "";
           return (

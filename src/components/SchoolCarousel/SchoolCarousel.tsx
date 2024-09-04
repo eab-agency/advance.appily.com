@@ -52,25 +52,31 @@ const SchoolCarousel = ({ handleClick, className }) => {
           <div className="item-content" key={card.id}>
             <div className="item-head">
               <Image
+                //@ts-ignore
                 src={card.image?.url}
                 width="400"
                 height="300"
+                //@ts-ignore
                 alt={card.image?.alt}
                 className="school-thumbnail"
               />
               <figure className="school-logo">
                 <Image
+                  //@ts-ignore
                   src={card?.partner?.logo?.url}
                   width="100"
                   height="100"
+                  //@ts-ignore
                   alt={card?.partner?.logo?.alt || ''}
                 />
               </figure>
             </div>
             <div className="item-text">
               <div className="item-head">
+                {/*@ts-ignore */}
                 <h3 key={card?.partner?.title}>{card?.partner?.title}</h3>
                 <p>
+                  {/*@ts-ignore */}
                   {card?.partner?.contact?.city}, {card?.partner?.contact?.state}
                 </p>
               </div>
