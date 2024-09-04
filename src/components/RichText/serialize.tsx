@@ -32,11 +32,20 @@ function stripAnchorTags(node) {
   return "";
 }
 
+interface ParentNode {
+  listType?: string; // Optional because not all nodes may have this property
+}
+
 export default function serializeLexicalRichText({
   children,
-  customClassNames,
+  customClassNames = {},
   extractFirstParagraph = false,
   parentNode = {},
+}: {
+  children: any;
+  customClassNames?: any;
+  extractFirstParagraph?: boolean;
+  parentNode?: ParentNode; // Use the interface for typing
 }) {
 
   const processNode = (node, i) => {

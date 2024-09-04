@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-param-reassign */
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function useScript(src, containerRef, multiple) {
     // Keep track of script status ("idle", "loading", "ready", "error")
@@ -24,7 +24,9 @@ function useScript(src, containerRef, multiple) {
             if (!script) {
                 // Create script
                 script = document.createElement('script');
+                //@ts-ignore
                 script.src = src;
+                //@ts-ignore
                 script.async = true;
                 script.setAttribute('data-status', 'loading');
                 // Add script to document body or container element
@@ -36,6 +38,7 @@ function useScript(src, containerRef, multiple) {
                 // Store status in attribute on script
                 // This can be read by other instances of this hook
                 const setAttributeFromEvent = (event) => {
+                //@ts-ignore
                     script.setAttribute(
                         'data-status',
                         event.type === 'load' ? 'ready' : 'error'
@@ -45,6 +48,7 @@ function useScript(src, containerRef, multiple) {
                 script.addEventListener('error', setAttributeFromEvent);
             } else {
                 // Grab existing script status from attribute and set to state.
+                //@ts-ignore
                 setStatus(script.getAttribute('data-status'));
             }
             // Script event handler to update status in state
