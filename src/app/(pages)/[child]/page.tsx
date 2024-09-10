@@ -21,6 +21,32 @@ export async function generateStaticParams() {
 }
 
 
+export const getStaticProps = async ({ params: { slug } }) => {
+  console.log(slug, 'slug**')
+  let props = {};
+
+  const pageReq = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/pages?where[slug][equals]=${slug}&depth=0&limit=300`);
+  const pageData = await pageReq.json();
+
+  if (pageReq.ok) {
+    const { docs } = pageData;
+    const [doc] = docs;
+
+    props = {
+      ...doc,
+      collection: 'pages',
+      collectionLabels: {
+        singular: 'page',
+        plural: 'pages',
+      }
+    };
+  }
+
+  console.log(props, 'props**')
+  return props;
+}
+
+
 export async function generateMetadata({ params }: { params: { child: string; subChild: string } }): Promise<Metadata> {
   const { isEnabled: isDraftMode } = draftMode();
   const { child, subChild } = params;
@@ -49,6 +75,7 @@ export async function generateMetadata({ params }: { params: { child: string; su
 
 const CategoryPage = async ({ params, searchParams }: any) => {
   const { child, subChild } = params;
+
   let pageData: Page | null = null;
   let slug: string[] = [];
 
@@ -65,6 +92,9 @@ const CategoryPage = async ({ params, searchParams }: any) => {
 
   if (!pageData) {
     return notFound()
+  }
+  if (pageData) {
+
   }
   // const {hero , layout} = pageData;
   // return (

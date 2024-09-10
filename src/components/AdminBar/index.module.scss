@@ -1,0 +1,50 @@
+.adminBar {
+  z-index: 10;
+  width: 100%;
+  padding: 20px 0;
+  font-size: 19px;
+  display: block;
+  background-color: red;
+}
+
+:global([data-theme='dark']) {
+  .adminBar {
+    background-color: var(--theme-elevation-0);
+  }
+}
+
+.payloadAdminBar {
+  color: red !important;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.controls {
+  &>*:not(:last-child) {
+    margin-right: 10px !important;
+  }
+}
+
+.user {
+  margin-right: 10px !important;
+}
+
+.logo {
+  margin-right: 10px !important;
+}
+
+.blockContainer {
+  position: relative;
+}
+
+.hr {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--light-gray);
+  height: 2px;
+}

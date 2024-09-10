@@ -61,7 +61,7 @@ module.exports = async () => {
           }
         }
       }
-
+      console.log(source,destination,'destination**')
       if (source.startsWith('/') && destination && source !== destination) {
         dynamicRedirects.push({
           source,
@@ -73,6 +73,5 @@ module.exports = async () => {
   }
 
   const redirects = [internetExplorerRedirect, ...dynamicRedirects]
-
   return redirects
 }
