@@ -2,7 +2,7 @@ import React, { ReactNode, createContext, useContext, useState } from 'react';
 
 // Define the type for the context value
 interface IdContextType {
-  id: string | null;
+  docId: string | null;
   setId: (id: string | null) => void;
 }
 
@@ -25,10 +25,10 @@ interface IdProviderProps {
 
 // Provider component to wrap the app
 export const IdProvider: React.FC<IdProviderProps> = ({ children }) => {
-  const [id, setId] = useState<string | null>(null);
+  const [docId, setId] = useState<string | null>(null);
 
   return (
-    <IdContext.Provider value={{ id, setId }}>
+    <IdContext.Provider value={{ docId, setId }}>
       {children}
     </IdContext.Provider>
   );

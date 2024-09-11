@@ -10,7 +10,7 @@ export const PageClient: React.FC<{
   page: Page
 }> = ({ page: initialPage }) => {
   const serverURL = process.env.NEXT_PUBLIC_CMS_URL || '';
-  const { id, setId } = useId(); // Get and set the ID from the context
+  const { docId, setId } = useId(); // Get and set the ID from the context
 
   const { data } = useLivePreview<Page>({
     initialData: initialPage,

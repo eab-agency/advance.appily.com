@@ -1,12 +1,10 @@
 import { fetchPage, fetchPages } from '@/app/graphql';
-import { Blocks } from '@/components/Block';
 import { generateMeta } from "@/seo/generateMeta";
 import { Metadata } from "next";
 import { draftMode } from 'next/headers';
 import { notFound } from 'next/navigation';
-import React from 'react';
 import { Page } from '../../../../../../payload-types';
-import { Hero } from '../../../../../blocks/HeroBlock';
+import { PageClient } from './page.client';
 
 export async function generateStaticParams() {
 	const pages = await fetchPages();
@@ -49,6 +47,7 @@ const SubCategoryPage = async ({ params, searchParams }: any) => {
 	const { child, subChild, result } = params;
 	let pageData: Page | null = null
 	const slug = [child, subChild, result].filter(Boolean);
+
 	try {
 		pageData = await fetchPage(slug);
 	} catch (error) {
@@ -58,29 +57,13 @@ const SubCategoryPage = async ({ params, searchParams }: any) => {
 	if (!pageData) {
 		return notFound()
 	}
-	const hero = pageData?.hero;
-	const layout = pageData?.layout;
 
-	const addIdToTabSections = (blocks) => {
-		let idCounter = 1;
-		return blocks?.map(block => {
-			if (block.blockType === 'tabsection') {
-				return {
-					...block,
-					id: `${idCounter++}`
-				}
-			}
-			return block;
-		});
-	};
-
-	const updatedBlocks = addIdToTabSections(layout);
 	return (
-		<React.Fragment>
-			<Hero {...hero} />
-			<Blocks blocks={updatedBlocks} />
-		</React.Fragment>
-
+		// <React.Fragment>
+		// 	<Hero {...hero} />
+		// 	<Blocks blocks={updatedBlocks} />
+		// </React.Fragment>
+		<PageClient page={pageData} />
 	);
 };
 

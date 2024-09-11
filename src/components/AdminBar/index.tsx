@@ -2,7 +2,7 @@
 
 import type { PayloadAdminBarProps } from 'payload-admin-bar';
 
-import { useSelectedLayoutSegments } from 'next/navigation';
+import { usePathname, useSelectedLayoutSegments } from 'next/navigation';
 import { PayloadAdminBar, PayloadMeUser } from 'payload-admin-bar';
 import React from 'react';
 import { useId } from '../../context/idContext';
@@ -31,9 +31,13 @@ export const AdminBar: React.FC<{
 }> = (props) => {
   const { adminBarProps, user, setUser } = props || {}
   const segments = useSelectedLayoutSegments()
-  const collection = segments?.[1] === 'posts' ? 'posts' : 'pages'
-  const { id } = useId();
-  console.log(id, 'id**')
+  let collection = segments?.[1] === 'posts' ? 'posts' : 'pages'
+  const { docId } = useId();
+
+  const pathname = usePathname();
+  if (pathname?.includes('/blog/')) {
+    collection = 'posts'
+  }
   return (
     <div className={classes.adminBar}>
       <PayloadAdminBar
@@ -41,11 +45,12 @@ export const AdminBar: React.FC<{
 
         cmsURL={process.env.NEXT_PUBLIC_CMS_URL}
         collection={collection}
-        // collectionLabels={{
-        //   plural: collectionLabels[collection]?.plural || 'Pages',
-        //   singular: collectionLabels[collection]?.singular || 'Page',
-        // }}
-        id={id}
+        collectionLabels={{
+          plural: collectionLabels[collection]?.plural || 'Pages',
+          singular: collectionLabels[collection]?.singular || 'Page',
+        }}
+        // @ts-ignore
+        id={docId}
         logo={<Title />}
       />
     </div>
