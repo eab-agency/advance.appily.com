@@ -73,6 +73,7 @@ module.exports = async () => {
   }
 
   const redirects = [internetExplorerRedirect, ...dynamicRedirects]
-
+  console.log('*********************************redirectpage************************************************')
+  console.log(redirects)
   return redirects
 }
