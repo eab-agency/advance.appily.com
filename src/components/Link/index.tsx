@@ -103,7 +103,7 @@ export const CMSLink: React.FC<CMSLinkType> = ({
       <a href={finalHref} {...linkProps}>
         <div className="btn-content">
           <span className="btn-label">
-            {finalHref} {label}
+            {label}
             {children}
           </span>
         </div>
