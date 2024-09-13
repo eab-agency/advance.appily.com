@@ -9,7 +9,7 @@ import { useId } from '../../context/idContext';
 
 
 // import { useAuth } from '../../_providers/Auth'
-import classes from './index.module.scss';
+import styles from './index.module.scss';
 
 const Title: React.FC = () => <span>Dashboard</span>
 
@@ -39,9 +39,11 @@ export const AdminBar: React.FC<{
     collection = 'posts'
   }
   return (
-    <div className={classes.adminBar}>
+    <>
       <PayloadAdminBar
         {...adminBarProps}
+
+        className={styles.adminBar}
 
         cmsURL={process.env.NEXT_PUBLIC_CMS_URL}
         collection={collection}
@@ -52,7 +54,19 @@ export const AdminBar: React.FC<{
         // @ts-ignore
         id={docId}
         logo={<Title />}
+        unstyled={true}
+        classNames={
+          {
+            logo: styles.logo,
+            user: styles.user,
+            edit: styles.edit,
+            create: styles.create,
+            preview: styles.preview,
+            logout: styles.logout,
+            controls: styles.controls,
+          }
+        }
       />
-    </div>
+    </>
   )
 }

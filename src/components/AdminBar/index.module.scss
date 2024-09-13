@@ -1,50 +1,98 @@
-.adminBar {
-  z-index: 10;
-  width: 100%;
-  padding: 20px 0;
-  font-size: 19px;
-  display: block;
-  background-color: red;
-}
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-:global([data-theme='dark']) {
-  .adminBar {
-    background-color: var(--theme-elevation-0);
+@mixin buttons {
+  display: flex !important;
+  padding-block: 0.5em;
+  padding-inline: 0.9em;
+  transition: all 0.2s ease-in;
+  height: initial !important;
+  margin: initial !important;
+  text-decoration: none;
+  color: white;
+  font-family: "Helvetica Neue", sans-serif;
+
+  &:hover {
+    background: rgba(white, 0.1);
+    color: white;
+    text-decoration: none;
+
+    &::before {
+      color: #007ee5;
+      color: var(--c-linkPrimary);
+    }
+
+    span {
+      text-decoration: underline;
+    }
   }
 }
 
-.payloadAdminBar {
-  color: red !important;
+// ==============================
+
+.adminBar {
+  display: flex;
+  background: #1d1d1d;
+  position: sticky;
+  top: 0;
+  z-index: 100000;
+
+  a {
+    display: flex;
+    width: fit-content;
+    gap: 0.2em;
+    align-items: center;
+
+    &::before {
+      font-family: "Material Icons";
+      font-size: 1.2em;
+    }
+  }
+
+  & > a:not(.button) {
+    @include buttons;
+  }
+
+  & + header {
+    top: 2.8rem;
+  }
 }
 
-.show {
-  visibility: visible;
-  opacity: 1;
-}
-
-.controls {
-  &>*:not(:last-child) {
-    margin-right: 10px !important;
+.logo {
+  &::before {
+    content: "home";
   }
 }
 
 .user {
-  margin-right: 10px !important;
+  &::before {
+    content: "person";
+  }
 }
 
-.logo {
-  margin-right: 10px !important;
+.edit {
+  &::before {
+    content: "edit";
+  }
 }
 
-.blockContainer {
-  position: relative;
+.create {
+  &::before {
+    content: "add";
+  }
 }
 
-.hr {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--light-gray);
-  height: 2px;
+.logout {
+  &::before {
+    content: "logout";
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  margin-inline: auto 0;
+
+  a:not(.button) {
+    @include buttons;
+  }
 }
