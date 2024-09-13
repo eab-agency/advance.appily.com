@@ -6,6 +6,8 @@ height
 alt
 caption
 url
+focalX
+focalY
 sizes{
   squareSmall{
     width
