@@ -2,9 +2,9 @@
 import { Blocks } from '@/components/Block';
 import { useLivePreview } from '@payloadcms/live-preview-react';
 import React, { useEffect } from 'react';
-import { Page } from '../../../../../payload-types';
-import { Hero } from '../../../../blocks/HeroBlock';
-import { useId } from '../../../../context/idContext';
+import { Page } from '../../../../../../payload-types';
+import { Hero } from '../../../../../blocks/HeroBlock';
+import { useId } from '../../../../../context/idContext';
 
 export const PageClient: React.FC<{
   page: Page
@@ -24,10 +24,24 @@ export const PageClient: React.FC<{
     }
   }, [setId]);
 
+  const addIdToTabSections = (blocks) => {
+    let idCounter = 1;
+    return blocks?.map(block => {
+      if (block.blockType === 'tabsection') {
+        return {
+          ...block,
+          id: `${idCounter++}`
+        }
+      }
+      return block;
+    });
+  };
+
+  const updatedBlocks = addIdToTabSections(data?.layout);
   return (
     <React.Fragment>
       <Hero {...data?.hero} />
-      <Blocks blocks={data?.layout} />
+      <Blocks blocks={updatedBlocks} />
     </React.Fragment>
   );
 };

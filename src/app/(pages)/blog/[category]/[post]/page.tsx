@@ -72,8 +72,10 @@ const PostComponent = async ({ params }: PostComponentProps) => {
   const { post } = params;
   let postData: Post | null = null;
   let relatesPosts: Post[] | null = [];
+
   try {
     postData = await fetchPost(post);
+
     if (postData) {
       const catID: Category["id"] = postData?.category
         ? (postData?.category[0] as Category)?.id
@@ -122,7 +124,7 @@ const PostComponent = async ({ params }: PostComponentProps) => {
         Back to Blog
       </Link>
       <header className="post-header">
-        <PostDateDisplay publishedDate={publishedDate} updatedAt={updatedAt} />
+        <PostDateDisplay publishedDate={publishedDate} updatedAt={updatedAt} id={id} />
         <h1>{title}</h1>
         <PostAuthorDisplay createdBy={createdBy} />
       </header>
@@ -199,6 +201,7 @@ const PostComponent = async ({ params }: PostComponentProps) => {
                             createdBy={createdBy}
                             publishedDate={publishedDate}
                             updatedAt={updatedAt}
+                            id={id}
                           />
                         </Link>
                       </article>

@@ -5,6 +5,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import type { CarouselCard } from "../../payload-types";
 
 import { getMatchedSchool } from "../helpers/getMatchedSchool";
+import { IdProvider } from "./idContext";
 
 interface UserLocationContextProps {
   matchedSchools: CarouselCard[];
@@ -179,10 +180,12 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    //@ts-ignore
-    <UserLocationContext.Provider value={valueUser}>
-      {children}
-    </UserLocationContext.Provider>
+    <IdProvider>
+      {/*@ts-ignore */}
+      <UserLocationContext.Provider value={valueUser}>
+        {children}
+      </UserLocationContext.Provider>
+    </IdProvider>
   );
 }
 

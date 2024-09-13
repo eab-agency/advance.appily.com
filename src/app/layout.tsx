@@ -12,6 +12,7 @@ import "@/styles/styles.scss";
 import FooterComponent from "../components/Footer";
 import HeaderComponent from "../components/Header";
 
+import { AdminBar } from "@/components/AdminBar";
 import isDevMode from "@/helpers/isDevMode";
 
 export default async function RootLayout({
@@ -43,6 +44,7 @@ export default async function RootLayout({
       {!isDevMode() && <GoogleTagManager gtmId={GTM_ID} />}
       <body>
         <Providers>
+          <AdminBar />
           <HeaderComponent />
           {/* <LocationInDevMode /> */}
           <main className="layout-wrapper">{children}</main>
