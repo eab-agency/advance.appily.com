@@ -58,16 +58,6 @@ interface PostComponentProps {
   params: { slug: string; post: string };
 }
 
-const formatDate = (dateString: string) => {
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat("en-US", options).format(date);
-};
-
 const PostComponent = async ({ params }: PostComponentProps) => {
   const { post } = params;
   let postData: Post | null = null;
@@ -139,6 +129,11 @@ const PostComponent = async ({ params }: PostComponentProps) => {
                 width={800}
                 height={500}
                 priority
+                style={
+                  {
+                    objectPosition: `${postFeaturedImage.focalX}% ${postFeaturedImage.focalY}%`,
+                  }
+                }
               />
             )}
           </figure>
