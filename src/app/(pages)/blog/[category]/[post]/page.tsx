@@ -180,10 +180,10 @@ const PostComponent = async ({ params }: PostComponentProps) => {
           <>
             <h2>Related Posts</h2>
             <div className="cards-container">
-              {relatesPosts?.length > 0 &&
-                relatesPosts.map((data, index) => {
-                  const { slug, title, publishedDate, updatedAt, createdBy } =
-                    data;
+              {relatesPosts?.filter((data) => data.id !== id)
+                .slice(0, 3)
+                .map((data, index) => {
+                  const { slug, title, publishedDate, updatedAt, createdBy } = data;
 
                   if (data.id !== id) {
                     return (
