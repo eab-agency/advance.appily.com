@@ -2,18 +2,23 @@ const permalinks = require('./src/utilities/formatPermalink')
 const { formatPermalink } = permalinks
 
 module.exports = async () => {
-  const internetExplorerRedirect = {
-    source: '/:path((?!ie-incompatible.html$).*)', // all pages except the incompatibility page
-    has: [
-      {
-        type: 'header',
-        key: 'user-agent',
-        value: '(.*Trident.*)', // all IE browsers
-      },
-    ],
-    permanent: false,
-    destination: '/ie-incompatible.html',
+  const hardCodedRedirects = [
+  {
+    source: "/careers/healthcare/quiz/start",
+    destination: "/careers/healthcare/quiz/",
+    permanent: true,
+  },
+  {
+    source: "/careers/education/quiz/start",
+    destination: "/careers/education/quiz/",
+    permanent: true,
+  },
+  {
+    source: "/careers/business/quiz/start",
+    destination: "/careers/business/quiz/",
+    permanent: true,
   }
+]
 
   const redirectsRes = await fetch(
     `${process.env.NEXT_PUBLIC_CMS_URL}/api/redirects?limit=1000&depth=1`
@@ -61,7 +66,6 @@ module.exports = async () => {
           }
         }
       }
-      console.log(source,destination,'destination**')
       if (source.startsWith('/') && destination && source !== destination) {
         dynamicRedirects.push({
           source,
@@ -72,6 +76,6 @@ module.exports = async () => {
     }
   }
 
-  const redirects = [internetExplorerRedirect, ...dynamicRedirects]
+  const redirects = [...hardCodedRedirects, ...dynamicRedirects]
   return redirects
 }
