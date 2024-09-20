@@ -58,22 +58,14 @@ interface PostComponentProps {
   params: { slug: string; post: string };
 }
 
-const formatDate = (dateString: string) => {
-  const options: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat("en-US", options).format(date);
-};
-
 const PostComponent = async ({ params }: PostComponentProps) => {
   const { post } = params;
   let postData: Post | null = null;
   let relatesPosts: Post[] | null = [];
+
   try {
     postData = await fetchPost(post);
+
     if (postData) {
       const catID: Category["id"] = postData?.category
         ? (postData?.category[0] as Category)?.id
@@ -122,7 +114,7 @@ const PostComponent = async ({ params }: PostComponentProps) => {
         Back to Blog
       </Link>
       <header className="post-header">
-        <PostDateDisplay publishedDate={publishedDate} updatedAt={updatedAt} />
+        <PostDateDisplay publishedDate={publishedDate} updatedAt={updatedAt} id={id} />
         <h1>{title}</h1>
         <PostAuthorDisplay createdBy={createdBy} />
       </header>
@@ -137,6 +129,11 @@ const PostComponent = async ({ params }: PostComponentProps) => {
                 width={800}
                 height={500}
                 priority
+                style={
+                  {
+                    objectPosition: `${postFeaturedImage.focalX}% ${postFeaturedImage.focalY}%`,
+                  }
+                }
               />
             )}
           </figure>
@@ -183,10 +180,10 @@ const PostComponent = async ({ params }: PostComponentProps) => {
           <>
             <h2>Related Posts</h2>
             <div className="cards-container">
-              {relatesPosts?.length > 0 &&
-                relatesPosts.map((data, index) => {
-                  const { slug, title, publishedDate, updatedAt, createdBy } =
-                    data;
+              {relatesPosts?.filter((data) => data.id !== id)
+                .slice(0, 3)
+                .map((data, index) => {
+                  const { slug, title, publishedDate, updatedAt, createdBy } = data;
 
                   if (data.id !== id) {
                     return (
@@ -199,6 +196,7 @@ const PostComponent = async ({ params }: PostComponentProps) => {
                             createdBy={createdBy}
                             publishedDate={publishedDate}
                             updatedAt={updatedAt}
+                            id={id}
                           />
                         </Link>
                       </article>

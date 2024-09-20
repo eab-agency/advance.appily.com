@@ -1,8 +1,7 @@
 import { CMSLink } from '@/components/Link';
-import { Media } from '@/components/Media'
+import { Media } from '@/components/Media';
 import RichText from "@/components/RichText";
 import "@/styles/components/modules/ImageCard.scss";
-import React from "react";
 
 interface ImageCardProps {
   imageCardData: ImageCardData;
@@ -20,6 +19,8 @@ interface ImageCardData {
     alt: string;
     updatedAt: string;
     createdAt: string;
+    focalX: number;
+    focalY: number;
   };
   links?: {
     link: {
