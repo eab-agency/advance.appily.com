@@ -2,23 +2,6 @@ const permalinks = require('./src/utilities/formatPermalink')
 const { formatPermalink } = permalinks
 
 module.exports = async () => {
-  const hardCodedRedirects = [
-  {
-    source: "/careers/healthcare/quiz/start",
-    destination: "/careers/healthcare/quiz/",
-    permanent: true,
-  },
-  {
-    source: "/careers/education/quiz/start",
-    destination: "/careers/education/quiz/",
-    permanent: true,
-  },
-  {
-    source: "/careers/business/quiz/start",
-    destination: "/careers/business/quiz/",
-    permanent: true,
-  }
-]
 
   const redirectsRes = await fetch(
     `${process.env.NEXT_PUBLIC_CMS_URL}/api/redirects?limit=1000&depth=1`
@@ -76,6 +59,6 @@ module.exports = async () => {
     }
   }
 
-  const redirects = [...hardCodedRedirects, ...dynamicRedirects]
+  const redirects = [...dynamicRedirects]
   return redirects
 }
