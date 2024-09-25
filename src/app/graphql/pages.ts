@@ -21,6 +21,8 @@ export const PAGES = `
     Pages(limit: 300)  {
       docs {
         slug
+        fullPath
+        updatedAt
         breadcrumbs {
           url
           label

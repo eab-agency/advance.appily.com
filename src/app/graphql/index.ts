@@ -196,7 +196,7 @@ export const fetchGlobals = async (): Promise<{
 
 
 export const fetchPages = async (): Promise<
-	Array<{ breadcrumbs: Page["breadcrumbs"]; slug: string }>
+	Array<{ breadcrumbs: Page["breadcrumbs"]; slug: string, fullPath: string, updatedAt: string }>
 > => {
 	const { data, errors } = await fetch(
 		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?pages`,
