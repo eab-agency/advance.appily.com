@@ -38,6 +38,9 @@ export const AdminBar: React.FC<{
   if (pathname?.includes('/blog/')) {
     collection = 'posts'
   }
+  console.log(process.env.NEXT_PUBLIC_CMS_URL, 'NEXT_PUBLIC_CMS_URL');
+  console.log(docId, 'docId***');
+  console.log(collection, 'collection***')
   return (
     <>
       <PayloadAdminBar
