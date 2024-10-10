@@ -62,6 +62,7 @@ const BlogComponent = () => {
             <article key={index} className="post post__featured">
               <Link href={`blog/${catTitle}/${slug}`}>
                 <div className="post__content">
+                  {/*@ts-ignore */}
                   <PostHeader
                     title={title}
                     createdBy={createdBy}
@@ -99,6 +100,7 @@ const BlogComponent = () => {
             return (
               <article key={index} className="post post__latest">
                 <Link href={`blog/${catTitle}/${slug}`}>
+                  {/*@ts-ignore */}
                   <PostHeader
                     title={title}
                     createdBy={createdBy}
