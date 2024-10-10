@@ -203,6 +203,7 @@ const BlogComponent = async () => {
             <article key={index} className="post post__featured">
               <Link href={`blog/${catTitle}/${slug}`}>
                 <div className="post__content">
+                  {/*@ts-ignore */}
                   <PostHeader
                     title={title}
                     createdBy={createdBy}
@@ -231,6 +232,7 @@ const BlogComponent = async () => {
             return (
               <article key={index} className="post post__latest">
                 <Link href={`blog/${catTitle}/${slug}`}>
+                  {/*@ts-ignore */}
                   <PostHeader
                     title={title}
                     createdBy={createdBy}
