@@ -24,7 +24,7 @@ const StickyCta: React.FC<stickyProps> = ({ trackedElement, ctaLabel }) => {
   if (currentPath?.includes("business")) {
     quizRoute = "/careers/business/quiz";
   } else if (currentPath?.includes("degree-completion")) {
-    quizRoute = "/degree-completion/build-plan-quiz";
+    quizRoute = "https://my.appily.com/register/adult/buildplanquiz1";
   } else if (currentPath?.includes("education")) {
     quizRoute = "/careers/education/quiz";
   } else {
@@ -54,8 +54,9 @@ const StickyCta: React.FC<stickyProps> = ({ trackedElement, ctaLabel }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [posY, trackedElement]);
 
-  const stickyCtaClass = `${styles.stickyCta} ${trackedElement && scrolled ? styles.scrolled : ""
-    }`;
+  const stickyCtaClass = `${styles.stickyCta} ${
+    trackedElement && scrolled ? styles.scrolled : ""
+  }`;
 
   const handleClick = () => {
     if (trackedElement) {
