@@ -1,40 +1,32 @@
-import { useEffect, useRef } from 'react';
-
-type EventListener = (event: Event) => void;
+import { useEffect, useRef } from "react";
 
 function useEventListener<K extends keyof WindowEventMap>(
   eventName: K,
-  handler: EventListener,
-  element: HTMLElement | Window = window
+  handler: (event: WindowEventMap[K]) => void,
+  element: HTMLElement | Window = typeof window !== 'undefined' ? window : null // Only set window if available
 ) {
   // Store the handler in a ref so it persists across renders
   const savedHandler = useRef<EventListener>();
 
+  // Update ref.current to the latest handler
   useEffect(() => {
-    // Update the ref value if the handler changes
     savedHandler.current = handler;
   }, [handler]);
 
   useEffect(() => {
-    // Make sure element supports addEventListener
-    const targetElement: HTMLElement | Window | null = element;
-    if (!targetElement || !targetElement.addEventListener) return;
+    // Make sure the element is available
+    if (!element) return;
 
-    // Create an event listener that calls the handler stored in ref
-    const eventListener: EventListener = (event) => {
-      if (savedHandler.current) {
-        savedHandler.current(event);
-      }
-    };
+    const eventListener: EventListener = (event) => savedHandler.current?.(event);
 
     // Add event listener
-    targetElement.addEventListener(eventName, eventListener);
+    element.addEventListener(eventName, eventListener);
 
-    // Remove event listener on cleanup
+    // Cleanup function to remove the event listener
     return () => {
-      targetElement.removeEventListener(eventName, eventListener);
+      element.removeEventListener(eventName, eventListener);
     };
-  }, [eventName, element]); // Re-run if eventName or element changes
+  }, [eventName, element]);
 }
 
 export default useEventListener;
