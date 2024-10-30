@@ -15,9 +15,8 @@ export default async function CategoryComponent({ params }) {
 
   let posts: Post[] = [];
   let categoryData;
-
   try {
-    categoryData = await fetchCategoryIDByTitle(formattedSlug);
+    categoryData = await fetchCategoryIDByTitle(category);
     if (categoryData?.length) {
       posts = await fetchPostsByCategory(categoryData[0].id);
     } else {
