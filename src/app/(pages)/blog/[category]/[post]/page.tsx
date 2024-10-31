@@ -69,7 +69,8 @@ const PostComponent = async ({ params }: PostComponentProps) => {
     notFound();
   }
 
-  const { meta, publishedDate, updatedAt, createdBy } = postData;
+  const { meta, publishedDate, updatedAt, createdBy, postFeaturedImage } =
+    postData;
 
   const jsonLd = {
     "@context": "https://schema.org",
