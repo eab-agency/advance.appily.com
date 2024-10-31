@@ -42,7 +42,7 @@ export default async function CategoryComponent({ params }) {
             richText,
             id,
           } = post;
-          const href = `/blog/${slugTitle}/${slug}`;
+          const href = `/blog/${category}/${slug}`;
           return (
             <article key={id} className="post post__latest">
               <Link href={href}>
