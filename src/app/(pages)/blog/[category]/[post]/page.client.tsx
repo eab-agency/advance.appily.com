@@ -1,21 +1,22 @@
-'use client'
+"use client";
 import { PostAuthorDisplay } from "@/components/Blog/PostAuthorDisplay";
 import PostDateDisplay from "@/components/Blog/PostDateDisplay";
 import { PostHeader } from "@/components/Blog/PostHeader";
 import RichText from "@/components/RichText";
 import "@/styles/layouts/templates/PostPage.scss";
-import { useLivePreview } from '@payloadcms/live-preview-react';
+import { useLivePreview } from "@payloadcms/live-preview-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { Post } from "../../../../../../payload-types";
-import { useId } from '../../../../../context/idContext';
+import { useId } from "../../../../../context/idContext";
 
 export const PageClient: React.FC<{
-  post: Post, relatedPostData: Post[]
+  post: Post;
+  relatedPostData: Post[];
 }> = ({ post: initialPage, relatedPostData }) => {
-  const serverURL = process.env.NEXT_PUBLIC_CMS_URL || '';
+  const serverURL = process.env.NEXT_PUBLIC_CMS_URL || "";
   const { docId, setId } = useId(); // Get and set the ID from the context
 
   const { data } = useLivePreview<Post>({
@@ -29,7 +30,6 @@ export const PageClient: React.FC<{
       setId(data?.id); // Store the ID in context
     }
   }, [setId]);
-
 
   const {
     postFeaturedImage,
@@ -45,18 +45,21 @@ export const PageClient: React.FC<{
   const userImageURL =
     sizes?.squareSmall?.url !== null
       ? sizes?.squareSmall?.url
-      // @ts-ignore
-      : createdBy?.userImage?.url;
+      : // @ts-ignore
+        createdBy?.userImage?.url;
 
   return (
-
     <div className="post-content__wrapper">
       <Link href="/blog" className="back-btn">
         <FaChevronLeft />
         Back to Blog
       </Link>
       <header className="post-header">
-        <PostDateDisplay publishedDate={publishedDate} updatedAt={updatedAt} id={id} />
+        <PostDateDisplay
+          publishedDate={publishedDate}
+          updatedAt={updatedAt}
+          id={id}
+        />
         <h1>{title}</h1>
         <PostAuthorDisplay createdBy={createdBy} />
       </header>
@@ -71,11 +74,9 @@ export const PageClient: React.FC<{
                 width={800}
                 height={500}
                 priority
-                style={
-                  {
-                    objectPosition: `${postFeaturedImage.focalX}% ${postFeaturedImage.focalY}%`,
-                  }
-                }
+                style={{
+                  objectPosition: `${postFeaturedImage.focalX}% ${postFeaturedImage.focalY}%`,
+                }}
               />
             )}
           </figure>
@@ -104,16 +105,15 @@ export const PageClient: React.FC<{
             </figure>
             <div className="author-content">
               <header>
-                <h3 itemProp="name"
-                // @ts-ignore
-                > {createdBy?.name}</h3>
-                <p itemProp="jobTitle"
-                // @ts-ignore 
-                >{createdBy?.roles}</p>
+                <h3 itemProp="name">
+                  {/* @ts-ignore */}
+                  {createdBy?.name}
+                </h3>
               </header>
-              <p itemProp="description"
-              // @ts-ignore
-              >{createdBy?.bio}</p>
+              <p itemProp="description">
+                {/* @ts-ignore */}
+                {createdBy?.bio}
+              </p>
             </div>
           </div>
         </aside>
@@ -124,17 +124,20 @@ export const PageClient: React.FC<{
           <>
             <h2>Related Posts</h2>
             <div className="cards-container">
-              {relatedPostData?.filter((data) => data.id !== id)
+              {relatedPostData
+                ?.filter((data) => data.id !== id)
                 .slice(0, 3)
                 .map((data, index) => {
-                  const { slug, title, publishedDate, updatedAt, createdBy } = data;
+                  const { slug, title, publishedDate, updatedAt, createdBy } =
+                    data;
 
                   if (data.id !== id) {
                     return (
                       <article key={index} className="post post__latest">
                         <Link
                           // @ts-ignore
-                          href={slug}>
+                          href={slug}
+                        >
                           <PostHeader
                             title={title}
                             createdBy={createdBy}
