@@ -37,6 +37,7 @@
 		"react-tabs": "^6.0.2",
 		"reoverlay": "^1.0.3",
 		"sass": "^1.69.3",
+		"schema-dts": "^1.1.2",
 		"sharp": "^0.33.4",
 		"slate": "^0.84.0",
 		"stripe": "^11.6.0",
