@@ -5,8 +5,7 @@ import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { Category, Post } from "../../../../../../payload-types";
-import { PageClient } from './page.client';
-
+import { PageClient } from "./page.client";
 
 export async function generateStaticParams() {
   try {
@@ -70,19 +69,36 @@ const PostComponent = async ({ params }: PostComponentProps) => {
     notFound();
   }
 
-  // const layout = [];
+  const { meta, publishedDate, updatedAt, createdBy } = postData;
 
-  // richText?.root?.children.forEach((obj) => {
-  //   if (obj.type === "block") {
-  //     layout.push(obj?.fields);
-  //   }
-  // });
-
-
-
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://advance.appily.com/blog/${params.category}/${params.post}`,
+    },
+    headline: meta?.title || postData?.title,
+    description: meta?.description,
+    // @ts-ignore
+    image: meta?.image?.url || postFeaturedImage?.url || "",
+    author: {
+      "@type": "Person",
+      // @ts-ignore
+      name: createdBy?.name,
+    },
+    datePublished: publishedDate,
+    dateModified: updatedAt,
+  };
 
   return (
-    <PageClient post={postData} relatedPostData={relatesPosts} />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <PageClient post={postData} relatedPostData={relatesPosts} />
+    </>
   );
 };
 
