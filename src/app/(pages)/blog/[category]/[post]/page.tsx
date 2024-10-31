@@ -78,10 +78,10 @@ const PostComponent = async ({ params }: PostComponentProps) => {
       "@type": "WebPage",
       "@id": `https://advance.appily.com/blog/${params.category}/${params.post}`,
     },
-    headline: meta?.title,
+    headline: meta?.title || postData?.title,
     description: meta?.description,
     // @ts-ignore
-    image: meta?.image?.url,
+    image: meta?.image?.url || postFeaturedImage?.url || "",
     author: {
       "@type": "Person",
       // @ts-ignore
