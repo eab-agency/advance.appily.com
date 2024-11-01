@@ -2,21 +2,26 @@
 
 export default $config({
   app(input) {
-    let domain;
+    let domainName;
     if (input?.stage === "production") {
-      domain = "advance.appily.com";
+      domainName = "advance.appily.com";
     } else if (input?.stage === "qa") {
-      domain = "qa.advance.appily.com";
+      domainName = "qa.advance.appily.com";
     } else {
-      domain = `${input.stage}.qa.advance.appily.com`;
+      domainName = `${input.stage}.qa.advance.appily.com`;
     }
 
+    console.log("🚀 ~ app ~ input?.stage:", input?.stage)
 
     return {
       name: "advance-appily-com",
       removal: input?.stage === "production" ? "retain" : "remove",
       home: "aws",
-      domain,
+      domain: {
+        name: domainName,
+        dns: false, // Set to true if you want SST to manage DNS records
+        cert: "arn:aws:acm:us-east-1:112233445566:certificate/3a958790-8878-4cdc-a396-06d95064cf63"
+      }
     };
   },
   async run() {
