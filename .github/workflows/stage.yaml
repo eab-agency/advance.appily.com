@@ -46,7 +46,7 @@ jobs:
 
       - name: Set SST Config Secret
         run: |
-          npx sst secrets set COMMIT_SHA '${{ github.sha }}' --stage staging
+          npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage staging
 
       - name: Deploy to AWS with SST
         run: pnpm run deploy:staging
