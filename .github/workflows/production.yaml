@@ -33,11 +33,6 @@ jobs:
           key: cache-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]xs') }}
           restore-keys: |
             cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
-      - name: Install AWS CLI
-        run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install
 
       - name: Verify AWS CLI Installation
         run: aws --version
