@@ -90,7 +90,7 @@ ol {
   }
 }
 
-a:not(.button) {
+:where(a:not(.button)) {
   text-decoration: underline;
   color: var(--c-linkPrimary);
 
