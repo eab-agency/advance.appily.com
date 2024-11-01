@@ -1,5 +1,4 @@
 "use client";
-"use client";
 
 import type { PayloadAdminBarProps } from "payload-admin-bar";
 
