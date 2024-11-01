@@ -13,7 +13,7 @@ export default $config({
 
     return {
       name: "advance-appily-com",
-      removal: input?.stage === "production" ? "retain" : "remove",
+      // removal: input?.stage === "production" ? "retain" : "remove",
       home: "aws",
       domain: {
         name: domainName,
