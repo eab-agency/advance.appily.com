@@ -1,16 +1,21 @@
-name: One-Off Deploy via SST to AWS
+name: QA/Staging Deploy via SST to AWS
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "src/**"
+      - "*.json"
+      - "*.yaml"
+      - "*.json"
+      - "*.config.js"
+      - "*.config.ts"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
-      NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
-      NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
-      NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -41,11 +46,17 @@ jobs:
 
       - name: Set SST Config Secret
         run: |
-          npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage production
+          npx sst secrets set COMMIT_SHA '${{ github.sha }}' --stage staging
 
       - name: Deploy to AWS with SST
-        run: pnpm run deploy
+        run: pnpm run deploy:staging
 
       - name: Clean Up AWS Profile
         run: |
           rm -rf ~/.aws
+
+      - name: Create Pull Request to Production
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr create --base production --head main --title "Auto- ${{ github.event.head_commit.message }}" --body "Auto PR from Stage Release"

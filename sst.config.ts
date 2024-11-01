@@ -5,13 +5,11 @@ export default $config({
     let domainName;
     if (input?.stage === "production") {
       domainName = "advance.appily.com";
-    } else if (input?.stage === "qa") {
+    } else if (input?.stage === "staging") {
       domainName = "qa.advance.appily.com";
     } else {
       domainName = `${input.stage}.qa.advance.appily.com`;
     }
-
-    console.log("🚀 ~ app ~ input?.stage:", input?.stage)
 
     return {
       name: "advance-appily-com",

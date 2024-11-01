@@ -11,8 +11,8 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "deploy": "sst deploy --stage production",
-    "deploy:qa": "sst deploy --stage qa"
-
+    "deploy:staging": "sst deploy --stage staging",
+    "deploy:preview": "sst deploy --stage preview"
   },
   "dependencies": {
     "@apollo/client": "^3.7.0",
