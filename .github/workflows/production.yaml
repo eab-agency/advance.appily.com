@@ -34,9 +34,6 @@ jobs:
           restore-keys: |
             cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - name: Verify AWS CLI Installation
-        run: aws --version
-
       - name: Install Pnpm
         run: npm install -g pnpm
 
@@ -49,9 +46,6 @@ jobs:
           echo "[default]" > ~/.aws/credentials
           echo "aws_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID_PROD }}" >> ~/.aws/credentials
           echo "aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY_PROD }}" >> ~/.aws/credentials
-
-      - name: Verify AWS Credentials
-        run: aws sts get-caller-identity
 
       - name: Set SST Config Secret
         run: |
