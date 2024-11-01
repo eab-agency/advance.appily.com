@@ -7,7 +7,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      AWS_REGION: us-west-1
       NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
       NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
       NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
@@ -45,7 +44,7 @@ jobs:
           npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage production
 
       - name: Deploy to AWS with SST
-        run: pnpm run deploy
+        run: pnpm run deploy:qa
 
       - name: Clean Up AWS Profile
         run: |

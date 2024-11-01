@@ -10,7 +10,9 @@
     "lint": "next lint",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "deploy": "sst deploy --stage production"
+    "deploy": "sst deploy --stage production",
+    "deploy:qa": "sst deploy --stage qa"
+
   },
   "dependencies": {
     "@apollo/client": "^3.7.0",
