@@ -1,5 +1,5 @@
+'use client'
 import { fetchPosts, fetchPostsByCategory } from "@/app/graphql";
-import useEventListener from "@/lib/useEventListener";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Post } from "../../../../payload-types";
@@ -13,23 +13,35 @@ const BlogTabs = ({ tabs }) => {
   const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const filterTabsRef = useRef(null);
-  const [currentViewportWidth, setCurrentViewportWidth] = useState(
-    window.innerWidth
-  );
+  const [currentViewportWidth, setCurrentViewportWidth] = useState(0); // Initialize with a default value
 
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  // This useEffect initializes the viewport width correctly on the client-side
+  useEffect(() => {
+    const updateViewportWidth = () => {
+      setCurrentViewportWidth(window.innerWidth);
+    };
+
+    // Set initial viewport width
+    updateViewportWidth();
+
+    // Add event listener to update on resize
+    window.addEventListener('resize', updateViewportWidth);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('resize', updateViewportWidth);
+    };
+  }, []);
+
+  const [viewportWidth, setViewportWidth] = useState(0); // Initialize with a default value
 
   useEffect(() => {
     fetchAllPosts();
   }, []);
 
-  useEventListener("resize", () => {
-    setViewportWidth(window.innerWidth);
-  });
-
   useEffect(() => {
     if (currentViewportWidth !== viewportWidth) {
-      setCurrentViewportWidth(window.innerWidth);
+      setViewportWidth(currentViewportWidth);
 
       if (filterTabsRef.current) {
         //@ts-ignore
@@ -80,11 +92,12 @@ const BlogTabs = ({ tabs }) => {
       setActiveTab(tab.title);
     }
 
-    if (currentViewportWidth < 768)
+    if (currentViewportWidth < 768) {
       window.scrollTo({
         top: scrollPosition,
         behavior: "smooth",
       });
+    }
   };
 
   return (
@@ -98,17 +111,15 @@ const BlogTabs = ({ tabs }) => {
         </button>
         <div className={`blog-categories ${categoriesOpen ? "open" : ""}`}>
           <button
-            className={`button-tab ${activeTab === ALL_POST ? "button-tab__active" : ""
-              }`}
+            className={`button-tab ${activeTab === ALL_POST ? "button-tab__active" : ""}`}
             onClick={() => handleClick(ALL_POST)}
           >
             {ALL_POST}
           </button>
-          {tabs.map((tab) => (
+          {tabs?.map((tab) => (
             <button
               key={tab.id}
-              className={`button-tab ${activeTab === tab.title ? "button-tab__active" : ""
-                }`}
+              className={`button-tab ${activeTab === tab.title ? "button-tab__active" : ""}`}
               onClick={() => handleClick(tab)}
             >
               {tab.title}
@@ -121,7 +132,6 @@ const BlogTabs = ({ tabs }) => {
           const {
             id,
             title,
-            richText,
             createdBy,
             publishedDate,
             updatedAt,
