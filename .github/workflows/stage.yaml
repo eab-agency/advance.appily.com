@@ -65,4 +65,6 @@ jobs:
         if: success()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr create --base production --head main --title "Auto- ${{ github.event.head_commit.message }}" --body "Auto PR from Stage Release"
+        run: |
+          COMMIT_MSG="${{ github.event.head_commit.message || 'No commit message' }}"
+          gh pr create --base production --head main --title "Auto- $COMMIT_MSG" --body "Auto PR from Stage Release"
