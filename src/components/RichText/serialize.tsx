@@ -199,7 +199,7 @@ export default function serializeLexicalRichText({
       if (node.type === "paragraph" && node.children && node.children.length > 0) {
 
         const strippedParagraph = stripAnchorTags(node);
-        return strippedParagraph;
+        return <p className="text-base">{strippedParagraph}</p>;
       }
     }
   }
