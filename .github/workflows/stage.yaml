@@ -9,24 +9,22 @@ on:
       - "src/**"
       - "*.json"
       - "*.yaml"
-      - "*.json"
       - "*.config.js"
       - "*.config.ts"
 
 jobs:
-  deploy:
+  setup:
     runs-on: ubuntu-latest
-    environment: Staging
-    env:
-      NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
-      NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
-      NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
-      NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 20
+
+  dependencies:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
       - name: Cache Next.js Build
         uses: actions/cache@v3
         with:
@@ -39,30 +37,48 @@ jobs:
             cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
       - name: Install Pnpm
         run: npm install -g pnpm
-
-      - name: Install projects deps
+      - name: Install project dependencies
         run: pnpm install
 
-      - name: Install AWS Creds
+  aws-config:
+    runs-on: ubuntu-latest
+    needs: dependencies
+    steps:
+      - name: Configure AWS Credentials
         run: |
           mkdir -p ~/.aws
           echo "[default]" > ~/.aws/credentials
           echo "aws_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" >> ~/.aws/credentials
           echo "aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/credentials
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: aws-config
+    environment: Staging
+    env:
+      NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL }}
+      NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL }}
+      NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID }}
+      NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID }}
+    steps:
       - name: Set SST Config Secret
-        run: |
-          npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage staging
-
+        run: npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage staging
       - name: Deploy to AWS with SST
         run: pnpm run deploy:staging
 
+  cleanup:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
       - name: Clean Up AWS Profile
-        run: |
-          rm -rf ~/.aws
+        run: rm -rf ~/.aws
 
+  create-pr:
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: success()
+    steps:
       - name: Create Pull Request to Production
-        if: success()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr create --base production --head main --title "Auto- ${{ github.event.head_commit.message }}" --body "Auto PR from Stage Release"
