@@ -2,6 +2,11 @@ name: QA/Staging Deploy via SST to AWS
 
 on:
   workflow_dispatch:
+    inputs:
+      reason:
+        description: "Reason for deployment"
+        required: false
+        default: "No reason provided"
   push:
     branches:
       - "main"
@@ -66,5 +71,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          COMMIT_MSG="${{ github.event.head_commit.message || 'No commit message' }}"
-          gh pr create --base production --head main --title "Auto- $COMMIT_MSG" --body "Auto PR from Stage Release"
+          REASON="${{ github.event.inputs.reason || 'No reason provided' }}"
+          ACTOR="${{ github.actor }}"
+          DATE=$(date)
+          gh pr create --base production --head main --title "Auto- Deploy by $ACTOR on $DATE" --body "Reason: $REASON"
