@@ -18,6 +18,9 @@ export const githubRole = new aws.iam.Role("GithubRole", {
         },
         Action: "sts:AssumeRoleWithWebIdentity",
         Condition: {
+          StringEquals: github.url.apply((url) => ({
+            [`${url}:aud`]: "sts.amazonaws.com",
+          })),
           StringLike: github.url.apply((url) => ({
             [`${url}:sub`]: "repo:b00y0h/*",
           })),

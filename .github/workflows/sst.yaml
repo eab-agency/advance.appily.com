@@ -46,7 +46,7 @@ jobs:
         name: Configure Dev AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::539958552223:role/OIDC-github-role
+          role-to-assume: arn:aws:iam::539958552223:role/advance-appily-com-staging-github
           aws-region: us-east-1
 
       - if: github.ref == 'refs/heads/production'
