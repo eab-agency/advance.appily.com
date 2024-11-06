@@ -55,9 +55,9 @@ jobs:
           role-to-assume: arn:aws:iam::539958552223:role/OIDC-github-role
           aws-region: us-east-1
 
-          - name: Install projects deps
-          run: pnpm install
-  
+      - name: Install projects deps
+        run: pnpm install
+
       - name: Set SST Config Secret
         run: |
           npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage production
