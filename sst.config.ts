@@ -6,7 +6,7 @@ export default $config({
 
     return {
       name: "advance-appily-com",
-      // removal: input?.stage === "production" ? "retain" : "remove",
+      removal: input?.stage === "production" ? "retain" : "remove",
       home: "aws",
       providers: {
         aws: {
@@ -17,11 +17,6 @@ export default $config({
             : "appily-dev",
         }
       }
-      // domain: {
-      //   name: domain,
-      //   dns: false, // Set to true if you want SST to manage DNS records
-      //   cert: "arn:aws:acm:us-east-1:112233445566:certificate/3a958790-8878-4cdc-a396-06d95064cf63"
-      // }
     };
   },
   async run() {
