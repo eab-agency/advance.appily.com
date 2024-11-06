@@ -40,24 +40,19 @@ jobs:
       - name: Install projects deps
         run: pnpm install
 
-      - name: Install AWS Creds
-        run: |
-          mkdir -p ~/.aws
-          echo "[default]" > ~/.aws/credentials
-          echo "aws_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID }}" >> ~/.aws/credentials
-          echo "aws_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> ~/.aws/credentials
+      - if: github.ref == 'refs/heads/dev'
+        name: Configure Dev AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::539958552223:role/advance-appily-com-dev-github
+          aws-region: us-east-1
 
-      - name: Set SST Config Secret
-        run: |
-          npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage production --print-logs
+      - if: github.ref == 'refs/heads/production'
+        name: Configure Production AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::631709423707:role/advance-appily-com-production-github
+          aws-region: us-east-1
 
       - name: Deploy to AWS with SST
-        run: pnpm run deploy
-
-      - name: Clean Up AWS Profile
-        run: |
-          rm -rf ~/.aws
-
-      # - name: Remove Staging Deployment
-      #   run: |
-      #     npx sst remove --stage staging
+        run: npx sst deploy --stage=${GITHUB_REF_NAME}
