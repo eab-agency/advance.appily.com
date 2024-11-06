@@ -49,7 +49,7 @@ jobs:
           role-to-assume: arn:aws:iam::539958552223:role/advance-appily-com-dev-github
           aws-region: us-east-1
 
-      - if: github.ref == 'refs/heads/production'
+      - if: github.ref == 'refs/heads/main'
         name: Configure Production AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
