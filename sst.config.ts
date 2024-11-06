@@ -10,7 +10,11 @@ export default $config({
       home: "aws",
       providers: {
         aws: {
-          profile: input?.stage === "staging" ? "appily-staging" : "default"
+          profile: process.env.GITHUB_ACTIONS
+          ? undefined
+          : input.stage === "production"
+            ? "appily-production"
+            : "appily-dev",
         }
       }
       // domain: {
