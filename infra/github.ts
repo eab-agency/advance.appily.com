@@ -1,3 +1,5 @@
+
+
 export const github = new aws.iam.OpenIdConnectProvider("GithubProvider", {
   url: "https://token.actions.githubusercontent.com",
   clientIdLists: ["sts.amazonaws.com"],
@@ -17,7 +19,7 @@ export const githubRole = new aws.iam.Role("GithubRole", {
         Action: "sts:AssumeRoleWithWebIdentity",
         Condition: {
           StringLike: github.url.apply((url) => ({
-            [`${url}:sub`]: "repo:${GITHUB_ORG}/${GITHUB_REPO}:*",
+            [`${url}:sub`]: "repo:b00y0h:*",
           })),
         },
       },
