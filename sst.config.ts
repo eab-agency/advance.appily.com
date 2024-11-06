@@ -1,28 +1,32 @@
 /// <reference path="./.sst/platform/config.d.ts" />
+import { readdirSync } from "fs";
 
 export default $config({
   app(input) {
-    let domainName;
-    if (input?.stage === "production") {
-      domainName = "advance.appily.com";
-    } else if (input?.stage === "staging") {
-      domainName = "qa.advance.appily.com";
-    } else {
-      domainName = `${input.stage}.qa.advance.appily.com`;
-    }
 
     return {
       name: "advance-appily-com",
       // removal: input?.stage === "production" ? "retain" : "remove",
       home: "aws",
-      domain: {
-        name: domainName,
-        dns: false, // Set to true if you want SST to manage DNS records
-        cert: "arn:aws:acm:us-east-1:112233445566:certificate/3a958790-8878-4cdc-a396-06d95064cf63"
+      providers: {
+        aws: {
+          profile: input?.stage === "staging" ? "appily-staging" : "default"
+        }
       }
+      // domain: {
+      //   name: domain,
+      //   dns: false, // Set to true if you want SST to manage DNS records
+      //   cert: "arn:aws:acm:us-east-1:112233445566:certificate/3a958790-8878-4cdc-a396-06d95064cf63"
+      // }
     };
   },
   async run() {
-    new sst.aws.Nextjs("AppilyAdvanceSite");
+    const outputs = {};
+    for (const value of readdirSync("./infra/")) {
+      const result = await import("./infra/" + value);
+      if (result.outputs) Object.assign(outputs, result.outputs);
+    }
+    // new sst.aws.Nextjs("AppilyAdvanceSite");
+    return outputs;
   },
 });
