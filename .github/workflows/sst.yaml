@@ -60,4 +60,4 @@ jobs:
         run: pnpm install
 
       - name: Deploy to AWS with SST
-        run: sst deploy --stage=${GITHUB_REF_NAME}
+        run: npx sst deploy --stage=${GITHUB_REF_NAME}
