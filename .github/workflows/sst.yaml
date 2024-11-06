@@ -64,4 +64,4 @@ jobs:
       #     npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage production
 
       - name: Deploy to AWS with SST
-        run: npx sst deploy --stage=${GITHUB_REF_NAME}
+        run: pnpm run deploy --stage=${GITHUB_REF_NAME}
