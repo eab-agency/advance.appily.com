@@ -56,6 +56,9 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets. AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
           aws-region: us-east-1
 
+      - name: Fetch the caller identity
+        run: aws sts get-caller-identity
+
       - name: Install projects deps
         run: pnpm install
 
