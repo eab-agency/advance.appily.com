@@ -13,8 +13,8 @@ export default $config({
           profile: process.env.GITHUB_ACTIONS
           ? undefined
           : input.stage === "production"
-            ? "appily-production"
-            : "appily-dev",
+            ? "reversetype-production"
+            : "reversetype-production",
         }
       }
     };
@@ -25,7 +25,6 @@ export default $config({
       const result = await import("./infra/" + value);
       if (result.outputs) Object.assign(outputs, result.outputs);
     }
-    // new sst.aws.Nextjs("AppilyAdvanceSite");
     return outputs;
   },
 });

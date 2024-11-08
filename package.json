@@ -10,6 +10,7 @@
     "lint": "next lint",
     "postbuild": "next-sitemap",
     "start": "next start",
+    "sso": "aws sso login --sso-session=reversetype --no-browser",
     "deploy": "sst deploy",
     "deploy:staging": "sst deploy --stage staging",
     "deploy:preview": "sst deploy --stage preview"

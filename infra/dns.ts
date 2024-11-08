@@ -1,4 +1,6 @@
+export const rootDomain = "appily.link"
+
 export const domain = {
-    production: "advance.appily.com",
-    dev: "dev.advance.appily.com",
-  }[$app.stage] || $app.stage + ".dev.advance.appily.com";
+    production: rootDomain,
+    dev: `dev.${rootDomain}`,
+  }[$app.stage] || $app.stage + `.dev.${rootDomain}`

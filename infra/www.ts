@@ -1,7 +1,9 @@
 /// <reference path="../.sst/platform/config.d.ts" />
+import { domain, rootDomain } from "./dns";
 
-export const www = new sst.aws.Nextjs("AppilyAdvanceSite");
-
-export const outputs = {
-  www: www.url,
-};
+export const www = new sst.aws.Nextjs("AppilyAdvanceSite", {
+    domain: {
+      name: domain,
+      redirects: [`www.${rootDomain}`],
+    },
+});
