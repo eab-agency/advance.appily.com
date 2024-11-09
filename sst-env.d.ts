@@ -6,5 +6,9 @@ import "sst"
 export {}
 declare module "sst" {
   export interface Resource {
+    "AppilyAdvanceSite": {
+      "type": "sst.aws.Nextjs"
+      "url": string
+    }
   }
 }
