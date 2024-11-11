@@ -6,7 +6,5 @@ export const domain = {
   }[$app.stage] || $app.stage + `.dev.${rootDomain}`
 
 export const outputs = {
-  www: {
-    FrontendUrl: `https://${domain}`
-  }
+  www: `https://${domain}`
 }

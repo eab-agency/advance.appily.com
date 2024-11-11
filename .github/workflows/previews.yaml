@@ -77,7 +77,7 @@ jobs:
         id: sst-frontend-outputs
         run: |
           cat .sst/outputs.json
-          FRONTEND_URL=$(jq -r '.[].FrontendUrl | select(. != null)' .sst/outputs.json)
+          FRONTEND_URL=$(jq -r '.www | select(. != null)' .sst/outputs.json)
           echo "frontendUrl=$FRONTEND_URL" >> $GITHUB_OUTPUT
 
   comment:
