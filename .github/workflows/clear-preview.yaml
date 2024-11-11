@@ -44,6 +44,9 @@ jobs:
           restore-keys: |
             cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
+      - name: Install Pnpm
+        run: npm install -g pnpm
+
       - name: Install deps (with cache)
         run: pnpm install
 
