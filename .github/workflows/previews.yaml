@@ -21,6 +21,9 @@ jobs:
     name: Deploy
     if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
+    # if github.ref is main or production, then set the environment to Production, otherwise set to staging
+    environment: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production' && 'Production' || 'Staging'}}
+
     outputs:
       frontendUrl: ${{ steps.sst-frontend-outputs.outputs.frontendUrl }}
     env:
