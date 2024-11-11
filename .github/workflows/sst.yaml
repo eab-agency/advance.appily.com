@@ -61,8 +61,5 @@ jobs:
       - name: Fetch the caller identity
         run: aws sts get-caller-identity
 
-      - name: Install projects deps
-        run: pnpm install
-
       - name: Deploy to AWS with SST
         run: npx sst deploy --stage=${GITHUB_REF_NAME}
