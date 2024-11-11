@@ -1,0 +1,108 @@
+name: Build Preview on Pull Request
+
+# Only trigger, when the CI workflow succeeds
+on:
+  pull_request:
+    branches: ["*"]
+
+# This action is copied and edited from https://joshghent.com/github-actions-pr-env/
+# and https://github.com/curdinc/skylar-email
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+  deployments: write
+
+env:
+  PR_PREFIX: pr-${{ github.event.pull_request.number }}
+
+jobs:
+  deploy:
+    name: Deploy
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    # if github.ref is main or production, then set the environment to Production, otherwise set to staging
+    environment: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production' && 'Production' || 'Staging'}}
+
+    outputs:
+      frontendUrl: ${{ steps.sst-frontend-outputs.outputs.frontendUrl }}
+    env:
+      NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
+      NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
+      NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
+      NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Configure Dev AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
+          aws-region: us-east-1
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Cache Next.js Build
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache/
+            .open-next/
+            .sst/
+          key: cache-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]xs') }}
+          restore-keys: |
+            cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
+      - name: Install Pnpm
+        run: npm install -g pnpm
+
+      - name: Install deps (with cache)
+        run: pnpm install
+
+      - name: Deploy frontend and backend
+        run: npx sst deploy --stage $PR_PREFIX
+
+      - name: Extract frontend URL and set output
+        id: sst-frontend-outputs
+        run: |
+          cat .sst/outputs.json
+          FRONTEND_URL=$(jq -r '.www | select(. != null)' .sst/outputs.json)
+          echo "frontendUrl=$FRONTEND_URL" >> $GITHUB_OUTPUT
+
+  comment:
+    name: Output Links
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    needs:
+      - deploy
+    steps:
+      - name: Find Comment
+        uses: peter-evans/find-comment@v3
+        if: success() && github.event.number
+        id: fc
+        with:
+          issue-number: ${{ github.event.number }}
+          body-includes: "🚀 Successfully deployed preview environment"
+
+      - name: Create Comment
+        uses: peter-evans/create-or-update-comment@v3
+        if: success() && github.event.number
+        with:
+          issue-number: ${{ github.event.number }}
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            ## 🚀 Successfully deployed preview environment
+
+            <table><tr><td><strong>Latest commit:</strong> </td><td>
+            <code>${{ github.sha }}</code>
+            </td></tr>
+            <tr><td><strong>Status:</strong></td><td>&nbsp;✅&nbsp; Deploy successful!</td></tr>
+            <tr><td><strong>Preview URL:</strong></td><td>
+            <a href='${{ needs.deploy.outputs.frontendUrl }}'>${{ needs.deploy.outputs.frontendUrl }}</a>
+            </td></tr>
+            </table>
