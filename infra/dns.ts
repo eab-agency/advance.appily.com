@@ -7,6 +7,6 @@ export const domain = {
 
 export const outputs = {
   www: {
-    FrontendUrl: domain
+    FrontendUrl: `https://${domain}`
   }
 }
