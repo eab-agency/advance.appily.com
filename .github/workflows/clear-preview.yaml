@@ -15,8 +15,8 @@ jobs:
   remove:
     runs-on: ubuntu-latest
 
-    # Add a condition to skip the entire job if the PR is from dev to main
-    if: ${{ !(github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'dev') }}
+    # Add a condition to skip the entire job for specific pull request scenarios
+    if: ${{ !((github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'dev') || (github.event.pull_request.base.ref == 'production' && github.event.pull_request.head.ref == 'main')) }}
 
     # if github.ref is main or production, then set the environment to Production, otherwise set to staging
     environment: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production' && 'Production' || 'Staging'}}
