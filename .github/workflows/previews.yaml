@@ -35,10 +35,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
       - name: Configure Dev AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -66,9 +62,6 @@ jobs:
 
       - name: Install deps (with cache)
         run: pnpm install
-
-      - name: Fetch the caller identity
-        run: aws sts get-caller-identity
 
       - name: Deploy frontend and backend
         run: npx sst deploy --stage $PR_PREFIX
