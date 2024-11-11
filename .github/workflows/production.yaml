@@ -40,18 +40,10 @@ jobs:
       - name: Install projects deps
         run: pnpm install
 
-      - if: github.ref == 'refs/heads/dev'
-        name: Configure Dev AWS credentials
+      - name: Configure Prod AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::539958552223:role/advance-appily-com-dev-github
-          aws-region: us-east-1
-
-      - if: github.ref == 'refs/heads/production'
-        name: Configure Production AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::631709423707:role/advance-appily-com-production-github
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
           aws-region: us-east-1
 
       - name: Deploy to AWS with SST
