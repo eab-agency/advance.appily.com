@@ -58,8 +58,5 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
           aws-region: us-east-1
 
-      - name: Fetch the caller identity
-        run: aws sts get-caller-identity
-
       - name: Deploy to AWS with SST
         run: npx sst deploy --stage=${GITHUB_REF_NAME}
