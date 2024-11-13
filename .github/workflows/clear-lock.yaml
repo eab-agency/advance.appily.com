@@ -1,0 +1,45 @@
+name: Clear lock on branch
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+  deployments: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: Staging
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Configure Dev AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
+          aws-region: us-east-1
+
+      - name: Cache Next.js Build
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache/
+            .open-next/
+            .sst/
+          key: cache-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]xs') }}
+          restore-keys: |
+            cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
+      - name: Install Pnpm
+        run: npm install -g pnpm
+
+      - name: Install projects deps
+        run: pnpm install
+
+      - name: Deploy to AWS with SST
+        run: npx sst unlock --stage=${GITHUB_REF_NAME}
