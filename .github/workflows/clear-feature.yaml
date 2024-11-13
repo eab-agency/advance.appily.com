@@ -24,8 +24,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }} # Ensure the branch is checked out
 
       - name: Configure Dev AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
