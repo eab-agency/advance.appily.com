@@ -27,6 +27,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      - name: Configure Dev AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
+          aws-region: us-east-1
+
       - name: Cache Next.js Build
         uses: actions/cache@v4
         with:
@@ -42,12 +49,6 @@ jobs:
 
       - name: Install projects deps
         run: pnpm install
-
-      - name: Configure Dev AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
-          aws-region: us-east-1
 
       - name: Deploy to AWS with SST
         run: npx sst deploy --stage=${GITHUB_REF_NAME}

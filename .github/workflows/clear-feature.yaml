@@ -1,0 +1,59 @@
+name: Destroy Feature Environment
+
+on:
+  pull_request:
+    types: [closed]
+
+env:
+  PR_PREFIX: pr-${{ github.event.pull_request.number }}
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  remove:
+    runs-on: ubuntu-latest
+
+    # Run the job only when a PR is merged from a 'feature-*' branch into 'dev'
+    if: ${{ github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'dev' && startsWith(github.event.pull_request.head.ref, 'feature') }}
+
+    # if github.ref is main or production, then set the environment to Production, otherwise set to staging
+    environment: Staging
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }} # Ensure the branch is checked out
+
+      - name: Configure Dev AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
+          aws-region: us-east-1
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Cache Next.js Build
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache/
+            .open-next/
+            .sst/
+          key: cache-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]xs') }}
+          restore-keys: |
+            cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
+      - name: Install Pnpm
+        run: npm install -g pnpm
+
+      - name: Install deps (with cache)
+        run: pnpm install
+
+      - name: Remove SST Stage ${{ github.event.pull_request.head.ref }}
+        run: npx sst remove --stage=${{ github.event.pull_request.head.ref }}
