@@ -43,6 +43,6 @@
   "exclude": [
     "node_modules",
     ".next",
-    "payload-types.ts",
+    "payload-types.ts","sst.config.ts"
   ]
 }
