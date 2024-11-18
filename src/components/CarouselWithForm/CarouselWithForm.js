@@ -47,7 +47,7 @@ const CarouselWithForm = ({
 
   return (
     <>
-      <section className={styles.matchedSchools} id={sectionId()}>
+      <section className={`${styles.matchedSchools} school-carousel`} id={sectionId()}>
         <div className={styles.wrapper}>
           <div className={styles.intro}>
             <h2>{title ? title : "Explore Your School Matches"}</h2>

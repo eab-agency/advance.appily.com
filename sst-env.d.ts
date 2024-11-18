@@ -3,8 +3,12 @@
 /* eslint-disable */
 /* deno-fmt-ignore-file */
 import "sst"
-export {}
+export { }
 declare module "sst" {
   export interface Resource {
+    "AppilyAdvanceSite": {
+      "type": "sst.aws.Nextjs"
+      "url": string
+    }
   }
 }
