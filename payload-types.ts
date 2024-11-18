@@ -1,4 +1,3 @@
-// @ts-nocheck
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -20,6 +19,7 @@ export interface Config {
     users: User;
     'user-media': UserMedia;
     blocks: Block;
+    redirects: Redirect;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -71,7 +71,6 @@ export interface Post {
  */
 export interface Category {
   id: string;
-  [x: string]: any;
   title?: string | null;
   slug?: string | null;
   updatedAt: string;
@@ -1042,7 +1041,7 @@ export interface Page {
             )
           | null;
         imageAlignment?: ('left' | 'right') | null;
-        image?: string | Media | null;
+        image: string | Media;
         richText?: {
           root: {
             type: string;
@@ -1590,9 +1589,7 @@ export interface Block {
   title?: string | null;
   Block: (
     | {
-        number: string;
-        title?: string | null;
-        richText?: {
+        richText: {
           root: {
             type: string;
             children: {
@@ -1606,33 +1603,10 @@ export interface Block {
             version: number;
           };
           [k: string]: unknown;
-        } | null;
+        };
         id?: string | null;
         blockName?: string | null;
-        blockType: 'stats';
-      }
-    | {
-        author?: string | null;
-        richText?: {
-          root: {
-            type: string;
-            children: {
-              type: string;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        } | null;
-        authortitle?: string | null;
-        alignment?: ('left' | 'center' | 'right') | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'testimonial';
+        blockType: 'richText';
       }
     | {
         imageCardBlockBackgroundColor?:
@@ -1723,6 +1697,72 @@ export interface Block {
         blockType: 'comparison';
       }
     | {
+        links?:
+          | {
+              link: {
+                type?: ('reference' | 'custom') | null;
+                newTab?: boolean | null;
+                reference?: {
+                  relationTo: 'pages';
+                  value: string | Page;
+                } | null;
+                url?: string | null;
+                label: string;
+                appearance?: ('default' | 'primary' | 'secondary' | 'tertiary') | null;
+              };
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'ButtonGroup';
+      }
+    | {
+        number: string;
+        title?: string | null;
+        richText?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'stats';
+      }
+    | {
+        author?: string | null;
+        richText?: {
+          root: {
+            type: string;
+            children: {
+              type: string;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        authortitle?: string | null;
+        alignment?: ('left' | 'center' | 'right') | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'testimonial';
+      }
+    | {
         numberedItems?: boolean | null;
         accordions?:
           | {
@@ -1788,7 +1828,19 @@ export interface Block {
         blockType: 'accordion';
       }
     | {
-        richText: {
+        carouselBackgroundColor?:
+          | (
+              | 'default'
+              | 'dark_blue_light_gray'
+              | 'blue_light_blue'
+              | 'orange_peach'
+              | 'turquoise_yellow'
+              | 'turquoise_light_turquoise'
+              | 'slate_gray_white'
+            )
+          | null;
+        title?: string | null;
+        richText?: {
           root: {
             type: string;
             children: {
@@ -1802,31 +1854,10 @@ export interface Block {
             version: number;
           };
           [k: string]: unknown;
-        };
+        } | null;
         id?: string | null;
         blockName?: string | null;
-        blockType: 'richText';
-      }
-    | {
-        links?:
-          | {
-              link: {
-                type?: ('reference' | 'custom') | null;
-                newTab?: boolean | null;
-                reference?: {
-                  relationTo: 'pages';
-                  value: string | Page;
-                } | null;
-                url?: string | null;
-                label: string;
-                appearance?: ('default' | 'primary' | 'secondary' | 'tertiary') | null;
-              };
-              id?: string | null;
-            }[]
-          | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'ButtonGroup';
+        blockType: 'Schoolcarousel';
       }
   )[];
   slug?: string | null;
@@ -1980,6 +2011,29 @@ export interface CarouselCard {
 export interface LeadType {
   id: string;
   title: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "redirects".
+ */
+export interface Redirect {
+  id: string;
+  from: string;
+  to?: {
+    type?: ('reference' | 'custom') | null;
+    reference?:
+      | ({
+          relationTo: 'pages';
+          value: string | Page;
+        } | null)
+      | ({
+          relationTo: 'posts';
+          value: string | Post;
+        } | null);
+    url?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
