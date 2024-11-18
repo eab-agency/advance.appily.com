@@ -42,26 +42,11 @@ const CarouselWithForm = ({
 
   return (
     <>
-      <section className={styles.matchedSchools} id={sectionId()}>
+      <section className={`${styles.matchedSchools} school-carousel`} id={sectionId()}>
         <div className={styles.wrapper}>
           <div className={styles.intro}>
             <h2>{title ? title : "Explore Your School Matches"}</h2>
             <RichText content={richText} />
-            {/* {description ? (
-							<div dangerouslySetInnerHTML={{ __html: description }} />
-						) : (
-							<>
-								<p>
-									Appily partners with institutions across the country that are
-									known for having exceptional programs and providing strong
-									outcomes.
-								</p>
-								<p>
-									No matter which career or degree you choose, you’re likely to
-									find a path to success at these colleges and universities.
-								</p>
-							</>
-						)} */}
           </div>
 
           <div className={styles.container}>
