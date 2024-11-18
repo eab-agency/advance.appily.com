@@ -16,13 +16,10 @@ export const GlobalBlock: React.FC<
   const {
     globalBlocks
   } = props;
+
   return (
-    <section>
-      <>
-        {globalBlocks && globalBlocks.length > 0 && (
-          <GlobalContent blocks={globalBlocks} />
-        )}
-      </>
-    </section>
+    <div className='global-block'>
+        {globalBlocks && <GlobalContent blocks={globalBlocks} />}
+    </div>
   )
 }

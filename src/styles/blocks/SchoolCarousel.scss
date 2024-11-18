@@ -21,63 +21,73 @@
   backface-visibility: hidden;
   will-change: transform, transition;
 }
-.react-multiple-carousel__arrow {
-  position: absolute;
-  outline: none;
-  transition: all 0.5s;
-  z-index: 1000;
-  border: none;
-  border-radius: 0;
-  background: var(--c-teal-700) !important;
-  width: auto;
-  height: auto;
-  opacity: 1;
-  cursor: pointer;
-  display: block;
 
-  &::after {
-    display: none !important
-    ;
+.school-carousel{
+  .react-multiple-carousel__arrow {
+    position: absolute;
+    outline: none;
+    z-index: 1000;
+    border: none;
+    border-radius: 0;
+    background: var(--c-teal-700);
+    width: auto;
+    height: auto;
+    opacity: 1;
+    cursor: pointer;
+    display: block;
+    transition: all 0.2s;
+
+    &::after {
+      display: none !important;
+    }
   }
-}
-.react-multiple-carousel__arrow:hover {
-  background: var(--c-linkHover);
-}
-.react-multiple-carousel__arrow::before {
-  content: tokens.$i-chevron;
-  font-family: tokens.$f-icons;
-  font-size: 2em;
-  color: var(--c-white);
-  display: block;
-  text-align: center;
-  z-index: 2;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: none;
-  opacity: 1;
-  width: 1em;
-  height: 1em;
-}
-.react-multiple-carousel__arrow:disabled {
-  cursor: default;
-  background: rgba(0, 0, 0, 0.5);
-}
+
+  .react-multiple-carousel__arrow:hover {
+    background: var(--c-linkHover);
+    transform: translateX(-0.5em);
+  }
+
+  .react-multiple-carousel__arrow::before {
+    content: tokens.$i-chevron;
+    font-family: tokens.$f-icons;
+    font-size: 2em;
+    color: var(--c-white);
+    display: block;
+    text-align: center;
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    opacity: 1;
+    width: 1em;
+    height: 1em;
+  }
+  .react-multiple-carousel__arrow:disabled {
+    cursor: default;
+    background: rgba(0, 0, 0, 0.5);
+  }
 
 .react-multiple-carousel__arrow--left {
   left: -1em !important;
   border-top-right-radius: 2em;
   border-bottom-right-radius: 2em;
 
+
   &::before {
     transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  &:hover{
+    transform: translateX(0.5em);
   }
 }
 .react-multiple-carousel__arrow--right {
   right: -1em !important;
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
+}
 }
 
 .react-multi-carousel-dot-list {
