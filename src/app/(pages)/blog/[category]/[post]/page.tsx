@@ -42,7 +42,7 @@ export async function generateMetadata({
 }
 
 interface PostComponentProps {
-  params: { slug: string; post: string };
+  params: { slug: string; post: string; category: string };
 }
 
 const PostComponent = async ({ params }: PostComponentProps) => {

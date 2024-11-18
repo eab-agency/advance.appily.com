@@ -9,13 +9,11 @@ import styles from "@/styles/components/CarouselWithForm.module.scss";
 import RichText from "../RichText";
 
 const CarouselWithForm = ({
-  blockType,
   blockName,
   title,
   richText,
-  carouselBackgroundColor,
   formId = "4",
-  collectData = true,
+  collectData = false,
 }) => {
   const [visibleForm, setVisibleForm] = useState(false);
   const { user, location, vertical, globalPrivacyControl } = useUser();
@@ -23,8 +21,15 @@ const CarouselWithForm = ({
   const [selectedSchool, setSelectedSchool] = useState(null);
 
   const onCarouselClick = (school) => {
-    if (location.notUS || globalPrivacyControl || !collectData) {
-      window.open(school.links[0].link.url, "_blank");
+    const shouldOpenInNewTab = location.notUS || globalPrivacyControl || !collectData;
+  
+    if (shouldOpenInNewTab) {
+      const url = school.links[0].link.url;
+      if (url) {
+        window.open(url, "_blank", "noopener,noreferrer");
+      } else {
+        console.error("Invalid URL");
+      }
     } else {
       setSelectedSchool(school);
       setVisibleForm(!visibleForm);
@@ -82,7 +87,7 @@ const CarouselWithForm = ({
                 school={selectedSchool}
                 redirectTo={`${selectedSchool.links[0].link.url}?utm_source=appily_advance&utm_campaign=${vertical}`}
                 user={user}
-                id={formId || "4"}
+                id={formId}
               />
             </div>
           </div>
