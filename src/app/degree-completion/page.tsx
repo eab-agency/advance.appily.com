@@ -1,8 +1,8 @@
 // "use client";
 import Image from "next/image";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 
-import { Button, StatCard, StickyCta, WhatIsCappex } from "@/components";
+import { Button, StickyCta, WhatIsCappex } from "@/components";
 import ABButton from "@/components/Button/ABButton";
 import { IconCard } from "@/components/IconCard/IconCard";
 import data from "@/data/careers-adc.json";
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: description,
   }),
   robots: {
-    index: false,
+    index: true,
   },
 };
 
@@ -208,7 +208,11 @@ const DegreeCompletionSeoPage = () => {
       </section>
 
       <WhatIsCappex>
-        <StatisticsSection statistics={data.statsAppily} statsLayoutWidth="full" statsBackgroundColor="slate_gray_white" />
+        <StatisticsSection
+          statistics={data.statsAppily}
+          statsLayoutWidth="full"
+          statsBackgroundColor="slate_gray_white"
+        />
       </WhatIsCappex>
 
       <StickyCta ctaLabel="Get Your Back-to-School Plan" />
