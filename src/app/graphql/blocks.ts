@@ -355,6 +355,7 @@ export const GLOBAL_TOKEN= `
       ${BUTTONGROUPBLOCK}
       ${RICHTEXTBLOCK}
       ${COMPARISONBLOCK}
+      ${CAROUSELCARD}
       }
   }
 }`

@@ -9,7 +9,7 @@ const robotHeader = {
       value: "noindex",
     },
   ],
-  source: "/(careers/healthcare|careers/business|careers/education|careers/degree-completion)/:path+",
+  source: "/careers/(healthcare|business|education|degree-completion)/:path+",
 };
 
 const strictTransportHeader = {

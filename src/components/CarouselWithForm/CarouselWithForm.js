@@ -7,20 +7,25 @@ import styles from "@/styles/components/CarouselWithForm.module.scss";
 import RichText from "../RichText";
 
 const CarouselWithForm = ({
-  blockType,
-  blockName,
+  blockName
   title,
   richText,
-  carouselBackgroundColor,
   formId = "4",
-  collectData = true,
+  collectData = false,
 }) => {
   const [visibleForm, setVisibleForm] = useState(false);
   const { user, location, vertical, globalPrivacyControl } = useUser();
 
   const onCarouselClick = (school) => {
-    if (location.notUS || globalPrivacyControl || !collectData) {
-      window.open(school.links[0].link.url, "_blank");
+    const shouldOpenInNewTab = location.notUS || globalPrivacyControl || !collectData;
+  
+    if (shouldOpenInNewTab) {
+      const url = school.links[0].link.url;
+      if (url) {
+        window.open(url, "_blank", "noopener,noreferrer");
+      } else {
+        console.error("Invalid URL");
+      }
     } else {
       setSelectedSchool(school);
       setVisibleForm(!visibleForm);
@@ -38,7 +43,7 @@ const CarouselWithForm = ({
 
   return (
     <>
-      <section className={styles.matchedSchools} id={sectionId()}>
+      <section className={`${styles.matchedSchools} school-carousel`} id={sectionId()}>
         <div className={styles.wrapper}>
           <div className={styles.intro}>
             <h2>{title ? title : "Explore Your School Matches"}</h2>
