@@ -18,6 +18,9 @@ on:
       - "*.config.js"
       - "*.config.ts"
 
+permissions:
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
