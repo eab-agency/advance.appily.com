@@ -1,11 +1,18 @@
-name: One-Off Deploy via SST to AWS
+name: Deploy Production via SST to AWS
 
 on:
+  pull_request:
+    branches:
+      - production
+    types:
+      - closed
   workflow_dispatch:
 
 jobs:
-  deploy:
+  production:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    environment: Production
     env:
       NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
       NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
@@ -26,6 +33,7 @@ jobs:
           key: cache-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]xs') }}
           restore-keys: |
             cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
       - name: Install Pnpm
         run: npm install -g pnpm
 
@@ -38,9 +46,5 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
           aws-region: us-east-1
 
-      - name: Set SST Config Secret
-        run: |
-          npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage production
-
       - name: Deploy to AWS with SST
-        run: pnpm run deploy
+        run: npx sst deploy --stage=${GITHUB_REF_NAME}

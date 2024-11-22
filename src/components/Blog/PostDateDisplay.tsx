@@ -1,10 +1,10 @@
-'use client'
-import { format } from 'date-fns';
-import { useEffect } from 'react';
-import { useId } from '../../context/idContext';
+"use client";
+import { format } from "date-fns";
+import { useEffect } from "react";
+import { useId } from "../../context/idContext";
 
 const formatDate = (dateString) => {
-  return format(new Date(dateString), 'MMMM d, yyyy');
+  return format(new Date(dateString), "MMMM d, yyyy");
 };
 
 const PostDateDisplay = ({ publishedDate, updatedAt, id }) => {
@@ -13,7 +13,7 @@ const PostDateDisplay = ({ publishedDate, updatedAt, id }) => {
     if (id !== null) {
       setId(id); // Store the ID in context
     }
-  }, [setId]);
+  }, [id, setId]);
 
   if (!publishedDate && !updatedAt) return null;
 

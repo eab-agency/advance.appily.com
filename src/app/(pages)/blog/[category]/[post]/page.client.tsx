@@ -29,7 +29,7 @@ export const PageClient: React.FC<{
     if (data?.id) {
       setId(data?.id); // Store the ID in context
     }
-  }, [setId]);
+  }, [data?.id, setId]);
 
   const {
     postFeaturedImage,

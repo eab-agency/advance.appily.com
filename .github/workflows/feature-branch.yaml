@@ -1,11 +1,22 @@
-name: One-Off Deploy via SST to AWS
+name: Build Preview on Push to Feature Branch
 
 on:
+  push:
+    branches:
+      - "feature/*"
+      - "feature-*"
   workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+  deployments: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: Staging
     env:
       NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
       NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
@@ -16,6 +27,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      - name: Configure Dev AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
+          aws-region: us-east-1
+
       - name: Cache Next.js Build
         uses: actions/cache@v4
         with:
@@ -32,15 +50,5 @@ jobs:
       - name: Install projects deps
         run: pnpm install
 
-      - name: Configure Prod AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
-          aws-region: us-east-1
-
-      - name: Set SST Config Secret
-        run: |
-          npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage production
-
       - name: Deploy to AWS with SST
-        run: pnpm run deploy
+        run: npx sst deploy --stage=${GITHUB_REF_NAME}
