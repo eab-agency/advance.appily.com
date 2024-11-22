@@ -13,8 +13,8 @@ export default $config({
           profile: process.env.GITHUB_ACTIONS
           ? undefined
           : input.stage === "production"
-            ? "reversetype-production"
-            : "reversetype-production",
+            ? "appily-production"
+            : "appily-dev",
         }
       }
     };

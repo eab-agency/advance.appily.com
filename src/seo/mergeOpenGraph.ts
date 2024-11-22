@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 const defaultOpenGraph: Metadata["openGraph"] = {
 	type: "website",
-	siteName: "Appily-Advance",
+	siteName: "Appily Advance",
 	description: "Resources for Students Returning to School",
 	title: {
 		default: "Appily Advance",
