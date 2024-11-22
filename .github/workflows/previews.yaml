@@ -1,12 +1,9 @@
 name: Build Preview on Pull Request
 
-# Only trigger, when the CI workflow succeeds
 on:
   pull_request:
     branches: ["*"]
 
-# This action is copied and edited from https://joshghent.com/github-actions-pr-env/
-# and https://github.com/curdinc/skylar-email
 permissions:
   contents: write
   pull-requests: write
@@ -21,16 +18,16 @@ jobs:
     name: Deploy
     if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
-    # if github.ref is main or production, then set the environment to Production, otherwise set to staging
     environment: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production' && 'Production' || 'Staging'}}
 
     outputs:
       frontendUrl: ${{ steps.sst-frontend-outputs.outputs.frontendUrl }}
+      deployStatus: ${{ steps.deployment-status.outputs.status }}
     env:
-      NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
-      NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
-      NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
-      NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
+      NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL }}
+      NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL }}
+      NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID }}
+      NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -38,7 +35,7 @@ jobs:
       - name: Configure Dev AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/advance-appily-com-production-github
           aws-region: us-east-1
 
       - name: Setup Node 20
@@ -64,14 +61,24 @@ jobs:
         run: pnpm install
 
       - name: Deploy frontend and backend
+        id: deploy-step
         run: npx sst deploy --stage $PR_PREFIX
+        continue-on-error: true
 
       - name: Extract frontend URL and set output
         id: sst-frontend-outputs
         run: |
-          cat .sst/outputs.json
           FRONTEND_URL=$(jq -r '.www | select(. != null)' .sst/outputs.json)
           echo "frontendUrl=$FRONTEND_URL" >> $GITHUB_OUTPUT
+
+      - name: Set Deployment Status
+        id: deployment-status
+        run: |
+          if [ "${{ steps.deploy-step.outcome }}" == "success" ]; then
+            echo "status=✅ Ready (Inspect)" >> $GITHUB_OUTPUT
+          else
+            echo "status=❌ Failed" >> $GITHUB_OUTPUT
+          fi
 
   comment:
     name: Output Links
@@ -80,6 +87,10 @@ jobs:
     needs:
       - deploy
     steps:
+      - name: Get Current Date
+        id: date
+        run: echo "date=$(date -u '+%b %d, %Y %I:%M%p')" >> $GITHUB_OUTPUT
+
       - name: Find Comment
         uses: peter-evans/find-comment@v3
         if: success() && github.event.number
@@ -88,7 +99,7 @@ jobs:
           issue-number: ${{ github.event.number }}
           body-includes: "🚀 Successfully deployed preview environment"
 
-      - name: Create Comment
+      - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v3
         if: success() && github.event.number
         with:
@@ -96,13 +107,8 @@ jobs:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           edit-mode: replace
           body: |
-            ## 🚀 Successfully deployed preview environment
+            The latest updates on your projects. Learn more about [Vercel for Git](https://vercel.com/docs/git).
 
-            <table><tr><td><strong>Latest commit:</strong> </td><td>
-            <code>${{ github.sha }}</code>
-            </td></tr>
-            <tr><td><strong>Status:</strong></td><td>&nbsp;✅&nbsp; Deploy successful!</td></tr>
-            <tr><td><strong>Preview URL:</strong></td><td>
-            <a href='${{ needs.deploy.outputs.frontendUrl }}'>${{ needs.deploy.outputs.frontendUrl }}</a>
-            </td></tr>
-            </table>
+            | Name                | Status                    | Preview        | Comments      | Updated (UTC)            |
+            |---------------------|---------------------------|----------------|---------------|--------------------------|
+            | advance-appily-com  | ${{ needs.deploy.outputs.deployStatus }} | [Visit Preview](${{ needs.deploy.outputs.frontendUrl }}) | 💬 [Add feedback](#) | ${{ steps.date.outputs.date }} |
