@@ -109,6 +109,6 @@ jobs:
           body: |
             The latest updates on your projects. Learn more about [Vercel for Git](https://vercel.com/docs/git).
 
-            | Name                | Status                    | Preview        | Comments      | Updated (UTC)            |
-            |---------------------|---------------------------|----------------|---------------|--------------------------|
-            | advance-appily-com  | ${{ needs.deploy.outputs.deployStatus }} | [Visit Preview](${{ needs.deploy.outputs.frontendUrl }}) | 💬 [Add feedback](#) | ${{ steps.date.outputs.date }} |
+            | Status                    | Preview        | Updated (UTC)            |
+            |---------------------------|----------------|--------------------------|
+            | ${{ needs.deploy.outputs.deployStatus }} | [Visit Preview](${{ needs.deploy.outputs.frontendUrl }}) | ${{ steps.date.outputs.date }} |
