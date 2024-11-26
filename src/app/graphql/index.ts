@@ -8,7 +8,6 @@ import { ALLCATEGORIES } from "./categories";
 import { FOOTER_QUERY, GLOBALS, HEADER_QUERY } from "./globals";
 import { PAGE, PAGES } from "./pages";
 import { FIRSTFIVEPOSTS, GET_CATEGORY_ID, POST, POSTS, POSTS_BY_CATEGORY, POST_BY_TAG } from "./posts";
-import { ALLTAGS } from "./tags";
 
 const next: { revalidate: number | false | undefined } = {
 	revalidate: 5,
@@ -394,23 +393,23 @@ export const fetchPostsByCategory = async (
 	return data?.Posts?.docs;
 };
 
-export const fetchAllTags = async (): Promise<Tag[]> => {
-	const { data } = await fetch(
-		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?tags`,
-		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			cache: "no-store",
-			body: JSON.stringify({
-				query: ALLTAGS,
+// export const fetchAllTags = async (): Promise<Tag[]> => {
+// 	const { data } = await fetch(
+// 		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?tags`,
+// 		{
+// 			method: "POST",
+// 			headers: {
+// 				"Content-Type": "application/json",
+// 			},
+// 			cache: "no-store",
+// 			body: JSON.stringify({
+// 				query: ALLTAGS,
 				
-			}),
-		},
-	).then(res => res.json());
-	return data?.Tags?.docs;
- };
+// 			}),
+// 		},
+// 	).then(res => res.json());
+// 	return data?.Tags?.docs;
+//  };
 
 
  export const fetchPostsByTag = async (

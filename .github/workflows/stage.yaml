@@ -1,25 +1,30 @@
-name: One-Off Deploy via SST to AWS
+name: QA/Staging Deploy via SST to AWS
 
 on:
   workflow_dispatch:
     inputs:
-      stage:
-        description: "Select the deployment stage"
-        required: true
-        default: "production"
-        type: choice
-        options:
-          - development
-          - staging
-          - production
+      reason:
+        description: "Reason for deployment"
+        required: false
+        default: "No reason provided"
+  push:
+    branches:
+      - "main"
+    paths:
+      - "src/**"
+      - "*.json"
+      - "*.yaml"
+      - "*.json"
+      - "*.config.js"
+      - "*.config.ts"
 
 permissions:
   id-token: write
-  contents: read
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: Staging
     env:
       NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
       NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
@@ -46,15 +51,21 @@ jobs:
       - name: Install projects deps
         run: pnpm install
 
-      - name: Configure Prod AWS credentials
+      - name: Configure Dev AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
           aws-region: us-east-1
 
-      - name: Set SST Config Secret
-        run: |
-          npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage production
-
       - name: Deploy to AWS with SST
-        run: npx sst deploy --stage ${{ github.event.inputs.stage }}
+        run: npx sst deploy --stage=${GITHUB_REF_NAME}
+
+      - name: Create Pull Request to Production
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REASON="${{ github.event.inputs.reason || 'No reason provided' }}"
+          ACTOR="${{ github.actor }}"
+          DATE=$(date)
+          gh pr create --base production --head main --title "Auto- Deploy by $ACTOR on $DATE" --body "Reason: $REASON"
