@@ -1,54 +1,63 @@
 import * as aws from "@pulumi/aws";
-import { isPermanentStage } from "./stage";
 
-if (isPermanentStage) {
-  // Check if the OIDC provider already exists
-  const existingProvider = aws.iam.getOpenIdConnectProvider({
-    url: "https://token.actions.githubusercontent.com",
-  }, { async: true });
+async function setupOidcProvider() {
+  try {
+    // Attempt to get the existing OIDC provider
+    const existingProvider = await aws.iam.getOpenIdConnectProvider({
+      url: "https://token.actions.githubusercontent.com",
+    });
 
-  existingProvider.then(provider => {
-    if (!provider) {
-      // Create the OIDC provider if it doesn't exist
-      const github = new aws.iam.OpenIdConnectProvider("GithubProvider", {
-        url: "https://token.actions.githubusercontent.com",
-        clientIdLists: ["sts.amazonaws.com"],
-        thumbprintLists: ["d89e3bd43d5d909b47a18977aa9d5ce36cee184c"],
-      });
-
+    if (existingProvider) {
+      console.log(
+        "OIDC provider already exists. Setting up the role and permissions."
+      );
+      
+      // Set up the IAM role with the existing provider
       const githubRole = new aws.iam.Role("GithubRole", {
-        name: ["$app.name", "$app.stage", "github"].join("-"),
+        name: [$app.name, $app.stage, "github"].join("-"),
         assumeRolePolicy: {
           Version: "2012-10-17",
           Statement: [
             {
               Effect: "Allow",
               Principal: {
-                Federated: github.arn,
+                Federated: existingProvider.arn,
               },
               Action: "sts:AssumeRoleWithWebIdentity",
               Condition: {
-                StringEquals: github.url.apply((url) => ({
-                  [`${url}:aud`]: "sts.amazonaws.com",
-                })),
-                StringLike: github.url.apply((url) => ({
-                  [`${url}:sub`]: [
-                    "repo:b00y0h/*",       // Matches all repositories owned by the user b00y0h
-                    "repo:eab-agency/*"    // Matches all repositories within the eab-agency organization
+                StringEquals: {
+                  [`${existingProvider.url}:aud`]: "sts.amazonaws.com",
+                },
+                StringLike: {
+                  [`${existingProvider.url}:sub`]: [
+                    "repo:eab-agency/*", // Matches all repositories within the eab-agency organization
                   ],
-                })),
+                },
               },
             },
           ],
         },
       });
 
+      // Attach a policy to the role
       new aws.iam.RolePolicyAttachment("GithubRolePolicy", {
-        policyArn: "arn:aws:iam::aws:policy/AdministratorAccess",
+        policyArn: "arn:aws:iam::aws:policy/AdministratorAccess", // Consider using a more specific policy
         role: githubRole.name,
       });
+    } else {
+      console.log(
+        "OIDC provider not found, please create the OIDC provider first."
+      );
     }
-  }).catch(error => {
-    console.error("Error checking OIDC provider:", error);
-  });
+  } catch (error) {
+    if (error.message.includes("not found")) {
+      console.log(
+        "OIDC provider not found, please create the OIDC provider first."
+      );
+    } else {
+      console.error("Error checking OIDC provider:", error);
+    }
+  }
 }
+
+setupOidcProvider();

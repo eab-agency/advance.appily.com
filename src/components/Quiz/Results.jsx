@@ -1,8 +1,6 @@
-import Form from "@/components/Form";
 import Link from "next/link";
 
 import isDevMode from "@/helpers/isDevMode";
-import styles from "@/styles/components/Results.module.scss";
 
 function toTitleCase(str) {
   return str
@@ -21,7 +19,7 @@ const Results = ({ children, vertical, answers, formId, redirectUrl }) => {
   const roleResult = () => {
     console.log(
       "🚀 ~ roleResult ~ answers.highestScorePersonality:",
-      answers.highestScorePersonality,
+      answers.highestScorePersonality
     );
     switch (answers.highestScorePersonality) {
       // Business
@@ -113,13 +111,13 @@ const Results = ({ children, vertical, answers, formId, redirectUrl }) => {
         <div className="formWrapper">
           <div className="leadForm">
             <h2>Where should we send your results?</h2>
-            <Form
+            {/* <Form
               redirectTo={redirectUrl}
               answers={formSubmitAnswers}
               user={null}
               id={formId || "2"}
               className={styles.formContainer}
-            />
+            /> */}
             {devModeOnly && (
               <>
                 <Link href={redirectUrl}>
