@@ -7,7 +7,7 @@ import styles from "@/styles/components/CarouselWithForm.module.scss";
 import RichText from "../RichText";
 
 const CarouselWithForm = ({
-  blockName
+  blockName,
   title,
   richText,
   formId = "4",
