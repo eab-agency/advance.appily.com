@@ -2,6 +2,16 @@ name: One-Off Deploy via SST to AWS
 
 on:
   workflow_dispatch:
+    inputs:
+      stage:
+        description: "Select the deployment stage"
+        required: true
+        default: "production"
+        type: choice
+        options:
+          - development
+          - staging
+          - production
 
 jobs:
   deploy:
@@ -43,4 +53,4 @@ jobs:
           npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage production
 
       - name: Deploy to AWS with SST
-        run: pnpm run deploy
+        run: npx sst deploy --stage ${{ github.event.inputs.stage }}
