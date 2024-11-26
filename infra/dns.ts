@@ -1,9 +1,10 @@
-export const rootDomain = "appily.link"
+export const rootDomain = "advance.appily.link"
+export const devDomain = "advance.appily.click"
 
 export const domain = {
     production: rootDomain,
-    dev: `dev.${rootDomain}`,
-  }[$app.stage] || $app.stage + `.dev.${rootDomain}`
+    dev: devDomain,
+  }[$app.stage] || `${$app.stage}.${devDomain}`
 
 export const outputs = {
   www: `https://${domain}`
