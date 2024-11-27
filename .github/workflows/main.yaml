@@ -20,6 +20,8 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # if stage is production, then set the environment to Production, otherwise set to Staging
+    environment: ${{ github.event.inputs.stage == 'production' && 'Production' || 'Staging'}}
     env:
       NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
       NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
@@ -51,10 +53,6 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
           aws-region: us-east-1
-
-      - name: Set SST Config Secret
-        run: |
-          npx sst secret set COMMIT_SHA '${{ github.sha }}' --stage production
 
       - name: Deploy to AWS with SST
         run: npx sst deploy --stage ${{ github.event.inputs.stage }}
