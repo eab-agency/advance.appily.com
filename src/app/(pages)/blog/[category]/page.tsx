@@ -47,6 +47,7 @@ export default async function CategoryComponent({ params }) {
             <article key={id} className="post post__latest">
               <Link href={href}>
                 <PostHeader
+                  id={id}
                   title={title}
                   createdBy={createdBy}
                   publishedDate={publishedDate}

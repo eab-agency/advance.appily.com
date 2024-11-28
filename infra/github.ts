@@ -50,7 +50,7 @@ async function setupOidcProvider() {
       );
     }
   } catch (error) {
-    if (error.message.includes("not found")) {
+    if ((error as any).message.includes("not found")) {
       console.log(
         "OIDC provider not found, please create the OIDC provider first."
       );

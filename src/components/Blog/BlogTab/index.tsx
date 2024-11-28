@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { fetchPosts, fetchPostsByCategory } from "@/app/graphql";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -25,11 +25,11 @@ const BlogTabs = ({ tabs }) => {
     updateViewportWidth();
 
     // Add event listener to update on resize
-    window.addEventListener('resize', updateViewportWidth);
+    window.addEventListener("resize", updateViewportWidth);
 
     // Cleanup listener on component unmount
     return () => {
-      window.removeEventListener('resize', updateViewportWidth);
+      window.removeEventListener("resize", updateViewportWidth);
     };
   }, []);
 
@@ -111,7 +111,9 @@ const BlogTabs = ({ tabs }) => {
         </button>
         <div className={`blog-categories ${categoriesOpen ? "open" : ""}`}>
           <button
-            className={`button-tab ${activeTab === ALL_POST ? "button-tab__active" : ""}`}
+            className={`button-tab ${
+              activeTab === ALL_POST ? "button-tab__active" : ""
+            }`}
             onClick={() => handleClick(ALL_POST)}
           >
             {ALL_POST}
@@ -119,7 +121,9 @@ const BlogTabs = ({ tabs }) => {
           {tabs?.map((tab) => (
             <button
               key={tab.id}
-              className={`button-tab ${activeTab === tab.title ? "button-tab__active" : ""}`}
+              className={`button-tab ${
+                activeTab === tab.title ? "button-tab__active" : ""
+              }`}
               onClick={() => handleClick(tab)}
             >
               {tab.title}
@@ -140,14 +144,15 @@ const BlogTabs = ({ tabs }) => {
           } = post;
           const catTitle =
             Array.isArray(category) &&
-              typeof category[0] === "object" &&
-              "slug" in category[0]
+            typeof category[0] === "object" &&
+            "slug" in category[0]
               ? category[0]?.slug ?? ""
               : "";
           return (
             <article key={id} className="post">
               <Link href={`blog/${catTitle}/${slug}`}>
                 <PostHeader
+                  id={id}
                   title={title}
                   createdBy={createdBy}
                   publishedDate={publishedDate}

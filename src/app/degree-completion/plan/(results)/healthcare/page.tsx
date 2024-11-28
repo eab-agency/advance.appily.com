@@ -7,7 +7,6 @@ import { useEffect, useRef } from "react";
 import {
   AccordionSection,
   CareerPaths,
-  CarouselWithForm,
   LinkedCardsSection,
   StickyCta,
   SubNavPlan,
@@ -36,7 +35,11 @@ export default function Page() {
 
         <AccordionSection id="value-of-a-degree" data={data.reasons} />
 
-        <StatisticsSection statistics={data.stats} source={data.statsSource} statsLayoutWidth="contained" />
+        <StatisticsSection
+          statistics={data.stats}
+          source={data.statsSource}
+          statsLayoutWidth="contained"
+        />
 
         <Testimonial testimonialData={data.testimonial} />
 
@@ -48,7 +51,11 @@ export default function Page() {
 
         <AccordionSection data={data.fileFafsa} newTab={true} />
 
-        <StatisticsSection statistics={data.fileFafsa.stats} source={data.fileFafsa.statsSource} statsLayoutWidth="contained" />
+        <StatisticsSection
+          statistics={data.fileFafsa.stats}
+          source={data.fileFafsa.statsSource}
+          statsLayoutWidth="contained"
+        />
 
         <AccordionSection data={data.fileFafsa.moreWays} />
 
@@ -58,7 +65,11 @@ export default function Page() {
 
         <CareerPaths careerPaths={data.topCareers} />
 
-        <StatisticsSection statistics={data.topCareers.stats} source={data.topCareers.statsSource} statsLayoutWidth="contained" />
+        <StatisticsSection
+          statistics={data.topCareers.stats}
+          source={data.topCareers.statsSource}
+          statsLayoutWidth="contained"
+        />
 
         <TabsSection id="degrees-and-schools" data={data.degreeGoals} />
 
@@ -69,7 +80,7 @@ export default function Page() {
           className="carouselWithForm"
           ref={carouselRef}
         >
-          <CarouselWithForm formId="15" collectData={false} />
+          {/* <CarouselWithForm formId="15" collectData={false} /> */}
         </div>
 
         <AccordionSection id="your-next-steps" data={data.yourNextSteps} />
