@@ -19,6 +19,12 @@ jobs:
     environment: Staging
     steps:
       - uses: actions/checkout@v4
+      # Define an environment variable for the sanitized stage name
+      - name: Set Environment Variables
+        env:
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+        run: echo "STAGE_NAME=$(echo \"$GITHUB_REF_NAME\" | tr -cd '[:alnum:]-')" >> $GITHUB_ENV
+
       - uses: oven-sh/setup-bun@v2
 
       - run: "curl -fsSL https://sst.dev/install | bash"
@@ -69,4 +75,6 @@ jobs:
           NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
           NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
 
-        run: sst deploy --stage=${GITHUB_REF_NAME}
+        run: |
+          echo "Deploying to stage: $STAGE_NAME"
+          sst deploy --stage=${GITHUB_REF_NAME}
