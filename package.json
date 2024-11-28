@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "typecheck": "bun --filter=* typecheck",
+    "typecheck": "tsc --noEmit",
     "build": "next build",
     "dev": "next dev",
     "dev:sst": "sst dev",
-    "format": "biome format --write ./src",
     "lint": "next lint",
     "postbuild": "next-sitemap",
     "start": "next start",

@@ -26,12 +26,12 @@
     },
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.jsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": ["node_modules", ".next", "payload-types.ts", "sst.config.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "**/*.jsx"],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "payload-types.ts",
+    "sst.config.ts",
+    ".sst/"
+  ]
 }
