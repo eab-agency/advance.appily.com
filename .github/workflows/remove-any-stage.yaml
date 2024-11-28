@@ -1,4 +1,4 @@
-name: Remove Any Stage on Dev
+name: ❌ Remove Stage on Dev
 
 on:
   workflow_dispatch:
