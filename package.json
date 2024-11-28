@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "typecheck": "bun --filter=* typecheck",
     "build": "next build",
     "dev": "next dev",
     "dev:sst": "sst dev",

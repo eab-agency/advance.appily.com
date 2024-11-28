@@ -2,10 +2,10 @@ name: Build Preview on Push to Feature Branch
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - "feature/*"
-  #     - "feature-*"
+  push:
+    branches:
+      - "feature/*"
+      - "feature-*"
 
 permissions:
   contents: write
@@ -19,9 +19,11 @@ jobs:
     environment: Staging
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      - uses: oven-sh/setup-bun@v2
+
+      # - uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 20
 
       - name: Configure Dev AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -29,21 +31,33 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-dev-github
           aws-region: us-east-1
 
-      - name: Cache Next.js Build
+      # - name: Cache Next.js Build
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: |
+      #       .next/cache/
+      #       .open-next/
+      #       .sst/
+      #     key: cache-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]xs') }}
+      #     restore-keys: |
+      #       cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
+      - name: Cache Next.js Build with Bun
         uses: actions/cache@v4
         with:
           path: |
-            .next/cache/
-            .open-next/
-            .sst/
-          key: cache-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]xs') }}
+            ~/.sst/
+            ~/.bun/install/cache
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
           restore-keys: |
-            cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
-      - name: Install Pnpm
-        run: npm install -g pnpm
+            ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}-
 
-      - name: Install projects deps
-        run: pnpm install
+      - name: Install projects deps with Bun
+        run: bun install
+
+      - name: typecheck
+        run: bun typecheck
 
       - name: Deploy to AWS with SST
         env:
@@ -52,4 +66,4 @@ jobs:
           NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
           NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
 
-        run: npx sst deploy --stage=${GITHUB_REF_NAME}
+        run: sst deploy --stage=${GITHUB_REF_NAME}
