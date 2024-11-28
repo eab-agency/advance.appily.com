@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@v2
 
       - run: "curl -fsSL https://sst.dev/install | bash"
 
@@ -29,19 +29,19 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-dev-github
           aws-region: us-east-1
 
-      # - name: Cache Next.js Build with Bun
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: |
-      #       ~/.sst/
-      #       ~/.bun/install/cache
-      #       ${{ github.workspace }}/.next/cache
-      #     key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}-
+      - name: Cache Next.js Build with Bun
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.sst/
+            ~/.bun/install/cache
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}-
 
-      # - name: Install projects deps with Bun
-      #   run: bun install
+      - name: Install projects deps with Bun
+        run: bun install
 
       - name: Remove Stage from AWS
         run: sst remove --stage=${{github.event.inputs.stage}} --print-logs
