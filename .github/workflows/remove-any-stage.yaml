@@ -13,7 +13,7 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  remove-sst-stage:
     runs-on: ubuntu-latest
     environment: Staging
     steps:
@@ -44,4 +44,4 @@ jobs:
       #   run: bun install
 
       - name: Remove Stage from AWS
-        run: sst deploy --stage=${{github.event.inputs.stage}}
+        run: sst remove --stage=${{github.event.inputs.stage}}
