@@ -10,19 +10,17 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
   id-token: write
-  deployments: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: Staging
     steps:
-      - uses: actions/checkout@v4
+      # - uses: actions/checkout@v4
       # Define an environment variable for the sanitized stage name
 
-      - uses: oven-sh/setup-bun@v2
+      # - uses: oven-sh/setup-bun@v2
 
       - run: "curl -fsSL https://sst.dev/install | bash"
 
@@ -47,5 +45,4 @@ jobs:
       #   run: bun install
 
       - name: Remove Stage from AWS
-        if: ${{ github.event.inputs.stage != 'production' || 'Production' }}
         run: sst deploy --stage=${{github.event.inputs.stage}}
