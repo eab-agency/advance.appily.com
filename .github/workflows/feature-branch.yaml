@@ -77,4 +77,4 @@ jobs:
 
         run: |
           echo "Deploying to stage: $STAGE_NAME"
-          sst deploy --stage=${GITHUB_REF_NAME}
+          sst deploy --stage=$STAGE_NAME
