@@ -17,8 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Staging
     steps:
-      # - uses: actions/checkout@v4
-      # Define an environment variable for the sanitized stage name
+      - uses: actions/checkout@v4
 
       # - uses: oven-sh/setup-bun@v2
 
