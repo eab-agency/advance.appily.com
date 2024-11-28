@@ -1,6 +1,7 @@
 name: 🎣 Create Pull Request to Production on Merge to Main
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - "main"
@@ -31,8 +32,8 @@ jobs:
           ACTOR="${{ github.actor }}"
           DATE=$(date)
 
-          # Fetch the latest changes
-          git fetch origin production
+          # Get the list of commits between main and production using gh
+          COMMITS=$(gh api repos/:owner/:repo/compare/production...main --jq '.commits[].commit.message')
 
           # Get the list of commits between main and production
           COMMITS=$(git log origin/production..HEAD --oneline)
