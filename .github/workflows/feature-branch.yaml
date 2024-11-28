@@ -1,4 +1,4 @@
-name: Build Preview on Push to Feature Branch
+name: 👀 Build Preview on Push to Feature Branch
 
 on:
   workflow_dispatch:
@@ -6,6 +6,9 @@ on:
     branches:
       - "feature/*"
       - "feature-*"
+    paths:
+      - "src/**"
+      - "*.json"
 
 permissions:
   contents: write
