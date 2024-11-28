@@ -1,8 +1,8 @@
-## Getting Started
+# Getting Started (with Bun)
 
 Edit
 
-### Payload
+## Payload
 
 First you'll need an instance of our [Payload CMS](https://github.com/eab-agency/appily-cms). Take note of your server URL, you'll need this in the next step.
 
