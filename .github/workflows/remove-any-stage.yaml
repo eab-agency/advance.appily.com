@@ -44,4 +44,4 @@ jobs:
       #   run: bun install
 
       - name: Remove Stage from AWS
-        run: sst remove --stage=${{github.event.inputs.stage}}
+        run: sst remove --stage=${{github.event.inputs.stage}} --print-logs
