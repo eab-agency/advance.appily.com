@@ -111,7 +111,7 @@ export const fetchReaminingCarouselCards = async (
 				query: CAROUSELCARDSNOTIN,
 				variables: {
 					state: incomingLocationsToFilterOut,
-					lead: [leadType] || ["Business"],
+					lead: leadType ? [leadType] : ["Business"],
 				},
 			}),
 		},
