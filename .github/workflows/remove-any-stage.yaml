@@ -1,4 +1,4 @@
-name: Build Preview on Push to Feature Branch
+name: Remove Any Stage on Dev
 
 on:
   workflow_dispatch:
