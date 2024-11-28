@@ -2,6 +2,11 @@ name: 🎣 Create Pull Request to Production on Merge to Main
 
 on:
   workflow_dispatch:
+    inputs:
+      reason:
+        description: "Reason for deployment"
+        required: false
+        default: "No reason provided"
   push:
     branches:
       - "main"
@@ -15,25 +20,19 @@ on:
 
 permissions:
   id-token: write
-  contents: write # Required for pull request operations
 
 jobs:
-  create-pull-request-to-production:
+  deploy:
     runs-on: ubuntu-latest
     environment: Staging
     steps:
       - uses: actions/checkout@v4
-
       - name: Create Pull Request to Production
         if: success()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          REASON="${{ github.event.inputs.reason || 'No reason provided' }}"
           ACTOR="${{ github.actor }}"
           DATE=$(date)
-
-          gh pr create \
-            --base production \
-            --head main \
-            --title "Auto-Deploy by $ACTOR on $DATE" \
-            --body "This pull request was automatically created by GitHub Actions to deploy the latest changes to production."
+          gh pr create --base production --head main --title "Auto- Deploy by $ACTOR on $DATE" --body "Reason: $REASON"
