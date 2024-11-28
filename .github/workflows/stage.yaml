@@ -7,16 +7,16 @@ on:
         description: "Reason for deployment"
         required: false
         default: "No reason provided"
-  push:
-    branches:
-      - "main"
-    paths:
-      - "src/**"
-      - "*.json"
-      - "*.yaml"
-      - "*.json"
-      - "*.config.js"
-      - "*.config.ts"
+  # push:
+  #   branches:
+  #     - "main"
+  #   paths:
+  #     - "src/**"
+  #     - "*.json"
+  #     - "*.yaml"
+  #     - "*.json"
+  #     - "*.config.js"
+  #     - "*.config.ts"
 
 permissions:
   id-token: write

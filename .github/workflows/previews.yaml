@@ -1,8 +1,9 @@
 name: Build Preview on Pull Request
 
 on:
-  pull_request:
-    branches: ["*"]
+  workflow_dispatch:
+  # pull_request:
+  #   branches: ["*"]
 
 permissions:
   contents: write
