@@ -39,7 +39,7 @@ jobs:
             gh pr create \
               --base production \
               --head main \
-              --title "Auto-Deploy by $ACTOR on $DATE"
+              --title "Auto-Deploy by $ACTOR on $DATE" \
               --body "This pull request was automatically created by GitHub Actions to deploy the latest changes to production."
           else
             echo "Pull request from main to production already exists: #$PR_EXISTS"
