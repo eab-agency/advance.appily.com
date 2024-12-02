@@ -1,4 +1,4 @@
-export const rootDomain = "advance.appily.link"
+export const rootDomain = "advance.appily.com"
 export const devDomain = "advance.appily.click"
 
 export const domain = {

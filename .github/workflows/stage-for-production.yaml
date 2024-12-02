@@ -1,6 +1,12 @@
 name: 🎣 Create Pull Request to Production on Merge to Main
 
 on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Reason for deployment"
+        required: false
+        default: "No reason provided"
   push:
     branches:
       - "main"
@@ -14,7 +20,6 @@ on:
 
 permissions:
   id-token: write
-  contents: write # Required for pull request operations
 
 jobs:
   deploy:
@@ -22,33 +27,12 @@ jobs:
     environment: Staging
     steps:
       - uses: actions/checkout@v4
-
       - name: Create Pull Request to Production
         if: success()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          REASON="${{ github.event.inputs.reason || 'No reason provided' }}"
           ACTOR="${{ github.actor }}"
           DATE=$(date)
-
-          # Fetch the latest changes
-          git fetch origin production
-
-          # Get the list of commits between main and production
-          COMMITS=$(git log origin/production..HEAD --oneline)
-
-          # Get the list of changed files
-          FILES=$(git diff --name-only origin/production..HEAD)
-
-          # Check for existing pull requests
-          PR_EXISTS=$(gh pr list --base production --head main --json number --jq '.[].number')
-
-          if [ -z "$PR_EXISTS" ]; then
-            gh pr create \
-              --base production \
-              --head main \
-              --title "Auto-Deploy by $ACTOR on $DATE" \
-              --body "Changes:\n$COMMITS\n\n## Files Changed:\n$FILES"
-          else
-            echo "Pull request from main to production already exists: #$PR_EXISTS"
-          fi
+          gh pr create --base production --head main --title "Auto- Deploy by $ACTOR on $DATE" --body "Reason: $REASON"

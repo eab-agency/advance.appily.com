@@ -2,7 +2,11 @@
   "extends": "./.sst/platform/tsconfig.json",
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -21,12 +25,21 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@images/*": ["./public/images/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@images/*": [
+        "./public/images/*"
+      ]
     },
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "**/*.jsx"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "**/*.jsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     ".next",
