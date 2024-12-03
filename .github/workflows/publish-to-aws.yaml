@@ -1,0 +1,106 @@
+name: Deploy with SST
+
+# Run on call from other workflow
+on:
+  # Triggered manually from the GitHub UI
+  workflow_dispatch:
+    inputs:
+      stageName:
+        description: "The SST stage to deploy to (e.g., dev, prod)"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - prod
+      envName:
+        description: "The name of the environment (e.g., Staging, Production)"
+        required: true
+        default: "Staging"
+        type: choice
+        options:
+          - Staging
+          - Production
+      envUrl:
+        description: "The URL of the environment"
+        required: false
+        default: "https://advance.appily.com"
+        type: string
+
+  workflow_call:
+    inputs:
+      stageName:
+        description: "The SST stage to deploy to (e.g., dev, feature-1)"
+        required: true
+        default: "dev"
+        type: string
+      envName:
+        description: "The name of the environment (e.g., Staging, Production)"
+        required: true
+        default: "Staging"
+        type: string
+      envUrl:
+        description: "The URL of the environment"
+        required: false
+        default: "https://advance.appily.com"
+        type: string
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy to ${{ inputs.stageName }}
+    environment:
+      name: ${{ inputs.envName }}
+      url: ${{ inputs.stageName }}.advance.appily.com
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # - name: Install pnpm
+      #   uses: pnpm/action-setup@v4
+
+      # - uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 20
+      #     cache: "pnpm"
+
+      # - name: Install projects deps
+      #   run: pnpm install
+
+      - if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/production'
+        name: Configure Dev AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
+          aws-region: us-east-1
+
+      - if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production'
+        name: Configure Production AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-dev-github
+          aws-region: us-east-1
+
+      # - name: Cache Next.js Build
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: |
+      #       ${{ github.workspace }}/.next/cache
+      #       .open-next/
+      #       .sst/
+      #     key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
+      - name: Deploy with SST
+        env:
+          NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
+          NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
+          NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
+          NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
+        run: npx sst deploy --stage ${{ inputs.stageName }}
