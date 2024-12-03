@@ -52,7 +52,7 @@ permissions:
 jobs:
   deploy:
     name: Deploy to ${{ inputs.stageName }}
-    environment: ${{ inputs.envName }}
+    environment: Staging
 
     runs-on: ubuntu-latest
 
