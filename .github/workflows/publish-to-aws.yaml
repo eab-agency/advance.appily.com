@@ -73,19 +73,19 @@ jobs:
       - name: Install projects deps
         run: pnpm install
 
-      - if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/production'
-        name: Configure Dev AWS credentials
+      # - if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/production'
+      - name: Configure Dev AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-dev-github
           aws-region: us-east-1
 
-      - if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production'
-        name: Configure Production AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
-          aws-region: us-east-1
+      # - if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production'
+      #   name: Configure Production AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v4
+      #   with:
+      #     role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
+      #     aws-region: us-east-1
 
       - name: Cache Next.js Build
         uses: actions/cache@v4
@@ -104,4 +104,4 @@ jobs:
           NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
           NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
           NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
-        run: npx sst deploy --stage ${{ inputs.stageName }}
+        run: npx sst deploy --stage ${{ inputs.stageName }} --print-logs
