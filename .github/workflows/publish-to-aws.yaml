@@ -6,13 +6,13 @@ on:
   workflow_dispatch:
     inputs:
       stageName:
-        description: "The SST stage to deploy to (e.g., dev, prod)"
+        description: "The SST stage to deploy to (e.g., dev, prodroduction)"
         required: true
         default: "dev"
         type: choice
         options:
           - dev
-          - prod
+          - production
       envName:
         description: "The name of the environment (e.g., Staging, Production)"
         required: true
@@ -52,9 +52,10 @@ permissions:
 jobs:
   deploy:
     name: Deploy to ${{ inputs.stageName }}
-    environment: Staging
-
     runs-on: ubuntu-latest
+    environment:
+      name: Staging
+      url: https://advance.appily.com
 
     steps:
       - uses: actions/checkout@v4

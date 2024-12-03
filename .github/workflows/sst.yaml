@@ -59,4 +59,4 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy to AWS with SST
-        run: npx sst deploy --stage=${GITHUB_REF_NAME}
+        run: npx sst deploy --stage=${GITHUB_REF_NAME} --print-logs
