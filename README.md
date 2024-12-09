@@ -57,4 +57,4 @@ npx sst dev
 
 This starts a multiplexer with processes that deploy your app, run your functions, and start your frontend.
 
-![alt text](./infra/image.png)
+![alt text](./infra/misc/image.png)
