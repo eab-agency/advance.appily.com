@@ -47,7 +47,8 @@ export const PageClient: React.FC<{
       ? sizes?.squareSmall?.url
       : // @ts-ignore
         createdBy?.userImage?.url;
-
+console.log(postFeaturedImage)
+console.log(relatedPostData)
   return (
     <div className="post-content__wrapper">
       <Link href="/blog" className="back-btn">
@@ -87,22 +88,24 @@ export const PageClient: React.FC<{
 
       {createdBy && (
         <aside className="post__author-bio">
-          <h2>About the Author</h2>
           <div
             className="author-content-wrapper"
             itemScope
             itemType="https://schema.org/Person"
-          >
-            <figure className="author-image">
-              <Image
-                src={userImageURL}
-                // @ts-ignore
-                alt={createdBy?.userImage?.alt}
-                itemProp="image"
-                fill
-                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 30vw, 20vw"
-              />
-            </figure>
+            >
+            <h2>About the Author</h2>
+            {userImageURL && (
+                <figure className="author-image">
+                <Image
+                  src={userImageURL}
+                  // @ts-ignore
+                  alt={createdBy?.userImage?.alt}
+                  itemProp="image"
+                  fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 30vw, 20vw"
+                  />
+              </figure>
+            )}
             <div className="author-content">
               <header>
                 <h3 itemProp="name">
@@ -110,10 +113,12 @@ export const PageClient: React.FC<{
                   {createdBy?.name}
                 </h3>
               </header>
-              <p itemProp="description">
-                {/* @ts-ignore */}
-                {createdBy?.bio}
-              </p>
+              {createdBy && (
+                <p itemProp="description">
+                  {/* @ts-ignore */}
+                  {createdBy?.bio}
+                </p>
+              )}
             </div>
           </div>
         </aside>
