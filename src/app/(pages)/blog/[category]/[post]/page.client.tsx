@@ -47,8 +47,6 @@ export const PageClient: React.FC<{
       ? sizes?.squareSmall?.url
       : // @ts-ignore
         createdBy?.userImage?.url;
-console.log(postFeaturedImage)
-console.log(relatedPostData)
   return (
     <div className="post-content__wrapper">
       <Link href="/blog" className="back-btn">
