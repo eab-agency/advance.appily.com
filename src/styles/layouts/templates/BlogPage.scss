@@ -435,6 +435,7 @@ main {
     margin: 20px 0;
     width: 100%;
     padding-inline: clamp(1rem, 2vw, 2rem);
+    // gap: clamp(0.5rem, 1vw, 1rem);
 
     .category-heading {
       display: block;
@@ -444,6 +445,11 @@ main {
       margin-bottom: 1rem;
       color: var(--c-bodyPrimary);
       border-bottom: 1px solid var(--c-bg11);
+    }
+
+    a{
+      padding-block: 0.5em;
+      border-bottom: 1px solid  var(--c-bg11);
     }
   }
 }
