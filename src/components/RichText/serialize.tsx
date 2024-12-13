@@ -2,6 +2,17 @@ import escapeHTML from "escape-html";
 import { Fragment } from "react";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
 
+import ImageCard from '@/blocks/ImageCard';
+import { Media } from '@/components/Media';
+import { StatCard } from '@/components/StatCard';
+import Image from "next/image";
+import RichText from '../RichText';
+import { Testimonial } from '../Testimonial';
+import AccordionSection from '../commonComponent/AccordionGroup';
+import ButtonGroup from '../commonComponent/ButtonGroup';
+import ComparisonCard from '../commonComponent/ComparisonCard';
+
+
 export const IS_BOLD = 1;
 export const IS_ITALIC = 1 << 1;
 export const IS_STRIKETHROUGH = 1 << 2;
@@ -31,6 +42,30 @@ function stripAnchorTags(node) {
 
   return "";
 }
+
+// ======================================
+// Block rendering
+const blockRenderers = {
+  stats: (block) => <StatCard stats={block.statistics}{...block} />,
+  richText: (block) => <RichText content={block.richText} />,
+  mediaBlock: (block) => {
+    const { media, cornerStyle, enableHighlight } = block;
+    return (
+      <Media
+        resource={media}
+        cornerStyle={cornerStyle}
+        enableHighlight={enableHighlight}
+        priority
+      />
+    )
+  },
+  testimonial: (block) => <Testimonial testimonialData={block} />,
+  accordion: (block) => <AccordionSection data={block} />,
+  comparison: (block) => <ComparisonCard data={block} />,
+  ButtonGroup: (block) => <ButtonGroup data={block} />,
+  imageCard: (block) => <ImageCard imageCardData={block} />,
+};
+// ======================================
 
 interface ParentNode {
   listType?: string; // Optional because not all nodes may have this property
@@ -155,6 +190,37 @@ export default function serializeLexicalRichText({
         <p className={`${classNames.p} ${generateTextAlign(node)}`} key={i}>
           {serializeLexicalRichText({ children: node.children })}
         </p>
+      );
+    }
+
+    if (node.type === "linebreak") {
+      return <br key={i} />;
+    }
+
+    // handling uploaded images
+    if (node.type === "upload") {
+      return (
+        <figure className="my-xl" key={i}>
+          <Image
+            src={node.value?.url}
+            alt={node.value?.alt}
+            key={i}
+            width={node.value?.width}
+            height={node.value?.height}
+            sizes="(max-width: 55rem) 100vw, 60vw"
+          />
+        </figure>
+      );
+    }
+
+    // handling inline blocks
+    if (node.type === "block") {
+      const blocks = node.fields;
+
+      return (
+        <Fragment key={i}>
+          {blockRenderers[blocks.blockType](blocks)}
+        </Fragment>
       );
     }
 

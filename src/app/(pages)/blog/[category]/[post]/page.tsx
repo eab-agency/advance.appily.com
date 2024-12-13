@@ -42,18 +42,15 @@ interface PostComponentProps {
 }
 const PostComponent = async ({ params }: PostComponentProps) => {
   const { post, category } = params;
-  console.log(params, 'params**')
   let postData: Post | null = null;
   let relatesPosts: Post[] | null = [];
   let actualCategorySlug: string | null = null;
-  console.log(category, 'params123**')
   try {
     postData = await fetchPost(post);
     if (postData) {
       actualCategorySlug = postData?.category && postData.category.length > 0
         ? (postData.category[0] as Category)?.slug || null
         : null;
-      console.log(actualCategorySlug, 'actualCategorySlug**')
       // Compare the URL category with the actual category slug
       if (actualCategorySlug !== category) {
         console.error("Category mismatch:", { actualCategorySlug, category });
