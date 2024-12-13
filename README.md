@@ -4,7 +4,7 @@ Edit
 
 ## Payload
 
-First you'll need an instance of our [Payload CMS](https://github.com/eab-agency/appily-cms). Take note of your server URL, you'll need this in the next step.
+First you'll need an instance of our [Payload CMS](https://github.com/eab-agency/appily-cms) if you want to connect locally. Take note of your server URL, you'll need this in the next step.
 
 ### Next.js App Setup
 
@@ -20,29 +20,41 @@ Get your environment setup:
 
    ```bash
      NEXT_PUBLIC_APP_URL=http://localhost:3000
-     NEXT_PUBLIC_CMS_URL=http://localhost:8000
-     NEXT_PUBLIC_IS_LIVE=
+     NEXT_PUBLIC_CMS_URL=http://point-to-your-cms-here
      SECRET_COOKIE_PASSWORD=make-it-a-random-string
-     ACS_PUBLIC_KEY=get-from-bob
-     ACS_PRIVATE_KEY=get-from-bob
    ```
 
-First, run the development server:
+### Local Dev Environment Setup
+
+Configure your aws credentials:
+
+1. Install the AWS CLI: [https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+2. Run `aws configure` in your terminal
+3. Enter your AWS Access Key ID and Secret Access Key
+4. Enter your default region (us-east-1)
+5. Enter your default output format (json)
+
+Your ~/.aws/credentials file should look like this:
 
 ```bash
-npm run dev
-# or
-yarn dev
+[default]
+   aws_access_key_id = XXXXXXXXXXXXXXXXX
+   aws_secret_access_key = XXXXxxXXxxXXXXXxxxXXXxX
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Your ~/.aws/config file should look like this:
 
-You can start editing the page by modifying the documents within your CMS.
+```bash
+[default]
+   region = us-east-1
+```
 
-### Deployment
+First, run the development server with sst:
 
-QA CMS: [https://qa-appily-cms.payloadcms.app/admin/](https://qa-appily-cms.payloadcms.app/admin/)
+```bash
+npx sst dev
+```
 
-Branch that biulds to QA CMS: `UAT-dev-url-to-qa-cms`
+This starts a multiplexer with processes that deploy your app, run your functions, and start your frontend.
 
-Public facing URL that accesses above CMS: [https://dev.advance.appily.com/](https://dev.advance.appily.com/)
+![alt text](./infra/misc/image.png)

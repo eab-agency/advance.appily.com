@@ -14,7 +14,7 @@ import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import { Metadata } from "next";
 
 const title = data.metaData.title;
-const description = `${data.metaData.description} test`;
+const description = `${data.metaData.description}`;
 
 export const metadata: Metadata = {
   title: title,

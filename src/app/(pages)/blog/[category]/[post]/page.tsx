@@ -5,8 +5,7 @@ import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { Category, Post } from "../../../../../../payload-types";
-import { PageClient } from "./page.client";
-
+import { PageClient } from './page.client';
 export async function generateStaticParams() {
   try {
     const posts = await fetchPosts();
@@ -16,16 +15,14 @@ export async function generateStaticParams() {
     return [];
   }
 }
-
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string; post: string };
+  params: { slug: string; post: string; category: string };
 }): Promise<Metadata> {
   const { isEnabled: isDraftMode } = draftMode();
   const { slug, post } = params;
   let postData: Post | null = null;
-
   try {
     postData = await fetchPost(post);
   } catch (error) {
@@ -40,20 +37,24 @@ export async function generateMetadata({
     };
   }
 }
-
 interface PostComponentProps {
   params: { slug: string; post: string; category: string };
 }
-
 const PostComponent = async ({ params }: PostComponentProps) => {
-  const { post } = params;
+  const { post, category } = params;
   let postData: Post | null = null;
   let relatesPosts: Post[] | null = [];
-
+  let actualCategorySlug: string | null = null;
   try {
     postData = await fetchPost(post);
-
     if (postData) {
+      actualCategorySlug = postData?.category && postData.category.length > 0
+        ? (postData.category[0] as Category)?.slug || null
+        : null;
+      // Compare the URL category with the actual category slug
+      if (actualCategorySlug !== category) {
+        console.error("Category mismatch:", { actualCategorySlug, category });
+      }
       const catID: Category["id"] = postData?.category
         ? (postData?.category[0] as Category)?.id
         : "";
@@ -64,43 +65,18 @@ const PostComponent = async ({ params }: PostComponentProps) => {
   } catch (error) {
     console.error("Error fetching post:", error);
   }
-
+  if (actualCategorySlug !== category && postData) {
+    notFound();
+  }
+  if (actualCategorySlug !== category && !postData) {
+    notFound()
+  }
   if (!postData) {
     notFound();
   }
 
-  const { meta, publishedDate, updatedAt, createdBy, postFeaturedImage } =
-    postData;
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://advance.appily.com/blog/${params.category}/${params.post}`,
-    },
-    headline: meta?.title || postData?.title,
-    description: meta?.description,
-    // @ts-ignore
-    image: meta?.image?.url || postFeaturedImage?.url || "",
-    author: {
-      "@type": "Person",
-      // @ts-ignore
-      name: createdBy?.name,
-    },
-    datePublished: publishedDate,
-    dateModified: updatedAt,
-  };
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <PageClient post={postData} relatedPostData={relatesPosts} />
-    </>
+    <PageClient post={postData} relatedPostData={relatesPosts} />
   );
 };
-
 export default PostComponent;
