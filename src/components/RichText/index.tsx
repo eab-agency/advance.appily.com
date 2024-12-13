@@ -18,8 +18,6 @@ const RichText = function ({
 }: RichTextProps) {
   if (!content?.root?.children) return "";
 
-  console.log("the content", content);
-
   return (
     <div
       className={`${[classes.richText, className].filter(Boolean).join(" ")} `}

@@ -186,7 +186,6 @@ export default function serializeLexicalRichText({
 
     // Handling paragraphs and avoiding <p> nesting
     if (node.type === "paragraph") {
-      console.log("node:",node);
       return (
         <p className={`${classNames.p} ${generateTextAlign(node)}`} key={i}>
           {serializeLexicalRichText({ children: node.children })}
@@ -200,7 +199,6 @@ export default function serializeLexicalRichText({
 
     // handling uploaded images
     if (node.type === "upload") {
-      console.log("value", node.value);
       return (
         <figure className="my-xl" key={i}>
           <Image
