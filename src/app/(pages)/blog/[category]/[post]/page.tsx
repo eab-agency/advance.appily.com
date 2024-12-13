@@ -43,6 +43,8 @@ interface PostComponentProps {
 const PostComponent = async ({ params }: PostComponentProps) => {
   const { post, category } = params;
   console.log(params, 'params**')
+  const { post, category } = params;
+  console.log(params, 'params**')
   let postData: Post | null = null;
   let relatesPosts: Post[] | null = [];
   let actualCategorySlug: string | null = null;
