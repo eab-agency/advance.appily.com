@@ -200,13 +200,18 @@ export default function serializeLexicalRichText({
 
     // handling uploaded images
     if (node.type === "upload") {
+      console.log("value", node.value);
       return (
-        <Image
-          className="w-full"
-          src={node.value?.url}
-          alt={node.value?.alt}
-          key={i}
-        />
+        <figure className="my-xl" key={i}>
+          <Image
+            src={node.value?.url}
+            alt={node.value?.alt}
+            key={i}
+            width={node.value?.width}
+            height={node.value?.height}
+            sizes="(max-width: 55rem) 100vw, 60vw"
+          />
+        </figure>
       );
     }
 
