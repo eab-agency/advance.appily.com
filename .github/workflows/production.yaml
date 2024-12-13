@@ -52,4 +52,4 @@ jobs:
           NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
           NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
 
-        run: npx sst deploy --stage=${GITHUB_REF_NAME}
+        run: npx sst deploy --stage=production
