@@ -5,6 +5,7 @@ import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import ImageCard from '@/blocks/ImageCard';
 import { Media } from '@/components/Media';
 import { StatCard } from '@/components/StatCard';
+import Image from "next/image";
 import RichText from '../RichText';
 import { Testimonial } from '../Testimonial';
 import AccordionSection from '../commonComponent/AccordionGroup';
@@ -200,7 +201,7 @@ export default function serializeLexicalRichText({
     // handling uploaded images
     if (node.type === "upload") {
       return (
-        <img
+        <Image
           className="w-full"
           src={node.value?.url}
           alt={node.value?.alt}
