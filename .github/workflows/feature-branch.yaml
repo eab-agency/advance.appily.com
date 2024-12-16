@@ -54,23 +54,22 @@ jobs:
       #     restore-keys: |
       #       cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - name: Cache Next.js Build with Bun
+      - name: Cache Next.js Build
         uses: actions/cache@v4
         with:
           path: |
-            ~/.sst/
-            ~/.bun/install/cache
-            ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+            .next/cache/
+            .open-next/
+            .sst/
+          key: cache-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]xs') }}
           restore-keys: |
-            ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}-
+            cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - name: Install projects deps with Bun
-        run: bun install
+      - name: Install Pnpm
+        run: npm install -g pnpm
 
-      - name: typecheck
-        run: bun typecheck
-        continue-on-error: true
+      - name: Install projects deps
+        run: pnpm install
 
       - name: Deploy to AWS with SST
         env:
@@ -78,6 +77,9 @@ jobs:
           NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
           NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
           NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
+          NEXT_PUBLIC_AWS_IDENTITY_POOL_ID: ${{ vars.NEXT_PUBLIC_AWS_IDENTITY_POOL_ID}}
+          NEXT_PUBLIC_AWS_APPLICATION_ID: ${{ vars.NEXT_PUBLIC_AWS_APPLICATION_ID}}
+          NEXT_PUBLIC_AWS_CLOUDWATCH_RUM_ENDPOINT: ${{ vars.NEXT_PUBLIC_AWS_CLOUDWATCH_RUM_ENDPOINT}}
 
         run: |
           echo "Deploying to stage: $STAGE_NAME"
