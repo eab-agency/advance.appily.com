@@ -51,7 +51,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
   }
   return {
     props,
-    revalidate: 60, // Revalidate every 60 seconds
+    revalidate: 120, // Revalidate every 60 seconds
   };
 };
 
