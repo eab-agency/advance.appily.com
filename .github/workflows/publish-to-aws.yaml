@@ -107,5 +107,4 @@ jobs:
           NEXT_PUBLIC_AWS_IDENTITY_POOL_ID: ${{ vars.NEXT_PUBLIC_AWS_IDENTITY_POOL_ID}}
           NEXT_PUBLIC_AWS_APPLICATION_ID: ${{ vars.NEXT_PUBLIC_AWS_APPLICATION_ID}}
           NEXT_PUBLIC_AWS_CLOUDWATCH_RUM_ENDPOINT: ${{ vars.NEXT_PUBLIC_AWS_CLOUDWATCH_RUM_ENDPOINT}}
-
         run: npx sst deploy --stage ${{ inputs.stageName }}
