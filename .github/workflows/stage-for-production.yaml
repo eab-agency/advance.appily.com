@@ -20,6 +20,8 @@ on:
 
 permissions:
   id-token: write
+  contents: write # Ensure this is set to allow write access to contents
+  pull-requests: write # Add this to allow pull request creation
 
 jobs:
   deploy:
