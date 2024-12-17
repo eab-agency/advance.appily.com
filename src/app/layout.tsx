@@ -27,7 +27,6 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://use.typekit.net" />
         <link rel="stylesheet" href="https://use.typekit.net/wba2ytz.css" />
       </head>
-      {/* if isDevMode is false then load GoogleTagManager */}
       {!isDevMode() && <GoogleTagManager gtmId={GTM_ID} />}
       <body>
         <Providers>
