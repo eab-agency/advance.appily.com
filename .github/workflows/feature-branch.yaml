@@ -43,17 +43,6 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-dev-github
           aws-region: us-east-1
 
-      # - name: Cache Next.js Build
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: |
-      #       .next/cache/
-      #       .open-next/
-      #       .sst/
-      #     key: cache-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]xs') }}
-      #     restore-keys: |
-      #       cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
-
       - name: Cache Next.js Build
         uses: actions/cache@v4
         with:
