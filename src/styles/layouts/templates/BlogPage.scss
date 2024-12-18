@@ -396,6 +396,7 @@ main {
       &__published-date {
         margin: 0;
         flex-direction: row;
+
         @media (min-width: tokens.$mq-800) {
           text-align: center;
           width: 5rem;

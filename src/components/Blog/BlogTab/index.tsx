@@ -132,22 +132,21 @@ const BlogTabs = ({ tabs }) => {
         </div>
       </div>
       <div className="all-posts-container">
-        {fetchedPosts?.map((post) => {
-          const {
-            id,
-            title,
-            createdBy,
-            publishedDate,
-            updatedAt,
-            slug,
-            category,
-          } = post;
+      {fetchedPosts
+        ?.sort((a, b) => {
+          const getLatestDate = (post) =>
+            new Date(post.updatedAt || post.publishedDate || 0);
+
+          return getLatestDate(b).getTime() - getLatestDate(a).getTime();
+        })
+        .map((post) => {
+          const { id, title, createdBy, publishedDate, updatedAt, slug, category } = post;
+
           const catTitle =
-            Array.isArray(category) &&
-            typeof category[0] === "object" &&
-            "slug" in category[0]
-              ? category[0]?.slug ?? ""
+            Array.isArray(category) && typeof category[0] === "object" && "slug" in category[0] && category[0]?.slug
+              ? category[0].slug
               : "";
+
           return (
             <article key={id} className="post">
               <Link href={`blog/${catTitle}/${slug}`}>
@@ -161,7 +160,8 @@ const BlogTabs = ({ tabs }) => {
               </Link>
             </article>
           );
-        })}
+        })
+      }
       </div>
     </div>
   );
