@@ -7,15 +7,20 @@ import "@/styles/layouts/templates/PostPage.scss";
 import { useLivePreview } from "@payloadcms/live-preview-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { FaChevronLeft } from "react-icons/fa";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Post } from "../../../../../../payload-types";
 import { useId } from "../../../../../context/idContext";
 
 export const PageClient: React.FC<{
   post: Post;
   relatedPostData: Post[];
-}> = ({ post: initialPage, relatedPostData }) => {
+  toastMessage: String;
+
+}> = ({ post: initialPage, relatedPostData , toastMessage}) => {
   const serverURL = process.env.NEXT_PUBLIC_CMS_URL || "";
   const { docId, setId } = useId(); // Get and set the ID from the context
 
@@ -24,6 +29,35 @@ export const PageClient: React.FC<{
     serverURL: serverURL, // Ensure this URL is correct
     depth: 2,
   });
+  const router = useRouter();
+
+  useEffect(() => {
+    if (toastMessage) {
+      toast.error(toastMessage, {
+        position: "top-right",
+        autoClose: 5000, // Close after 5 seconds
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+      console.log(data,'data****');
+      if(data === undefined) {
+        setTimeout(() => {
+          router.push("/blog");
+        }, 3000);
+      }else {
+          setTimeout(() => {
+        router.push("/blog");
+      }, 4000);
+      }
+    
+    }
+  }, [toastMessage, router, data]);
+
+  // if (!data) {
+  //   return null; // Prevent rendering content if redirecting
+  // }
 
   useEffect(() => {
     if (data?.id) {
@@ -39,7 +73,17 @@ export const PageClient: React.FC<{
     createdBy,
     id,
     richText,
-  } = data;
+  } = data || {};
+
+  if (!data) {
+    return (
+      <div className="no-data-message">
+         <ToastContainer />
+        <h2>Post data are not available</h2>
+        <p>This page is not found. Redirecting to the blog.</p>
+      </div>
+    );
+  }
   // @ts-ignore
   const sizes = createdBy?.userImage?.sizes;
   const userImageURL =
@@ -49,6 +93,7 @@ export const PageClient: React.FC<{
         createdBy?.userImage?.url;
   return (
     <div className="post-content__wrapper">
+       <ToastContainer /> 
       <Link href="/blog" className="back-btn">
         <FaChevronLeft />
         Back to Blog

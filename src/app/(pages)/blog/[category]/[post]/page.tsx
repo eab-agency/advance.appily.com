@@ -3,9 +3,10 @@ import { generateMeta } from "@/seo/generateMeta";
 import "@/styles/layouts/templates/PostPage.scss";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { notFound } from "next/navigation";
+import 'react-toastify/dist/ReactToastify.css';
 import { Category, Post } from "../../../../../../payload-types";
 import { PageClient } from './page.client';
+
 export async function generateStaticParams() {
   try {
     const posts = await fetchPosts();
@@ -45,6 +46,8 @@ const PostComponent = async ({ params }: PostComponentProps) => {
   let postData: Post | null = null;
   let relatesPosts: Post[] | null = [];
   let actualCategorySlug: string | null = null;
+  let toastMessage: string | null = null;
+
   try {
     postData = await fetchPost(post);
     if (postData) {
@@ -52,9 +55,6 @@ const PostComponent = async ({ params }: PostComponentProps) => {
         ? (postData.category[0] as Category)?.slug || null
         : null;
       // Compare the URL category with the actual category slug
-      if (actualCategorySlug !== category) {
-        console.error("Category mismatch:", { actualCategorySlug, category });
-      }
       const catID: Category["id"] = postData?.category
         ? (postData?.category[0] as Category)?.id
         : "";
@@ -63,20 +63,22 @@ const PostComponent = async ({ params }: PostComponentProps) => {
       }
     }
   } catch (error) {
+    console.log(error,'error***')
     console.error("Error fetching post:", error);
   }
+
   if (actualCategorySlug !== category && postData) {
-    notFound();
+    toastMessage = `This page is not found. Redirecting to the blog.`;
   }
   if (actualCategorySlug !== category && !postData) {
-    notFound()
+    toastMessage = `This page is not found. Redirecting to the blog.`;
   }
   if (!postData) {
-    notFound();
+    toastMessage = `This page is not found. Redirecting to the blog.`;
   }
-
+ 
   return (
-    <PageClient post={postData} relatedPostData={relatesPosts} />
+    <PageClient post={postData} relatedPostData={relatesPosts} toastMessage={toastMessage} />
   );
 };
 export default PostComponent;
