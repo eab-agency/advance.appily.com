@@ -1,13 +1,10 @@
-import React from 'react';
-import { notFound } from 'next/navigation';
-import {  fetchPages, fetchPage } from '@/app/graphql';
-import { Page } from '../../../../../payload-types'
-import { Hero } from '../../../../blocks/HeroBlock';
-import { Blocks } from '@/components/Block';
-import { PageClient } from './page.client'
-import { Metadata } from "next";
-import { draftMode } from 'next/headers'
+import { fetchPage, fetchPages } from '@/app/graphql';
+import NotFound from '@/app/not-found';
 import { generateMeta } from "@/seo/generateMeta";
+import { Metadata } from "next";
+import { draftMode } from 'next/headers';
+import { Page } from '../../../../../payload-types';
+import { PageClient } from './page.client';
 
 export async function generateStaticParams() {
 	const pages = await fetchPages();
@@ -57,7 +54,9 @@ export async function generateStaticParams() {
 	  
 	
 	if (!pageData) {
-		return notFound()
+		return(
+      <NotFound statusCode={404}/>
+   )
 	  }
 	const hero = pageData?.hero;
 	const layout = pageData?.layout;

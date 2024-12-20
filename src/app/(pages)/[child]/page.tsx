@@ -1,8 +1,8 @@
 import { fetchPage, fetchPages } from "@/app/graphql";
+import NotFound from "@/app/not-found";
 import { generateMeta } from "@/seo/generateMeta";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { notFound } from "next/navigation";
 import { Page } from "../../../../payload-types";
 import { PageClient } from "./page.client";
 
@@ -101,10 +101,11 @@ const CategoryPage = async ({ params, searchParams }: any) => {
   } catch (error) {}
 
   if (!pageData) {
-    return notFound();
+   return(
+      <NotFound statusCode={404}/>
+   )
   }
-  if (pageData) {
-  }
+ 
   // const {hero , layout} = pageData;
   // return (
   //   <React.Fragment>
