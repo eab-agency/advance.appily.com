@@ -155,7 +155,8 @@ $backgrounds: (
     "button": colors.$c-orange,
     "shadow1": colors.$c-yellow,
     "shadow2": map.get($navy, 700),
-    "shadow3": map.get($violet, 400)
+    "shadow3": map.get($violet, 400),
+    "btn-bg-3": map.get($navy, 900)
   ),
   light: (
     "bg1": color.adjust(colors.$c-slateGray, $lightness: 72%),
@@ -174,7 +175,8 @@ $backgrounds: (
     "bg-posts": colors.$c-white,
     "bg-body": colors.$c-white,
     "bg-blog-tabs": colors.$c-orange,
-    "shadow3": map.get($navy, 700)
+    "shadow3": map.get($navy, 700),
+    "btn-bg-3": map.get($teal, 500),
   )
 );
 
