@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 
+import Toast from "@/components/Toast";
 import { Category, Post, Tag } from "../../../../payload-types";
 
 const BlogTab = dynamic(() => import("@/components/Blog/BlogTab"), {
@@ -34,7 +35,9 @@ const BlogComponent = async () => {
   }
 
   return (
+
     <div className="blog__landing">
+      <Toast />
       <header className="blog__archive-header">
         <h1>Blog</h1>
         <p>
@@ -69,8 +72,8 @@ const BlogComponent = async () => {
             } = post;
             const catTitle =
               Array.isArray(category) &&
-              typeof category[0] === "object" &&
-              "slug" in category[0]
+                typeof category[0] === "object" &&
+                "slug" in category[0]
                 ? category[0]?.slug ?? ""
                 : "";
 
@@ -119,8 +122,8 @@ const BlogComponent = async () => {
             } = post;
             const catTitle =
               Array.isArray(category) &&
-              typeof category[0] === "object" &&
-              "slug" in category[0]
+                typeof category[0] === "object" &&
+                "slug" in category[0]
                 ? category[0]?.slug ?? ""
                 : "";
             return (

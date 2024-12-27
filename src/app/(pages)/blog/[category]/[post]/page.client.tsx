@@ -20,7 +20,7 @@ export const PageClient: React.FC<{
   relatedPostData: Post[];
   toastMessage: String;
 
-}> = ({ post: initialPage, relatedPostData , toastMessage}) => {
+}> = ({ post: initialPage, relatedPostData, toastMessage }) => {
   const serverURL = process.env.NEXT_PUBLIC_CMS_URL || "";
   const { docId, setId } = useId(); // Get and set the ID from the context
 
@@ -32,32 +32,27 @@ export const PageClient: React.FC<{
   const router = useRouter();
 
   useEffect(() => {
-    if (toastMessage) {
-      toast.error(toastMessage, {
-        position: "top-right",
-        autoClose: 5000, // Close after 5 seconds
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
-      console.log(data,'data****');
-      if(data === undefined) {
+    if (data === undefined) {
+      router.push("/blog?error=404");
+    }
+    else {
+      if (toastMessage) {
+        toast.error(toastMessage, {
+          position: "top-right",
+          autoClose: 5000, // Close after 5 seconds
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
         setTimeout(() => {
           router.push("/blog");
-        }, 3000);
-      }else {
-          setTimeout(() => {
-        router.push("/blog");
-      }, 4000);
+        }, 4000);
       }
-    
     }
+
   }, [toastMessage, router, data]);
 
-  // if (!data) {
-  //   return null; // Prevent rendering content if redirecting
-  // }
 
   useEffect(() => {
     if (data?.id) {
@@ -75,25 +70,25 @@ export const PageClient: React.FC<{
     richText,
   } = data || {};
 
-  if (!data) {
-    return (
-      <div className="no-data-message">
-         <ToastContainer />
-        <h2>Post data are not available</h2>
-        <p>This page is not found. Redirecting to the blog.</p>
-      </div>
-    );
-  }
+  // if (!data) {
+  //   return (
+  //     <div className="no-data-message">
+  //        <ToastContainer />
+  //       <h2>Post data are not available</h2>
+  //       <p>This page is not found. Redirecting to the blog.</p>
+  //     </div>
+  //   );
+  // }
   // @ts-ignore
   const sizes = createdBy?.userImage?.sizes;
   const userImageURL =
     sizes?.squareSmall?.url !== null
       ? sizes?.squareSmall?.url
       : // @ts-ignore
-        createdBy?.userImage?.url;
+      createdBy?.userImage?.url;
   return (
     <div className="post-content__wrapper">
-       <ToastContainer /> 
+      <ToastContainer />
       <Link href="/blog" className="back-btn">
         <FaChevronLeft />
         Back to Blog
@@ -135,10 +130,10 @@ export const PageClient: React.FC<{
             className="author-content-wrapper"
             itemScope
             itemType="https://schema.org/Person"
-            >
+          >
             <h2>About the Author</h2>
             {userImageURL && (
-                <figure className="author-image">
+              <figure className="author-image">
                 <Image
                   src={userImageURL}
                   // @ts-ignore
@@ -146,7 +141,7 @@ export const PageClient: React.FC<{
                   itemProp="image"
                   fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 30vw, 20vw"
-                  />
+                />
               </figure>
             )}
             <div className="author-content">

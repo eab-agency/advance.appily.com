@@ -68,13 +68,13 @@ const PostComponent = async ({ params }: PostComponentProps) => {
   }
 
   if (actualCategorySlug !== category && postData) {
-    toastMessage = `This page is not found. Redirecting to the blog.`;
+    toastMessage = `This page is not found. Redirecting to the blog Category.`;
   }
   if (actualCategorySlug !== category && !postData) {
-    toastMessage = `This page is not found. Redirecting to the blog.`;
+    toastMessage = `This page is not found. Redirecting to the blog Category.`;
   }
   if (!postData) {
-    toastMessage = `This page is not found. Redirecting to the blog.`;
+    toastMessage = `This page is not found. Redirecting to the blog no data.`;
   }
  
   return (
