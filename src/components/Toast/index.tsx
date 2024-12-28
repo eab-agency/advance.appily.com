@@ -9,10 +9,9 @@ const Toast = () => {
 
   useEffect(() => {
     if (searchParams.get("error") === "404") {
-      // Show toast message for 404 error
       toast.error("Page not found. Redirected to the blog page.", {
         position: "top-right",
-        autoClose: 5000, // Close after 5 seconds
+        autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -22,9 +21,7 @@ const Toast = () => {
   }, [searchParams]);
 
   return (
-    <>
-      <ToastContainer style={{ zIndex: 9999, position: "absolute", }} />
-    </>
+    <ToastContainer />
   );
 };
 

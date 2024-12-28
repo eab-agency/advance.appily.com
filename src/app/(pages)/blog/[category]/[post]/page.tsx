@@ -63,7 +63,6 @@ const PostComponent = async ({ params }: PostComponentProps) => {
       }
     }
   } catch (error) {
-    console.log(error,'error***')
     console.error("Error fetching post:", error);
   }
 
@@ -73,10 +72,7 @@ const PostComponent = async ({ params }: PostComponentProps) => {
   if (actualCategorySlug !== category && !postData) {
     toastMessage = `This page is not found. Redirecting to the blog Category.`;
   }
-  if (!postData) {
-    toastMessage = `This page is not found. Redirecting to the blog no data.`;
-  }
- 
+
   return (
     <PageClient post={postData} relatedPostData={relatesPosts} toastMessage={toastMessage} />
   );

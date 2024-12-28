@@ -33,25 +33,32 @@ export const PageClient: React.FC<{
 
   useEffect(() => {
     if (data === undefined) {
+      // Redirect immediately if data is undefined
       router.push("/blog?error=404");
-    }
-    else {
-      if (toastMessage) {
-        toast.error(toastMessage, {
-          position: "top-right",
-          autoClose: 5000, // Close after 5 seconds
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-        });
-        setTimeout(() => {
-          router.push("/blog");
-        }, 4000);
-      }
+      return; // Exit to prevent further execution
     }
 
-  }, [toastMessage, router, data]);
+    if (toastMessage) {
+      // Show the toast if toastMessage is available
+      toast.error(toastMessage, {
+        position: "top-right",
+        autoClose: 5000, // Close after 5 seconds
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+
+      // Redirect after showing the toast
+      const redirectTimeout = setTimeout(() => {
+        router.push("/blog");
+      }, 4000);
+
+      // Cleanup timeout on component unmount
+      return () => clearTimeout(redirectTimeout);
+    }
+  }, [data, toastMessage, router]);
+
 
 
   useEffect(() => {
