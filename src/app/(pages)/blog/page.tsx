@@ -24,7 +24,7 @@ const BlogComponent = async () => {
       fetchFirstFivePosts(),
       fetchAllCategories(),
     ]);
-    posts = posts.filter((post) => {
+    posts = posts?.filter((post) => {
       const publishedDate = post?.publishedDate
         ? new Date(post.publishedDate)
         : null;

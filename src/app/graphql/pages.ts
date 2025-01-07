@@ -14,7 +14,6 @@ import {
 } from "./blocks";
 import { LINK_FIELDS } from "./link";
 import { ANIMATION, MEDIA } from "./media";
-import { META } from "./meta";
 
 export const PAGES = `
   query Pages {
@@ -63,7 +62,6 @@ export const PAGE = `
           ${STICKYCTASECTION}
           ${GLOBAL_TOKEN}
         }
-        ${META}
         breadcrumbs {
           url
           label

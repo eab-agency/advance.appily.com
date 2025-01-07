@@ -1,4 +1,3 @@
-// @ts-nocheck
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -8,6 +7,9 @@
  */
 
 export interface Config {
+  auth: {
+    users: UserAuthOperations;
+  };
   collections: {
     posts: Post;
     categories: Category;
@@ -20,13 +22,63 @@ export interface Config {
     users: User;
     'user-media': UserMedia;
     blocks: Block;
-    redirects: Redirect;
+    'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
+  };
+  collectionsJoins: {};
+  collectionsSelect: {
+    posts: PostsSelect<false> | PostsSelect<true>;
+    categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    tags: TagsSelect<false> | TagsSelect<true>;
+    pages: PagesSelect<false> | PagesSelect<true>;
+    media: MediaSelect<false> | MediaSelect<true>;
+    partners: PartnersSelect<false> | PartnersSelect<true>;
+    'carousel-cards': CarouselCardsSelect<false> | CarouselCardsSelect<true>;
+    'lead-types': LeadTypesSelect<false> | LeadTypesSelect<true>;
+    users: UsersSelect<false> | UsersSelect<true>;
+    'user-media': UserMediaSelect<false> | UserMediaSelect<true>;
+    blocks: BlocksSelect<false> | BlocksSelect<true>;
+    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
+    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
+    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
+  };
+  db: {
+    defaultIDType: string;
   };
   globals: {
     header: Header;
     footer: Footer;
+  };
+  globalsSelect: {
+    header: HeaderSelect<false> | HeaderSelect<true>;
+    footer: FooterSelect<false> | FooterSelect<true>;
+  };
+  locale: null;
+  user: User & {
+    collection: 'users';
+  };
+  jobs: {
+    tasks: unknown;
+    workflows: unknown;
+  };
+}
+export interface UserAuthOperations {
+  forgotPassword: {
+    email: string;
+    password: string;
+  };
+  login: {
+    email: string;
+    password: string;
+  };
+  registerFirstUser: {
+    email: string;
+    password: string;
+  };
+  unlock: {
+    email: string;
+    password: string;
   };
 }
 /**
@@ -35,6 +87,7 @@ export interface Config {
  */
 export interface Post {
   id: string;
+  fullPath?: string | null;
   title: string;
   richText?: {
     root: {
@@ -51,42 +104,16 @@ export interface Post {
     };
     [k: string]: unknown;
   } | null;
+  lastModifiedBy?: string | null;
+  postFeaturedImage?: (string | null) | Media;
   category: (string | Category)[];
-  tag: (string | Tag)[];
-  publishedDate?: string | null;
-  postFeaturedImage?: string | Media | null;
+  tag?: (string | Tag)[] | null;
+  publishedDate: string;
   createdBy?: (string | null) | User;
   slug?: string | null;
-  meta?: {
-    title?: string | null;
-    description?: string | null;
-    image?: string | Media | null;
-  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "categories".
- */
-export interface Category {
-  id: string;
-  title?: string | null;
-  slug?: string | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "tags".
- */
-export interface Tag {
-  id: string;
-  title?: string | null;
-  slug?: string | null;
-  updatedAt: string;
-  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -113,6 +140,7 @@ export interface Media {
   updatedAt: string;
   createdAt: string;
   url?: string | null;
+  thumbnailURL?: string | null;
   filename?: string | null;
   mimeType?: string | null;
   filesize?: number | null;
@@ -141,12 +169,35 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories".
+ */
+export interface Category {
+  id: string;
+  title?: string | null;
+  fullPath?: string | null;
+  slug?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags".
+ */
+export interface Tag {
+  id: string;
+  title?: string | null;
+  slug?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
   id: string;
   name?: string | null;
-  userImage?: string | UserMedia | null;
+  userImage?: (string | null) | UserMedia;
   bio?: string | null;
   roles?: ('admin' | 'blogAuthor' | 'blogEditor')[] | null;
   updatedAt: string;
@@ -158,7 +209,7 @@ export interface User {
   hash?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
-  password: string | null;
+  password?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -170,6 +221,7 @@ export interface UserMedia {
   updatedAt: string;
   createdAt: string;
   url?: string | null;
+  thumbnailURL?: string | null;
   filename?: string | null;
   mimeType?: string | null;
   filesize?: number | null;
@@ -202,6 +254,7 @@ export interface UserMedia {
  */
 export interface Page {
   id: string;
+  lastModifiedBy?: string | null;
   fullPath?: string | null;
   title: string;
   publishedDate?: string | null;
@@ -239,8 +292,8 @@ export interface Page {
           id?: string | null;
         }[]
       | null;
-    media?: string | Media | null;
-    animation?: string | Media | null;
+    media?: (string | null) | Media;
+    animation?: (string | null) | Media;
   };
   layout: (
     | {
@@ -411,7 +464,7 @@ export interface Page {
                       | {
                           title?: string | null;
                           icon: string | Media;
-                          darkicon?: string | Media | null;
+                          darkicon?: (string | null) | Media;
                           richText?: {
                             root: {
                               type: string;
@@ -680,7 +733,7 @@ export interface Page {
                 | {
                     title?: string | null;
                     icon: string | Media;
-                    darkicon?: string | Media | null;
+                    darkicon?: (string | null) | Media;
                     richText?: {
                       root: {
                         type: string;
@@ -1247,9 +1300,9 @@ export interface Page {
         };
         tabs?:
           | {
-              tabicon?: string | Media | null;
+              tabicon?: (string | null) | Media;
               useSameIcon?: boolean | null;
-              alternateImage?: string | Media | null;
+              alternateImage?: (string | null) | Media;
               shortTitle?: string | null;
               blocks: (
                 | {
@@ -1572,11 +1625,6 @@ export interface Page {
         id?: string | null;
       }[]
     | null;
-  meta?: {
-    title?: string | null;
-    description?: string | null;
-    image?: string | Media | null;
-  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -1661,7 +1709,7 @@ export interface Block {
     | {
         title?: string | null;
         icon: string | Media;
-        darkicon?: string | Media | null;
+        darkicon?: (string | null) | Media;
         richText?: {
           root: {
             type: string;
@@ -2017,23 +2065,59 @@ export interface LeadType {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "redirects".
+ * via the `definition` "payload-locked-documents".
  */
-export interface Redirect {
+export interface PayloadLockedDocument {
   id: string;
-  from: string;
-  to?: {
-    type?: ('reference' | 'custom') | null;
-    reference?:
-      | ({
-          relationTo: 'pages';
-          value: string | Page;
-        } | null)
-      | ({
-          relationTo: 'posts';
-          value: string | Post;
-        } | null);
-    url?: string | null;
+  document?:
+    | ({
+        relationTo: 'posts';
+        value: string | Post;
+      } | null)
+    | ({
+        relationTo: 'categories';
+        value: string | Category;
+      } | null)
+    | ({
+        relationTo: 'tags';
+        value: string | Tag;
+      } | null)
+    | ({
+        relationTo: 'pages';
+        value: string | Page;
+      } | null)
+    | ({
+        relationTo: 'media';
+        value: string | Media;
+      } | null)
+    | ({
+        relationTo: 'partners';
+        value: string | Partner;
+      } | null)
+    | ({
+        relationTo: 'carousel-cards';
+        value: string | CarouselCard;
+      } | null)
+    | ({
+        relationTo: 'lead-types';
+        value: string | LeadType;
+      } | null)
+    | ({
+        relationTo: 'users';
+        value: string | User;
+      } | null)
+    | ({
+        relationTo: 'user-media';
+        value: string | UserMedia;
+      } | null)
+    | ({
+        relationTo: 'blocks';
+        value: string | Block;
+      } | null);
+  globalSlug?: string | null;
+  user: {
+    relationTo: 'users';
+    value: string | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -2071,6 +2155,1367 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts_select".
+ */
+export interface PostsSelect<T extends boolean = true> {
+  fullPath?: T;
+  title?: T;
+  richText?: T;
+  lastModifiedBy?: T;
+  postFeaturedImage?: T;
+  category?: T;
+  tag?: T;
+  publishedDate?: T;
+  createdBy?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories_select".
+ */
+export interface CategoriesSelect<T extends boolean = true> {
+  title?: T;
+  fullPath?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags_select".
+ */
+export interface TagsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages_select".
+ */
+export interface PagesSelect<T extends boolean = true> {
+  lastModifiedBy?: T;
+  fullPath?: T;
+  title?: T;
+  publishedDate?: T;
+  hero?:
+    | T
+    | {
+        type?: T;
+        title?: T;
+        richText?: T;
+        links?:
+          | T
+          | {
+              link?:
+                | T
+                | {
+                    type?: T;
+                    newTab?: T;
+                    reference?: T;
+                    url?: T;
+                    label?: T;
+                    appearance?: T;
+                  };
+              id?: T;
+            };
+        media?: T;
+        animation?: T;
+      };
+  layout?:
+    | T
+    | {
+        cta?:
+          | T
+          | {
+              ctaBackgroundColor?: T;
+              richText?: T;
+              links?:
+                | T
+                | {
+                    link?:
+                      | T
+                      | {
+                          type?: T;
+                          newTab?: T;
+                          reference?: T;
+                          url?: T;
+                          label?: T;
+                          appearance?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        section?:
+          | T
+          | {
+              type?: T;
+              layoutWidth?: T;
+              backgroundColor?: T;
+              enableHighlight?: T;
+              rows?:
+                | T
+                | {
+                    columns?:
+                      | T
+                      | {
+                          size?: T;
+                          halignment?: T;
+                          valignment?: T;
+                          extendToBorders?: T;
+                          blocks?:
+                            | T
+                            | {
+                                stats?:
+                                  | T
+                                  | {
+                                      number?: T;
+                                      title?: T;
+                                      richText?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                testimonial?:
+                                  | T
+                                  | {
+                                      author?: T;
+                                      richText?: T;
+                                      authortitle?: T;
+                                      alignment?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                imageCard?:
+                                  | T
+                                  | {
+                                      imageCardBlockBackgroundColor?: T;
+                                      title?: T;
+                                      richText?: T;
+                                      image?: T;
+                                      links?:
+                                        | T
+                                        | {
+                                            link?:
+                                              | T
+                                              | {
+                                                  type?: T;
+                                                  newTab?: T;
+                                                  reference?: T;
+                                                  url?: T;
+                                                  label?: T;
+                                                  appearance?: T;
+                                                };
+                                            id?: T;
+                                          };
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                comparison?:
+                                  | T
+                                  | {
+                                      title?: T;
+                                      icon?: T;
+                                      darkicon?: T;
+                                      richText?: T;
+                                      links?:
+                                        | T
+                                        | {
+                                            link?:
+                                              | T
+                                              | {
+                                                  type?: T;
+                                                  newTab?: T;
+                                                  reference?: T;
+                                                  url?: T;
+                                                  label?: T;
+                                                  appearance?: T;
+                                                };
+                                            id?: T;
+                                          };
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                accordion?:
+                                  | T
+                                  | {
+                                      numberedItems?: T;
+                                      accordions?:
+                                        | T
+                                        | {
+                                            title?: T;
+                                            blocks?:
+                                              | T
+                                              | {
+                                                  richText?:
+                                                    | T
+                                                    | {
+                                                        richText?: T;
+                                                        id?: T;
+                                                        blockName?: T;
+                                                      };
+                                                  mediaBlock?:
+                                                    | T
+                                                    | {
+                                                        cornerStyle?: T;
+                                                        enableHighlight?: T;
+                                                        media?: T;
+                                                        id?: T;
+                                                        blockName?: T;
+                                                      };
+                                                  ButtonGroup?:
+                                                    | T
+                                                    | {
+                                                        links?:
+                                                          | T
+                                                          | {
+                                                              link?:
+                                                                | T
+                                                                | {
+                                                                    type?: T;
+                                                                    newTab?: T;
+                                                                    reference?: T;
+                                                                    url?: T;
+                                                                    label?: T;
+                                                                    appearance?: T;
+                                                                  };
+                                                              id?: T;
+                                                            };
+                                                        id?: T;
+                                                        blockName?: T;
+                                                      };
+                                                };
+                                            id?: T;
+                                          };
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                richText?:
+                                  | T
+                                  | {
+                                      richText?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                mediaBlock?:
+                                  | T
+                                  | {
+                                      cornerStyle?: T;
+                                      enableHighlight?: T;
+                                      media?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                ButtonGroup?:
+                                  | T
+                                  | {
+                                      links?:
+                                        | T
+                                        | {
+                                            link?:
+                                              | T
+                                              | {
+                                                  type?: T;
+                                                  newTab?: T;
+                                                  reference?: T;
+                                                  url?: T;
+                                                  label?: T;
+                                                  appearance?: T;
+                                                };
+                                            id?: T;
+                                          };
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              columns?:
+                | T
+                | {
+                    size?: T;
+                    halignment?: T;
+                    valignment?: T;
+                    extendToBorders?: T;
+                    blocks?:
+                      | T
+                      | {
+                          stats?:
+                            | T
+                            | {
+                                number?: T;
+                                title?: T;
+                                richText?: T;
+                                id?: T;
+                                blockName?: T;
+                              };
+                          testimonial?:
+                            | T
+                            | {
+                                author?: T;
+                                richText?: T;
+                                authortitle?: T;
+                                alignment?: T;
+                                id?: T;
+                                blockName?: T;
+                              };
+                          imageCard?:
+                            | T
+                            | {
+                                imageCardBlockBackgroundColor?: T;
+                                title?: T;
+                                richText?: T;
+                                image?: T;
+                                links?:
+                                  | T
+                                  | {
+                                      link?:
+                                        | T
+                                        | {
+                                            type?: T;
+                                            newTab?: T;
+                                            reference?: T;
+                                            url?: T;
+                                            label?: T;
+                                            appearance?: T;
+                                          };
+                                      id?: T;
+                                    };
+                                id?: T;
+                                blockName?: T;
+                              };
+                          comparison?:
+                            | T
+                            | {
+                                title?: T;
+                                icon?: T;
+                                darkicon?: T;
+                                richText?: T;
+                                links?:
+                                  | T
+                                  | {
+                                      link?:
+                                        | T
+                                        | {
+                                            type?: T;
+                                            newTab?: T;
+                                            reference?: T;
+                                            url?: T;
+                                            label?: T;
+                                            appearance?: T;
+                                          };
+                                      id?: T;
+                                    };
+                                id?: T;
+                                blockName?: T;
+                              };
+                          accordion?:
+                            | T
+                            | {
+                                numberedItems?: T;
+                                accordions?:
+                                  | T
+                                  | {
+                                      title?: T;
+                                      blocks?:
+                                        | T
+                                        | {
+                                            richText?:
+                                              | T
+                                              | {
+                                                  richText?: T;
+                                                  id?: T;
+                                                  blockName?: T;
+                                                };
+                                            mediaBlock?:
+                                              | T
+                                              | {
+                                                  cornerStyle?: T;
+                                                  enableHighlight?: T;
+                                                  media?: T;
+                                                  id?: T;
+                                                  blockName?: T;
+                                                };
+                                            ButtonGroup?:
+                                              | T
+                                              | {
+                                                  links?:
+                                                    | T
+                                                    | {
+                                                        link?:
+                                                          | T
+                                                          | {
+                                                              type?: T;
+                                                              newTab?: T;
+                                                              reference?: T;
+                                                              url?: T;
+                                                              label?: T;
+                                                              appearance?: T;
+                                                            };
+                                                        id?: T;
+                                                      };
+                                                  id?: T;
+                                                  blockName?: T;
+                                                };
+                                          };
+                                      id?: T;
+                                    };
+                                id?: T;
+                                blockName?: T;
+                              };
+                          richText?:
+                            | T
+                            | {
+                                richText?: T;
+                                id?: T;
+                                blockName?: T;
+                              };
+                          mediaBlock?:
+                            | T
+                            | {
+                                cornerStyle?: T;
+                                enableHighlight?: T;
+                                media?: T;
+                                id?: T;
+                                blockName?: T;
+                              };
+                          ButtonGroup?:
+                            | T
+                            | {
+                                links?:
+                                  | T
+                                  | {
+                                      link?:
+                                        | T
+                                        | {
+                                            type?: T;
+                                            newTab?: T;
+                                            reference?: T;
+                                            url?: T;
+                                            label?: T;
+                                            appearance?: T;
+                                          };
+                                      id?: T;
+                                    };
+                                id?: T;
+                                blockName?: T;
+                              };
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        formBlock?:
+          | T
+          | {
+              enableIntro?: T;
+              id?: T;
+              blockName?: T;
+            };
+        mediaBlock?:
+          | T
+          | {
+              cornerStyle?: T;
+              enableHighlight?: T;
+              media?: T;
+              id?: T;
+              blockName?: T;
+            };
+        archive?:
+          | T
+          | {
+              introContent?: T;
+              populateBy?: T;
+              relationTo?: T;
+              limit?: T;
+              selectedDocs?: T;
+              populatedDocs?: T;
+              populatedDocsTotal?: T;
+              id?: T;
+              blockName?: T;
+            };
+        statistics?:
+          | T
+          | {
+              backgroundColor?: T;
+              layoutWidth?: T;
+              statistics?:
+                | T
+                | {
+                    number?: T;
+                    title?: T;
+                    richText?: T;
+                    id?: T;
+                  };
+              source?: T;
+              id?: T;
+              blockName?: T;
+            };
+        testimonial?:
+          | T
+          | {
+              backgroundColor?: T;
+              alignment?: T;
+              richText?: T;
+              author?: T;
+              authortitle?: T;
+              links?:
+                | T
+                | {
+                    link?:
+                      | T
+                      | {
+                          type?: T;
+                          newTab?: T;
+                          reference?: T;
+                          url?: T;
+                          label?: T;
+                          appearance?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        callout?:
+          | T
+          | {
+              callOutBackgroundColor?: T;
+              kicker?: T;
+              title?: T;
+              richText?: T;
+              calloutLinks?:
+                | T
+                | {
+                    link?:
+                      | T
+                      | {
+                          type?: T;
+                          newTab?: T;
+                          reference?: T;
+                          url?: T;
+                          label?: T;
+                          appearance?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        highlightCTA?:
+          | T
+          | {
+              highlightCtaBackgroundColor?: T;
+              imageAlignment?: T;
+              image?: T;
+              richText?: T;
+              highlightedSectionCTALinks?:
+                | T
+                | {
+                    link?:
+                      | T
+                      | {
+                          type?: T;
+                          newTab?: T;
+                          reference?: T;
+                          url?: T;
+                          label?: T;
+                          appearance?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        Schoolcarousel?:
+          | T
+          | {
+              carouselBackgroundColor?: T;
+              title?: T;
+              richText?: T;
+              id?: T;
+              blockName?: T;
+            };
+        tabsection?:
+          | T
+          | {
+              tabSectionBackgroundColor?: T;
+              sectionHead?:
+                | T
+                | {
+                    showSectionHead?: T;
+                    headContent?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                accordion?:
+                                  | T
+                                  | {
+                                      numberedItems?: T;
+                                      accordions?:
+                                        | T
+                                        | {
+                                            title?: T;
+                                            blocks?:
+                                              | T
+                                              | {
+                                                  richText?:
+                                                    | T
+                                                    | {
+                                                        richText?: T;
+                                                        id?: T;
+                                                        blockName?: T;
+                                                      };
+                                                  mediaBlock?:
+                                                    | T
+                                                    | {
+                                                        cornerStyle?: T;
+                                                        enableHighlight?: T;
+                                                        media?: T;
+                                                        id?: T;
+                                                        blockName?: T;
+                                                      };
+                                                  ButtonGroup?:
+                                                    | T
+                                                    | {
+                                                        links?:
+                                                          | T
+                                                          | {
+                                                              link?:
+                                                                | T
+                                                                | {
+                                                                    type?: T;
+                                                                    newTab?: T;
+                                                                    reference?: T;
+                                                                    url?: T;
+                                                                    label?: T;
+                                                                    appearance?: T;
+                                                                  };
+                                                              id?: T;
+                                                            };
+                                                        id?: T;
+                                                        blockName?: T;
+                                                      };
+                                                };
+                                            id?: T;
+                                          };
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                richText?:
+                                  | T
+                                  | {
+                                      richText?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                mediaBlock?:
+                                  | T
+                                  | {
+                                      cornerStyle?: T;
+                                      enableHighlight?: T;
+                                      media?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                ButtonGroup?:
+                                  | T
+                                  | {
+                                      links?:
+                                        | T
+                                        | {
+                                            link?:
+                                              | T
+                                              | {
+                                                  type?: T;
+                                                  newTab?: T;
+                                                  reference?: T;
+                                                  url?: T;
+                                                  label?: T;
+                                                  appearance?: T;
+                                                };
+                                            id?: T;
+                                          };
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                        };
+                  };
+              tabs?:
+                | T
+                | {
+                    tabicon?: T;
+                    useSameIcon?: T;
+                    alternateImage?: T;
+                    shortTitle?: T;
+                    blocks?:
+                      | T
+                      | {
+                          accordion?:
+                            | T
+                            | {
+                                numberedItems?: T;
+                                accordions?:
+                                  | T
+                                  | {
+                                      title?: T;
+                                      blocks?:
+                                        | T
+                                        | {
+                                            richText?:
+                                              | T
+                                              | {
+                                                  richText?: T;
+                                                  id?: T;
+                                                  blockName?: T;
+                                                };
+                                            mediaBlock?:
+                                              | T
+                                              | {
+                                                  cornerStyle?: T;
+                                                  enableHighlight?: T;
+                                                  media?: T;
+                                                  id?: T;
+                                                  blockName?: T;
+                                                };
+                                            ButtonGroup?:
+                                              | T
+                                              | {
+                                                  links?:
+                                                    | T
+                                                    | {
+                                                        link?:
+                                                          | T
+                                                          | {
+                                                              type?: T;
+                                                              newTab?: T;
+                                                              reference?: T;
+                                                              url?: T;
+                                                              label?: T;
+                                                              appearance?: T;
+                                                            };
+                                                        id?: T;
+                                                      };
+                                                  id?: T;
+                                                  blockName?: T;
+                                                };
+                                          };
+                                      id?: T;
+                                    };
+                                id?: T;
+                                blockName?: T;
+                              };
+                          richText?:
+                            | T
+                            | {
+                                richText?: T;
+                                id?: T;
+                                blockName?: T;
+                              };
+                          mediaBlock?:
+                            | T
+                            | {
+                                cornerStyle?: T;
+                                enableHighlight?: T;
+                                media?: T;
+                                id?: T;
+                                blockName?: T;
+                              };
+                          ButtonGroup?:
+                            | T
+                            | {
+                                links?:
+                                  | T
+                                  | {
+                                      link?:
+                                        | T
+                                        | {
+                                            type?: T;
+                                            newTab?: T;
+                                            reference?: T;
+                                            url?: T;
+                                            label?: T;
+                                            appearance?: T;
+                                          };
+                                      id?: T;
+                                    };
+                                id?: T;
+                                blockName?: T;
+                              };
+                        };
+                    id?: T;
+                  };
+              sectionFooter?:
+                | T
+                | {
+                    showSectionFooter?: T;
+                    footerContent?:
+                      | T
+                      | {
+                          blocks?:
+                            | T
+                            | {
+                                accordion?:
+                                  | T
+                                  | {
+                                      numberedItems?: T;
+                                      accordions?:
+                                        | T
+                                        | {
+                                            title?: T;
+                                            blocks?:
+                                              | T
+                                              | {
+                                                  richText?:
+                                                    | T
+                                                    | {
+                                                        richText?: T;
+                                                        id?: T;
+                                                        blockName?: T;
+                                                      };
+                                                  mediaBlock?:
+                                                    | T
+                                                    | {
+                                                        cornerStyle?: T;
+                                                        enableHighlight?: T;
+                                                        media?: T;
+                                                        id?: T;
+                                                        blockName?: T;
+                                                      };
+                                                  ButtonGroup?:
+                                                    | T
+                                                    | {
+                                                        links?:
+                                                          | T
+                                                          | {
+                                                              link?:
+                                                                | T
+                                                                | {
+                                                                    type?: T;
+                                                                    newTab?: T;
+                                                                    reference?: T;
+                                                                    url?: T;
+                                                                    label?: T;
+                                                                    appearance?: T;
+                                                                  };
+                                                              id?: T;
+                                                            };
+                                                        id?: T;
+                                                        blockName?: T;
+                                                      };
+                                                };
+                                            id?: T;
+                                          };
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                richText?:
+                                  | T
+                                  | {
+                                      richText?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                mediaBlock?:
+                                  | T
+                                  | {
+                                      cornerStyle?: T;
+                                      enableHighlight?: T;
+                                      media?: T;
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                                ButtonGroup?:
+                                  | T
+                                  | {
+                                      links?:
+                                        | T
+                                        | {
+                                            link?:
+                                              | T
+                                              | {
+                                                  type?: T;
+                                                  newTab?: T;
+                                                  reference?: T;
+                                                  url?: T;
+                                                  label?: T;
+                                                  appearance?: T;
+                                                };
+                                            id?: T;
+                                          };
+                                      id?: T;
+                                      blockName?: T;
+                                    };
+                              };
+                        };
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        subNavigation?:
+          | T
+          | {
+              subNavBackgroundColor?: T;
+              navigationItem?:
+                | T
+                | {
+                    title?: T;
+                    pageReference?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        stickyCTA?:
+          | T
+          | {
+              stickyCTABackgroundColor?: T;
+              resultPage?: T;
+              stickyctaLinks?:
+                | T
+                | {
+                    link?:
+                      | T
+                      | {
+                          type?: T;
+                          newTab?: T;
+                          reference?: T;
+                          url?: T;
+                          label?: T;
+                          appearance?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        globalBlock?:
+          | T
+          | {
+              globalBlocks?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  slug?: T;
+  parent?: T;
+  breadcrumbs?:
+    | T
+    | {
+        doc?: T;
+        url?: T;
+        label?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media_select".
+ */
+export interface MediaSelect<T extends boolean = true> {
+  alt?: T;
+  caption?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+  sizes?:
+    | T
+    | {
+        squareSmall?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        squareMedium?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "partners_select".
+ */
+export interface PartnersSelect<T extends boolean = true> {
+  title?: T;
+  shortName?: T;
+  acroynm?: T;
+  contact?:
+    | T
+    | {
+        street1?: T;
+        street2?: T;
+        city?: T;
+        state?: T;
+        zip?: T;
+        country?: T;
+      };
+  logo?: T;
+  phone?: T;
+  email?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  publishedDate?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "carousel-cards_select".
+ */
+export interface CarouselCardsSelect<T extends boolean = true> {
+  admintitle?: T;
+  partner?: T;
+  leadTypes?: T;
+  partnerState?: T;
+  title?: T;
+  subtitle?: T;
+  description?: T;
+  links?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lead-types_select".
+ */
+export interface LeadTypesSelect<T extends boolean = true> {
+  title?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users_select".
+ */
+export interface UsersSelect<T extends boolean = true> {
+  name?: T;
+  userImage?: T;
+  bio?: T;
+  roles?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  email?: T;
+  resetPasswordToken?: T;
+  resetPasswordExpiration?: T;
+  salt?: T;
+  hash?: T;
+  loginAttempts?: T;
+  lockUntil?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "user-media_select".
+ */
+export interface UserMediaSelect<T extends boolean = true> {
+  alt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  url?: T;
+  thumbnailURL?: T;
+  filename?: T;
+  mimeType?: T;
+  filesize?: T;
+  width?: T;
+  height?: T;
+  focalX?: T;
+  focalY?: T;
+  sizes?:
+    | T
+    | {
+        squareSmall?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        squareMedium?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blocks_select".
+ */
+export interface BlocksSelect<T extends boolean = true> {
+  title?: T;
+  Block?:
+    | T
+    | {
+        richText?:
+          | T
+          | {
+              richText?: T;
+              id?: T;
+              blockName?: T;
+            };
+        imageCard?:
+          | T
+          | {
+              imageCardBlockBackgroundColor?: T;
+              title?: T;
+              richText?: T;
+              image?: T;
+              links?:
+                | T
+                | {
+                    link?:
+                      | T
+                      | {
+                          type?: T;
+                          newTab?: T;
+                          reference?: T;
+                          url?: T;
+                          label?: T;
+                          appearance?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        comparison?:
+          | T
+          | {
+              title?: T;
+              icon?: T;
+              darkicon?: T;
+              richText?: T;
+              links?:
+                | T
+                | {
+                    link?:
+                      | T
+                      | {
+                          type?: T;
+                          newTab?: T;
+                          reference?: T;
+                          url?: T;
+                          label?: T;
+                          appearance?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        ButtonGroup?:
+          | T
+          | {
+              links?:
+                | T
+                | {
+                    link?:
+                      | T
+                      | {
+                          type?: T;
+                          newTab?: T;
+                          reference?: T;
+                          url?: T;
+                          label?: T;
+                          appearance?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        stats?:
+          | T
+          | {
+              number?: T;
+              title?: T;
+              richText?: T;
+              id?: T;
+              blockName?: T;
+            };
+        testimonial?:
+          | T
+          | {
+              author?: T;
+              richText?: T;
+              authortitle?: T;
+              alignment?: T;
+              id?: T;
+              blockName?: T;
+            };
+        accordion?:
+          | T
+          | {
+              numberedItems?: T;
+              accordions?:
+                | T
+                | {
+                    title?: T;
+                    blocks?:
+                      | T
+                      | {
+                          richText?:
+                            | T
+                            | {
+                                richText?: T;
+                                id?: T;
+                                blockName?: T;
+                              };
+                          mediaBlock?:
+                            | T
+                            | {
+                                cornerStyle?: T;
+                                enableHighlight?: T;
+                                media?: T;
+                                id?: T;
+                                blockName?: T;
+                              };
+                          ButtonGroup?:
+                            | T
+                            | {
+                                links?:
+                                  | T
+                                  | {
+                                      link?:
+                                        | T
+                                        | {
+                                            type?: T;
+                                            newTab?: T;
+                                            reference?: T;
+                                            url?: T;
+                                            label?: T;
+                                            appearance?: T;
+                                          };
+                                      id?: T;
+                                    };
+                                id?: T;
+                                blockName?: T;
+                              };
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        Schoolcarousel?:
+          | T
+          | {
+              carouselBackgroundColor?: T;
+              title?: T;
+              richText?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-locked-documents_select".
+ */
+export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
+  document?: T;
+  globalSlug?: T;
+  user?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-preferences_select".
+ */
+export interface PayloadPreferencesSelect<T extends boolean = true> {
+  user?: T;
+  key?: T;
+  value?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-migrations_select".
+ */
+export interface PayloadMigrationsSelect<T extends boolean = true> {
+  name?: T;
+  batch?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2119,6 +3564,59 @@ export interface Footer {
     | null;
   updatedAt?: string | null;
   createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "header_select".
+ */
+export interface HeaderSelect<T extends boolean = true> {
+  navItems?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer_select".
+ */
+export interface FooterSelect<T extends boolean = true> {
+  navItems?:
+    | T
+    | {
+        link?:
+          | T
+          | {
+              type?: T;
+              newTab?: T;
+              reference?: T;
+              url?: T;
+              label?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "auth".
+ */
+export interface Auth {
+  [k: string]: unknown;
 }
 
 

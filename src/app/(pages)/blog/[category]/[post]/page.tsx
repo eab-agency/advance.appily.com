@@ -1,8 +1,5 @@
 import { fetchPost, fetchPosts, fetchPostsByCategory } from "@/app/graphql";
-import { generateMeta } from "@/seo/generateMeta";
 import "@/styles/layouts/templates/PostPage.scss";
-import { Metadata } from "next";
-import { draftMode } from "next/headers";
 import 'react-toastify/dist/ReactToastify.css';
 import { Category, Post } from "../../../../../../payload-types";
 import { PageClient } from './page.client';
@@ -16,28 +13,28 @@ export async function generateStaticParams() {
     return [];
   }
 }
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string; post: string; category: string };
-}): Promise<Metadata> {
-  const { isEnabled: isDraftMode } = draftMode();
-  const { slug, post } = params;
-  let postData: Post | null = null;
-  try {
-    postData = await fetchPost(post);
-  } catch (error) {
-    console.error("Error fetching post data:", error);
-  }
-  if (postData) {
-    return generateMeta({ doc: postData });
-  } else {
-    return {
-      title: "Default Title",
-      description: "Default Description",
-    };
-  }
-}
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: { slug: string; post: string; category: string };
+// }): Promise<Metadata> {
+//   const { isEnabled: isDraftMode } = draftMode();
+//   const { slug, post } = params;
+//   let postData: Post | null = null;
+//   try {
+//     postData = await fetchPost(post);
+//   } catch (error) {
+//     console.error("Error fetching post data:", error);
+//   }
+//   if (postData) {
+//     return generateMeta({ doc: postData });
+//   } else {
+//     return {
+//       title: "Default Title",
+//       description: "Default Description",
+//     };
+//   }
+// }
 interface PostComponentProps {
   params: { slug: string; post: string; category: string };
 }
