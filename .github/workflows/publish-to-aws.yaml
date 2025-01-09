@@ -73,8 +73,8 @@ jobs:
       - name: Install projects deps
         run: pnpm install
 
-      # - if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/production'
-      - name: Configure Dev AWS credentials
+      - if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/production'
+        name: Configure Dev AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-dev-github
