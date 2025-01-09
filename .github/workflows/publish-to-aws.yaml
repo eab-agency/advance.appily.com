@@ -14,7 +14,7 @@ on:
           - dev
           - production
       envName:
-        description: "The name of the environment (e.g., Staging, Production)"
+        description: "The name of the github environment (e.g., Staging, Production)"
         required: true
         default: "Staging"
         type: choice
