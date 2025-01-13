@@ -43,8 +43,7 @@ export const POST_DATA = `
           title
           slug
         }
-        ${META}
-
+          ${META}
 `
 
 export const POSTS = `
@@ -89,6 +88,7 @@ export const POSTS = `
           id
           slug
         }
+          ${META}
       }
     }
   }
@@ -148,7 +148,6 @@ export const POST = `
           title
           slug
         }
-        ${META}
       }
     }
   }
@@ -177,10 +176,10 @@ query Categories ($categorySlug: String) {
 `;
 
 export const POSTS_BY_CATEGORY = `
-query Posts ($category : JSON, $status: Post__status_Input) {
-  Posts(where: {category: {equals : $category}, _status: {equals: $status}}) {
+query Posts ($category: JSON, $status: Post__status_Input) {
+  Posts(where: {category: {equals: $category }, _status: {equals: $status}}) {
     docs {
-      ${POST_DATA}
+       ${POST_DATA}
     }
   }
 }

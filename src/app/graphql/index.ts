@@ -5,7 +5,7 @@ import {
 	CAROUSELCARDSNOTIN,
 } from "./carouselCards";
 import { ALLCATEGORIES } from "./categories";
-import { GLOBALS, HEADER_QUERY } from "./globals";
+import { FOOTER_QUERY, GLOBALS, HEADER_QUERY } from "./globals";
 import { PAGE, PAGES } from "./pages";
 import { FIRSTFIVEPOSTS, GET_CATEGORY_ID, POST, POSTS, POSTS_BY_CATEGORY, POST_BY_TAG } from "./posts";
 
@@ -156,41 +156,20 @@ try{
 	  headers: {
 		'Content-Type': 'application/json',
 	  },
-	//  next: { revalidate: 5 },
+	  next: { revalidate: 5 },
 	  body: JSON.stringify({
-		query: `query Footer {
-            Footer {
-              navItems {
-                link {
-                  href
-                  label
-                }
-              }
-            }
-          }`,
+			query: FOOTER_QUERY,
 	  }),
 	})
-	//   .then(res => {
-	// 	if (!res.ok) throw new Error('Error fetching doc')
-	// 	return res.json()
-	//   })
-	//   ?.then(res => {
-	// 	if (res?.errors) throw new Error(res?.errors[0]?.message || 'Error fetching footer')
-	// 	return res.data?.Footer
-	//   })
-
-	// return footer
 
 	if (!footer.ok) {
 		throw new Error(`HTTP error! Status: ${footer.status}`);
 	}
-	console.log(footer,'footer**')
 	const result = await footer.json();
 
 	if (result.errors) {
 		throw new Error(result.errors[0]?.message || 'GraphQL error fetching header');
 	}
-console.log(result,'result***')
 	return result.data?.Footer;
 }catch (error) {
 	console.log(error,'err**')
@@ -299,7 +278,7 @@ export const fetchPage = async (
 
 
 export const fetchPosts = async (): Promise<Post[]> => {
-	// const currentDate = new Date();
+	const currentDate = new Date();
    const { data } = await fetch(
 	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
 	   {
@@ -311,7 +290,7 @@ export const fetchPosts = async (): Promise<Post[]> => {
 		   body: JSON.stringify({
 			   query: POSTS,
 			   variables: {
-				  //  publishedOn: currentDate,
+				   publishedOn: currentDate,
 					 status: "published"
 			   },
 		   }),
@@ -343,7 +322,7 @@ export const fetchPost = async (slug: string): Promise<Post> => {
 };
 
 export const fetchFirstFivePosts = async (): Promise<Post[]> => {
-	// const currentDate = new Date();
+	const currentDate = new Date();
    const { data } = await fetch(
 	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
 	   {
@@ -351,18 +330,21 @@ export const fetchFirstFivePosts = async (): Promise<Post[]> => {
 		   headers: {
 			   "Content-Type": "application/json",
 		   },
-		   next,
+		   next,		   
 		   body: JSON.stringify({
 			   query: FIRSTFIVEPOSTS,
 			   variables: {
-				  //  publishedOn: currentDate,
+				    publishedOn: currentDate,
 					 status: "published"
 			   },
 		   }),
 	   },
-   ).then(res => res.json());
+   ).then(res => res.json()).catch((err)=>{
+		console.log(err,'err***')
+	 });
    return data?.Posts?.docs;
 };
+
 
 export const fetchAllCategories = async (): Promise<Category[]> => {
    const { data } = await fetch(
@@ -392,7 +374,7 @@ export const fetchCategoryIDByTitle = async (
 			headers: {
 				"Content-Type": "application/json",
 			},
-			// next,
+		  next,
 			body: JSON.stringify({
 				query: GET_CATEGORY_ID,
 				variables: {
@@ -406,7 +388,7 @@ export const fetchCategoryIDByTitle = async (
 };
 
 export const fetchPostsByCategory = async (
-	category?: Category['id'],
+	category: Category['id'],
 ): Promise<Post[]> => {
 	const { data } = await fetch(
 		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
@@ -415,12 +397,12 @@ export const fetchPostsByCategory = async (
 			headers: {
 				"Content-Type": "application/json",
 			},
-			// next,
+			 //next,
 			body: JSON.stringify({
 				query: POSTS_BY_CATEGORY,
 				variables: {
-					category, 
-					status: 'published'
+					  category,
+						status: "published"
 				},
 			}),
 		},

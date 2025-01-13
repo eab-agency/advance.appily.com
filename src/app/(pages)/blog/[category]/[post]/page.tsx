@@ -39,7 +39,10 @@ interface PostComponentProps {
   params: { slug: string; post: string; category: string };
 }
 const PostComponent = async ({ params }: PostComponentProps) => {
-  const { post, category } = params;
+  const awaitedParams = await params;
+  const { post, category } = awaitedParams;
+
+  // const { post, category } = params;
   let postData: Post | null = null;
   let relatesPosts: Post[] | null = [];
   let actualCategorySlug: string | null = null;
@@ -47,6 +50,7 @@ const PostComponent = async ({ params }: PostComponentProps) => {
 
   try {
     postData = await fetchPost(post);
+
     if (postData) {
       actualCategorySlug = postData?.category && postData.category.length > 0
         ? (postData.category[0] as Category)?.slug || null
@@ -57,6 +61,7 @@ const PostComponent = async ({ params }: PostComponentProps) => {
         : "";
       if (catID) {
         relatesPosts = await fetchPostsByCategory(catID);
+        console.log(relatesPosts, 'relatesPosts**')
       }
     }
   } catch (error) {

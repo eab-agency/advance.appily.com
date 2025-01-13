@@ -10,7 +10,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { FaChevronLeft } from "react-icons/fa";
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Post } from "../../../../../../payload-types";
 import { useId } from "../../../../../context/idContext";
@@ -57,7 +57,7 @@ export const PageClient: React.FC<{
       // Cleanup timeout on component unmount
       return () => clearTimeout(redirectTimeout);
     }
-  }, [data, toastMessage, router]);
+  }, [data, toastMessage]);
 
 
 
@@ -76,7 +76,7 @@ export const PageClient: React.FC<{
     id,
     richText,
   } = data || {};
-
+  console.log(postFeaturedImage, 'image**')
   // if (!data) {
   //   return (
   //     <div className="no-data-message">
