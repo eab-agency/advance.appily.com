@@ -1,5 +1,7 @@
 import NotFound from '@/app/(app)/not-found';
+import { generateMeta } from '@/seo/generateMeta';
 import configPromise from '@payload-config';
+import { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import { getPayload } from 'payload';
 import { cache } from 'react';
@@ -38,36 +40,29 @@ export async function generateStaticParams() {
 			}
 		};
 	});
-	console.log()
 	return params;
 }
-
-// export async function generateMetadata({ params }: { params: { child: string; subChild: string } }): Promise<Metadata> {
-// 	const { child, subChild } = await params;
-
-// 	const slug = [child, subChild].filter(Boolean);
-
-// 	let page: Page | null = null;
-// 	try {
-// 		page = await fetchPage(slug);
-// 	} catch (error) {
-// 		console.error('Error fetching page data:', error);
-// 	}
-// 	if (page) {
-// 		return generateMeta({ doc: page });
-// 	} else {
-// 		return {
-// 			title: 'Default Title',
-// 			description: 'Default Description',
-// 		};
-// 	}
-// }
-
 type Args = {
 	params: Promise<{
 		subChild?: string
 	}>
 }
+export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
+	const { subChild = "" } = await paramsPromise
+	let page: Page | null = null;
+
+	page = await queryPageBySlug({ subChild })
+	if (page) {
+		return generateMeta({ doc: page })
+	} else {
+		return {
+			title: "Default Title",
+			description: "Default Description",
+		};
+	}
+}
+
+
 const SubCategoryPage = async ({ params: paramsPromise }: Args) => {
 	let pageData: Page | null = null;
 	const { subChild = '' } = await paramsPromise

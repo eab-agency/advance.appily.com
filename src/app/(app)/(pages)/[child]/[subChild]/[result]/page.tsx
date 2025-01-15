@@ -1,9 +1,10 @@
-import { fetchPage } from '@/app/(app)/graphql';
 import NotFound from '@/app/(app)/not-found';
 import { generateMeta } from '@/seo/generateMeta';
 import configPromise from '@payload-config';
 import { Metadata } from 'next';
+import { draftMode } from 'next/headers';
 import { getPayload } from 'payload';
+import { cache } from 'react';
 import { Page } from '../../../../../../payload-types';
 import { PageClient } from './page.client';
 
@@ -41,37 +42,37 @@ export async function generateStaticParams() {
 	});
 	return params;
 }
-
-export async function generateMetadata({ params }: { params: { child: string; subChild: string, result: string } }): Promise<Metadata> {
-	const { child, subChild, result } = await params;
-
-	const slug = [child, subChild, result].filter(Boolean);
+type Args = {
+	params: Promise<{
+		result: string
+	}>
+}
+export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
+	const { result } = await paramsPromise
 	let page: Page | null = null;
 
-	try {
-		page = await fetchPage(slug);
-	} catch (error) {
-		console.error('Error fetching page data:', error);
-	}
+	page = await queryPageBySlug({ result })
 	if (page) {
-		return generateMeta({ doc: page });
+		return generateMeta({ doc: page })
 	} else {
 		return {
-			title: 'Default Title',
-			description: 'Default Description',
+			title: "Default Title",
+			description: "Default Description",
 		};
 	}
 }
 
-
-const SubCategoryPage = async ({ params, searchParams }: any) => {
-	const { child, subChild, result } = await params;
-	let pageData: Page | null = null
-	const slug = [child, subChild, result].filter(Boolean);
-
+const SubCategoryPage = async ({ params: paramsPromise }: Args) => {
+	let pageData: Page | null = null;
+	const { result = '' } = await paramsPromise
+	console.log(result, 'sub')
 	try {
-		pageData = await fetchPage(slug);
+		pageData = await queryPageBySlug({
+			result,
+		});
+		console.log(pageData, 'pageData***')
 	} catch (error) {
+		console.log(error, 'err')
 	}
 
 
@@ -80,14 +81,49 @@ const SubCategoryPage = async ({ params, searchParams }: any) => {
 			<NotFound statusCode={404} />
 		)
 	}
-
+	const hero = pageData?.hero;
+	const layout = pageData?.layout;
 	return (
-		// <React.Fragment>
-		// 	<Hero {...hero} />
-		// 	<Blocks blocks={updatedBlocks} />
-		// </React.Fragment>
+		// 	<React.Fragment>
+		// 	<Hero {...hero} />	
+		// 	<Blocks blocks={layout} />
+
+		//   </React.Fragment>
 		<PageClient page={pageData} />
+
 	);
 };
 
 export default SubCategoryPage;
+
+const queryPageBySlug = cache(async ({ result }: { result: string }) => {
+	const { isEnabled: draft } = await draftMode();
+	const payload = await getPayload({ config: configPromise });
+
+	if (!result) {
+		throw new Error('Slug is undefined or empty');
+	}
+
+	try {
+		const data = await payload.find({
+			collection: 'pages',
+			draft,
+			limit: 1,
+			pagination: false,
+			overrideAccess: draft,
+			where: {
+				slug: {
+					equals: result,
+				},
+			},
+		});
+		if (!data.docs?.length) {
+			console.warn('No pages found for slug:', result);
+			return null;
+		}
+		return data.docs[0];
+	} catch (error) {
+		console.error('Error querying Payload CMS:', error);
+		throw new Error(`Failed to fetch page for slug: ${result}`);
+	}
+});
