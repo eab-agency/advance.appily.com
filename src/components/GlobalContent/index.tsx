@@ -1,4 +1,4 @@
-import ImageCard from '@/blocks/ImageCard';
+import ImageCard from '@/commonBlocks/ImageCard';
 import { StatCard } from '@/components/StatCard';
 import { CarouselWithForm } from '../CarouselWithForm';
 import AccordionSection from '../commonComponent/AccordionGroup';

@@ -1,17 +1,17 @@
 import React from "react";
 
-import CalloutSection from '@/blocks/CalloutSection';
-import HighlightedCtaSection from '@/blocks/HighlightCTASection';
-import StatisticsSection from '@/blocks/StatisticsSection/';
-import SubNavigation from "@/blocks/SubNavigation";
-import TabSection from '@/blocks/TabSection';
-import Testimonial from '@/blocks/TestimonialBlock';
+import CalloutSection from '@/commonBlocks/CalloutSection';
 import { Page } from "../../../payload-types.js";
+import HighlightedCtaSection from '../../commonBlocks/HighlightCTASection';
+import StatisticsSection from '../../commonBlocks/StatisticsSection';
+import SubNavigation from "../../commonBlocks/SubNavigation";
+import TabSection from '../../commonBlocks/TabSection';
+import Testimonial from '../../commonBlocks/TestimonialBlock';
 // import { CallToActionBlock } from '../../blocks/CallToAction'
-import { GlobalBlock } from "@/blocks/GlobalBlock";
-import StickyCta from "@/blocks/StickyCTASection";
-import { ContentBlock } from "../../blocks/Content";
-import { MediaBlock } from "../../blocks/MediaBlock";
+import { ContentBlock } from "../../commonBlocks/Content";
+import { GlobalBlock } from "../../commonBlocks/GlobalBlock";
+import { MediaBlock } from "../../commonBlocks/MediaBlock";
+import StickyCta from "../../commonBlocks/StickyCTASection";
 import CarouselWithForm from '../CarouselWithForm/CarouselWithForm';
 
 

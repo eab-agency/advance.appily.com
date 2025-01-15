@@ -1,7 +1,7 @@
-import ImageCard from '@/blocks/ImageCard';
-import { Media } from '@/components/Media'
+import ImageCard from '@/commonBlocks/ImageCard';
+import { Media } from '@/components/Media';
 import { StatCard } from '@/components/StatCard';
-import React, { Fragment } from 'react'
+import { Fragment } from 'react';
 import RichText from '../RichText';
 import { Testimonial } from '../Testimonial';
 import AccordionSection from '../commonComponent/AccordionGroup';

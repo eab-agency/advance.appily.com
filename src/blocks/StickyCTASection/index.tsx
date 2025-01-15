@@ -1,94 +1,36 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { CMSLink } from "@/components/Link";
+import type { Block } from 'payload'
 
-import { Button } from "@/components";
-import styles from "@/styles/components/StickyCta.module.scss";
+import { backgroundColor } from '../../fields/backgroundColor'
+import linkGroup from '../../fields/linkGroup'
 
-
-interface stickyProps {
-  trackedElement?: React.RefObject<HTMLElement> | null;
-  ctaLabel?: string;
-  stickyctaLinks?: { link: {
-    type?: 'reference' | 'custom';
-    newTab?: boolean;
-    reference: {
-      value: string;
-      relationTo: 'pages';
-    };
-    url: string;
-    label: string;
-    appearance?: 'default' | 'primary' | 'secondary';
-  };
-  id?: string;
-}[];
-resultPage?: string;
+export const StickyCTA: Block = {
+  slug: 'stickyCTA',
+  labels: {
+    singular: 'Sticky CTA',
+    plural: 'Sticky CTAs',
+  },
+  imageURL: '/assets/thumbnails/sticky-cta-block.png',
+  fields: [
+    backgroundColor({ overrides: { name: 'stickyCTABackgroundColor' } }),
+    {
+      name: 'resultPage',
+      type: 'checkbox',
+      label: 'Result Page',
+      defaultValue: false,
+      admin: {
+        description: 'Check this if this page is a result page.',
+        style: {
+          display: 'flex',
+          flexDirection: 'column-reverse',
+        },
+      },
+    },
+    linkGroup({
+      overrides: {
+        name: 'stickyctaLinks',
+        maxRows: 1,
+      },
+      appearances: ['default', 'primary', 'secondary'],
+    }),
+  ],
 }
-
-const StickyCta: React.FC<stickyProps> = ({ trackedElement, ctaLabel, stickyctaLinks, resultPage }) => {
-
-  const [scrolled, setScrolled] = useState(false);
-  const [posY, setPosY] = useState(0);
-
- 
-
-  useEffect(() => {
-    if (trackedElement) {
-      const trackedElementPosY = trackedElement.current?.offsetTop;
-      setPosY(trackedElementPosY || 0);
-    }
-  }, [trackedElement]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const trigger = posY - 200;
-      const postTrigger = posY + 600;
-
-      if (window.scrollY >= trigger && window.scrollY <= postTrigger) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [posY, trackedElement]);
-
-  const stickyCtaClass = `${styles.stickyCta} ${trackedElement && scrolled ? styles.scrolled : ""
-    }`;
-
-  const handleClick = () => {
-    if (trackedElement) {
-      window.scrollTo({
-        top: posY,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  
-
-
-  return (
-    <div className={stickyCtaClass}>
-      
-      {!resultPage ?  
-         ( stickyctaLinks && stickyctaLinks?.length > 0 &&
-            (stickyctaLinks || []).map(({ link }, index) => {
-              return (
-                <CMSLink key={index} {...link} className="button btn-primary btn-click-quiz" />
-              )
-            })
-          ) : ( <Button
-            type="button"
-            onClick={handleClick}
-            appearance="primary"
-            className="button btn-primary"
-            label="Explore Your School Matches"
-          />) }
-    </div>
-  );
-};
-
-export default StickyCta;

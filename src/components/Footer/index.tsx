@@ -1,5 +1,5 @@
 'use client'
-import { fetchFooter } from "@/app/graphql";
+import { fetchFooter } from "@/app/(app)/graphql";
 import { Button } from "@/components";
 import styles from "@/styles/components/PageFooter.module.scss";
 import Image from "next/image";

@@ -20,7 +20,7 @@ Get your environment setup:
 
    ```bash
      NEXT_PUBLIC_APP_URL=http://localhost:3000
-     NEXT_PUBLIC_CMS_URL=http://point-to-your-cms-here
+     NEXT_PUBLIC_SERVER_URL=http://point-to-your-cms-here
      SECRET_COOKIE_PASSWORD=make-it-a-random-string
    ```
 

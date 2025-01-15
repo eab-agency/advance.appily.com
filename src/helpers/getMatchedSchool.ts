@@ -3,7 +3,7 @@ import {
 	fetchCarouselCardsByStateAndLeadType,
 	fetchLeadTypes,
 	fetchReaminingCarouselCards,
-} from "../app/graphql";
+} from "@/app/(app)/graphql";
 
 // import CarouselCard type from payload-types.ts
 import type { CarouselCard } from "../../payload-types";

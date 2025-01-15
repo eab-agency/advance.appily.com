@@ -1,3 +1,4 @@
+const { withPayload } = require("@payloadcms/next/withPayload");
 /** @type {import('next').NextConfig} */
 const path = require("path");
 const redirects = require("./redirects");
@@ -23,12 +24,12 @@ const strictTransportHeader = {
 };
 
 // function to trip https:// from the front of the url
-function stripHttps(url) {
-  if (typeof url !== 'string') {
-    throw new TypeError('Expected a string');
-  }
-  return url.replace(/^https?:\/\//, "");
-}
+// function stripHttps(url) {
+//   if (typeof url !== 'string') {
+//     throw new TypeError('Expected a string');
+//   }
+//   return url.replace(/^https?:\/\//, "");
+// }
 
 const nextConfig = {
   typescript: {
@@ -38,7 +39,7 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-  redirects,
+ // redirects,
   images: {
     formats: ["image/webp"],
     minimumCacheTTL: 31536000,
@@ -46,7 +47,7 @@ const nextConfig = {
       {
         protocol: "http",
         hostname: "localhost",
-        port: "8000",
+        port: "3000",
       },
       {
         protocol: "https",
@@ -68,11 +69,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "**.amplifyapp.com",
       },
-      {
-        protocol: "https",
-        hostname: stripHttps(process.env.NEXT_PUBLIC_CMS_URL),
-        pathname: "/media/**",
-      },
+      // {
+      //   protocol: "https",
+      //   hostname: stripHttps(process.env.NEXT_PUBLIC_SERVER_URL),
+      //   pathname: "/media/**",
+      // },
     ],
   },
   sassOptions: {
@@ -92,4 +93,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withPayload(nextConfig);

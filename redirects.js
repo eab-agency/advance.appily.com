@@ -4,7 +4,7 @@ const { formatPermalink } = permalinks
 module.exports = async () => {
 
   const redirectsRes = await fetch(
-    `${process.env.NEXT_PUBLIC_CMS_URL}/api/redirects?limit=1000&depth=1`
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/redirects?limit=1000&depth=1`
   )
 
   const redirectsData = await redirectsRes.json()
@@ -41,7 +41,7 @@ module.exports = async () => {
         } else if (reference.relationTo === 'posts') {
           // Fetch category slug for the post
           try {
-            const categoryData = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/categories/${reference.value.category[0]}?depth=1`)
+            const categoryData = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/categories/${reference.value.category[0]}?depth=1`)
             const categoryRes = await categoryData.json()
             destination = `/blog/${categoryRes.slug}/${reference.value.slug}`
           } catch (error) {

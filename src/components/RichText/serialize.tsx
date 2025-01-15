@@ -2,7 +2,7 @@ import escapeHTML from "escape-html";
 import { Fragment } from "react";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
 
-import ImageCard from '@/blocks/ImageCard';
+import ImageCard from '@/commonBlocks/ImageCard';
 import { Media } from '@/components/Media';
 import { StatCard } from '@/components/StatCard';
 import Image from "next/image";

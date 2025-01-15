@@ -42,7 +42,7 @@ export const AdminBar: React.FC<{
       <PayloadAdminBar
         {...adminBarProps}
         className={styles.adminBar}
-        cmsURL={process.env.NEXT_PUBLIC_CMS_URL}
+        cmsURL={process.env.NEXT_PUBLIC_SERVER_URL}
         collection={collection}
         collectionLabels={{
           plural: collectionLabels[collection]?.plural || "Pages",
