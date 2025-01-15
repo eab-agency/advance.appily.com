@@ -1,7 +1,5 @@
 import NotFound from '@/app/(app)/not-found';
-import { generateMeta } from '@/seo/generateMeta';
 import configPromise from '@payload-config';
-import { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import { getPayload } from 'payload';
 import { cache } from 'react';
@@ -47,20 +45,22 @@ type Args = {
 		subChild?: string
 	}>
 }
-export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
-	const { subChild = "" } = await paramsPromise
-	let page: Page | null = null;
+// export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
+// 	const { subChild = "" } = await paramsPromise
+// 	let page: Page | null = null;
 
-	page = await queryPageBySlug({ subChild })
-	if (page) {
-		return generateMeta({ doc: page })
-	} else {
-		return {
-			title: "Default Title",
-			description: "Default Description",
-		};
-	}
-}
+// 	page = await queryPageBySlug({ subChild })
+// 	console.log(page, 'pageData***')
+
+// 	if (page) {
+// 		return generateMeta({ doc: page })
+// 	} else {
+// 		return {
+// 			title: "Default Title",
+// 			description: "Default Description",
+// 		};
+// 	}
+// }
 
 
 const SubCategoryPage = async ({ params: paramsPromise }: Args) => {
@@ -71,7 +71,6 @@ const SubCategoryPage = async ({ params: paramsPromise }: Args) => {
 		pageData = await queryPageBySlug({
 			subChild,
 		});
-		console.log(pageData, 'pageData***')
 	} catch (error) {
 		console.log(error, 'err')
 	}

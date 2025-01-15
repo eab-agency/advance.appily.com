@@ -1,7 +1,5 @@
 import NotFound from '@/app/(app)/not-found';
-import { generateMeta } from '@/seo/generateMeta';
 import configPromise from '@payload-config';
-import { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import { getPayload } from 'payload';
 import { cache } from 'react';
@@ -47,20 +45,20 @@ type Args = {
 		result: string
 	}>
 }
-export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
-	const { result } = await paramsPromise
-	let page: Page | null = null;
+// export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
+// 	const { result } = await paramsPromise
+// 	let page: Page | null = null;
 
-	page = await queryPageBySlug({ result })
-	if (page) {
-		return generateMeta({ doc: page })
-	} else {
-		return {
-			title: "Default Title",
-			description: "Default Description",
-		};
-	}
-}
+// 	page = await queryPageBySlug({ result })
+// 	if (page) {
+// 		return generateMeta({ doc: page })
+// 	} else {
+// 		return {
+// 			title: "Default Title",
+// 			description: "Default Description",
+// 		};
+// 	}
+// }
 
 const SubCategoryPage = async ({ params: paramsPromise }: Args) => {
 	let pageData: Page | null = null;
