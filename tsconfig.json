@@ -13,7 +13,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node", // Changed from "bundler" to "node"
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noImplicitAny": false,
@@ -35,18 +35,22 @@
         "./src/payload.config.ts"
       ]
     },
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".", // Added baseUrl
+    "types": ["node"] // Added types
   },
   "include": [
+    "next-env.d.ts", // Added next-env.d.ts
     "src/**/*.ts",
     "src/**/*.tsx",
     "**/*.jsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "payload.config.ts", // Added payload.config.ts
+    "payload-types.ts" // Added payload-types.ts
   ],
   "exclude": [
     "node_modules",
     ".next",
-    "payload-types.ts",
     "sst.config.ts",
     ".sst/"
   ]
