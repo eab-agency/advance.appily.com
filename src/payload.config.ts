@@ -1,13 +1,12 @@
 // storage-adapter-import-placeholder
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
 import { redirectsPlugin } from '@payloadcms/plugin-redirects'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { s3Storage } from '@payloadcms/storage-s3'
 import path from 'path'
-import { buildConfig } from 'payload'
+import { buildConfig } from 'payload'; // Add PayloadRequest import
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 import { Categories } from './collections/Blog/Categories'
@@ -61,7 +60,7 @@ export default buildConfig({
   ],
   globals: [Header, Footer],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: process.env.PAYLOAD_SECRET,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
@@ -74,7 +73,7 @@ export default buildConfig({
   plugins: [
     nestedDocsPlugin({
       collections: ['pages'],
-      generateLabel: (_, doc) =>  doc?.title as string,
+      generateLabel: (_, doc) =>  String(doc?.title || ''),
       generateURL: (docs) => docs.reduce((url, doc) => `${url}/${doc.slug}`, ''),
     }),
     // seoPlugin({
@@ -92,11 +91,11 @@ export default buildConfig({
         media: true,
         "user-media": true
       },
-      bucket: process.env.S3_BUCKET as string,
+      bucket: String(process.env.S3_BUCKET),
       config: {
         credentials: {
-          accessKeyId: process.env.S3_ACCESS_KEY_ID as string,
-          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY as string,
+          accessKeyId: String(process.env.S3_ACCESS_KEY_ID),
+          secretAccessKey: String(process.env.S3_SECRET_ACCESS_KEY),
         },
         endpoint: process.env.S3_ENDPOINT,
         region: process.env.S3_REGION,
@@ -106,6 +105,6 @@ export default buildConfig({
       collections: ['pages','posts'],
       uploadsCollection: 'media',
     }),
-    payloadCloudPlugin(),
+    // payloadCloudPlugin(),
   ],
 })

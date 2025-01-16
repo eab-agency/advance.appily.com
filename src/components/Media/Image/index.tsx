@@ -3,12 +3,10 @@
 import NextImage, { StaticImageData } from "next/image";
 import React from "react";
 
-import cssVariables from "../../../../cssVariables";
+import { breakpoints } from "cssVariables";
 import { Props as MediaProps } from "../types";
 
 import classes from "./index.module.scss";
-
-const { breakpoints } = cssVariables;
 
 export const Image: React.FC<MediaProps> = (props) => {
   const {

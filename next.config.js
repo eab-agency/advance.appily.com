@@ -1,7 +1,11 @@
-const { withPayload } = require("@payloadcms/next/withPayload");
-/** @type {import('next').NextConfig} */
-const path = require("path");
-const redirects = require("./redirects");
+import { withPayload } from '@payloadcms/next/withPayload';
+
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 
 const robotHeader = {
   headers: [
@@ -89,4 +93,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPayload(nextConfig);
+export default withPayload(nextConfig)

@@ -1,7 +1,5 @@
-module.exports = {
-  breakpoints: {
+export const breakpoints = {
     s: 768,
     m: 1024,
     l: 1679,
-  },
-}
+  }

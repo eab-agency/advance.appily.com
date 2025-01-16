@@ -4,8 +4,8 @@ import { GridProvider } from "@faceless-ui/css-grid";
 import React from "react";
 import { SWRConfig } from "swr";
 
+import { breakpoints } from "cssVariables";
 import { CookiesProvider } from "react-cookie";
-import cssVariables from "../../cssVariables";
 import { ContextProvider } from "../context/context";
 
 // import { AuthProvider } from './Auth'
@@ -22,9 +22,9 @@ export const Providers: React.FC<{
         <CookiesProvider>
           <GridProvider
             breakpoints={{
-              s: cssVariables.breakpoints.s,
-              m: cssVariables.breakpoints.m,
-              l: cssVariables.breakpoints.l,
+              s: breakpoints.s,
+              m: breakpoints.m,
+              l: breakpoints.l,
             }}
             colGap={{
               s: "24px",
