@@ -22,7 +22,7 @@ export const fetchLeadTypes = async (): Promise<
 	}[]
 > => {
 	const { data } = await fetch(
-		`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?lead-types`,
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?lead-types`,
 		{
 			method: "POST",
 			headers: {
@@ -49,7 +49,7 @@ export const fetchLeadTypes = async (): Promise<
 
 export const fetchCarouselCards = async (): Promise<CarouselCard[]> => {
 	const { data } = await fetch(
-		`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?carousel-cards`,
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?carousel-cards`,
 		{
 			method: "POST",
 			headers: {
@@ -72,7 +72,7 @@ export const fetchCarouselCardsByStateAndLeadType = async (
 
 	if (leadTypeId) {
 		const { data } = await fetch(
-			`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?carousel-cards`,
+			`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?carousel-cards`,
 			{
 				method: "POST",
 				headers: {
@@ -100,7 +100,7 @@ export const fetchReaminingCarouselCards = async (
 	leadType?: string,
 ): Promise<CarouselCard[]> => {
 	const { data } = await fetch(
-		`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?carousel-cards`,
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?carousel-cards`,
 		{
 			method: "POST",
 			headers: {
@@ -121,7 +121,7 @@ export const fetchReaminingCarouselCards = async (
 
 export async function fetchHeader(): Promise<Header> {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -151,7 +151,7 @@ export async function fetchHeader(): Promise<Header> {
 
   export async function fetchFooter(): Promise<Footer> {
 try{
-	const footer = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql`, {
+	const footer = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql`, {
 	  method: 'POST',
 	  headers: {
 		'Content-Type': 'application/json',
@@ -184,7 +184,7 @@ export const fetchGlobals = async (): Promise<{
 	header: Header;
 	footer: Footer;
   }> => {
-	const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?globals`, {
+	const response = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?globals`, {
 	  method: 'POST',
 	  headers: {
 		'Content-Type': 'application/json',
@@ -211,7 +211,7 @@ export const fetchPages = async (): Promise<
 	Array<{ breadcrumbs: Page["breadcrumbs"]; slug: string, fullPath: string, updatedAt: string }>
 > => {
 	const { data, errors } = await fetch(
-		`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?pages`,
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?pages`,
 		{
 			method: "POST",
 			headers: {
@@ -239,7 +239,7 @@ export const fetchPage = async (
 	const slugSegments = incomingSlugSegments || ["index"];
 	const slug = slugSegments.at(-1);
 	const { data, errors } = await fetch(
-		`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?page=${slug}`,
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?page=${slug}`,
 		{
 			method: "POST",
 			headers: {
@@ -280,7 +280,7 @@ export const fetchPage = async (
 export const fetchPosts = async (): Promise<Post[]> => {
 	const currentDate = new Date();
    const { data } = await fetch(
-	   `${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?posts`,
+	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
 	   {
 		   method: "POST",
 		   headers: {
@@ -303,7 +303,7 @@ export const fetchPosts = async (): Promise<Post[]> => {
 
 export const fetchPost = async (slug: string): Promise<Post> => {
    const { data } = await fetch(
-	   `${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?post=${slug}`,
+	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?post=${slug}`,
 	   {
 		   method: "POST",
 		   headers: {
@@ -324,7 +324,7 @@ export const fetchPost = async (slug: string): Promise<Post> => {
 export const fetchFirstFivePosts = async (): Promise<Post[]> => {
 	const currentDate = new Date();
    const { data } = await fetch(
-	   `${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?posts`,
+	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
 	   {
 		   method: "POST",
 		   headers: {
@@ -348,7 +348,7 @@ export const fetchFirstFivePosts = async (): Promise<Post[]> => {
 
 export const fetchAllCategories = async (): Promise<Category[]> => {
    const { data } = await fetch(
-	   `${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?categories`,
+	   `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?categories`,
 	   {
 		   method: "POST",
 		   headers: {
@@ -368,7 +368,7 @@ export const fetchCategoryIDByTitle = async (
 	categorySlug?: Category['slug'],
 ): Promise<Post[]> => {
 	const { data } = await fetch(
-		`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?category=${categorySlug}`,
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?category=${categorySlug}`,
 		{
 			method: "POST",
 			headers: {
@@ -391,7 +391,7 @@ export const fetchPostsByCategory = async (
 	category?: Category['id'],
 ): Promise<Post[]> => {
 	const { data } = await fetch(
-		`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?posts`,
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
 		{
 			method: "POST",
 			headers: {
@@ -413,7 +413,7 @@ export const fetchPostsByCategory = async (
 
 // export const fetchAllTags = async (): Promise<Tag[]> => {
 // 	const { data } = await fetch(
-// 		`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?tags`,
+// 		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?tags`,
 // 		{
 // 			method: "POST",
 // 			headers: {
@@ -434,7 +434,7 @@ export const fetchPostsByCategory = async (
 	tag?: Tag['id'],
 ): Promise<Post[]> => {
 	const { data } = await fetch(
-		`${process.env.NEXT_PUBLIC_SERVER_URL}/api/graphql?posts`,
+		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
 		{
 			method: "POST",
 			headers: {

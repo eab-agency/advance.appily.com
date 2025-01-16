@@ -42,7 +42,7 @@ export default async function RootLayout({
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || ""),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://advance.appily.com"),
   openGraph: mergeOpenGraph(),
   twitter: mergeTwitter(),
   description: "Resources for Students Returning to School",

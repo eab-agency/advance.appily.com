@@ -21,7 +21,7 @@ export const PageClient: React.FC<{
   toastMessage: String;
 
 }> = ({ post: initialPage, relatedPostData, toastMessage }) => {
-  const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || "";
+  const serverURL = process.env.NEXT_PUBLIC_CMS_URL || "";
   const { docId, setId } = useId(); // Get and set the ID from the context
 
   const { data } = useLivePreview<Post>({

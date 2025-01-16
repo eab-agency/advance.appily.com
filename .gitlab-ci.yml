@@ -1,7 +1,7 @@
 image: node
 
 variables:
-  NEXT_PUBLIC_SERVER_URL: $NEXT_PUBLIC_SERVER_URL
+  NEXT_PUBLIC_CMS_URL: $NEXT_PUBLIC_CMS_URL
 
 before_script:
   - yarn install
@@ -32,7 +32,7 @@ build project:
     - echo "NODE_ENV is ${NODE_ENV}"
     # - if [ "${CI_COMMIT_REF_NAME}" != "main" ]; then export NEXT_PUBLIC_ISDEV=true; fi
     - echo "NEXT_PUBLIC_ISDEV is ${NEXT_PUBLIC_ISDEV}"
-    - echo "NEXT_PUBLIC_SERVER_URL is ${NEXT_PUBLIC_SERVER_URL}"
+    - echo "NEXT_PUBLIC_CMS_URL is ${NEXT_PUBLIC_CMS_URL}"
     # - yarn install
     - yarn build
   artifacts:

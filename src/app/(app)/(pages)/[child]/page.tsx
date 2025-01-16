@@ -47,7 +47,7 @@ export async function generateStaticParams() {
 
 //   try {
 //     const pageReq = await fetch(
-//       `${process.env.NEXT_PUBLIC_SERVER_URL}/api/pages?where[slug][equals]=${slug}&depth=0&limit=300`
+//       `${process.env.NEXT_PUBLIC_CMS_URL}/api/pages?where[slug][equals]=${slug}&depth=0&limit=300`
 //     );
 //     if (!pageReq.ok) {
 //       throw new Error(`Failed to fetch page data: ${pageReq.statusText}`);

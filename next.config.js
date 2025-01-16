@@ -52,26 +52,22 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "qa-appily-cms.payloadcms.app",
+        port: '',
+        pathname: '/api/media/**',
       },
       {
         protocol: "https",
         hostname: "advance-cms.appily.com", // port: "3000",
-      },
-      {
-        protocol: "https",
-        hostname: "**-eab-agency.vercel.app",
+        port: '',
+        pathname: '/api/media/**',
       },
       {
         protocol: "https",
         hostname: "advance.appily.com",
       },
-      {
-        protocol: "https",
-        hostname: "**.amplifyapp.com",
-      },
       // {
       //   protocol: "https",
-      //   hostname: stripHttps(process.env.NEXT_PUBLIC_SERVER_URL),
+      //   hostname: stripHttps(process.env.NEXT_PUBLIC_CMS_URL),
       //   pathname: "/media/**",
       // },
     ],
