@@ -3,6 +3,7 @@ import { fetchFooter } from "@/app/graphql";
 import { Button } from "@/components";
 import styles from "@/styles/components/PageFooter.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Footer } from "../../../payload-types";
 import { CMSLink } from "../Link";
@@ -71,6 +72,9 @@ const FooterComponent = () => {
               </li>
             </ul>
           </nav>
+          <Link href="/sitemap">
+            Sitemap
+          </Link>
         </div>
       </div>
     </footer>
