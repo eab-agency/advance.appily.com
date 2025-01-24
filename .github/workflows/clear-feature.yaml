@@ -47,5 +47,8 @@ jobs:
       - name: Install deps (with cache)
         run: pnpm install
 
-      - name: Remove SST Stage ${{ github.event.pull_request.head.ref }}
-        run: npx sst remove --stage=${{ github.event.pull_request.head.ref }}
+      - name: Set Stage Name
+        run: echo "STAGE_NAME=$(echo \"${GITHUB_HEAD_REF}\" | sed 's/[\/]/-/g' | tr -cd '[:alnum:]-')" >> $GITHUB_ENV
+
+      - name: Remove SST Stage
+        run: npx sst remove --stage=$STAGE_NAME
