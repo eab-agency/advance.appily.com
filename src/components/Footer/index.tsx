@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { fetchFooter } from "@/app/graphql";
 import { Button } from "@/components";
 import styles from "@/styles/components/PageFooter.module.scss";
@@ -17,7 +17,7 @@ const FooterComponent = () => {
         const footerData = await fetchFooter();
         setFooter(footerData);
       } catch (error) {
-        console.error('Failed to fetch footer:', error);
+        console.error("Failed to fetch footer:", error);
       }
     };
 
@@ -53,15 +53,14 @@ const FooterComponent = () => {
           </div>
           <nav className={styles.legalLinks}>
             <ul className="footer-col-1">
-              {navItems && navItems?.length > 0 && (navItems.map(({ link }, index) => (
-                <li key={index}>
-                  {/* @ts-ignore */}
-                  <CMSLink
-                    {...link}
-                    appearance={'default'}
-                  />
-                </li>
-              )))}
+              {navItems &&
+                navItems?.length > 0 &&
+                navItems.map(({ link }, index) => (
+                  <li key={index}>
+                    {/* @ts-ignore */}
+                    <CMSLink {...link} appearance={"default"} />
+                  </li>
+                ))}
               <li>
                 <Button
                   type="button"
@@ -70,11 +69,11 @@ const FooterComponent = () => {
                   label="Privacy Preferences"
                 />
               </li>
+              <li>
+                <Link href="/sitemap">Sitemap</Link>
+              </li>
             </ul>
           </nav>
-          <Link href="/sitemap">
-            Sitemap
-          </Link>
         </div>
       </div>
     </footer>
