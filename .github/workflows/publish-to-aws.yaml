@@ -14,7 +14,7 @@ on:
           - dev
           - production
       envName:
-        description: "The name of the environment (e.g., Staging, Production)"
+        description: "The name of the github environment (e.g., Staging, Production)"
         required: true
         default: "Staging"
         type: choice
@@ -73,8 +73,8 @@ jobs:
       - name: Install projects deps
         run: pnpm install
 
-      # - if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/production'
-      - name: Configure Dev AWS credentials
+      - if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/production'
+        name: Configure Dev AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-dev-github
@@ -102,7 +102,7 @@ jobs:
         env:
           NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
           NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
-          NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
+          NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}}
           NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
           NEXT_PUBLIC_AWS_IDENTITY_POOL_ID: ${{ vars.NEXT_PUBLIC_AWS_IDENTITY_POOL_ID}}
           NEXT_PUBLIC_AWS_APPLICATION_ID: ${{ vars.NEXT_PUBLIC_AWS_APPLICATION_ID}}

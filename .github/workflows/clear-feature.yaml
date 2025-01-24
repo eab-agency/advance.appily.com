@@ -4,9 +4,6 @@ on:
   pull_request:
     types: [closed]
 
-env:
-  PR_PREFIX: pr-${{ github.event.pull_request.number }}
-
 permissions:
   id-token: write
   contents: read
@@ -15,11 +12,8 @@ jobs:
   remove:
     runs-on: ubuntu-latest
 
-    # Run the job only when a PR is merged from a 'feature-*' branch into 'dev'
-    if: ${{ github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'dev' && startsWith(github.event.pull_request.head.ref, 'feature') }}
-
-    # if github.ref is main or production, then set the environment to Production, otherwise set to staging
-    environment: Staging
+    # Run the job only when a PR is merged into 'main' and the source branch starts with 'feature/' or 'feature-' or 'bugfix/' or 'bugfix-'
+    if: ${{ github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main' && (startsWith(github.event.pull_request.head.ref, 'feature/') || startsWith(github.event.pull_request.head.ref, 'feature-') || startsWith(github.event.pull_request.head.ref, 'bugfix/') || startsWith(github.event.pull_request.head.ref, 'bugfix-')) }}
 
     steps:
       - name: Checkout repo
@@ -28,7 +22,7 @@ jobs:
       - name: Configure Dev AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-dev-github
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/advance-appily-com-dev-github
           aws-region: us-east-1
 
       - name: Setup Node 20
@@ -53,5 +47,8 @@ jobs:
       - name: Install deps (with cache)
         run: pnpm install
 
-      - name: Remove SST Stage ${{ github.event.pull_request.head.ref }}
-        run: npx sst remove --stage=${{ github.event.pull_request.head.ref }}
+      - name: Set Stage Name
+        run: echo "STAGE_NAME=$(echo \"${GITHUB_HEAD_REF}\" | sed 's/[\/]/-/g' | tr -cd '[:alnum:]-')" >> $GITHUB_ENV
+
+      - name: Remove SST Stage
+        run: npx sst remove --stage=$STAGE_NAME

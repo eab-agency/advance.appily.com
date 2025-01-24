@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   }),
   title: title,
   description: description,
+  robots: {
+    index: false,
+    follow: false,
+  }
 };
 
 export default async function BusinessResultsLayout({
