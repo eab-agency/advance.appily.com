@@ -6,7 +6,7 @@ import React from "react";
 import { mergeOpenGraph } from "@/seo/mergeOpenGraph";
 import { mergeTwitter } from "@/seo/mergeTwitter";
 
-import "./styles/global.css";
+import "./styles/global.scss";
 
 import AWSRumInitializer from "@/components/AWSRumInit";
 import isDevMode from "@/helpers/isDevMode";
