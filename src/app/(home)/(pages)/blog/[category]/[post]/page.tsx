@@ -4,7 +4,7 @@ import "@/styles/layouts/templates/PostPage.scss";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
-import { Category, Post } from "../../../../../../payload-types";
+import { Category, Post } from "../../../../../../../payload-types";
 import { PageClient } from './page.client';
 export async function generateStaticParams() {
   try {

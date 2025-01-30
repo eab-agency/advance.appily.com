@@ -3,7 +3,7 @@ import { generateMeta } from "@/seo/generateMeta";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
-import { Page } from "../../../../payload-types";
+import { Page } from "../../../../../payload-types";
 import { PageClient } from "./page.client";
 
 export async function generateStaticParams() {

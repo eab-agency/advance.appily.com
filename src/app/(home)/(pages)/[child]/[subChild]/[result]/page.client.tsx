@@ -2,9 +2,9 @@
 import { Blocks } from "@/components/Block";
 import { useLivePreview } from "@payloadcms/live-preview-react";
 import React, { useEffect } from "react";
-import { Page } from "../../../../../../payload-types";
-import { Hero } from "../../../../../blocks/HeroBlock";
-import { useId } from "../../../../../context/idContext";
+import { Page } from "../../../../../../../payload-types";
+import { Hero } from "../../../../../../blocks/HeroBlock";
+import { useId } from "../../../../../../context/idContext";
 
 export const PageClient: React.FC<{
   page: Page;

@@ -3,20 +3,15 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { Metadata } from "next";
 import React from "react";
 
-import { Providers } from "../providers";
-import { mergeOpenGraph } from "../seo/mergeOpenGraph";
-import { mergeTwitter } from "../seo/mergeTwitter";
+import { mergeOpenGraph } from "@/seo/mergeOpenGraph";
+import { mergeTwitter } from "@/seo/mergeTwitter";
 
-import "@/styles/styles.scss";
+import "./styles/global.css";
 
-import FooterComponent from "../components/Footer";
-import HeaderComponent from "../components/Header";
-
-import { AdminBar } from "@/components/AdminBar";
 import AWSRumInitializer from "@/components/AWSRumInit";
 import isDevMode from "@/helpers/isDevMode";
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -29,13 +24,8 @@ export default async function RootLayout({
       </head>
       {!isDevMode() && <GoogleTagManager gtmId={GTM_ID} />}
       <body>
-        <Providers>
           <AWSRumInitializer /> {/* Use the client component here */}
-          <AdminBar />
-          <HeaderComponent />
           <main className="layout-wrapper">{children}</main>
-          <FooterComponent />
-        </Providers>
       </body>
     </html>
   );

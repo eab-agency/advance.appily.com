@@ -6,7 +6,7 @@ import "@/styles/layouts/templates/BlogPage.scss";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Post } from "../../../../../../payload-types";
+import { Post } from "../../../../../../../payload-types";
 
 export function TagComponent() {
   const pathname = usePathname();

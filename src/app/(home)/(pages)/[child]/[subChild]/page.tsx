@@ -1,13 +1,10 @@
-import React from 'react';
-import { notFound } from 'next/navigation';
-import {  fetchPages, fetchPage } from '@/app/graphql';
-import { Page } from '../../../../../payload-types'
-import { Hero } from '../../../../blocks/HeroBlock';
-import { Blocks } from '@/components/Block';
-import { PageClient } from './page.client'
-import { Metadata } from "next";
-import { draftMode } from 'next/headers'
+import { fetchPage, fetchPages } from '@/app/graphql';
 import { generateMeta } from "@/seo/generateMeta";
+import { Metadata } from "next";
+import { draftMode } from 'next/headers';
+import { notFound } from 'next/navigation';
+import { Page } from '../../../../../../payload-types';
+import { PageClient } from './page.client';
 
 export async function generateStaticParams() {
 	const pages = await fetchPages();
@@ -21,15 +18,15 @@ export async function generateStaticParams() {
 	});
 	return paramsVal;
   }
-  
+
   export async function generateMetadata({ params }: { params: { child: string; subChild: string } }): Promise<Metadata> {
 	const { isEnabled: isDraftMode } = draftMode();
 	const { child, subChild } = params;
-  
+
     const slug = [child, subChild].filter(Boolean);
-  
+
 	let page: Page | null = null;
-  
+
 	try {
 	  page = await fetchPage(slug);
 	} catch (error) {
@@ -45,17 +42,17 @@ export async function generateStaticParams() {
 	}
   }
 
-  
+
   const SubCategoryPage = async({ params, searchParams }: any) => {
-	const { child, subChild } = params; 
+	const { child, subChild } = params;
 	let pageData: Page | null = null
     const slug = [child, subChild].filter(Boolean);
 	try {
 		pageData  = await fetchPage(slug);
 	  } catch (error) {
 	  }
-	  
-	
+
+
 	if (!pageData) {
 		return notFound()
 	  }
@@ -63,7 +60,7 @@ export async function generateStaticParams() {
 	const layout = pageData?.layout;
   return (
 // 	<React.Fragment>
-// 	<Hero {...hero} />	
+// 	<Hero {...hero} />
 // 	<Blocks blocks={layout} />
 
 //   </React.Fragment>

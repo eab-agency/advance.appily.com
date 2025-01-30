@@ -4,7 +4,7 @@ import RichText from "@/components/RichText";
 import "@/styles/layouts/templates/BlogPage.scss";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Post } from "../../../../../payload-types";
+import { Post } from "../../../../../../payload-types";
 
 export default async function CategoryComponent({ params }) {
   const { category } = params;

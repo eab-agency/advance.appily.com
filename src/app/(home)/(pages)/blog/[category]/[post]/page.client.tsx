@@ -9,8 +9,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { FaChevronLeft } from "react-icons/fa";
-import { Post } from "../../../../../../payload-types";
-import { useId } from "../../../../../context/idContext";
+import { Post } from "../../../../../../../payload-types";
+import { useId } from "../../../../../../context/idContext";
 
 export const PageClient: React.FC<{
   post: Post;

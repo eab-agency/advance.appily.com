@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Category, Post, Tag } from "../../../../payload-types";
+import { Category, Post, Tag } from "../../../../../payload-types";
 
 const BlogTab = dynamic(() => import("@/components/Blog/BlogTab"), {
   ssr: true,
