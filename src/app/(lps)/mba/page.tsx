@@ -11,8 +11,8 @@ export default function DashboardPage() {
       <PageHead />
       <Hero />
 
-      <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start">
-        <div className="md:w-3/5">
+      <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
+        <div className="md:w-3/5 deco-l-brand-violet deco-r-left-0">
           <h2>Are you ready to take the next step in your professional journey?</h2>
           <p>Earning a Masters in Business Administration can provide the skills, knowledge, and network you need to unlock new career opportunities.  If you&apos;re wondering "Should I get an MBA?" or "What can I do with an MBA?", our interactive quiz can help guide you in the right direction.</p>
 

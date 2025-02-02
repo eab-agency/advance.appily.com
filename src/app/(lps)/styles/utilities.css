@@ -1,0 +1,47 @@
+@utility container-*{
+  max-width: --value(--container-*);
+  margin-inline: auto;
+  width: 90%;
+}
+
+@utility deco-r-*{
+  &::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+    aspect-ratio: 1/1;
+    max-height: 100%;
+    background: --value(--color-*);
+    /* border-top-left-radius: 100%; */
+  }
+}
+
+@utility deco-r-right-*{
+  &::before{
+    right: calc(var(--spacing) * --value(integer))
+  }
+}
+
+@utility deco-r-left-*{
+  &::before{
+    left: calc(var(--spacing) * --value(integer))
+  }
+}
+
+@utility deco-tl-radius-*{
+  border-top-left-radius: --value(--radius-*);
+}
+
+@utility deco-l-*{
+  &::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+    aspect-ratio: 1/1;
+    max-height: 100%;
+    background: --value(--color-*);
+    border-top-right-radius: 100%;
+  }
+}

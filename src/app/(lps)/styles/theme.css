@@ -100,7 +100,3 @@
 
 }
 
-@utility container-*{
-  max-width: --value(--container-*);
-  margin-inline: auto;
-}
