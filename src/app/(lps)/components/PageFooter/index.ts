@@ -1,0 +1,2 @@
+export { PageFooter } from './PageFooter';
+

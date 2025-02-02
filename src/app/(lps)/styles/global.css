@@ -1,0 +1,29 @@
+/* @use 'tokens/primitives'; */
+@import "tailwindcss";
+@import "./theme";
+@import "./breakpoints";
+@import "./typography";
+
+
+body{
+  margin: 0;
+}
+
+.logo{
+  width: clamp(5rem, 15vw, 15rem);
+  height: clamp(1rem, 3vw, 3rem);
+}
+
+.decorated{
+  &::before{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    height: 70%;
+    background: var(--color-brand-yellow);
+    border-top-left-radius: 100%;
+  }
+}
+

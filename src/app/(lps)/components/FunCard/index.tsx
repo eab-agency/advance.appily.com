@@ -1,0 +1,2 @@
+export { FunCard } from './FunCard';
+

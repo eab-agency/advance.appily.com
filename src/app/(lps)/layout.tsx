@@ -6,7 +6,7 @@ import React from "react";
 import { mergeOpenGraph } from "@/seo/mergeOpenGraph";
 import { mergeTwitter } from "@/seo/mergeTwitter";
 
-import "./styles/global.scss";
+import "./styles/global.css";
 
 import AWSRumInitializer from "@/components/AWSRumInit";
 import isDevMode from "@/helpers/isDevMode";
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="font-sans">
       <head>
         <link rel="preconnect" href="https://use.typekit.net" />
         <link rel="stylesheet" href="https://use.typekit.net/wba2ytz.css" />
