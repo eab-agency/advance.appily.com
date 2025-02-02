@@ -9,7 +9,7 @@ export const Hero = () => {
               <h1 className="text-brand-navy-blue text-left">Unlock Your Career Potential with an MBA</h1>
               <p className=''>Discover How an MBA Can Transform Your Future in Business, Finance, and Leadership</p>
           </div>
-          <figure className="block order-0 lg:order-1 relative lg:absolute w-full h-90 lg:w-auto lg:h-full lg:aspect-square xl:aspect-[1.2/1] m-0 top-0 right-0 deco-r-brand-yellow deco-r-left-0">
+          <figure className="block order-0 lg:order-1 relative lg:absolute w-full h-90 lg:w-auto lg:h-full lg:aspect-square xl:aspect-[1.2/1] m-0 top-0 right-0 deco-petal-brand-yellow deco-petal-left-0 deco-petal-tl-500">
             <Image
               className="object-cover rounded-bl-full overflow-hidden"
               alt=""

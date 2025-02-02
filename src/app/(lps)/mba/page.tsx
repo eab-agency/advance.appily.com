@@ -12,7 +12,7 @@ export default function DashboardPage() {
       <Hero />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
-        <div className="md:w-3/5 deco-l-brand-violet deco-r-left-0">
+        <div className="md:w-3/5">
           <h2>Are you ready to take the next step in your professional journey?</h2>
           <p>Earning a Masters in Business Administration can provide the skills, knowledge, and network you need to unlock new career opportunities.  If you&apos;re wondering "Should I get an MBA?" or "What can I do with an MBA?", our interactive quiz can help guide you in the right direction.</p>
 
@@ -73,7 +73,7 @@ export default function DashboardPage() {
               <h2 className="block text-center">Explore MBA Program Specializations</h2>
 
               <div className="flex flex-wrap justify-center gap-fluid-2xl items-start">
-                  <FunCard color="teal" className="w-full sm:w-[48%] lg:w-[30%] flex-none">
+                  <FunCard color="teal" className="w-full md:w-[48%] lg:w-[30%] flex-none">
                       <h3 className="mt-auto">MBA in Finance</h3>
                       <p>Advance your financial acumen and pursue roles in investment, corporate finance, or financial consulting.</p>
                       <p><strong>Related specializations:</strong></p>
@@ -86,7 +86,7 @@ export default function DashboardPage() {
                       </ul>
                   </FunCard>
 
-                  <FunCard color="yellow" className="w-full  sm:w-[48%] lg:w-[30%] flex-none">
+                  <FunCard color="yellow" className="w-full md:w-[48%] lg:w-[30%] flex-none">
                       <h3 className="mt-auto">MBA in Management or MBA in Organizational Leadership</h3>
                       <p>Gain the skills to lead teams and manage complex initiatives across industries. Prepare for executive roles and become a leader who inspires change.</p>
                       <p><strong>Related specializations:</strong></p>
@@ -100,7 +100,7 @@ export default function DashboardPage() {
                         </ul>
                   </FunCard>
 
-                  <FunCard color="orange" className="w-full  sm:w-[48%] lg:w-[30%] flex-none">
+                  <FunCard color="orange" className="w-full  md:w-[48%] lg:w-[30%] flex-none">
                       <h3 className="mt-auto">MBA in Project Management</h3>
                       <p>Learn how to oversee large-scale projects and improve organizational efficiency.</p>
                       <p><strong>Related specializations:</strong></p>
@@ -113,7 +113,7 @@ export default function DashboardPage() {
                         </ul>
                   </FunCard>
 
-                  <FunCard color="violet" className="w-full  sm:w-[48%] lg:w-[30%] flex-none">
+                  <FunCard color="violet" className="w-full  md:w-[48%] lg:w-[30%] flex-none">
                       <h3 className="mt-auto">MBA in Marketing</h3>
                       <p>Create and execute marketing strategies and campaigns.</p>
                       <p><strong>Related specializations:</strong></p>
@@ -128,7 +128,7 @@ export default function DashboardPage() {
                         </ul>
                   </FunCard>
 
-                  <FunCard color="navy-blue" className="w-full  sm:w-[48%] lg:w-[30%] flex-none">
+                  <FunCard color="navy-blue" className="w-full  md:w-[48%] lg:w-[30%] flex-none">
                       <h3 className="mt-auto">MBA in Entrepreneurship</h3>
                       <p>Equip yourself with the knowledge and skills to start and manage you own businesses and ventures.</p>
                       <p><strong>Related specializations:</strong></p>
