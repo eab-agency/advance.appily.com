@@ -1,4 +1,4 @@
-# Template for GitHub Actions CI/CD Workflow for Next.js App Deployment
+# Template for GitHub Actions CI/CD Workflow
 #
 # Guidelines to Avoid Copy-Paste Errors:
 # 1. Use descriptive and unique variable names to prevent confusion (e.g., differentiate between GTM and GTAG IDs).
@@ -8,6 +8,7 @@
 # 5. Ensure all changes are peer-reviewed to catch potential errors early.
 # 6. Utilize automated linting and validation tools to detect syntax issues.
 # 7. Document any changes or customizations made to this template for future reference.
+# 8. Test the workflow in a staging environment before deploying to production.
 
 name: [Workflow Name] # e.g., Deploy to AWS
 
@@ -76,7 +77,7 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - name: Install Pnpm
-        run: npm install -g pnpm
+        run: npm install -g pnpm@9.15.2
 
       - name: Install project dependencies
         run: pnpm install

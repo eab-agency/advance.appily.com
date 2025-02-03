@@ -10,7 +10,7 @@ export default async function ResultsLayout({
 export const metadata: Metadata = {
 	robots: {
 		index: false,
-		follow: true,
+		follow: false,
 		nocache: true,
 		googleBot: {
 			index: false,
