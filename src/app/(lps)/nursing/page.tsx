@@ -6,7 +6,6 @@ import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
 
-import CommonQuestions from "../assets/common-questions.png";
 import ElevateYourCareer from "../assets/elevate-your-career.jpg";
 
 export default function Page() {
@@ -19,12 +18,13 @@ export default function Page() {
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
         <div className="md:w-3/5">
-          <h2>Find Your Perfect Path: Explore Jobs in the Medical Field With Our Career Quiz</h2>
-          <p>Are you wondering, "What medical career is right for me?" or "What should I do in the medical field?" Whether you're interested in high-paying medical jobs or exploring different careers in the medical field, our free medical specialty quiz can guide you toward the best options based on your skills and interests. With countless job opportunities available in the ever-growing medical field, now is the time to discover which career suits you best!</p>
+          <h2>Discover Specialized Nursing Roles and Unlock New Opportunities</h2>
+          <p>Are you a registered nurse (RN) wondering, "Should I pursue an advanced nursing degree?" or "What nursing career is right for me?" With health care evolving rapidly, now is the perfect time to explore different nursing jobs that may require advanced education and offer greater autonomy, higher salaries, and leadership opportunities. Our career quiz is designed to help you identify the best path forward, whether you want to become a nurse practitioner, a clinical specialist, or a nurse leader.</p>
         </div>
         <FunCard className="shadow-md-orange" color="teal">
-          <h3>Take the Next Step</h3>
-          <p>Not sure which pathway or graduate degree is right for you? Our career quiz can help identify the best option based on your skills and interests. </p>
+          <h3>Take the Next Step </h3>
+          <p>If you want to advance your career, our health care quiz can help you identify career paths and educational opportunities that get you to the next level.</p>
+          <p>The quiz provides personalized guidance based on your experience, interests, and long-term career goals and connects you to nursing schools, colleges, and universities with programs that align to your needs.</p>
           <Button label="Start the Quiz Now" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button" />
         </FunCard>
 
@@ -32,27 +32,27 @@ export default function Page() {
 
       <section className="bg-brand-navy-blue text-white py-fluid-5xl px-fluid-2xl facts">
         <div className="container-wide">
-          <h2 className="block text-center">Why Pursue a Career in Medicine?</h2>
-          <p className="text-center mb-fluid-3xl container-default">Medical careers offer more than just financial stability—they provide the opportunity to make a real difference in people&apos;s lives. Whether you're considering different jobs in the medical field or looking for medical jobs that pay well, a career in medicine allows you to contribute to society while enjoying personal and professional growth.</p>
+          <h2 className="block text-center">Why Advance Your Nursing Career?</h2>
+          <p className="text-center mb-fluid-3xl container-default">Advanced nursing degrees open doors to specialized roles, leadership positions, and higher earning potential. Whether you want to provide more comprehensive care, lead healthcare teams, or contribute to healthcare innovation, advancing your nursing career allows you to make a broader impact.</p>
           <div className="flex flex-col md:flex-row gap-fluid-4xl items-start">
             <FactsCard
               headingLevel="h3"
               color="yellow"
-              title="High Earning Potential"
-              description="Many roles in the medical field offer above-average salaries."
+              title="Increased Autonomy"
+              description="Advanced practice nurses often work independently, managing patient care without direct supervision."
             />
             <FactsCard
               headingLevel="h3"
               color="violet"
-              title="Job Stability"
-              description="With the continuous demand for healthcare professionals, medical jobs provide long-term security."
+              title="Higher Salaries"
+              description="Specialized nursing jobs typically come with significantly higher compensation."
 
             />
             <FactsCard
               headingLevel="h3"
               color="teal"
-              title="Diverse Opportunities"
-              description="Whether you want to work directly with patients, behind the scenes, or in a leadership role, there are countless career pathways in the medical field."
+              title="Leadership Opportunities"
+              description="Advanced degrees qualify you for administrative and leadership roles in health care."
 
             />
 
@@ -63,20 +63,20 @@ export default function Page() {
       <section className="py-fluid-5xl px-fluid-2xl">
           <div className="container-wide flex flex-col md:flex-row gap-fluid-4xl items-start">
             <div>
-              <h2 className="block">Explore Different Professions in the Medical Field</h2>
-              <p className="mb-fluid-3xl">The medical field offers a wide range of rewarding careers, from direct patient care to administrative and technology-focused roles. Whether you're curious about medical health jobs or want to explore different jobs in the medical field, there&apos;s a perfect path for everyone.</p>
+              <h2 className="block">Explore Advanced Jobs in Nursing</h2>
+              <p className="mb-fluid-3xl">If you're ready to advance your career beyond your RN degree, advanced roles can offer exciting new challenges and opportunities. These positions often require specialized graduate degrees, enabling you to take on greater responsibilities in patient care, administration, and healthcare innovation.</p>
 
               <h3 className="font-sans text-fluid-lg mb-0">High-Demand Medical Careers</h3>
               <p>According to industry statistics, medical field jobs are among the fastest-growing and most in-demand. Whether you want to work in patient care or behind the scenes in medical research or administration, the opportunities are endless.</p>
             </div>
             <FunCard color="violet" className="bg-white w-full md:w-[48%] flex-none">
-              <h3>Popular Medical Health Jobs:</h3>
-              <ul>
-                <li><strong>Nursing Careers:</strong> From registered nurses (RNs) to advanced practice nurses, nursing offers numerous advancement opportunities.</li>
-                <li><strong>Medical Technologists:</strong> Perform vital tests that help in diagnosing and treating patients.</li>
-                <li><strong>Pharmacy Careers:</strong> Work as a pharmacist or pharmacy technician and play a critical role in healthcare delivery.</li>
-                <li><strong>Therapists:</strong> Explore roles such as respiratory or occupational therapy, which provide hands-on patient care.</li>
-                <li><strong>Medical Administration:</strong> Lead hospital departments, manage medical facilities, or coordinate health services.</li>
+              <h3>Advanced Nursing Career Paths:</h3>
+              <ul className="list-disc pl-6">
+                <li><strong>Nurse Practitioner (NP):</strong> Provide primary and specialty care, diagnose and treat illnesses, and prescribe medications.</li>
+                <li><strong>Clinical Nurse Specialist (CNS):</strong> Focus on improving patient outcomes through specialized expertise in a particular area of practice.</li>
+                <li><strong>Nurse Anesthetist (CRNA):</strong> Deliver anesthesia during surgeries and procedures, a highly specialized and in-demand role.</li>
+                <li><strong>Nurse Midwife (CNM):</strong> Offer comprehensive care to women, including prenatal, labor, and postnatal services.</li>
+                <li><strong>Nursing Administrators:</strong> Lead healthcare teams and manage nursing operations at hospitals and other healthcare facilities.</li>
               </ul>
             </FunCard>
           </div>
@@ -89,7 +89,7 @@ export default function Page() {
         >
           <Image
             src={ElevateYourCareer}
-            alt="Find the Best Medical Field Jobs for You"
+            alt="Choosing the Right Registered Nurse Degree Advancement Program"
             fill
             quality={85}
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -99,52 +99,22 @@ export default function Page() {
 
         <div className="container-wide z-10 relative py-[7vw]">
           <FunCard color="yellow" className="bg-white w-full md:w-[48%] flex-none">
-            <h2>Find the Best Medical Field Jobs for You</h2>
-            <p>If you're asking yourself, "What medical career is best for me?," our medical specialty quiz will help you discover roles tailored to your interests. Whether you&apos;re looking for medical jobs that pay well or considering a career change, the quiz provides personalized suggestions for your next steps.</p>
-            <h3>Top-Paying Jobs in the Medical Field</h3>
-            <p>Looking for jobs in the medical field that pay well? Many careers in medicine offer competitive salaries and strong growth potential. Explore roles in:</p>
-            <p><strong>Physician & Surgeon Careers:</strong> These highly skilled roles offer some of the best medical field jobs in terms of compensation.</p>
-            <p><strong>Specialist Nurses:</strong> Nurse practitioners, anesthetists, and midwives can earn high salaries while delivering specialized care.</p>
-            <p><strong>Medical Research:</strong> Conduct groundbreaking research that improves patient outcomes and advances medical science.</p>
+            <h2>Choosing the Right Registered Nurse Degree Advancement Program</h2>
+            <p>To take on advanced roles, you’ll need to enroll in a graduate-level registered nurse degree program. Depending on your chosen path, options include master’s and doctoral programs in nursing.</p>
+            <h3 className="font-sans text-fluid-lg mb-0">Key Considerations for Advanced Nursing Programs:</h3>
+            <p><strong>Specializations:</strong> Choose a program that aligns with your desired advanced nursing role, whether it's family practice, acute care, or nursing leadership.</p>
+            <p><strong>Flexibility:</strong>  Many programs offer part-time, online, or hybrid options, making it easier to balance work and education.</p>
+            <p><strong>Licensure and Certification:</strong> Advanced roles often require additional certifications beyond a graduate degree, such as NP or CRNA licensure.</p>
           </FunCard>
         </div>
 
       </section>
 
-      <section className="bg-brand-lightteal py-fluid-5xl px-fluid-2xl">
-        <div className="container-wide flex flex-col gap-fluid-4xl items-start md:flex-row">
-          <figure className="w-full md:w-1/2">
-            <Image
-              src={CommonQuestions}
-              alt="Common Questions About Medical Careers"
-              quality={85}
-              className="object-cover"
-              width={800}
-              height={533}
-              layout="responsive"
-            />
-          </figure>
-          <div className="w-full md:w-1/2">
-            <h2>Common Questions About Medical Careers</h2>
-            <div>
-              <h3 className="mb-0 font-sans font-bold">How can I find out which medical career is right for me?</h3>
-              <p>Taking a career quiz is a great way to discover roles that match your interests, skills, and long-term goals.</p>
-
-              <h3 className="mb-0 font-sans font-bold">Are there high-demand jobs in the medical field?</h3>
-              <p>Yes, medical field jobs are in high demand due to the growing need for health care services. The Bureau of Labor Statistics predicts about two million jobs in health care will be created each year over the next decade.</p>
-
-              <h3 className="mb-0 font-sans font-bold">What is the best way to start a career in medicine?</h3>
-              <p>Start by identifying your interests—whether it's patient care, technology, or administration—then take our career quiz to explore suitable pathways and be connected with schools who offer the required degrees to help you meet your goals.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
         <div className="container-default relative z-10">
           <h2>Ready to Take the Next Step?</h2>
-          <p className="text-fluid-lg">Start your journey toward a fulfilling career by taking our medical careers quiz today! Discover which roles align with your skills, interests, and goals—whether you're exploring jobs in the medical field, considering medical field jobs that pay well, or searching for different medical field careers.</p>
-          <p className="text-fluid-lg">Take the Free Quiz Now and find out "What medical career is best for me?" Your future in the medical field starts here!</p>
+          <p className="text-fluid-lg">Start your journey toward a fulfilling career by taking our health care careers quiz today! Discover which roles align with your skills, interests, and goals—whether you're focused on advancing your current nursing career or are exploring other jobs in the health care field, this quiz will ensure your are on the right path. Once you have completed the quiz, we will connect you to nursing schools with programs that can help you earn the degrees required to advance your career.</p>
+
           <Button label="Start the Free Business Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
         </div>
       </section>

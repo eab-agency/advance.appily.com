@@ -71,7 +71,7 @@ export default function Page() {
             </div>
             <FunCard color="violet" className="bg-white w-full md:w-[48%] flex-none">
               <h3>Popular Medical Health Jobs:</h3>
-              <ul>
+              <ul className="list-disc pl-6">
                 <li><strong>Nursing Careers:</strong> From registered nurses (RNs) to advanced practice nurses, nursing offers numerous advancement opportunities.</li>
                 <li><strong>Medical Technologists:</strong> Perform vital tests that help in diagnosing and treating patients.</li>
                 <li><strong>Pharmacy Careers:</strong> Work as a pharmacist or pharmacy technician and play a critical role in healthcare delivery.</li>
@@ -101,7 +101,7 @@ export default function Page() {
           <FunCard color="yellow" className="bg-white w-full md:w-[48%] flex-none">
             <h2>Find the Best Medical Field Jobs for You</h2>
             <p>If you're asking yourself, "What medical career is best for me?," our medical specialty quiz will help you discover roles tailored to your interests. Whether you&apos;re looking for medical jobs that pay well or considering a career change, the quiz provides personalized suggestions for your next steps.</p>
-            <h3>Top-Paying Jobs in the Medical Field</h3>
+            <h3 className="font-sans text-fluid-lg mb-0">Top-Paying Jobs in the Medical Field</h3>
             <p>Looking for jobs in the medical field that pay well? Many careers in medicine offer competitive salaries and strong growth potential. Explore roles in:</p>
             <p><strong>Physician & Surgeon Careers:</strong> These highly skilled roles offer some of the best medical field jobs in terms of compensation.</p>
             <p><strong>Specialist Nurses:</strong> Nurse practitioners, anesthetists, and midwives can earn high salaries while delivering specialized care.</p>
