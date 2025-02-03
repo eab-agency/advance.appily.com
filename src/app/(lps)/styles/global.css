@@ -10,8 +10,10 @@ body{
   margin: 0;
 }
 
-button,
 .button{
+  display: flex;
+  width: fit-content;
+  align-items: center;
   cursor: pointer;
   background: var(--color-brand-orange);
   border-radius: var(--radius-sm);
@@ -20,4 +22,103 @@ button,
   color: var(--color-brand-navy-blue);
   font-family: var(--font-serif);
   font-size: var(--text-fluid-md);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  line-height: 1.2;
+  border: 2px solid var(--color-brand-orange);
+  text-decoration: none;
+  text-align: left;
+
+
+  &::before {
+    content: "";
+    display: block;
+    width: 12rem;
+    height: 5rem;
+    background: white;
+    border-top-left-radius: 100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    opacity: 0.3;
+    transform: translateX(100%) translateY(-50%);
+    transition: all 0.15s ease-in-out 0.03s;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 7rem;
+    height: 5rem;
+    background: white;
+    border-top-left-radius: 100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    opacity: 0.5;
+    transform: translateX(100%) translateY(-50%);
+    transition: all 0.15s ease-in-out;
+  }
+
+  .btn-content {
+
+    &::before {
+      content: "";
+      display: block;
+      width: 5rem;
+      height: 5rem;
+      background: var(--color-brand-lightyellow);
+      border-top-left-radius: 100%;
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      right: 1.5em;
+      transform: translateX(50%) translateY(-50%);
+    }
+  }
+
+  span {
+    padding-right: 3em;
+    z-index: 2;
+    position: relative;
+    font-family: var(--font-serif);
+    font-weight: 500;
+    color: var(--color-brand-navy-blue);
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0.7em;
+      aspect-ratio: 1/1;
+      border-top: 3px solid var(--color-brand-navy-blue);
+      border-right: 3px solid var(--color-brand-navy-blue);
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  /* &:hover {
+    border-color: #FFDAA6;
+  } */
+
+  @media (min-width: 800px) {
+    &:hover {
+      background: #FFAB33;
+      color: var(--c-navy-800);
+      /* border-color: var(--c-teal-500); */
+
+      &::before {
+        transform: scale(1.2) translateY(-50%);
+      }
+
+      &::after {
+        transform: scale(1.2) translateY(-50%);
+      }
+    }
+  }
 }
+
+

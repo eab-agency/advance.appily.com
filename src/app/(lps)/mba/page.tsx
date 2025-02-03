@@ -1,3 +1,4 @@
+import { Button } from "@/components";
 import Image from "next/image";
 import { HiBadgeCheck } from "react-icons/hi";
 import { FactsCard } from "../components/FactsCard";
@@ -13,7 +14,10 @@ export default function DashboardPage() {
   return (
     <>
       <PageHead />
-      <Hero />
+      <Hero
+        title="Unlock Your Career Potential with an MBA"
+        description="Discover How an MBA Can Transform Your Future in Business, Finance, and Leadership"
+      />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
         <div className="md:w-3/5">
@@ -37,7 +41,7 @@ export default function DashboardPage() {
         <FunCard className="shadow-md-orange" color="teal">
           <h3>Let us help you find the best MBA business program!<br/><br/>Take our Free Career Quiz </h3>
           <p>Answer a few questions to get matched with the best MBA programs for you.</p>
-          <button className="btn btn-primary">Get Started</button>
+          <Button label="Get Started" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
         </FunCard>
 
       </section>
@@ -177,7 +181,7 @@ export default function DashboardPage() {
           <h2>Your Future MBA Awaits</h2>
           <p>Get personalized recommendations from top universities and colleges for MBA degree opportunities. Request detailed information about top MBA programs today!</p>
           <p className="text-fluid-2xl">Start the process by taking our free Business Career Quiz.</p>
-          <button className="btn btn-primary">Take the Quiz and Get More Info</button>
+          <Button label="Take the Quiz and Get More Info" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
         </div>
       </section>
 
@@ -214,7 +218,7 @@ export default function DashboardPage() {
         <div className="container-default relative z-10">
           <h2>Take the Next Step in Your Career</h2>
           <p className="text-fluid-lg">A Masters in Business Administration could be the catalyst for achieving your career goals. Get started today!</p>
-          <button className="btn btn-primary">Start the Free Business Career Quiz </button>
+          <Button label="Start the Free Business Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button mx-auto" />
         </div>
       </section>
 
