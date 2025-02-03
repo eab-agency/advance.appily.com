@@ -1,6 +1,5 @@
 import { Button } from "@/components";
 import Image from "next/image";
-import { Accordion } from "../components/Accordion";
 import { FactsCard } from "../components/FactsCard";
 import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
@@ -20,42 +19,40 @@ export default function Page() {
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
         <div className="md:w-3/5">
-          <h2>Explore Business Marketing, Management, and Leadership Degrees Designed to Elevate Your Career</h2>
-          <p>Are you wondering "What can I do with a business degree?" or "What can I do with a master&apos;s in business?" <strong>Our free quiz will help you</strong> discover the right degree path and career opportunities tailored to your interests and goals.The Bureau of Labor Statistics predicts that nearly one million jobs in business will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can give you a head start in transferring your skills to a new or more advanced role.</p>
+          <h2>Find Your Perfect Path: Explore Jobs in the Medical Field With Our Career Quiz</h2>
+          <p>Are you wondering, "What medical career is right for me?" or "What should I do in the medical field?" Whether you're interested in high-paying medical jobs or exploring different careers in the medical field, our free medical specialty quiz can guide you toward the best options based on your skills and interests. With countless job opportunities available in the ever-growing medical field, now is the time to discover which career suits you best!</p>
         </div>
         <FunCard className="shadow-md-orange" color="teal">
-          <h3>Take Our Free Business Career Quiz</h3>
-          <p>If you want to work in business but you don&apos;t know which job fits your skills and interests, this free quiz can help you find a good fit and plan your next steps.</p>
-
-          <p>In less than three minutes, you&apos;ll discover which type of business careers suit your goals and aspirations. We&apos;ll also connect you with schools near you that offer degrees to help you reach your goals.</p>
-          <Button label="Start the Quiz Now" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
+          <h3>Take the Next Step</h3>
+          <p>Not sure which pathway or graduate degree is right for you? Our career quiz can help identify the best option based on your skills and interests. </p>
+          <Button label="Start the Quiz Now" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button" />
         </FunCard>
 
       </section>
 
       <section className="bg-brand-navy-blue text-white py-fluid-5xl px-fluid-2xl facts">
         <div className="container-wide">
-          <h2 className="block text-center">Why Pursue an Advanced Business Degree?</h2>
-          <p className="text-center mb-fluid-3xl container-default">Business degrees open doors to roles in marketing, finance, management, and entrepreneurship. These programs provide the skills and credentials needed to excel in high-demand fields. Additionally, different types of business degrees and salaries offer exciting opportunities for career growth and financial success.</p>
+          <h2 className="block text-center">Why Pursue a Career in Medicine?</h2>
+          <p className="text-center mb-fluid-3xl container-default">Medical careers offer more than just financial stability—they provide the opportunity to make a real difference in people&apos;s lives. Whether you're considering different jobs in the medical field or looking for medical jobs that pay well, a career in medicine allows you to contribute to society while enjoying personal and professional growth.</p>
           <div className="flex flex-col md:flex-row gap-fluid-4xl items-start">
             <FactsCard
               headingLevel="h3"
               color="yellow"
-              title="Versatile Career Paths"
-              description="Business degrees open doors to roles in marketing, finance, management, and entrepreneurship."
+              title="High Earning Potential"
+              description="Many roles in the medical field offer above-average salaries."
             />
             <FactsCard
               headingLevel="h3"
               color="violet"
-              title="High Earning Potential"
-              description="Different types of business degrees and salaries vary, but graduates often see significant financial growth over time."
+              title="Job Stability"
+              description="With the continuous demand for healthcare professionals, medical jobs provide long-term security."
 
             />
             <FactsCard
               headingLevel="h3"
               color="teal"
-              title="Leadership Opportunities"
-              description="Master&apos;s degrees in business help you develop advanced skills for executive and managerial positions."
+              title="Diverse Opportunities"
+              description="Whether you want to work directly with patients, behind the scenes, or in a leadership role, there are countless career pathways in the medical field."
 
             />
 
@@ -64,97 +61,24 @@ export default function Page() {
       </section>
 
       <section className="py-fluid-5xl px-fluid-2xl">
-          <div className="container-wide">
-              <h2 className="block text-center">Explore Potential Business Career Paths</h2>
-              <p className="text-center container-default mb-fluid-3xl">You can pursue a wide range of specializations, from business marketing degrees to master&apos;s degrees in business, catering to diverse career aspirations. Whether you&apos;re looking to switch careers or are seeking to advance your skills in your existing role, understanding the different types of business degrees and salaries can help guide your decision. Take our Business Career Quiz to explore programs that match your interests and career goals to maximize your potential earnings.</p>
+          <div className="container-wide flex flex-col md:flex-row gap-fluid-4xl items-start">
+            <div>
+              <h2 className="block">Explore Different Professions in the Medical Field</h2>
+              <p className="mb-fluid-3xl">The medical field offers a wide range of rewarding careers, from direct patient care to administrative and technology-focused roles. Whether you're curious about medical health jobs or want to explore different jobs in the medical field, there&apos;s a perfect path for everyone.</p>
 
-              <div className="container-default flex flex-col gap-fluid-xl">
-
-                <Accordion title="Business Administration" titleLevel="h3">
-                  <p>If you&apos;re a dynamic and strategic thinker with a passion for guiding teams toward success, you&apos;re well-suited for roles in leadership and management. You possess a natural aptitude for planning, decision-making, and motivating others, thriving in fast-paced corporate environments. Equipped with the skills to handle the responsibilities of management, you&apos;re ready to lead and inspire. Whether you have a background in business or aspire to excel in the world of commerce, the executive and leadership path offers a promising future.</p>
-                  <p><strong>Related Career Paths Include:</strong></p>
-                  <ul>
-                    <li>Executive Business Administration</li>
-                    <li>Business Administration</li>
-                    <li>Organizational Leadership</li>
-                    <li>International Business/Trade/Commerce</li>
-                    <li>Risk Management</li>
-                    <li>Office Management and Supervision</li>
-                    <li>Nonprofit/Public Organizational Management</li>
-                    <li>Management</li>
-                  </ul>
-                </Accordion>
-
-                <Accordion title="Marketing Careers" titleLevel="h3">
-                  <p>Do you have a flair for creativity and innovation? You may thrive in the world of marketing. You excel at crafting compelling campaigns, building strong brands, and effectively engaging with audiences. Working in dynamic and innovative environments keeps you motivated, and you constantly seek new ways to connect with clients and customers. With a talent for creative thinking and a passion for driving business growth, you&apos;re well-suited for careers in marketing and the creative fields.</p>
-                  <p><strong>Related Career Paths Include:</strong></p>
-                  <ul>
-                    <li>Marketing</li>
-                    <li>Marketing Research</li>
-                    <li>Advertising</li>
-                    <li>Graphic Design</li>
-                    <li>Digital Marketing</li>
-                    <li>Public Relations and Applied Communication</li>
-                    <li>Nonprofit/Public Organizational Management</li>
-                    <li>Management</li>
-                  </ul>
-                </Accordion>
-
-                <Accordion title="Finance Careers" titleLevel="h3">
-                  <p>Do you have a flair for creativity and innovation? You may thrive in the world of marketing. You excel at crafting compelling campaigns, building strong brands, and effectively engaging with audiences. Working in dynamic and innovative environments keeps you motivated, and you constantly seek new ways to connect with clients and customers. With a talent for creative thinking and a passion for driving business growth, you&apos;re well-suited for careers in marketing and the creative fields.</p>
-
-                  <p><strong>Related Career Paths Include:</strong></p>
-                  <ul>
-                    <li>Marketing</li>
-                    <li>Marketing Research</li>
-                    <li>Advertising</li>
-                    <li>Graphic Design</li>
-                    <li>Digital Marketing</li>
-                    <li>Public Relations and Applied Communication</li>
-                    <li>Nonprofit/Public Organizational Management</li>
-                    <li>Management</li>
-                  </ul>
-                </Accordion>
-
-                <Accordion title="Information Technology and Analytics Careers" titleLevel="h3">
-                  <p>For individuals with a strong affinity for technology, working with computers and data feels natural. You&apos;re driven by a passion for leveraging technology to solve problems and conduct data analysis. Enthusiastic about optimizing processes and developing innovative solutions to complex challenges, you thrive in environments that require technological expertise. With a keen interest in data-driven decision-making and a solid technological aptitude, you&apos;re well-suited for careers in information technology and analytics.</p>
-                  <p><strong>Related Career Paths Include:</strong></p>
-                  <ul>
-                  <li>Management of Information Systems</li>
-                  <li>Information Technology</li>
-                  <li>Business Analytics</li>
-                  <li>Business Statistics</li>
-                  <li>System Administrator</li>
-                  <li>Financial Analytics</li>
-                  </ul>
-                </Accordion>
-
-                <Accordion title="Entrepreneurial Careers" titleLevel="h3">
-                  <p>If you&apos;re entrepreneurial-minded, you possess a natural drive to take risks and create new ventures. Your entrepreneurial spirit motivates you to seize opportunities and build businesses from the ground up. The prospect of being your own boss and driving business growth inspires your ambition. If it sounds like a dream to launch your own business or lead innovative projects, the path of entrepreneurship offers an exciting and rewarding journey.</p>
-                  <p><strong>Related Career Paths Include:</strong></p>
-                  <ul>
-                  <li>Entrepreneurship</li>
-                  <li>Franchising</li>
-                  <li>Small Business Management</li>
-                  <li>Social Entrepreneurship</li>
-                  <li>E-Commerce</li>
-                  <li>Real Estate</li>
-                  </ul>
-                </Accordion>
-
-                <Accordion title="Management and Operations Careers" titleLevel="h3">
-                  <p>You may prioritize people and excel at creating positive work environments that nurture talent and foster growth. If so, you&apos;re well-suited for roles in operations, project management, and human resources. You thrive in collaborative settings, bringing out the best in both colleagues and clients. You find fulfillment in managing teams, handling employee relations, and facilitating effective teamwork. With qualities like empathy, strong communication skills, and a drive to build cohesive teams, you&apos;re positioned to succeed in these dynamic fields.</p>
-                  <p><strong>Related Career Paths Include:</strong></p>
-                  <ul>
-                  <li>Logistics, Materials, and Supply Chain Management</li>
-                  <li>Operations Management and Supervision</li>
-                  <li>Project Management</li>
-                  <li>Executive/Career Coaching</li>
-                  <li>Sales, Distribution, and Marketing Operations</li>
-                  <li>Human Resources Management</li>
-                  </ul>
-                </Accordion>
-              </div>
+              <h3 className="font-sans text-fluid-lg mb-0">High-Demand Medical Careers</h3>
+              <p>According to industry statistics, medical field jobs are among the fastest-growing and most in-demand. Whether you want to work in patient care or behind the scenes in medical research or administration, the opportunities are endless.</p>
+            </div>
+            <FunCard color="violet" className="bg-white w-full md:w-[48%] flex-none">
+              <h3>Popular Medical Health Jobs:</h3>
+              <ul>
+                <li><strong>Nursing Careers:</strong> From registered nurses (RNs) to advanced practice nurses, nursing offers numerous advancement opportunities.</li>
+                <li><strong>Medical Technologists:</strong> Perform vital tests that help in diagnosing and treating patients.</li>
+                <li><strong>Pharmacy Careers:</strong> Work as a pharmacist or pharmacy technician and play a critical role in healthcare delivery.</li>
+                <li><strong>Therapists:</strong> Explore roles such as respiratory or occupational therapy, which provide hands-on patient care.</li>
+                <li><strong>Medical Administration:</strong> Lead hospital departments, manage medical facilities, or coordinate health services.</li>
+              </ul>
+            </FunCard>
           </div>
       </section>
 
@@ -165,7 +89,7 @@ export default function Page() {
         >
           <Image
             src={ElevateYourCareer}
-            alt="How a Business Degree Can Elevate Your Career"
+            alt="Find the Best Medical Field Jobs for You"
             fill
             quality={85}
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -175,22 +99,16 @@ export default function Page() {
 
         <div className="container-wide z-10 relative py-[7vw]">
           <FunCard color="yellow" className="bg-white w-full md:w-[48%] flex-none">
-            <h2>How a Business Degree Can Elevate Your Career</h2>
-            <p><strong>Broad Skill Set:</strong> Business degrees teach a combination of analytical, leadership, and communication skills.</p>
-            <p><strong>Job Market Demand:</strong> Business graduates are sought after in nearly every industry, from tech to finance.</p>
-            <p><strong>Career Flexibility:</strong> With a business degree, you can pivot into different fields as your interests evolve.</p>
+            <h2>Find the Best Medical Field Jobs for You</h2>
+            <p>If you're asking yourself, "What medical career is best for me?," our medical specialty quiz will help you discover roles tailored to your interests. Whether you&apos;re looking for medical jobs that pay well or considering a career change, the quiz provides personalized suggestions for your next steps.</p>
+            <h3>Top-Paying Jobs in the Medical Field</h3>
+            <p>Looking for jobs in the medical field that pay well? Many careers in medicine offer competitive salaries and strong growth potential. Explore roles in:</p>
+            <p><strong>Physician & Surgeon Careers:</strong> These highly skilled roles offer some of the best medical field jobs in terms of compensation.</p>
+            <p><strong>Specialist Nurses:</strong> Nurse practitioners, anesthetists, and midwives can earn high salaries while delivering specialized care.</p>
+            <p><strong>Medical Research:</strong> Conduct groundbreaking research that improves patient outcomes and advances medical science.</p>
           </FunCard>
         </div>
 
-      </section>
-
-      <section className="bg-brand-lightteal bg-[url(/images/teal-texture.svg)] overflow-hidden py-fluid-5xl px-fluid-2xl">
-        <div className="container-wide">
-          <h2>Ready to Find the Right Business Program?</h2>
-          <p>Get personalized recommendations for top business master&apos;s degrees and degrees in business programs and start planning your future.Start the process by taking our Business Career Quiz today!</p>
-          <p className="text-fluid-2xl">Start the process by taking our free Business Career Quiz.</p>
-          <Button label="Take the Quiz and Get More Info" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
-        </div>
       </section>
 
       <section className="bg-brand-lightteal py-fluid-5xl px-fluid-2xl">
@@ -198,7 +116,7 @@ export default function Page() {
           <figure className="w-full md:w-1/2">
             <Image
               src={CommonQuestions}
-              alt="Common Questions About Business Degrees"
+              alt="Common Questions About Medical Careers"
               quality={85}
               className="object-cover"
               width={800}
@@ -207,16 +125,16 @@ export default function Page() {
             />
           </figure>
           <div className="w-full md:w-1/2">
-            <h2>Common Questions About Business Degrees</h2>
+            <h2>Common Questions About Medical Careers</h2>
             <div>
-              <h3 className="mb-0 font-sans font-bold">What can I do with a business degree?</h3>
-              <p>There are many things to do with a business degree, including roles in management, marketing, finance, and business operations. Business degrees provide the flexibility to pursue a wide range of careers, helping graduates explore different fields based on their interests.</p>
+              <h3 className="mb-0 font-sans font-bold">How can I find out which medical career is right for me?</h3>
+              <p>Taking a career quiz is a great way to discover roles that match your interests, skills, and long-term goals.</p>
 
-              <h3 className="mb-0 font-sans font-bold">What can I do with a master&apos;s in business?</h3>
-              <p>A master&apos;s degree in business allows graduates to specialize in areas such as strategic management, finance, and analytics, often leading to executive or senior-level roles.</p>
+              <h3 className="mb-0 font-sans font-bold">Are there high-demand jobs in the medical field?</h3>
+              <p>Yes, medical field jobs are in high demand due to the growing need for health care services. The Bureau of Labor Statistics predicts about two million jobs in health care will be created each year over the next decade.</p>
 
-              <h3 className="mb-0 font-sans font-bold">What are the different types of business degrees and their salaries?</h3>
-              <p>Types of business degrees include business marketing, business management, and financial analysis. Salaries can range from $80,000 to $150,000 annually, depending on the role and experience.</p>
+              <h3 className="mb-0 font-sans font-bold">What is the best way to start a career in medicine?</h3>
+              <p>Start by identifying your interests—whether it's patient care, technology, or administration—then take our career quiz to explore suitable pathways and be connected with schools who offer the required degrees to help you meet your goals.</p>
             </div>
           </div>
         </div>
@@ -224,9 +142,10 @@ export default function Page() {
 
       <section className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
         <div className="container-default relative z-10">
-          <h2>Take the Next Step Toward Your Ideal Career</h2>
-          <p className="text-fluid-lg">A business degree can be the catalyst for achieving your professional ambitions. Take our quiz today and find out which program is the right fit for your goals.</p>
-          <Button label="Start the Free Business Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button mx-auto" />
+          <h2>Ready to Take the Next Step?</h2>
+          <p className="text-fluid-lg">Start your journey toward a fulfilling career by taking our medical careers quiz today! Discover which roles align with your skills, interests, and goals—whether you're exploring jobs in the medical field, considering medical field jobs that pay well, or searching for different medical field careers.</p>
+          <p className="text-fluid-lg">Take the Free Quiz Now and find out "What medical career is best for me?" Your future in the medical field starts here!</p>
+          <Button label="Start the Free Business Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
         </div>
       </section>
 
