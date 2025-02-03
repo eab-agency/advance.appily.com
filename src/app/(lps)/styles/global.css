@@ -9,3 +9,15 @@
 body{
   margin: 0;
 }
+
+button,
+.button{
+  cursor: pointer;
+  background: var(--color-brand-orange);
+  border-radius: var(--radius-sm);
+  padding-block: var(--spacing-fluid-sm);
+  padding-inline: var(--spacing-fluid-md);
+  color: var(--color-brand-navy-blue);
+  font-family: var(--font-serif);
+  font-size: var(--text-fluid-md);
+}

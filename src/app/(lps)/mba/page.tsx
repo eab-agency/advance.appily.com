@@ -1,9 +1,13 @@
+import Image from "next/image";
 import { HiBadgeCheck } from "react-icons/hi";
 import { FactsCard } from "../components/FactsCard";
 import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
+
+import CommonQuestions from "../assets/common-questions.png";
+import ElevateYourCareer from "../assets/elevate-your-career.jpg";
 
 export default function DashboardPage() {
   return (
@@ -144,13 +148,23 @@ export default function DashboardPage() {
           </div>
       </section>
 
-      <section className="bg-brand-lightgray py-fluid-5xl px-fluid-2xl">
-        <figure className="absolute top-0 right-0 w-1/2 h-full">
-          {/* <Image /> */}
+      <section className="relative flex flex-col bg-[#bcc5c0]  md:petal-brand-yellow petal-left-0 petal-tr-100 petal-top-0 petal-square-h-100 lg:petal-square-w-50 overflow-hidden">
+
+        <figure
+        className="w-full h-[80vw] -mb-[40vw] relative top-0 right-0 md:absolute lg:w-2/3 md:h-full z-0"
+        >
+          <Image
+            src={ElevateYourCareer}
+            alt="How an MBA Can Elevate Your Career"
+            fill
+            quality={85}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
+            />
         </figure>
 
-        <div className="container-wide">
-          <FunCard color="yellow" className="w-full md:w-[48%] flex-none">
+        <div className="container-wide z-10 relative py-[7vw]">
+          <FunCard color="yellow" className="bg-white w-full md:w-[48%] flex-none">
             <h2>How an MBA Can Elevate Your Career</h2>
             <p>Whether you're aiming to move up in your current company or pivot to a new industry, <strong>an MBA can be a game-changer.</strong> Graduates of MBA programs report increased job satisfaction, better leadership skills, and access to a larger professional network. From finance to business operations, an MBA equips you with versatile skills that are in demand.</p>
           </FunCard>
@@ -158,7 +172,7 @@ export default function DashboardPage() {
 
       </section>
 
-      <section className="bg-brand-lightteal py-fluid-5xl px-fluid-2xl">
+      <section className="bg-brand-lightteal bg-[url(/images/teal-texture.svg)] overflow-hidden py-fluid-5xl px-fluid-2xl">
         <div className="container-wide">
           <h2>Your Future MBA Awaits</h2>
           <p>Get personalized recommendations from top universities and colleges for MBA degree opportunities. Request detailed information about top MBA programs today!</p>
@@ -168,26 +182,36 @@ export default function DashboardPage() {
       </section>
 
       <section className="bg-brand-lightteal py-fluid-5xl px-fluid-2xl">
-        <div className="container-wide">
-          <figure>
-            {/* <Image /> */}
+        <div className="container-wide flex flex-col gap-fluid-4xl items-start md:flex-row">
+          <figure className="w-full md:w-1/2">
+            <Image
+              src={CommonQuestions}
+              alt="Common Questions About MBA Programs"
+              quality={85}
+              className="object-cover"
+              width={800}
+              height={533}
+              layout="responsive"
+            />
           </figure>
-          <h2>Common Questions About MBA Programs</h2>
-          <div>
-            <h3>What can I do with an MBA?</h3>
-            <p>An MBA can lead to careers in a range of industries including  finance, marketing, consulting, entrepreneurship, and executive management.</p>
+          <div className="w-full md:w-1/2">
+            <h2>Common Questions About MBA Programs</h2>
+            <div>
+              <h3 className="mb-0 font-sans font-bold">What can I do with an MBA?</h3>
+              <p>An MBA can lead to careers in a range of industries including  finance, marketing, consulting, entrepreneurship, and executive management.</p>
 
-            <h3>Should I get an MBA?</h3>
-            <p>If you&apos;re looking to boost your career prospects, expand your professional network, and gain specialized knowledge, an MBA is a great choice.</p>
+              <h3 className="mb-0 font-sans font-bold">Should I get an MBA?</h3>
+              <p>If you&apos;re looking to boost your career prospects, expand your professional network, and gain specialized knowledge, an MBA is a great choice.</p>
 
-            <h3>Which schools offer MBA programs?</h3>
-            <p>There are many great options! Request more information and we can connect you with top schools offering MBA degrees that will support your goals.</p>
+              <h3 className="mb-0 font-sans font-bold">Which schools offer MBA programs?</h3>
+              <p>There are many great options! Request more information and we can connect you with top schools offering MBA degrees that will support your goals.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-brand-navy-blue text-white py-fluid-5xl px-fluid-2xl text-center">
-        <div className="container-default">
+      <section className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
+        <div className="container-default relative z-10">
           <h2>Take the Next Step in Your Career</h2>
           <p className="text-fluid-lg">A Masters in Business Administration could be the catalyst for achieving your career goals. Get started today!</p>
           <button className="btn btn-primary">Start the Free Business Career Quiz </button>
