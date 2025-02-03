@@ -9,6 +9,7 @@ import { PageHead } from "../components/PageHead/PageHead";
 
 import CommonQuestions from "../assets/common-questions.png";
 import ElevateYourCareer from "../assets/elevate-your-career.jpg";
+import heroImage from '../assets/mba-hero.jpg';
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
       <PageHead />
       <Hero
         title="Find Your Best Fit Business Degree and Unlock New Career Opportunities"
+        image={heroImage}
       />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">

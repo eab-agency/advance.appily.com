@@ -1,12 +1,13 @@
 import Image from 'next/image';
-import mbaHero from '../../assets/mba-hero.jpg';
+
 
 interface HeroProps {
   title: string;
   description?: string;
+  image: string;
 }
 
-export const Hero = ({title,description}:HeroProps) => {
+export const Hero = ({title,description,image}:HeroProps) => {
   	return (
       <section className="relative w-full bg-brand-lightteal bg-[url(/images/teal-texture.svg)] overflow-hidden">
         <div className="w-full lg:container-wide flex flex-col gap-fluid-xl lg:flex-row items-center pt-0 pb-fluid-xl lg:py-[15vw] xl:py-[10vw]">
@@ -18,7 +19,7 @@ export const Hero = ({title,description}:HeroProps) => {
             <Image
               className="object-cover rounded-bl-full overflow-hidden z-10"
               alt=""
-              src={mbaHero}
+              src={image}
               fill
               sizes='(max-width: 640px) 100vw, 80vw'
               unoptimized

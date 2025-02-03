@@ -6,7 +6,8 @@ import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
 
-import ElevateYourCareer from "../assets/elevate-your-career.jpg";
+import heroImage from '../assets/healthcare-hero.jpg';
+import ElevateYourCareer from "../assets/healthcare-professional.jpg";
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       <PageHead />
       <Hero
         title="Advance Your Nursing Career: Take Our Free Health Care Career Quiz"
+        image={heroImage}
       />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">

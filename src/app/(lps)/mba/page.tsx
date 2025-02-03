@@ -9,6 +9,7 @@ import { PageHead } from "../components/PageHead/PageHead";
 
 import CommonQuestions from "../assets/common-questions.png";
 import ElevateYourCareer from "../assets/elevate-your-career.jpg";
+import heroImage from '../assets/mba-hero.jpg';
 
 export default function Page() {
   return (
@@ -17,6 +18,7 @@ export default function Page() {
       <Hero
         title="Unlock Your Career Potential with an MBA"
         description="Discover How an MBA Can Transform Your Future in Business, Finance, and Leadership"
+        image={heroImage}
       />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">

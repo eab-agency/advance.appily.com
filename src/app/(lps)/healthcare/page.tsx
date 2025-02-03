@@ -8,7 +8,8 @@ import { PageFooter } from "../components/PageFooter/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
 
 import CommonQuestions from "../assets/common-questions.png";
-import ElevateYourCareer from "../assets/elevate-your-career.jpg";
+import heroImage from '../assets/healthcare-hero.jpg';
+import ElevateYourCareer from "../assets/healthcare-professional.jpg";
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
       <PageHead />
       <Hero
         title="Boost Your Health Care Career With the Right Advanced Degree"
+        image={heroImage}
       />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
