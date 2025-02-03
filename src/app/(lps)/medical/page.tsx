@@ -15,7 +15,7 @@ export default function Page() {
     <>
       <PageHead />
       <Hero
-        title="Find Your Best Fit Business Degree and Unlock New Career Opportunities"
+        title="Boost Your Career in the Medical Field With the Right Advanced Degree"
       />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
