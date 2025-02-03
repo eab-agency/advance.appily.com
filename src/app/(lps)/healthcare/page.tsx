@@ -15,47 +15,46 @@ export default function Page() {
     <>
       <PageHead />
       <Hero
-        title="Find Your Best Fit Business Degree and Unlock New Career Opportunities"
+        title="Boost Your Health Care Career With the Right Advanced Degree"
       />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
         <div className="md:w-3/5">
-          <h2>Explore Business Marketing, Management, and Leadership Degrees Designed to Elevate Your Career</h2>
-          <p>Are you wondering "What can I do with a business degree?" or "What can I do with a master&apos;s in business?" <strong>Our free quiz will help you</strong> discover the right degree path and career opportunities tailored to your interests and goals.The Bureau of Labor Statistics predicts that nearly one million jobs in business will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can give you a head start in transferring your skills to a new or more advanced role.</p>
+          <h2>Chart Your Path in Health Care: Explore Careers and Graduate Degrees</h2>
+          <p>Are you exploring careers in health care or wondering "Which health care career is right for me?" Our free quiz will guide you to the right degree and career pathway.</p>
+          <p>With growing demand in the industry, there are numerous jobs in health care that offer long-term career stability and growth. The Bureau of Labor Statistics predicts about two million jobs in health care will be created each year over the next decade.</p>
+          <p>Whether you're interested in patient care, administration, or technology, there's a rewarding career path waiting for you. </p>
         </div>
         <FunCard className="shadow-md-orange" color="teal">
-          <h3>Take Our Free Business Career Quiz</h3>
-          <p>If you want to work in business but you don&apos;t know which job fits your skills and interests, this free quiz can help you find a good fit and plan your next steps.</p>
-
-          <p>In less than three minutes, you&apos;ll discover which type of business careers suit your goals and aspirations. We&apos;ll also connect you with schools near you that offer degrees to help you reach your goals.</p>
-          <Button label="Start the Quiz Now" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
+          <h3>Take Our Free Health Care Careers Quiz</h3>
+          <p>Not sure which pathway or graduate degree is right for you? Our quiz can help identify the best option based on your skills and interests. </p>
+          <Button label="Start the Quiz Now" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button" />
         </FunCard>
 
       </section>
 
       <section className="bg-brand-navy-blue text-white py-fluid-5xl px-fluid-2xl facts">
         <div className="container-wide">
-          <h2 className="block text-center">Why Pursue an Advanced Business Degree?</h2>
-          <p className="text-center mb-fluid-3xl container-default">Business degrees open doors to roles in marketing, finance, management, and entrepreneurship. These programs provide the skills and credentials needed to excel in high-demand fields. Additionally, different types of business degrees and salaries offer exciting opportunities for career growth and financial success.</p>
+          <h2 className="block text-center">Why Pursue an Advanced Health Care Degree?</h2>
           <div className="flex flex-col md:flex-row gap-fluid-4xl items-start">
             <FactsCard
               headingLevel="h3"
               color="yellow"
-              title="Versatile Career Paths"
-              description="Business degrees open doors to roles in marketing, finance, management, and entrepreneurship."
+              title="Broaden Your Career Opportunities"
+              description="A graduate degree opens doors to advanced careers in health care, including leadership, specialized clinical roles, and research."
             />
             <FactsCard
               headingLevel="h3"
               color="violet"
-              title="High Earning Potential"
-              description="Different types of business degrees and salaries vary, but graduates often see significant financial growth over time."
+              title="High Job Demand"
+              description="The health care industry is projected to grow rapidly, offering countless jobs in health care across various sectors."
 
             />
             <FactsCard
               headingLevel="h3"
               color="teal"
-              title="Leadership Opportunities"
-              description="Master&apos;s degrees in business help you develop advanced skills for executive and managerial positions."
+              title="Specialized Skills Development"
+              description="Graduate programs help you gain advanced knowledge and skills, preparing you for high-impact roles in the health care system."
 
             />
 
@@ -189,7 +188,7 @@ export default function Page() {
           <h2>Ready to Find the Right Business Program?</h2>
           <p>Get personalized recommendations for top business master&apos;s degrees and degrees in business programs and start planning your future.Start the process by taking our Business Career Quiz today!</p>
           <p className="text-fluid-2xl">Start the process by taking our free Business Career Quiz.</p>
-          <Button label="Take the Quiz and Get More Info" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
+          <Button label="Take the Quiz and Get More Info" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button" />
         </div>
       </section>
 
@@ -212,8 +211,8 @@ export default function Page() {
               <h3 className="mb-0 font-sans font-bold">What can I do with a business degree?</h3>
               <p>There are many things to do with a business degree, including roles in management, marketing, finance, and business operations. Business degrees provide the flexibility to pursue a wide range of careers, helping graduates explore different fields based on their interests.</p>
 
-              <h3 className="mb-0 font-sans font-bold">What can I do with a master&apos;s in business?</h3>
-              <p>A master&apos;s degree in business allows graduates to specialize in areas such as strategic management, finance, and analytics, often leading to executive or senior-level roles.</p>
+              <h3 className="mb-0 font-sans font-bold">What can I do with a master’s in business?</h3>
+              <p>A master’s degree in business allows graduates to specialize in areas such as strategic management, finance, and analytics, often leading to executive or senior-level roles.</p>
 
               <h3 className="mb-0 font-sans font-bold">What are the different types of business degrees and their salaries?</h3>
               <p>Types of business degrees include business marketing, business management, and financial analysis. Salaries can range from $80,000 to $150,000 annually, depending on the role and experience.</p>
@@ -226,7 +225,7 @@ export default function Page() {
         <div className="container-default relative z-10">
           <h2>Take the Next Step Toward Your Ideal Career</h2>
           <p className="text-fluid-lg">A business degree can be the catalyst for achieving your professional ambitions. Take our quiz today and find out which program is the right fit for your goals.</p>
-          <Button label="Start the Free Business Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button mx-auto" />
+          <Button label="Start the Free Business Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
         </div>
       </section>
 

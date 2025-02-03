@@ -17,7 +17,7 @@ export const Accordion = ({ className = "", title, titleLevel, children }: Accor
     <div className={`border border-brand-orange rounded-md overflow-hidden ${className}`}>
       <TitleTag className="w-full m-0 relative z-1">
         <button
-          className="flex justify-between items-center w-full text-left py-3 px-4 font-semibold focus:outline-none focus:ring-2 focus:ring-brand-yellow cursor-pointer hover:bg-brand-orange-200"
+          className="flex justify-between items-center w-full text-left py-3 px-4 font-semibold focus:outline-none focus:ring-2 focus:inner-ring-brand-teal cursor-pointer hover:bg-brand-orange-200"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
         >

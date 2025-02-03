@@ -10,7 +10,7 @@ import { PageHead } from "../components/PageHead/PageHead";
 import CommonQuestions from "../assets/common-questions.png";
 import ElevateYourCareer from "../assets/elevate-your-career.jpg";
 
-export default function DashboardPage() {
+export default function Page() {
   return (
     <>
       <PageHead />
