@@ -15,14 +15,14 @@ export default function Page() {
     <>
       <PageHead />
       <Hero
-        title="Boost Your Career in the Medical Field With the Right Advanced Degree"
+        title="Boost Your Career in the Medical Field with the Right Advanced Degree"
         image={heroImage}
       />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
         <div className="md:w-3/5">
-          <h2>Find Your Perfect Path: Explore Jobs in the Medical Field With Our Career Quiz</h2>
-          <p>Are you wondering, "What medical career is right for me?" or "What should I do in the medical field?" Whether you're interested in high-paying medical jobs or exploring different careers in the medical field, our free medical specialty quiz can guide you toward the best options based on your skills and interests. With countless job opportunities available in the ever-growing medical field, now is the time to discover which career suits you best!</p>
+          <h2>Find Your Perfect Path: Explore Jobs in the Medical Field with Our Career Quiz</h2>
+          <p>Are you wondering "What medical career is right for me?" or "What should I do in the medical field?" Whether you're interested in high-paying medical jobs or exploring different careers in the medical field, our free medical specialty quiz can guide you toward the best options based on your skills and interests. With countless job opportunities available in the ever-growing medical field, now is the time to discover which career suits you best!</p>
         </div>
         <FunCard className="shadow-md-orange" color="teal">
           <h3>Take the Next Step</h3>
@@ -47,7 +47,7 @@ export default function Page() {
               headingLevel="h3"
               color="violet"
               title="Job Stability"
-              description="With the continuous demand for healthcare professionals, medical jobs provide long-term security."
+              description="With the continuous demand for health care professionals, medical jobs provide long-term security."
 
             />
             <FactsCard
@@ -76,7 +76,7 @@ export default function Page() {
               <ul className="list-disc pl-6">
                 <li><strong>Nursing Careers:</strong> From registered nurses (RNs) to advanced practice nurses, nursing offers numerous advancement opportunities.</li>
                 <li><strong>Medical Technologists:</strong> Perform vital tests that help in diagnosing and treating patients.</li>
-                <li><strong>Pharmacy Careers:</strong> Work as a pharmacist or pharmacy technician and play a critical role in healthcare delivery.</li>
+                <li><strong>Pharmacy Careers:</strong> Work as a pharmacist or pharmacy technician and play a critical role in health care delivery.</li>
                 <li><strong>Therapists:</strong> Explore roles such as respiratory or occupational therapy, which provide hands-on patient care.</li>
                 <li><strong>Medical Administration:</strong> Lead hospital departments, manage medical facilities, or coordinate health services.</li>
               </ul>
@@ -102,7 +102,7 @@ export default function Page() {
         <div className="container-wide z-10 relative py-[7vw]">
           <FunCard color="yellow" className="bg-white w-full md:w-[48%] flex-none">
             <h2>Find the Best Medical Field Jobs for You</h2>
-            <p>If you're asking yourself, "What medical career is best for me?," our medical specialty quiz will help you discover roles tailored to your interests. Whether you&apos;re looking for medical jobs that pay well or considering a career change, the quiz provides personalized suggestions for your next steps.</p>
+            <p>If you're asking yourself, "What medical career is best for me?", our medical specialty quiz will help you discover roles tailored to your interests. Whether you&apos;re looking for medical jobs that pay well or considering a career change, the quiz provides personalized suggestions for your next steps.</p>
             <h3 className="font-sans text-fluid-lg mb-0">Top-Paying Jobs in the Medical Field</h3>
             <p>Looking for jobs in the medical field that pay well? Many careers in medicine offer competitive salaries and strong growth potential. Explore roles in:</p>
             <p><strong>Physician & Surgeon Careers:</strong> These highly skilled roles offer some of the best medical field jobs in terms of compensation.</p>
@@ -146,8 +146,8 @@ export default function Page() {
         <div className="container-default relative z-10">
           <h2>Ready to Take the Next Step?</h2>
           <p className="text-fluid-lg">Start your journey toward a fulfilling career by taking our medical careers quiz today! Discover which roles align with your skills, interests, and goals—whether you're exploring jobs in the medical field, considering medical field jobs that pay well, or searching for different medical field careers.</p>
-          <p className="text-fluid-lg">Take the Free Quiz Now and find out "What medical career is best for me?" Your future in the medical field starts here!</p>
-          <Button label="Start the Free Business Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
+          <p className="text-fluid-lg">Take the free quiz now and find out what medical career is best for you. Your future in the medical field starts here!</p>
+          <Button label="Start the Free Medical Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
         </div>
       </section>
 
