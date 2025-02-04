@@ -16,14 +16,14 @@ export default function Page() {
     <>
       <PageHead />
       <Hero
-        title="Find Your Best Fit Business Degree and Unlock New Career Opportunities"
+        title="Find Your Best-Fit Business Degree and Unlock New Career Opportunities"
         image={heroImage}
       />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
         <div className="md:w-3/5">
           <h2>Explore Business Marketing, Management, and Leadership Degrees Designed to Elevate Your Career</h2>
-          <p>Are you wondering "What can I do with a business degree?" or "What can I do with a master&apos;s in business?" <strong>Our free quiz will help you</strong> discover the right degree path and career opportunities tailored to your interests and goals.The Bureau of Labor Statistics predicts that nearly one million jobs in business will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can give you a head start in transferring your skills to a new or more advanced role.</p>
+          <p>Are you wondering "What can I do with a business degree?" or "What can I do with a master&apos;s in business?" <strong>Our free quiz will help you</strong> discover the right degree path and career opportunities tailored to your interests and goals. The Bureau of Labor Statistics predicts that nearly one million jobs in business will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can give you a head start in transferring your skills to a new or more advanced role.</p>
         </div>
         <FunCard className="shadow-md-orange" color="teal">
           <h3>Take Our Free Business Career Quiz</h3>
@@ -103,18 +103,15 @@ export default function Page() {
                 </Accordion>
 
                 <Accordion title="Finance Careers" titleLevel="h3">
-                  <p>Do you have a flair for creativity and innovation? You may thrive in the world of marketing. You excel at crafting compelling campaigns, building strong brands, and effectively engaging with audiences. Working in dynamic and innovative environments keeps you motivated, and you constantly seek new ways to connect with clients and customers. With a talent for creative thinking and a passion for driving business growth, you&apos;re well-suited for careers in marketing and the creative fields.</p>
-
+                  <p>For those who excel in working with numbers, financial management offers an ideal path. You thrive in analyzing data, managing finances, and making well-informed decisions to drive profitability. Whether in financial institutions or investment firms, you feel comfortable navigating financial data and tracking economic trends. With a strong analytical mindset and a desire to influence financial outcomes, careers in finance, accounting, and economics present exciting opportunities.</p>
                   <p><strong>Related Career Paths Include:</strong></p>
                   <ul>
-                    <li>Marketing</li>
-                    <li>Marketing Research</li>
-                    <li>Advertising</li>
-                    <li>Graphic Design</li>
-                    <li>Digital Marketing</li>
-                    <li>Public Relations and Applied Communication</li>
-                    <li>Nonprofit/Public Organizational Management</li>
-                    <li>Management</li>
+                  <li>Finance</li>
+                  <li>Accounting</li>
+                  <li>Business Economics</li>
+                  <li>Banking and Financial Support Services</li>
+                  <li>Investments and Securities</li>
+                  <li>Taxation</li>
                   </ul>
                 </Accordion>
 
@@ -189,8 +186,7 @@ export default function Page() {
       <section className="bg-brand-lightteal bg-[url(/images/teal-texture.svg)] overflow-hidden py-fluid-5xl px-fluid-2xl">
         <div className="container-wide">
           <h2>Ready to Find the Right Business Program?</h2>
-          <p>Get personalized recommendations for top business master&apos;s degrees and degrees in business programs and start planning your future.Start the process by taking our Business Career Quiz today!</p>
-          <p className="text-fluid-2xl">Start the process by taking our free Business Career Quiz.</p>
+          <p>Get personalized recommendations for top business master&apos;s degrees and degrees in business programs and start planning your future. Start the process by taking our Business Career Quiz today!</p>
           <Button label="Take the Quiz and Get More Info" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
         </div>
       </section>

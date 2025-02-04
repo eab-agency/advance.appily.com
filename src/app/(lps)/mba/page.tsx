@@ -24,7 +24,7 @@ export default function Page() {
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
         <div className="md:w-3/5">
           <h2>Are you ready to take the next step in your professional journey?</h2>
-          <p>Earning a Masters in Business Administration can provide the skills, knowledge, and network you need to unlock new career opportunities.  If you&apos;re wondering "Should I get an MBA?" or "What can I do with an MBA?", our interactive quiz can help guide you in the right direction.</p>
+          <p>Earning a Master's in Business Administration can provide the skills, knowledge, and network you need to unlock new career opportunities.  If you&apos;re wondering "Should I get an MBA?" or "What can I do with an MBA?", our interactive quiz can help guide you in the right direction.</p>
 
           <h3>Why Pursue an MBA?</h3>
           <ul className="flex flex-col gap-fluid-lg">
@@ -56,21 +56,21 @@ export default function Page() {
               headingLevel="h3"
               color="yellow"
               title="Employment Rate"
-              description="USC Marshall reports that approximately 97% of their full-time MBA graduates secured employment within three months post-graduation with an average base salary exceeding $150k."
+              description="USC Marshall reports that approximately 97% of their full-time MBA graduates secured employment within three months postgraduation with an average base salary exceeding $150k."
               source="Marshall School of Business"
             />
             <FactsCard
               headingLevel="h3"
               color="violet"
               title="Salary-to-Debt Ratio"
-              description="Many MBA programs across the US have a high ROI. At some schools, graduates earn salaries that exceed 216% of their student debt, which indicates a substantial return on investment."
-              source="US News"
+              description="Many MBA programs across the United States have a high ROI. At some schools, graduates earn salaries that exceed 216% of their student debt, which indicates a substantial return on investment."
+              source="U.S. News & World Report"
             />
             <FactsCard
               headingLevel="h3"
               color="teal"
               title="Startup Initiatives"
-              description="There's a notable trend of MBA graduates, especially older alumni, leveraging their degrees to launch startups, with over 40% of graduates aged 54 and above starting their own companies."
+              description="There's a notable trend of MBA graduates, especially older alumni, leveraging their degrees to launch start-ups, with over 40% of graduates aged 54 and above starting their own companies."
               source="Financial Times"
             />
 
@@ -219,7 +219,7 @@ export default function Page() {
       <section className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
         <div className="container-default relative z-10">
           <h2>Take the Next Step in Your Career</h2>
-          <p className="text-fluid-lg">A Masters in Business Administration could be the catalyst for achieving your career goals. Get started today!</p>
+          <p className="text-fluid-lg">A Master's in Business Administration could be the catalyst for achieving your career goals. Get started today!</p>
           <Button label="Start the Free Business Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button mx-auto" />
         </div>
       </section>
