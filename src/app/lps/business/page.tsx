@@ -201,7 +201,6 @@ export default function Page() {
               className="object-cover"
               width={800}
               height={533}
-              layout="responsive"
             />
           </figure>
           <div className="w-full md:w-1/2">

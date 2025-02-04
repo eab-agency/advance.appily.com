@@ -83,13 +83,13 @@ export default function Page() {
                 </Accordion>
 
                 <Accordion title="Clinical Practitioner Roles" titleLevel="h3">
-                  <p>Empathetic individuals who&apos;re drawn to helping others often find fulfillment in health care roles. With an interest in subjects like anatomy and biology, you&apos;re comfortable working with the human body and its functions. Whether through nursing, surgery, therapy, or routine care, your primary focus is to improve the health and well-being of others. You may have prior experience in patient care and seek to advance your career, or you&apos;re exploring a new path inspired by a desire to make a difference.</p>
+                  <p>Empathetic individuals who are drawn to helping others often find fulfillment in health care roles. With an interest in subjects like anatomy and biology, you&apos;re comfortable working with the human body and its functions. Whether through nursing, surgery, therapy, or routine care, your primary focus is to improve the health and well-being of others. You may have prior experience in patient care and seek to advance your career, or you&apos;re exploring a new path inspired by a desire to make a difference.</p>
                   <p><strong>Potential Career Paths:</strong></p>
                   <ul>
                   <li><strong>Nursing:</strong> Nurses are essential in any health care setting and have many career advancement opportunities. Most nurses start as an LVN/LPN and move into an RN role. After that, an ARPN role allows nurses to specialize in areas such as nurse anesthetist, midwife, nurse practitioner, or other advanced careers.</li>
-                  <li><strong>Dentistry:</strong> Dental hygienists often only require an associate&apos;s degree to enter the field, and have a natural path to becoming dentists.</li>
+                  <li><strong>Dentistry:</strong> Dental hygienists often require only an associate&apos;s degree to enter the field and have a natural path to becoming dentists.</li>
                   <li><strong>Pharmacy:</strong> While a pharmacy degree is required to become a licensed pharmacist, pharmacy technicians help dispense medication and are on a natural path to their advanced degree.</li>
-                  <li><strong>Therapy:</strong> There are a range of careers such as respiratory and occupational therapy that don&apos;t require a doctoral degree. These can be a good entry point to the medical field.</li>
+                  <li><strong>Therapy:</strong> There are a range of careers such as respiratory and occupational therapy that don&apos;t require a doctoral degree. These can be a good entry point into the medical field.</li>
                   <li><strong>Medicine:</strong> While common professional degrees in medicine include the MD and DO, some careers require less schooling that still involve patient care, such as a physician&apos;s assistant.</li>
                   <li><strong>Nutrition and Athletic Training:</strong> Preventive wellness is an important part of health care, and these careers often only require a bachelor&apos;s or master&apos;s degree.</li>
                   </ul>
@@ -103,8 +103,8 @@ export default function Page() {
                   <li><strong>Executives or administrators:</strong> Plan strategies and policies to help organizations such as hospital systems reach their goals.</li>
                   <li><strong>Human resources manager:</strong> Plan, coordinate, and direct the employee-focused functions of organizations such as hospitals or clinics.</li>
                   <li><strong>Purchasing managers or agents:</strong> Buy products and services such as medical supplies and equipment for hospitals or clinics.</li>
-                  <li><strong>Community health workers:</strong> Have a more local focus, deeply understanding the communities they serve. They identify health-related issues, collect data, and discuss health concerns with the community. They work with health education specialists and social services to inform programs that address the health and wellness needs of their community.</li>
-                  <li><strong>Medical educators:</strong> Often work in either universities or hospitals to support medical students or trainee doctors, or in a public health role in a local authority. Most university-based medical educators have transferred from a clinical career or continue to balance a clinical career with a research and teaching career as clinical academics.</li>
+                  <li><strong>Community health workers:</strong> These individuals a more local focus, deeply understanding the communities they serve. They identify health-related issues, collect data, and discuss health concerns with the community. They work with health education specialists and social services to inform programs that address the health and wellness needs of their community.</li>
+                  <li><strong>Medical educators:</strong> These individuals often work in either universities or hospitals to support medical students or trainee doctors, or they work in a public health role in a local authority. Most university-based medical educators have transferred from a clinical career or continue to balance a clinical career with a research and teaching career as clinical academics.</li>
                   </ul>
                 </Accordion>
 
@@ -123,8 +123,8 @@ export default function Page() {
                   <p>If you&apos;re someone who excels at connecting the dots and thinking in systems, you often thrive in roles that involve analyzing data and identifying patterns. Comfortable working with technology and complex spreadsheets, you bring a methodical approach to problem-solving. With a background in analytics or information systems, you may be interested in applying your expertise to health care, or you may currently hold administrative roles and seek to enhance your skills for greater impact in the field.</p>
                   <p><strong>Potential Career Paths:</strong></p>
                   <ul>
-                  <li><strong>Health information technologists:</strong> Apply their knowledge of information technology and health care in a variety of ways. Some specialize in the electronic health records systems used for storing and retrieving patient data while others analyze health care data for research or evaluation of products and services.</li>
-                  <li><strong>Medical registrars:</strong> Create and maintain databases of information, such as those used to track a particular disease or condition. They may collect and analyze information for facility, regional, and national databases; review patients' records and pathology reports to verify completeness and accuracy; assign classification codes to represent the diagnosis and treatment; then track treatment, survival, and recovery.</li>
+                  <li><strong>Health information technologists:</strong> These individuals apply their knowledge of information technology and health care in a variety of ways. Some specialize in the electronic health records systems used for storing and retrieving patient data, while others analyze health care data for research or evaluation of products and services.</li>
+                  <li><strong>Medical registrars:</strong> Create and maintain databases of information, such as those used to track a particular disease or condition. Medical registrars may collect and analyze information for facility, regional, and national databases; review patients' records and pathology reports to verify completeness and accuracy; assign classification codes to represent the diagnosis and treatment; and then track treatment, survival, and recovery.</li>
                   <li><strong>Bioinformatics specialists:</strong> Combine knowledge of computer programming, big data, and biology for careers that range from pharmaceutical and biotechnology development to biological and environmental analysis.</li>
                   </ul>
                 </Accordion>
@@ -177,7 +177,6 @@ export default function Page() {
               className="object-cover"
               width={800}
               height={533}
-              layout="responsive"
             />
           </figure>
           <div className="w-full md:w-1/2">

@@ -1,4 +1,4 @@
-import { PreFooter } from '../../components/PreFooter/PreFooter';
+import { PreFooter } from '../PreFooter/PreFooter';
 
 const theDate = new Date();
 const year = theDate.getFullYear();
