@@ -1,14 +1,15 @@
-import { fetchPost, fetchPosts, fetchPostsByCategory } from "@/app/graphql";
+import { fetchPost, fetchPostSlugs, fetchPostsByCategory } from "@/app/graphql";
 import { generateMeta } from "@/seo/generateMeta";
 import "@/styles/layouts/templates/PostPage.scss";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { Category, Post } from "../../../../../../../payload-types";
-import { PageClient } from './page.client';
+import { PageClient } from "./page.client";
 export async function generateStaticParams() {
   try {
-    const posts = await fetchPosts();
+    const posts = await fetchPostSlugs();
+
     return posts.map(({ slug }) => ({ params: { slug } }));
   } catch (error) {
     console.error("Error fetching posts:", error);
@@ -48,9 +49,10 @@ const PostComponent = async ({ params }: PostComponentProps) => {
   try {
     postData = await fetchPost(post);
     if (postData) {
-      actualCategorySlug = postData?.category && postData.category.length > 0
-        ? (postData.category[0] as Category)?.slug || null
-        : null;
+      actualCategorySlug =
+        postData?.category && postData.category.length > 0
+          ? (postData.category[0] as Category)?.slug || null
+          : null;
       // Compare the URL category with the actual category slug
       if (actualCategorySlug !== category) {
         console.error("Category mismatch:", { actualCategorySlug, category });
@@ -69,14 +71,12 @@ const PostComponent = async ({ params }: PostComponentProps) => {
     notFound();
   }
   if (actualCategorySlug !== category && !postData) {
-    notFound()
+    notFound();
   }
   if (!postData) {
     notFound();
   }
 
-  return (
-    <PageClient post={postData} relatedPostData={relatesPosts} />
-  );
+  return <PageClient post={postData} relatedPostData={relatesPosts} />;
 };
 export default PostComponent;

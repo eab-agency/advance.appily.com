@@ -7,7 +7,7 @@ import {
 import { ALLCATEGORIES } from "./categories";
 import { FOOTER_QUERY, GLOBALS, HEADER_QUERY } from "./globals";
 import { PAGE, PAGES } from "./pages";
-import { FIRSTFIVEPOSTS, GET_CATEGORY_ID, POST, POSTS, POSTS_BY_CATEGORY, POST_BY_TAG } from "./posts";
+import { FIRSTFIVEPOSTS, GET_CATEGORY_ID, POST, POSTS, POSTS_BY_CATEGORY, POST_BY_TAG, POST_SLUGS } from "./posts";
 
 const next: { revalidate: number | false | undefined } = {
 	revalidate: 5,
@@ -262,6 +262,30 @@ export const fetchPage = async (
 
 	return null;
 };
+
+export const fetchPostSlugs = async (): Promise<{ slug: string }[]> => {
+  try {
+    const { data } = await fetch(
+      `${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?posts`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query: POST_SLUGS,
+          variables: {}, // No variables are needed for this query
+        }),
+      }
+    ).then(res => res.json());
+
+    return data?.Posts?.docs || []; // Return an empty array if no data is found
+  } catch (error) {
+    console.error("Error fetching post slugs:", error);
+    return [];
+  }
+};
+
 
 
 export const fetchPosts = async (): Promise<Post[]> => {
