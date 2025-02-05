@@ -67,13 +67,10 @@ export default function Page() {
             <div>
               <h2 className="block">Explore Advanced Jobs in Nursing</h2>
               <p className="mb-fluid-3xl">If you're ready to advance your career beyond your RN degree, advanced roles can offer exciting new challenges and opportunities. These positions often require specialized graduate degrees, enabling you to take on greater responsibilities in patient care, administration, and health care innovation.</p>
-
-              <h3 className="font-sans text-fluid-lg mb-0">High-Demand Medical Careers</h3>
-              <p>According to industry statistics, medical field jobs are among the fastest-growing and most in-demand. Whether you want to work in patient care or behind the scenes in medical research or administration, the opportunities are endless.</p>
             </div>
             <FunCard color="violet" className="bg-white w-full md:w-[48%] flex-none">
               <h3>Advanced Nursing Career Paths:</h3>
-              <ul className="list-disc pl-6">
+              <ul className="flex flex-col gap-fluid-md">
                 <li><strong>Nurse Practitioner (NP):</strong> Provide primary and specialty care, diagnose and treat illnesses, and prescribe medications.</li>
                 <li><strong>Clinical Nurse Specialist (CNS):</strong> Focus on improving patient outcomes through specialized expertise in a particular area of practice.</li>
                 <li><strong>Nurse Anesthetist (CRNA):</strong> Deliver anesthesia during surgeries and procedures, a highly specialized and in-demand role.</li>

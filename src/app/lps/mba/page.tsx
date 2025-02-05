@@ -23,7 +23,7 @@ export default function Page() {
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
         <div className="md:w-3/5">
-          <h2>Are you ready to take the next step in your professional journey?</h2>
+          <h2>Are You Ready to Take the Next Step in Your Professional Journey?</h2>
           <p>Earning a Master's in Business Administration can provide the skills, knowledge, and network you need to unlock new career opportunities.  If you&apos;re wondering "Should I get an MBA?" or "What can I do with an MBA?", our interactive quiz can help guide you in the right direction.</p>
 
           <h3>Why Pursue an MBA?</h3>
@@ -50,7 +50,7 @@ export default function Page() {
 
       <section className="bg-brand-navy-blue text-white py-fluid-5xl px-fluid-2xl facts">
         <div className="container-wide">
-          <h2 className="block text-center">Is earning an MBA worth it?</h2>
+            <h2 className="block text-center">Is Earning an MBA Worth It?</h2>
           <div className="flex flex-col md:flex-row gap-fluid-4xl items-start">
             <FactsCard
               headingLevel="h3"
@@ -86,7 +86,7 @@ export default function Page() {
                   <FunCard color="teal" className="w-full md:w-[48%] lg:w-[30%] flex-none">
                       <h3 className="mt-auto">MBA in Finance</h3>
                       <p>Advance your financial acumen and pursue roles in investment, corporate finance, or financial consulting.</p>
-                      <p><strong>Related specializations:</strong></p>
+                      <p><strong>Related Specializations:</strong></p>
                       <ul className="list-disc list-outside pl-fluid-lg text-fluid-sm">
                         <li>Accounting</li>
                         <li>Business Economics</li>
@@ -99,7 +99,7 @@ export default function Page() {
                   <FunCard color="yellow" className="w-full md:w-[48%] lg:w-[30%] flex-none">
                       <h3 className="mt-auto">MBA in Management or MBA in Organizational Leadership</h3>
                       <p>Gain the skills to lead teams and manage complex initiatives across industries. Prepare for executive roles and become a leader who inspires change.</p>
-                      <p><strong>Related specializations:</strong></p>
+                      <p><strong>Related Specializations:</strong></p>
                         <ul className="list-disc list-outside pl-fluid-lg text-fluid-sm">
                           <li>Executive Business Administration</li>
                           <li>Business Administration</li>
@@ -113,7 +113,7 @@ export default function Page() {
                   <FunCard color="orange" className="w-full  md:w-[48%] lg:w-[30%] flex-none">
                       <h3 className="mt-auto">MBA in Project Management</h3>
                       <p>Learn how to oversee large-scale projects and improve organizational efficiency.</p>
-                      <p><strong>Related specializations:</strong></p>
+                      <p><strong>Related Specializations:</strong></p>
                         <ul className="list-disc list-outside pl-fluid-lg text-fluid-sm">
                           <li>Logistics, Materials, and Supply Chain Management</li>
                           <li>Operations Management and Supervision</li>
@@ -126,7 +126,7 @@ export default function Page() {
                   <FunCard color="violet" className="w-full  md:w-[48%] lg:w-[30%] flex-none">
                       <h3 className="mt-auto">MBA in Marketing</h3>
                       <p>Create and execute marketing strategies and campaigns.</p>
-                      <p><strong>Related specializations:</strong></p>
+                      <p><strong>Related Specializations:</strong></p>
                         <ul className="list-disc list-outside pl-fluid-lg text-fluid-sm">
                           <li>Marketing Research</li>
                           <li>Advertising</li>
@@ -141,7 +141,7 @@ export default function Page() {
                   <FunCard color="navy-blue" className="w-full  md:w-[48%] lg:w-[30%] flex-none">
                       <h3 className="mt-auto">MBA in Entrepreneurship</h3>
                       <p>Equip yourself with the knowledge and skills to start and manage you own businesses and ventures.</p>
-                      <p><strong>Related specializations:</strong></p>
+                      <p><strong>Related Specializations:</strong></p>
                         <ul className="list-disc list-outside pl-fluid-lg text-fluid-sm">
                           <li>Franchising</li>
                           <li>Small Business Management</li>
@@ -182,7 +182,7 @@ export default function Page() {
         <div className="container-wide">
           <h2>Your Future MBA Awaits</h2>
           <p>Get personalized recommendations from top universities and colleges for MBA degree opportunities. Request detailed information about top MBA programs today!</p>
-          <p className="text-fluid-2xl">Start the process by taking our free Business Career Quiz.</p>
+          <p>Start the process by taking our free Business Career Quiz.</p>
           <Button label="Take the Quiz and Get More Info" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
         </div>
       </section>

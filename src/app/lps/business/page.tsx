@@ -75,7 +75,7 @@ export default function Page() {
                 <Accordion title="Business Administration" titleLevel="h3">
                   <p>If you&apos;re a dynamic and strategic thinker with a passion for guiding teams toward success, you&apos;re well-suited for roles in leadership and management. You possess a natural aptitude for planning, decision-making, and motivating others, thriving in fast-paced corporate environments. Equipped with the skills to handle the responsibilities of management, you&apos;re ready to lead and inspire. Whether you have a background in business or aspire to excel in the world of commerce, the executive and leadership path offers a promising future.</p>
                   <p><strong>Related Career Paths Include:</strong></p>
-                  <ul>
+                  <ul className="list-disc list-inside">
                     <li>Executive Business Administration</li>
                     <li>Business Administration</li>
                     <li>Organizational Leadership</li>
@@ -90,7 +90,7 @@ export default function Page() {
                 <Accordion title="Marketing Careers" titleLevel="h3">
                   <p>Do you have a flair for creativity and innovation? You may thrive in the world of marketing. You excel at crafting compelling campaigns, building strong brands, and effectively engaging with audiences. Working in dynamic and innovative environments keeps you motivated, and you constantly seek new ways to connect with clients and customers. With a talent for creative thinking and a passion for driving business growth, you&apos;re well-suited for careers in marketing and the creative fields.</p>
                   <p><strong>Related Career Paths Include:</strong></p>
-                  <ul>
+                  <ul className="list-disc list-inside">
                     <li>Marketing</li>
                     <li>Marketing Research</li>
                     <li>Advertising</li>
@@ -105,7 +105,7 @@ export default function Page() {
                 <Accordion title="Finance Careers" titleLevel="h3">
                   <p>For those who excel in working with numbers, financial management offers an ideal path. You thrive in analyzing data, managing finances, and making well-informed decisions to drive profitability. Whether in financial institutions or investment firms, you feel comfortable navigating financial data and tracking economic trends. With a strong analytical mindset and a desire to influence financial outcomes, careers in finance, accounting, and economics present exciting opportunities.</p>
                   <p><strong>Related Career Paths Include:</strong></p>
-                  <ul>
+                  <ul className="list-disc list-inside">
                   <li>Finance</li>
                   <li>Accounting</li>
                   <li>Business Economics</li>
@@ -118,7 +118,7 @@ export default function Page() {
                 <Accordion title="Information Technology and Analytics Careers" titleLevel="h3">
                   <p>For individuals with a strong affinity for technology, working with computers and data feels natural. You&apos;re driven by a passion for leveraging technology to solve problems and conduct data analysis. Enthusiastic about optimizing processes and developing innovative solutions to complex challenges, you thrive in environments that require technological expertise. With a keen interest in data-driven decision-making and a solid technological aptitude, you&apos;re well-suited for careers in information technology and analytics.</p>
                   <p><strong>Related Career Paths Include:</strong></p>
-                  <ul>
+                  <ul className="list-disc list-inside">
                   <li>Management of Information Systems</li>
                   <li>Information Technology</li>
                   <li>Business Analytics</li>
@@ -131,7 +131,7 @@ export default function Page() {
                 <Accordion title="Entrepreneurial Careers" titleLevel="h3">
                   <p>If you&apos;re entrepreneurial-minded, you possess a natural drive to take risks and create new ventures. Your entrepreneurial spirit motivates you to seize opportunities and build businesses from the ground up. The prospect of being your own boss and driving business growth inspires your ambition. If it sounds like a dream to launch your own business or lead innovative projects, the path of entrepreneurship offers an exciting and rewarding journey.</p>
                   <p><strong>Related Career Paths Include:</strong></p>
-                  <ul>
+                  <ul className="list-disc list-inside">
                   <li>Entrepreneurship</li>
                   <li>Franchising</li>
                   <li>Small Business Management</li>
@@ -144,7 +144,7 @@ export default function Page() {
                 <Accordion title="Management and Operations Careers" titleLevel="h3">
                   <p>You may prioritize people and excel at creating positive work environments that nurture talent and foster growth. If so, you&apos;re well-suited for roles in operations, project management, and human resources. You thrive in collaborative settings, bringing out the best in both colleagues and clients. You find fulfillment in managing teams, handling employee relations, and facilitating effective teamwork. With qualities like empathy, strong communication skills, and a drive to build cohesive teams, you&apos;re positioned to succeed in these dynamic fields.</p>
                   <p><strong>Related Career Paths Include:</strong></p>
-                  <ul>
+                  <ul className="list-disc list-inside">
                   <li>Logistics, Materials, and Supply Chain Management</li>
                   <li>Operations Management and Supervision</li>
                   <li>Project Management</li>

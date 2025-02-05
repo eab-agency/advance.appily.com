@@ -73,7 +73,7 @@ export default function Page() {
             </div>
             <FunCard color="violet" className="bg-white w-full md:w-[48%] flex-none">
               <h3>Popular Medical Health Jobs:</h3>
-              <ul className="list-disc pl-6">
+              <ul className="flex flex-col gap-fluid-md">
                 <li><strong>Nursing Careers:</strong> From registered nurses (RNs) to advanced practice nurses, nursing offers numerous advancement opportunities.</li>
                 <li><strong>Medical Technologists:</strong> Perform vital tests that help in diagnosing and treating patients.</li>
                 <li><strong>Pharmacy Careers:</strong> Work as a pharmacist or pharmacy technician and play a critical role in health care delivery.</li>
