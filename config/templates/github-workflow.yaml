@@ -1,0 +1,94 @@
+# Template for GitHub Actions CI/CD Workflow
+#
+# Guidelines to Avoid Copy-Paste Errors:
+# 1. Use descriptive and unique variable names to prevent confusion (e.g., differentiate between GTM and GTAG IDs).
+# 2. Add comments to explain the purpose of each section and variable.
+# 3. Verify environment variables and other critical settings using a checklist before committing changes.
+# 4. Use this template as a base to ensure consistency across workflow files.
+# 5. Ensure all changes are peer-reviewed to catch potential errors early.
+# 6. Utilize automated linting and validation tools to detect syntax issues.
+# 7. Document any changes or customizations made to this template for future reference.
+# 8. Test the workflow in a staging environment before deploying to production.
+
+name: [Workflow Name] # e.g., Deploy to AWS
+
+on:
+  # Define triggers for the workflow
+  push:
+    branches:
+      - main
+    paths:
+      - "src/**"
+      - "*.json"
+      - "*.yaml"
+      - "*.config.js"
+      - "*.config.ts"
+  workflow_dispatch:
+    inputs:
+      stageName:
+        description: "The SST stage to deploy to (e.g., dev, production)"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - production
+      reason:
+        description: "Reason for deployment"
+        required: false
+        default: "No reason provided"
+
+permissions:
+  id-token: write # Required for JWT
+  contents: write # Required for actions/checkout
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.envName || 'Staging' }} # Use input or default to Staging
+
+    env:
+      # Define environment variables with placeholders
+      NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL }}
+      NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL }}
+      NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID }}
+      NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID }}
+      NEXT_PUBLIC_AWS_IDENTITY_POOL_ID: ${{ vars.NEXT_PUBLIC_AWS_IDENTITY_POOL_ID }}
+      NEXT_PUBLIC_AWS_APPLICATION_ID: ${{ vars.NEXT_PUBLIC_AWS_APPLICATION_ID }}
+      NEXT_PUBLIC_AWS_CLOUDWATCH_RUM_ENDPOINT: ${{ vars.NEXT_PUBLIC_AWS_CLOUDWATCH_RUM_ENDPOINT }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Cache Next.js Build
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache/
+            .open-next/
+            .sst/
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
+      - name: Install Pnpm
+        run: npm install -g pnpm@9.15.2
+
+      - name: Install project dependencies
+        run: pnpm install
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/[role-name] # Replace with actual role name
+          aws-region: us-east-1
+
+      - name: Deploy to AWS with SST
+        run: npx sst deploy --stage=${{ github.event.inputs.stageName || 'dev' }} --print-logs
+
+  # Additional jobs can be defined here if needed

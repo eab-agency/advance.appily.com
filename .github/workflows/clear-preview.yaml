@@ -46,7 +46,7 @@ jobs:
             cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - name: Install Pnpm
-        run: npm install -g pnpm
+        run: npm install -g pnpm@9.15.2
 
       - name: Install deps (with cache)
         run: pnpm install

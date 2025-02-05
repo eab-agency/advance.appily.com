@@ -1,8 +1,9 @@
-'use client'
+"use client";
 import { fetchFooter } from "@/app/graphql";
 import { Button } from "@/components";
 import styles from "@/styles/components/PageFooter.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Footer } from "../../../payload-types";
 import { CMSLink } from "../Link";
@@ -16,7 +17,7 @@ const FooterComponent = () => {
         const footerData = await fetchFooter();
         setFooter(footerData);
       } catch (error) {
-        console.error('Failed to fetch footer:', error);
+        console.error("Failed to fetch footer:", error);
       }
     };
 
@@ -52,15 +53,14 @@ const FooterComponent = () => {
           </div>
           <nav className={styles.legalLinks}>
             <ul className="footer-col-1">
-              {navItems && navItems?.length > 0 && (navItems.map(({ link }, index) => (
-                <li key={index}>
-                  {/* @ts-ignore */}
-                  <CMSLink
-                    {...link}
-                    appearance={'default'}
-                  />
-                </li>
-              )))}
+              {navItems &&
+                navItems?.length > 0 &&
+                navItems.map(({ link }, index) => (
+                  <li key={index}>
+                    {/* @ts-ignore */}
+                    <CMSLink {...link} appearance={"default"} />
+                  </li>
+                ))}
               <li>
                 <Button
                   type="button"
@@ -68,6 +68,9 @@ const FooterComponent = () => {
                   onClick={privacyClick}
                   label="Privacy Preferences"
                 />
+              </li>
+              <li>
+                <Link href="/sitemap">Sitemap</Link>
               </li>
             </ul>
           </nav>

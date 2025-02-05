@@ -1,116 +1,31 @@
-// import { fetchCategoryIDByTitle, fetchPostsByCategory } from "@/app/graphql";
-// import { PostHeader } from "@/components/Blog/PostHeader";
-// import RichText from "@/components/RichText";
-// import "@/styles/layouts/templates/BlogPage.scss";
-// import Link from "next/link";
-// import { useRouter } from "next/navigation";
-// import { Post } from "../../../../../payload-types";
-
-// export default async function CategoryComponent({ params }) {
-//   const { category } = await params;
-//   console.log(category, 'cat**')
-//   const formattedSlug = category?.replace(/-/g, " ") || "";
-//   const slugTitle = formattedSlug
-//     ? formattedSlug.charAt(0).toUpperCase() + formattedSlug.slice(1)
-//     : "";
-
-//   let posts: Post[] = [];
-//   let categoryData;
-//   const router = useRouter();
-
-//   try {
-//     categoryData = await fetchCategoryIDByTitle(category);
-//     console.log(categoryData, 'data***')
-//     if (categoryData?.length > 0) {
-//       posts = await fetchPostsByCategory(categoryData[0]?.id);
-//       console.log(posts, 'posts**')
-//     } else {
-//       router.replace("/blog");
-//     }
-//   } catch (error) {
-//     console.error("Error fetching posts:", error);
-//   }
-
-//   return (
-//     <div className="blog__landing blog-category__landing">
-//       <header className="blog__archive-header">
-//         <h1>{slugTitle}</h1>
-//       </header>
-//       <div className="blog__archive">
-//         {posts?.map((post) => {
-//           const {
-//             slug,
-//             title,
-//             publishedDate,
-//             updatedAt,
-//             createdBy,
-//             richText,
-//             id,
-//           } = post;
-//           const href = `/blog/${category}/${slug}`;
-//           return (
-//             <article key={id} className="post post__latest">
-//               <Link href={href}>
-//                 <PostHeader
-//                   id={id}
-//                   title={title}
-//                   createdBy={createdBy}
-//                   publishedDate={publishedDate}
-//                   updatedAt={updatedAt}
-//                 />
-//                 <RichText content={richText} extractFirstParagraph={true} />
-//               </Link>
-//             </article>
-//           );
-//         })}
-//       </div>
-//     </div>
-//   );
-// }
-
-"use client";
 import { fetchCategoryIDByTitle, fetchPostsByCategory } from "@/app/graphql";
 import { PostHeader } from "@/components/Blog/PostHeader";
 import RichText from "@/components/RichText";
 import "@/styles/layouts/templates/BlogPage.scss";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { Category, Post } from "../../../../../payload-types";
 
-export function CategoryComponent() {
-  const pathname = usePathname();
-  const router = useRouter();
+import { redirect } from "next/navigation";
+import { Post } from "../../../../../payload-types";
 
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [category, setCategoryData] = useState<Category[]>([]);
-
-  const slug = pathname?.split("/").pop();
-  const removeHyphen = slug?.replace(/-/g, " ");
-  const slugTitle = removeHyphen
-    ? removeHyphen.charAt(0).toUpperCase() + removeHyphen.slice(1)
+export default async function CategoryComponent({ params }) {
+  const { category } = params;
+  const formattedSlug = category?.replace(/-/g, " ") || "";
+  const slugTitle = formattedSlug
+    ? formattedSlug.charAt(0).toUpperCase() + formattedSlug.slice(1)
     : "";
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if (slug) {
-          const categoryData = await fetchCategoryIDByTitle(slug);
-          setCategoryData(categoryData);
-          if (categoryData.length > 0) {
-            const posts = await fetchPostsByCategory(categoryData[0]?.id);
-            setPosts(posts);
-          } else {
-            router.push("/blog");
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching posts:", error);
-      }
-    };
-
-    fetchData();
-  }, [slug, router]);
+  let posts: Post[] = [];
+  let categoryData;
+  try {
+    categoryData = await fetchCategoryIDByTitle(category);
+    if (categoryData?.length) {
+      posts = await fetchPostsByCategory(categoryData[0].id);
+    } else {
+      redirect("/blog");
+    }
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+  }
 
   return (
     <div className="blog__landing blog-category__landing">
@@ -128,17 +43,17 @@ export function CategoryComponent() {
             richText,
             id,
           } = post;
-
-          const href = `${window.location.origin}/blog/${slugTitle}/${slug}`;
+          const href = `/blog/${category}/${slug}`;
           return (
             <article key={id} className="post post__latest">
               <Link href={href}>
                 <PostHeader
+                  id={id}
                   title={title}
                   createdBy={createdBy}
                   publishedDate={publishedDate}
-                  updatedAt={updatedAt} />
-
+                  updatedAt={updatedAt}
+                />
                 <RichText content={richText} extractFirstParagraph={true} />
               </Link>
             </article>
@@ -148,5 +63,3 @@ export function CategoryComponent() {
     </div>
   );
 }
-
-export default CategoryComponent;
