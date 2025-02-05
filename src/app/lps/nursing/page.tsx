@@ -9,6 +9,32 @@ import { PageHead } from "../components/PageHead/PageHead";
 import heroImage from '../assets/healthcare-hero.jpg';
 import ElevateYourCareer from "../assets/healthcare-professional.jpg";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Free Health Care Career Quiz",
+  description: "Explore careers in health care and find your path with our free quiz. Discover top jobs, graduate degrees, and health career pathways to advance your future!",
+  openGraph: {
+    title: "Free Health Care Career Quiz",
+    description: "Explore careers in health care and find your path with our free quiz. Discover top jobs, graduate degrees, and health career pathways to advance your future!",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/healthcare-careers`,
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_APP_URL}/images/healthcare-hero.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Health care professionals discussing patient care",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Health Care Career Quiz",
+    description: "Explore careers in health care and find your path with our free quiz. Discover top jobs, graduate degrees, and health career pathways to advance your future!",
+    images: [`${process.env.NEXT_PUBLIC_APP_URL}/images/healthcare-hero.jpg`],
+  },
+};
+
 export default function Page() {
   return (
     <>
@@ -16,6 +42,7 @@ export default function Page() {
       <Hero
         title="Advance Your Nursing Career: Take Our Free Health Care Career Quiz"
         image={heroImage}
+        altText="Health care professionals discussing patient care"
       />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">

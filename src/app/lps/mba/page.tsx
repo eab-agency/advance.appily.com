@@ -11,6 +11,33 @@ import CommonQuestions from "../assets/common-questions.png";
 import ElevateYourCareer from "../assets/elevate-your-career.jpg";
 import heroImage from '../assets/mba-hero.jpg';
 
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Master of Business Administration",
+  description: "Find the right advanced business degree for your goals! Take our quiz to explore master’s degrees in finance, management, leadership, and more. Unlock your career potential today!",
+  openGraph: {
+    title: "Master of Business Administration",
+    description: "Find the right advanced business degree for your goals! Take our quiz to explore master’s degrees in finance, management, leadership, and more. Unlock your career potential today!",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/business`,
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_APP_URL}/images/mba-hero.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "A group of business professionals discussing a project",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Master of Business Administration",
+    description: "Find the right advanced business degree for your goals! Take our quiz to explore master’s degrees in finance, management, leadership, and more. Unlock your career potential today!",
+    images: [`${process.env.NEXT_PUBLIC_APP_URL}/images/mba-hero.jpg`],
+  },
+};
+
 export default function Page() {
   return (
     <>
@@ -19,6 +46,7 @@ export default function Page() {
         title="Unlock Your Career Potential with an MBA"
         description="Discover How an MBA Can Transform Your Future in Business, Finance, and Leadership"
         image={heroImage}
+        altText="A group of business professionals discussing a project"
       />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">

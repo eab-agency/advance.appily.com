@@ -10,6 +10,33 @@ import CommonQuestions from "../assets/common-questions.png";
 import heroImage from '../assets/healthcare-hero.jpg';
 import ElevateYourCareer from "../assets/healthcare-professional.jpg";
 
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Free Medical Care Career Quiz",
+  description: "Take our free medical field career quiz to discover top-paying medical jobs, explore different careers in the medical field, and find the best path for you.",
+  openGraph: {
+    title: "Free Medical Care Career Quiz",
+    description: "Take our free medical field career quiz to discover top-paying medical jobs, explore different careers in the medical field, and find the best path for you.",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/healthcare-careers`,
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_APP_URL}/images/healthcare-hero.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Health care professionals discussing patient care",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Medical Care Career Quiz",
+    description: "Take our free medical field career quiz to discover top-paying medical jobs, explore different careers in the medical field, and find the best path for you.",
+    images: [`${process.env.NEXT_PUBLIC_APP_URL}/images/healthcare-hero.jpg`],
+  },
+};
+
 export default function Page() {
   return (
     <>
@@ -17,6 +44,7 @@ export default function Page() {
       <Hero
         title="Boost Your Career in the Medical Field with the Right Advanced Degree"
         image={heroImage}
+        altText="Health care professionals discussing patient care"
       />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">

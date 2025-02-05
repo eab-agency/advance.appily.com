@@ -11,6 +11,33 @@ import CommonQuestions from "../assets/common-questions.png";
 import heroImage from '../assets/healthcare-hero.jpg';
 import ElevateYourCareer from "../assets/healthcare-professional.jpg";
 
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Free Health Care Career Quiz",
+  description: "Explore careers in health care and find your path with our free quiz. Discover top jobs, graduate degrees, and health career pathways to advance your future!",
+  openGraph: {
+    title: "Free Health Care Career Quiz",
+    description: "Explore careers in health care and find your path with our free quiz. Discover top jobs, graduate degrees, and health career pathways to advance your future!",
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/healthcare`,
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_APP_URL}/images/healthcare-hero.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Health care professionals discussing patient care",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Health Care Career Quiz",
+    description: "Explore careers in health care and find your path with our free quiz. Discover top jobs, graduate degrees, and health career pathways to advance your future!",
+    images: [`${process.env.NEXT_PUBLIC_APP_URL}/images/healthcare-hero.jpg`],
+  },
+};
+
 export default function Page() {
   return (
     <>
@@ -18,6 +45,7 @@ export default function Page() {
       <Hero
         title="Boost Your Health Care Career With the Right Advanced Degree"
         image={heroImage}
+        altText="Health care professionals discussing patient care"
       />
 
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
@@ -186,7 +214,7 @@ export default function Page() {
               <p>Health care career pathways include clinical roles, health science careers, and administrative positions. Depending on your interests, you can pursue roles in direct patient care, research, or health care management.</p>
 
               <h3 className="mb-0 font-sans font-bold">How can I determine which health care career is right for me?</h3>
-              <p>Our free health care career quiz can help you identify the best career path based on your skills, interests, and long-term goals.</p>
+              <p>Our Free Health Care Career Quiz can help you identify the best career path based on your skills, interests, and long-term goals.</p>
 
               <h3 className="mb-0 font-sans font-bold">Are there high-paying jobs in health care?</h3>
               <p>Yes, many jobs in health care, especially those requiring a graduate degree, offer high earning potential. Roles such as nurse practitioners, health care administrators, and health scientists are among the top-paying careers.</p>
