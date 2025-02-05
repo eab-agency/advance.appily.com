@@ -5,6 +5,11 @@ export function middleware(request: NextRequest) {
   // get search query params from nextUrl
   const { pathname, search } = request.nextUrl;
 
+  // ✅ Redirect only "/lps" or "/lps/" to "/"
+  if (pathname === "/lps" || pathname === "/lps/") {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+
   // Apply normalization only to /blog paths
   if (pathname.startsWith("/blog")) {
     // Normalize the pathname

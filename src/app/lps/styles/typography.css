@@ -1,0 +1,81 @@
+@layer base{
+
+  :where(body){
+    color: var(--color-brand-navy-blue);
+
+    h1{
+      font-size: var(--text-fluid-4xl);
+      font-family: var(--font-serif);
+      line-height: var(--leading-tight);
+      font-weight: 800;
+    }
+
+    h2{
+      font-size: var(--text-fluid-2xl);
+      font-family: var(--font-serif);
+      line-height: var(--leading-tight);
+      margin-bottom: 1em;
+      font-weight: 800;
+    }
+
+    h3{
+      font-size: var(--text-fluid-xl);
+      font-family: var(--font-serif);
+      margin-block: 1em;
+      font-weight: 800;
+    }
+
+    h4{
+      font-size: var(--text-fluid-lg);
+      font-family: var(--font-serif);
+      margin-block: 1em;
+    }
+
+    h5{
+      font-size: var(--text-fluid-md);
+      font-family: var(--font-serif);
+    }
+
+    h6{
+      font-size: var(--text-fluid-sm);
+      font-family: var(--font-serif);
+    }
+
+    p, ul, ol, span{
+      font-size: var(--text-fluid-md);
+      font-family: var(--font-sans);
+      line-height: var(--leading-relaxed);
+      font-weight: 300;
+    }
+
+    strong{
+      font-weight: 700;
+    }
+
+    p, ul, ol{
+      margin-bottom: 1em;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+    li{
+      /* margin-bottom: 0.25em; */
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+    a{
+      color: var(--color-brand-darkteal);
+      text-decoration: underline;
+
+      &:hover{
+        text-decoration: none;
+      }
+    }
+
+  }
+}
