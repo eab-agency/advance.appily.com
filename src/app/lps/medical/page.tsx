@@ -14,11 +14,11 @@ import ElevateYourCareer from "../assets/healthcare-professional.jpg";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Medical Care Career Quiz",
-  description: "Take our free medical field career quiz to discover top-paying medical jobs, explore different careers in the medical field, and find the best path for you.",
+  title: "Free Medical Careers Quiz",
+  description: "Take our free career quiz to discover top-paying medical jobs, explore different careers in the medical field, and find the best path for you.",
   openGraph: {
-    title: "Free Medical Care Career Quiz",
-    description: "Take our free medical field career quiz to discover top-paying medical jobs, explore different careers in the medical field, and find the best path for you.",
+    title: "Free Medical Careers Quiz",
+    description: "Take our free career quiz to discover top-paying medical jobs, explore different careers in the medical field, and find the best path for you.",
     url: `${process.env.NEXT_PUBLIC_APP_URL}/healthcare-careers`,
     images: [
       {
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Medical Care Career Quiz",
-    description: "Take our free medical field career quiz to discover top-paying medical jobs, explore different careers in the medical field, and find the best path for you.",
+    title: "Free Medical Careers Quiz",
+    description: "Take our free career quiz to discover top-paying medical jobs, explore different careers in the medical field, and find the best path for you.",
     images: [`${process.env.NEXT_PUBLIC_APP_URL}/images/healthcare-hero.jpg`],
   },
 };
