@@ -48,7 +48,7 @@ export const POST_DATA = `
 
 export const POSTS = `
   query Posts ($status: Post__status_Input) {
-    Posts (limit: 300, where: {_status: {equals: $status}}){
+    Posts (limit: 100, where: {_status: {equals: $status}}){
       docs {
         slug
         title

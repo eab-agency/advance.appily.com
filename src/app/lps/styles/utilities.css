@@ -1,0 +1,80 @@
+@utility container-*{
+  max-width: --value(--container-*);
+  margin-inline: auto;
+  width: 90%;
+}
+
+/* ---------------------------- */
+/* Decorative Appily Petal */
+
+@utility petal-*{
+  &::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+    aspect-ratio: 1/1;
+    z-index: 1;
+    background: --value(--color-*);
+  }
+}
+
+@utility petal-square-w-*{
+  &::before{
+    width: calc(--value(integer) * 1%);
+    height: auto;
+  }
+}
+
+@utility petal-square-h-*{
+  &::before{
+    height: calc(--value(integer) * 1%);
+    width: auto;
+  }
+}
+
+@utility petal-h-*{
+  &::before{
+    height: calc(--value(integer) * 1%);
+  }
+}
+
+@utility petal-top-*{
+  &::before{
+    top: calc(var(--spacing) * --value(integer));
+    bottom: initial;
+  }
+}
+
+@utility petal-bottom-*{
+  &::before{
+    bottom: calc(var(--spacing) * --value(integer));
+    top: initial;
+  }
+}
+
+@utility petal-right-*{
+  &::before{
+    right: calc(var(--spacing) * --value(integer))
+  }
+}
+
+@utility petal-left-*{
+  &::before{
+    left: calc(var(--spacing) * --value(integer))
+  }
+}
+
+@utility petal-tl-*{
+  &::before{
+    border-top-left-radius: calc(--value(integer) * 1%);
+  }
+}
+
+@utility petal-tr-*{
+  &::before{
+    border-top-right-radius: calc(--value(integer) * 1%);
+  }
+}
+
+/* -------------------------------- */
