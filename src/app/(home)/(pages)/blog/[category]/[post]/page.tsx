@@ -67,13 +67,8 @@ const PostComponent = async ({ params }: PostComponentProps) => {
   } catch (error) {
     console.error("Error fetching post:", error);
   }
-  if (actualCategorySlug !== category && postData) {
-    notFound();
-  }
-  if (actualCategorySlug !== category && !postData) {
-    notFound();
-  }
-  if (!postData) {
+
+  if (!postData || actualCategorySlug !== category) {
     notFound();
   }
 
