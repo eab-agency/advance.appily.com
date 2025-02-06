@@ -69,7 +69,12 @@ jobs:
           NEXT_PUBLIC_AWS_IDENTITY_POOL_ID: ${{ vars.NEXT_PUBLIC_AWS_IDENTITY_POOL_ID}}
           NEXT_PUBLIC_AWS_APPLICATION_ID: ${{ vars.NEXT_PUBLIC_AWS_APPLICATION_ID}}
           NEXT_PUBLIC_AWS_CLOUDWATCH_RUM_ENDPOINT: ${{ vars.NEXT_PUBLIC_AWS_CLOUDWATCH_RUM_ENDPOINT}}
-
         run: |
           echo "Deploying to stage: $STAGE_NAME"
           sst deploy --stage=$STAGE_NAME
+          DEPLOY_URL=$(sst outputs --stage=$STAGE_NAME | grep "www" | awk '{print $2}')
+          echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_ENV
+      - name: Output Deployment URL
+        env:
+          DEPLOY_URL: ${{ env.DEPLOY_URL }}
+        run: "echo 'Deployment URL: $DEPLOY_URL'"
