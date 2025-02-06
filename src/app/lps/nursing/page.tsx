@@ -12,25 +12,25 @@ import ElevateYourCareer from "../assets/healthcare-professional.jpg";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Health Care Career Quiz",
-  description: "Explore careers in health care and find your path with our free quiz. Discover top jobs, graduate degrees, and health career pathways to advance your future!",
+  title: "Advance Your Nursing Career",
+  description: "Advance your nursing career with specialized roles. Explore different nursing jobs, registered nurse programs, and take our free health care career quiz today!",
   openGraph: {
-    title: "Free Health Care Career Quiz",
-    description: "Explore careers in health care and find your path with our free quiz. Discover top jobs, graduate degrees, and health career pathways to advance your future!",
+    title: "Advance Your Nursing Career",
+    description: "Advance your nursing career with specialized roles. Explore different nursing jobs, registered nurse programs, and take our free health care career quiz today!",
     url: `${process.env.NEXT_PUBLIC_APP_URL}/healthcare-careers`,
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_APP_URL}/images/healthcare-hero.jpg`,
         width: 1200,
         height: 630,
-        alt: "Health care professionals discussing patient care",
+        alt: "Nursing professionals discussing patient care",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Health Care Career Quiz",
-    description: "Explore careers in health care and find your path with our free quiz. Discover top jobs, graduate degrees, and health career pathways to advance your future!",
+    title: "Advance Your Nursing Career",
+    description: "Advance your nursing career with specialized roles. Explore different nursing jobs, registered nurse programs, and take our free health care career quiz today!",
     images: [`${process.env.NEXT_PUBLIC_APP_URL}/images/healthcare-hero.jpg`],
   },
 };
@@ -40,7 +40,7 @@ export default function Page() {
     <>
       <PageHead />
       <Hero
-        title="Advance Your Nursing Career: Take Our Free Health Care Career Quiz"
+        title="Advance Your Nursing Career: Take Our Advance Your Nursing Career"
         image={heroImage}
         altText="Health care professionals discussing patient care"
       />
@@ -141,7 +141,7 @@ export default function Page() {
           <h2>Ready to Take the Next Step?</h2>
           <p className="text-fluid-lg">Start your journey toward a fulfilling career by taking our health care careers quiz today! Discover which roles align with your skills, interests, and goals—whether you're focused on advancing your current nursing career or are exploring other jobs in the health care field, this quiz will ensure you are on the right path. Once you have completed the quiz, we will connect you to nursing schools with programs that can help you earn the degrees required to advance your career.</p>
 
-          <Button label="Start the Free Health Care Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
+          <Button label="Start the Advance Your Nursing Career" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
         </div>
       </section>
 

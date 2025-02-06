@@ -14,11 +14,11 @@ import heroImage from '../assets/mba-hero.jpg';
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Master of Business Administration",
-  description: "Find the right MBA for your goals! Take our quiz to explore MBA degrees in finance, management, leadership, and more. Unlock your career potential today!",
+  title: "Master’s Degrees in Business",
+  description: "Find the right advanced business degree for your goals. Take our quiz to explore careers in finance, management, and leadership. Unlock your potential today!",
   openGraph: {
-    title: "Master of Business Administration",
-    description: "Find the right MBA for your goals! Take our quiz to explore MBA degrees in finance, management, leadership, and more. Unlock your career potential today!",
+    title: "Master’s Degrees in Business",
+    description: "Find the right advanced business degree for your goals. Take our quiz to explore careers in finance, management, and leadership. Unlock your potential today!",
     url: `${process.env.NEXT_PUBLIC_APP_URL}/business`,
     images: [
       {
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Master of Business Administration",
-    description: "Find the right MBA for your goals! Take our quiz to explore MBA degrees in finance, management, leadership, and more. Unlock your career potential today!",
+    title: "Master’s Degrees in Business",
+    description: "Find the right advanced business degree for your goals. Take our quiz to explore careers in finance, management, and leadership. Unlock your potential today!",
     images: [`${process.env.NEXT_PUBLIC_APP_URL}/images/mba-hero.jpg`],
   },
 };
