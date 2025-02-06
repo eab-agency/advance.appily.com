@@ -1,4 +1,4 @@
-# Getting Started (with Bun)
+# Getting Started
 
 Edit
 
