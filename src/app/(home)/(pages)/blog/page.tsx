@@ -52,12 +52,10 @@ const BlogComponent = async () => {
     });
 
     posts.sort((a, b) => {
-      const dateA = a?.publishedDate ? new Date(a.publishedDate) : null;
-      const dateB = b?.publishedDate ? new Date(b.publishedDate) : null;
-      if (dateA && dateB) {
-        return dateB.getTime() - dateA.getTime();
-      }
-      return 0;
+      if (!a?.publishedDate || !b?.publishedDate) return 0;
+      const dateA = new Date(a.publishedDate);
+      const dateB = new Date(b.publishedDate);
+      return dateB.getTime() - dateA.getTime();
     });
 
   } catch (error) {
