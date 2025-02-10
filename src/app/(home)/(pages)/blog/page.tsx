@@ -1,7 +1,9 @@
 import { fetchAllCategories, fetchFirstFivePosts } from "@/app/graphql";
 import { PostHeader } from "@/components/Blog/PostHeader";
 import RichText from "@/components/RichText";
+import { mergeOpenGraph, mergeTwitter } from "@/seo";
 import "@/styles/layouts/templates/BlogPage.scss";
+import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +13,25 @@ import { Category, Post, Tag } from "../../../../../payload-types";
 const BlogTab = dynamic(() => import("@/components/Blog/BlogTab"), {
   ssr: true,
 });
+
+const title = 'Career Advice, Insights, and Resources';
+const description = 'Get practical tips, expert insights and essential tools to navigate your career options and the degrees that can help you achieve your goals.';
+
+export const metadata: Metadata = {
+  title: title,
+  description: description,
+  openGraph: mergeOpenGraph({
+    title: title,
+    description: description,
+  }),
+  twitter: mergeTwitter({
+    title: title,
+    description: description,
+  }),
+  robots: {
+    index: true,
+  },
+};
 
 const BlogComponent = async () => {
   let posts: Post[] = [];
@@ -29,6 +50,14 @@ const BlogComponent = async () => {
         : null;
       return publishedDate && publishedDate <= currentDate;
     });
+
+    posts.sort((a, b) => {
+      if (!a?.publishedDate || !b?.publishedDate) return 0;
+      const dateA = new Date(a.publishedDate);
+      const dateB = new Date(b.publishedDate);
+      return dateB.getTime() - dateA.getTime();
+    });
+
   } catch (error) {
     console.error("Error fetching data:", error);
   }
