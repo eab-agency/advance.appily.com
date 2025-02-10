@@ -134,10 +134,9 @@ const BlogTabs = ({ tabs }) => {
       <div className="all-posts-container">
       {fetchedPosts
         ?.sort((a, b) => {
-          const getLatestDate = (post) =>
-            new Date(post.updatedAt || post.publishedDate || 0);
-
-          return getLatestDate(b).getTime() - getLatestDate(a).getTime();
+          const dateA = new Date(a.publishedDate ?? "").getTime();
+          const dateB = new Date(b.publishedDate ?? "").getTime();
+          return dateB - dateA;
         })
         .map((post) => {
           const { id, title, createdBy, publishedDate, updatedAt, slug, category } = post;

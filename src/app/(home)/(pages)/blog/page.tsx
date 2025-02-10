@@ -50,6 +50,16 @@ const BlogComponent = async () => {
         : null;
       return publishedDate && publishedDate <= currentDate;
     });
+
+    posts.sort((a, b) => {
+      const dateA = a?.publishedDate ? new Date(a.publishedDate) : null;
+      const dateB = b?.publishedDate ? new Date(b.publishedDate) : null;
+      if (dateA && dateB) {
+        return dateB.getTime() - dateA.getTime();
+      }
+      return 0;
+    });
+
   } catch (error) {
     console.error("Error fetching data:", error);
   }

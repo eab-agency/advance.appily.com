@@ -18,12 +18,12 @@ const PostDateDisplay = ({ publishedDate, updatedAt, id }) => {
   if (!publishedDate && !updatedAt) return null;
 
   const renderDate = () => {
-    const mostRecentDate = updatedAt && updatedAt > publishedDate ? updatedAt : publishedDate;
+    const mostRecentDate = updatedAt && updatedAt > publishedDate ? updatedAt : publishedDate; //temporarily unused.
 
     return (
       <div className="post__published-date">
-      <span className="date-label">{updatedAt && updatedAt > publishedDate ? "Updated: " : "Published: "}</span>
-      <span className="date-value">{formatDate(mostRecentDate)}</span>
+      <span className="date-label">Published:</span>
+      <span className="date-value">{formatDate(publishedDate)}</span>
       </div>
     )
 
