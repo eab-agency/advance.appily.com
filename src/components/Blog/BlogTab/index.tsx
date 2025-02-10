@@ -133,10 +133,14 @@ const BlogTabs = ({ tabs }) => {
       </div>
       <div className="all-posts-container">
       {fetchedPosts
-        ?.sort((a, b) => {
-          const dateA = new Date(a.publishedDate ?? "").getTime();
-          const dateB = new Date(b.publishedDate ?? "").getTime();
-          return dateB - dateA;
+       ?.sort((a, b) => {
+          const dateA = new Date(a.publishedDate);
+          const dateB = new Date(b.publishedDate);
+        
+          const timeA = isNaN(dateA.getTime()) ? 0 : dateA.getTime();
+          const timeB = isNaN(dateB.getTime()) ? 0 : dateB.getTime();
+        
+          return timeB - timeA;
         })
         .map((post) => {
           const { id, title, createdBy, publishedDate, updatedAt, slug, category } = post;
