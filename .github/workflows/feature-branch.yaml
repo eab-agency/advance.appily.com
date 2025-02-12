@@ -9,9 +9,6 @@ on:
       - "bugfix/*"
       - "bugfix-*"
       - "dev"
-    paths:
-      - "src/**"
-      - "*.json"
 
 permissions:
   contents: write
