@@ -4,24 +4,26 @@ on:
   pull_request:
     types: [closed]
 
-env:
-  PR_PREFIX: pr-${{ github.event.pull_request.number }}
-
 permissions:
+  contents: write
+  pull-requests: write
   id-token: write
-  contents: read
+  deployments: write
 
 jobs:
   remove:
     runs-on: ubuntu-latest
     environment: Staging
 
-    # Add a condition to skip the entire job for specific pull request scenarios
-    if: ${{ !((github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'dev') || (github.event.pull_request.base.ref == 'production' && github.event.pull_request.head.ref == 'main')) }}
+    if: ${{ !((github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'dev') || (github.event.pull_request.base.ref == 'production' && github.event.pull_request.head.ref == 'main')) && (startsWith(github.event.pull_request.head.ref, 'bugfix-') || startsWith(github.event.pull_request.head.ref, 'bugfix/') || startsWith(github.event.pull_request.head.ref, 'feature-') || startsWith(github.event.pull_request.head.ref, 'feature/')) }}
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+
+      - name: Get merged branch name
+        id: get_merged_branch
+        run: echo "MERGED_BRANCH=$(echo ${{ github.event.pull_request.head.ref }} | sed 's/[\/]/-/g' | tr -cd '[:alnum:]-')" >> $GITHUB_ENV
 
       - name: Configure Dev AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -51,4 +53,4 @@ jobs:
       - name: Install deps (with cache)
         run: pnpm install
 
-      - run: npx sst remove --stage $PR_PREFIX
+      - run: npx sst remove --stage $MERGED_BRANCH
