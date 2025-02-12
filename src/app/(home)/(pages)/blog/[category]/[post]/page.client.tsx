@@ -90,10 +90,10 @@ export const PageClient: React.FC<{
             className="author-content-wrapper"
             itemScope
             itemType="https://schema.org/Person"
-            >
+          >
             <h2>About the Author</h2>
             {userImageURL && (
-                <figure className="author-image">
+              <figure className="author-image">
                 <Image
                   src={userImageURL}
                   // @ts-ignore
@@ -101,7 +101,7 @@ export const PageClient: React.FC<{
                   itemProp="image"
                   fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 30vw, 20vw"
-                  />
+                />
               </figure>
             )}
             <div className="author-content">

@@ -100,7 +100,7 @@ const BlogComponent = async () => {
               Array.isArray(category) &&
               typeof category[0] === "object" &&
               "slug" in category[0]
-                ? category[0]?.slug ?? ""
+                ? (category[0]?.slug ?? "")
                 : "";
 
             return (
@@ -150,7 +150,7 @@ const BlogComponent = async () => {
               Array.isArray(category) &&
               typeof category[0] === "object" &&
               "slug" in category[0]
-                ? category[0]?.slug ?? ""
+                ? (category[0]?.slug ?? "")
                 : "";
             return (
               <article key={index} className="post post__latest">

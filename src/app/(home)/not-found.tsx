@@ -1,7 +1,7 @@
 'use client';
 import styles from '@/styles/components/Error.module.scss';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /* eslint-disable no-nested-ternary */
 function NotFound({ statusCode }) {
@@ -41,7 +41,7 @@ function NotFound({ statusCode }) {
           </figure>
           <div className={styles.content}>
             <div className={styles.intro}>
-              <h1>Oops! A server error just happened.</h1>
+              <h1>Oops! This page data is not found</h1>
             </div>
             <p>
               Do not worry, you can visit{' '}

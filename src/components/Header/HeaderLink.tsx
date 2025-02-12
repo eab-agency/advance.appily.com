@@ -29,12 +29,12 @@ export const CMSHeaderLink: React.FC<CMSHeaderLinkType> = ({
   className,
 }) => {
   const href = type === 'reference' && reference && typeof reference.value === 'object'
-  ? '/' + reference.value.breadcrumbs?.[reference.value.breadcrumbs.length - 1]?.url?.replace(/^\/|\/$/g, '')
-  : type === 'custom' && url
-    ? url.startsWith('http://') || url.startsWith('https://') 
-      ? url 
-      : '/' + url.replace(/^\/|\/$/g, '')
-    : '';
+    ? '/' + reference.value.breadcrumbs?.[reference.value.breadcrumbs.length - 1]?.url?.replace(/^\/|\/$/g, '')
+    : type === 'custom' && url
+      ? url.startsWith('http://') || url.startsWith('https://')
+        ? url
+        : '/' + url.replace(/^\/|\/$/g, '')
+      : '';
 
   const isCustomType = type === 'custom';
   const linkProps = {
@@ -44,14 +44,14 @@ export const CMSHeaderLink: React.FC<CMSHeaderLinkType> = ({
 
   if (isCustomType) {
     return (
-      <a href={href} {...linkProps}>
+      <Link href={href} {...linkProps}>
         <div className='btn-content'>
           <span className='btn-label'>
             {label}
             {children}
           </span>
         </div>
-      </a>
+      </Link>
     );
   }
 

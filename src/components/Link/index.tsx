@@ -39,24 +39,23 @@ export const CMSLink: React.FC<CMSLinkType> = ({
   const href =
     type === "reference" && reference && typeof reference.value === "object"
       ? `/${reference.value.breadcrumbs?.[
-          reference.value.breadcrumbs.length - 1
-        ]?.url?.replace(/^\/|\/$/g, "")}`
+        reference.value.breadcrumbs.length - 1
+      ]?.url?.replace(/^\/|\/$/g, "")}`
       : type === "custom" && url
-      ? url.startsWith("http://") ||
-        url.startsWith("https://") ||
-        url.startsWith("#")
-        ? url
-        : `/${url.replace(/^\/|\/$/g, "")}`
-      : "";
+        ? url.startsWith("http://") ||
+          url.startsWith("https://") ||
+          url.startsWith("#")
+          ? url
+          : `/${url.replace(/^\/|\/$/g, "")}`
+        : "";
 
   const isCustomType = type === "custom";
   const linkProps = {
     ...(newTab && { target: "_blank", rel: "noopener noreferrer" }),
-    className: `${
-      appearance === "default"
+    className: `${appearance === "default"
         ? `btn-${appearance}`
         : `button btn-${appearance || "default"}`
-    } ${className || ""}`,
+      } ${className || ""}`,
   };
 
   const [cookies, _, removeCookie] = useCookies([UTM_PARAMS]);
@@ -100,14 +99,14 @@ export const CMSLink: React.FC<CMSLinkType> = ({
 
   if (isCustomType) {
     return (
-      <a href={finalHref} {...linkProps}>
+      <Link href={finalHref} {...linkProps}>
         <div className="btn-content">
           <span className="btn-label">
             {label}
             {children}
           </span>
         </div>
-      </a>
+      </Link>
     );
   }
 

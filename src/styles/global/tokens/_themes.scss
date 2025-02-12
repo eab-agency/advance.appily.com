@@ -242,7 +242,7 @@ $miscellaneous: (
   $maps: $texts, $backgrounds, $borders;
 
   @each $map in $maps {
-    @each $name, $color in map-get($map, dark) {
+    @each $name, $color in map.get($map, dark) {
       --c-#{$name}: #{$color};
     }
   }
@@ -257,7 +257,7 @@ $miscellaneous: (
     $maps: $texts, $backgrounds, $borders;
 
     @each $map in $maps {
-      @each $name, $color in map-get($map, light) {
+      @each $name, $color in map.get($map, light) {
         --c-#{$name}: #{$color};
       }
     }

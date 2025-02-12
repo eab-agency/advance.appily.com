@@ -3,6 +3,7 @@ import { PostHeader } from "@/components/Blog/PostHeader";
 import RichText from "@/components/RichText";
 import "@/styles/layouts/templates/BlogPage.scss";
 import Link from "next/link";
+
 import { redirect } from "next/navigation";
 import { Post } from "../../../../../../payload-types";
 
