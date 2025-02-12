@@ -50,7 +50,7 @@ export default function Page() {
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
         <div className="md:w-3/5">
           <h2>Explore Business Marketing, Management, and Leadership Degrees Designed to Elevate Your Career</h2>
-          <p>Are you wondering "What can I do with a business degree?" or "What can I do with a master&apos;s in business?" <strong>Our free quiz will help you</strong> discover the right degree path and career opportunities tailored to your interests and goals. The Bureau of Labor Statistics predicts that nearly one million jobs in business will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can give you a head start in transferring your skills to a new or more advanced role.</p>
+          <p>Are you wondering &ldquo;What can I do with a business degree?&ldquo; or &ldquo;What can I do with a master&apos;s in business?&ldquo; <strong>Our free quiz will help you</strong> discover the right degree path and career opportunities tailored to your interests and goals. The Bureau of Labor Statistics predicts that nearly one million jobs in business will be created each year over the next decade. Many colleges and universities offer flexible, affordable degrees or certificates that can give you a head start in transferring your skills to a new or more advanced role.</p>
         </div>
         <FunCard className="shadow-md-orange" color="teal">
           <h3>Take Our Free Business Career Quiz</h3>

@@ -52,7 +52,7 @@ export default function Page() {
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
         <div className="md:w-3/5">
           <h2>Are You Ready to Take the Next Step in Your Professional Journey?</h2>
-          <p>Earning a Master's in Business Administration can provide the skills, knowledge, and network you need to unlock new career opportunities.  If you&apos;re wondering "Should I get an MBA?" or "What can I do with an MBA?", our interactive quiz can help guide you in the right direction.</p>
+          <p>Earning a Master&apos;s in Business Administration can provide the skills, knowledge, and network you need to unlock new career opportunities.  If you&apos;re wondering &quot;Should I get an MBA?&quot; or &quot;What can I do with an MBA?&quot;, our interactive quiz can help guide you in the right direction.</p>
 
           <h3>Why Pursue an MBA?</h3>
           <ul className="flex flex-col gap-fluid-lg">
@@ -200,7 +200,7 @@ export default function Page() {
         <div className="container-wide z-10 relative py-[7vw]">
           <FunCard color="yellow" className="bg-white w-full md:w-[48%] flex-none">
             <h2>How an MBA Can Elevate Your Career</h2>
-            <p>Whether you're aiming to move up in your current company or pivot to a new industry, <strong>an MBA can be a game-changer.</strong> Graduates of MBA programs report increased job satisfaction, better leadership skills, and access to a larger professional network. From finance to business operations, an MBA equips you with versatile skills that are in demand.</p>
+            <p>Whether you&apos;re aiming to move up in your current company or pivot to a new industry, <strong>an MBA can be a game-changer.</strong> Graduates of MBA programs report increased job satisfaction, better leadership skills, and access to a larger professional network. From finance to business operations, an MBA equips you with versatile skills that are in demand.</p>
           </FunCard>
         </div>
 
@@ -246,7 +246,7 @@ export default function Page() {
       <section className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
         <div className="container-default relative z-10">
           <h2>Take the Next Step in Your Career</h2>
-          <p className="text-fluid-lg">A Master's in Business Administration could be the catalyst for achieving your career goals. Get started today!</p>
+          <p className="text-fluid-lg">A Master&apos;s in Business Administration could be the catalyst for achieving your career goals. Get started today!</p>
           <Button label="Start the Free Business Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button mx-auto" />
         </div>
       </section>

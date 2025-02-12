@@ -51,9 +51,9 @@ export default function Page() {
       <section className="container-wide px-fluid-lg py-fluid-5xl flex flex-col md:flex-row gap-fluid-4xl items-start relative">
         <div className="md:w-3/5">
           <h2>Chart Your Path in Health Care: Explore Careers and Graduate Degrees</h2>
-          <p>Are you exploring careers in health care or wondering "Which health care career is right for me?" Our free quiz will guide you to the right degree and career pathway.</p>
+          <p>Are you exploring careers in health care or wondering &quot;Which health care career is right for me?&quot; Our free quiz will guide you to the right degree and career pathway.</p>
           <p>With growing demand in the industry, there are numerous jobs in health care that offer long-term career stability and growth. The Bureau of Labor Statistics predicts about two million jobs in health care will be created each year over the next decade.</p>
-          <p>Whether you're interested in patient care, administration, or technology, there's a rewarding career path waiting for you. </p>
+          <p>Whether you&apos;re interested in patient care, administration, or technology, there&apos;s a rewarding career path waiting for you. </p>
         </div>
         <FunCard className="shadow-md-orange" color="teal">
           <h3>Take Our Free Health Care Careers Quiz</h3>
@@ -152,7 +152,7 @@ export default function Page() {
                   <p><strong>Potential Career Paths:</strong></p>
                   <ul className="flex flex-col gap-fluid-md">
                     <li><strong>Health Information Technologists:</strong> These individuals apply their knowledge of information technology and health care in a variety of ways. Some specialize in the electronic health records systems used for storing and retrieving patient data, while others analyze health care data for research or evaluation of products and services.</li>
-                    <li><strong>Medical Registrars:</strong> Create and maintain databases of information, such as those used to track a particular disease or condition. Medical registrars may collect and analyze information for facility, regional, and national databases; review patients' records and pathology reports to verify completeness and accuracy; assign classification codes to represent the diagnosis and treatment; and then track treatment, survival, and recovery.</li>
+                    <li><strong>Medical Registrars:</strong> Create and maintain databases of information, such as those used to track a particular disease or condition. Medical registrars may collect and analyze information for facility, regional, and national databases; review patients&apos; records and pathology reports to verify completeness and accuracy; assign classification codes to represent the diagnosis and treatment; and then track treatment, survival, and recovery.</li>
                     <li><strong>Bioinformatics Specialists:</strong> Combine knowledge of computer programming, big data, and biology for careers that range from pharmaceutical and biotechnology development to biological and environmental analysis.</li>
                   </ul>
                 </Accordion>
