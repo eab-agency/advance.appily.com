@@ -26,7 +26,7 @@ Get your environment setup:
 
 ### Local Dev Environment Setup
 
-Configure your aws credentials:
+Configure your AWS credentials:
 
 1. Install the AWS CLI: [https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
 2. Run `aws configure` in your terminal
@@ -55,6 +55,6 @@ First, run the development server with sst:
 npx sst dev
 ```
 
-This starts a multiplexer with processes that deploy your app, run your functions, and start your frontend.
+This starts a multiplexer (what a cool thing!) with processes that deploy your app, run your functions, and start your frontend.
 
 ![alt text](./infra/misc/image.png)
