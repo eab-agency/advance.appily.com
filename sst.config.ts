@@ -3,7 +3,7 @@ import { readdirSync } from "fs";
 
 export default $config({
   app(input) {
-
+    // Configure the application
     return {
       name: "advance-appily-com",
       // removal: input?.stage === "production" ? "retain" : "remove",
@@ -20,6 +20,7 @@ export default $config({
     };
   },
   async run() {
+    // Load outputs from the infra directory
     const outputs = {};
     for (const value of readdirSync("./infra/")) {
       const result = await import("./infra/" + value);
