@@ -40,7 +40,7 @@ export default function Page() {
     <>
       <PageHead />
       <Hero
-        title="Advance Your Nursing Career: Take Our Advance Your Nursing Career"
+        title="Advance Your Nursing Career: Take Our Free Health Care Career Quiz"
         image={heroImage}
         altText="Health care professionals discussing patient care"
       />
