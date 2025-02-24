@@ -1,4 +1,4 @@
-name: Deploy Production via SST to AWS
+name: Auto Deploy Production to AWS
 
 on:
   pull_request:
