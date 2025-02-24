@@ -141,7 +141,7 @@ export default function Page() {
           <h2>Ready to Take the Next Step?</h2>
           <p className="text-fluid-lg">Start your journey toward a fulfilling career by taking our health care careers quiz today! Discover which roles align with your skills, interests, and goals—whether you're focused on advancing your current nursing career or are exploring other jobs in the health care field, this quiz will ensure you are on the right path. Once you have completed the quiz, we will connect you to nursing schools with programs that can help you earn the degrees required to advance your career.</p>
 
-          <Button label="Start the Advance Your Nursing Career" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
+          <Button label="Take Our Free Health Care Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
         </div>
       </section>
 
