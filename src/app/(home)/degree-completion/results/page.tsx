@@ -1,5 +1,5 @@
 "use client";
-import { Button, StickyCta, Tabs } from "@/components";
+import { Button, Tabs } from "@/components";
 import AdcResultsHero from "@/components/Heros/ReadynessResultsHero";
 import HighlightedCtaSection from "@/components/HighlightedCtaSection/HighlightedCtaSection";
 import { useUser } from "@/context/context";
@@ -254,7 +254,7 @@ export default function ADCResultsPage({
           </>
         )}
       </div>
-      <StickyCta trackedElement={carouselRef} />
+      {/* <StickyCta trackedElement={carouselRef} /> */}
     </>
   );
 }
