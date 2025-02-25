@@ -21,6 +21,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://use.typekit.net" />
         <link rel="stylesheet" href="https://use.typekit.net/wba2ytz.css" />
+        <meta name="robots" content="noindex,nofollow" />
       </head>
       {!isDevMode() && <GoogleTagManager gtmId={GTM_ID} />}
       <body>
