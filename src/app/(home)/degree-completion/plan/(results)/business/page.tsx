@@ -8,11 +8,10 @@ import {
   AccordionSection,
   CareerPaths,
   LinkedCardsSection,
-  StickyCta,
   SubNavPlan,
   TabsSection,
   Testimonial,
-  TextWithImage,
+  TextWithImage
 } from "@/components";
 import BuildPlanHero from "@/components/Heros/BuildPlanHero";
 import { useUser } from "@/context/context";
@@ -96,7 +95,7 @@ export default function Page() {
           altText={data.textWithImage.altText}
         />
       </div>
-      <StickyCta trackedElement={carouselRef} />
+      {/* <StickyCta trackedElement={carouselRef} /> */}
     </>
   ) : null;
 }
