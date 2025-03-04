@@ -24,7 +24,6 @@
     "@tailwindcss/postcss": "^4.0.3",
     "apollo-link-http": "^1.5.17",
     "aws-amplify": "^6.0.12",
-    "aws-rum-web": "^1.19.0",
     "cors": "^2.8.5",
     "date-fns": "^3.6.0",
     "escape-html": "^1.0.3",

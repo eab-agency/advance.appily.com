@@ -8,7 +8,6 @@ import { mergeTwitter } from "@/seo/mergeTwitter";
 
 import "./styles/global.css";
 
-import AWSRumInitializer from "@/components/AWSRumInit";
 import isDevMode from "@/helpers/isDevMode";
 
 export default function RootLayout({
@@ -25,8 +24,7 @@ export default function RootLayout({
       </head>
       {!isDevMode() && <GoogleTagManager gtmId={GTM_ID} />}
       <body>
-          <AWSRumInitializer /> {/* Use the client component here */}
-          <main className="layout-wrapper">{children}</main>
+        <main className="layout-wrapper">{children}</main>
       </body>
     </html>
   );
