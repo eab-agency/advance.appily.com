@@ -13,7 +13,6 @@ import FooterComponent from "../../components/Footer";
 import HeaderComponent from "../../components/Header";
 
 import { AdminBar } from "@/components/AdminBar";
-import AWSRumInitializer from "@/components/AWSRumInit";
 import isDevMode from "@/helpers/isDevMode";
 
 export default async function RootLayout({
@@ -30,7 +29,6 @@ export default async function RootLayout({
       {!isDevMode() && <GoogleTagManager gtmId={GTM_ID} />}
       <body>
         <Providers>
-          <AWSRumInitializer /> {/* Use the client component here */}
           <AdminBar />
           <HeaderComponent />
           <main className="layout-wrapper">{children}</main>
