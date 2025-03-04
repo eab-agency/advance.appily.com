@@ -19,6 +19,9 @@ jobs:
     environment: Production
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: production # Explicitly check out the production branch
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
