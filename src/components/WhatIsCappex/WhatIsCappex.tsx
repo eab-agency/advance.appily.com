@@ -24,20 +24,10 @@ export default function WhatIsCappex({ children }: WhatIsCappexProps) {
 				<div className="column">
 					<h2>
 						<MainLogo />
-						An All-in-One Resource for <strong>Going to College</strong>
+						Find Your Path, Plan Your Future, <strong>Advance with Confidence</strong>
 					</h2>
 					<p>
-						Appily is the future of higher education guidance, uniting trusted
-						tools that have empowered students for almost two decades. Born from
-						respected platforms including Cappex, Concourse, YouVisit, and
-						College Greenlight, Appily offers a seamless experience for students
-						of all ages on their journey to college.{" "}
-					</p>
-					<p>
-						Discover your ideal career path, make a plan to reach your academic
-						and professional goals, and match with colleges that can help you
-						get there—all in one place. Take the next step in achieving your
-						academic goals with confidence.
+					Appily Advance is a comprehensive platform designed to help you take the next step in your education and career. Whether you're completing a degree or exploring new opportunities, our career quizzes provide insights into paths that align with your skills and interests. With personalized resources and degree planning tools, you can map out your goals and find programs that support your aspirations—so you can move forward with confidence.
 					</p>
 				</div>
 			</div>
