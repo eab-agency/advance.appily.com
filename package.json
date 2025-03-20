@@ -70,5 +70,13 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^3.4.1",
     "typescript": "latest"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@biomejs/biome",
+      "@parcel/watcher",
+      "protobufjs",
+      "sharp"
+    ]
   }
 }
