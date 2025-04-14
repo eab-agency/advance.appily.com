@@ -74,7 +74,7 @@ const StickyCta: React.FC<stickyProps> = ({ scrolToElement, ctaLabel, trackedEle
 
   const stickyCtaClass = `${styles.stickyCta} ${
     scrolToElement && scrolled ? styles.scrolled : ""
-  } ${isHidden ? styles.hidden : ""}`;
+  } ${isHidden ? styles.hidden : ""} border border-t-brand-darkteal`;
 
   const handleClick = () => {
     if (scrolToElement) {

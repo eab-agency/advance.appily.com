@@ -20,6 +20,7 @@
 
   /* NOTE: temporary fix*/
   --c-bg6: var(--color-brand-lightteal);
+  --c-border-5: var(--color-brand-teal);
 
   /* Spacing */
   --spacing-2xs: 0.25rem; /* 4px */
@@ -62,6 +63,8 @@
   --text-fluid-3xl: clamp(2rem, 3vw, 3rem); /* 48px */
   --text-fluid-4xl: clamp(3rem, 4vw, 4rem); /* 64px */
   --text-fluid-5xl: clamp(4rem, 5vw, 5rem); /* 80px */
+
+  --text-fluid-lgb: clamp(1.4rem, 1.8vw, 1.8rem); /* 28px */
 
   /* Font-family */
   --font-serif: "museo-slab", serif;
