@@ -3,7 +3,11 @@
     color: var(--color-brand-navy-blue);
 
     h1 {
-      font-size: clamp(var(--text-fluid-2xl), 5vw, var(--text-fluid-4xl));
+      font-size: clamp(
+        var(--text-fluid-2xl),
+        5vw,
+        calc(var(--text-fluid-4xl) - 0.3rem)
+      );
       font-family: var(--font-serif);
       line-height: var(--leading-tight);
       font-weight: 800;

@@ -64,7 +64,7 @@
   --text-fluid-4xl: clamp(3rem, 4vw, 4rem); /* 64px */
   --text-fluid-5xl: clamp(4rem, 5vw, 5rem); /* 80px */
 
-  --text-fluid-lgb: clamp(1.4rem, 1.8vw, 1.8rem); /* 28px */
+  --text-fluid-lgb: clamp(1.25rem, 1.7vw, 1.7rem); /* 28px */
 
   /* Font-family */
   --font-serif: "museo-slab", serif;
