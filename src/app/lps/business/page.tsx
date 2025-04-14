@@ -55,9 +55,7 @@ export default function Page() {
         </div>
         <FunCard className="shadow-md-orange" color="teal">
           <h3>Take Our Free Business Career Quiz</h3>
-          <p>If you want to work in business but you don&apos;t know which job fits your skills and interests, this free quiz can help you find a good fit and plan your next steps.</p>
-
-          <p>In less than three minutes, you&apos;ll discover which type of business careers suit your goals and aspirations. We&apos;ll also connect you with schools near you that offer degrees to help you reach your goals.</p>
+          <p>In less than three minutes, discover which business careers match your skills and interests, along with next steps to explore.</p>
           <Button label="Get Started" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
         </FunCard>
 

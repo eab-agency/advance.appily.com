@@ -71,8 +71,8 @@ export default function Page() {
           </ul>
         </div>
         <FunCard className="shadow-md-orange" color="teal">
-          <h3>Let us help you find the best MBA business program!<br/><br/>Take our Free Career Quiz </h3>
-          <p>Answer a few questions to get matched with the best MBA programs for you.</p>
+          <h3>Take our Free Career Quiz </h3>
+          <p>Let us help you find the best MBA business program!</p>
           <Button label="Get Started" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
         </FunCard>
 
