@@ -16,7 +16,7 @@ export const Hero = ({title,description,image, altText}:HeroProps) => {
               <h1 className="text-brand-navy-blue text-left">{title}</h1>
               {description && <p dangerouslySetInnerHTML={{__html:description}} /> }
           </div>
-          <figure className="block order-0 lg:order-1 relative lg:absolute w-full h-90 lg:w-1/2 xl:w-auto lg:h-full lg:aspect-square xl:aspect-[1.2/1] m-0 top-0 right-0 petal-brand-yellow petal-left-0 petal-tl-100">
+          <figure className="block order-0 lg:order-1 relative lg:absolute w-full h-50 sm:h-80 lg:w-1/2 xl:w-auto lg:h-full lg:aspect-square xl:aspect-[1.2/1] m-0 top-0 right-0 petal-brand-yellow petal-left-0 petal-tl-100">
             <Image
               className="object-cover rounded-bl-full overflow-hidden z-10"
               alt={altText}

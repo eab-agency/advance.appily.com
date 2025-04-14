@@ -1,22 +1,25 @@
 @theme {
   /* Primary */
-  --color-brand-orange:#ED8B00;
-  --color-brand-yellow: #FFE510;
-  --color-brand-slate: #333F48;
-  --color-brand-teal: #00B1B0;
+  --color-brand-orange: #ed8b00;
+  --color-brand-yellow: #ffe510;
+  --color-brand-slate: #333f48;
+  --color-brand-teal: #00b1b0;
 
   /* Secondary */
-  --color-brand-violet: #E468FF;
-  --color-brand-darkorange: #D96800;
-  --color-brand-darkteal:#037680;
-  --color-brand-navy-blue: #031D32;
-  --color-brand-lightyellow: #FFFBDB;
-  --color-brand-lightteal:#E0F1F1;
-  --color-brand-lightgray: #F7F7F9;
+  --color-brand-violet: #e468ff;
+  --color-brand-darkorange: #d96800;
+  --color-brand-darkteal: #037680;
+  --color-brand-navy-blue: #031d32;
+  --color-brand-lightyellow: #fffbdb;
+  --color-brand-lightteal: #e0f1f1;
+  --color-brand-lightgray: #f7f7f9;
 
   /* Tertiary */
-  --color-brand-violet-200: #FACDFF;
-  --color-brand-orange-200: #FAE6CC;
+  --color-brand-violet-200: #facdff;
+  --color-brand-orange-200: #fae6cc;
+
+  /* NOTE: temporary fix*/
+  --c-bg6: var(--color-brand-navy-blue);
 
   /* Spacing */
   --spacing-2xs: 0.25rem; /* 4px */
@@ -41,7 +44,6 @@
   --spacing-fluid-4xl: clamp(3rem, 4vw, 4rem);
   --spacing-fluid-5xl: clamp(4rem, 5vw, 5rem);
 
-
   /* Radius */
   --radius-*: initial;
   --radius-sm: 0.5rem;
@@ -62,8 +64,8 @@
   --text-fluid-5xl: clamp(4rem, 5vw, 5rem); /* 80px */
 
   /* Font-family */
-  --font-serif: 'museo-slab', serif;
-  --font-sans: 'museo-sans', sans-serif;
+  --font-serif: "museo-slab", serif;
+  --font-sans: "museo-sans", sans-serif;
 
   /* Container  */
   --container-icon-sm: 1rem; /*16px*/
@@ -97,6 +99,4 @@
   --container-default: 60rem; /* 960 */
   --container-wide: 80rem; /* 1280 */
   --container-full: 100%;
-
 }
-
