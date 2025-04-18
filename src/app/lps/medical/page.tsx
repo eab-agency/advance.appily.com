@@ -5,6 +5,7 @@ import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
+import { StickyCta } from "../components/StickyCta";
 
 import CommonQuestions from "../assets/common-questions.png";
 import heroImage from '../assets/healthcare-hero.jpg';
@@ -55,7 +56,7 @@ export default function Page() {
         <FunCard className="shadow-md-orange" color="teal">
           <h3>Take the Next Step</h3>
           <p>Not sure which pathway or graduate degree is right for you? Our career quiz can help identify the best option based on your skills and interests. </p>
-          <Button label="Start the Quiz Now" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button" />
+          <Button label="Get Started" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button" />
         </FunCard>
 
       </section>
@@ -169,7 +170,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
+      <section id="lets-go-section" className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
         <div className="container-default relative z-10">
           <h2>Ready to Take the Next Step?</h2>
           <p className="text-fluid-lg">Start your journey toward a fulfilling career by taking our medical careers quiz today! Discover which roles align with your skills, interests, and goals—whether you're exploring jobs in the medical field, considering medical field jobs that pay well, or searching for different medical field careers.</p>
@@ -177,6 +178,11 @@ export default function Page() {
           <Button label="Start the Free Medical Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
         </div>
       </section>
+
+      <StickyCta
+        ctaLabel="Start the Free Medical Career Quiz"
+        trackedElement="#lets-go-section"
+      />
 
       <PageFooter />
 

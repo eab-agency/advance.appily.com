@@ -6,10 +6,12 @@ import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
+import { StickyCta } from "../components/StickyCta";
 
 import CommonQuestions from "../assets/common-questions.png";
 import heroImage from '../assets/healthcare-hero.jpg';
 import ElevateYourCareer from "../assets/healthcare-professional.jpg";
+
 
 
 import { Metadata } from "next";
@@ -58,7 +60,7 @@ export default function Page() {
         <FunCard className="shadow-md-orange" color="teal">
           <h3>Take Our Free Health Care Careers Quiz</h3>
           <p>Not sure which pathway or graduate degree is right for you? Our quiz can help identify the best option based on your skills and interests. </p>
-          <Button label="Start the Quiz Now" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button" />
+          <Button label="Get Started" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button" />
         </FunCard>
 
       </section>
@@ -186,14 +188,14 @@ export default function Page() {
 
       </section>
 
-      <section className="bg-brand-lightteal bg-[url(/images/teal-texture.svg)] overflow-hidden py-fluid-5xl px-fluid-2xl">
+      {/* <section className="bg-brand-lightteal bg-[url(/images/teal-texture.svg)] overflow-hidden py-fluid-5xl px-fluid-2xl">
         <div className="container-wide">
           <h2>Ready to Take the Next Step in Your Health Science Career?</h2>
           <p>Get personalized recommendations for top health care programs and information about degrees that will advance your career.</p>
           <p>Start the process by taking our Health Care Career Quiz today!</p>
           <Button label="Take the Quiz and Get More Info" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button" />
         </div>
-      </section>
+      </section> */}
 
       <section className="bg-brand-lightteal py-fluid-5xl px-fluid-2xl">
         <div className="container-wide flex flex-col gap-fluid-4xl items-start md:flex-row">
@@ -223,13 +225,18 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
+      <section id="lets-go-section" className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
         <div className="container-default relative z-10">
           <h2>Take the Next Step Toward Your Health Care Career</h2>
           <p className="text-fluid-lg">A graduate degree in health care can be the key to advancing your career and achieving your professional goals. Take our quiz today to discover the best path and program for you.</p>
-          <Button label="Start the Free Health Care Career Quiz " appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
+          <Button label="Start the Free Health Care Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
         </div>
       </section>
+
+      <StickyCta
+        ctaLabel="Start the Free Health Care Career Quiz"
+        trackedElement="#lets-go-section"
+      />
 
       <PageFooter />
 

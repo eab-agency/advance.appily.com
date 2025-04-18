@@ -11,6 +11,8 @@ import CommonQuestions from "../assets/common-questions.png";
 import ElevateYourCareer from "../assets/elevate-your-career.jpg";
 import heroImage from '../assets/mba-hero.jpg';
 
+import { StickyCta } from "../components/StickyCta";
+
 
 import { Metadata } from "next";
 
@@ -69,8 +71,8 @@ export default function Page() {
           </ul>
         </div>
         <FunCard className="shadow-md-orange" color="teal">
-          <h3>Let us help you find the best MBA business program!<br/><br/>Take our Free Career Quiz </h3>
-          <p>Answer a few questions to get matched with the best MBA programs for you.</p>
+          <h3>Take our Free Career Quiz </h3>
+          <p>Let us help you find the best MBA business program!</p>
           <Button label="Get Started" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
         </FunCard>
 
@@ -206,14 +208,14 @@ export default function Page() {
 
       </section>
 
-      <section className="bg-brand-lightteal bg-[url(/images/teal-texture.svg)] overflow-hidden py-fluid-5xl px-fluid-2xl">
+      {/* <section className="bg-brand-lightteal bg-[url(/images/teal-texture.svg)] overflow-hidden py-fluid-5xl px-fluid-2xl">
         <div className="container-wide">
           <h2>Your Future MBA Awaits</h2>
           <p>Get personalized recommendations from top universities and colleges for MBA degree opportunities. Request detailed information about top MBA programs today!</p>
           <p>Start the process by taking our free Business Career Quiz.</p>
           <Button label="Take the Quiz and Get More Info" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
         </div>
-      </section>
+      </section> */}
 
       <section className="bg-brand-lightteal py-fluid-5xl px-fluid-2xl">
         <div className="container-wide flex flex-col gap-fluid-4xl items-start md:flex-row">
@@ -243,13 +245,18 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
+      <section id="lets-go-section" className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
         <div className="container-default relative z-10">
           <h2>Take the Next Step in Your Career</h2>
           <p className="text-fluid-lg">A Master's in Business Administration could be the catalyst for achieving your career goals. Get started today!</p>
           <Button label="Start the Free Business Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button mx-auto" />
         </div>
       </section>
+
+      <StickyCta
+        ctaLabel="Start the Free Business Career Quiz"
+        trackedElement="#lets-go-section"
+      />
 
      <PageFooter />
     </>

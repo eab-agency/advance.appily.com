@@ -9,8 +9,7 @@
   background: var(--c-bg6);
   border-top: 1px solid var(--c-border-5);
   position: sticky;
-  // position: fixed;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   width: 100%;
   z-index: tokens.$layer-8;
@@ -19,5 +18,11 @@
   &.scrolled {
     opacity: 0;
     z-index: -100;
+  }
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(100%);
   }
 }
