@@ -6,6 +6,7 @@ import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
+import { StickyCta } from "../components/StickyCta";
 
 import CommonQuestions from "../assets/common-questions.png";
 import ElevateYourCareer from "../assets/elevate-your-career.jpg";
@@ -54,10 +55,8 @@ export default function Page() {
         </div>
         <FunCard className="shadow-md-orange" color="teal">
           <h3>Take Our Free Business Career Quiz</h3>
-          <p>If you want to work in business but you don&apos;t know which job fits your skills and interests, this free quiz can help you find a good fit and plan your next steps.</p>
-
-          <p>In less than three minutes, you&apos;ll discover which type of business careers suit your goals and aspirations. We&apos;ll also connect you with schools near you that offer degrees to help you reach your goals.</p>
-          <Button label="Start the Quiz Now" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
+          <p>In less than three minutes, discover which business careers match your skills and interests, along with next steps to explore.</p>
+          <Button label="Get Started" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
         </FunCard>
 
       </section>
@@ -210,13 +209,13 @@ export default function Page() {
 
       </section>
 
-      <section className="bg-brand-lightteal bg-[url(/images/teal-texture.svg)] overflow-hidden py-fluid-5xl px-fluid-2xl">
+      {/* <section className="bg-brand-lightteal bg-[url(/images/teal-texture.svg)] overflow-hidden py-fluid-5xl px-fluid-2xl">
         <div className="container-wide">
           <h2>Ready to Find the Right Business Program?</h2>
           <p>Get personalized recommendations for top business master&apos;s degrees and degrees in business programs and start planning your future. Start the process by taking our Business Career Quiz today!</p>
           <Button label="Take the Quiz and Get More Info" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button" />
         </div>
-      </section>
+      </section> */}
 
       <section className="bg-brand-lightteal py-fluid-5xl px-fluid-2xl">
         <div className="container-wide flex flex-col gap-fluid-4xl items-start md:flex-row">
@@ -246,13 +245,18 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
+      <section id="lets-go-section" className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
         <div className="container-default relative z-10">
           <h2>Take the Next Step Toward Your Ideal Career</h2>
           <p className="text-fluid-lg">A business degree can be the catalyst for achieving your professional ambitions. Take our quiz today and find out which program is the right fit for your goals.</p>
           <Button label="Start the Free Business Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/businesscareers1/degree" className="button mx-auto" />
         </div>
       </section>
+
+      <StickyCta
+        ctaLabel="Start the Free Business Career Quiz"
+        trackedElement="#lets-go-section"
+      />
 
       <PageFooter />
 

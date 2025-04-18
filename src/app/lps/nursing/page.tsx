@@ -5,9 +5,11 @@ import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
+import { StickyCta } from "../components/StickyCta";
 
 import heroImage from '../assets/healthcare-hero.jpg';
 import ElevateYourCareer from "../assets/healthcare-professional.jpg";
+
 
 import { Metadata } from "next";
 
@@ -54,7 +56,7 @@ export default function Page() {
           <h3>Take the Next Step </h3>
           <p>If you want to advance your career, our health care quiz can help you identify career paths and educational opportunities that get you to the next level.</p>
           <p>The quiz provides personalized guidance based on your experience, interests, and long-term career goals and connects you to nursing schools, colleges, and universities with programs that align to your needs.</p>
-          <Button label="Start the Quiz Now" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button" />
+          <Button label="Get Started" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button" />
         </FunCard>
 
       </section>
@@ -136,7 +138,7 @@ export default function Page() {
 
       </section>
 
-      <section className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
+      <section id="lets-go-section" className="relative bg-brand-navy-blue bg-[url(/images/darkblue-texture.svg)] text-white py-fluid-5xl px-fluid-2xl text-center before:bg-brand-navy-blue before:content-[''] before:absolute before:inset-0 before:z-1 before:opacity-80">
         <div className="container-default relative z-10">
           <h2>Ready to Take the Next Step?</h2>
           <p className="text-fluid-lg">Start your journey toward a fulfilling career by taking our health care careers quiz today! Discover which roles align with your skills, interests, and goals—whether you're focused on advancing your current nursing career or are exploring other jobs in the health care field, this quiz will ensure you are on the right path. Once you have completed the quiz, we will connect you to nursing schools with programs that can help you earn the degrees required to advance your career.</p>
@@ -144,6 +146,11 @@ export default function Page() {
           <Button label="Take Our Free Health Care Career Quiz" appearance="primary" href="https://my.appily.com/register/adult/healthcarecareers1/degree" className="button mx-auto" />
         </div>
       </section>
+
+      <StickyCta
+        ctaLabel="Take our free health care career quiz"
+        trackedElement="#lets-go-section"
+      />
 
       <PageFooter />
 

@@ -5,12 +5,11 @@
 @import "./breakpoints";
 @import "./typography";
 
-
-body{
+body {
   margin: 0;
 }
 
-.button{
+.button {
   display: flex;
   width: fit-content;
   align-items: center;
@@ -29,7 +28,6 @@ body{
   border: 2px solid var(--color-brand-orange);
   text-decoration: none;
   text-align: left;
-
 
   &::before {
     content: "";
@@ -62,6 +60,7 @@ body{
   }
 
   .btn-content {
+    display: flex;
 
     &::before {
       content: "";
@@ -79,7 +78,7 @@ body{
   }
 
   span {
-    padding-right: 3em;
+    padding-right: 3.5em;
     z-index: 2;
     position: relative;
     font-family: var(--font-serif);
@@ -106,7 +105,7 @@ body{
 
   @media (min-width: 800px) {
     &:hover {
-      background: #FFAB33;
+      background: #ffab33;
       color: var(--c-navy-800);
       /* border-color: var(--c-teal-500); */
 
@@ -120,5 +119,3 @@ body{
     }
   }
 }
-
-
