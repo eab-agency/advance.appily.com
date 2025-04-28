@@ -8,8 +8,6 @@ import { Button } from "../Button";
 
 import { useUtmHref } from "@/hooks/useUtmHref";
 
-var trackingCookieCategory = "C0004";
-
 type CMSLinkType = {
   type?: "custom" | "reference";
   url?: string;
@@ -45,7 +43,7 @@ export const CMSLink: React.FC<CMSLinkType> = ({
           url.startsWith("#")
           ? url
           : `/${url.replace(/^\/|\/$/g, "")}`
-        : "";
+        : null;
 
   const isCustomType = type === "custom";
   const linkProps = {
@@ -59,7 +57,7 @@ export const CMSLink: React.FC<CMSLinkType> = ({
 
   const finalHref = useUtmHref(href);
 
-  if (isCustomType) {
+  if (isCustomType && finalHref) {
     return (
       <a href={finalHref} {...linkProps}>
         <div className="btn-content">
@@ -72,7 +70,7 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     );
   }
 
-  if (href) {
+  if (finalHref) {
     return (
       <Link href={finalHref} {...linkProps}>
         <div className="btn-content">
@@ -92,5 +90,11 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     label,
   };
 
-  return <Button {...buttonProps} label={buttonProps.label ?? ""} />;
+  return (
+    <Button
+      {...buttonProps}
+      href={finalHref || undefined}
+      label={buttonProps.label ?? ""}
+    />
+  );
 };

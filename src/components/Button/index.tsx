@@ -27,7 +27,7 @@ export const Button: React.FC<Props> = ({
   label,
   children,
   newTab,
-  href = "",
+  href,
   appearance = "default",
   className: classNameFromProps,
   onClick,
@@ -50,7 +50,7 @@ export const Button: React.FC<Props> = ({
     .filter(Boolean)
     .join(" ");
 
-  const finalHref = useUtmHref(href);
+  const finalHref = useUtmHref(href || null);
 
   const content = (
     <div className="btn-content">
@@ -61,7 +61,7 @@ export const Button: React.FC<Props> = ({
 
   if (onClick || type === "submit") el = "button";
 
-  if (el === "link") {
+  if (el === "link" && finalHref) {
     return (
       <Link
         href={finalHref}
@@ -78,7 +78,7 @@ export const Button: React.FC<Props> = ({
 
   return (
     <Element
-      href={finalHref}
+      {...(finalHref ? { href: finalHref } : {})}
       className={className}
       type={type}
       {...newTabProps}
