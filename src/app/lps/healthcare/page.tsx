@@ -88,6 +88,7 @@ export default function Page() {
             href="https://my.appily.com/register/adult/healthcarecareers1/degree"
             className="button"
           />
+
         </FunCard>
       </section>
 
