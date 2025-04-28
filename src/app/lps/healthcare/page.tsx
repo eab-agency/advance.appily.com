@@ -60,9 +60,9 @@ export default function Page() {
             Chart Your Path in Health Care: Explore Careers and Graduate Degrees
           </h2>
           <p>
-            Are you exploring careers in health care or wondering "Which health
-            care career is right for me?" Our free quiz will guide you to the
-            right degree and career pathway.
+            Are you exploring careers in health care or wondering &ldquo;Which
+            health care career is right for me?&rdquo; Our free quiz will guide
+            you to the right degree and career pathway.
           </p>
           <p>
             With growing demand in the industry, there are numerous jobs in
@@ -71,8 +71,8 @@ export default function Page() {
             care will be created each year over the next decade.
           </p>
           <p>
-            Whether you're interested in patient care, administration, or
-            technology, there's a rewarding career path waiting for you.{" "}
+            Whether you&apos;re interested in patient care, administration, or
+            technology, there&apos;s a rewarding career path waiting for you.{" "}
           </p>
         </div>
         <FunCard className="shadow-md-orange" color="teal">

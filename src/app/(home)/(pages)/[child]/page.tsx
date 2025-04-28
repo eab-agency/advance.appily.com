@@ -21,38 +21,38 @@ export async function generateStaticParams() {
   return paramsVal;
 }
 
-export const getStaticProps = async ({ params: { slug } }) => {
-  let props = {};
+// export const getStaticProps = async ({ params: { slug } }) => {
+//   let props = {};
 
-  try {
-    const pageReq = await fetch(
-      `${process.env.NEXT_PUBLIC_CMS_URL}/api/pages?where[slug][equals]=${slug}&depth=0&limit=300`
-    );
-    if (!pageReq.ok) {
-      throw new Error(`Failed to fetch page data: ${pageReq.statusText}`);
-    }
+//   try {
+//     const pageReq = await fetch(
+//       `${process.env.NEXT_PUBLIC_CMS_URL}/api/pages?where[slug][equals]=${slug}&depth=0&limit=300`
+//     );
+//     if (!pageReq.ok) {
+//       throw new Error(`Failed to fetch page data: ${pageReq.statusText}`);
+//     }
 
-    const pageData = await pageReq.json();
-    const { docs } = pageData;
-    const [doc] = docs;
+//     const pageData = await pageReq.json();
+//     const { docs } = pageData;
+//     const [doc] = docs;
 
-    props = {
-      ...doc,
-      collection: "pages",
-      collectionLabels: {
-        singular: "page",
-        plural: "pages",
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching page data:", error);
-    // Optionally, you could set a default state or log the error to an error tracking service
-  }
-  return {
-    props,
-    revalidate: 120, // Revalidate every 60 seconds
-  };
-};
+//     props = {
+//       ...doc,
+//       collection: "pages",
+//       collectionLabels: {
+//         singular: "page",
+//         plural: "pages",
+//       },
+//     };
+//   } catch (error) {
+//     console.error("Error fetching page data:", error);
+//     // Optionally, you could set a default state or log the error to an error tracking service
+//   }
+//   return {
+//     props,
+//     revalidate: 120, // Revalidate every 60 seconds
+//   };
+// };
 
 export async function generateMetadata({
   params,
