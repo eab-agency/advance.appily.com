@@ -1,14 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { Page } from "../../../payload-types";
 import { Button } from "../Button";
 
-import OnetrustActiveGroups from "@/hooks/useOneturstActiveGroups";
-import { UTM_PARAMS } from "@/middleware";
-import { useCookies } from "react-cookie";
+import { useUtmHref } from "@/hooks/useUtmHref";
 
 var trackingCookieCategory = "C0004";
 
@@ -42,12 +40,12 @@ export const CMSLink: React.FC<CMSLinkType> = ({
           reference.value.breadcrumbs.length - 1
         ]?.url?.replace(/^\/|\/$/g, "")}`
       : type === "custom" && url
-      ? url.startsWith("http://") ||
-        url.startsWith("https://") ||
-        url.startsWith("#")
-        ? url
-        : `/${url.replace(/^\/|\/$/g, "")}`
-      : "";
+        ? url.startsWith("http://") ||
+          url.startsWith("https://") ||
+          url.startsWith("#")
+          ? url
+          : `/${url.replace(/^\/|\/$/g, "")}`
+        : "";
 
   const isCustomType = type === "custom";
   const linkProps = {
@@ -59,44 +57,7 @@ export const CMSLink: React.FC<CMSLinkType> = ({
     } ${className || ""}`,
   };
 
-  const [cookies, _, removeCookie] = useCookies([UTM_PARAMS]);
-  const [finalHref, setFinalHref] = useState(href);
-  const activeGroups = OnetrustActiveGroups();
-
-  // detect if activeGroups changes and if it does not include trackingCookieCategory, remove the UTM_PARAMS cookie
-  useEffect(() => {
-    if (activeGroups && !activeGroups.includes(trackingCookieCategory)) {
-      removeCookie(UTM_PARAMS);
-    }
-  }, [activeGroups, removeCookie]);
-
-  // State to determine if the effect should run
-  const [shouldRunEffect, setShouldRunEffect] = useState(false);
-
-  // Update the state based on isCustomType
-  useEffect(() => {
-    if (isCustomType) {
-      setShouldRunEffect(true);
-    }
-  }, [isCustomType]);
-
-  // Effect to handle the custom type logic
-  useEffect(() => {
-    if (shouldRunEffect) {
-      const utmParams = cookies[UTM_PARAMS] || "";
-      try {
-        const url = new URL(href);
-        const utmParamsObj = new URLSearchParams(utmParams);
-        utmParamsObj.forEach((value, key) => {
-          url.searchParams.append(key, value);
-        });
-        setFinalHref(url.toString());
-      } catch (error) {
-        console.error("Invalid URL:", error);
-        setFinalHref(href);
-      }
-    }
-  }, [shouldRunEffect, href, cookies]);
+  const finalHref = useUtmHref(href);
 
   if (isCustomType) {
     return (
@@ -113,7 +74,7 @@ export const CMSLink: React.FC<CMSLinkType> = ({
 
   if (href) {
     return (
-      <Link href={href} {...linkProps}>
+      <Link href={finalHref} {...linkProps}>
         <div className="btn-content">
           <span className="btn-label">
             {label}
@@ -126,7 +87,7 @@ export const CMSLink: React.FC<CMSLinkType> = ({
 
   const buttonProps = {
     newTab,
-    href,
+    href: finalHref,
     appearance,
     label,
   };
