@@ -5,9 +5,7 @@ import React, { ElementType } from "react";
 
 import { useBackgroundColor } from "../BackgroundColor";
 
-import { UTM_PARAMS } from "@/middleware";
-import { useEffect, useState } from "react";
-import { useCookies } from "react-cookie";
+import { useUtmHref } from "@/hooks/useUtmHref";
 import classes from "./index.module.scss";
 
 export type Props = {
@@ -52,28 +50,7 @@ export const Button: React.FC<Props> = ({
     .filter(Boolean)
     .join(" ");
 
-  const [cookies] = useCookies([UTM_PARAMS]);
-  const [finalHref, setFinalHref] = useState(href);
-
-  // Effect to handle UTM parameters
-  useEffect(() => {
-    if (href && href.startsWith("http")) {
-      try {
-        const url = new URL(href);
-        const utmParams = cookies[UTM_PARAMS] || "";
-        const utmParamsObj = new URLSearchParams(utmParams);
-        utmParamsObj.forEach((value, key) => {
-          url.searchParams.append(key, value);
-        });
-        setFinalHref(url.toString());
-      } catch (error) {
-        console.error("Invalid URL:", error);
-        setFinalHref(href);
-      }
-    } else {
-      setFinalHref(href);
-    }
-  }, [href, cookies]);
+  const finalHref = useUtmHref(href || null);
 
   const content = (
     <div className="btn-content">
@@ -84,10 +61,10 @@ export const Button: React.FC<Props> = ({
 
   if (onClick || type === "submit") el = "button";
 
-  if (el === "link") {
+  if (el === "link" && finalHref) {
     return (
       <Link
-        href={finalHref as string}
+        href={finalHref}
         className={className}
         {...newTabProps}
         onClick={onClick}
@@ -101,7 +78,7 @@ export const Button: React.FC<Props> = ({
 
   return (
     <Element
-      href={finalHref}
+      {...(finalHref ? { href: finalHref } : {})}
       className={className}
       type={type}
       {...newTabProps}
