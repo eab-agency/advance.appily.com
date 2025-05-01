@@ -1,40 +1,61 @@
-name: 🎣 Create Pull Request to Production on Merge to Main
+name: 🎣 Create Release for Production Deployment
 
 on:
+  pull_request:
+    types: [closed]
+    branches:
+      - "main"
   workflow_dispatch:
     inputs:
       reason:
-        description: "Reason for deployment"
+        description: "Reason for release"
         required: false
         default: "No reason provided"
-  push:
-    branches:
-      - "main"
-    paths:
-      - "src/**"
-      - "*.json"
-      - "*.yaml"
-      - "*.json"
-      - "*.config.js"
-      - "*.config.ts"
 
 permissions:
   id-token: write
-  contents: write # Ensure this is set to allow write access to contents
-  pull-requests: write # Add this to allow pull request creation
+  contents: write
+  pull-requests: write
 
 jobs:
-  deploy:
+  create-release:
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     environment: Staging
     steps:
       - uses: actions/checkout@v4
-      - name: Create Pull Request to Production
-        if: success()
+        with:
+          fetch-depth: 0
+
+      - name: Create GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          REASON="${{ github.event.inputs.reason || 'No reason provided' }}"
+          # Get the latest tag or start at v1.0.0 if no tags exist
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v1.0.0")
+          
+          # Increment the patch version
+          NEW_TAG=$(echo $LATEST_TAG | awk -F. -v OFS=. '{$NF += 1 ; print}')
+          
+          # Generate release notes from commits since last tag
+          RELEASE_NOTES=$(git log --pretty=format:"- %s" $LATEST_TAG..HEAD)
+          
+          if [ -z "$RELEASE_NOTES" ]; then
+            RELEASE_NOTES="No changes since last release"
+          fi
+          
+          # Create the release
+          REASON="${{ github.event.inputs.reason || format('Merged {0} into main', github.event.pull_request.head.ref) }}"
           ACTOR="${{ github.actor }}"
           DATE=$(date)
-          gh pr create --base production --head main --title "Auto- Deploy by $ACTOR on $DATE" --body "Reason: $REASON"
+          
+          gh release create $NEW_TAG \
+            --title "Release $NEW_TAG" \
+            --notes "🚀 Release $NEW_TAG
+
+            **Initiated by:** $ACTOR
+            **Reason:** $REASON
+            **Date:** $DATE
+            
+            ## Changes
+            $RELEASE_NOTES"
