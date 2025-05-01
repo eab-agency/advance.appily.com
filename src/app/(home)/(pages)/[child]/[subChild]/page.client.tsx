@@ -1,10 +1,10 @@
 "use client";
+import { Hero } from "@/blocks/HeroBlock";
 import { Blocks } from "@/components/Block";
+import { useId } from "@/context/idContext";
 import { useLivePreview } from "@payloadcms/live-preview-react";
 import React, { useEffect } from "react";
 import { Page } from "../../../../../../payload-types";
-import { Hero } from "../../../../../blocks/HeroBlock";
-import { useId } from "../../../../../context/idContext";
 
 export const PageClient: React.FC<{
   page: Page;
