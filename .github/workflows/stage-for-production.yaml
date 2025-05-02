@@ -1,16 +1,16 @@
 name: 🎣 Create Release for Production Deployment
 
 on:
-  pull_request:
-    types: [closed]
-    branches:
-      - "main"
   workflow_dispatch:
     inputs:
-      reason:
-        description: "Reason for release"
+      version:
+        description: "Version to release (e.g. v1.2.0). Leave empty for automatic versioning"
         required: false
-        default: "No reason provided"
+        type: string
+      reason:
+        description: "Release description - what features/fixes are included?"
+        required: true
+        type: string
 
 permissions:
   id-token: write
@@ -19,43 +19,70 @@ permissions:
 
 jobs:
   create-release:
-    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     environment: Staging
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
+
+      - name: Ensure we're on main branch
+        run: |
+          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          if [[ "$CURRENT_BRANCH" != "main" ]]; then
+            echo "❌ Releases must be created from the main branch"
+            exit 1
+          fi
 
       - name: Create GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Get the latest tag or start at v1.0.0 if no tags exist
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v1.0.0")
-          
-          # Increment the patch version
-          NEW_TAG=$(echo $LATEST_TAG | awk -F. -v OFS=. '{$NF += 1 ; print}')
-          
+          if [[ -n "${{ github.event.inputs.version }}" ]]; then
+            NEW_TAG="${{ github.event.inputs.version }}"
+          else
+            # Get the latest tag or start at v1.0.0 if no tags exist
+            LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v1.0.0")
+
+            # Split version into major, minor, patch
+            IFS='.' read -r major minor patch < <(echo "${LATEST_TAG#v}" | tr '.' '\n')
+
+            # Increment minor version and reset patch
+            NEW_TAG="v$major.$((minor + 1)).0"
+          fi
+
           # Generate release notes from commits since last tag
-          RELEASE_NOTES=$(git log --pretty=format:"- %s" $LATEST_TAG..HEAD)
-          
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          if [ -n "$LAST_TAG" ]; then
+            echo "Generating release notes for changes since $LAST_TAG..."
+            RELEASE_NOTES=$(git log --pretty=format:"- %s (%h)" $LAST_TAG..HEAD)
+          else
+            echo "No previous tag found, including all commits in release notes..."
+            RELEASE_NOTES=$(git log --pretty=format:"- %s (%h)")
+          fi
+
           if [ -z "$RELEASE_NOTES" ]; then
             RELEASE_NOTES="No changes since last release"
           fi
-          
+
           # Create the release
-          REASON="${{ github.event.inputs.reason || format('Merged {0} into main', github.event.pull_request.head.ref) }}"
+          REASON="${{ github.event.inputs.reason }}"
           ACTOR="${{ github.actor }}"
           DATE=$(date)
-          
+
+          echo "Creating release $NEW_TAG..."
           gh release create $NEW_TAG \
             --title "Release $NEW_TAG" \
-            --notes "🚀 Release $NEW_TAG
+            --target main \
+            --draft false \
+            --notes "🚀 Production Release $NEW_TAG
 
             **Initiated by:** $ACTOR
-            **Reason:** $REASON
+            **Release Description:** $REASON
             **Date:** $DATE
-            
-            ## Changes
+
+            ## Changes included in this release:
             $RELEASE_NOTES"
+
+          echo "✅ Release $NEW_TAG created successfully!"
