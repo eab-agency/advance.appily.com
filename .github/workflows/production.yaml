@@ -39,14 +39,12 @@ jobs:
           # Get the commit that the tag points to
           TAG_COMMIT=$(git rev-parse "$TAG_REF")
 
-          # Get the commit that main points to
-          MAIN_COMMIT=$(git rev-parse origin/main)
-
           echo "Tag commit: $TAG_COMMIT"
-          echo "Main commit: $MAIN_COMMIT"
 
-          if [[ "$TAG_COMMIT" != "$MAIN_COMMIT" ]]; then
-            echo "❌ This release tag must be created from the main branch"
+          # Check if the tag commit is in the main branch history
+          if ! git merge-base --is-ancestor "$TAG_COMMIT" origin/main; then
+            echo "❌ This release tag's commit is not in the main branch history"
+            echo "Make sure the changes are merged to main before deploying"
             exit 1
           fi
 
