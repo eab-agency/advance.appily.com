@@ -1,14 +1,10 @@
-name: 👾 Build Preview on Push to Feature or Dev Branch
+name: 👾 Build Preview on Push to Feature or Bugfix Branch
 
 on:
-  workflow_dispatch:
   push:
     branches:
-      - "feature/*"
-      - "feature-*"
-      - "bugfix/*"
-      - "bugfix-*"
-      - "dev"
+      - "feature**"
+      - "bugfix**"
 
 permissions:
   contents: write
