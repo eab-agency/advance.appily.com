@@ -20,15 +20,30 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.release.tag_name || github.event.inputs.tag }}
+          fetch-depth: 0  # Fetch all history for all branches and tags
 
-      - name: Validate release branch
+      - name: Fetch and validate
         run: |
+          git fetch origin main
+          git fetch origin --tags
+
+          TAG_REF="${{ github.event.release.tag_name || github.event.inputs.tag }}"
+          echo "Validating tag: $TAG_REF"
+
+          # Check if tag exists
+          if ! git rev-parse "$TAG_REF" >/dev/null 2>&1; then
+            echo "❌ Tag $TAG_REF does not exist"
+            exit 1
+          fi
+
           # Get the commit that the tag points to
-          TAG_COMMIT=$(git rev-parse ${{ github.event.release.tag_name || github.event.inputs.tag }})
+          TAG_COMMIT=$(git rev-parse "$TAG_REF")
 
           # Get the commit that main points to
           MAIN_COMMIT=$(git rev-parse origin/main)
+
+          echo "Tag commit: $TAG_COMMIT"
+          echo "Main commit: $MAIN_COMMIT"
 
           if [[ "$TAG_COMMIT" != "$MAIN_COMMIT" ]]; then
             echo "❌ This release tag must be created from the main branch"
