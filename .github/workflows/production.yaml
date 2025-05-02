@@ -4,19 +4,45 @@ on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to deploy (e.g. v1.2.0)"
+        required: true
+        type: string
 
 permissions:
   id-token: write
   contents: read
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || github.event.inputs.tag }}
+
+      - name: Validate release branch
+        run: |
+          # Get the commit that the tag points to
+          TAG_COMMIT=$(git rev-parse ${{ github.event.release.tag_name || github.event.inputs.tag }})
+
+          # Get the commit that main points to
+          MAIN_COMMIT=$(git rev-parse origin/main)
+
+          if [[ "$TAG_COMMIT" != "$MAIN_COMMIT" ]]; then
+            echo "❌ This release tag must be created from the main branch"
+            exit 1
+          fi
+
   production:
+    needs: validate
     runs-on: ubuntu-latest
     environment: Production
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.release.tag_name }}
+          ref: ${{ github.event.release.tag_name || github.event.inputs.tag }}
 
       - uses: actions/setup-node@v4
         with:
@@ -52,5 +78,5 @@ jobs:
           NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}}
           NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
         run: |
-          echo "🚀 Deploying release ${{ github.event.release.tag_name }} to production..."
+          echo "🚀 Deploying release ${{ github.event.release.tag_name || github.event.inputs.tag }} to production..."
           npx sst deploy --stage=production --print-logs
