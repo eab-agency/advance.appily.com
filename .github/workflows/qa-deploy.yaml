@@ -58,4 +58,4 @@ jobs:
           NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
         run: |
           echo "🧪 Deploying merged changes to QA environment..."
-          npx sst deploy --stage=qa --print-logs
+          npx sst deploy --stage=qa
