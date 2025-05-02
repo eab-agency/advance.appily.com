@@ -92,4 +92,4 @@ jobs:
           NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
         run: |
           echo "🚀 Deploying release ${{ github.event.release.tag_name || github.event.inputs.tag }} to production..."
-          npx sst deploy --stage=production --print-logs
+          npx sst deploy --stage=production
