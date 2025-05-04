@@ -1,8 +1,8 @@
 import type { CarouselCard, Category, Footer, Header, Page, Post, Tag } from "../../../payload-types";
 import {
-	ALLCAROUSELCARDS,
-	CAROUSELCARDS,
-	CAROUSELCARDSNOTIN,
+  ALLCAROUSELCARDS,
+  CAROUSELCARDS,
+  CAROUSELCARDSNOTIN,
 } from "./carouselCards";
 import { ALLCATEGORIES } from "./categories";
 import { FOOTER_QUERY, GLOBALS, HEADER_QUERY } from "./globals";
@@ -121,29 +121,29 @@ export const fetchReaminingCarouselCards = async (
 
 export async function fetchHeader(): Promise<Header> {
 	const header = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql`, {
-	  method: 'POST',
-	  headers: {
-		'Content-Type': 'application/json',
-	  },
-		// use next revalidate every 10 seconds. later change to 5 minutes(300 seconds)
-		// next: { revalidate: 10 },
-	  body: JSON.stringify({
-		query: HEADER_QUERY,
-	  }),
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		next: { revalidate: 10 },
+		body: JSON.stringify({
+			query: HEADER_QUERY,
+		}),
 	})
-	  ?.then(res => {
-		if (!res.ok) throw new Error('Error fetching doc')
-		return res.json()
-	  })
-	  ?.then(res => {
-		if (res?.errors) throw new Error(res?.errors[0]?.message || 'Error fetching header')
-		return res.data?.Header
-	  })
+		.then(res => {
+			if (!res.ok) throw new Error('Error fetching doc');
+			return res.json();
+		})
+		.then(res => {
+			if (res?.errors) throw new Error(res?.errors[0]?.message || 'Error fetching header');
+			return res.data?.Header;
+		});
 
-	return header
-  }
+	if (!header) throw new Error('No header data returned');
+	return header;
+}
 
-  export async function fetchFooter(): Promise<Footer> {
+export async function fetchFooter(): Promise<Footer> {
 
 	const footer = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql`, {
 	  method: 'POST',
@@ -225,43 +225,47 @@ export const fetchPage = async (
 ): Promise<Page | null> => {
 	const slugSegments = incomingSlugSegments || ["index"];
 	const slug = slugSegments.at(-1);
-	const { data, errors } = await fetch(
-		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?page=${slug}`,
-		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			// cache: "no-store",
-			next,
-			body: JSON.stringify({
-				query: PAGE,
-				variables: {
-					slug,
+
+	try {
+		const response = await fetch(
+			`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?page=${slug}`,
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
 				},
-			}),
-		},
-	).then(res => res.json());
+				next: { revalidate: 10 },
+				body: JSON.stringify({
+					query: PAGE,
+					variables: {
+						slug,
+					},
+				}),
+			}
+		);
 
-	if (errors) {
-		console.error(JSON.stringify(errors)); // eslint-disable-line no-console
-		throw new Error();
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`);
+		}
+
+		const { data, errors } = await response.json();
+
+		if (errors) {
+			console.error(JSON.stringify(errors));
+			throw new Error(errors[0]?.message || 'Error fetching page');
+		}
+
+		const pagePath = `/${slugSegments.join("/")}`;
+		return data.Pages?.docs.find(({ breadcrumbs }: Page) => {
+			if (!breadcrumbs) return false;
+			const { url } = breadcrumbs[breadcrumbs.length - 1];
+			return url === pagePath;
+		}) || null;
+	} catch (error) {
+		console.error('Error in fetchPage:', error);
+		return null;
 	}
-
-	const pagePath = `/${slugSegments.join("/")}`;
-
-	const page = data.Pages?.docs.find(({ breadcrumbs }: Page) => {
-		if (!breadcrumbs) return false;
-		const { url } = breadcrumbs[breadcrumbs.length - 1];
-		return url === pagePath;
-	});
-
-	if (page) {
-		return page;
-	}
-
-	return null;
-};
+}
 
 export const fetchPostSlugs = async (): Promise<{ slug: string }[]> => {
   try {
@@ -297,7 +301,7 @@ export const fetchPosts = async (): Promise<Post[]> => {
 		   headers: {
 			   "Content-Type": "application/json",
 		   },
-		   next,		   
+		   next,
 		   body: JSON.stringify({
 			   query: POSTS,
 			   variables: {
@@ -363,7 +367,7 @@ export const fetchAllCategories = async (): Promise<Category[]> => {
 		   next,
 		   body: JSON.stringify({
 			   query: ALLCATEGORIES,
-			   
+
 		   }),
 	   },
    ).then(res => res.json());
@@ -388,7 +392,7 @@ export const fetchCategoryIDByTitle = async (
 				},
 			}),
 		},
-	
+
 	).then(res => res.json());
 	return data?.Categories?.docs;
 };
@@ -407,12 +411,12 @@ export const fetchPostsByCategory = async (
 			body: JSON.stringify({
 				query: POSTS_BY_CATEGORY,
 				variables: {
-					category, 
+					category,
 					status: 'published'
 				},
 			}),
 		},
-	
+
 	).then(res => res.json());
 	return data?.Posts?.docs;
 };
@@ -428,7 +432,7 @@ export const fetchPostsByCategory = async (
 // 			cache: "no-store",
 // 			body: JSON.stringify({
 // 				query: ALLTAGS,
-				
+
 // 			}),
 // 		},
 // 	).then(res => res.json());
@@ -454,7 +458,7 @@ export const fetchPostsByCategory = async (
 				},
 			}),
 		},
-	
+
 	).then(res => res.json());
 	return data?.Posts?.docs;
 };

@@ -2,22 +2,38 @@ import { fetchPage, fetchPages } from "@/app/graphql";
 import { generateMeta } from "@/seo/generateMeta";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Page } from "../../../../../../payload-types";
 import { PageClient } from "./page.client";
 
 export async function generateStaticParams() {
-  const pages = await fetchPages();
-  const paramsVal = pages.map(({ breadcrumbs }) => {
-    const slug = breadcrumbs?.[breadcrumbs.length - 1]?.url
-      ?.replace(/^\/|\/$/g, "")
-      .split("/");
-    return {
-      params: {
-        slug,
-      },
-    };
-  });
-  return paramsVal;
+  try {
+    const pages = await fetchPages();
+    if (!Array.isArray(pages)) {
+      console.error("Invalid pages data received");
+      return [];
+    }
+
+    return pages
+      .map(({ breadcrumbs }) => {
+        if (!breadcrumbs || breadcrumbs.length === 0) return null;
+        const url = breadcrumbs[breadcrumbs.length - 1]?.url;
+        if (!url) return null;
+
+        const slug = url.replace(/^\/|\/$/g, "").split("/");
+        if (!slug || slug.length === 0) return null;
+
+        return {
+          child: slug[0] ?? "",
+          subChild: slug[1] ?? "",
+        };
+      })
+      .filter(
+        (params): params is { child: string; subChild: string } =>
+          params !== null
+      );
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    return [];
+  }
 }
 
 export async function generateMetadata({
@@ -25,48 +41,43 @@ export async function generateMetadata({
 }: {
   params: { child: string; subChild: string };
 }): Promise<Metadata> {
-  const { child, subChild } = await params;
-
+  const { child, subChild } = params;
   const slug = [child, subChild].filter(Boolean);
 
-  let page: Page | null = null;
-
   try {
-    page = await fetchPage(slug);
+    const page = await fetchPage(slug);
+    if (page) {
+      return generateMeta({ doc: page });
+    }
   } catch (error) {
     console.error("Error fetching page data:", error);
   }
-  if (page) {
-    return generateMeta({ doc: page });
-  } else {
-    return {
-      title: "Default Title",
-      description: "Default Description",
-    };
-  }
+
+  return {
+    title: "Default Title",
+    description: "Default Description",
+  };
 }
 
-const SubCategoryPage = async ({ params, searchParams }: any) => {
-  const { child, subChild } = await params;
-  let pageData: Page | null = null;
+const SubCategoryPage = async ({
+  params,
+}: {
+  params: { child: string; subChild: string };
+}) => {
+  const { child, subChild } = params;
   const slug = [child, subChild].filter(Boolean);
-  try {
-    pageData = await fetchPage(slug);
-  } catch (error) {}
 
-  if (!pageData) {
+  try {
+    const pageData = await fetchPage(slug);
+    if (!pageData) {
+      return notFound();
+    }
+
+    return <PageClient page={pageData} />;
+  } catch (error) {
+    console.error("Error rendering page:", error);
     return notFound();
   }
-  const hero = pageData?.hero;
-  const layout = pageData?.layout;
-  return (
-    // 	<React.Fragment>
-    // 	<Hero {...hero} />
-    // 	<Blocks blocks={layout} />
-
-    //   </React.Fragment>
-    <PageClient page={pageData} />
-  );
 };
 
 export default SubCategoryPage;
