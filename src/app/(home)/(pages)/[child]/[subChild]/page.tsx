@@ -12,24 +12,30 @@ export async function generateStaticParams() {
       return [];
     }
 
-    return pages
+    const validParams = pages
       .map(({ breadcrumbs }) => {
-        if (!breadcrumbs || breadcrumbs.length === 0) return null;
+        if (!breadcrumbs || breadcrumbs.length < 2) return null;
+
         const url = breadcrumbs[breadcrumbs.length - 1]?.url;
         if (!url) return null;
 
-        const slug = url.replace(/^\/|\/$/g, "").split("/");
-        if (!slug || slug.length === 0) return null;
+        // Remove leading and trailing slashes and split into segments
+        const segments = url.replace(/^\/|\/$/g, "").split("/");
+
+        // Only process URLs that have exactly 2 segments for [child]/[subChild]
+        if (segments.length !== 2) return null;
 
         return {
-          child: slug[0] ?? "",
-          subChild: slug[1] ?? "",
+          child: segments[0],
+          subChild: segments[1],
         };
       })
       .filter(
         (params): params is { child: string; subChild: string } =>
-          params !== null
+          params !== null && params.child !== "" && params.subChild !== ""
       );
+
+    return validParams;
   } catch (error) {
     console.error("Error generating static params:", error);
     return [];
