@@ -28,7 +28,7 @@ jobs:
           GITHUB_REF_NAME: ${{ github.ref_name }}
         run: echo "STAGE_NAME=$(echo \"$GITHUB_REF_NAME\" | sed 's/[\/]/-/g' | tr -cd '[:alnum:]-')" >> $GITHUB_ENV
 
-      - run: "curl -fsSL https://sst.dev/install | bash"
+      - run: "curl -fsSLhttps://raw.githubusercontent.com/sst/sst/dev/install | bash"
 
       # - uses: actions/setup-node@v4
       #   with:
