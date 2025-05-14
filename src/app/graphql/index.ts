@@ -10,7 +10,7 @@ import { PAGE, PAGES } from "./pages";
 import { FIRSTFIVEPOSTS, GET_CATEGORY_ID, POST, POSTS, POSTS_BY_CATEGORY, POST_BY_TAG, POST_SLUGS } from "./posts";
 
 const next: { revalidate: number | false | undefined } = {
-	revalidate: 5,
+	revalidate: 300,
 };
 
 
@@ -125,7 +125,7 @@ export async function fetchHeader(): Promise<Header> {
 		headers: {
 			'Content-Type': 'application/json',
 		},
-		next: { revalidate: 10 },
+		next,
 		body: JSON.stringify({
 			query: HEADER_QUERY,
 		}),
@@ -150,7 +150,7 @@ export async function fetchFooter(): Promise<Footer> {
 	  headers: {
 		'Content-Type': 'application/json',
 	  },
-	 next: { revalidate: 10 },
+	 next,
 	  body: JSON.stringify({
 		query: FOOTER_QUERY,
 	  }),
@@ -234,7 +234,7 @@ export const fetchPage = async (
 				headers: {
 					"Content-Type": "application/json",
 				},
-				next: { revalidate: 10 },
+				next,
 				body: JSON.stringify({
 					query: PAGE,
 					variables: {
