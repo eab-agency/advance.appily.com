@@ -47,7 +47,7 @@ export async function generateMetadata({
 }: {
   params: { child: string; subChild: string };
 }): Promise<Metadata> {
-  const { child, subChild } = params;
+  const { child, subChild } = await params;
   const slug = [child, subChild].filter(Boolean);
 
   try {
@@ -70,7 +70,7 @@ const SubCategoryPage = async ({
 }: {
   params: { child: string; subChild: string };
 }) => {
-  const { child, subChild } = params;
+  const { child, subChild } = await params;
   const slug = [child, subChild].filter(Boolean);
 
   try {
