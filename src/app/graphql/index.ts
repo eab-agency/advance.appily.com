@@ -1,9 +1,5 @@
-import type { CarouselCard, Category, Footer, Header, Page, Post, Tag } from "../../../payload-types";
-import {
-  ALLCAROUSELCARDS,
-  CAROUSELCARDS,
-  CAROUSELCARDSNOTIN,
-} from "./carouselCards";
+import type { Category, Footer, Header, Page, Post, Tag } from "../../../payload-types";
+
 import { ALLCATEGORIES } from "./categories";
 import { FOOTER_QUERY, GLOBALS, HEADER_QUERY } from "./globals";
 import { PAGE, PAGES } from "./pages";
@@ -45,78 +41,6 @@ export const fetchLeadTypes = async (): Promise<
 	).then(res => res.json());
 
 	return data?.LeadTypes?.docs;
-};
-
-export const fetchCarouselCards = async (): Promise<CarouselCard[]> => {
-	const { data } = await fetch(
-		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?carousel-cards`,
-		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			next,
-			body: JSON.stringify({
-				query: ALLCAROUSELCARDS,
-			}),
-		},
-	).then(res => res.json());
-
-	return data?.CarouselCards?.docs;
-};
-
-export const fetchCarouselCardsByStateAndLeadType = async (
-	incomingLocations?: string[],
-	leadTypeId?: string,
-): Promise<CarouselCard[] | undefined> => {
-
-	if (leadTypeId) {
-		const { data } = await fetch(
-			`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?carousel-cards`,
-			{
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				next,
-				body: JSON.stringify({
-					query: CAROUSELCARDS,
-					variables: {
-						state: incomingLocations,
-						lead: [leadTypeId],
-					},
-				}),
-			},
-		).then(res => res.json());
-
-		return data?.CarouselCards?.docs;
-	}
-
-	return undefined;
-};
-
-export const fetchReaminingCarouselCards = async (
-	incomingLocationsToFilterOut?: string[],
-	leadType?: string,
-): Promise<CarouselCard[]> => {
-	const { data } = await fetch(
-		`${process.env.NEXT_PUBLIC_CMS_URL}/api/graphql?carousel-cards`,
-		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			next,
-			body: JSON.stringify({
-				query: CAROUSELCARDSNOTIN,
-				variables: {
-					state: incomingLocationsToFilterOut,
-					lead: leadType ? [leadType] : ["Business"],
-				},
-			}),
-		},
-	).then(res => res.json());
-	return data?.CarouselCards?.docs;
 };
 
 export async function fetchHeader(): Promise<Header> {

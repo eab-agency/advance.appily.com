@@ -2,7 +2,6 @@
 "use client";
 // import computerWhiz from "@/assets/lotties/computerWhiz.json";
 // import Lottie from "lottie-react";
-import { useEffect, useRef } from "react";
 
 import {
   AccordionSection,
@@ -11,20 +10,14 @@ import {
   SubNavPlan,
   TabsSection,
   Testimonial,
-  TextWithImage
+  TextWithImage,
 } from "@/components";
 import BuildPlanHero from "@/components/Heros/BuildPlanHero";
-import { useUser } from "@/context/context";
 import data from "@/data/AdcResults/results-other-plan.json";
 
 import StatisticsSection from "@/blocks/StatisticsSection";
 
 export default function Page() {
-  const carouselRef = useRef(null);
-  const { setVertical, vertical } = useUser();
-  useEffect(() => {
-    setVertical("ADC");
-  }, [setVertical]);
   return data ? (
     <>
       <div className="resultContent">
@@ -68,14 +61,6 @@ export default function Page() {
 
         <CareerPaths careerPaths={data.bachelorDegrees} />
 
-        <div
-          id="explore-your-school-matches"
-          className="carouselWithForm"
-          ref={carouselRef}
-        >
-          {/* <CarouselWithForm formId="15" collectData={false} /> */}
-        </div>
-
         <AccordionSection id="your-next-steps" data={data.yourNextSteps} />
 
         <TabsSection data={data.topBarriers} />
@@ -89,7 +74,6 @@ export default function Page() {
           altText={data.textWithImage.altText}
         />
       </div>
-      {/* <StickyCta trackedElement={carouselRef} /> */}
     </>
   ) : null;
 }

@@ -4,7 +4,6 @@ export { StickyCta } from "./StickyCta";
 // export { default as PageHeader } from "./Header/PageHeader";
 export { Accordion } from "./Accordion";
 export { AccordionSection } from "./AccordionSection";
-export { CarouselWithForm } from "./CarouselWithForm";
 export { Quiz, QuizV2 } from "./Quiz";
 export { StatCard } from "./StatCard";
 export { Tabs } from "./Tabs";

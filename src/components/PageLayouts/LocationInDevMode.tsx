@@ -1,6 +1,5 @@
 "use client";
 import { useUser } from "@/context/context";
-import { statesToMatchAgainst } from "@/helpers/getMatchedSchool";
 import isDevMode from "@/helpers/isDevMode";
 
 import styles from "@/styles/components/LocationScoreDev.module.scss";
@@ -84,11 +83,6 @@ const LocationInDevMode = () => {
           >
             <option value="">Select a state</option>
             {/* iterated through the statesToMatchAgainst object for each option */}
-            {Object.keys(statesToMatchAgainst).map((state) => (
-              <option key={state} value={state}>
-                {state}
-              </option>
-            ))}
           </select>
         </div>
       </div>

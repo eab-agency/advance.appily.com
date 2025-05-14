@@ -212,15 +212,6 @@ export const COMPARISONBLOCK = `
   }
 }`;
 
-export const CAROUSELCARD = `
-...on Schoolcarousel {
-  blockType
-  blockName
-  title
-  richText
-  carouselBackgroundColor
-}`;
-
 export const TABSECTION = `
 ...on Tabsection {
   id
@@ -355,7 +346,6 @@ export const GLOBAL_TOKEN= `
       ${BUTTONGROUPBLOCK}
       ${RICHTEXTBLOCK}
       ${COMPARISONBLOCK}
-      ${CAROUSELCARD}
       }
   }
 }`

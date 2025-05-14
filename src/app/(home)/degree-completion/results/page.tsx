@@ -2,10 +2,9 @@
 import { Button, Tabs } from "@/components";
 import AdcResultsHero from "@/components/Heros/ReadynessResultsHero";
 import HighlightedCtaSection from "@/components/HighlightedCtaSection/HighlightedCtaSection";
-import { useUser } from "@/context/context";
 import quizData from "@/data/quiz-adc-readiness.json";
 import Image from "next/image";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 const getAnimationData = async (score) => {
   if (score >= 41 && score <= 50) {
@@ -59,12 +58,6 @@ export default function ADCResultsPage({
     [key: string]: string | string[] | undefined;
   };
 }) {
-  const { setVertical, vertical } = useUser();
-  useEffect(() => {
-    setVertical("ADC");
-  }, [setVertical]);
-
-  const carouselRef = useRef(null);
   const [animationData, setAnimationData] = useState(null);
   const [showContent, setShowContent] = useState(false);
 
@@ -242,19 +235,10 @@ export default function ADCResultsPage({
               </div>
             </section>
 
-            <div
-              id="explore-your-school-matches"
-              className="carouselWithForm"
-              ref={carouselRef}
-            >
-              {/* <CarouselWithForm formId="14" collectData={false} /> */}
-            </div>
-
             <HighlightedCtaSection />
           </>
         )}
       </div>
-      {/* <StickyCta trackedElement={carouselRef} /> */}
     </>
   );
 }
