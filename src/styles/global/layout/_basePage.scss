@@ -155,19 +155,9 @@
   }
 }
 
-div[class*="CarouselWithForm_carouselForm_"] {
-  p {
-    color: var(--c-black);
-  }
-}
-
 .centered-content {
   text-align: center;
 }
-
-// .bgfilled {
-//   background-color: var(--c-bg5);
-// }
 
 .imgTextSection {
   @media (max-width: tokens.$mq-900) {
@@ -258,4 +248,3 @@ div[class*="CarouselWithForm_carouselForm_"] {
     }
   }
 }
-

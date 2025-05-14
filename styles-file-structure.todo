@@ -10,9 +10,7 @@ styles:
             - _button.scss
             - _forms.scss
             - _modals.scss
-            - _schoolCarousel.scss
             - _tabs.scss
-            - CarouselWithForm.module.scss
             - Accordion.module.scss
             - Form.module.scss
             - MainLogo.module.scss
@@ -54,7 +52,6 @@ styles:
         layouts:
             - EmailOnly.module.scss
             - Error.module.scss
-            - FinalPage.module.scss
             - Question.module.scss
             - Quiz.module.scss
             - Results.module.scss
