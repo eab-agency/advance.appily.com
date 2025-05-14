@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Button } from "@/components";
 import Image from "next/image";
 import { Accordion } from "../components/Accordion";
