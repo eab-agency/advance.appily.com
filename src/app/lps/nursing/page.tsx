@@ -5,7 +5,6 @@ import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
-import { StickyCta } from "../components/StickyCta";
 
 import heroImage from '../assets/healthcare-hero.jpg';
 import ElevateYourCareer from "../assets/healthcare-professional.jpg";
@@ -147,10 +146,10 @@ export default function Page() {
         </div>
       </section>
 
-      <StickyCta
+      {/* <StickyCta
         ctaLabel="Take our free health care career quiz"
         trackedElement="#lets-go-section"
-      />
+      /> */}
 
       <PageFooter />
 

@@ -6,7 +6,6 @@ import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
-import { StickyCta } from "../components/StickyCta";
 
 import CommonQuestions from "../assets/common-questions.png";
 import ElevateYourCareer from "../assets/elevate-your-career.jpg";
@@ -253,10 +252,10 @@ export default function Page() {
         </div>
       </section>
 
-      <StickyCta
+      {/* <StickyCta
         ctaLabel="Start the Free Business Career Quiz"
         trackedElement="#lets-go-section"
-      />
+      /> */}
 
       <PageFooter />
 
