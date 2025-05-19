@@ -15,7 +15,6 @@ import ElevateYourCareer from "../assets/elevate-your-career.jpg";
 // @ts-ignore
 import heroImage from "../assets/mba-hero.jpg";
 
-import { StickyCta } from "../components/StickyCta";
 
 import { Metadata } from "next";
 
@@ -360,10 +359,10 @@ export default function Page() {
         </div>
       </section>
 
-      <StickyCta
+      {/* <StickyCta
         ctaLabel="Start the Free Business Career Quiz"
         trackedElement="#lets-go-section"
-      />
+      /> */}
 
       <PageFooter />
     </>
