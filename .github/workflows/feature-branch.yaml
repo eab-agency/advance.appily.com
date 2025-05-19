@@ -1,14 +1,10 @@
-name: 👾 Build Preview on Push to Feature or Dev Branch
+name: 👾 Build Preview on Push to Feature or Bugfix Branch
 
 on:
-  workflow_dispatch:
   push:
     branches:
-      - "feature/*"
-      - "feature-*"
-      - "bugfix/*"
-      - "bugfix-*"
-      - "dev"
+      - "feature**"
+      - "bugfix**"
 
 permissions:
   contents: write
@@ -28,7 +24,8 @@ jobs:
           GITHUB_REF_NAME: ${{ github.ref_name }}
         run: echo "STAGE_NAME=$(echo \"$GITHUB_REF_NAME\" | sed 's/[\/]/-/g' | tr -cd '[:alnum:]-')" >> $GITHUB_ENV
 
-      - run: "curl -fsSL https://sst.dev/install | bash"
+      - run: "curl -fsSL https://raw.githubusercontent.com/sst/sst/dev/install | bash"
+
 
       # - uses: actions/setup-node@v4
       #   with:

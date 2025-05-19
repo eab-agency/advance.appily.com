@@ -2,7 +2,6 @@ import { fetchPost, fetchPostSlugs, fetchPostsByCategory } from "@/app/graphql";
 import { generateMeta } from "@/seo/generateMeta";
 import "@/styles/layouts/templates/PostPage.scss";
 import { Metadata } from "next";
-import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { Category, Post } from "../../../../../../../payload-types";
 import { PageClient } from "./page.client";
@@ -21,8 +20,7 @@ export async function generateMetadata({
 }: {
   params: { slug: string; post: string; category: string };
 }): Promise<Metadata> {
-  const { isEnabled: isDraftMode } = draftMode();
-  const { slug, post } = params;
+  const { slug, post } = await params;
   let postData: Post | null = null;
   try {
     postData = await fetchPost(post);
@@ -42,7 +40,7 @@ interface PostComponentProps {
   params: { slug: string; post: string; category: string };
 }
 const PostComponent = async ({ params }: PostComponentProps) => {
-  const { post, category } = params;
+  const { post, category } = await params;
   let postData: Post | null = null;
   let relatesPosts: Post[] | null = [];
   let actualCategorySlug: string | null = null;

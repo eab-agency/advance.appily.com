@@ -15,7 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     environment: Staging
 
-    if: ${{ !((github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'dev') || (github.event.pull_request.base.ref == 'production' && github.event.pull_request.head.ref == 'main')) && (startsWith(github.event.pull_request.head.ref, 'bugfix-') || startsWith(github.event.pull_request.head.ref, 'bugfix/') || startsWith(github.event.pull_request.head.ref, 'feature-') || startsWith(github.event.pull_request.head.ref, 'feature/')) }}
+    # Updated condition to include merges to qa or main
+    if: |
+      github.event.pull_request.merged == true &&
+      (
+        (github.event.pull_request.base.ref == 'qa' || github.event.pull_request.base.ref == 'main') &&
+        (startsWith(github.event.pull_request.head.ref, 'bugfix-') ||
+         startsWith(github.event.pull_request.head.ref, 'bugfix/') ||
+         startsWith(github.event.pull_request.head.ref, 'feature-') ||
+         startsWith(github.event.pull_request.head.ref, 'feature/'))
+      )
 
     steps:
       - name: Checkout repo
@@ -53,4 +62,5 @@ jobs:
       - name: Install deps (with cache)
         run: pnpm install
 
-      - run: npx sst remove --stage $MERGED_BRANCH
+      - name: Remove SST Environment
+        run: npx sst remove --stage $MERGED_BRANCH

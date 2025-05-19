@@ -2,14 +2,10 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import type { CarouselCard } from "../../payload-types";
 
-import { getMatchedSchool } from "../helpers/getMatchedSchool";
 import { IdProvider } from "./idContext";
 
 interface UserLocationContextProps {
-  matchedSchools: CarouselCard[];
-  setMatchedSchools: React.Dispatch<React.SetStateAction<any[]>>;
   location: {
     region_iso_code: string;
     country_code: string;
@@ -27,15 +23,12 @@ interface UserLocationContextProps {
     } | null>
   >;
   globalPrivacyControl: boolean;
-  vertical: string;
-  setVertical: React.Dispatch<React.SetStateAction<string>>;
   oneTrust: any;
 }
 
 const UserLocationContext = createContext<UserLocationContextProps>(null!);
 
 function ContextProvider({ children }: { children: React.ReactNode }) {
-  const [matchedSchools, setMatchedSchools] = useState<any[]>([]);
   const [oneTrust, setOneTrust] = useState<any>(null);
   const [oneTrustActiveGroups, setOneTrustActiveGroups] = useState<any>(null);
 
@@ -53,11 +46,6 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
       //   handleOneTrustUpdated,
       // );
       if (window.OneTrust) {
-        // console.log("Setting OneTrust");
-        // console.log(
-        //   "🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 ~ handleOneTrustUpdated ~ window.OneTrustActiveGroups:",
-        //   window.OnetrustActiveGroups,
-        // );
         setOneTrust(window.OneTrust);
         setOneTrustActiveGroups(window.OnetrustActiveGroups);
       }
@@ -112,11 +100,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
     notUS: true,
   });
 
-  const [formData, setFormData] = useState<any>(null);
-
   const [utmSource, setUtmSource] = useState<any>(null);
-
-  const [vertical, setVertical] = useState<string>("Business");
 
   // check oneTrust.getGeolocation(), that returns an object of { country: 'US', region: 'CA' }, and set location
   useEffect(() => {
@@ -130,53 +114,25 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
     }
   }, [oneTrust, setLocation]);
 
-  // wait for userLocation to be populated and then set matchedSchool based on userLocation.region_iso_code
-  useEffect(() => {
-    const fetchData = async () => {
-      if (location) {
-        const matchedSchoolInternal = await getMatchedSchool(
-          location?.region_iso_code || "VA",
-          vertical,
-        );
-        // grab first school from schools and set matchedSchool
-        setMatchedSchools(matchedSchoolInternal);
-      }
-    };
-
-    fetchData();
-  }, [location, vertical]);
-
   const valueUser = useMemo(
     () => ({
-      matchedSchools,
-      setMatchedSchools,
       location,
-      formData,
-      setFormData,
       utmSource,
       setUtmSource,
       setLocation,
-      vertical,
-      setVertical,
       globalPrivacyControl,
       oneTrust,
       oneTrustActiveGroups,
     }),
     [
-      matchedSchools,
-      setMatchedSchools,
       location,
-      formData,
-      setFormData,
       utmSource,
       setUtmSource,
       setLocation,
-      vertical,
-      setVertical,
       globalPrivacyControl,
       oneTrust,
       oneTrustActiveGroups,
-    ],
+    ]
   );
 
   return (
@@ -198,4 +154,3 @@ function useUser() {
 }
 
 export { ContextProvider, useUser };
-

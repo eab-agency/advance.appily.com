@@ -1,30 +1,66 @@
-name: Auto Deploy Production to AWS
+name: 🚀 Deploy to Production
 
 on:
-  pull_request:
-    branches:
-      - production
-    types:
-      - closed
+  release:
+    types: [published]
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to deploy (e.g. v1.2.0)"
+        required: true
+        type: string
 
 permissions:
-  id-token: write # This is required for requesting the JWT
-  contents: read # This is required for actions/checkout
+  id-token: write
+  contents: read
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history for all branches and tags
+
+      - name: Fetch and validate
+        run: |
+          git fetch origin main
+          git fetch origin --tags
+
+          TAG_REF="${{ github.event.release.tag_name || github.event.inputs.tag }}"
+          echo "Validating tag: $TAG_REF"
+
+          # Check if tag exists
+          if ! git rev-parse "$TAG_REF" >/dev/null 2>&1; then
+            echo "❌ Tag $TAG_REF does not exist"
+            exit 1
+          fi
+
+          # Get the commit that the tag points to
+          TAG_COMMIT=$(git rev-parse "$TAG_REF")
+
+          echo "Tag commit: $TAG_COMMIT"
+
+          # Check if the tag commit is in the main branch history
+          if ! git merge-base --is-ancestor "$TAG_COMMIT" origin/main; then
+            echo "❌ This release tag's commit is not in the main branch history"
+            echo "Make sure the changes are merged to main before deploying"
+            exit 1
+          fi
+
   production:
-    if: github.event.pull_request.merged == true
+    needs: validate
     runs-on: ubuntu-latest
     environment: Production
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: production # Explicitly check out the production branch
+          ref: ${{ github.event.release.tag_name || github.event.inputs.tag }}
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
       - name: Cache Next.js Build
         uses: actions/cache@v4
         with:
@@ -48,11 +84,12 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-production-github
           aws-region: us-east-1
 
-      - name: Deploy to AWS with SST
+      - name: Deploy to Production
         env:
           NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
           NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
           NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}}
           NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
-
-        run: npx sst deploy --stage=production --print-logs
+        run: |
+          echo "🚀 Deploying release ${{ github.event.release.tag_name || github.event.inputs.tag }} to production..."
+          npx sst deploy --stage=production

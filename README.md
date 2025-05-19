@@ -58,3 +58,7 @@ npx sst dev
 This starts a multiplexer (what a cool thing!) with processes that deploy your app, run your functions, and start your frontend.
 
 ![alt text](./infra/misc/image.png)
+
+## Todo
+
+- [ ] Setup Veracode scanning

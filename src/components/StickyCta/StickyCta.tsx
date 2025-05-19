@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components";
 import styles from "@/styles/components/StickyCta.module.scss";
 
-import { useUser } from "@/context/context";
 import { usePathname } from "next/navigation";
 
 interface stickyProps {
@@ -13,8 +12,6 @@ interface stickyProps {
 }
 
 const StickyCta: React.FC<stickyProps> = ({ trackedElement, ctaLabel }) => {
-  const { matchedSchools } = useUser();
-
   const [scrolled, setScrolled] = useState(false);
   const [posY, setPosY] = useState(0);
 
@@ -66,10 +63,6 @@ const StickyCta: React.FC<stickyProps> = ({ trackedElement, ctaLabel }) => {
       });
     }
   };
-
-  if (matchedSchools.length === 0) {
-    return null; // Return null to show nothing
-  }
 
   const ctaText = ctaLabel || "Take the Quiz";
 

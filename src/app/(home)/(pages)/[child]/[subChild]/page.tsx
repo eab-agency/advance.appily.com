@@ -1,72 +1,89 @@
-import { fetchPage, fetchPages } from '@/app/graphql';
+import { fetchPage, fetchPages } from "@/app/graphql";
 import { generateMeta } from "@/seo/generateMeta";
 import { Metadata } from "next";
-import { draftMode } from 'next/headers';
-import { notFound } from 'next/navigation';
-import { Page } from '../../../../../../payload-types';
-import { PageClient } from './page.client';
+import { notFound } from "next/navigation";
+import { PageClient } from "./page.client";
 
 export async function generateStaticParams() {
-	const pages = await fetchPages();
-	const paramsVal = pages.map(({ breadcrumbs }) => {
-	  const slug = breadcrumbs?.[breadcrumbs.length - 1]?.url?.replace(/^\/|\/$/g, '').split('/');
-	  return {
-		params: {
-			slug
-		}
-	  };
-	});
-	return paramsVal;
+  try {
+    const pages = await fetchPages();
+    if (!Array.isArray(pages)) {
+      console.error("Invalid pages data received");
+      return [];
+    }
+
+    const validParams = pages
+      .map(({ breadcrumbs }) => {
+        if (!breadcrumbs || breadcrumbs.length < 2) return null;
+
+        const url = breadcrumbs[breadcrumbs.length - 1]?.url;
+        if (!url) return null;
+
+        // Remove leading and trailing slashes and split into segments
+        const segments = url.replace(/^\/|\/$/g, "").split("/");
+
+        // Only process URLs that have exactly 2 segments for [child]/[subChild]
+        if (segments.length !== 2) return null;
+
+        return {
+          child: segments[0],
+          subChild: segments[1],
+        };
+      })
+      .filter(
+        (params): params is { child: string; subChild: string } =>
+          params !== null && params.child !== "" && params.subChild !== ""
+      );
+
+    return validParams;
+  } catch (error) {
+    console.error("Error generating static params:", error);
+    return [];
+  }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { child: string; subChild: string };
+}): Promise<Metadata> {
+  const { child, subChild } = await params;
+  const slug = [child, subChild].filter(Boolean);
+
+  try {
+    const page = await fetchPage(slug);
+    if (page) {
+      return generateMeta({ doc: page });
+    }
+  } catch (error) {
+    console.error("Error fetching page data:", error);
   }
 
-  export async function generateMetadata({ params }: { params: { child: string; subChild: string } }): Promise<Metadata> {
-	const { isEnabled: isDraftMode } = draftMode();
-	const { child, subChild } = params;
+  return {
+    title: "Default Title",
+    description: "Default Description",
+  };
+}
 
-    const slug = [child, subChild].filter(Boolean);
+const SubCategoryPage = async ({
+  params,
+}: {
+  params: { child: string; subChild: string };
+}) => {
+  const { child, subChild } = await params;
+  const slug = [child, subChild].filter(Boolean);
 
-	let page: Page | null = null;
+  try {
+    const pageData = await fetchPage(slug);
+    if (!pageData) {
+      return notFound();
+    }
 
-	try {
-	  page = await fetchPage(slug);
-	} catch (error) {
-	  console.error('Error fetching page data:', error);
-	}
-	if (page) {
-	  return generateMeta({doc:page});
-	} else {
-	  return {
-		title: 'Default Title',
-		description: 'Default Description',
-	  };
-	}
+    return <PageClient page={pageData} />;
+  } catch (error) {
+    console.error("Error rendering page:", error);
+    return notFound();
   }
-
-
-  const SubCategoryPage = async({ params, searchParams }: any) => {
-	const { child, subChild } = params;
-	let pageData: Page | null = null
-    const slug = [child, subChild].filter(Boolean);
-	try {
-		pageData  = await fetchPage(slug);
-	  } catch (error) {
-	  }
-
-
-	if (!pageData) {
-		return notFound()
-	  }
-	const hero = pageData?.hero;
-	const layout = pageData?.layout;
-  return (
-// 	<React.Fragment>
-// 	<Hero {...hero} />
-// 	<Blocks blocks={layout} />
-
-//   </React.Fragment>
- <PageClient page={pageData} />
-
-  );
 };
 
 export default SubCategoryPage;

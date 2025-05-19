@@ -1,0 +1,61 @@
+name: 🧪 Deploy to QA Environment
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - "main"
+
+permissions:
+  id-token: write
+  contents: read
+  deployments: write
+
+jobs:
+  deploy-qa:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    environment: Staging
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Cache Next.js Build
+        uses: actions/cache@v4
+        with:
+          path: |
+            .next/cache/
+            .open-next/
+            .sst/
+          key: cache-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]xs') }}
+          restore-keys: |
+            cache-${{ hashFiles('**/pnpm-lock.yaml') }}-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID}}:role/advance-appily-com-dev-github
+          aws-region: us-east-1
+
+      - name: Deploy to QA
+        env:
+          NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL}}
+          NEXT_PUBLIC_CMS_URL: ${{ vars.NEXT_PUBLIC_CMS_URL}}
+          NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: ${{ vars.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}}
+          NEXT_PUBLIC_GTAG_ID: ${{ vars.NEXT_PUBLIC_GTAG_ID}}
+        run: |
+          echo "🧪 Deploying merged changes to QA environment..."
+          npx sst deploy --stage=qa

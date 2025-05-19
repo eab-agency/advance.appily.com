@@ -5,6 +5,7 @@ import React, { ElementType } from "react";
 
 import { useBackgroundColor } from "../BackgroundColor";
 
+import { useUtmHref } from "@/hooks/useUtmHref";
 import classes from "./index.module.scss";
 
 export type Props = {
@@ -49,9 +50,10 @@ export const Button: React.FC<Props> = ({
     .filter(Boolean)
     .join(" ");
 
+  const finalHref = useUtmHref(href || null);
+
   const content = (
     <div className="btn-content">
-      {/* <Chevron /> */}
       <span className="btn-label">{label}</span>
       {children}
     </div>
@@ -59,10 +61,10 @@ export const Button: React.FC<Props> = ({
 
   if (onClick || type === "submit") el = "button";
 
-  if (el === "link") {
+  if (el === "link" && finalHref) {
     return (
       <Link
-        href={href as string}
+        href={finalHref}
         className={className}
         {...newTabProps}
         onClick={onClick}
@@ -76,7 +78,7 @@ export const Button: React.FC<Props> = ({
 
   return (
     <Element
-      href={href}
+      {...(finalHref ? { href: finalHref } : {})}
       className={className}
       type={type}
       {...newTabProps}

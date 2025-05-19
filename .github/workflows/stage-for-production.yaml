@@ -1,40 +1,87 @@
-name: 🎣 Create Pull Request to Production on Merge to Main
+name: 🎣 Create Release for Production Deployment
 
 on:
   workflow_dispatch:
     inputs:
-      reason:
-        description: "Reason for deployment"
+      version:
+        description: "Version to release (e.g. v1.2.0). Leave empty for automatic versioning"
         required: false
-        default: "No reason provided"
-  push:
-    branches:
-      - "main"
-    paths:
-      - "src/**"
-      - "*.json"
-      - "*.yaml"
-      - "*.json"
-      - "*.config.js"
-      - "*.config.ts"
+        type: string
+      reason:
+        description: "Release description - what features/fixes are included?"
+        required: true
+        type: string
 
 permissions:
   id-token: write
-  contents: write # Ensure this is set to allow write access to contents
-  pull-requests: write # Add this to allow pull request creation
+  contents: write
+  pull-requests: write
 
 jobs:
-  deploy:
+  create-release:
     runs-on: ubuntu-latest
     environment: Staging
     steps:
       - uses: actions/checkout@v4
-      - name: Create Pull Request to Production
-        if: success()
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Ensure we're on main branch
+        run: |
+          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          if [[ "$CURRENT_BRANCH" != "main" ]]; then
+            echo "❌ Releases must be created from the main branch"
+            exit 1
+          fi
+
+      - name: Create GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          REASON="${{ github.event.inputs.reason || 'No reason provided' }}"
+          if [[ -n "${{ github.event.inputs.version }}" ]]; then
+            NEW_TAG="${{ github.event.inputs.version }}"
+          else
+            # Get the latest version tag (only matching vX.Y.Z format)
+            LATEST_TAG=$(git tag -l "v[0-9]*.[0-9]*.[0-9]*" | sort -V | tail -n1 || echo "v1.0.0")
+
+            # Split version into major, minor, patch, removing the 'v' prefix
+            IFS='.' read -r major minor patch < <(echo "${LATEST_TAG#v}" | tr '.' '\n')
+
+            # Increment minor version and reset patch
+            NEW_TAG="v$major.$((minor + 1)).0"
+          fi
+
+          # Generate release notes from commits since last tag
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          if [ -n "$LAST_TAG" ]; then
+            echo "Generating release notes for changes since $LAST_TAG..."
+            RELEASE_NOTES=$(git log --pretty=format:"- %s (%h)" $LAST_TAG..HEAD)
+          else
+            echo "No previous tag found, including all commits in release notes..."
+            RELEASE_NOTES=$(git log --pretty=format:"- %s (%h)")
+          fi
+
+          if [ -z "$RELEASE_NOTES" ]; then
+            RELEASE_NOTES="No changes since last release"
+          fi
+
+          # Create the release
+          REASON="${{ github.event.inputs.reason }}"
           ACTOR="${{ github.actor }}"
           DATE=$(date)
-          gh pr create --base production --head main --title "Auto- Deploy by $ACTOR on $DATE" --body "Reason: $REASON"
+
+          echo "Creating release $NEW_TAG..."
+          gh release create "$NEW_TAG" \
+            --title "Release $NEW_TAG" \
+            --target main \
+            --notes "🚀 Production Release $NEW_TAG
+
+            **Initiated by:** $ACTOR
+            **Release Description:** $REASON
+            **Date:** $DATE
+
+            ## Changes included in this release:
+            $RELEASE_NOTES"
+
+          echo "✅ Release $NEW_TAG created successfully!"
