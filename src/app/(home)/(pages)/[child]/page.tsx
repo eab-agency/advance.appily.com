@@ -82,6 +82,7 @@ async function getPageData(slug: string) {
   }
 }
 
+
 const CategoryPage = async ({ params, searchParams }: any) => {
   const { child, subChild } = await params;
 
@@ -105,7 +106,7 @@ const CategoryPage = async ({ params, searchParams }: any) => {
     console.error("Error fetching page:", error);
   }
 
-  if (!pageData) {
+  if (!pageData || !pageData.id) {
     return notFound();
   }
 

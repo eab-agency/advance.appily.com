@@ -1,11 +1,12 @@
 'use client';
 import styles from '@/styles/components/Error.module.scss';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /* eslint-disable no-nested-ternary */
-function NotFound({ statusCode }) {
+function NotFound() {
   const [isLightMode, setIsLightMode] = useState(false);
+  const statusCode = 404;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
@@ -41,7 +42,7 @@ function NotFound({ statusCode }) {
           </figure>
           <div className={styles.content}>
             <div className={styles.intro}>
-              <h1>Oops! A server error just happened.</h1>
+              <h1>Oops! Page not found.</h1>
             </div>
             <p>
               Do not worry, you can visit{' '}
@@ -56,9 +57,7 @@ function NotFound({ statusCode }) {
               offer for students interested in health care.
             </p>
             <small>
-              {statusCode
-                ? `An error ${statusCode} occurred on server.`
-                : ''}
+              {`An error ${statusCode} occurred. Page not found.`}
             </small>
           </div>
         </div>
@@ -66,10 +65,5 @@ function NotFound({ statusCode }) {
     </>
   );
 }
-
-NotFound.getInitialProps = ({ res, err }) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
-  return { statusCode };
-};
 
 export default NotFound;
