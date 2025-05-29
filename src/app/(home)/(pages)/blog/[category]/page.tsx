@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 import { Post } from "../../../../../../payload-types";
 
 export default async function CategoryComponent({ params }) {
-  const { category } = params;
+  const { category } = await params;
   const formattedSlug = category?.replace(/-/g, " ") || "";
   const slugTitle = formattedSlug
     ? formattedSlug.charAt(0).toUpperCase() + formattedSlug.slice(1)

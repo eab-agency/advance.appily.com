@@ -1,5 +1,4 @@
 import RichText from "@/components/RichText";
-import React from "react";
 
 interface TestimonialProps {
 	richText?: {

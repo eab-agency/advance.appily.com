@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Button } from "@/components";
 import Image from "next/image";
 import { HiBadgeCheck } from "react-icons/hi";
@@ -6,6 +7,8 @@ import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
+import { StickyCta } from "../components/StickyCta";
+
 
 // @ts-ignore
 import CommonQuestions from "../assets/common-questions.png";
@@ -14,7 +17,6 @@ import ElevateYourCareer from "../assets/elevate-your-career.jpg";
 // @ts-ignore
 import heroImage from "../assets/mba-hero.jpg";
 
-import { StickyCta } from "../components/StickyCta";
 
 import { Metadata } from "next";
 

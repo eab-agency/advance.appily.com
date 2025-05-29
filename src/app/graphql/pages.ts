@@ -1,7 +1,6 @@
 import {
   CALLOUTSECTION,
   CALL_TO_ACTION,
-  CAROUSELCARD,
   GLOBAL_TOKEN,
   HIGHLIGHTEDCTA,
   MEDIA_BLOCK,
@@ -58,7 +57,6 @@ export const PAGE = `
           ${HIGHLIGHTEDCTA}
           ${CALLOUTSECTION}
           ${TABSECTION}
-          ${CAROUSELCARD}
           ${SUBNAVIGATION}
           ${STICKYCTASECTION}
           ${GLOBAL_TOKEN}

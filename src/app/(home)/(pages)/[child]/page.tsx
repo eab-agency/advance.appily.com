@@ -56,7 +56,7 @@ async function getPageData(slug: string) {
       `${process.env.NEXT_PUBLIC_CMS_URL}/api/pages?where[slug][equals]=${slug}&depth=0&limit=300`,
       {
         next: {
-          revalidate: 120, // Revalidate every 120 seconds
+          revalidate: 300, // Revalidate every 120 seconds
         },
       }
     );
