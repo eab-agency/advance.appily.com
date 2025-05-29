@@ -403,7 +403,7 @@ export default function Page() {
           <p className="text-fluid-lg">
             A business degree can be the catalyst for achieving your
             professional ambitions. Take our quiz today and find out which
-            program is the right fit for your goals.
+            program is the right fit for your goal.
           </p>
           <Button
             label="Start the Free Business Career Quiz"
