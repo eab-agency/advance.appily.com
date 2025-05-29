@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Button } from "@/components";
 import Image from "next/image";
 import { Accordion } from "../components/Accordion";
@@ -6,7 +7,6 @@ import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
-import { StickyCta } from "../components/StickyCta";
 
 // @ts-ignore
 import CommonQuestions from "../assets/common-questions.png";
@@ -88,7 +88,6 @@ export default function Page() {
             href="https://my.appily.com/register/adult/healthcarecareers1/degree"
             className="button"
           />
-
         </FunCard>
       </section>
 
@@ -494,10 +493,10 @@ export default function Page() {
         </div>
       </section>
 
-      <StickyCta
+      {/* <StickyCta
         ctaLabel="Start the Free Health Care Career Quiz"
         trackedElement="#lets-go-section"
-      />
+      /> */}
 
       <PageFooter />
     </>

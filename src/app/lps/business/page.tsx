@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Button } from "@/components";
 import Image from "next/image";
 import { Accordion } from "../components/Accordion";
@@ -6,8 +7,7 @@ import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
-import { StickyCta } from "../components/StickyCta";
-// @ts-ignore
+
 import CommonQuestions from "../assets/common-questions.png";
 // @ts-ignore
 import ElevateYourCareer from "../assets/elevate-your-career.jpg";
@@ -412,10 +412,10 @@ export default function Page() {
         </div>
       </section>
 
-      <StickyCta
+      {/* <StickyCta
         ctaLabel="Start the Free Business Career Quiz"
         trackedElement="#lets-go-section"
-      />
+      /> */}
 
       <PageFooter />
     </>

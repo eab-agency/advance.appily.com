@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Button } from "@/components";
 import Image from "next/image";
 import { FactsCard } from "../components/FactsCard";
@@ -5,7 +6,6 @@ import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
-import { StickyCta } from "../components/StickyCta";
 
 // @ts-ignore
 import heroImage from "../assets/healthcare-hero.jpg";
@@ -245,10 +245,10 @@ export default function Page() {
         </div>
       </section>
 
-      <StickyCta
+      {/* <StickyCta
         ctaLabel="Take our free health care career quiz"
         trackedElement="#lets-go-section"
-      />
+      /> */}
 
       <PageFooter />
     </>
