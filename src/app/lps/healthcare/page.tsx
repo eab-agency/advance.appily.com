@@ -7,6 +7,7 @@ import { FunCard } from "../components/FunCard";
 import { Hero } from "../components/Hero";
 import { PageFooter } from "../components/PageFooter/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
+import { StickyCta } from "../components/StickyCta";
 
 // @ts-ignore
 import CommonQuestions from "../assets/common-questions.png";
@@ -493,10 +494,10 @@ export default function Page() {
         </div>
       </section>
 
-      {/* <StickyCta
+      <StickyCta
         ctaLabel="Start the Free Health Care Career Quiz"
         trackedElement="#lets-go-section"
-      /> */}
+      />
 
       <PageFooter />
     </>

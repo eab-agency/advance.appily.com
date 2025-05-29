@@ -361,10 +361,10 @@ export default function Page() {
         </div>
       </section>
 
-      {/* <StickyCta
+      <StickyCta
         ctaLabel="Start the Free Business Career Quiz"
         trackedElement="#lets-go-section"
-      /> */}
+      />
 
       <PageFooter />
     </>

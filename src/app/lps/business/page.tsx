@@ -9,6 +9,7 @@ import { PageFooter } from "../components/PageFooter";
 import { PageHead } from "../components/PageHead/PageHead";
 import { StickyCta } from "../components/StickyCta";
 
+// @ts-ignore
 import CommonQuestions from "../assets/common-questions.png";
 // @ts-ignore
 import ElevateYourCareer from "../assets/elevate-your-career.jpg";
@@ -402,7 +403,7 @@ export default function Page() {
           <p className="text-fluid-lg">
             A business degree can be the catalyst for achieving your
             professional ambitions. Take our quiz today and find out which
-            program is the right fit for your goals.
+            program is the right fit for your goal.
           </p>
           <Button
             label="Start the Free Business Career Quiz"
@@ -413,10 +414,10 @@ export default function Page() {
         </div>
       </section>
 
-      {/* <StickyCta
+      <StickyCta
         ctaLabel="Start the Free Business Career Quiz"
         trackedElement="#lets-go-section"
-      /> */}
+      />
 
       <PageFooter />
     </>
